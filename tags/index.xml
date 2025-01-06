@@ -1233,40 +1233,5 @@
       <guid>/tags/zip/</guid>
       <description></description>
     </item>
-    <item>
-      <title>Nextjs</title>
-      <link>/tags/nextjs/</link>
-      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>/tags/nextjs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Silicon</title>
-      <link>/tags/silicon/</link>
-      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>/tags/silicon/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Software</title>
-      <link>/tags/software/</link>
-      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>/tags/software/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tailwind</title>
-      <link>/tags/tailwind/</link>
-      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>/tags/tailwind/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Technology</title>
-      <link>/tags/technology/</link>
-      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
-      <guid>/tags/technology/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
