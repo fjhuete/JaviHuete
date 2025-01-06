@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administración De Sistemas on Javi Huete</title>
+    <link>/tags/administraci%C3%B3n-de-sistemas/</link>
+    <description>Recent content in Administración De Sistemas on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/administraci%C3%B3n-de-sistemas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración del balanceador de carga HAProxy</title>
+      <link>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</guid>
+      <description>En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</description>
+    </item>
+    <item>
+      <title>Guía básica de configuración de Nginx</title>
+      <link>/blog/servicios/2024-12-02-configuracion-nginx/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-nginx/</guid>
+      <description>En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</description>
+    </item>
+    <item>
+      <title>Configuración de un proxy inverso en Apache2 y Nginx</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</guid>
+      <description>En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</description>
+    </item>
+    <item>
+      <title>Configuración de un proxy inverso en Apache2</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy/</guid>
+      <description>A través de un caso práctica se muestran diferentes ejemplos de configuración de un proxy inverso usando Apache2.</description>
+    </item>
+    <item>
+      <title>Configuración de un servidor SAN</title>
+      <link>/blog/servicios/2024-11-10-configuracion-servidor-san/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-configuracion-servidor-san/</guid>
+      <description>En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</description>
+    </item>
+    <item>
+      <title>Funcionamiento básico de ansible</title>
+      <link>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</guid>
+      <description>Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</description>
+    </item>
+  </channel>
+</rss>

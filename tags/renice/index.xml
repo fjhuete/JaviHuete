@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Renice on Javi Huete</title>
+    <link>/tags/renice/</link>
+    <description>Recent content in Renice on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 17 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/renice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comandos para el control de procesos</title>
+      <link>/blog/sistemas/2024-03-17-comandos-control-procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-03-17-comandos-control-procesos/</guid>
+      <description>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administracion-Bbdd on Javi Huete</title>
+    <link>/categories/administracion-bbdd/</link>
+    <description>Recent content in Administracion-Bbdd on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 17 Nov 2024 01:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/administracion-bbdd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interconexión entre dos servidores Postgres</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</guid>
+      <description>En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</description>
+    </item>
+    <item>
+      <title>Interconexión entre dos servidores Oracle</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</guid>
+      <description>Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</description>
+    </item>
+    <item>
+      <title>Instalación de MySQL en Debian</title>
+      <link>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</guid>
+      <description>El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</description>
+    </item>
+  </channel>
+</rss>

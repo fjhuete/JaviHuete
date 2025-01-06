@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tinycore Linux on Javi Huete</title>
+    <link>/tags/tinycore-linux/</link>
+    <description>Recent content in Tinycore Linux on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 28 Jan 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/tinycore-linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo importar dispositivos a GNS3</title>
+      <link>/blog/redes/2024-01-28-importar-dispositivos-gns3/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-01-28-importar-dispositivos-gns3/</guid>
+      <description>&lt;p&gt;En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

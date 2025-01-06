@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iptables on Javi Huete</title>
+    <link>/tags/iptables/</link>
+    <description>Recent content in Iptables on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 12 Apr 2024 02:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/iptables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de reglas de cortafuegos en router Linux usando iptables</title>
+      <link>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</guid>
+      <description>Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.</description>
+    </item>
+  </channel>
+</rss>

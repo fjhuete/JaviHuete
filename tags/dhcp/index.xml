@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DHCP on Javi Huete</title>
+    <link>/tags/dhcp/</link>
+    <description>Recent content in DHCP on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo configurar un servidor DHCP en un router Cisco</title>
+      <link>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</guid>
+      <description>La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</description>
+    </item>
+  </channel>
+</rss>

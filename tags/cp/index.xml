@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cp on Javi Huete</title>
+    <link>/tags/cp/</link>
+    <description>Recent content in Cp on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 10 Nov 2023 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/cp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ejemplos de uso de comandos básicos en Debian</title>
+      <link>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</guid>
+      <description>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</description>
+    </item>
+  </channel>
+</rss>

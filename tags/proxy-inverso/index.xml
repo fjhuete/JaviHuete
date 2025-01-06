@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proxy Inverso on Javi Huete</title>
+    <link>/tags/proxy-inverso/</link>
+    <description>Recent content in Proxy Inverso on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sat, 16 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/proxy-inverso/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de un proxy inverso en Apache2 y Nginx</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</guid>
+      <description>En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</description>
+    </item>
+    <item>
+      <title>Configuración de un proxy inverso en Apache2</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy/</guid>
+      <description>A través de un caso práctica se muestran diferentes ejemplos de configuración de un proxy inverso usando Apache2.</description>
+    </item>
+  </channel>
+</rss>

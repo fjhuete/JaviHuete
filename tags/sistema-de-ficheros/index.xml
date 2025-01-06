@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sistema De Ficheros on Javi Huete</title>
+    <link>/tags/sistema-de-ficheros/</link>
+    <description>Recent content in Sistema De Ficheros on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 05 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/sistema-de-ficheros/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gestión de dispositivos de almacenamiento con Powershell</title>
+      <link>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</link>
+      <pubDate>Sun, 05 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</guid>
+      <description>&lt;p&gt;El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+      <link>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</guid>
+      <description>&lt;p&gt;OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación y configuración de un sistema de ficheros en Debian 12</title>
+      <link>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</link>
+      <pubDate>Sun, 04 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</guid>
+      <description>&lt;p&gt;En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

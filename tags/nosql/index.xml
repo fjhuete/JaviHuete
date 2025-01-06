@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NoSQL on Javi Huete</title>
+    <link>/tags/nosql/</link>
+    <description>Recent content in NoSQL on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 07 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guía de instalación de MongoDB en Debian 12</title>
+      <link>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</guid>
+      <description>En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1650 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/redes/2024-03-25-nat-router-mikrotik-openstak/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración NAT en routers Mikrotik en Openstack</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración NAT en routers Mikrotik en Openstack" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/redes/2024-03-25-nat-router-mikrotik-openstak/" />
+
+
+<meta name="twitter:title" content="Configuración NAT en routers Mikrotik en Openstack" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Configuración NAT en routers Mikrotik en Openstack
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/redes/"
+                    class=""
+                    >Redes
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              25 de marzo de 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-de-un-servidor-dhcp-en-un-router-mikrotik">Configuración de un servidor DHCP en un router Mikrotik</a></li>
+    <li><a href="#enrutamiento-de-los-routers-mikrotik-en-openstack">Enrutamiento de los routers Mikrotik en Openstack</a>
+      <ol>
+        <li><a href="#direccionamiento-de-los-routers-del-escenario">Direccionamiento de los routers del escenario</a></li>
+        <li><a href="#enrutamiento-de-los-routers-del-escenario">Enrutamiento de los routers del escenario</a>
+          <ol>
+            <li><a href="#empresa-1">Empresa 1</a></li>
+            <li><a href="#empresa-2">Empresa 2</a></li>
+            <li><a href="#casa">Casa</a></li>
+            <li><a href="#internet-1">Internet 1</a></li>
+            <li><a href="#internet-2">Internet 2</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#configuración-del-snat-en-el-router-casa">Configuración del SNAT en el router Casa</a></li>
+    <li><a href="#configuración-del-nat-en-los-routers-de-las-empresas">Configuración del NAT en los routers de las empresas</a>
+      <ol>
+        <li><a href="#configuración-del-snat-en-los-routers-de-las-empresas">Configuración del SNAT en los routers de las empresas</a></li>
+        <li><a href="#configuración-del-dnat-en-los-routers-de-las-empresas">Configuración del DNAT en los routers de las empresas</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se resuelve un caso práctico de configuración NAT en routers Mikrotik simulados en Openstack. Para ello se crea el siguiente escenario usando una plantilla YAML como se explica en <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack"
+
+
+
+ 
+
+
+>este post</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="902"
+            height="600"
+            src="/images/redes/practica13/img1_hu16336523051638233059.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img1_hu16336523051638233059.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>En este caso, se reutiliza la plantilla de la que se habla en <a href="redes/nat-router-linux-openstack"
+
+
+
+ 
+
+
+>este otro post</a> sustituyendo los routers Linux por router Mikrotik. La única modificación necesaria sobre el fichero de creación del escenario es cambiar, en la primera parte del documento en la que se definen las variables, el identificador de la imagen de Debian 12 que se usa en ese post para crear los routers Linux por la imagen de los routers Mikrotik que se utilizan en esta entrada.</p>
+<p>Por lo demás, los ordenadores clientes están basados en una imagen de Debian 12 con los clientes de MariaDB y PostgreSQL instalados; y, por último, los servidores se basan en una imagen de Debian 12 con los servicios de <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache"
+
+
+
+ 
+
+
+>Apache</a>, <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3"
+
+
+
+ 
+
+
+>PostgreSQL</a>, SSH y <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3"
+
+
+
+ 
+
+
+>MariaDB</a> instalados y configurados para su funcionamiento.</p>
+<h1 id="configuración-de-un-servidor-dhcp-en-un-router-mikrotik">Configuración de un servidor DHCP en un router Mikrotik</h1>
+<p>La configuración DHCP en los escenarios de Openstack se puede realizar <a href="/blog/redes/2024-03-25-nat-router-linux-openstack#configuraci%c3%b3n-del-servidor-dhcp-en-openstack"
+
+
+
+ 
+
+
+>a través de la interfaz gráfica</a> de la plataforma o desde la plantilla para la creación del escenario. En este caso, se ha especificado la opción <code>enable_dhcp: true</code> en la red 7, a la que pertenecen los ordenadores conectados al router Casa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">subnet7</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Subnet</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">red7 }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">cidr</span>: <span style="color:#ae81ff">192.168.0.0</span><span style="color:#ae81ff">/24</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enable_dhcp</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>Sin embargo, a continuación, se documenta el proceso para la configuración de un servidor DHCP en un router Mikrotik en otros entornos.</p>
+<p>Se trata de un proceso muy sencillo. Al ejecutar el comando ip dhcp-server setup en un router, el propio equipo pide el resto de información necesaria para configurar el servidor de manera interactiva. Así, se deben aportar datos como la interfaz del servidor DHCP, el rango de la red, la puerta de enlace para la red, el rango de direcciones que el servidor puede asignar, el servidor DNS y el tiempo de préstamo de la configuración que ofrece el servidor DHCP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip dhcp-server setup
+</span></span><span style="display:flex;"><span>Select interface to run DHCP server on
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>dhcp server interface: ether2
+</span></span><span style="display:flex;"><span>Select network for DHCP addresses
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>dhcp address space: 192.168.0.0/24
+</span></span><span style="display:flex;"><span>Select gateway for given network
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>gateway for dhcp network: 192.168.0.50
+</span></span><span style="display:flex;"><span>Select pool of ip addresses given out by DHCP server
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>addresses to give out: 192.168.0.1-192.168.0.49,192.168.0.51-192.168.0.254
+</span></span><span style="display:flex;"><span>Select DNS servers
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>dns servers: 8.8.8.8
+</span></span><span style="display:flex;"><span>Select lease time
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>lease time: 10m
+</span></span></code></pre></div><h1 id="enrutamiento-de-los-routers-mikrotik-en-openstack">Enrutamiento de los routers Mikrotik en Openstack</h1>
+<h2 id="direccionamiento-de-los-routers-del-escenario">Direccionamiento de los routers del escenario</h2>
+<p>Para asignar la dirección IP otorgada por Openstack a cada tarjeta de red de los routers del escenario se usa el comando <code>interface ethernet print</code> para mostrar la dirección MAC de cada puerto. Con esta información se debe comprobar a qué dirección IP de Openstack corresponde la interfaz. Una vez que se conozca esta información se puede pasar al router. Por ejemplo, si la IP de la interfaz ether1 del router Casa es 100.40.0.146:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip address add address=100.40.0.146/24 interface=ether1
+</span></span></code></pre></div><p>Esta configuración se aplica a todas las tarjetas de red de todos los routers, así como a las interfaces de los servidores. A los clientes no es necesario asignarles una IP de forma manual porque ya la han recibido a través del protocolo DHCP.</p>
+<h2 id="enrutamiento-de-los-routers-del-escenario">Enrutamiento de los routers del escenario</h2>
+<h3 id="empresa-1">Empresa 1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.10.0.114
+</span></span></code></pre></div><h3 id="empresa-2">Empresa 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.20.0.45
+</span></span></code></pre></div><h3 id="casa">Casa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.40.0.202
+</span></span></code></pre></div><h3 id="internet-1">Internet 1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=100.40.0.0/0 gateway=100.30.0.70
+</span></span></code></pre></div><h3 id="internet-2">Internet 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.30.0.111
+</span></span></code></pre></div><h1 id="configuración-del-snat-en-el-router-casa">Configuración del SNAT en el router Casa</h1>
+<p>Configurar el SNAT en un router es algo sencillo. Sólo es necesario ejecutar un comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=192.168.0.0/24 action=src-nat to-addresses=100.40.0.146 out-interface=ether1
+</span></span></code></pre></div><p>Con esto se indica al router que debe modificar la dirección de origen de todos los paquetes que provengan de la red 192.168.0.0/24 y que se enruten por la interfaz ether1 por la IP 100.40.0.146.</p>
+<p>De esta manera, tras configurar el SNAT en el router Casa, los ordenadores PC1 y PC2 pueden comunicarse con direcciones IP de fuera de su red.</p>
+<h1 id="configuración-del-nat-en-los-routers-de-las-empresas">Configuración del NAT en los routers de las empresas</h1>
+<h2 id="configuración-del-snat-en-los-routers-de-las-empresas">Configuración del SNAT en los routers de las empresas</h2>
+<p>Para configurar SNAT en los routers de las empresas hay que repetir el mismo comando ejecutado en el router casa.</p>
+<p>Para Empresa 1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.10.0.129 out-interface=ether2
+</span></span></code></pre></div><p>Para empresa 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.20.0.93 out-interface=ether2
+</span></span></code></pre></div><p>Ahora sólo queda realizar la configuración necesaria para que estos servidores también puedan recibir tráfico desde fuera de su red.</p>
+<h2 id="configuración-del-dnat-en-los-routers-de-las-empresas">Configuración del DNAT en los routers de las empresas</h2>
+<p>El comando que configura el DNAT en los routers Mikrotik es similar al que se ha usado previamente para la configuración SNAT.</p>
+<p>En el router Empresa 1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=80 to-addresses=10.0.0.112 protocol=tcp 
+</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=443 to-addresses=10.0.0.112 protocol=tcp
+</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=5432 to-addresses=10.0.0.120 protocol=tcp
+</span></span></code></pre></div><p>En el router Empresa 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.93 dst-port=22 to-addresses=10.0.0.102 protocol=tcp
+</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.39 dst-port=3306 to-addresses=10.0.0.198 protocol=tcp
+</span></span></code></pre></div><p>Esta configuración permite a los ordenadores PC1 y PC2 acceder, desde su red local, a los servidores en las empresas.</p>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>En este blog también puedes encontrar este mismo caso práactico resuelto usando <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3"
+
+
+
+ 
+
+
+>routers Cisco en GNS3</a> y usando <a href="/blog/redes/2024-03-25-nat-router-linux-openstack"
+
+
+
+ 
+
+
+>routers Linux en Openstack</a>.</p></div>
+</div>
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2024-03-25-nat-router-mikrotik-openstak%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2024-03-25-nat-router-mikrotik-openstak%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2024-03-25-nat-router-mikrotik-openstak%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2024-03-25-nat-router-mikrotik-openstak%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+      Gestión de dispositivos de almacenamiento con Powershell
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
+      Funcionamiento básico de ansible
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-03-17-comandos-control-procesos/">
+      Comandos para el control de procesos
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-03-17-comandos-control-procesos/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

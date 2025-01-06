@@ -1,0 +1,2128 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Conceptos de gestión de paquetería en Debian</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Conceptos de gestión de paquetería en Debian" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/" />
+
+
+<meta name="twitter:title" content="Conceptos de gestión de paquetería en Debian" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Conceptos De Gestión De Paquetería en Debian</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Conceptos de gestión de paquetería en Debian
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <h1 id="trabajo-con-apt-aptitude-dpkg">Trabajo con apt, aptitude, dpkg</h1>
+<h2 id="qué-acciones-consigo-al-realizar-apt-update-y-apt-upgrade">Qué acciones consigo al realizar apt update y apt upgrade</h2>
+<p>El comando <code>apt update</code> revisa los repositorios del sistema operativo en busca de nuevas versiones de los paquetes instalados en el equipo. Posteriormente, el comando <code>apt upgrade</code> ejecuta la actualización de aquellos paquetes de los que haya una versión más reciente disponible.</p>
+<p>Antes de instalar un nuevo paquete o de actualizar a su versión más reciente, el gestor de paquetes apt consulta el fichero Releases del repositorio para comprobar que el hash corresponde al del propio paquete y garantizar así que no ha sido modificado desde que se distribuye por parte del mantenedor hasta que llega al equipo del usuario.</p>
+<h2 id="lista-la-relación-de-paquetes-que-pueden-ser-actualizados-qué-información-puedes-sacar-a-tenor-de-lo-mostrado-en-el-listado">Lista la relación de paquetes que pueden ser actualizados. ¿Qué información puedes sacar a tenor de lo mostrado en el listado?</h2>
+<p>Los paquetes que pueden ser actualizados se consultan con el comando <code>apt list --upgradable</code>. La salida de este comando devuelve el nombre del paquete junto a otra información relevante como la rama del SO a la que pertenece el paquete, la versión, la fecha de actualización, etc.</p>
+<h2 id="indica-la-versión-instalada-candidata-así-como-la-prioridad-del-paquete-openssh-client">Indica la versión instalada, candidata así como la prioridad del paquete openssh-client</h2>
+<p>La versión instalada de <code>openssh-client</code> en mi equipo es la 1:9.2p1-2+deb12u3 y la candidata es la misma versión, lo que quiere decir que el paquete está actualizado en el equipo.
+La prioridad de este paquete es de 500 desde los repositorios de debian, es decir, el gestor de paquetería instala el paquete si no hay una versión disponible en la rama principal o si no hay una versión más reciente instalada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt policy openssh-client
+</span></span><span style="display:flex;"><span>openssh-client:
+</span></span><span style="display:flex;"><span>  Instalados: 1:9.2p1-2+deb12u3
+</span></span><span style="display:flex;"><span>  Candidato:  1:9.2p1-2+deb12u3
+</span></span><span style="display:flex;"><span>  Tabla de versión:
+</span></span><span style="display:flex;"><span> *** 1:9.2p1-2+deb12u3 500
+</span></span><span style="display:flex;"><span>        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+</span></span><span style="display:flex;"><span>        100 /var/lib/dpkg/status
+</span></span></code></pre></div><h2 id="cómo-puedes-sacar-información-de-un-paquete-oficial-instalado-o-que-no-este-instalado">¿Cómo puedes sacar información de un paquete oficial instalado o que no este instalado?</h2>
+<p>Para obtener información de un paquete instalado en el equipo la fuente más completa suele ser el manual, al que se puede acceder con el comando man seguido del nombre del paquete. Si el paquete no está instalado en el equipo aún se puede consultar información acerca de él a través de comandos como <code>apt show</code>, que muestra el nombre del paquete, la versión más reciente, la prioridad, la sección a la que pertenece, el nombre y contacto del mantenedor, el tamaño que ocupa una vez instalado, así como sus dependencias, paquetes recomendados y sugeridos. Además, también muestra información sobre la fuente del repositorio desde la que apt descarga el paquete y una pequeña descripción de lo que hace la herramienta.</p>
+<h2 id="saca-toda-la-información-que-puedas-del-paquete-openssh-client-que-tienes-actualmente-instalado-en-tu-máquina">Saca toda la información que puedas del paquete openssh-client que tienes actualmente instalado en tu máquina</h2>
+<p>De forma resumida, se puede acceder a una información básica muy útil sobre el paquete <code>openssh-client</code> con el comando <code>apt-show openssh-client</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt show openssh-client
+</span></span><span style="display:flex;"><span>Package: openssh-client
+</span></span><span style="display:flex;"><span>Version: 1:9.2p1-2+deb12u3
+</span></span><span style="display:flex;"><span>Priority: standard
+</span></span><span style="display:flex;"><span>Section: net
+</span></span><span style="display:flex;"><span>Source: openssh
+</span></span><span style="display:flex;"><span>Maintainer: Debian OpenSSH Maintainers &lt;debian-ssh@lists.debian.org&gt;
+</span></span><span style="display:flex;"><span>Installed-Size: 5.919 kB
+</span></span><span style="display:flex;"><span>Provides: ssh-client
+</span></span><span style="display:flex;"><span>Depends: adduser, passwd, libc6 (&gt;= 2.36), libedit2 (&gt;= 2.11-20080614-0), libfido2-1 (&gt;= 1.8.0), libgssapi-krb5-2 (&gt;= 1.17), libselinux1 (&gt;= 3.1~), libssl3 (&gt;= 3.0.13), zlib1g (&gt;= 1:1.1.4)
+</span></span><span style="display:flex;"><span>Recommends: xauth
+</span></span><span style="display:flex;"><span>Suggests: keychain, libpam-ssh, monkeysphere, ssh-askpass
+</span></span><span style="display:flex;"><span>Conflicts: sftp
+</span></span><span style="display:flex;"><span>Breaks: openssh-sk-helper
+</span></span><span style="display:flex;"><span>Replaces: openssh-sk-helper, ssh, ssh-krb5
+</span></span><span style="display:flex;"><span>Homepage: https://www.openssh.com/
+</span></span><span style="display:flex;"><span>Tag: implemented-in::c, interface::commandline, interface::shell,
+</span></span><span style="display:flex;"><span> network::client, protocol::sftp, protocol::ssh, role::program,
+</span></span><span style="display:flex;"><span> security::authentication, security::cryptography, uitoolkit::ncurses,
+</span></span><span style="display:flex;"><span> use::login, use::transmission, works-with::file
+</span></span><span style="display:flex;"><span>Download-Size: 991 kB
+</span></span><span style="display:flex;"><span>APT-Manual-Installed: yes
+</span></span><span style="display:flex;"><span>APT-Sources: http://deb.debian.org/debian bookworm/main amd64 Packages
+</span></span><span style="display:flex;"><span>Description: Cliente del protocolo &#34;Secure Shell&#34; (SSH) para acceso seguro a máquinas remotas
+</span></span><span style="display:flex;"><span> Esta es la versión adaptable de OpenSSH, una implementación libre del
+</span></span><span style="display:flex;"><span> protocolo «Secure Shell» como especifica el grupo de trabajo secsh del IETF.
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> Ssh (Secure Shell) es una aplicación para acceder y ejecutar comandos 
+</span></span><span style="display:flex;"><span> en una máquina remota. Provee conexiones encriptadas y seguras entre dos
+</span></span><span style="display:flex;"><span> huéspedes no certificados en una red sin seguridad. Las conexiones a través
+</span></span><span style="display:flex;"><span> de X11 y puertos arbitrarios TCP/IP también pueden ser transportados a un
+</span></span><span style="display:flex;"><span> canal seguro. Puede ser usado para proveer a las aplicaciones de un canal de
+</span></span><span style="display:flex;"><span> comunicación seguro.
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> Este paquete proporciona los clientes de ssh, scp y sftp, los programas
+</span></span><span style="display:flex;"><span> sh-agent y ssh-add para hacer más comoda la autenticación de clave pública,
+</span></span><span style="display:flex;"><span> y las utilidades ssh-keygen, ssh-keyscan, ssh-copy-id y ssh-argv0.
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> En algunos países puede ser ilegal utilizar cualquier tipo de cifrado sin
+</span></span><span style="display:flex;"><span> un permiso especial.
+</span></span><span style="display:flex;"><span> .
+</span></span><span style="display:flex;"><span> ssh reemplaza a las aplicaciones no seguras rsh, rcp y rlogin, 
+</span></span><span style="display:flex;"><span> obsoletas para la mayoría de los propósitos.
+</span></span></code></pre></div><p>La salida de este comando devuelve información como el nombre del paquete (openssh-client), la versión más reciente (1:9.2p1-2+deb12u3), la prioridad para la instalación (standard), la sección del SO a la que pertenece (red), la fuente (openssh), el mantenedor (el equipo de mantenedores de OpenSSH de Debian), el tamaño del paquete instalado (5.919 kB), la herramienta que ofrece (ssh-client), los paquetes de los que depende (adduser, passwd, libc6 (&gt;= 2.36), libedit2 (&gt;= 2.11-20080614-0), libfido2-1 (&gt;= 1.8.0), libgssapi-krb5-2 (&gt;= 1.17), libselinux1 (&gt;= 3.1~), libssl3 (&gt;= 3.0.13), zlib1g (&gt;= 1:1.1.4)), los paquetes cuya instalación recomienda (xauth), los paquetes cuya instalación sugiere (keychain, libpam-ssh, monkeysphere, ssh-askpass), los paquetes con los que pueden generarse conflictos (sftp), los paquetes que rompe (openssh-sk-helper) y los paquetes que reemplaza (openssh-sk-helper, ssh, ssh-krb5), así como la web del proyecto (<a href="https://www.openssh.com/%29"
+
+
+
+
+ target="_blank"
+ 
+
+
+>https://www.openssh.com/)</a>, algunas etiquetas para identificar el paquete, el tamaño de la descarga (991 kB), si el manual está instalado (en este caso, sí), la fuente del repositorio (<a href="http://deb.debian.org/debian"
+
+
+
+
+ target="_blank"
+ 
+
+
+>http://deb.debian.org/debian</a> bookworm/main amd64 Packages) y la descripción del paquete.</p>
+<p>Se puede acceder a una información mucho más extensa de la herramienta a través del comando man ssh.</p>
+<p>Además, parte de la información recogida en la salida del comando apt show se puede acceder de otras formas. Por ejemplo, para conseguir la información sobre los paquetes de los que depende <code>openssh-client</code> se puede ejecutar el comando <code>apt depends openssh-client</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt depends openssh-client
+</span></span><span style="display:flex;"><span>openssh-client
+</span></span><span style="display:flex;"><span>  Depende: adduser
+</span></span><span style="display:flex;"><span>  Depende: passwd
+</span></span><span style="display:flex;"><span>  Depende: libc6 (&gt;= 2.36)
+</span></span><span style="display:flex;"><span>  Depende: libedit2 (&gt;= 2.11-20080614-0)
+</span></span><span style="display:flex;"><span>  Depende: libfido2-1 (&gt;= 1.8.0)
+</span></span><span style="display:flex;"><span>  Depende: libgssapi-krb5-2 (&gt;= 1.17)
+</span></span><span style="display:flex;"><span>  Depende: libselinux1 (&gt;= 3.1~)
+</span></span><span style="display:flex;"><span>  Depende: libssl3 (&gt;= 3.0.13)
+</span></span><span style="display:flex;"><span>  Depende: zlib1g (&gt;= 1:1.1.4)
+</span></span><span style="display:flex;"><span>  Entra en conflicto: &lt;sftp&gt;
+</span></span><span style="display:flex;"><span>  Rompe: &lt;openssh-sk-helper&gt;
+</span></span><span style="display:flex;"><span>  Recomienda: xauth
+</span></span><span style="display:flex;"><span>  Sugiere: keychain
+</span></span><span style="display:flex;"><span>  Sugiere: &lt;libpam-ssh&gt;
+</span></span><span style="display:flex;"><span>  Sugiere: &lt;monkeysphere&gt;
+</span></span><span style="display:flex;"><span>  Sugiere: ssh-askpass
+</span></span><span style="display:flex;"><span>    ksshaskpass
+</span></span><span style="display:flex;"><span>    kwalletcli
+</span></span><span style="display:flex;"><span>    lxqt-openssh-askpass
+</span></span><span style="display:flex;"><span>    ssh-askpass-fullscreen
+</span></span><span style="display:flex;"><span>    ssh-askpass-gnome
+</span></span><span style="display:flex;"><span>  Reemplaza: &lt;openssh-sk-helper&gt;
+</span></span><span style="display:flex;"><span>  Reemplaza: ssh
+</span></span><span style="display:flex;"><span>  Reemplaza: &lt;ssh-krb5&gt;
+</span></span></code></pre></div><p>Una información a la que no se puede acceder a través de apt show es la de las dependencias inversas del paquete. En este caso, con el comando <code>apt rdepends openssh-client</code> se puede obtener esta lista de paquetes que dependen del propio <code>openssh-client</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt rdepends openssh-client
+</span></span><span style="display:flex;"><span>openssh-client
+</span></span><span style="display:flex;"><span>Reverse Depends:
+</span></span><span style="display:flex;"><span>  Reemplaza: openssh-server (&lt;&lt; 1:7.9p1-8)
+</span></span><span style="display:flex;"><span>  Depende: arb
+</span></span><span style="display:flex;"><span> |Depende: zssh
+</span></span><span style="display:flex;"><span>  Recomienda: xpra
+</span></span><span style="display:flex;"><span>  Depende: xen-tools
+</span></span><span style="display:flex;"><span>  Depende: x2goserver
+</span></span><span style="display:flex;"><span>  Depende: x2goclient
+</span></span><span style="display:flex;"><span> |Recomienda: waypipe
+</span></span><span style="display:flex;"><span>  Recomienda: vorta
+</span></span><span style="display:flex;"><span>  Depende: vagrant
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.52-gtk
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.52
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.51+4.13.1-gtk
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.51+4.13.1
+</span></span><span style="display:flex;"><span>  Recomienda: tsung
+</span></span><span style="display:flex;"><span>  Depende: python3-tomahawk
+</span></span><span style="display:flex;"><span>  Sugiere: tla
+</span></span><span style="display:flex;"><span>  Recomienda: task-ssh-server
+</span></span><span style="display:flex;"><span> |Depende: taktuk
+</span></span><span style="display:flex;"><span>  Recomienda: python3-jarabe
+</span></span><span style="display:flex;"><span>  Depende: ssvnc
+</span></span><span style="display:flex;"><span> |Depende: sshuttle
+</span></span><span style="display:flex;"><span>  Depende: sshfs
+</span></span><span style="display:flex;"><span>  Depende: ssh-tools
+</span></span><span style="display:flex;"><span>  Depende: ssh-import-id
+</span></span><span style="display:flex;"><span>  Depende: ssh-cron
+</span></span><span style="display:flex;"><span>  Depende: ssh-contact-client
+</span></span><span style="display:flex;"><span>  Depende: ssh-agent-filter
+</span></span><span style="display:flex;"><span>  Depende: snapd
+</span></span><span style="display:flex;"><span>  Sugiere: smokeping
+</span></span><span style="display:flex;"><span>  Sugiere: slack
+</span></span><span style="display:flex;"><span> |Recomienda: sisu
+</span></span><span style="display:flex;"><span>  Recomienda: simple-tpm-pk11
+</span></span><span style="display:flex;"><span>  Depende: sidedoor
+</span></span><span style="display:flex;"><span>  Depende: secpanel
+</span></span><span style="display:flex;"><span>  Recomienda: seahorse
+</span></span><span style="display:flex;"><span>  Depende: python3-sahara-plugin-vanilla
+</span></span><span style="display:flex;"><span>  Depende: python3-sahara-plugin-spark
+</span></span><span style="display:flex;"><span>  Sugiere: rsync
+</span></span><span style="display:flex;"><span> |Recomienda: rsnapshot
+</span></span><span style="display:flex;"><span>  Recomienda: rsbackup-graph
+</span></span><span style="display:flex;"><span>  Recomienda: rsbackup
+</span></span><span style="display:flex;"><span> |Depende: rancid
+</span></span><span style="display:flex;"><span>  Depende: pssh
+</span></span><span style="display:flex;"><span> |Depende: pkg-perl-tools
+</span></span><span style="display:flex;"><span>  Depende: piuparts-slave-from-git-deps
+</span></span><span style="display:flex;"><span>  Depende: piuparts-slave
+</span></span><span style="display:flex;"><span>  Recomienda: pdudaemon
+</span></span><span style="display:flex;"><span> |Depende: pdsh
+</span></span><span style="display:flex;"><span>  Depende: python3-parallax
+</span></span><span style="display:flex;"><span>  Depende: oz
+</span></span><span style="display:flex;"><span>  Recomienda: ostree-push
+</span></span><span style="display:flex;"><span>  Depende: openstack-cluster-installer-openstack-ci
+</span></span><span style="display:flex;"><span>  Recomienda: openssh-known-hosts
+</span></span><span style="display:flex;"><span> |Depende: ssh-askpass-gnome
+</span></span><span style="display:flex;"><span>  Depende: ssh (&gt;= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-tests (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-sftp-server (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-server (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: git-annex (&gt;= 1:5.6p1)
+</span></span><span style="display:flex;"><span> |Depende: openmpi-bin
+</span></span><span style="display:flex;"><span>  Sugiere: oar-user
+</span></span><span style="display:flex;"><span>  Depende: oar-server
+</span></span><span style="display:flex;"><span>  Depende: oar-node
+</span></span><span style="display:flex;"><span>  Depende: python3-nova
+</span></span><span style="display:flex;"><span>  Depende: network-manager-ssh
+</span></span><span style="display:flex;"><span>  Depende: mussh
+</span></span><span style="display:flex;"><span>  Depende: mssh
+</span></span><span style="display:flex;"><span>  Depende: mosh
+</span></span><span style="display:flex;"><span>  Recomienda: mercurial
+</span></span><span style="display:flex;"><span> |Recomienda: lxsession
+</span></span><span style="display:flex;"><span>  Sugiere: lsh-server
+</span></span><span style="display:flex;"><span>  Depende: live-task-standard
+</span></span><span style="display:flex;"><span>  Recomienda: live-task-recommended
+</span></span><span style="display:flex;"><span>  Depende: libnetapp-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-ssh-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-sftp-foreign-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-scp-perl
+</span></span><span style="display:flex;"><span>  Depende: libnet-openssh-perl
+</span></span><span style="display:flex;"><span>  Depende: libguestfs0
+</span></span><span style="display:flex;"><span>  Mejora: libconfig-model-openssh-perl
+</span></span><span style="display:flex;"><span>  Recomienda: lftp
+</span></span><span style="display:flex;"><span>  Recomienda: lava-server
+</span></span><span style="display:flex;"><span>  Depende: lava
+</span></span><span style="display:flex;"><span> |Depende: lam-runtime
+</span></span><span style="display:flex;"><span>  Recomienda: python3-labgrid
+</span></span><span style="display:flex;"><span>  Recomienda: kwalletcli
+</span></span><span style="display:flex;"><span>  Depende: ksshaskpass
+</span></span><span style="display:flex;"><span> |Depende: keychain
+</span></span><span style="display:flex;"><span>  Recomienda: hollywood
+</span></span><span style="display:flex;"><span>  Depende: hash-slinger
+</span></span><span style="display:flex;"><span>  Depende: gitolite3
+</span></span><span style="display:flex;"><span>  Rompe: git (&lt;&lt; 1:6.8)
+</span></span><span style="display:flex;"><span> |Depende: ansible
+</span></span><span style="display:flex;"><span>  Depende: ganeti-3.0
+</span></span><span style="display:flex;"><span> |Sugiere: gabedit
+</span></span><span style="display:flex;"><span> |Sugiere: gabedit
+</span></span><span style="display:flex;"><span> |Depende: fssync
+</span></span><span style="display:flex;"><span>  Recomienda: freedombox
+</span></span><span style="display:flex;"><span>  Recomienda: fence-agents
+</span></span><span style="display:flex;"><span>  Recomienda: fdroidserver
+</span></span><span style="display:flex;"><span>  Recomienda: fai-server
+</span></span><span style="display:flex;"><span>  Sugiere: duply
+</span></span><span style="display:flex;"><span> |Recomienda: dupload
+</span></span><span style="display:flex;"><span>  Sugiere: dropbear-bin
+</span></span><span style="display:flex;"><span>  Recomienda: python3-dput
+</span></span><span style="display:flex;"><span>  Sugiere: dput
+</span></span><span style="display:flex;"><span> |Recomienda: dish
+</span></span><span style="display:flex;"><span>  Recomienda: diffoscope-minimal
+</span></span><span style="display:flex;"><span>  Recomienda: diffoscope
+</span></span><span style="display:flex;"><span>  Recomienda: debvm
+</span></span><span style="display:flex;"><span>  Sugiere: debian-goodies
+</span></span><span style="display:flex;"><span>  Recomienda: cvs
+</span></span><span style="display:flex;"><span>  Depende: cockpit-tests
+</span></span><span style="display:flex;"><span>  Depende: clusterssh
+</span></span><span style="display:flex;"><span>  Sugiere: clonezilla
+</span></span><span style="display:flex;"><span> |Recomienda: ckermit
+</span></span><span style="display:flex;"><span>  Mejora: chkrootkit
+</span></span><span style="display:flex;"><span>  Depende: ceph-mgr-cephadm
+</span></span><span style="display:flex;"><span>  Recomienda: btrbk
+</span></span><span style="display:flex;"><span>  Recomienda: barman-cli
+</span></span><span style="display:flex;"><span>  Recomienda: barman
+</span></span><span style="display:flex;"><span> |Recomienda: backuppc
+</span></span><span style="display:flex;"><span>  Sugiere: backup-manager
+</span></span><span style="display:flex;"><span>  Depende: backintime-common
+</span></span><span style="display:flex;"><span>  Mejora: autossh
+</span></span><span style="display:flex;"><span> |Depende: autossh
+</span></span><span style="display:flex;"><span>  Depende: apt-dater
+</span></span><span style="display:flex;"><span> |Depende: ansible-core
+</span></span></code></pre></div><p>Finalmente, cabe destacar que con el comando <code>apt-rdepends openssh-client</code> se puede obtener información recursiva sobre las dependencias del paquete, es decir, se puede conocer de qué paquetes dependen aquellos paquetes de los que, a su vez, depende <code>openssh-client</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt-rdepends openssh-client
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree... Done
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>openssh-client
+</span></span><span style="display:flex;"><span>  Depends: adduser
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.36)
+</span></span><span style="display:flex;"><span>  Depends: libedit2 (&gt;= 2.11-20080614-0)
+</span></span><span style="display:flex;"><span>  Depends: libfido2-1 (&gt;= 1.8.0)
+</span></span><span style="display:flex;"><span>  Depends: libgssapi-krb5-2 (&gt;= 1.17)
+</span></span><span style="display:flex;"><span>  Depends: libselinux1 (&gt;= 3.1~)
+</span></span><span style="display:flex;"><span>  Depends: libssl3 (&gt;= 3.0.13)
+</span></span><span style="display:flex;"><span>  Depends: passwd
+</span></span><span style="display:flex;"><span>  Depends: zlib1g (&gt;= 1:1.1.4)
+</span></span><span style="display:flex;"><span>adduser
+</span></span><span style="display:flex;"><span>  Depends: passwd
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span>  Depends: libaudit1 (&gt;= 1:2.2.1)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.36)
+</span></span><span style="display:flex;"><span>  Depends: libcrypt1 (&gt;= 1:4.1.0)
+</span></span><span style="display:flex;"><span>  Depends: libpam-modules
+</span></span><span style="display:flex;"><span>  Depends: libpam0g (&gt;= 0.99.7.1)
+</span></span><span style="display:flex;"><span>  Depends: libselinux1 (&gt;= 3.1~)
+</span></span><span style="display:flex;"><span>  Depends: libsemanage2 (&gt;= 2.0.32)
+</span></span><span style="display:flex;"><span>libaudit1
+</span></span><span style="display:flex;"><span>  Depends: libaudit-common (&gt;= 1:3.0.9-1)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>  Depends: libcap-ng0 (&gt;= 0.7.9)
+</span></span><span style="display:flex;"><span>libaudit-common
+</span></span><span style="display:flex;"><span>libc6
+</span></span><span style="display:flex;"><span>  Depends: libgcc-s1
+</span></span><span style="display:flex;"><span>libgcc-s1
+</span></span><span style="display:flex;"><span>  Depends: gcc-12-base (= 12.2.0-14)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.35)
+</span></span><span style="display:flex;"><span>gcc-12-base
+</span></span><span style="display:flex;"><span>libcap-ng0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>libcrypt1
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.36)
+</span></span><span style="display:flex;"><span>libpam-modules
+</span></span><span style="display:flex;"><span>  PreDepends: debconf (&gt;= 0.5)
+</span></span><span style="display:flex;"><span>  PreDepends: debconf-2.0
+</span></span><span style="display:flex;"><span>  PreDepends: libaudit1 (&gt;= 1:2.2.1)
+</span></span><span style="display:flex;"><span>  PreDepends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  PreDepends: libcrypt1 (&gt;= 1:4.3.0)
+</span></span><span style="display:flex;"><span>  PreDepends: libdb5.3
+</span></span><span style="display:flex;"><span>  PreDepends: libpam-modules-bin (= 1.5.2-6+deb12u1)
+</span></span><span style="display:flex;"><span>  PreDepends: libpam0g (&gt;= 1.4.1)
+</span></span><span style="display:flex;"><span>  PreDepends: libselinux1 (&gt;= 3.1~)
+</span></span><span style="display:flex;"><span>debconf
+</span></span><span style="display:flex;"><span>debconf-2.0
+</span></span><span style="display:flex;"><span>libdb5.3
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libpam-modules-bin
+</span></span><span style="display:flex;"><span>  Depends: libaudit1 (&gt;= 1:2.2.1)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  Depends: libcrypt1 (&gt;= 1:4.3.0)
+</span></span><span style="display:flex;"><span>  Depends: libpam0g (&gt;= 0.99.7.1)
+</span></span><span style="display:flex;"><span>  Depends: libselinux1 (&gt;= 3.1~)
+</span></span><span style="display:flex;"><span>libpam0g
+</span></span><span style="display:flex;"><span>  Depends: debconf (&gt;= 0.5)
+</span></span><span style="display:flex;"><span>  Depends: debconf-2.0
+</span></span><span style="display:flex;"><span>  Depends: libaudit1 (&gt;= 1:2.2.1)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libselinux1
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  Depends: libpcre2-8-0 (&gt;= 10.22)
+</span></span><span style="display:flex;"><span>libpcre2-8-0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libsemanage2
+</span></span><span style="display:flex;"><span>  Depends: libaudit1 (&gt;= 1:2.2.1)
+</span></span><span style="display:flex;"><span>  Depends: libbz2-1.0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  Depends: libselinux1 (&gt;= 3.4)
+</span></span><span style="display:flex;"><span>  Depends: libsemanage-common (&gt;= 3.4-1)
+</span></span><span style="display:flex;"><span>  Depends: libsepol2 (&gt;= 3.4)
+</span></span><span style="display:flex;"><span>libbz2-1.0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.4)
+</span></span><span style="display:flex;"><span>libsemanage-common
+</span></span><span style="display:flex;"><span>libsepol2
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>libedit2
+</span></span><span style="display:flex;"><span>  Depends: libbsd0 (&gt;= 0.1.3)
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>  Depends: libtinfo6 (&gt;= 6)
+</span></span><span style="display:flex;"><span>libbsd0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  Depends: libmd0 (&gt;= 1.0.3-2)
+</span></span><span style="display:flex;"><span>libmd0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>libtinfo6
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libfido2-1
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.36)
+</span></span><span style="display:flex;"><span>  Depends: libcbor0.8 (&gt;= 0.8.0)
+</span></span><span style="display:flex;"><span>  Depends: libssl3 (&gt;= 3.0.0)
+</span></span><span style="display:flex;"><span>  Depends: libudev1 (&gt;= 183)
+</span></span><span style="display:flex;"><span>  Depends: zlib1g (&gt;= 1:1.1.4)
+</span></span><span style="display:flex;"><span>libcbor0.8
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.14)
+</span></span><span style="display:flex;"><span>libssl3
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libudev1
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>zlib1g
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.14)
+</span></span><span style="display:flex;"><span>libgssapi-krb5-2
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>  Depends: libcom-err2 (&gt;= 1.43.9)
+</span></span><span style="display:flex;"><span>  Depends: libk5crypto3 (&gt;= 1.20)
+</span></span><span style="display:flex;"><span>  Depends: libkrb5-3 (= 1.20.1-2+deb12u2)
+</span></span><span style="display:flex;"><span>  Depends: libkrb5support0 (&gt;= 1.15~beta1)
+</span></span><span style="display:flex;"><span>libcom-err2
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.17)
+</span></span><span style="display:flex;"><span>libk5crypto3
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.33)
+</span></span><span style="display:flex;"><span>  Depends: libkrb5support0 (&gt;= 1.20)
+</span></span><span style="display:flex;"><span>libkrb5support0
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>libkrb5-3
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.34)
+</span></span><span style="display:flex;"><span>  Depends: libcom-err2 (&gt;= 1.43.9)
+</span></span><span style="display:flex;"><span>  Depends: libk5crypto3 (&gt;= 1.20)
+</span></span><span style="display:flex;"><span>  Depends: libkeyutils1 (&gt;= 1.5.9)
+</span></span><span style="display:flex;"><span>  Depends: libkrb5support0 (= 1.20.1-2+deb12u2)
+</span></span><span style="display:flex;"><span>  Depends: libssl3 (&gt;= 3.0.0)
+</span></span><span style="display:flex;"><span>libkeyutils1
+</span></span><span style="display:flex;"><span>  Depends: libc6 (&gt;= 2.14)
+</span></span></code></pre></div><h2 id="saca-toda-la-información-que-puedas-del-paquete-openssh-client-candidato-a-actualizar-en-tu-máquina">Saca toda la información que puedas del paquete openssh-client candidato a actualizar en tu máquina</h2>
+<p>En caso de que el paquete no estuviese instalado, el comando <code>apt show</code> también mostraría toda la información relativa al paquete de la versión candidata a la actualización. Para conocer la versión candidata se puede ejecutar <code>apt policy openssh-client</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt policy openssh-client
+</span></span><span style="display:flex;"><span>openssh-client:
+</span></span><span style="display:flex;"><span>  Instalados: 1:9.2p1-2+deb12u3
+</span></span><span style="display:flex;"><span>  Candidato:  1:9.2p1-2+deb12u3
+</span></span><span style="display:flex;"><span>  Tabla de versión:
+</span></span><span style="display:flex;"><span> *** 1:9.2p1-2+deb12u3 500
+</span></span><span style="display:flex;"><span>        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+</span></span><span style="display:flex;"><span>        100 /var/lib/dpkg/status
+</span></span></code></pre></div><p>Para conocer más información sobre diferentes versiones de un mismo paquete se puede usar también el comando <code>rmadison</code>, que muestra información sobre la versión de un paquete disponibles para las ramas del SO desde la oldoldstable hasta la unstable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ rmadison openssh-client
+</span></span><span style="display:flex;"><span>openssh-client | 1:7.9p1-10+deb10u2 | oldoldstable     | amd64, arm64, armhf, i386
+</span></span><span style="display:flex;"><span>openssh-client | 1:8.4p1-2~bpo10+1  | buster-backports | amd64, arm64, armel, armhf, i386, mips, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:8.4p1-5+deb11u3  | oldstable        | amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.2p1-2+deb12u3  | stable           | amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.8p1-8          | testing          | amd64, arm64, armel, armhf, i386, mips64el, ppc64el, riscv64, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.9p1-1          | unstable         | amd64, arm64, armel, armhf, i386, mips64el, ppc64el, riscv64, s390x
+</span></span></code></pre></div><p>Por tanto, la versión candidata para la instalación del paquete depende de las ramas cuyos repositorios estén presentes en el fichero sources.list, así como de la configuración de la preferencia de cada uno de estos repositorios.</p>
+<p>En este caso, la versión instalada y la candidata coinciden porque en el fichero  sources.list sólo se recoge el repositorio de la rama stable de Debian12 pero si se incorporasen los repositorios de otras ramas como la backports o la testing, la versión candidata sería posterior a la instalada.</p>
+<h2 id="lista-todo-el-contenido-referente-al-paquete-openssh-client-actual-de-tu-máquina-utiliza-para-ello-tanto-dpkg-como-apt">Lista todo el contenido referente al paquete openssh-client actual de tu máquina. Utiliza para ello tanto dpkg como apt</h2>
+<p>Con el comando <code>dpkg -L openssh-client</code> se puede conocer la ubicación en el sistema de todos los ficheros que forman parte del paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ dpkg -L openssh-client
+</span></span><span style="display:flex;"><span>/.
+</span></span><span style="display:flex;"><span>/etc
+</span></span><span style="display:flex;"><span>/etc/ssh
+</span></span><span style="display:flex;"><span>/etc/ssh/ssh_config
+</span></span><span style="display:flex;"><span>/etc/ssh/ssh_config.d
+</span></span><span style="display:flex;"><span>/usr
+</span></span><span style="display:flex;"><span>/usr/bin
+</span></span><span style="display:flex;"><span>/usr/bin/scp
+</span></span><span style="display:flex;"><span>/usr/bin/sftp
+</span></span><span style="display:flex;"><span>/usr/bin/ssh
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-add
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-agent
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-argv0
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-copy-id
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-keygen
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-keyscan
+</span></span><span style="display:flex;"><span>/usr/lib
+</span></span><span style="display:flex;"><span>/usr/lib/openssh
+</span></span><span style="display:flex;"><span>/usr/lib/openssh/agent-launch
+</span></span><span style="display:flex;"><span>/usr/lib/openssh/ssh-keysign
+</span></span><span style="display:flex;"><span>/usr/lib/openssh/ssh-pkcs11-helper
+</span></span><span style="display:flex;"><span>/usr/lib/openssh/ssh-sk-helper
+</span></span><span style="display:flex;"><span>/usr/lib/systemd
+</span></span><span style="display:flex;"><span>/usr/lib/systemd/user
+</span></span><span style="display:flex;"><span>/usr/lib/systemd/user/graphical-session-pre.target.wants
+</span></span><span style="display:flex;"><span>/usr/lib/systemd/user/ssh-agent.service
+</span></span><span style="display:flex;"><span>/usr/share
+</span></span><span style="display:flex;"><span>/usr/share/apport
+</span></span><span style="display:flex;"><span>/usr/share/apport/package-hooks
+</span></span><span style="display:flex;"><span>/usr/share/apport/package-hooks/openssh-client.py
+</span></span><span style="display:flex;"><span>/usr/share/doc
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/NEWS.Debian.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/OVERVIEW.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/README
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/README.Debian.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/README.dns
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/README.tun.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/changelog.Debian.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/changelog.gz
+</span></span><span style="display:flex;"><span>/usr/share/doc/openssh-client/copyright
+</span></span><span style="display:flex;"><span>/usr/share/lintian
+</span></span><span style="display:flex;"><span>/usr/share/lintian/overrides
+</span></span><span style="display:flex;"><span>/usr/share/lintian/overrides/openssh-client
+</span></span><span style="display:flex;"><span>/usr/share/man
+</span></span><span style="display:flex;"><span>/usr/share/man/man1
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/scp.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/sftp.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-add.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-agent.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-argv0.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-copy-id.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-keygen.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh-keyscan.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/ssh.1.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man5
+</span></span><span style="display:flex;"><span>/usr/share/man/man5/ssh_config.5.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man8
+</span></span><span style="display:flex;"><span>/usr/share/man/man8/ssh-keysign.8.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man8/ssh-pkcs11-helper.8.gz
+</span></span><span style="display:flex;"><span>/usr/share/man/man8/ssh-sk-helper.8.gz
+</span></span><span style="display:flex;"><span>/usr/bin/slogin
+</span></span><span style="display:flex;"><span>/usr/lib/systemd/user/graphical-session-pre.target.wants/ssh-agent.service
+</span></span><span style="display:flex;"><span>/usr/share/man/man1/slogin.1.gz
+</span></span></code></pre></div><p>Esta salida se puede filtrar con el comando <code>grep</code> para mostrar únicamente aquellos binarios que se incluyen en el paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ dpkg -L openssh-client | grep bin
+</span></span><span style="display:flex;"><span>/usr/bin
+</span></span><span style="display:flex;"><span>/usr/bin/scp
+</span></span><span style="display:flex;"><span>/usr/bin/sftp
+</span></span><span style="display:flex;"><span>/usr/bin/ssh
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-add
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-agent
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-argv0
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-copy-id
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-keygen
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-keyscan
+</span></span><span style="display:flex;"><span>/usr/bin/slogin
+</span></span></code></pre></div><p>Con herramientas del gestor de paquetes apt se puede acceder a información recogida en ejercicios anteriores usando, por ejemplo, el comando <code>apt show</code>, <code>apt depends</code> para conocer las dependencias del paquete, <code>apt rdepends</code> para conocer las dependencias inversas o <code>apt-rdepends</code> para conocer las dependencias de forma recursiva.</p>
+<h2 id="listar-el-contenido-de-un-paquete-sin-la-necesidad-de-instalarlo-o-descargarlo">Listar el contenido de un paquete sin la necesidad de instalarlo o descargarlo</h2>
+<p>Para listar el contenido de un paquete independientemente de si está o no instalado en el sistema se puede usar el comando <code>apt-file find</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt-file find openssh-client
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/apport/package-hooks/openssh-client.py
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/NEWS.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/OVERVIEW.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/README
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/README.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/README.dns
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/README.tun.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/changelog.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/changelog.gz
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/doc/openssh-client/copyright
+</span></span><span style="display:flex;"><span>openssh-client: /usr/share/lintian/overrides/openssh-client
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/NEWS.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/README
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/README.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/changelog.Debian.gz
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/changelog.gz
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/share/doc/openssh-client-ssh1/copyright
+</span></span><span style="display:flex;"><span>openssh-server: /usr/share/doc/openssh-client/examples/ssh-session-cleanup.service
+</span></span><span style="display:flex;"><span>❯ apt-file find tldr | grep tldr:
+</span></span><span style="display:flex;"><span>tldr: /usr/bin/tldr-hs
+</span></span><span style="display:flex;"><span>tldr: /usr/share/doc/tldr/buildinfo_amd64.gz
+</span></span><span style="display:flex;"><span>tldr: /usr/share/doc/tldr/changelog.Debian.amd64.gz
+</span></span><span style="display:flex;"><span>tldr: /usr/share/doc/tldr/changelog.Debian.gz
+</span></span><span style="display:flex;"><span>tldr: /usr/share/doc/tldr/changelog.gz
+</span></span><span style="display:flex;"><span>tldr: /usr/share/doc/tldr/copyright
+</span></span><span style="display:flex;"><span>tldr: /usr/share/man/man1/tldr-hs.1.gz
+</span></span></code></pre></div><h2 id="simula-la-instalación-del-paquete-openssh-client">Simula la instalación del paquete openssh-client</h2>
+<p>Se puede simular la instalación de un paquete con la opción <code>-s</code> del comando <code>apt install</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo apt install -s openssh-client
+</span></span><span style="display:flex;"><span>Leyendo lista de paquetes... Hecho
+</span></span><span style="display:flex;"><span>Creando árbol de dependencias... Hecho
+</span></span><span style="display:flex;"><span>Leyendo la información de estado... Hecho
+</span></span><span style="display:flex;"><span>Inst openssh-client (1:8.9p1-3 Ubuntu:22.04/jammy [amd64])
+</span></span><span style="display:flex;"><span>Conf openssh-client (1:8.9p1-3 Ubuntu:22.04/jammy [amd64])
+</span></span></code></pre></div><p>En caso de que se genere algún conflicto o problema durante la instalación, la salida de este comando informa al respecto. En este caso, como esto no ocurre, simplemente muestra la información sobre el paquete que se instalaría si se ejecuta el comando sin la opción <code>-s</code>.</p>
+<h2 id="qué-comando-te-informa-de-los-posible-bugs-que-presente-un-determinado-paquete">¿Qué comando te informa de los posible bugs que presente un determinado paquete?</h2>
+<p>El comando <code>apt-listbugs</code> muestra el informe de fallos de un determinado paquete. Con la opción <code>-s</code> se puede filtrar por el nivel de gravedad del bug reportado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt-listbugs -s all list openssh-client
+</span></span><span style="display:flex;"><span>Obteniendo informes de fallo... Finalizado
+</span></span><span style="display:flex;"><span>Analizando información Encontrada/Corregida... Finalizado
+</span></span><span style="display:flex;"><span>Fallos important del paquete openssh-client (→ ) &lt;Pendientes&gt;
+</span></span><span style="display:flex;"><span> b1 - #1038150 - openssh-client: Please add the openssh-client group rename from &#34;ssh&#34; to &#34;_ssh&#34; to the bookworm release notes
+</span></span><span style="display:flex;"><span> b2 - #250311 - ssh: pubkey auth fails between 3.8.1p1-3 and 3.4(woody)
+</span></span><span style="display:flex;"><span> b3 - #314596 - Cannot ssh OUT from host as non-root user
+</span></span><span style="display:flex;"><span> b4 - #337484 - openssh-client: ssh-add displays password with bad permissions on /dev/tty
+</span></span><span style="display:flex;"><span> b5 - #341042 - ssh: Slow Connections Due to Bogus IPv6 name resolution
+</span></span><span style="display:flex;"><span> b6 - #391964 - warn if client-requested locale not available on server?
+</span></span><span style="display:flex;"><span> b7 - #415697 - openssh-client: portforwarding with either -R or -L fails with module tun loaded
+</span></span><span style="display:flex;"><span> b8 - #513071 - Regression: for some hosts etch can connect but lenny can&#39;t (password auth)
+</span></span><span style="display:flex;"><span>…
+</span></span><span style="display:flex;"><span> b270 - #911758 - ssh-add doesn&#39;t recognize PKCS#11 URL
+</span></span><span style="display:flex;"><span> b271 - #538197 - openssh-client: [sftp] support multiple args: &lt;command&gt; &lt;item&gt; &lt;item&gt; ...
+</span></span><span style="display:flex;"><span>Fallos minor del paquete openssh-client (→ ) &lt;Corregidos en alguna versión&gt;
+</span></span><span style="display:flex;"><span> b272 - #1001186 - ssh-agent: SSH_AUTH_SOCK temporary directory uses 6 template chars out of 12 (Corregido: openssh/1:9.3p1-1)
+</span></span><span style="display:flex;"><span>Resumen:
+</span></span><span style="display:flex;"><span> openssh-client(272 fallos)
+</span></span></code></pre></div><p>Otras herramientas como <code>bts</code> también permiten acceder a la web de Debian para conocer la lista de bugs que se han reportado respecto a un determinado paquete.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-Salida del comando bts bugs openssh-client">
+      
+          <img
+            title="Salida del comando bts bugs openssh-client"
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid"
+            width="674"
+            height="506"
+            src="/images/aso/practica1/img1_hu18190998445924241182.png"
+            alt="Salida del comando bts bugs openssh-client"
+            onerror="this.onerror='null';this.src='\/images\/aso\/practica1\/img1_hu18190998445924241182.png'" />
+      
+        <figcaption id="caption-Salida del comando bts bugs openssh-client" class="caption-Salida-del-comando-bts-bugs-openssh-client">
+          Salida del comando bts bugs openssh-client
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<h2 id="después-de-realizar-un-apt-update--apt-upgrade-si-quisieras-actualizar-únicamente-los-paquetes-que-tienen-de-cadena-openssh-qué-procedimiento-seguirías-realiza-esta-acción-con-las-estructuras-repetitivas-que-te-ofrece-bash-así-como-con-el-comando-xargs">Después de realizar un apt update &amp;&amp; apt upgrade. Si quisieras actualizar únicamente los paquetes que tienen de cadena openssh. ¿Qué procedimiento seguirías?. Realiza esta acción, con las estructuras repetitivas que te ofrece bash, así como con el comando xargs</h2>
+<p>Justo después de realizar una actualización de la paquetería del sistema con <code>apt update &amp;&amp; apt upgrade</code> no habría ningún paquete relacionado con openssh que actualizar porque todos estarían ya en su versión más reciente.</p>
+<p>Sin embargo, si se quieren mantener actualizaciones posteriores de estos paquetes tras un tiempo habría que usar de nuevo el comando <code>apt update</code> para consultar las nuevas versiones disponibles en los repositorios. Con los repositorios actualizados, se debería consular la lista de paquetes disponibles para actualizar con <code>apt list --upgradable</code>. Además, la salida de este comando se puede filtrar usando <code>grep</code> para eliminar de la lista todos aquellos paquetes que no estén relacionados con <code>openssh</code>. Finalmente, con el comando <code>xargs</code> se puede pasar esta lista de paquetes como argumentos al comando apt upgrade para ejecutar la actualización de los paquetes listado.</p>
+<p>Este flujo de trabajo se podría ejecutar en una única línea de comando redireccionando los diferentes comentarios a través de tuberías: <code>apt update &amp;&amp; apt list --upgradable | grep openssh | xargs apt upgrade</code>.</p>
+<p>Otra forma de conseguir que sólo los paquetes relacionados con <code>openssh</code> se actualicen es marcar el resto de paquetes del sistema como manuales o retenidos. De esta manera, cuando se ejecuta un <code>apt upgrade</code> del sistema, sólo los paquetes relacionados con <code>openssh</code>, marcados como auto, se actualizarán.</p>
+<h2 id="cómo-encontrarías-qué-paquetes-dependen-de-un-paquete-específico">¿Cómo encontrarías qué paquetes dependen de un paquete específico?</h2>
+<p>Con el comando <code>apt rdepends</code> se puede saber cuáles son las dependencias inversas de un paquete, es decir, qué paquetes dependen de él.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt rdepends openssh-client
+</span></span><span style="display:flex;"><span>openssh-client
+</span></span><span style="display:flex;"><span>Reverse Depends:
+</span></span><span style="display:flex;"><span>  Reemplaza: openssh-server (&lt;&lt; 1:7.9p1-8)
+</span></span><span style="display:flex;"><span>  Depende: arb
+</span></span><span style="display:flex;"><span> |Depende: zssh
+</span></span><span style="display:flex;"><span>  Recomienda: xpra
+</span></span><span style="display:flex;"><span>  Depende: xen-tools
+</span></span><span style="display:flex;"><span>  Depende: x2goserver
+</span></span><span style="display:flex;"><span>  Depende: x2goclient
+</span></span><span style="display:flex;"><span> |Recomienda: waypipe
+</span></span><span style="display:flex;"><span>  Recomienda: vorta
+</span></span><span style="display:flex;"><span>  Depende: vagrant
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.52-gtk
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.52
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.51+4.13.1-gtk
+</span></span><span style="display:flex;"><span>  Recomienda: unison-2.51+4.13.1
+</span></span><span style="display:flex;"><span>  Recomienda: tsung
+</span></span><span style="display:flex;"><span>  Depende: python3-tomahawk
+</span></span><span style="display:flex;"><span>  Sugiere: tla
+</span></span><span style="display:flex;"><span>  Recomienda: task-ssh-server
+</span></span><span style="display:flex;"><span> |Depende: taktuk
+</span></span><span style="display:flex;"><span>  Recomienda: python3-jarabe
+</span></span><span style="display:flex;"><span>  Depende: ssvnc
+</span></span><span style="display:flex;"><span> |Depende: sshuttle
+</span></span><span style="display:flex;"><span>  Depende: sshfs
+</span></span><span style="display:flex;"><span>  Depende: ssh-tools
+</span></span><span style="display:flex;"><span>  Depende: ssh-import-id
+</span></span><span style="display:flex;"><span>  Depende: ssh-cron
+</span></span><span style="display:flex;"><span>  Depende: ssh-contact-client
+</span></span><span style="display:flex;"><span>  Depende: ssh-agent-filter
+</span></span><span style="display:flex;"><span>  Depende: snapd
+</span></span><span style="display:flex;"><span>  Sugiere: smokeping
+</span></span><span style="display:flex;"><span>  Sugiere: slack
+</span></span><span style="display:flex;"><span> |Recomienda: sisu
+</span></span><span style="display:flex;"><span>  Recomienda: simple-tpm-pk11
+</span></span><span style="display:flex;"><span>  Depende: sidedoor
+</span></span><span style="display:flex;"><span>  Depende: secpanel
+</span></span><span style="display:flex;"><span>  Recomienda: seahorse
+</span></span><span style="display:flex;"><span>  Depende: python3-sahara-plugin-vanilla
+</span></span><span style="display:flex;"><span>  Depende: python3-sahara-plugin-spark
+</span></span><span style="display:flex;"><span>  Sugiere: rsync
+</span></span><span style="display:flex;"><span> |Recomienda: rsnapshot
+</span></span><span style="display:flex;"><span>  Recomienda: rsbackup-graph
+</span></span><span style="display:flex;"><span>  Recomienda: rsbackup
+</span></span><span style="display:flex;"><span> |Depende: rancid
+</span></span><span style="display:flex;"><span>  Depende: pssh
+</span></span><span style="display:flex;"><span> |Depende: pkg-perl-tools
+</span></span><span style="display:flex;"><span>  Depende: piuparts-slave-from-git-deps
+</span></span><span style="display:flex;"><span>  Depende: piuparts-slave
+</span></span><span style="display:flex;"><span>  Recomienda: pdudaemon
+</span></span><span style="display:flex;"><span> |Depende: pdsh
+</span></span><span style="display:flex;"><span>  Depende: python3-parallax
+</span></span><span style="display:flex;"><span>  Depende: oz
+</span></span><span style="display:flex;"><span>  Recomienda: ostree-push
+</span></span><span style="display:flex;"><span>  Depende: openstack-cluster-installer-openstack-ci
+</span></span><span style="display:flex;"><span>  Recomienda: openssh-known-hosts
+</span></span><span style="display:flex;"><span> |Depende: ssh-askpass-gnome
+</span></span><span style="display:flex;"><span>  Depende: ssh (&gt;= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-tests (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-sftp-server (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: openssh-server (= 1:9.2p1-2+deb12u3)
+</span></span><span style="display:flex;"><span>  Depende: git-annex (&gt;= 1:5.6p1)
+</span></span><span style="display:flex;"><span> |Depende: openmpi-bin
+</span></span><span style="display:flex;"><span>  Sugiere: oar-user
+</span></span><span style="display:flex;"><span>  Depende: oar-server
+</span></span><span style="display:flex;"><span>  Depende: oar-node
+</span></span><span style="display:flex;"><span>  Depende: python3-nova
+</span></span><span style="display:flex;"><span>  Depende: network-manager-ssh
+</span></span><span style="display:flex;"><span>  Depende: mussh
+</span></span><span style="display:flex;"><span>  Depende: mssh
+</span></span><span style="display:flex;"><span>  Depende: mosh
+</span></span><span style="display:flex;"><span>  Recomienda: mercurial
+</span></span><span style="display:flex;"><span> |Recomienda: lxsession
+</span></span><span style="display:flex;"><span>  Sugiere: lsh-server
+</span></span><span style="display:flex;"><span>  Depende: live-task-standard
+</span></span><span style="display:flex;"><span>  Recomienda: live-task-recommended
+</span></span><span style="display:flex;"><span>  Depende: libnetapp-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-ssh-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-sftp-foreign-perl
+</span></span><span style="display:flex;"><span> |Depende: libnet-scp-perl
+</span></span><span style="display:flex;"><span>  Depende: libnet-openssh-perl
+</span></span><span style="display:flex;"><span>  Depende: libguestfs0
+</span></span><span style="display:flex;"><span>  Mejora: libconfig-model-openssh-perl
+</span></span><span style="display:flex;"><span>  Recomienda: lftp
+</span></span><span style="display:flex;"><span>  Recomienda: lava-server
+</span></span><span style="display:flex;"><span>  Depende: lava
+</span></span><span style="display:flex;"><span> |Depende: lam-runtime
+</span></span><span style="display:flex;"><span>  Recomienda: python3-labgrid
+</span></span><span style="display:flex;"><span>  Recomienda: kwalletcli
+</span></span><span style="display:flex;"><span>  Depende: ksshaskpass
+</span></span><span style="display:flex;"><span> |Depende: keychain
+</span></span><span style="display:flex;"><span>  Recomienda: hollywood
+</span></span><span style="display:flex;"><span>  Depende: hash-slinger
+</span></span><span style="display:flex;"><span>  Depende: gitolite3
+</span></span><span style="display:flex;"><span>  Rompe: git (&lt;&lt; 1:6.8)
+</span></span><span style="display:flex;"><span> |Depende: ansible
+</span></span><span style="display:flex;"><span>  Depende: ganeti-3.0
+</span></span><span style="display:flex;"><span> |Sugiere: gabedit
+</span></span><span style="display:flex;"><span> |Sugiere: gabedit
+</span></span><span style="display:flex;"><span> |Depende: fssync
+</span></span><span style="display:flex;"><span>  Recomienda: freedombox
+</span></span><span style="display:flex;"><span>  Recomienda: fence-agents
+</span></span><span style="display:flex;"><span>  Recomienda: fdroidserver
+</span></span><span style="display:flex;"><span>  Recomienda: fai-server
+</span></span><span style="display:flex;"><span>  Sugiere: duply
+</span></span><span style="display:flex;"><span> |Recomienda: dupload
+</span></span><span style="display:flex;"><span>  Sugiere: dropbear-bin
+</span></span><span style="display:flex;"><span>  Recomienda: python3-dput
+</span></span><span style="display:flex;"><span>  Sugiere: dput
+</span></span><span style="display:flex;"><span> |Recomienda: dish
+</span></span><span style="display:flex;"><span>  Recomienda: diffoscope-minimal
+</span></span><span style="display:flex;"><span>  Recomienda: diffoscope
+</span></span><span style="display:flex;"><span>  Recomienda: debvm
+</span></span><span style="display:flex;"><span>  Sugiere: debian-goodies
+</span></span><span style="display:flex;"><span>  Recomienda: cvs
+</span></span><span style="display:flex;"><span>  Depende: cockpit-tests
+</span></span><span style="display:flex;"><span>  Depende: clusterssh
+</span></span><span style="display:flex;"><span>  Sugiere: clonezilla
+</span></span><span style="display:flex;"><span> |Recomienda: ckermit
+</span></span><span style="display:flex;"><span>  Mejora: chkrootkit
+</span></span><span style="display:flex;"><span>  Depende: ceph-mgr-cephadm
+</span></span><span style="display:flex;"><span>  Recomienda: btrbk
+</span></span><span style="display:flex;"><span>  Recomienda: barman-cli
+</span></span><span style="display:flex;"><span>  Recomienda: barman
+</span></span><span style="display:flex;"><span> |Recomienda: backuppc
+</span></span><span style="display:flex;"><span>  Sugiere: backup-manager
+</span></span><span style="display:flex;"><span>  Depende: backintime-common
+</span></span><span style="display:flex;"><span>  Mejora: autossh
+</span></span><span style="display:flex;"><span> |Depende: autossh
+</span></span><span style="display:flex;"><span>  Depende: apt-dater
+</span></span><span style="display:flex;"><span> |Depende: ansible-core
+</span></span></code></pre></div><p>Este comando devuelve, además, información sobre aquellos paquetes que recomiendan o sugieren la instalación del comando consultado así como aquellos paquetes en los que puede generar conflictos o que puede romper. También se muestran los paquetes a los que sustituye o mejora el paquete consultado.</p>
+<h2 id="cómo-procederías-para-encontrar-el-paquete-al-que-pertenece-un-determinado-fichero">¿Cómo procederías para encontrar el paquete al que pertenece un determinado fichero?</h2>
+<p>La opción <code>-S</code> o <code>--search</code> del comando dpkg permite encontrar el paquete al que pertenece un determinado fichero. De forma inversa a la ejecución del comando dpkg con la opción <code>-L</code>, que muestra la lista de ficheros que tienen relación con un paquete indicado, la opción <code>-S</code> de este comando permite pasarle como argumento una expresión o cadena de búsqueda que corresponda a la ruta a un fichero. La salida del comando dpkg con la opción <code>-S</code> mostrará el paquete al que pertenece ese fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ dpkg -S /usr/bin/ssh
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh
+</span></span></code></pre></div><p>Otra forma de obtener el mismo resultado es usando el comando <code>apt-find</code> seguido de la ruta al fichero cuyo paquete se quiere conocer. La salida de este comando es similar a la del comando anteriormente citado aunque, en este caso, el filtro es mucho más laxo y se muestran todos aquellos paquetes en los que hay algún fichero que coincida, en parte, con la cadena introducida. Esto convierte a esta opción en una herramienta de búsqueda mucho más genérica, mientras que la búsqueda con <code>dpkg -S</code> es más precisa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt-file search /usr/bin/ssh
+</span></span><span style="display:flex;"><span>hash-slinger: /usr/bin/sshfp              
+</span></span><span style="display:flex;"><span>lsh-utils: /usr/bin/ssh-conv
+</span></span><span style="display:flex;"><span>node-sshpk: /usr/bin/sshpk-conv
+</span></span><span style="display:flex;"><span>node-sshpk: /usr/bin/sshpk-sign
+</span></span><span style="display:flex;"><span>node-sshpk: /usr/bin/sshpk-verify
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-add
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-agent
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-argv0
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-copy-id
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-keygen
+</span></span><span style="display:flex;"><span>openssh-client: /usr/bin/ssh-keyscan
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/bin/ssh-keygen1
+</span></span><span style="display:flex;"><span>openssh-client-ssh1: /usr/bin/ssh1
+</span></span><span style="display:flex;"><span>python3-sshtunnel: /usr/bin/sshtunnel
+</span></span><span style="display:flex;"><span>rsendmail: /usr/bin/sshsendmail
+</span></span><span style="display:flex;"><span>slurm-client: /usr/bin/sshare
+</span></span><span style="display:flex;"><span>slurm-client-emulator: /usr/bin/sshare-emulator
+</span></span><span style="display:flex;"><span>ssh-agent-filter: /usr/bin/ssh-agent-filter
+</span></span><span style="display:flex;"><span>ssh-agent-filter: /usr/bin/ssh-askpass-noinput
+</span></span><span style="display:flex;"><span>ssh-askpass-fullscreen: /usr/bin/ssh-askpass-fullscreen
+</span></span><span style="display:flex;"><span>ssh-audit: /usr/bin/ssh-audit
+</span></span><span style="display:flex;"><span>ssh-contact-client: /usr/bin/ssh-contact
+</span></span><span style="display:flex;"><span>ssh-cron: /usr/bin/ssh-cron
+</span></span><span style="display:flex;"><span>ssh-import-id: /usr/bin/ssh-import-id
+</span></span><span style="display:flex;"><span>ssh-import-id: /usr/bin/ssh-import-id-gh
+</span></span><span style="display:flex;"><span>ssh-import-id: /usr/bin/ssh-import-id-lp
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-certinfo
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-diff
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-facts
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-force-password
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-hostkeys
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-keyinfo
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-ping
+</span></span><span style="display:flex;"><span>ssh-tools: /usr/bin/ssh-version
+</span></span><span style="display:flex;"><span>sshcommand: /usr/bin/sshcommand
+</span></span><span style="display:flex;"><span>sshesame: /usr/bin/sshesame
+</span></span><span style="display:flex;"><span>sshfs: /usr/bin/sshfs
+</span></span><span style="display:flex;"><span>sshpass: /usr/bin/sshpass
+</span></span><span style="display:flex;"><span>sshuttle: /usr/bin/sshuttle
+</span></span><span style="display:flex;"><span>ssvnc: /usr/bin/sshvnc
+</span></span></code></pre></div><h2 id="que-procedimientos-emplearías-para-liberar-la-caché-en-cuanto-a-descargas-de-paquetería">¿Que procedimientos emplearías para liberar la caché en cuanto a descargas de paquetería?</h2>
+<p>Los paquetes descargados a través del gestor de paquetes apt se almacenan en una caché junto a sus dependencias en el directorio var/cache/apt/archive. Esta información se almacena en el disco duro del equipo incluso cuando la instalación del paquete ha terminado de forma satisfactoria.</p>
+<p>Esta caché facilita y agiliza el proceso de reinstalar o reconfigurar paquetes ya que el sistema sólo tiene que acceder a los ficheros de instalación almacenado en la caché y no necesita buscarlos y descargarlos de los repositorios de Debian, sin embargo, en ocasiones, la caché de apt puede ocupar mucho espacio y puede ser necesario limpiarla. Para ello apt ofrece el comando <code>apt clean</code>, que borra todo el contenido del directorio en el que se almacenan los paquetes y dependencias instalados por apt.</p>
+<p>Asimismo, la herramienta <code>apt autoclean</code> permite borrar sólo los paquetes de este directorio que se han quedado obsoletos pero mantiene aquellos que están actualizados y, por tanto, el sistema aún puede necesitar.</p>
+<h2 id="realiza-la-instalación-del-paquete-keyboard-configuration-pasando-previamente-los-valores-de-los-parámetros-de-configuración-como-variables-de-entorno">Realiza la instalación del paquete keyboard-configuration pasando previamente los valores de los parámetros de configuración como variables de entorno</h2>
+<p>Para instalar paquetes de forma no interactiva se pueden usar los comandos <code>dpkg</code> y <code>debconf</code>. El comando <code>debconf</code> permite conocer cuáles son los parámetros que se deben configurar durante la instalación de un paquete. También permite reconfigurar la instalación para volver a elegir los parámetros necesarios en caso de que la configuración en el momento de la instalación no sea la adecuada.</p>
+<p>En primer lugar, es necesario conocer cuáles son los parámetros que se solicitan durante la instalación de un determinado paquete. Una vez conocida esta información, se puede configurar el proceso de instalación desatendido con <code>dpkg</code> y <code>debconf</code> seleccionando la opción <code>noninteractive</code>.</p>
+<p>Posteriormente, se deben exportar los parámetros como variables de entorno usando <code>export</code> seguido del nombre del parámetro y el valor de la variable. La configuración desatendida de <code>debconf</code> y <code>dpkg</code> tomará estas variables como parámetros para la instalación y configuración del paquete.</p>
+<p>El gestor de paquetes apt también permite configurar una instalación a través de variables de entorno de una manera similar. Tras exportar las variables de entorno se ejecuta el comando <code>DEBIAN_FRONTEND=noninteractive apt install -y</code>. Con la variable <code>DEBIAN_FRONTEND=noninteractive</code> se indica al gestor de paquetes que debe leer los parámetros de las variables de entorno.</p>
+<h2 id="reconfigura-el-paquete-locales-de-tu-equipo-añadiendo-una-localización-que-no-exista-previamente-comprueba-a-modificar-las-variables-de-entorno-correspondientes-para-que-la-sesión-del-usuario-utilice-otra-localización">Reconfigura el paquete locales de tu equipo, añadiendo una localización que no exista previamente. Comprueba a modificar las variables de entorno correspondientes para que la sesión del usuario utilice otra localización</h2>
+<p>Para reconfigurar el paquete locale se pueden usar las herramientas del paquete <code>debconf-utils</code>. El comando <code>debconf-set-selections</code> permite modificar las variables de un paquete instalado y <code>dpkg-reconfigure</code> también ofrece la posibilidad de reconfigurar un paquete. En este caso, se pueden reconfigura el paquete locale para añadir una nueva localización.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo dpkg-reconfigure --frontend Dialog --priority low locales
+</span></span><span style="display:flex;"><span>debconf: Please do not capitalize the first letter of the debconf frontend.
+</span></span><span style="display:flex;"><span>Generating locales (this might take a while)...
+</span></span><span style="display:flex;"><span>  en_US.UTF-8... done
+</span></span><span style="display:flex;"><span>  es_ES.UTF-8... done
+</span></span><span style="display:flex;"><span>Generation complete.
+</span></span></code></pre></div><p>Tras reconfigurar el paquete y añadir una nueva localización, ésta se puede modificar en el fichero de configuración /etc/default/locale o, de forma más genérica, se puede generar y exportar la variable de entorno con la orden <code>${LC_ALL=en_US.UTF-8}; export LC_ALL</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo nano /etc/default/locale 
+</span></span><span style="display:flex;"><span>❯ locale -a
+</span></span><span style="display:flex;"><span>C
+</span></span><span style="display:flex;"><span>C.utf8
+</span></span><span style="display:flex;"><span>en_US.utf8
+</span></span><span style="display:flex;"><span>es_ES.utf8
+</span></span><span style="display:flex;"><span>POSIX
+</span></span></code></pre></div><h2 id="interrumpe-la-configuración-de-un-paquete-y-explica-los-pasos-a-dar-para-continuar-la-instalación">Interrumpe la configuración de un paquete y explica los pasos a dar para continuar la instalación</h2>
+<p>Si se interrumpe la instalación de un paquete en el proceso de configuración, se puede continuar el proceso usando el comando <code>dpkg --configure -a</code>. Con este  comando  se configurar los paquetes que se han desempaquetado en el proceso de instalación interrumpido pero no se han llegado a configurar. <code>dpkg --configure</code> desempaqueta los ficheros de configuración y restaura los ficheros de configuración de los paquetes cancelados. Posteriormente ejecuta los scripts postinstalación del paquete, en caso de que existan.</p>
+<h2 id="explica-la-instrucción-que-utilizarías-para-hacer-una-actualización-completa-de-todos-los-paquetes-de-tu-sistema-de-manera-completamente-no-interactiva">Explica la instrucción que utilizarías para hacer una actualización completa de todos los paquetes de tu sistema de manera completamente no interactiva</h2>
+<p>Para actualizar toda la paquetería del sistema de forma no interactiva se puede ejecutar el comando <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code>.</p>
+<p>Con este flujo, en primer lugar se revisa la información sobre actualizaciones disponible en los repositorios con el comando <code>apt update</code>. Cuando la ejecución de este comando es exitosa, se ejecuta la actualización de la paquetería con el comando <code>apt upgrade</code>. Con al opción <code>-y</code>, se contesta afirmativamente a todas las preguntas interactivas del comando.</p>
+<h2 id="bloquea-la-actualización-de-determinados-paquetes">Bloquea la actualización de determinados paquetes</h2>
+<p>Para bloquear la actualización de determinados paquetes se usa el comando <code>apt-mark</code>. Con este comando se pueden marcar como instalados manualmente determinados paquetes, lo que evita que se actualicen de forma automática. Si, además, se marcan como retenidos, estos paquetes no se actualizan nunca. Por ejemplo, para bloquear la actualización automática del paquete <code>git</code> se puede ejecutar el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo apt-mark manual git 
+</span></span><span style="display:flex;"><span>git set to manually installed.
+</span></span></code></pre></div><p>Para evitar que el paquete wget se actualice en cualquier caso se puede ejecutar el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo apt-mark hold wget
+</span></span><span style="display:flex;"><span>wget set on hold.
+</span></span></code></pre></div><h1 id="trabajo-con-ficheros-deb">Trabajo con ficheros .deb</h1>
+<h2 id="descarga-un-paquete-sin-instalarlo-es-decir-descarga-el-fichero-deb-correspondiente-indica-diferentes-formas-de-hacerlo">Descarga un paquete sin instalarlo, es decir, descarga el fichero .deb correspondiente. Indica diferentes formas de hacerlo</h2>
+<p>El fichero .deb de un paquete se puede descargar usando el comando <code>apt download</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt download mdadm 
+</span></span><span style="display:flex;"><span>Get:1 http://deb.debian.org/debian bookworm/main amd64 mdadm amd64 4.2-5 [443 kB]
+</span></span><span style="display:flex;"><span>Fetched 443 kB in 0s (3,791 kB/s)
+</span></span></code></pre></div><p>o con el comando <code>wget</code> indicando la url de descarga desde la web del repositorio de Debian:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ wget &#34;http://ftp.es.debian.org/debian/pool/main/m/mdadm/mdadm-udeb_4.2-5_amd64.udeb&#34;
+</span></span></code></pre></div><h2 id="cómo-puedes-ver-el-contenido-que-no-extraerlo-de-lo-que-se-instalará-en-el-sistema-de-un-paquete-deb">¿Cómo puedes ver el contenido, que no extraerlo, de lo que se instalará en el sistema de un paquete deb?</h2>
+<p>Para ver el contenido de un paquete .deb sin llegar a desempaquetarlo se puede usar la opción <code>-t</code> del comando <code>ar</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ar -t mdadm_4.2-5_amd64.deb 
+</span></span><span style="display:flex;"><span>debian-binary
+</span></span><span style="display:flex;"><span>control.tar.xz
+</span></span><span style="display:flex;"><span>data.tar.xz
+</span></span></code></pre></div><p>Para ver el contenido del paquete con más detalle es necesario desempaquetarlo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ar -x mdadm_4.2-5_amd64.deb
+</span></span></code></pre></div><p>Una vez desempaquetado, con el comando <code>tar</code> se puede listar, sin extraer, todo el contenido de cada uno de los archivos incluidos en el paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ tar -tf data.tar.xz 
+</span></span><span style="display:flex;"><span>./
+</span></span><span style="display:flex;"><span>./etc/
+</span></span><span style="display:flex;"><span>./etc/cron.d/
+</span></span><span style="display:flex;"><span>./etc/cron.d/mdadm
+</span></span><span style="display:flex;"><span>./etc/cron.daily/
+</span></span><span style="display:flex;"><span>./etc/cron.daily/mdadm
+</span></span><span style="display:flex;"><span>./etc/init.d/
+</span></span><span style="display:flex;"><span>./etc/init.d/mdadm
+</span></span><span style="display:flex;"><span>./etc/init.d/mdadm-waitidle
+</span></span><span style="display:flex;"><span>./etc/logcheck/
+</span></span><span style="display:flex;"><span>./etc/logcheck/ignore.d.server/
+</span></span><span style="display:flex;"><span>./etc/logcheck/ignore.d.server/mdadm
+</span></span><span style="display:flex;"><span>./etc/logcheck/violations.d/
+</span></span><span style="display:flex;"><span>./etc/logcheck/violations.d/mdadm
+</span></span><span style="display:flex;"><span>./etc/mdadm/
+</span></span><span style="display:flex;"><span>./etc/modprobe.d/
+</span></span><span style="display:flex;"><span>./etc/modprobe.d/mdadm.conf
+</span></span><span style="display:flex;"><span>…
+</span></span><span style="display:flex;"><span>./usr/share/mdadm/
+</span></span><span style="display:flex;"><span>./usr/share/mdadm/checkarray
+</span></span><span style="display:flex;"><span>./usr/share/mdadm/mdcheck
+</span></span><span style="display:flex;"><span>./usr/share/mdadm/mkconf
+</span></span><span style="display:flex;"><span>./lib/systemd/system/mdadm-waitidle.service
+</span></span><span style="display:flex;"><span>./lib/systemd/system/mdadm.service
+</span></span></code></pre></div><h2 id="sobre-el-fichero-deb-descargado-utiliza-el-comando-ar-ar-permite-extraer-el-contenido-de-una-paquete-deb-indica-el-procedimiento-para-visualizar-con-ar-el-contenido-del-paquete-deb-con-el-paquete-que-has-descargado-y-utilizando-el-comando-ar-descomprime-el-paquete-qué-información-dispones-después-de-la-extracción-indica-la-finalidad-de-lo-extraído">Sobre el fichero .deb descargado, utiliza el comando ar. ar permite extraer el contenido de una paquete deb. Indica el procedimiento para visualizar con ar el contenido del paquete deb. Con el paquete que has descargado y utilizando el comando ar, descomprime el paquete. ¿Qué información dispones después de la extracción?. Indica la finalidad de lo extraído</h2>
+<p>Tras desempaquetar el paquete .deb:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ar -x mdadm_4.2-5_amd64.deb
+</span></span></code></pre></div><p>Los contenidos del paquete se muestran en el directorio tras desempaquetar el paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ls -l
+</span></span><span style="display:flex;"><span>total 876
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario  15156 Sep 27 10:03 control.tar.xz
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario 427708 Sep 27 10:03 data.tar.xz
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario      4 Sep 27 10:03 debian-binary
+</span></span></code></pre></div><p>En el archivo control.tar.xz se encuentran todos los ficheros de control del paquete. Entre ellos los scripts que se ejecutan antes y después de la instalación, las plantillas, los ficheros de configuración o el fichero md5sums con los hashes de verificación de las versiones de los ficheros del paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ tar -tf control.tar.xz 
+</span></span><span style="display:flex;"><span>./
+</span></span><span style="display:flex;"><span>./conffiles
+</span></span><span style="display:flex;"><span>./config
+</span></span><span style="display:flex;"><span>./control
+</span></span><span style="display:flex;"><span>./md5sums
+</span></span><span style="display:flex;"><span>./postinst
+</span></span><span style="display:flex;"><span>./postrm
+</span></span><span style="display:flex;"><span>./preinst
+</span></span><span style="display:flex;"><span>./prerm
+</span></span><span style="display:flex;"><span>./templates
+</span></span><span style="display:flex;"><span>./triggers
+</span></span></code></pre></div><p>Por su parte, en el archivo data.tar.xz se recogen los ficheros de configuración, binarios, ficheros de servicios y otro tipo de ficheros que componen la parte fundamental del paquete y que son, en definitiva, los que se encargan de que la herramienta instalada cumpla su función.</p>
+<h2 id="indica-el-procedimiento-para-descomprimir-lo-extraído-por-ar-del-punto-anterior-qué-información-contiene">Indica el procedimiento para descomprimir lo extraído por ar del punto anterior. ¿Qué información contiene?</h2>
+<p>Para descomprimir el contenido de cada archivo .tar.xz del paquete desempaquetado anteriormente se puede usar el comando <code>tar</code> con la opción <code>-x</code>, para indicar que se debe realizar la descompresión y la opción <code>-f</code> para indicar el nombre del archivo que se debe descomprimir.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ tar -xf control.tar.xz
+</span></span><span style="display:flex;"><span>❯ tar -xf data.tar.xz
+</span></span><span style="display:flex;"><span>❯ ls -l
+</span></span><span style="display:flex;"><span>total 964
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario    181 feb 24  2023 conffiles
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 usuario usuario   1161 feb 24  2023 config
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario    808 feb 24  2023 control
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario  15156 sep 27 12:22 control.tar.xz
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario 427708 sep 27 12:22 data.tar.xz
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario      4 sep 27 12:22 debian-binary
+</span></span><span style="display:flex;"><span>drwxr-xr-x 8 usuario usuario   4096 feb 24  2023 etc
+</span></span><span style="display:flex;"><span>drwxr-xr-x 4 usuario usuario   4096 feb 24  2023 lib
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario   5060 feb 24  2023 md5sums
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario 443056 feb 24  2023 mdadm_4.2-5_amd64.deb
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 usuario usuario   5279 feb 24  2023 postinst
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 usuario usuario   1734 feb 24  2023 postrm
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 usuario usuario    455 feb 24  2023 preinst
+</span></span><span style="display:flex;"><span>-rwxr-xr-x 1 usuario usuario    485 feb 24  2023 prerm
+</span></span><span style="display:flex;"><span>drwxr-xr-x 2 usuario usuario   4096 feb 24  2023 sbin
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario  25872 feb 24  2023 templates
+</span></span><span style="display:flex;"><span>-rw-r--r-- 1 usuario usuario     82 feb 24  2023 triggers
+</span></span><span style="display:flex;"><span>drwxr-xr-x 3 usuario usuario   4096 feb 24  2023 usr
+</span></span></code></pre></div><p>Listando el contenido del directorio de trabajo tras descomprimir los ficheros del paquete se puede comprobar que, como se había adelantado en el ejercicio anterior, el archivo control contiene ficheros de utilidad para gestionar la instalación del paquete. Entre estos ficheros, algunos son importantes para verificar la seguridad e integridad de los ficheros que forman parte del paquete mientras que algunos otros incluyen órdenes relacionadas con el proceso de instalación como scripts que se ejecutan antes o después de la instalación. También incluye ficheros que contienen las diferentes variables que se deben configurar para el correcto funcionamiento del paquete.</p>
+<p>Por su parte, en el archivo data se incluyen todos los ficheros que forman parte de la herramienta instalada con este paquete, es decir, desde sus ficheros de configuración, binarios que se pueden ejecutar a través de la línea de comandos, ficheros de ayuda y manual, ficheros para permitir a la bash autocompletar el comando al tabular, los ficheros para generar los daemons necesarios para el correcto funcionamiento de la herramienta, etc. En definitiva, este directorio contiene todos los ficheros necesarios para el funcionamiento del paquete descargado tras su instalación.</p>
+<h1 id="trabajo-con-repositorios">Trabajo con repositorios</h1>
+<h2 id="añade-a-tu-fichero-sourceslist-los-repositorios-de-bookworm-backports-y-sid">Añade a tu fichero sources.list los repositorios de bookworm-backports y sid</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>deb http://deb.debian.org/debian/ bookworm main non-free-firmware
+</span></span><span style="display:flex;"><span>deb-src http://deb.debian.org/debian/ bookworm main non-free-firmware
+</span></span><span style="display:flex;"><span>deb http://deb.debian.org/debian/ bookworm-backports main non-free-firmware
+</span></span><span style="display:flex;"><span>deb http://deb.debian.org/debian/ sid main non-free-firmware
+</span></span></code></pre></div><h2 id="configura-el-sistema-apt-para-que-los-paquetes-de-debian-bookworm-tengan-mayor-prioridad-y-por-tanto-sean-los-que-se-instalen-por-defecto">Configura el sistema APT para que los paquetes de debian bookworm tengan mayor prioridad y por tanto sean los que se instalen por defecto</h2>
+<p>Para configurar el orden de prioridad de instalación del sistema APT se puede configurar el fichero /etc/apt/preferences. Por defecto, este fichero no existe en el equipo y hay que crearlo.</p>
+<p>Para que los paquetes de debian bookworm (stable) tengan la mayor prioridad se debe añadir la siguiente configuración:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>Package: *
+</span></span><span style="display:flex;"><span>Pin: release a=stable
+</span></span><span style="display:flex;"><span>Pin_Priority: 500
+</span></span></code></pre></div><h2 id="configura-el-sistema-apt-para-que-los-paquetes-de-bookworm-backports-tengan-mayor-prioridad-que-los-de-unstable">Configura el sistema APT para que los paquetes de bookworm-backports tengan mayor prioridad que los de unstable</h2>
+<p>Para que los paquetes de la rama bookworm-backports tengan mayor prioridad que los de la rama unstable en el gestor de paquetes APT se puede añadir la siguiente configuración al fichero /etc/apt/preferences.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>Package: *
+</span></span><span style="display:flex;"><span>Pin: release a=stable-backports
+</span></span><span style="display:flex;"><span>Pin_Priority: 100
+</span></span><span style="display:flex;"><span>Package: *
+</span></span><span style="display:flex;"><span>Pin: release a=unstable
+</span></span><span style="display:flex;"><span>Pin_Priority: 1
+</span></span></code></pre></div><h2 id="cómo-añades-la-posibilidad-de-descargar-paquetería-de-la-arquitectura-i386-en-tu-sistema-que-comando-has-empleado-lista-arquitecturas-no-nativas-cómo-procederías-para-desechar-la-posibilidad-de-descargar-paquetería-de-la-arquitectura-i386">¿Cómo añades la posibilidad de descargar paquetería de la arquitectura i386 en tu sistema. ¿Que comando has empleado?. Lista arquitecturas no nativas. ¿Cómo procederías para desechar la posibilidad de descargar paquetería de la arquitectura i386?</h2>
+<p>Para añadir la posibilidad de descargar paquetería de la arquitectura i386 en el sistema Debian con arquitectura nativa amd64 se puede usar el comando <code>dpkg</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo dpkg --add-architecture i386
+</span></span></code></pre></div><p>Para listar las arquitecturas no nativas habilitadas en el sistema, el comando dpkg ofrece la opción <code>--print-foreign-architecutres</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ dpkg --print-foreign-architectures
+</span></span><span style="display:flex;"><span>i386
+</span></span></code></pre></div><p>Finalmente, para eliminar una determinada arquitectura de la lista de arquitecturas no nativas añadidas al sistema se usa la opción <code>--remove-architecture</code> del mismo comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo dpkg --remove-architecture i386
+</span></span></code></pre></div><p>Si se han instalado paquetes de la arquitectura no nativa configurada en el sistema se puede generar un conflicto al intentar eliminar esta opción mientras estos paquetes están instalados. Por eso, es necesario desinstalar los paquetes de esta arquitectura antes de eliminarla de la lista. Para la arquitectura i386, por ejemplo, esto se puede hacer con el comando <code>apt purge “.*:i386”</code>.</p>
+<p>La lista de arquitecturas no nativas que se configuran en un sistema Debian se almacena en el directorio /var/lib/dpkg/arch.</p>
+<h2 id="si-quisieras-descargar-un-paquete-cómo-puedes-saber-todas-las-versiones-disponible-de-dicho-paquete">Si quisieras descargar un paquete, ¿cómo puedes saber todas las versiones disponible de dicho paquete?</h2>
+<p>Para conocer las versiones disponibles de un paquete en los repositorios de Debian en cada rama de la distribución se puede ejecutar el comando <code>rmadison</code>. A este comando se le debe indicar el nombre del paquete y devuelve una lista con todas las versiones disponibles para cada una de las ramas de Debian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ rmadison openssh-client
+</span></span><span style="display:flex;"><span>openssh-client | 1:7.9p1-10+deb10u2 | oldoldstable     | amd64, arm64, armhf, i386
+</span></span><span style="display:flex;"><span>openssh-client | 1:8.4p1-2~bpo10+1  | buster-backports | amd64, arm64, armel, armhf, i386, mips, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:8.4p1-5+deb11u3  | oldstable        | amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.2p1-2+deb12u3  | stable           | amd64, arm64, armel, armhf, i386, mips64el, mipsel, ppc64el, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.8p1-8          | testing          | amd64, arm64, armel, armhf, i386, mips64el, ppc64el, riscv64, s390x
+</span></span><span style="display:flex;"><span>openssh-client | 1:9.9p1-1          | unstable         | amd64, arm64, armel, armhf, i386, mips64el, ppc64el, riscv64, s390x
+</span></span></code></pre></div><h2 id="indica-el-procedimiento-para-descargar-un-paquete-del-repositorio-stable">Indica el procedimiento para descargar un paquete del repositorio stable</h2>
+<p>El gestor de paquetes APT utiliza la opción <code>-t</code> para recibir la rama de Debian de la que se debe instalar un paquete determinado como argumento. En este caso, para instalar un paquete del repositorio stable se puede usar o no la opción <code>-t</code>, puesto que la rama stable es la rama desde la que se descargan los paquetes por defecto. De esta forma, estos dos comandos se pueden usar de forma indistinta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client -t stable
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client -t bookworm
+</span></span></code></pre></div><p>Cabe destacar que, para que una rama de la distribución esté disponible como argumento para la opción <code>-t</code> de este comando, la rama debe estar incluida en el fichero sources.list. De esta manera, las opciones para un sistema en el que las ramas configuradas en este fichero son la stable, la stable-security y la stable-updates, los argumentos que acepta la opción <code>-t</code> del comando son esas tres ramas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt install -t 
+</span></span><span style="display:flex;"><span>bookworm           bookworm-updates   stable             stable-updates
+</span></span><span style="display:flex;"><span>bookworm-security  now                stable-security  
+</span></span></code></pre></div><h2 id="indica-el-procedimiento-para-descargar-un-paquete-del-repositorio-de-bookworm-backports">Indica el procedimiento para descargar un paquete del repositorio de bookworm-backports</h2>
+<p>Dando por supuesto que la rama configuada en el fichero sources.list y con prioridad más alta es la stable o bookworm, para descargar paquetes de la rama bookworm-backports se debe indicar este parámetro con la opción <code>-t</code> del comando apt install.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client -t bookworm-backports
+</span></span></code></pre></div><h2 id="indica-el-procedimiento-para-descargar-un-paquete-del-repositorio-de-sid">Indica el procedimiento para descargar un paquete del repositorio de sid</h2>
+<p>Para que un paquete se instale desde la rama unstable o sid de los repositorios de debian se puede usar uno de estos dos parámetros en la opción <code>-t</code> del comando <code>apt-install</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client -t sid
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client -t unstable
+</span></span></code></pre></div><h2 id="indica-el-procedimiento-para-descargar-un-paquete-de-arquitectura-i386">Indica el procedimiento para descargar un paquete de arquitectura i386</h2>
+<p>Si se necesita instalar el paquete para una arquitectura no nativa del sistema operativo, esta opción también se puede indicar a través del comando <code>apt-install</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install openssh-client:i386
+</span></span></code></pre></div><h1 id="trabajo-con-directorios">Trabajo con directorios</h1>
+<h2 id="varlibaptlists">/var/lib/apt/lists/</h2>
+<p>Este directorio almacena información sobre los paquetes de los repositorios de Debian. Este directorio se rellena con la actualización de la paquetería a través del comando <code>apt update</code>. A él acceden otros comandos del gestor de paquete apt para recuperar información relativa a los paquetes del sistema, como <code>apt-cache</code> o <code>apt install</code>.</p>
+<h2 id="varlibdpkgavailable">/var/lib/dpkg/available</h2>
+<p>Este es el fichero en el que <code>dpkg</code> almacena un registro de los paquetes disponibles para el sistema. Se trata de un fichero que funciona a modo de cache para el gestor de paquetes <code>dpkg</code>. El gestor de paquetes apt usa una caché diferente.</p>
+<h2 id="varlibdpkgstatus">/var/lib/dpkg/status</h2>
+<p>El fichero status almacena información sobre el estado de los paquetes del sistema. La herramienta <code>dpkg</code> accede a este fichero para saber si un paquete debe ser desempaquetado, configurado o eliminado.</p>
+<h2 id="varcacheaptarchives">/var/cache/apt/archives/</h2>
+<p>En este directorio se almacena la información relativa a los paquetes descargados y actualizados a través del gestor de paquetes apt. Cumple una función similar a la que tiene el fichero available de la herramienta <code>dpkg</code>. Este directorio almacena toda la información incluso después de que los paquetes se hayan instalado con éxito. Varios comandos del gestor de paquetes apt acceden a este directorio para recuperar la información que necesitan para mostrarla o para instalar o actualizar paquetes.</p>
+<h2 id="varlogapthistorylog">/var/log/apt/history.log</h2>
+<p>Este es un fichero de log en el que se almacena información sobre los paquetes que se han instalado, actualizado o desinstalado a través del gestor de paquetes apt. Otras herramientas para la gestión de paquetes como <code>dpkg</code> tienen sus propios archivos de log, de manera que la información sobre los paquetes gestionados con una de estas herramientas no aparecen en el log de las otras.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

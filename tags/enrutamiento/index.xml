@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enrutamiento on Javi Huete</title>
+    <link>/tags/enrutamiento/</link>
+    <description>Recent content in Enrutamiento on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 27 Feb 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/enrutamiento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo enrutar una red en OpenStack</title>
+      <link>/blog/redes/2024-02-27-enrutamiento-red-openstack/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-02-27-enrutamiento-red-openstack/</guid>
+      <description>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</description>
+    </item>
+    <item>
+      <title>Escenario de enrutamiento en GNS3</title>
+      <link>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</guid>
+      <description>&lt;p&gt;En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,2523 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Cómo enrutar una red en OpenStack</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Página personal de Javi Huete" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Cómo enrutar una red en OpenStack" />
+<meta property="og:description" content="Página personal de Javi Huete" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/redes/2024-02-27-enrutamiento-red-openstack/" />
+
+
+<meta name="twitter:title" content="Cómo enrutar una red en OpenStack" />
+<meta name="twitter:description" content="Página personal de Javi Huete" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Cómo enrutar una red en OpenStack
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/redes/"
+                    class=""
+                    >Redes
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              February 27, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#creación-de-la-red-en-openstack">Creación de la red en OpenStack</a></li>
+    <li><a href="#configuración-de-los-nodos">Configuración de los nodos</a>
+      <ol>
+        <li><a href="#pc1">PC1</a></li>
+        <li><a href="#pc2">PC2</a></li>
+        <li><a href="#pc3">PC3</a></li>
+        <li><a href="#router-1">Router 1</a></li>
+        <li><a href="#router-2">Router 2</a></li>
+        <li><a href="#router-3">Router 3</a></li>
+      </ol>
+    </li>
+    <li><a href="#captura-del-tráfico-entre-pc1-y-pc3-en-router-2">Captura del tráfico entre PC1 y PC3 en router 2</a>
+      <ol>
+        <li><a href="#captura-con-tcpdump">Captura con <code>tcpdump</code></a></li>
+        <li><a href="#captura-con-tshark">Captura con <code>tshark</code></a>
+          <ol>
+            <li><a href="#instalación-de-tshark">Instalación de <code>tshark</code></a></li>
+            <li><a href="#captura-con-tshark-1">Captura con <code>tshark</code></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. Además, la plataforma permite crear redes virtuales, de manera que las diferentes máquinas virtuales pueden comunicarse entre sí. En este post se recoge un caso práctico en el que se configura el enrutamiento de una pequeña red de máquinas virtuales creadas en OpenStack.</p>
+<h1 id="creación-de-la-red-en-openstack">Creación de la red en OpenStack</h1>
+<p>Las redes en OpenStack se pueden crear de forma manual, creando cada una de las máquinas y configurando la conexión entre ellas a través de la interfaz gráfica de la plataforma pero también se pueden crear de forma automatizada. Este tipo de creación de máquinas virtuales en lote requiere la creación previa de un fichero YAML como plantilla en el que se incluye la información necesaria para la creación de las máquinas y redes. Desde el menú &ldquo;stacks&rdquo; se puede lanzar la creación de una plantilla YAML pulsando el botón &ldquo;lanzar stack&rdquo;.</p>
+<p>Para este caso práctico se usa un escenario formado por seis máquinas, de las cuales tres funcionan como PC y las otras tres como routers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="587"
+            height="231"
+            src="/images/redes/practica11/img1_hu12026091018350734470.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img1_hu12026091018350734470.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<h1 id="configuración-de-los-nodos">Configuración de los nodos</h1>
+<h2 id="pc1">PC1</h2>
+<p>Puesto que sólo está conectado a un router por su única tarjeta de red, la tabla de enrutamiento de PC1 se puede simplificar hasta dejarla en una única línea.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Por defecto</td>
+          <td>R1: 172.23.1.8</td>
+          <td>ens3</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para trasladar esta tabla a la configuración del ordenador se puede usar el comando <code>ip route</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 172.23.1.8
+</span></span></code></pre></div><h2 id="pc2">PC2</h2>
+<p>Puesto que sólo está conectado a un router por su única tarjeta de red, la tabla de enrutamiento de PC2 se puede simplificar hasta dejarla en una única línea.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Por defecto</td>
+          <td>R2: 172.25.2.255</td>
+          <td>ens3</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para trasladar esta tabla a la configuración del ordenador se puede usar el comando <code>ip route</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 172.25.2.255
+</span></span></code></pre></div><h2 id="pc3">PC3</h2>
+<p>Puesto que sólo está conectado a un router por su única tarjeta de red, la tabla de enrutamiento de PC3 se puede simplificar hasta dejarla en una única línea.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Por defecto</td>
+          <td>R3: 172.27.1.204</td>
+          <td>ens3</td>
+      </tr>
+  </tbody>
+</table>
+<p>Por el mismo motivo que en los casos anteriores, para PC3 tampoco es necesario trasladar esta tabla a la configuración de la máquina.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 172.27.1.204
+</span></span></code></pre></div><h2 id="router-1">Router 1</h2>
+<p>Este router sólo se conecta a un ordenador y otro router. Por tanto, su tabla de enrutamiento sólo necesitará dos entradas: la de la interfaz por la que se comunica con el ordenador al que está conectado y la de la interfaz por la que se comunica con el resto de la red a través del router 2.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Por defecto</td>
+          <td>R2: 172.24.2.230</td>
+          <td>ens3</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para trasladar esta tabla a la configuración de la máquina se puede usar el comando <code>ip route</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 172.24.2.230
+</span></span></code></pre></div><p>Además, se debe activar en este dispositivo el bit de forwarding, por ejemplo, modificando el fichero /proc/sys/net/ipv4/ip_forward:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</span></span></code></pre></div><h2 id="router-2">Router 2</h2>
+<p>El router 2 está conectado a un ordenador pero también a dos routers. Esto lo convierte en un dispositivo que deberá enrutar una gran cantidad de tráfico en la red y, además, hace que su tabla de enrutamiento sea algo más compleja que las del resto de dispositivos porque no se pueden simplificar tantas entradas.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>R1</td>
+          <td>R1: 172.24.2.206</td>
+          <td>ens3</td>
+      </tr>
+      <tr>
+          <td>R3</td>
+          <td>R3: 172.26.2.36</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>PC1</td>
+          <td>R1: 172.24.2.206</td>
+          <td>ens3</td>
+      </tr>
+      <tr>
+          <td>PC2</td>
+          <td>172.25.2.142</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>PC3</td>
+          <td>R3: 172.26.2.36</td>
+          <td>ens5</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para trasladar esta tabla a la configuración de la máquina se puede usar el comando <code>ip route</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add 172.24.0.0/16 via 172.24.2.206
+</span></span><span style="display:flex;"><span>ip route add 172.26.0.0/16 via 172.26.2.36
+</span></span><span style="display:flex;"><span>ip route add 172.23.0.0/16 via 172.24.2.206
+</span></span><span style="display:flex;"><span>ip route add 172.27.0.0/16 via 172.26.2.36
+</span></span></code></pre></div><p>Además, se debe activar en este dispositivo el bit de forwarding, por ejemplo, modificando el fichero /proc/sys/net/ipv4/ip_forward:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</span></span></code></pre></div><h2 id="router-3">Router 3</h2>
+<p>Este router sólo se conecta a un ordenador y otro router. Por tanto, su tabla de enrutamiento sólo necesitará dos entradas: la de la interfaz por la que se comunica con el ordenador al que está conectado y la de la interfaz por la que se comunica con el resto de la red a través del router 2.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Por defecto</td>
+          <td>R2: 172.26.0.146</td>
+          <td>ens3</td>
+      </tr>
+  </tbody>
+</table>
+<p>Puesto que ya hay conectividad entre PC3 y el router 3, para trasladar esta tabla a la configuración de la máquina se puede usar el comando ip route y, a continuación, se debe activar en este dispositivo el bit de forwarding, por ejemplo, modificando el fichero /proc/sys/net/ipv4/ip_forward:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</span></span></code></pre></div><p>Una vez que se ha configurado el escenario de acuerdo a la descripción previamente expuesta, todas las máquinas que lo conforman pueden comunicarse entre sí.</p>
+<h1 id="captura-del-tráfico-entre-pc1-y-pc3-en-router-2">Captura del tráfico entre PC1 y PC3 en router 2</h1>
+<h2 id="captura-con-tcpdump">Captura con <code>tcpdump</code></h2>
+<p>Con el comando <code>tcpdump</code>, la opción <code>-vvv</code> que aporta la mayor cantidad de información posible y el argumento host 172.23.1.187 and 172.27.1.204 se puede filtrar el tráfico que circula por la red entre PC1 y PC3 en cualquiera de los dos routers por los que pasa: el router 2 o el router 3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tcpdump -vvv host 172.23.1.187 and 172.27.1.204
+</span></span></code></pre></div><p>En el caso de la siguiente imagen, el tráfico que se ha capturado en el router 2.</p>
+<p>La captura se produce en un momento en el que la red ya estaba totalmente configurada y en el que se había estado trabajando en el enrutamiento de los diferentes dispositivos de la red recientemente. Esto hace que en la captura de tráfico que se muestra no aparezcan paquetes que usan el protocolo ARP para descubrir las direcciones IP de los dispositivos vecinos puesto que las tablas de memoria ARP tienen esa información almacenada.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="792"
+            height="711"
+            src="/images/redes/practica11/img2_hu10384491218610840828.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img2_hu10384491218610840828.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por tanto, en la captura de tráfico se recogen 18 paquetes que han pasado por la tarjeta de red del router 2 que se ha usado para realizarla. En ella, se alternan las líneas tanto de petición como de respuesta de un ping que se ha enviado desde el PC1 al PC3. En cada una de estas líneas se incluye, en primer lugar, un código de tiempo con la hora a la que se ha capturado el paquete. A continuación, se muestra una serie de datos relevantes para el análisis del tráfico capturado. Algunos de ellos tienen una relevancia mayor que otros. Por ejemplo, se muestra el ttl de cada paquete o el protocolo que se está usando, en este caso ICMP (ping).</p>
+<p>Posteriormente se muestra la IP de origen y destino de cada uno de los paquetes capturados. En el caso de las peticiones, el origen es la IP del PC1 (172.23.1.187) y el destino es la IP del PC3 (172.27.1.204). En las líneas que se corresponden con los paquetes de respuesta del ping, el orden de las direcciones IP es el inverso puesto que el origen de estos mensajes es el PC3 y su destino el PC1. Posteriormente, la captura especifica el tipo de paquete del que se trata, bien ICMP echo request si es el ping que envía el PC1 al PC3 o bien ICMP echo reply si es la respuesta de ping que el PC3 devuelve al PC1. También se muestra el número de secuencia de cada paquete dentro del ping, así como la longitud del paquete: 64 bits.</p>
+<h2 id="captura-con-tshark">Captura con <code>tshark</code></h2>
+<h3 id="instalación-de-tshark">Instalación de <code>tshark</code></h3>
+<p>Para instalar el paquete <code>tshark</code> en el router 2 (en el que se va a realizar la captura) es necesario conectar el equipo a Internet. En primer lugar  se debe conectar de alguna manera  este escenario con la red externa de OpenStack que permite accede a Internet. Un opción es crear un nuevo router y conectarlo tanto a la red exterior como a un dispositivo del escenario de enrutamiento, en este caso, el router 2.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="829"
+            height="815"
+            src="/images/redes/practica11/img3_hu3822552191074945483.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img3_hu3822552191074945483.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Posteriormente, se debe añadir una interfaz al router:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="829"
+            height="502"
+            src="/images/redes/practica11/img4_hu17398034564588878262.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img4_hu17398034564588878262.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Y, en la ventana de configuración de la nueva interfaz se debe indicar la red de la que va a formar parte (en este caso la 172.24.0.0/16), así como la dirección IP que funcionará como puerta de enlace para la red:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="829"
+            height="502"
+            src="/images/redes/practica11/img5_hu11415103200564468895.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img5_hu11415103200564468895.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Una vez que la red ya tiene esta conexión física con Internet, el router 2 ya puede hacer ping fuera de la red, por ejemplo, a 8.8.8.8.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="503"
+            height="166"
+            src="/images/redes/practica11/img6_hu4140697584153403660.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img6_hu4140697584153403660.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Pero para que pueda resolver nombres de dominio y acceder a los respositorios de debian es necesario configurar el DNS. Esto se puede hacer añadiendo una línea al fichero /etc/resolvconf indicando la dirección de un servidor DNS a través del comando <code>resolvectl</code>, teniendo en cuenta que se debe reiniciar el servicio después:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>resolvectl dns ens3 8.8.8.8
+</span></span><span style="display:flex;"><span>systemctl restart networkd
+</span></span></code></pre></div><p>Con esta configuración ya se pueden resolver nombres de dominio y, por tanto, instalar paquetes desde los repositorios de Debian.</p>
+<h3 id="captura-con-tshark-1">Captura con <code>tshark</code></h3>
+<p>En el caso de la captura con <code>tshark</code>, la información que se recoge es muy similar a la que se encuentra en la captura con <code>tcpdump</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="984"
+            height="441"
+            src="/images/redes/practica11/img7_hu14967296434974731679.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica11\/img7_hu14967296434974731679.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>La mayor parte del tráfico que se registra es tráfico de petición de respuesta del ping que hace PC1 (172.23.1.187) a PC3 (172.27.1.204). En estos paquetes se puede ver la dirección IP de origen y de destino, el protocolo que usan (ICMP) así como su tamaño (98 bytes) y su tipo (Echo (ping) request o reply según si se trata de una petición o una respuesta). También se indica el número de secuencia dentro del ping y el ttl. Además, de la misma manera que se muestra en la interfaz gráfica de wireshark, se indica a qué petición corresponde cada respuesta del ping.</p>
+<p>En esta captura aparecen, además, dos paquetes que no habían aparecido en la captura realizada con <code>tcpdump</code> y que corresponden a una petición y una respuesta ARP. En ellos se ve cómo primero el equipo con la IP 172.24.0.2 (un servidor DHCP) hace una petición ARP para conocer la dirección MAC del equipo con la IP 172.24.2.230 (el router 2). A continuación el router 2 contesta a esa petición con su dirección MAC.</p>
+<p>A diferencia de las peticiones ARP habituales, en este caso, el equipo con la IP 172.24.0.2 envía la petición no a la dirección de broadcast (FF:FF:FF:FF:FF:FF) sino a la MAC del router 2. De esta manera, en la captura de estos dos paquetes se muestra, en primer lugar la MAC de origen, a continuación la de destino, después el protocolo usado (ARP) y el tamaño del paquete (42 bytes). Finalmente, se incluye también el contenido del mensaje en formato legible, ya sea la pregunta o la respuesta.</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/redes/">
+                        Redes
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/planificaci%c3%b3n-y-administraci%c3%b3n-de-redes/">
+                        Planificación y administración de redes
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/openstack/">
+                        Open stack
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/enrutamiento/">
+                        Enrutamiento
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/tcpdump/">
+                        Tcpdump
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/virtualizaci%c3%b3n/">
+                        Virtualización
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/router-linux/">
+                        Router linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/ip-route/">
+                        IP route
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fredes%2f2024-02-27-enrutamiento-red-openstack%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fredes%2f2024-02-27-enrutamiento-red-openstack%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fredes%2f2024-02-27-enrutamiento-red-openstack%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fredes%2f2024-02-27-enrutamiento-red-openstack%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+      Instalación desatendida de Debian12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+      Configuración de un servidor SAN
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
+      Ejemplos de uso de comandos básicos en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Blog</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

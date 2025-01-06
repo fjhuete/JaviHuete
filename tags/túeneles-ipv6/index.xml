@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Túeneles IPv6 on Javi Huete</title>
+    <link>/tags/t%C3%BAeneles-ipv6/</link>
+    <description>Recent content in Túeneles IPv6 on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 21 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/t%C3%BAeneles-ipv6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Túneles IPv6: túneles 6to4</title>
+      <link>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</guid>
+      <description>&lt;p&gt;En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

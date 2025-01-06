@@ -1,0 +1,5198 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/redes/2023-11-24-escenario-enrutamiento-gns3/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Escenario de enrutamiento en GNS3</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Escenario de enrutamiento en GNS3" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/redes/2023-11-24-escenario-enrutamiento-gns3/" />
+
+
+<meta name="twitter:title" content="Escenario de enrutamiento en GNS3" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Escenario de enrutamiento en GNS3
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/redes/"
+                    class=""
+                    >Redes
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              24 de noviembre de 2023
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#montar-el-escenario-en-gns3-completando-las-direcciones-ip">Montar el escenario en GNS3 completando las direcciones IP</a></li>
+    <li><a href="#tablas-de-enrutamiento">Tablas de enrutamiento</a>
+      <ol>
+        <li><a href="#tabla-de-enrutamiento-de-h1-y-h2">Tabla de enrutamiento de H1 y H2</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-h3">Tabla de enrutamiento de H3</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-h4-y-h5">Tabla de enrutamiento de H4 y H5</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-h6-y-h7">Tabla de enrutamiento de H6 y H7</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-r1">Tabla de enrutamiento de R1</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-r2">Tabla de enrutamiento de R2</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-r3">Tabla de enrutamiento de R3</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-r4">Tabla de enrutamiento de R4</a></li>
+        <li><a href="#tabla-de-enrutamiento-de-r5">Tabla de enrutamiento de R5</a></li>
+        <li><a href="#configuración-de-las-tablas-de-enrutamiento-en-los-routers-cisco-en-gns3">Configuración de las tablas de enrutamiento en los routers Cisco en GNS3</a></li>
+      </ol>
+    </li>
+    <li><a href="#análisis-de-las-cachés-arp">Análisis de las cachés ARP</a></li>
+    <li><a href="#captura-del-tráfico-con-wireshark">Captura del tráfico con Wireshark</a>
+      <ol>
+        <li><a href="#captura-del-tráfico-en-el-punto-a">Captura del tráfico en el punto A</a>
+          <ol>
+            <li><a href="#petición-arp">Petición ARP</a></li>
+            <li><a href="#respuesta-arp">Respuesta ARP</a></li>
+            <li><a href="#petición-echo-ping">Petición echo (ping)</a></li>
+            <li><a href="#respuesta-echo-ping">Respuesta echo (ping)</a></li>
+          </ol>
+        </li>
+        <li><a href="#captrua-del-tráfico-en-el-punto-b">Captrua del tráfico en el punto B</a>
+          <ol>
+            <li><a href="#petición-echo-ping-1">Petición echo (ping)</a></li>
+            <li><a href="#respuesta-echo-ping-1">Respuesta echo (ping)</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="607"
+            height="376"
+            src="/images/redes/practica5/img1_hu2322932638944497893.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img1_hu2322932638944497893.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<h1 id="montar-el-escenario-en-gns3-completando-las-direcciones-ip">Montar el escenario en GNS3 completando las direcciones IP</h1>
+<p>Para configurar el escenario indicado en la práctica se deben ordenar y nombrar las diferentes redes.
+En primer lugar aparece una red con dos ordenadores conectados (H1 y H2). Se indica que la dirección IP de H2 es 192.168.10.2/24, por tanto, para que H1 esté en la misma red tiene que tener una dirección IP como por ejemplo  192.168.10.3/24.</p>
+<p>Para configurar esta red en GNS3 se deben crear los dos ordenadores junto al switch al que deben ir conectados. Para mantener el orden, los switches adoptarán en su nombre el último número de la máscara de red de cada red. En este caso, el switch se llamará Switch10.</p>
+<p>Una vez que se han creado todos los dispositivos, se deben configurar. En el caso de los ordenadores es necesario acceder al archivo de configuración y, en él, descomentar la línea indicada para asignar una dirección IP de forma manual al equipo.</p>
+<p>Este procedimiento se debe repetir con todos los ordenadores que forman parte de cada una de las redes establecidas en la práctica.</p>
+<p>En la siguiente red sólo hay un ordenador, con la IP  192.168.20.2/24. Este equipo se llama H3.</p>
+<p>Los ordenadores H4 y H5 están conectados al Switch30. El H4 tiene la IP  192.168.30.2/24 y el H5 usa la IP 192.168.30.3/24.</p>
+<p>Finalmente, hay una cuarta red formada por los ordenadores H6, con la IP 192.168.40.2/24 y H7, con la IP 192.168.40.3/24, conectados al Switch40.</p>
+<p>Todos los equipos se han configurado para asignarle sus direcciones IP y máscaras de red correspondientes. A continuación hay que incluir los routers a esta red para poder establecer las conexiones que indica el enunciado.</p>
+<p>El primer paso para incorporar un router al escenario de GNS3 es importar la plantilla al programa, eligiendo la opción “nueva plantilla” de la ventana de dispositivos del área de trabajo.</p>
+<p>Esta importación se puede hacer de forma manual, desde el servidor o a través de un archivo con extensión .gns3a. En el caso de usar la opción de importación manual, GNS3 pide que se indique el archivo con extensión .gns3a que se quiere utilizar.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="365"
+            height="207"
+            src="/images/redes/practica5/img2_hu17401376949091180210.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img2_hu17401376949091180210.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El siguiente paso es elegir un tipo de servidor para instalar la plantilla.</p>
+<p>Posteriormente se debe importar la imagen del SO del router que se pretende importar. En este caso es necesario marcar la opción “permitir ficheros personalizados” para poder instalar la imagen descargada de Internet.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="896"
+            height="572"
+            src="/images/redes/practica5/img3_hu16296780302535898504.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img3_hu16296780302535898504.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras confirmar la instalación de la versión de la imagen del router de Cisco que corresponde al fichero de imagen que se ha seleccionado durante el proceso de importación de la plantilla, el nuevo router ya está disponible en la lista de dispositivos del proyecto de GNS3.</p>
+<p>Finalmente, para llegar al escenario planteado en el enunciado de la práctica sólo queda colocar los diferentes routers en cada punto y conectarlos a los dispositivos indicados.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="530"
+            height="313"
+            src="/images/redes/practica5/img4_hu1434458213235829024.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img4_hu1434458213235829024.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Una vez que están colocados y conectados todos los dispositivos, es necesario asignarle sus correspondientes direcciones IP a cada una de sus interfaces:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Router</th>
+          <th style="text-align: center">Interfaz</th>
+          <th style="text-align: center">IP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">R1</td>
+          <td style="text-align: center">f0/0</td>
+          <td style="text-align: center">192.168.10.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f1/0</td>
+          <td style="text-align: center">192.168.50.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">R2</td>
+          <td style="text-align: center">f0/0</td>
+          <td style="text-align: center">192.168.20.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f1/0</td>
+          <td style="text-align: center">192.168.50.2/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f2/0</td>
+          <td style="text-align: center">192.168.60.2/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f3/0</td>
+          <td style="text-align: center">192.168.70.2/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f4/0</td>
+          <td style="text-align: center">80.1.1.1/8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">R3</td>
+          <td style="text-align: center">f0/0</td>
+          <td style="text-align: center">192.168.30.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f1/0</td>
+          <td style="text-align: center">192.168.60.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">R4</td>
+          <td style="text-align: center">f0/0</td>
+          <td style="text-align: center">192.168.40.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f1/0</td>
+          <td style="text-align: center">192.168.70.1/24</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">R5</td>
+          <td style="text-align: center">f0/0</td>
+          <td style="text-align: center">80.59.1.152/8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">f1/0</td>
+          <td style="text-align: center">90.0.0.1/8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ISP</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">90.1.1.1/8</td>
+      </tr>
+  </tbody>
+</table>
+<p>Para trasladar esta información al escenario de GNS3, se puede acceder a cada uno de los routers a través de la consola y, desde allí, asignarle la dirección IP y máscara de red a las tarjetas de red de estos dispositivos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R4#conf t
+</span></span><span style="display:flex;"><span>R4(config)#interface f0/0
+</span></span><span style="display:flex;"><span>R4(config-if)#ip address 192.168.40.1 255.255.255.0
+</span></span><span style="display:flex;"><span>R4(config-if)#no shutdown
+</span></span></code></pre></div><h1 id="tablas-de-enrutamiento">Tablas de enrutamiento</h1>
+<h2 id="tabla-de-enrutamiento-de-h1-y-h2">Tabla de enrutamiento de H1 y H2</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.10.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.10.1</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-h3">Tabla de enrutamiento de H3</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.20.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.20.1</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-h4-y-h5">Tabla de enrutamiento de H4 y H5</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.30.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.30.1</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-h6-y-h7">Tabla de enrutamiento de H6 y H7</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.40.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.40.1</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-r1">Tabla de enrutamiento de R1</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.10.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.50.2</td>
+          <td style="text-align: center">f1/0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-r2">Tabla de enrutamiento de R2</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.10.0</td>
+          <td style="text-align: center">192.168.50.1</td>
+          <td style="text-align: center">f1/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.20.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.30.0</td>
+          <td style="text-align: center">192.168.60.1</td>
+          <td style="text-align: center">f2/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.40.0</td>
+          <td style="text-align: center">192.168.70.1</td>
+          <td style="text-align: center">f3/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">80.59.1.152</td>
+          <td style="text-align: center">e0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-r3">Tabla de enrutamiento de R3</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.30.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.60.2</td>
+          <td style="text-align: center">f1/0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-r4">Tabla de enrutamiento de R4</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.40.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">192.168.70.2</td>
+          <td style="text-align: center">f1/0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="tabla-de-enrutamiento-de-r5">Tabla de enrutamiento de R5</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Destino</th>
+          <th style="text-align: center">Siguiente router</th>
+          <th style="text-align: center">Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.10.0</td>
+          <td style="text-align: center">80.1.1.1</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.20.0</td>
+          <td style="text-align: center">80.1.1.1</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.30.0</td>
+          <td style="text-align: center">80.1.1.1</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">192.168.40.0</td>
+          <td style="text-align: center">80.1.1.1</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">80.0.0.0</td>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">f0/0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">0.0.0.0</td>
+          <td style="text-align: center">90.1.1.1</td>
+          <td style="text-align: center">f1/0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="configuración-de-las-tablas-de-enrutamiento-en-los-routers-cisco-en-gns3">Configuración de las tablas de enrutamiento en los routers Cisco en GNS3</h2>
+<p>Una vez que las direcciones IP de todas las interfaces de red están asignadas a los routers de la escena de GNS3, la mayor parte de entradas de las tablas de enrutamiento se completan por defecto. Sin embargo, conviene revisar y, si fuese necesario, complementar la información almacenada en estos dispositivos.</p>
+<h1 id="análisis-de-las-cachés-arp">Análisis de las cachés ARP</h1>
+<p>Para limpiar la memoria caché ARP de los VPCS H6 y H7 se ejecuta el comando <code>clear arp</code>.</p>
+<p>El comando para limpiar la memoria caché ARP de los routers es <code>clear arp</code>, sin embargo, en este caso, la tabla ARP no se llega a vaciar en ningún momento. Esto se debe a que los routers Cisco que se están usando en esta práctica elaboran esta tabla de forma automática sin necesidad de que haya tráfico en la red. Es decir, en el momento en el que se ejecuta el comando <code>clear arp</code> y se eliminan las entradas de la memoria caché ARP del router, este vuelve a lanzar peticiones ARP a todos los dispositivos conectados a él para volver a elaborar esta tabla.</p>
+<p>Tras limpiar todas las cachés ARP de los equipos indicados se ejecuta el ping entre H6 y R5. Tres construir el mensaje en el nivel de aplicación y asignarle los puertos en el de transporte, en el nivel de red se añaden las direcciones IP de origen y destino a la trama. En este caso, no interviene el protocolo DNS porque se está indicando la IP de destino directamente al ejecutar el comando ping. La IP de origen se asigna también de forma automática por parte del ordenador, que ya tiene su dirección IP previamente configurada.</p>
+<p>En el nivel de enlace, en cambio, sí que interviene el protocolo ARP en el proceso de asignación de las direcciones MAC de destino y origen a las cabeceras de la trama. En este primer paso de la transmisión del mensaje al ejecutar el ping que se produce en el ordenador H6, el equipo asigna su propia dirección MAC a la cabecera del nivel de enlace de la trama como dirección MAC de origen y envía una petición ARP request a la red en busca de la dirección MAC que corresponde a la tarjeta de red con la IP 192.168.40.1, es decir, la tarjeta de red del router de su red que funciona como puerta de enlace para este equipo.</p>
+<p>El resto de equipos de la red recibe esta petición y el router contesta con una respuesta ARP reply, que llega al ordenador H6 con la dirección MAC de la tarjeta de red del router. Este ordenador la incluye en la cabecera de la trama y, además, la guarda en su memoria caché ARP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="786"
+            height="540"
+            src="/images/redes/practica5/img5_hu1888916543982788462.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img5_hu1888916543982788462.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Sin embargo, aunque la petición ARP request que envió el ordenador H6 ha llegado a todos los dispositivos de la red, la respuesta ARP reply sólo se ha enviado al ordenador que solicitó esta información, de manera que el otro ordenador conectado a la misma red, H7, no ha recibido el mensaje ARP reply del router y, por tanto, no conoce su dirección MAC. Esto se puede comprobar al consultar la tabla de la memoria caché ARP de este equipo, que sigue vacía.</p>
+<p>El router conectado a esta red, R4, es el siguiente punto en el camino del mensaje ping entre H6 y R5. Este router tiene ya guardad en su memoria caché ARP la dirección MAC del ordenador H6, que lanzó una petición ARP en el primer paso de la transmisión del mensaje.</p>
+<p>En el nivel de enlace, este router vuelve a realizar una petición ARP para conocer la MAC de destino. Para ello, en primer lugar consulta su tabla de enrutamiento para comprobar la IP del siguiente router al que tiene que dirigir el mensaje, en este caso, la 192.168.70.2 y, cuando la conoce, lanza una petición ARP a todos los dispositivos conectados para solicitar la dirección MAC que corresponde a esa IP.</p>
+<p>El dispositivo cuya tarjeta de red tiene configurada esa dirección, responde la petición de R4 con una respuesta ARP que incluye su dirección MAC. Así, el router R4 guarda esa información en la cabecera de la trama y, como se puede comprobar en la siguiente captura, la almacena también en su tabla de memoria caché ARP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="786"
+            height="540"
+            src="/images/redes/practica5/img6_hu10802449526091470403.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img6_hu10802449526091470403.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el siguiente router, R2, se repite el proceso. En este caso no se aplica ninguna modificación a la trama en el nivel de red pero sí en el nivel de enlace. En primer lugar, el router comprueba la dirección IP de destino incluida en la trama y la busca en su tabla de enrutamiento para conocer el siguiente paso en el camino, en este caso, la dirección de destino 80.59.1.152 ya está indicada en la tabla de enrutamiento. Entonces, R2 envía una petición ARP al resto de equipos de la red para solicitar la dirección MAC asociada a la IP de destino y R5 devuelve una respuesta ARP con su dirección MAC. El router R2 modifica la información de la cabecera del nivel de enlace de la trama para modificar la MAC de origen por su propia MAC y la de destino por la de R5 y guarda la dirección MAC de R5 en su memoria caché ARP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="786"
+            height="540"
+            src="/images/redes/practica5/img7_hu1064967627446064648.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img7_hu1064967627446064648.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Finalmente, el mensaje ping consigue llegar a su destino en el router R5.</p>
+<p>Una vez que R5 recibe el mensaje ping que envió el ordenador H6, tiene que devolver una respuesta. Para construir la trama, en primer lugar elabora el mensaje ping de vuelta en el nivel de aplicación, con los puertos correspondientes en el nivel de transporte y, a continuación, añade la cabecera del nivel de red incluyendo como IP de origen su propia dirección IP y como IP de destino la IP que aparece como IP de origen en la trama que ha recibido.</p>
+<p>Para completar la cabecera del nivel de enlace, R5 tiene que consultar su tabla de enrutamiento y descubrir a qué IP debe dirigir el mensaje para que llegue a su destino, en este caso la 80.1.1.1. Cuando la conoce, lanza una petición ARP a su red solicitando la MAC asociada a esa IP que R2 contesta con una respuesta ARP con la información sobre su dirección MAC. Entonces, R5 construye la cabecera del nivel de enlace con su MAC como MAC de origen y la de R2 como MAC de destino. También almacena la dirección MAC de R2 en su memoria caché ARP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="786"
+            height="540"
+            src="/images/redes/practica5/img8_hu7114509991071470439.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img8_hu7114509991071470439.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El recorrido de vuelta se hace más sencillo. Cuando el ping de vuelta vuelve a llegar a R2, este router puede modificar la cabecera del nivel de enlace sin necesidad de realizar ninguna petición ARP porque conserva la dirección MAC del destino del mensaje, la de R4, en su memoria caché ARP. Con esta información puede modificar la cabecera de la trama y transmitir el mensaje.</p>
+<p>Cuando R4 recibe el mensaje, como también conserva la dirección MAC del ordenador H6 simplemente modifica esa información en la cabecera del nivel de enlace de la trama y transmite el mensaje al ordenador.</p>
+<p>Con este último paso, el ping de vuelta llega hasta el ordenador H6. Y todo esto ocurre en sólo unos 47 milisegundos.</p>
+<h1 id="captura-del-tráfico-con-wireshark">Captura del tráfico con Wireshark</h1>
+<h2 id="captura-del-tráfico-en-el-punto-a">Captura del tráfico en el punto A</h2>
+<h3 id="petición-arp">Petición ARP</h3>
+<p>El primer campo relevante en la captura del tráfico en el punto indicado como A en la práctica muestra la petición ARP que hace el router R1 a los dispositivos conectados a la misma red. Tal y como la describe Wireshark, el router pregunta qué dispositivo tiene la dirección IP 80.59.1.152 y pide que se transmita esa información a su IP 192.168.50.1.</p>
+<p>En la información de este campo se puede observar que la dirección de destino de la petición ARP es la dirección MAC broadcast (ff:ff:ff:ff:ff:ff) y el origen del mensaje es la dirección MAC ca:01:17:f4:00:1c, que corresponde a la IP 192.168.50.1, asociada a la tarjeta de red 1/0 del router R1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img9_hu9558251046673140678.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img9_hu9558251046673140678.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>A continuación, también indica que se trata de una petición ARP (Address Resolution Protocol), a través de Ethernet e IPv4, que es de tipo petición y recoge también la dirección MAC e IP del remitente así como la IP del destinatario. El campo de la dirección MAC de destino está a 0 porque el objetivo de esta petición es, precisamente, obtener esa información.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="583"
+            height="190"
+            src="/images/redes/practica5/img10_hu17049557041281010125.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img10_hu17049557041281010125.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h3 id="respuesta-arp">Respuesta ARP</h3>
+<p>El siguiente campo en la captura muestra la respuesta a esta petición. En este caso, el software resume la respuesta ARP que devuelve el router R2 como “80.59.1.152 is at ca:02:0e:20:00:1c”. Es decir, identifica este mensaje como una respuesta ARP que incluye la información de la dirección MAC que el router R1 había solicitado en el mensaje anterior.</p>
+<p>En este caso, como destino se muestra la dirección MAC del router R1, ca:01:17:f4:00:1c, y como fuente del mensaje, se identifica la dirección MAC del router R2,  ca:02:0e:20:00:1c. También se indica que el tipo del mensaje es ARP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img11_hu2963572596682382452.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img11_hu2963572596682382452.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Concretamente, se identifica el mensaje como una respuesta ARP y, por tanto, se le asigna el código de operación 2. Como este mensaje ya sí incluye la información sobre la dirección MAC del router R2, este dato se muestra como contenido del mensaje en la dirección MAC del remitente y se indica como direcciones MAC e IP del destinatario las de la tarjeta de red 1/0 del router R1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="583"
+            height="190"
+            src="/images/redes/practica5/img12_hu13954720002857935812.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img12_hu13954720002857935812.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h3 id="petición-echo-ping">Petición echo (ping)</h3>
+<p>Una vez conocida la dirección MAC a la que el router R1 tiene que transmitir los mensajes, comienza la transmisión del ping propiamente dicho. En los siguientes campos se alternan, de forma consecutiva, peticiones y respuestas de ping.</p>
+<p>En el resumen, se observa este siguiente campo que contiene un mensaje de tipo ping con origen en 192.168.10.3 y destino en 80.59.1.152. Pero el análisis detallado de las diferentes cabeceras de la trama puede aportar más información.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img13_hu9067383573428908279.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img13_hu9067383573428908279.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En primer lugar, en el nivel de aplicación, se construye un mensaje de 56 bytes, que es el que se enviará al dispositivo que se ha indicado como destino del ping.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="831"
+            height="64"
+            src="/images/redes/practica5/img14_hu10103876875259588525.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img14_hu10103876875259588525.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el nivel de transporte se identifica el protocolo como Internet Control Message Protocol (ICMP) y el mensaje aparece identificado como un mensaje de tipo 8, es decir, una petición echo (ping). En esta cabecera de la trama se identifican también el origen y destino del mensaje con un código numérico.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="373"
+            height="187"
+            src="/images/redes/practica5/img15_hu1909691742329979872.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img15_hu1909691742329979872.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>A continuación, en el nivel de red se añade a la trama la información de las IP de origen y destino. En este caso, se indica que se usan direcciones del protocolo IPv4 y se especifican cuál corresponde al origen de la trama, 192.168.10.3, y cuál al destino, 80.59.1.152.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="627"
+            height="254"
+            src="/images/redes/practica5/img16_hu15026088821566685733.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img16_hu15026088821566685733.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por último, en la cabecera del nivel de enlace se añade a la trama la información sobre la dirección MAC de origen y destino del mensaje.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="992"
+            height="201"
+            src="/images/redes/practica5/img17_hu14208940945730311041.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img17_hu14208940945730311041.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h3 id="respuesta-echo-ping">Respuesta echo (ping)</h3>
+<p>El siguiente campo registra la respuesta echo (ping) a la petición anterior, tal y como se indica en el resumen. Se trata de un mensaje ICMP con origen en la IP 80.59.1.152 y destino en la 192.168.10.3.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img18_hu1109932354875347459.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img18_hu1109932354875347459.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el nivel de aplicación, se construye en mensaje con los mismos 56 bytes de información que se habían enviado previamente en la petición por parte del ordenador H1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="792"
+            height="70"
+            src="/images/redes/practica5/img19_hu17745823010264567346.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img19_hu17745823010264567346.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el nivel de enlace se añade a la cabecera de la trama información relacionada con el tipo de mensaje, en este caso un mensaje de tipo 0, una respuesta de echo (ping) que usa el protocolo Internet Control Message Protocol (ICMP). Además, se identifica el origen y destino del mensaje con los códigos numéricos 2749 y 48394.</p>
+<p>En este caso, se incluye también información adicional como el tiempo de respuesta (30,377ms).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="380"
+            height="201"
+            src="/images/redes/practica5/img20_hu5562789849049373531.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img20_hu5562789849049373531.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En la cabecera del nivel de red se invierte ahora el orden de las direcciones IP que se muestran. En este caso, la dirección IP de origen es la 80.59.1.152 y la de destino es la 192.168.10.3.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="646"
+            height="254"
+            src="/images/redes/practica5/img21_hu14542939602928258546.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img21_hu14542939602928258546.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por último, en el nivel de enlace, también se altera el orden de las direcciones MAC, de manera que en la respuesta, la MAC de origen es la dirección que en la petición correspondía a la MAC de destino y la de destino es la dirección MAC que en la petición correspondía al origen.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="992"
+            height="180"
+            src="/images/redes/practica5/img22_hu5679477457300800595.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img22_hu5679477457300800595.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="captrua-del-tráfico-en-el-punto-b">Captrua del tráfico en el punto B</h2>
+<p>La captura en el punto B indicado en la práctica presenta algunas diferencias respecto al tráfico capturado en el punto A. Para encontrar algunas de ellas es necesario analizar detenidamente el contenido de las cabeceras de las tramas transmitidas, sin embargo, hay una diferencia que es evidente al ver una imagen general de la captura de tráfico en wireshark.</p>
+<p>En primer lugar, llama la atención que, en este caso, no se ha podido detectar ningún mensaje ARP ni de petición ni de respuesta. Esto se explica porque esta captura de tráfico se ha llevado a cabo a continuación de la anterior y, por tanto, los dispositivos implicados ya contaban con las direcciones MAC del resto de dispositivos de su red implicados en la ruta en su memoria caché ARP, de manera que no es necesario que vuelvan a pedir esta información.</p>
+<h3 id="petición-echo-ping-1">Petición echo (ping)</h3>
+<p>Para encontrar el resto de novedades en esta captura de tráfico conviene analizar con más detenimiento un par de los campos que muestra wireshark.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img23_hu8923772972428089468.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img23_hu8923772972428089468.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el primero de ellos no se aprecia diferencia alguna en el nivel de aplicación. Nuevamente, el mensaje está formado por 56 bytes de información que se transmiten desde el ordenador H1 al router R5.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="798"
+            height="67"
+            src="/images/redes/practica5/img24_hu1566152009960640942.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img24_hu1566152009960640942.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>La cabecera del nivel de transporte ofrece también una información muy similar a la que incluían las tramas capturadas en el punto A: el tipo de mensaje que se está transmitiendo (tipo 8, petición echo (ping)), junto a los códigos numéricos que identifican el destino y el origen del mensaje, 29887 y 49012.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="363"
+            height="184"
+            src="/images/redes/practica5/img25_hu13723946459402746371.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img25_hu13723946459402746371.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tampoco hay diferencias en la información que añade a la trama la cabecera en el nivel de red: las direcciones IP de origen y destino coinciden con las que se incluyen en las tramas capturadas en el punto A.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="626"
+            height="253"
+            src="/images/redes/practica5/img26_hu3367758800039772499.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img26_hu3367758800039772499.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En cambio, en el nivel de enlace, el mensaje sí presenta diferencias respecto a la información que contenían las cabeceras de este nivel en el punto A. En este caso, el mensaje se ha capturado entre el router R2 y el router R5, por tanto, las direcciones MAC que se incluyen en esta cabecera son la de la tarjeta de red del router R2 como MAC de origen y la de la tarjeta de red del router R5 como MAC de destino.</p>
+<p>Esto es así porque mientras que el mensaje debe conservar durante todo el proceso de transmisión la IP de destino para saber cuál es el último punto al que se debe dirigir y la IP de origen para que el último equipo pueda saber a dónde debe dirigir la respuesta, la dirección MAC necesita cambiar en cada paso de la ruta, de manera que la información se pueda transmitir al siguiente router del camino.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="988"
+            height="181"
+            src="/images/redes/practica5/img27_hu11524383069224426974.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img27_hu11524383069224426974.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h3 id="respuesta-echo-ping-1">Respuesta echo (ping)</h3>
+<p>En el caso de la respuesta capturada en el punto B, las similitudes y diferencias con la respuesta capturada en el punto A van a ser las mismas que las analizadas en el mensaje  de petición.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1357"
+            height="503"
+            src="/images/redes/practica5/img28_hu545300088372166816.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img28_hu545300088372166816.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Así, se puede observar que en el nivel de aplicación nuevamente se ha construido un mensaje de 56 bytes de información.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="788"
+            height="60"
+            src="/images/redes/practica5/img29_hu2832935753148482908.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img29_hu2832935753148482908.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el nivel de transporte se ha identificado el mensaje como una respuesta echo (ping) que usa el protocolo ICMP y se han asignado también los códigos numéricos correspondientes al origen y destino del mensaje. Además, como ocurre en el punto A, se incluye información sobre el tiempo de respuesta (7,046ms). En este caso, como el mensaje se ha capturado mucho más cerca del dispositivo que ha generado la respuesta que en el análisis del punto A, el tiempo de respuesta es considerablemente más reducido.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="353"
+            height="197"
+            src="/images/redes/practica5/img30_hu11281293306584082602.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img30_hu11281293306584082602.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Y en el nivel de red, la cabecera alternado la información de las direcciones IP de origen y destino especificando ahora que el origen del mensaje es el router R5 (80.59.1.152) y el destino el ordenador H1 (192.168.10.3).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="626"
+            height="253"
+            src="/images/redes/practica5/img31_hu6517720988014075072.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img31_hu6517720988014075072.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Finalmente, la cabecera del nivel de enlace recoge en esta caso como MAC de origen la dirección del router R5 y como MAC de destino la del router R2, de manera que las direcciones MAC son las inversas que las que se mostraban en la cabecera del nivel de enlace de la trama correspondiente a la petición de echo (ping) en este mismo punto.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1000"
+            height="180"
+            src="/images/redes/practica5/img32_hu5511226930959249052.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica5\/img32_hu5511226930959249052.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-11-24-escenario-enrutamiento-gns3%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-11-24-escenario-enrutamiento-gns3%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-11-24-escenario-enrutamiento-gns3%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-11-24-escenario-enrutamiento-gns3%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/bases-de-datos/"
+            class="ms-1"
+            >Bases de datos
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2024-03-25-nat-router-linux-openstack/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
+      Gestión de permisos UGOA y ACL en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qemu on Javi Huete</title>
+    <link>/tags/qemu/</link>
+    <description>Recent content in Qemu on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sat, 03 Feb 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos</title>
+      <link>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</guid>
+      <description>&lt;p&gt;Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

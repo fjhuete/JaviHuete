@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog de prácticas on Javi Huete</title>
+    <link>/blog/</link>
+    <description>Recent content in Blog de prácticas on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de un CMS Python usando Django</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</guid>
+      <description>&lt;p&gt;En este post se instala el CMS CMS-Django usando un entorno virtual.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Convulsión en el mundo del software libre</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</guid>
+      <description>En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</description>
+    </item>
+    <item>
+      <title>Configuración del balanceador de carga HAProxy</title>
+      <link>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</guid>
+      <description>En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</description>
+    </item>
+    <item>
+      <title>Guía básica de configuración de Nginx</title>
+      <link>/blog/servicios/2024-12-02-configuracion-nginx/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-nginx/</guid>
+      <description>En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida por red de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</guid>
+      <description>En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</link>
+      <pubDate>Thu, 21 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</guid>
+      <description>Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</description>
+    </item>
+    <item>
+      <title>Despliegue de aplicaciones escritas en Python</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</guid>
+      <description>En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</description>
+    </item>
+    <item>
+      <title>Migración de aplicaciones web PHP al entorno de producción</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/</guid>
+      <description>&lt;p&gt;Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Interconexión entre dos servidores Postgres</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</guid>
+      <description>En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</description>
+    </item>
+    <item>
+      <title>Interconexión entre dos servidores Oracle</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</guid>
+      <description>Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</description>
+    </item>
+    <item>
+      <title>Configuración de un proxy inverso en Apache2 y Nginx</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</guid>
+      <description>En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</description>
+    </item>
+    <item>
+      <title>Configuración de un proxy inverso en Apache2</title>
+      <link>/blog/servicios/2024-12-02-configuracion-proxy/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-proxy/</guid>
+      <description>A través de un caso práctica se muestran diferentes ejemplos de configuración de un proxy inverso usando Apache2.</description>
+    </item>
+    <item>
+      <title>Manejo y modificación de módulos del kernel </title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</guid>
+      <description>Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</description>
+    </item>
+    <item>
+      <title>Configuración de Apache2 con fpm-php</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/</guid>
+      <description>En este post se documenta el proceso de configuración de un servidor Apache2 para servir aplicaciones web dinámicas escritas en PHP usando el servidor de aplicaciones fpm-php.</description>
+    </item>
+    <item>
+      <title>Configuración de un servidor SAN</title>
+      <link>/blog/servicios/2024-11-10-configuracion-servidor-san/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-configuracion-servidor-san/</guid>
+      <description>En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</description>
+    </item>
+    <item>
+      <title>Configuración del protocolo HTTPS para el acceso a una aplicación web</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/</guid>
+      <description>Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</description>
+    </item>
+    <item>
+      <title>Funcionamiento básico de ansible</title>
+      <link>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</guid>
+      <description>Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</description>
+    </item>
+    <item>
+      <title>Trabajo con el kernel de Linux</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</link>
+      <pubDate>Sat, 02 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</guid>
+      <description>En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</description>
+    </item>
+    <item>
+      <title>Instalación de MySQL en Debian</title>
+      <link>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</guid>
+      <description>El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</description>
+    </item>
+    <item>
+      <title>Conceptos de gestión de paquetería en Debian</title>
+      <link>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</link>
+      <pubDate>Mon, 30 Sep 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</description>
+    </item>
+    <item>
+      <title>Configurar redes virtuales (VLAN) en bridges Linux</title>
+      <link>/blog/redes/2024-05-28-configurar-vlan-bridge-linux/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-28-configurar-vlan-bridge-linux/</guid>
+      <description>Este post pretende demostrar el funcionamiento y guiar en la configuración de redes virtuales en un bridge creado en una máquina Debian.</description>
+    </item>
+    <item>
+      <title>Configurar una agregación de enlaces (bonding) en bridges Linux</title>
+      <link>/blog/redes/2024-05-28-configurar-bonding-bridge-linux/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-28-configurar-bonding-bridge-linux/</guid>
+      <description>&lt;p&gt;Una agregación de enlaces, link aggregation o port bonding combina varias interfaces de red de forma paralela para aumentar el ancho de banda de una conexión y aportar redundancia ante fallos de una de ellas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Funcionamiento básico de Linux Bridge</title>
+      <link>/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/</guid>
+      <description>&lt;p&gt;Un bridge o puente en Linux es un dispositivo de red virtual que permite que las máquinas virtuales alojadas en una máquina física usen su tarjeta de red. En este post se muestra un ejemplo de configuración de un Bridge en una máquina Debian.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Túneles IPv6: túneles 6to4</title>
+      <link>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</guid>
+      <description>&lt;p&gt;En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de política de grupo en Windows Active Directory</title>
+      <link>/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/</guid>
+      <description>&lt;p&gt;Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Así funciona IPv6: configuración en router Linux y Cisco</title>
+      <link>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</guid>
+      <description>&lt;p&gt;IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell</title>
+      <link>/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/</link>
+      <pubDate>Tue, 07 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/</guid>
+      <description>&lt;p&gt;Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Manejo y uso del comando mkisofs</title>
+      <link>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</guid>
+      <description>En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</description>
+    </item>
+    <item>
+      <title>Gestión de dispositivos de almacenamiento con Powershell</title>
+      <link>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</link>
+      <pubDate>Sun, 05 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</guid>
+      <description>&lt;p&gt;El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Enrutamiento dinámico con OSPF usando routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</guid>
+      <description>OSPF (Open Shortest Path First), &amp;ldquo;Abrir el camino más corto primero&amp;rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</description>
+    </item>
+    <item>
+      <title>Enrutamiento dinámico con OSPF usando routers Linux en GNS3</title>
+      <link>/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/</guid>
+      <description>&lt;p&gt;En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+      <link>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</guid>
+      <description>&lt;p&gt;OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración de reglas de cortafuegos en router Linux usando iptables</title>
+      <link>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</guid>
+      <description>Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Instalación de Debian 12 bajo LVM en Proxmox</title>
+      <link>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</guid>
+      <description>&lt;p&gt;Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-03-25-nat-router-cisco-gns3/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-cisco-gns3/</guid>
+      <description>NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Linux en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-linux-openstack/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-linux-openstack/</guid>
+      <description>En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Mikrotik en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</guid>
+      <description>En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+    <item>
+      <title>Cómo configurar un servidor DHCP en un router Cisco</title>
+      <link>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</guid>
+      <description>La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor MariaDB en GNS3</title>
+      <link>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</guid>
+      <description>MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor PostgreSQL en GNS3</title>
+      <link>/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/</guid>
+      <description>PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Comandos para el control de procesos</title>
+      <link>/blog/sistemas/2024-03-17-comandos-control-procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-03-17-comandos-control-procesos/</guid>
+      <description>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</description>
+    </item>
+    <item>
+      <title>Guía de instalación de MongoDB en Debian 12</title>
+      <link>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</guid>
+      <description>En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</description>
+    </item>
+    <item>
+      <title>Configuración de ACL en routers Cisco</title>
+      <link>/blog/redes/2024-03-03-acl-router-cisco/</link>
+      <pubDate>Sun, 03 Mar 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-03-acl-router-cisco/</guid>
+      <description>&lt;p&gt;Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor web en GNS3</title>
+      <link>/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/</link>
+      <pubDate>Sun, 03 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/</guid>
+      <description>&lt;p&gt;Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo enrutar una red en OpenStack</title>
+      <link>/blog/redes/2024-02-27-enrutamiento-red-openstack/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-02-27-enrutamiento-red-openstack/</guid>
+      <description>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</description>
+    </item>
+    <item>
+      <title>Gestión de permisos UGOA y ACL en Debian</title>
+      <link>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</guid>
+      <description>El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</description>
+    </item>
+    <item>
+      <title>Creación de usuarios y políticas de seguridad en Debian</title>
+      <link>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</link>
+      <pubDate>Sun, 18 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</guid>
+      <description>En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</description>
+    </item>
+    <item>
+      <title>Qué es ARP y cómo funciona</title>
+      <link>/blog/redes/2024-02-07-que-es-arp-como-funciona/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-02-07-que-es-arp-como-funciona/</guid>
+      <description>&lt;p&gt;El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación y configuración de un sistema de ficheros en Debian 12</title>
+      <link>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</link>
+      <pubDate>Sun, 04 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</guid>
+      <description>&lt;p&gt;En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos</title>
+      <link>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</guid>
+      <description>&lt;p&gt;Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso del comando parted en Debian</title>
+      <link>/blog/fundamentos-hardware/2024-02-01-comando-parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-02-01-comando-parted/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Parted&lt;/code&gt; es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo importar dispositivos a GNS3</title>
+      <link>/blog/redes/2024-01-28-importar-dispositivos-gns3/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-01-28-importar-dispositivos-gns3/</guid>
+      <description>&lt;p&gt;En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración de switches en GNS3</title>
+      <link>/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/</guid>
+      <description>&lt;p&gt;En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para la programación de tareas</title>
+      <link>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</guid>
+      <description>La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</description>
+    </item>
+    <item>
+      <title>Uso básico de Wireshark</title>
+      <link>/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/</link>
+      <pubDate>Mon, 11 Dec 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/</guid>
+      <description>&lt;p&gt;Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>El comando xargs</title>
+      <link>/blog/sistemas/2023-11-24-comando-xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-24-comando-xargs/</guid>
+      <description>El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</description>
+    </item>
+    <item>
+      <title>Escenario de enrutamiento en GNS3</title>
+      <link>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</guid>
+      <description>&lt;p&gt;En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos de supervisión de redes</title>
+      <link>/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/</guid>
+      <description>El uso de algunos comandos es fundamental en la administración de redes. Diferentes sistemas operativos usan distintos comandos pero todos ellos cumplen funciones relevantes</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso de comandos básicos en Debian</title>
+      <link>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</guid>
+      <description>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</description>
+    </item>
+    <item>
+      <title>Empaquetadores y compresores/descompresores en Debian</title>
+      <link>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</guid>
+      <description>Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</description>
+    </item>
+    <item>
+      <title>Instalación de Wireshark y GNS3 en Debian 12 y Windows 10</title>
+      <link>/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/</link>
+      <pubDate>Tue, 31 Oct 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/</guid>
+      <description>Wireshark y GNS3 son dos programas fundamentales para el trabajo de un administrador de redes pero instalarlos puede suponer algunos desafíos. Aquí se incluye una guía de instalación de Wireshark y GNS3 en Windows 10 y en Debian 12</description>
+    </item>
+    <item>
+      <title>Conceptos básicos del gestor de paquetes apt</title>
+      <link>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</link>
+      <pubDate>Wed, 25 Oct 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</description>
+    </item>
+    <item>
+      <title>How to build an Application with modern Technology</title>
+      <link>/blog/post-1/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/blog/post-1/</guid>
+      <description>&lt;p&gt;Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to build an Application with modern Technology</title>
+      <link>/blog/post-2/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/blog/post-2/</guid>
+      <description>&lt;p&gt;Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to build an Application with modern Technology</title>
+      <link>/blog/post-3/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/blog/post-3/</guid>
+      <description>&lt;p&gt;Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to build an Application with modern Technology</title>
+      <link>/blog/post-4/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/blog/post-4/</guid>
+      <description>&lt;p&gt;Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

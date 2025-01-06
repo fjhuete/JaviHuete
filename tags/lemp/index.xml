@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LEMP on Javi Huete</title>
+    <link>/tags/lemp/</link>
+    <description>Recent content in LEMP on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/lemp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de un CMS Python usando Django</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</guid>
+      <description>&lt;p&gt;En este post se instala el CMS CMS-Django usando un entorno virtual.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de aplicaciones escritas en Python</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</guid>
+      <description>En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</description>
+    </item>
+    <item>
+      <title>Migración de aplicaciones web PHP al entorno de producción</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/</guid>
+      <description>&lt;p&gt;Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración del protocolo HTTPS para el acceso a una aplicación web</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/</guid>
+      <description>Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Comandos Básicos on Javi Huete</title>
+    <link>/tags/comandos-b%C3%A1sicos/</link>
+    <description>Recent content in Comandos Básicos on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 17 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/comandos-b%C3%A1sicos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comandos para el control de procesos</title>
+      <link>/blog/sistemas/2024-03-17-comandos-control-procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-03-17-comandos-control-procesos/</guid>
+      <description>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</description>
+    </item>
+    <item>
+      <title>Gestión de permisos UGOA y ACL en Debian</title>
+      <link>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</guid>
+      <description>El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</description>
+    </item>
+    <item>
+      <title>Creación de usuarios y políticas de seguridad en Debian</title>
+      <link>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</link>
+      <pubDate>Sun, 18 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</guid>
+      <description>En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso del comando parted en Debian</title>
+      <link>/blog/fundamentos-hardware/2024-02-01-comando-parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-02-01-comando-parted/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Parted&lt;/code&gt; es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para la programación de tareas</title>
+      <link>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</guid>
+      <description>La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</description>
+    </item>
+    <item>
+      <title>El comando xargs</title>
+      <link>/blog/sistemas/2023-11-24-comando-xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-24-comando-xargs/</guid>
+      <description>El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso de comandos básicos en Debian</title>
+      <link>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</guid>
+      <description>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</description>
+    </item>
+  </channel>
+</rss>

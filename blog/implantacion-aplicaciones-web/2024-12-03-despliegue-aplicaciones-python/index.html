@@ -1,0 +1,2080 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/blog/implantacion-aplicaciones-web/2024-12-03-despliegue-aplicaciones-python/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Despliegue de aplicaciones Python</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Despliegue de aplicaciones Python" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/blog/implantacion-aplicaciones-web/2024-12-03-despliegue-aplicaciones-python/" />
+
+
+<meta name="twitter:title" content="Despliegue de aplicaciones Python" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Home</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >About</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/elements"
+              >Elements</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Pages
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/404">
+                    404 Page
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Authors
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/blog">
+                    Blog
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categories
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/contact">
+                    Contact
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Despliegue de aplicaciones Python
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/implantacion/"
+                    class=""
+                    >Implantacion
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              November 28, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-del-equipo-de-desarrollo-para-desplegar-una-aplicación-python-con-django">Configuración del equipo de desarrollo para desplegar una aplicación Python con Django</a></li>
+    <li><a href="#configurar-el-servidor-apache2-para-servir-la-página-web">Configurar el servidor Apache2 para servir la página web</a></li>
+    <li><a href="#migración-al-entorno-de-producción">Migración al entorno de producción</a>
+      <ol>
+        <li><a href="#configuración-del-proyecto-en-django">Configuración del proyecto en django</a></li>
+        <li><a href="#configuración-del-servidor-de-aplciaciones-uwsgi">Configuración del servidor de aplciaciones uwsgi</a></li>
+        <li><a href="#configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</a></li>
+      </ol>
+    </li>
+    <li><a href="#modificaciones-en-la-aplicación">Modificaciones en la aplicación</a>
+      <ol>
+        <li><a href="#modificación-de-la-página-principal">Modificación de la página principal</a></li>
+        <li><a href="#modificación-de-la-imagen-de-fondo-de-la-aplicación">Modificación de la imagen de fondo de la aplicación</a></li>
+        <li><a href="#creación-de-una-nueva-tabla-en-la-base-de-datos">Creación de una nueva tabla en la base de datos</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <h1 id="configuración-del-equipo-de-desarrollo-para-desplegar-una-aplicación-python-con-django">Configuración del equipo de desarrollo para desplegar una aplicación Python con Django</h1>
+<p>En primer lugar se crea un entorno virtual con las dependencias necesarias para que funcione el proyecto.</p>
+<pre tabindex="0"><code>cd venv
+python3 -m venv django
+pip install ~/django_tutorial/requirements.txt
+</code></pre><p>Para crear la base de datos con la estructura de datos definida en el proyecto django se ejecuta el comando <code>migrate</code>.</p>
+<pre tabindex="0"><code>(django) debian@implantacion:~$ cd ~/django_tutorial
+(django) debian@implantacion:~/django_tutorial$ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying polls.0001_initial... OK
+  Applying sessions.0001_initial... OK
+</code></pre><p>Para crear un usuario administrador se usa el comando <code>createsuperuser</code>.</p>
+<pre tabindex="0"><code>(django) debian@implantacion:~/django_tutorial$ python3 manage.py createsuperuser
+Username (leave blank to use &#39;debian&#39;): admin
+Email address: admin@poll.org
+Password: 
+Password (again): 
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+</code></pre><p>Al intentar acceder a la administración de la aplicación se produce el siguiente error:</p>
+<pre tabindex="0"><code>DisallowedHost at /admin
+
+Invalid HTTP_HOST header: &#39;172.22.202.151:8080&#39;. You may need to add &#39;172.22.202.151&#39; to ALLOWED_HOSTS.
+
+Request Method: 	GET
+Request URL: 	http://172.22.202.151:8080/admin
+Django Version: 	4.2
+Exception Type: 	DisallowedHost
+Exception Value: 	
+
+Invalid HTTP_HOST header: &#39;172.22.202.151:8080&#39;. You may need to add &#39;172.22.202.151&#39; to ALLOWED_HOSTS.
+
+Exception Location: 	/home/debian/venv/django/lib/python3.11/site-packages/django/http/request.py, line 167, in get_host
+Python Executable: 	/home/debian/venv/django/bin/python3
+Python Version: 	3.11.2
+Python Path: 	
+
+[&#39;/home/debian/django_tutorial&#39;,
+ &#39;/usr/lib/python311.zip&#39;,
+ &#39;/usr/lib/python3.11&#39;,
+ &#39;/usr/lib/python3.11/lib-dynload&#39;,
+ &#39;/home/debian/venv/django/lib/python3.11/site-packages&#39;]
+
+Server time: 	Mon, 25 Nov 2024 11:21:33 +0000
+</code></pre><p>Para solucionarlo se incluye la IP en la lista de hosts permitidos del fichero django_tutorial/settings.py</p>
+<pre tabindex="0"><code>ALLOWED_HOSTS = [&#34;172.22.202.151&#34;]
+</code></pre><p>Para ejecutar el servidor web de desarrollo se usa el comando <code>runserver</code>.</p>
+<pre tabindex="0"><code>python3 manage.py runserver 0.0.0.0:8080
+</code></pre><h1 id="configurar-el-servidor-apache2-para-servir-la-página-web">Configurar el servidor Apache2 para servir la página web</h1>
+<p>Para poder servir la página web en Apache2 hay que configurar el VirtualHost indicando el ServerName, DocumentRoot y también aportando la información necesaria para que funcione el módulo wsgi de Apache2.</p>
+<pre tabindex="0"><code>	ServerName polls.javi.org
+
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /home/debian/django_tutorial
+
+	WSGIDaemonProcess django_polls python-path=/home/debian/django_tutorial:/home/debian/venv/django/lib/python3.11/site-packages
+	WSGIProcessGroup django_polls
+	WSGIScriptAlias / /home/debian/django_tutorial/django_tutorial/wsgi.py process-group=django_polls
+</code></pre><p>A continuación se usa el comando <code>collectstatic</code> para generar un directorio de ficheros estáticos en el directorio del proyecto con todos los ficheros estáticos. Para que este comando funcione, se debe indicar la URL base de los ficheros estáticos en el fichero settings.py</p>
+<pre tabindex="0"><code>import os
+STATIC_ROOT = os.path.join(BASE_DIR, &#39;static&#39;)
+</code></pre><p>Y después se puede ejecutar el comando <code>collectstatic</code></p>
+<pre tabindex="0"><code>(django) debian@implantacion:~/django_tutorial$ python3 manage.py collectstatic
+
+You have requested to collect static files at the destination
+location as specified in your settings:
+
+    /home/debian/django_tutorial/static
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type &#39;yes&#39; to continue, or &#39;no&#39; to cancel: yes
+
+128 static files copied to &#39;/home/debian/django_tutorial/static&#39;.
+</code></pre><p>Finalmente se crea un alias en el VirtualHost que sirve el contenido del directorio estático cuando se accede a la URL_BASE/static.</p>
+<pre tabindex="0"><code>	Alias /static/ /home/debian/django_tutorial/static/
+	&lt;Directory /home/debian/django_tutorial/static/&gt;
+		Require all granted
+	&lt;/Directory&gt;
+</code></pre><p>Así, el contenido final del VirtualHost es el siguiente:</p>
+<pre tabindex="0"><code>&lt;VirtualHost *:80&gt;
+	ServerName polls.javi.org
+
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot /home/debian/django_tutorial
+
+	WSGIDaemonProcess django_polls python-path=/home/debian/django_tutorial:/home/debian/venv/django/lib/python3.11/site-packages
+	WSGIProcessGroup django_polls
+	WSGIScriptAlias / /home/debian/django_tutorial/django_tutorial/wsgi.py process-group=django_polls
+
+	&lt;Directory /home/debian/django_tutorial&gt;
+		Require all granted
+	&lt;/Directory&gt;
+
+	Alias /static/ /home/debian/django_tutorial/static/
+	&lt;Directory /home/debian/django_tutorial/static/&gt;
+		Require all granted
+	&lt;/Directory&gt;
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</code></pre><h1 id="migración-al-entorno-de-producción">Migración al entorno de producción</h1>
+<h2 id="configuración-del-proyecto-en-django">Configuración del proyecto en django</h2>
+<p>Una vez que la aplciación está funcionando en el entorno local de desarrollo correctamente, se puede implantar en el entorno de producción, en este caso, un VPS. Para volcar el directorio del proyecto primero se sincroniza el repositorio en GitHub.</p>
+<pre tabindex="0"><code>git add .
+git commit -am &#34;Modificaciones para servir la aplicación usando Apache2&#34;
+git push
+</code></pre><p>En el VPS se clona el repositorio</p>
+<pre tabindex="0"><code>git clone https://github.com/fjhuete/django_tutorial.git
+</code></pre><p>A continuación se crea en el entorno de producción también un entorno virtual para trabajar con el framework django.</p>
+<pre tabindex="0"><code>sudo apt install python3-venv
+mkdir venv
+cd venv/
+python3 -m venv django
+source django/bin/activate
+</code></pre><p>Con el entorno virtual activado se instalan las dependencias necesarias para el funcionamiento de la aplicación.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/venv$ cd ~/django_tutorial/
+(django) debian@pignite:~/django_tutorial$ pip install -r requirements.txt 
+</code></pre><p>En el entorno de producción la aplicación usa el SGBD MySQL en vez de sqlite. Para poder usarlo, en el entorno virtual tiene que estar instalado también el módulo para que python trabaje con mysql.</p>
+<pre tabindex="0"><code>pip install mysqlclient
+</code></pre><p>Durante el proceso de instalación de <code>mysqlclient</code> se produce un error en las dependencias. Para solucionarlo, hay que instalar algunos paquetes.</p>
+<pre tabindex="0"><code>sudo apt-get install pkg-config python3-dev default-libmysqlclient-dev build-essential
+</code></pre><p>En este caso, la instalación de <code>mysqlclient</code> sí es exitosa. A continuación, hay que crear una base de datos en MariaDB a la que pueda acceder la aplicación python.</p>
+<pre tabindex="0"><code>MariaDB [(none)]&gt; create database polls;
+Query OK, 1 row affected (0,001 sec)
+
+MariaDB [(none)]&gt; create user &#39;polls&#39;@&#39;localhost&#39; identified by &#39;polls&#39;;
+Query OK, 0 rows affected (0,002 sec)
+
+MariaDB [(none)]&gt; grant all privileges on polls.* to &#39;polls&#39;@&#39;localhost&#39; identified by &#39;polls&#39;;
+Query OK, 0 rows affected (0,002 sec)
+
+MariaDB [(none)]&gt; flush privileges;
+Query OK, 0 rows affected (0,002 sec)
+</code></pre><p>Para que la aplicación pueda acceder a la base de datos hay que modificar la configuración del fichero settings.py del proyecto.</p>
+<pre tabindex="0"><code># Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+          &#39;NAME&#39;: &#39;polls&#39;,
+          &#39;USER&#39;: &#39;polls&#39;,
+          &#39;PASSWORD&#39;: &#39;polls&#39;,
+          &#39;HOST&#39;: &#39;localhost&#39;,
+          &#39;PORT&#39;: &#39;&#39;,
+    }
+}
+</code></pre><p>Además, en el fichero settings se debe indicar el nombre de los hosts permitidos para el acceso a la aplicación, en este caso, se puede usar el nombre de la aplicación.</p>
+<pre tabindex="0"><code>ALLOWED_HOSTS = [&#34;python.javi.org&#34;]
+</code></pre><p>Para crear la estructura de tablas en la base de datos en el entorno de producción hay que ejecutar el comando <code>migrate</code> en el VPS.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying polls.0001_initial... OK
+  Applying sessions.0001_initial... OK
+</code></pre><p>Una vez creadas las tablas de la base de datos para rellenar el contenido hay que hacer una copia de seguridad en el entorno de desarrollo y volcarla al entorno de producción. En este caso se usan dos sistemas gestores de bases de datos diferentes pero se pueden usar los comandos <code>dumpdata</code> y <code>loaddata</code> de django para hacer este proceso de forma sencilla.</p>
+<p>Así, en el entorno de desarrollo se recopila el contenido de la base de datos, se vuelca a un fichero json y se copia al VPS</p>
+<pre tabindex="0"><code>python3 manage.py dumpdata &gt; polls.json
+scp polls.json debian@pignite.javihuete.site:/home/debian/django_tutorial
+</code></pre><p>En el VPS se puede volcar el contenido del fichero de respaldo json generado en el entorno de desarrollo a la base de datos MySQL que está funcionando en el entorno de producción.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ python3 manage.py loaddata polls.json 
+Installed 56 object(s) from 1 fixture(s)
+</code></pre><h2 id="configuración-del-servidor-de-aplciaciones-uwsgi">Configuración del servidor de aplciaciones uwsgi</h2>
+<p>Para servir aplicaciones python con el servidor de aplicaciones wsgi en Nginx el módulo <code>uwsgi</code> tiene que estar instalado en el entorno virtual.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ pip install uwsgi
+Collecting uwsgi
+  Downloading uwsgi-2.0.28.tar.gz (816 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 816.2/816.2 kB 10.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Installing collected packages: uwsgi
+  DEPRECATION: uwsgi is being installed using the legacy &#39;setup.py install&#39; method, because it does not have a &#39;pyproject.toml&#39; and the &#39;wheel&#39; package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the &#39;--use-pep517&#39; option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for uwsgi ... done
+Successfully installed uwsgi-2.0.28
+</code></pre><p>A continuación se configura el servidor de aplicaciones usando systemd. Primero se crea el fichero de configuración .ini para la aplicación. Este fichero está en el directorio del entorno virtual.</p>
+<pre tabindex="0"><code>[uwsgi]
+http = :8082
+chdir = /home/debian/django_tutorial/django_tutorial
+wsgi-file = wsgi.py
+processes = 4
+threads = 2
+</code></pre><p>Y después la unidad de systemd que controla la aplicación. Este fichero está en el directorio /etc/systemd/system/uwsgi-polls.service.</p>
+<pre tabindex="0"><code>[Unit]
+Description=uwsgi-polls
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=debian
+Group=debian
+Restart=always
+
+ExecStart=/home/debian/venv/django/bin/uwsgi /home/debian/venv/django/polls.ini
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+WorkingDirectory=/home/debian/django_tutorial
+Environment=PYTHONPATH=&#39;/home/debian/django_tutorial:/home/debian/venv/django/lib/python3.11/site-packages&#39;
+
+PrivateTmp=true
+</code></pre><p>Finalmente, se habilita y se arranca el servicio.</p>
+<pre tabindex="0"><code>(django) debian@pignite:/etc/systemd/system$ cd
+(django) debian@pignite:~$ sudo systemctl enable uwsgi-polls.service
+Created symlink /etc/systemd/system/multi-user.target.wants/uwsgi-polls.service → /etc/systemd/system/uwsgi-polls.service.
+(django) debian@pignite:~$ sudo systemctl start uwsgi-polls.service
+(django) debian@pignite:~$ sudo systemctl status uwsgi-polls.service
+● uwsgi-polls.service - uwsgi-polls
+     Loaded: loaded (/etc/systemd/system/uwsgi-polls.service; enabled; preset: &gt;
+     Active: active (running) since Wed 2024-11-27 07:23:11 UTC; 6s ago
+   Main PID: 520689 (uwsgi)
+      Tasks: 9 (limit: 2291)
+     Memory: 23.6M
+        CPU: 88ms
+     CGroup: /system.slice/uwsgi-polls.service
+             ├─520689 /home/debian/venv/django/bin/uwsgi /home/debian/venv/djan&gt;
+             ├─520690 /home/debian/venv/django/bin/uwsgi /home/debian/venv/djan&gt;
+             ├─520691 /home/debian/venv/django/bin/uwsgi /home/debian/venv/djan&gt;
+             ├─520692 /home/debian/venv/django/bin/uwsgi /home/debian/venv/djan&gt;
+             └─520693 /home/debian/venv/django/bin/uwsgi /home/debian/venv/djan&gt;
+</code></pre><h2 id="configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</h2>
+<p>Para que Nginx dirija el tráfico al servidor de aplicaciones uwsgi se crea un VirtualHost con la siguiente configuración:</p>
+<pre tabindex="0"><code>server {
+    listen 443 ssl;
+        
+    server_name python.javihuete.site;
+    
+    ssl_certificate /etc/letsencrypt/live/javihuete.site/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/javihuete.site/privkey.pem;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+
+	root /home/debian/django_tutorial;
+
+	location / {
+		proxy_pass http://localhost:8082;
+	}	
+
+	location /static/ {
+		alias /home/debian/django_tutorial/static/;
+	}
+
+	error_log /var/log/nginx/python_error.log;
+	access_log /var/log/nginx/python_access.log;   
+
+}
+</code></pre><p>Para habilitarlo se crea un enlace simbólico en el directorio sites-enabled.</p>
+<pre tabindex="0"><code>sudo ln -s ../sites-available/python 
+</code></pre><p>El VirtualHost debe contener la directiva location que establezca un alias desde la ruta <code>/static/</code> a la ruta en la que se encuentra el contenido estático en el directorio django_tutorial.</p>
+<pre tabindex="0"><code>	location /static/ {
+		alias /home/debian/django_tutorial/static/;
+	}
+</code></pre><p>Para evitar que se muestre información sensible de la aplicación en caso de error, en el entorno de producción el valor <code>DEBUG</code> en el fichero settings.py se debe cambiar a <code>False</code>.</p>
+<pre tabindex="0"><code># SECURITY WARNING: don&#39;t run with debug turned on in production!
+DEBUG = False
+</code></pre><h1 id="modificaciones-en-la-aplicación">Modificaciones en la aplicación</h1>
+<h2 id="modificación-de-la-página-principal">Modificación de la página principal</h2>
+<p>Para modificar el contenido de la página principal se añade una línea en el fichero index.html, que está en django_tutorial/polls/templates/polls/index.html.</p>
+<p>En ese caso, se añade la línea</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt;Práctica de Implantación de Javi Huete&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span></code></pre></div><p>Para desplegar este cambio en producción desde el entorno de desarrollo se actualiza el repositorio de la aplicación en GitHub.</p>
+<pre tabindex="0"><code>git commit -am &#34;Modificada la página inicial de la aplicación&#34;
+git push
+</code></pre><p>Y se sincronizan los cambios en el repositorio del servidor en producción.</p>
+<pre tabindex="0"><code>debian@pignite:~/django_tutorial$ git pull
+Actualizando 16c8380..0d693ff
+Fast-forward
+ .gitignore                 | 1 +
+ polls/templates/index.html | 2 +-
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+</code></pre><h2 id="modificación-de-la-imagen-de-fondo-de-la-aplicación">Modificación de la imagen de fondo de la aplicación</h2>
+<p>La imagen de fondo está en la ruta django_tutorial/static/polls/images/background.jpg. Para modificarla se copia una nueva imagen a este directorio y se le pone ese mismo nombre.</p>
+<p>Para llevar esta modificación al entorno de producción, como en el caso anterior, se actualiza el repositorio en GitHub.</p>
+<pre tabindex="0"><code> debian@implantacion ❯ git add .
+ debian@implantacion ❯ git commit -am &#34;Añadida una nueva imagen para el fondo de la aplicación&#34;
+[master 08ea1fe] Añadida una nueva imagen para el fondo de la aplicación
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 static/polls/images/background.jpg.old
+ debian@implantacion ❯ git push
+Enumerando objetos: 11, listo.
+Contando objetos: 100% (11/11), listo.
+Comprimiendo objetos: 100% (6/6), listo.
+Escribiendo objetos: 100% (6/6), 3.31 KiB | 3.31 MiB/s, listo.
+Total 6 (delta 1), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:fjhuete/django_tutorial.git
+   97a0a07..08ea1fe  master -&gt; master
+</code></pre><p>Y desde el VPS se sincroniza con el repositorio remoto.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ git pull
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 1), reused 6 (delta 1), pack-reused 0 (from 0)
+Desempaquetando objetos: 100% (6/6), 3.29 KiB | 1.65 MiB/s, listo.
+Desde https://github.com/fjhuete/django_tutorial
+   97a0a07..08ea1fe  master     -&gt; origin/master
+Actualizando 97a0a07..08ea1fe
+Fast-forward
+ static/polls/images/background.jpg     | Bin 46418 -&gt; 2879 bytes
+ static/polls/images/background.jpg.old | Bin 0 -&gt; 46418 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 static/polls/images/background.jpg.old
+</code></pre><h2 id="creación-de-una-nueva-tabla-en-la-base-de-datos">Creación de una nueva tabla en la base de datos</h2>
+<p>Para crear una nueva tabla en la base de datos de la aplicación hay que modificar el modelo. Este modelo se encuentra definido en el fichero django_tutorial/polls/models.py.</p>
+<p>Para añadir una nueva tabla a la base de datos hay que crear en el modelo una nueva clase.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Categoria</span>(models<span style="color:#f92672">.</span>Model):  
+</span></span><span style="display:flex;"><span>    Abr <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>    Nombre <span style="color:#f92672">=</span> models<span style="color:#f92672">.</span>CharField(max_length<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>Abr<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>self<span style="color:#f92672">.</span>Nombre
+</span></span></code></pre></div><p>Para aplicar este cambio a la base de datos del entorno de desarrollo se debe crear una nueva migración y, después, aplicarla.</p>
+<pre tabindex="0"><code> debian@implantacion ❯ python3 manage.py makemigrations
+Migrations for &#39;polls&#39;:
+  polls/migrations/0002_categoria.py
+    - Create model Categoria
+ debian@implantacion ❯ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying polls.0002_categoria... OK
+</code></pre><p>En este punto la base de datos debe contar ya con la nueva tabla pero para poder gestionarla desde el administrador gráfico de django es necesario seguir un par de pasos más para añadir el nuevo modelo a la página de administración. Primero en el fichero polls/admin.py hay que importar la nueva clase Categoria junto a las anteriores (Choice y Question).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> .models <span style="color:#f92672">import</span> Choice, Question, Categoria
+</span></span></code></pre></div><p>Y, al final de este fichero, tras a la línea <code>admin.site.register(Question, QuestionAdmin)</code> se añade la línea <code>admin.site.register(Categoria)</code>.</p>
+<blockquote>
+<p>Para que esta modificación sea efectiva en el entorno de produción (que usa el módulo wsgi de Apache2 para ejectuar el código python de la aplicación) el repositorio debe ser propiedad del usuario www-data para que la aplicación pueda acceder a la base de datos. En el caso del entorno de producción (que usa el servidor de aplicaciones uwsgi y un servidor web Nginx) el repositorio puede ser propoiedad de otro usuario.</p>
+</blockquote>
+<p>De nuevo, para aplicar esta modificación a la aplicación en producción se actualiza el repositorio en GitHub.</p>
+<pre tabindex="0"><code> debian@implantacion ❯ git add .
+ debian@implantacion ❯ git commit -am &#34;Modificación para añadir una nueva tabla a la aplicación&#34;
+[master d7da468] Modificación para añadir una nueva tabla a la aplicación
+ 3 files changed, 30 insertions(+), 1 deletion(-)
+ create mode 100644 polls/migrations/0002_categoria.py
+  debian@implantacion ❯ git push
+Enumerando objetos: 12, listo.
+Contando objetos: 100% (12/12), listo.
+Comprimiendo objetos: 100% (7/7), listo.
+Escribiendo objetos: 100% (7/7), 1020 bytes | 1020.00 KiB/s, listo.
+Total 7 (delta 4), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:fjhuete/django_tutorial.git
+   08ea1fe..d7da468  master -&gt; master
+</code></pre><p>Y desde el servidor en producción se sincroniza el directorio de la aplicación con el nuevo contenido del repositorio.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ git pull
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 7 (delta 4), reused 7 (delta 4), pack-reused 0 (from 0)
+Desempaquetando objetos: 100% (7/7), 1000 bytes | 333.00 KiB/s, listo.
+Desde https://github.com/fjhuete/django_tutorial
+   08ea1fe..d7da468  master     -&gt; origin/master
+Actualizando 08ea1fe..d7da468
+Fast-forward
+ polls/admin.py                     |  3 ++-
+ polls/migrations/0002_categoria.py | 21 +++++++++++++++++++++
+ polls/models.py                    |  7 +++++++
+ 3 files changed, 30 insertions(+), 1 deletion(-)
+ create mode 100644 polls/migrations/0002_categoria.py
+</code></pre><p>En este caso, la modificación realizada en el entorno de desarrollo implica un cambio en la estructura de la base de datos. Para replicarlo en el servidor en producción hay que usar el comando <code>migrate</code> de django.</p>
+<pre tabindex="0"><code>(django) debian@pignite:~/django_tutorial$ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying polls.0002_categoria... OK
+</code></pre><p>Tras aplicar todos estos cambios se reinicia el servidor de aplicaciones uwsgi.</p>
+<pre tabindex="0"><code>sudo systemctl restart uwsgi-polls.service
+</code></pre><p>Y el cambio ya es también efectivo en el servidor en producción.</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-despliegue-aplicaciones-python%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-despliegue-aplicaciones-python%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-despliegue-aplicaciones-python%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-despliegue-aplicaciones-python%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/image-placeholder_hu14898866438330350576.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu3366426647807776041.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu15761394040035298493.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu9923120856516670921.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/image-placeholder_hu10538127647789974651.png"
+            class=" mb-6 w-full rounded img"
+            alt="How to build an Application with modern Technology"
+            width="1096"
+            height="480" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/post-4/">
+      How to build an Application with modern Technology
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/john-doe/">
+          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/architecture/"
+            class="ms-1"
+            >Architecture
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/post-4/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+      Cómo simular un servidor MariaDB en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para instalar el servidor de MariaDB hay que instalar el paquete mariadb-server después de haber conectado la máquina a la nube NAT, haber solicitado una configuración al servidor DHCP y haber actualizado los paquetes del sistema.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+      Configuración de un servidor SAN
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><h1 id="gestión-de-volúmenes-en-el-servidor-san">Gestión de volúmenes en el servidor SAN</h1>
+<p>El servidor SAN cuenta con 3 discos duros de 2G cada uno. A partir de estos discos se crea un Raid5 y se convierte en un grupo de volúmenes. En este grupo de volúmenes se crean un volumen de 1G que se comparte con un cliente GNU/Linux y dos volúmenes de 512M que se comparten con un cliente Windows.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >About</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /elements
+                "
+                >Elements</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /privacy-policy
+                "
+                >Privacy Policy</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

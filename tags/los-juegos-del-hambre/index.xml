@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Los Juegos Del Hambre on Javi Huete</title>
+    <link>/tags/los-juegos-del-hambre/</link>
+    <description>Recent content in Los Juegos Del Hambre on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 12 Apr 2024 02:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/los-juegos-del-hambre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de reglas de cortafuegos en router Linux usando iptables</title>
+      <link>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</guid>
+      <description>Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Configuración de ACL en routers Cisco</title>
+      <link>/blog/redes/2024-03-03-acl-router-cisco/</link>
+      <pubDate>Sun, 03 Mar 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-03-acl-router-cisco/</guid>
+      <description>&lt;p&gt;Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

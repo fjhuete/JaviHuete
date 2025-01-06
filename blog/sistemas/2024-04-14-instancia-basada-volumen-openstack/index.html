@@ -1,0 +1,3952 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Página personal de Javi Huete" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Cómo crear una instancia basada en un volumen en OpenStack" />
+<meta property="og:description" content="Página personal de Javi Huete" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/" />
+
+
+<meta name="twitter:title" content="Cómo crear una instancia basada en un volumen en OpenStack" />
+<meta name="twitter:description" content="Página personal de Javi Huete" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Cómo crear una instancia basada en un volumen en OpenStack
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/sistemas/"
+                    class=""
+                    >Sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              April 14, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#creación-y-configuración-de-la-instancia-en-openstack">Creación y configuración de la instancia en OpenStack</a>
+      <ol>
+        <li><a href="#creación-del-volumen">Creación del volumen</a></li>
+        <li><a href="#creación-de-la-instancia">Creación de la instancia</a></li>
+        <li><a href="#configuración-de-la-instancia">Configuración de la instancia</a></li>
+      </ol>
+    </li>
+    <li><a href="#creación-y-configuración-de-un-nuevo-disco-en-openstack">Creación y configuración de un nuevo disco en OpenStack</a>
+      <ol>
+        <li><a href="#creación-del-nuevo-disco">Creación del nuevo disco</a></li>
+        <li><a href="#particionado-del-disco">Particionado del disco</a></li>
+        <li><a href="#asignación-del-sistema-de-ficheros">Asignación del sistema de ficheros</a></li>
+        <li><a href="#montaje-del-nuevo-disco">Montaje del nuevo disco</a></li>
+        <li><a href="#volcado-de-la-información-al-nuevo-disco">Volcado de la información al nuevo disco</a></li>
+        <li><a href="#configuración-del-fichero-fstab">Configuración del fichero fstab</a></li>
+      </ol>
+    </li>
+    <li><a href="#creación-de-una-instancia-basada-en-el-nuevo-volumen-en-openstack">Creación de una instancia basada en el nuevo volumen en Openstack</a></li>
+    <li><a href="#volcado-del-sistema-al-nuevo-disco-en-proxmox">Volcado del sistema al nuevo disco en Proxmox</a>
+      <ol>
+        <li><a href="#particionado-del-nuevo-disco">Particionado del nuevo disco</a></li>
+        <li><a href="#asignación-del-sistema-de-ficheros-1">Asignación del sistema de ficheros</a></li>
+        <li><a href="#montaje-del-nuevo-disco-1">Montaje del nuevo disco</a></li>
+        <li><a href="#volcado-de-la-información-al-nuevo-disco-1">Volcado de la información al nuevo disco</a></li>
+        <li><a href="#configuración-del-fichero-fstab-1">Configuración del fichero fstab</a></li>
+        <li><a href="#actualización-del-arranque">Actualización del arranque</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.</p>
+<h1 id="creación-y-configuración-de-la-instancia-en-openstack">Creación y configuración de la instancia en OpenStack</h1>
+<h2 id="creación-del-volumen">Creación del volumen</h2>
+<p>Para crear un volumen en Openstack se usa la opción “crear volumen” del menú volúmenes y en la ventana emergente se indica el nombre del volumen, la descripción, el tamaño y, para cargar en él la imagen de un sistema operativo, se marca la opción “Imagen” del menú “origen del volumen” y, a continuación, se elige la imagen que se debe cargar en el volumen, en este caso, la de Debian 12.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1126"
+            height="181"
+            src="/images/sistemas/practica10/img0_hu9360823854079551266.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img0_hu9360823854079551266.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="718"
+            height="544"
+            src="/images/sistemas/practica10/img1_hu5313067352168946732.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img1_hu5313067352168946732.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+</p>
+<h2 id="creación-de-la-instancia">Creación de la instancia</h2>
+<p>Para crear la instancia a partir del volumen anterior, se lanza una instancia de la forma habitual desde el botón “lanzar instancia” del menú “computación” → “instancias” de la forma habitual con la excepción de que en la ventana “origen” se selecciona la opción “volumen” como origen de arranque y se asigna al volumen creado anteriormente.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1129"
+            height="188"
+            src="/images/sistemas/practica10/img2_hu603366178997960263.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img2_hu603366178997960263.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="951"
+            height="380"
+            src="/images/sistemas/practica10/img3_hu989616234123078569.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img3_hu989616234123078569.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+</p>
+<p>Como sabor se usa, en este caso, el m1.normal, que está optimizado para funcionar con un disco de 10GB, el tamaño del volumen que se está usando.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="951"
+            height="188"
+            src="/images/sistemas/practica10/img4_hu2909004339827636953.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img4_hu2909004339827636953.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>Los sabores (flavour) pueden variar entre cada instalación de OpenStack.</p></div>
+</div>
+
+<h2 id="configuración-de-la-instancia">Configuración de la instancia</h2>
+<p>Para garantizar el acceso a la instancia a pesar de los posibles problemas que puedan suceder durante la práctica se pueden tomar varias medidas. La primera de ellas es poner contraseña tanto al root como al usuario Debian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>passwd debian
+</span></span><span style="display:flex;"><span>passwd root
+</span></span></code></pre></div><p>Además, se puede configurar el fichero /etc/default/grub de manera que el menú de arranque aparezca durante unos segundos antes de iniciar la máquina para poder seleccionar la opción de arrancar en el modo recuperación si fuese necesario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>GRUB_DEFAULT=0
+</span></span><span style="display:flex;"><span>GRUB_TIMEOUT=5
+</span></span></code></pre></div><h1 id="creación-y-configuración-de-un-nuevo-disco-en-openstack">Creación y configuración de un nuevo disco en OpenStack</h1>
+<h2 id="creación-del-nuevo-disco">Creación del nuevo disco</h2>
+<p>Para crear un nuevo disco duro, en este caso de 30GB, se repite <a href="#creaci%c3%b3n-del-volumen"
+
+
+
+ 
+
+
+>el procedimiento seguido anteriormente</a> indicando esta vez el nuevo tamaño del disco y que el origen es un volumen vacío.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="345"
+            height="472"
+            src="/images/sistemas/practica10/img5_hu7512256338969775447.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img5_hu7512256338969775447.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para poder trabajar con él, se asocia a la instancia que se está usando para esta práctica desde el menú “gestionar asociaciones” del volumen o desde el menú “asociar volumen” de la instancia, de manera que en el sistema aparece este nuevo volumen con el nombre vdb:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="909"
+            height="141"
+            src="/images/sistemas/practica10/img6_hu1055617390933691855.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img6_hu1055617390933691855.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>El proceso de particionado y configuración de un disco duro se explica con más detalle en <a href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian"
+
+
+
+ 
+
+
+>este otro post</a>.</p></div>
+</div>
+
+<h2 id="particionado-del-disco">Particionado del disco</h2>
+<p>En primer lugar, conviene determinar el tamaño que se debe asignar a cada una de las particiones. Como referencia, se puede tomar el particionado hecho en prácticas anteriores con características similares. Adaptando estos tamaños a un disco de 30GB se puede determinar que los siguientes tamaños son adecuados para cada partición, sin tener más información sobre el uso que va a tener este sistema en producción:</p>
+<ul>
+<li>/boot/efi: 100MB</li>
+<li>/boot: 2 GB</li>
+<li>/: 10GB</li>
+<li>/home: 5GB</li>
+<li>/var: 5GB</li>
+<li>/usr: 6GB</li>
+<li>swap: 2GB</li>
+</ul>
+<p>Para trasladar esta información a la tabla de particiones del nuevo disco duro se pueden usar comandos como <code>fdisk</code> o <code>gdisk</code>. En este caso, se usa <code>fdisk</code> para particionar el disco. Para ello se crea en primer lugar una nueva tabla de particiones con el comando <code>g</code>. Posteriormente, se crea cada partición y se le asigna su número, primer sector y tamaño con el comando <code>n</code>.</p>
+<p>Tras crear todas las particiones necesarias, se les puede asignar un tipo con el comando <code>t</code> hasta terminar con esta información en la tabla de particiones del disco:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="643"
+            height="311"
+            src="/images/sistemas/practica10/img7_hu12871439804212434028.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img7_hu12871439804212434028.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="asignación-del-sistema-de-ficheros">Asignación del sistema de ficheros</h2>
+<p>Para continuar volcando el sistema al nuevo disco, el siguiente paso es asignar a cada partición un sistema de ficheros acorde al contenido que debe almacenar. En este caso, todas las particiones tienen un sistema de ficheros de tipo ext4 excepto la partición UEFI, que cuenta con un sistema de ficheros FAT32 y la partición swap, que se debe configurar como tal.</p>
+<p>Empezando con la partición EFI, el comando <code>mkfs.vfat -F 32 -n EFI /dev/vdb1</code> permite asignarle un sistema de ficheros FAT32 a esta partición. Para el resto de particiones, se usa el comando <code>mkfs.ext4</code>, por ejemplo, para la partición boot se usa <code>mkfas.ext4 -L boot /dev/vdb2</code>, para la partición raíz del sistema se usa <code>mkfas.ext4 -L sistema /dev/vdb3</code>, para la partición home el comando es <code>mkfas.ext4 -L home /dev/vdb4</code> y así sucesivamente con el resto de particiones.</p>
+<p>Finalmente, para dotar de un sistema de ficheros de tipo swap a la partición swap se usa el comando <code>mkswap -L swap /dev/vdb7</code>.</p>
+<p>Finalmente, el disco queda particionado de esta forma:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="664"
+            height="155"
+            src="/images/sistemas/practica10/img8_hu9525836283359745932.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img8_hu9525836283359745932.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="montaje-del-nuevo-disco">Montaje del nuevo disco</h2>
+<p>Para volcar la información del sistema al nuevo disco hay dos opciones: montarlo en el propio sistema o generar una nueva instancia en la que se monten los dos volúmenes como discos duros y copiar la información de uno a otro. En este caso, se monta el nuevo disco duro en la instancia que ya está funcionando. Para ello se crean en el directorio /mnt un nuevo directorio para cada una de las particiones del disco con el comando <code>mkdir -p /mnt/vdb/vdb{1..7}</code> y con <code>mount -v /dev/vdbn /mnt/vdb/vdbn</code> (donde n es el número de la partición) se montan todas ellas en el directorio /mnt de la instancia.</p>
+<p>De esta manera, todas las particiones quedan montadas en el sistema:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="951"
+            height="155"
+            src="/images/sistemas/practica10/img9_hu4787503362312085641.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img9_hu4787503362312085641.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="volcado-de-la-información-al-nuevo-disco">Volcado de la información al nuevo disco</h2>
+<p>Con el nuevo disco montado en el sistema se puede comenzar a volcar la información desde el disco original al nuevo volumen. Para ello se usará el comando <code>cp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -ra /var/* /mnt/vdb/vdb5
+</span></span><span style="display:flex;"><span>cp -ra /usr/* /mnt/vdb/vdb6
+</span></span><span style="display:flex;"><span>cp -ra /home/* /mnt/vdb/vdb4
+</span></span></code></pre></div><p>Para los directorios /boot y /EFI se debe tener en cuenta que el segundo está dentro del primero, de manera que los comandos que se deben ejecutar son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -ra /boot/* /mnt/vdb/vdb2
+</span></span><span style="display:flex;"><span>cp -ra /boot/efi/* /mnt/vdb/vdb1
+</span></span></code></pre></div><p>Puesto que el contenido de /boot/efi ya está en la partición vdb1, no es necesario que ese directorio esté duplicado dentro de la partición vdb2, así que se puede eliminar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rm -r /mnt/vdb/vdb2/efi/
+</span></span></code></pre></div><p>Por último, sólo queda volcar el contenido del directorio raíz al nuevo disco duro. En este caso, no se puede hacer un copiado masivo de todo el directorio puesto que alguno de los directorios que contiene generarían un bucle de copia recursiva que colapsaría el sistema.  Por ejemplo, se debe evitar copiar el director /mnt al nuevo disco puesto que éste ya está montado en el propio directorio /mnt. Además, tampoco se deben volver a copiar al nuevo disco duro los directorios que ya tienen su propia partición.</p>
+<p>De esta manera, se puede ejecutar el volcado del contenido del directorio raíz al nuevo disco duro de manera un poco más compleja a través del uso de una secuencia de comandos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -ra /bin /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /dev /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /etc /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /lib* /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /media /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /opt /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /proc /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /r* /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>cp -ra /s* /mnt/vdb/vdb3
+</span></span></code></pre></div><h2 id="configuración-del-fichero-fstab">Configuración del fichero fstab</h2>
+<p>El último paso para tener una réplica del volumen original en el nuevo disco duro de 30GB es configurar el fichero fstab del nuevo sistema, que está alojado en el directorio /mnt/vdb/vdb3/etc/fstab. En él se deben modificar los puntos de montaje de las particiones del volumen original por los puntos de montajes de las nuevas particiones del disco duro de 30GB. Esto se puede hacer redirigiendo la salida del comando <code>blkid</code> al fichero para guardar los UUID de todas las particiones y editándolo posteriormente en un editor de texto como nano. Con el siguiente comando se consigue redirigir al fichero fstab, en primer lugar, sólo las líneas relativas a las particiones del nuevo disco de 30GB (vdb) y, además, sólo el campo necesario de cada partición: el UUID.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>blkid | grep vdb | cut -d “ “ -f 3
+</span></span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="978"
+            height="185"
+            src="/images/sistemas/practica10/img10_hu11562863572672205873.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img10_hu11562863572672205873.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="creación-de-una-instancia-basada-en-el-nuevo-volumen-en-openstack">Creación de una instancia basada en el nuevo volumen en Openstack</h1>
+<p>Tras configurar el sistema y volcarlo al nuevo volumen, este disco se puede desasociar de la instancia y usar para generar una nueva.</p>
+<p>En primer lugar, en el menú “desasociar un volumen” se selecciona la opción correspondiente al volumen de 30GB. Además, para que este volumen se pueda usar como origen de nuevas instancias se debe marcar como arrancable. Esto se puede hacer desde el menú “editar volumen” la ventana de volúmenes. En él se debe marcar la opción “arrancable”, que indica que el volumen puede ser usado para iniciar un instancia.</p>
+<p>Posteriormente, se lanza una nueva instancia siguiendo los mismos pasos que <a href="#creaci%c3%b3n-de-la-instancia"
+
+
+
+ 
+
+
+>anteriormente</a> pero eligiendo esta vez como origen de la instancia el volumen sobre el que se ha estado trabajando previamente.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="955"
+            height="388"
+            src="/images/sistemas/practica10/img11_hu706990513511217746.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img11_hu706990513511217746.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En este punto se produce un incidencia relevante: la nueva instancia no se puede crear porque es necesario actualizar el sistema de arranque en el nuevo disco. Al intentar ejecutar una actualización del grupo, faltan las variables EFI, que, en este caso, no están presentes en la imagen que se usa para la creación de instancias en Openstack.</p>
+<p>Sin variables EFI no se puede actualizar el grub para que se adapte al sistema volcado en el nuevo disco. Esta incidencia hace inviable la práctica en este escenario.</p>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>Las imágenes en las que se basan las instancias de OpenStack son diferentes en cada instalación y este error puede no aparecer en otros casos.</p></div>
+</div>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>Para continuar el ejemplo práctico planteado al inicio del post se migra el trabajo a la plataforma de virtualización Proxmox.</p></div>
+</div>
+
+<h1 id="volcado-del-sistema-al-nuevo-disco-en-proxmox">Volcado del sistema al nuevo disco en Proxmox</h1>
+<h2 id="particionado-del-nuevo-disco">Particionado del nuevo disco</h2>
+<p>El particionado y volcado del contenido del disco de 10GB al de 30GB se hace en Proxmox de forma análoga a la empleada en el caso de Openstack, ya documentado <a href="#creaci%c3%b3n-y-configuraci%c3%b3n-de-un-nuevo-disco-en-openstack"
+
+
+
+ 
+
+
+>anteriormente</a> en este post.</p>
+<p>De esta manera, se pueden establecer los siguientes tamaños de particiones, teniendo en cuenta que, en este caso, el nuevo disco es de 32GB:</p>
+<ul>
+<li>/boot/efi: 100MB</li>
+<li>/boot: 2 GB</li>
+<li>/: 12GB</li>
+<li>/home: 5GB</li>
+<li>/var: 5GB</li>
+<li>/usr: 6GB</li>
+<li>swap: 2GB</li>
+</ul>
+<p>Para trasladar esta información a la tabla de particiones del nuevo disco duro se vuelve a usar <code>fdisk</code> para particionar el disco. Para ello se crea en primer lugar una nueva tabla de particiones con el comando <code>g</code>. Posteriormente, se crea cada partición y se le asigna su número, primer sector y tamaño con el comando <code>n</code>. Tras crear todas las particiones necesarias, se les puede asignar un tipo con el comando <code>t</code> hasta terminar con esta información en la tabla de particiones del disco:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="593"
+            height="142"
+            src="/images/sistemas/practica10/img12_hu3220872629750231342.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img12_hu3220872629750231342.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="asignación-del-sistema-de-ficheros-1">Asignación del sistema de ficheros</h2>
+<p>Para continuar volcando el sistema al nuevo disco, el siguiente paso es asignar a cada partición un sistema de ficheros acorde al contenido que debe almacenar. En este caso, todas las particiones tienen un sistema de ficheros de tipo ext4 excepto la partición UEFI, que cuenta con un sistema de ficheros FAT32 y la partición swap, que se debe configurar como tal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkfs.vfat -F 32 -n EFI /dev/vdb1
+</span></span><span style="display:flex;"><span>mkfs.ext4 -L boot /dev/vdb2
+</span></span><span style="display:flex;"><span>mkfs.ext4 -L sistema /dev/vdb3
+</span></span><span style="display:flex;"><span>mkfs.ext4 -L home /dev/vdb4 
+</span></span><span style="display:flex;"><span>mkfs.ext4 -L var /dev/vdb5
+</span></span><span style="display:flex;"><span>mkfs.ext4 -L usr /dev/vdb6
+</span></span><span style="display:flex;"><span>mkswap -L swap /dev/vdb7
+</span></span></code></pre></div><p>Finalmente, el disco queda particionado de esta forma:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="735"
+            height="244"
+            src="/images/sistemas/practica10/img13_hu18106881327909481004.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img13_hu18106881327909481004.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="montaje-del-nuevo-disco-1">Montaje del nuevo disco</h2>
+<p>Para volcar la información del sistema al nuevo disco hay dos opciones: montarlo en el propio sistema o generar una nueva instancia en la que se monten los dos volúmenes como discos duros y copiar la información de uno a otro. En este caso, se monta el nuevo disco duro en la instancia que ya está funcionando. Para ello se crean en el directorio /mnt un nuevo directorio para cada una de las particiones del disco con el comando <code>mkdir -p /mnt/destino{efi,boot,sistema,home,var}</code> y con <code>mount -v /dev/vdbn /mnt/destino/partición</code> (donde n es el número de la partición y partición el nombre descriptivo de su contenido) se montan todas ellas en el directorio /mnt de la instancia.</p>
+<p>De esta manera, todas las particiones quedan montadas en el sistema:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="805"
+            height="244"
+            src="/images/sistemas/practica10/img14_hu11179869030273587314.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img14_hu11179869030273587314.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="volcado-de-la-información-al-nuevo-disco-1">Volcado de la información al nuevo disco</h2>
+<p>Con el nuevo disco montado en el sistema se puede comenzar a volcar la información desde el disco original al nuevo volumen. Para ello se usarán los comandos <code>rsync</code> y <code>cp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -ra /var/* /mnt/destino/var
+</span></span><span style="display:flex;"><span>cp -ra /usr/* /mnt/destino/usr
+</span></span><span style="display:flex;"><span>cp -ra /home/* /mnt/destino/home
+</span></span></code></pre></div><p>Para los directorios /boot y /EFI se debe tener en cuenta que el segundo está dentro del primero, de manera que los comandos que se deben ejecutar son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rsync -ra --exclude=efi /boot/* /mnt/destino/boot
+</span></span><span style="display:flex;"><span>cp -ra /boot/efi/* /mnt/destino/efi
+</span></span></code></pre></div><p>Puesto que el contenido de /boot/efi ya está dentro del directorio /boot, no es necesario que ese directorio esté duplicado dentro de la partición vdb2, así que se puede no copiar excluyéndolo con la opción <code>--exclude</code> del comando <code>rsync</code>.</p>
+<p>Por último, sólo queda volcar el contenido del directorio raíz al nuevo disco duro. En este caso, no se puede hacer un copiado masivo de todo el directorio puesto que alguno de los directorios que contiene generarían un bucle de copia recursiva que colapsaría el sistema.  Por ejemplo, se debe evitar copiar el director /mnt al nuevo disco puesto que éste ya está montado en el propio directorio /mnt. Además, tampoco se deben volver a copiar al nuevo disco duro los directorios que ya tienen su propia partición.</p>
+<p>De esta manera, se puede ejecutar el volcado del contenido del directorio raíz al nuevo disco duro usando el comando rsync, que permite excluir parte de los ficheros del origen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rsync -ra --exclude ‘boot’ --exclude ‘home’ --exclude ‘mnt’ --exclude ‘usr’ --exclude ‘var’ /* /mnt/destino/sistema/.
+</span></span></code></pre></div><h2 id="configuración-del-fichero-fstab-1">Configuración del fichero fstab</h2>
+<p>El último paso para tener una réplica del volumen original en el nuevo disco duro de 30GB es configurar el fichero fstab del nuevo sistema, que está alojado en el directorio /mnt/destino/sistema/etc/fstab. En él se deben modificar los puntos de montaje de las particiones del volumen original por los puntos de montajes de las nuevas particiones del disco duro de 30GB. Esto se puede hacer redirigiendo la salida del comando <code>blkid</code> al fichero para guardar los UUID de todas las particiones y editándolo posteriormente en un editor de texto como nano. Con <code>blkid | grep vdb | cut -d “ “ -f 3</code> se consigue redirigir al fichero fstab, en primer lugar, sólo las líneas relativas a las particiones del nuevo disco de 30GB (vdb) y, además, sólo el campo necesario de cada partición: el UUID.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="783"
+            height="137"
+            src="/images/sistemas/practica10/img15_hu5503921128338181146.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img15_hu5503921128338181146.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="actualización-del-arranque">Actualización del arranque</h2>
+<p>Para actualizar el arranque del sistema en el nuevo disco se debe cambiar el directorio raíz del sistema al directorio del nuevo disco /mnt/destino/sistema. Antes de ejecutar el comando chroot es necesario montar los directorios del sistema /dev, /proc y /sys con la opción &ndash;bind.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount --bind /dev /mnt/destino/sistema/dev/
+</span></span><span style="display:flex;"><span>mount --bind /proc /mnt/destino/sistema/proc/
+</span></span><span style="display:flex;"><span>mount --bind /sys /mnt/destino/sistema/sys/
+</span></span></code></pre></div><p>Con <code>chroot /mnt</code> se cambia la raíz temporalmente al nuevo disco duro:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="463"
+            height="263"
+            src="/images/sistemas/practica10/img16_hu3816141429707612560.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img16_hu3816141429707612560.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Además, antes de poder usar el nuevo disco duro como sistema se debe actualizar el arranque con el comando <code>update-grub</code>.</p>
+<p>Posteriormente, el comando <code>efibootmgr</code> permite actualizar las entradas del menú de arranque del firmware de la EFI.</p>
+<p>En este punto de la instalación se puede apagar el equipo y modificar el orden de arranque en la interfaz de Proxmox para iniciar la máquina virtual con el nuevo disco duro. Al experimentar errores en el arranque y comprobar que el sistema no era capaz de arrancar desde el nuevo disco se buscan posibles inconsistencias en los ficheros de configuración del grub. Y, aunque en el fichero /boot/grub/grub.cfg la entrada del menú de arranque ya recoge el UUID del disco duro de 32GB tras la actualización de grub:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1283"
+            height="246"
+            src="/images/sistemas/practica10/img17_hu14396043061083112373.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img17_hu14396043061083112373.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el fichero /boot/efi/EFI/debian/grub.cfg el UUID del dispositivo con el que arranca el equipo no se había actualizado y esto estaba provocando que el sistema arrancase desde el disco duro original.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="787"
+            height="91"
+            src="/images/sistemas/practica10/img18_hu16012397129749123918.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img18_hu16012397129749123918.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tas actualizar esta línea del fichero, ahora la máquina arranca desde el disco duro de 32GB sin el disco original de 10GB.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="735"
+            height="204"
+            src="/images/sistemas/practica10/img19_hu13296123793321096207.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica10\/img19_hu13296123793321096207.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/comandos/">
+                        Comandos
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistema-de-ficheros/">
+                        Sistema de ficheros
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/virtualizaci%c3%b3n/">
+                        Virtualización
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/openstack/">
+                        Open stack
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/implantaci%c3%b3n-de-sistemas-operativos/">
+                        Implantación de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fsistemas%2f2024-04-14-instancia-basada-volumen-openstack%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fsistemas%2f2024-04-14-instancia-basada-volumen-openstack%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fsistemas%2f2024-04-14-instancia-basada-volumen-openstack%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fsistemas%2f2024-04-14-instancia-basada-volumen-openstack%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+      Conceptos básicos del gestor de paquetes apt
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+      Qué es ARP y cómo funciona
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Blog</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

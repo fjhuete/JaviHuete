@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Instalacion on Javi Huete</title>
+    <link>/tags/instalacion/</link>
+    <description>Recent content in Instalacion on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 21 Oct 2024 01:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/instalacion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de MySQL en Debian</title>
+      <link>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</guid>
+      <description>El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</description>
+    </item>
+  </channel>
+</rss>

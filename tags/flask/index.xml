@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flask on Javi Huete</title>
+    <link>/tags/flask/</link>
+    <description>Recent content in Flask on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 18 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de aplicaciones escritas en Python</title>
+      <link>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/</guid>
+      <description>En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</description>
+    </item>
+  </channel>
+</rss>

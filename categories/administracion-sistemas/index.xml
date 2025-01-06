@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administracion-Sistemas on Javi Huete</title>
+    <link>/categories/administracion-sistemas/</link>
+    <description>Recent content in Administracion-Sistemas on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 02 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/categories/administracion-sistemas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convulsión en el mundo del software libre</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</guid>
+      <description>En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida por red de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</guid>
+      <description>En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</link>
+      <pubDate>Thu, 21 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</guid>
+      <description>Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</description>
+    </item>
+    <item>
+      <title>Manejo y modificación de módulos del kernel </title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</guid>
+      <description>Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</description>
+    </item>
+    <item>
+      <title>Trabajo con el kernel de Linux</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</link>
+      <pubDate>Sat, 02 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</guid>
+      <description>En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</description>
+    </item>
+    <item>
+      <title>Conceptos de gestión de paquetería en Debian</title>
+      <link>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</link>
+      <pubDate>Mon, 30 Sep 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</description>
+    </item>
+  </channel>
+</rss>

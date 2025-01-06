@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tcpdump on Javi Huete</title>
+    <link>/tags/tcpdump/</link>
+    <description>Recent content in Tcpdump on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 27 Feb 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/tcpdump/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo enrutar una red en OpenStack</title>
+      <link>/blog/redes/2024-02-27-enrutamiento-red-openstack/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-02-27-enrutamiento-red-openstack/</guid>
+      <description>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,4480 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Uso básico de Wireshark</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Uso básico de Wireshark" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/" />
+
+
+<meta name="twitter:title" content="Uso básico de Wireshark" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Uso básico de Wireshark
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/redes/"
+                    class=""
+                    >Redes
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              11 de diciembre de 2023
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#tráfico-básico-en-una-comunicación">Tráfico básico en una comunicación</a></li>
+    <li><a href="#tráfico-generado-por-ping">Tráfico generado por <code>ping</code></a></li>
+    <li><a href="#los-campos-en-el-resumen-de-los-paquetes-capturados-en-wireshark">Los campos en el resumen de los paquetes capturados en Wireshark</a></li>
+    <li><a href="#ejemplo-de-uso-de-los-filtros-de-captura-de-wireshark">Ejemplo de uso de los filtros de captura de Wireshark</a></li>
+    <li><a href="#análisis-del-tráfico-arp-en-wireshark">Análisis del tráfico ARP en Wireshark</a></li>
+    <li><a href="#análisis-del-tráfico-generado-por-traceroute">Análisis del tráfico generado por <code>traceroute</code></a></li>
+    <li><a href="#análisis-del-triple-apretón-de-manos-3-way-handshake">Análisis del triple apretón de manos (3-way handshake)</a></li>
+    <li><a href="#identificar-ficheros-descargados-vía-http-con-wireshark">Identificar ficheros descargados vía HTTP con Wireshark</a></li>
+    <li><a href="#la-opción-expert-information-de-wireshark">La opción Expert Information de Wireshark</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p>
+<h1 id="tráfico-básico-en-una-comunicación">Tráfico básico en una comunicación</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="568"
+            src="/images/redes/practica6/img1_hu7918741703273008451.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img1_hu7918741703273008451.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>En esta captura aparecen paquetes que usan protocolos como MDNS. Entre el resto de paquetes aparecen varios paquetes que usan el protocolo UDP con una IP de origen 192.168.0.177 y destino de broadcast que mi ordenador está recibiendo periódicamente. Más allá de eso encontramos, en primer lugar una petición y una respuesta ARP que mi ordenador usa para conocer la dirección MAC del router de casa, varias peticiones y respuestas DNS que el ordenador necesita para averiguar la dirección IP a la que debe hacer ping (la de <a href="https://www.google.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.google.com</a>) y, finalmente, una sucesión de peticiones y respuestas de mensajes Echo (ping) que usan el protocolo ICMP. Entre tanto, aparece también alguna petición y respuesta ARP que llega desde la puerta de enlace en busca de la IP de mi ordenador.</p>
+<h1 id="tráfico-generado-por-ping">Tráfico generado por <code>ping</code></h1>
+<p>Se realiza una captura de 10 segundos haciendo ping a <a href="https://www.google.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.google.com</a> en condiciones similares a las planteadas para el ejercicio anterior con la opción del modo promiscuo activada.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="529"
+            src="/images/redes/practica6/img2_hu17745865263224079546.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img2_hu17745865263224079546.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Durante la captura se han registrado los siguientes paquetes:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Protocolo</th>
+          <th>Nº de paquetes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ARP</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>IP</td>
+          <td>35</td>
+      </tr>
+      <tr>
+          <td>ICMP</td>
+          <td>22</td>
+      </tr>
+      <tr>
+          <td>TCP</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>UDP</td>
+          <td>13</td>
+      </tr>
+      <tr>
+          <td>DNS</td>
+          <td>10</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1085"
+            height="273"
+            src="/images/redes/practica6/img3_hu10929263098562473559.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img3_hu10929263098562473559.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Los datos del primer paquete IP recibido son:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Valor</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Dir. IP origen</td>
+          <td>192.168.0.1</td>
+      </tr>
+      <tr>
+          <td>Dir. IP destino</td>
+          <td>192.168.0.32</td>
+      </tr>
+      <tr>
+          <td>Protocolo</td>
+          <td>DNS</td>
+      </tr>
+      <tr>
+          <td>Tamaño</td>
+          <td>101 bytes</td>
+      </tr>
+      <tr>
+          <td>TTL</td>
+          <td>64</td>
+      </tr>
+      <tr>
+          <td>Identificador</td>
+          <td>0x9d29 (40233)</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img4_hu15477578905995099552.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img4_hu15477578905995099552.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="los-campos-en-el-resumen-de-los-paquetes-capturados-en-wireshark">Los campos en el resumen de los paquetes capturados en Wireshark</h1>
+<p>En la imagen se muestra una captura de los paquetes ICMP generados tras la ejecución de la orden ping <a href="https://www.elpais.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.elpais.com</a>. En total se capturan 8 mensajes: 4 de tipo echo (ping) request y otros cuatro de tipo echo (ping) reply.</p>
+<p>Si analizamos estos mensajes, podemos observar que son mensajes de tipo 8: echo (ping) request o de tipo 0: echo (ping) reply, que todos ellos usan el código 0 y que el tamaño de cada uno de los paquetes es de 98 bytes de datos.</p>
+<p>Además, el análisis de las cabeceras IP de estos mensajes indica que cuentan con cabeceras IP de una longitud de 20 bytes. La longitud total es de 84 bytes y estos mensajes cuentan con 48 bytes de datos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img5_hu17152019077647761526.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img5_hu17152019077647761526.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="ejemplo-de-uso-de-los-filtros-de-captura-de-wireshark">Ejemplo de uso de los filtros de captura de Wireshark</h1>
+<p>Con el filtro de captura <code>udp and src port 53 or dst port 53</code> se pueden filtrar únicamente aquellos paquetes que se envían o reciben para realizar peticiones o recibir respuestas desde el servidor DNS.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1052"
+            height="144"
+            src="/images/redes/practica6/img6_hu8162482831390637792.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img6_hu8162482831390637792.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El datagrama UDP de estos mensajes tiene una longitud variable en cada caso. En la captura aparecen paquetes tanto de 82 bytes como de 174, 158, 96, 97 ó 162 bytes. Otro elemento que cambia en cada una de las peticiones DNS que se han registrado en esta captura es el puerto del ordenador. Mientras que el puerto del servidor siempre es constante (puerto 53), el puerto del ordenador no es el mismo en cada petición y el sistema operativo asigna un puerto diferente a cada una de ellas, de manera que el puerto de origen o destino cambia en cada pareja de peticiones y respuestas al servidor DNS.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img7_hu1803467539100806110.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img7_hu1803467539100806110.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+Si se desactiva el filtro de captura, se puede comprobar que, al hacer un ping a la dirección IP de la máquina en la que está alojada la web <a href="https://www.nba.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.nba.com</a>, la 92.123.57.194, wireshark no consigue capturar ningún paquete que se corresponda con una petición o una respuesta DNS. Esto se debe a que, al no usar una URL a la hora de hacer el ping, no es necesario traducir ningún nombre de dominio a la IP y, por tanto, no es necesario usar ese servicio.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img8_hu5503104852207442946.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img8_hu5503104852207442946.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="análisis-del-tráfico-arp-en-wireshark">Análisis del tráfico ARP en Wireshark</h1>
+<p>Durante la ejecución del comando ping a <a href="https://www.barrapunto.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.barrapunto.com</a> se han capturado con el filtro <code>arp</code> cuatro mensajes ARP, dos de ellos de petición y otros dos de respuesta.</p>
+<p>El primero de ellos es una petición ARP que lanza el ordenador a la dirección de difusión para buscar la dirección MAC de la puerta de enlace, a la que debe enviar los paquetes de petición Echo. A continuación, se captura de la respuesta a esta petición ARP, en la que el router contesta con su dirección MAC.</p>
+<p>Por último, aparecen otros dos mensajes de petición y respuesta ARP en los que el router solicita la MAC del ordenador y el ordenador contesta con esa información al router.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img9_hu8741105537945026561.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img9_hu8741105537945026561.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras esta captura de tráfico, y sin volver a borrar la memoria caché ARP se realiza otra captura con el mismo filtro aplicado. En este caso, Wireshark no puede encontrar ningún paquete durante la captura que cumpla con los requisitos indicados en el filtro.</p>
+<p>Esto es así porque en esta ocasión el ordenador conserva en su memoria caché ARP la dirección MAC de la puerta de enlace a la que debe enviar las peticiones Echo, de la misma manera que el router conservar en su memoria caché ARP la dirección MAC de la tarjeta de red del ordenador al que tiene que enviar las respuestas según van llegando.</p>
+<h1 id="análisis-del-tráfico-generado-por-traceroute">Análisis del tráfico generado por <code>traceroute</code></h1>
+<p>El primer tipo de paquete capturado en este ejercicios es una serie de paquetes DNS que corresponden a la petición DNS desde el ordenador para conocer la dirección IP de <a href="https://www.rae.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.rae.es</a>. Se trata de dos peticiones y dos respuestas que permiten al ordenador conocer a qué dirección IP debe enviar los mensajes necesarios para ejecutar el comando traceroute, en este caso, la 104.26.1.151.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img10_hu7501577299927479352.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img10_hu7501577299927479352.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En segundo lugar se captura un bloque de 16 mensajes UDP con origen en el ordenador (192.168.0.32) y destino en <a href="https://www.rae.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.rae.es</a> (104.26.1.151). Pero estos mensajes no se envían al puerto privilegiado asignado al servicio web, sino que se envían a puertos que van del 33434 al 33449, aumentando progresivamente en cada mensaje.</p>
+<p>Todos ellos son paquetes de 74 bytes que contienen un mensaje de 32 bytes de datos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img11_hu14543875179067269824.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img11_hu14543875179067269824.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Estos 16 paquetes se agrupan en bloques de 3, cada uno de ellos con un TTL diferente. De esta forma, los tres primeros paquetes capturados tiene un time-to-live de 1 y aumenta progresivamente hasta los paquetes capturados en el orden 13, 14 y 15 que presentan un TTL de 5 cada uno de ellos. La excepción está en el último paquete de este bloque, cuyo TTL es 6 pero este dato sólo se encuentra en un paquete y no en tres como en los casos anteriores. Los otros dos paquetes de este bloque se encuentran a continuación, tras el primer grupo de mensajes ICMP ttl exceeded que se recibe.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="618"
+            height="332"
+            src="/images/redes/practica6/img12_hu10809061948915689032.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img12_hu10809061948915689032.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>A continuación, se registran en la captura una serie de mensajes del protocolo ICMP ordenados en grupos de tres. Cada grupo tiene asignada una IP de origen diferente, de manera que los tres primeros provienen de la IP 192.168.0.1, es decir, la puerta de enlace de la red, los tres siguientes de la 10.195.192.1, otra IP privada correspondiente a otra red, los tres siguientes provienen de la 193.149.1.56, que es una IP pública de Internet, otros tres llegan desde la IP 172.70.58.2 y, por último, hay tres paquetes que tienen como IP de origen la IP pública de la web <a href="https://www.rae.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.rae.es</a>, la 104.26.1.151.</p>
+<p>Estas direcciones IP corresponden con las que devuelve el comando <code>traceroute</code> durante su ejecución.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="724"
+            height="206"
+            src="/images/redes/practica6/img13_hu15013230374024618018.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img13_hu15013230374024618018.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Todos estos mensajes son de tipo 11 (time-to-live exceeded) y su código es el 0 (time to live exceeded in transit). Para todos ellos el TTL es 1.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img14_hu17105600960857134208.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img14_hu17105600960857134208.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Los siguientes paquetes que se han registrado en esta captura forman un nuevo bloque de mensajes UDP con origen en el ordenador (192.168.0.32) y destino en <a href="https://www.rae.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.rae.es</a> (104.26.1.151). Realmente, lo que ocurre aquí es que, a la vez que se enviaba el bloque de mensajes UDP se han empezado a recibir los mensajes ICMP anteriores, lo que ha hecho que aparezcan intercalados en la captura. Sin embargo, este bloque de mensajes UDP no es diferente, sino la continuación del bloque anterior. De hecho, los primeros dos mensajes de este bloque completan, junto con el último mensaje inmediatamente anterior a los paquetes ICMP, el conjunto de 3 mensajes con el mismo TTL del bloque anterior.</p>
+<p>De manera sucesiva se siguen enviando mensajes de este tipo a puertos consecutivos de la IP de destino, en este caso, desde el 33450 (el siguiente al usado en el último mensaje de este tipo) hasta el 33459. También sucesivamente, se va aumentando el TTL hasta llegar a 9 en los últimos dos mensajes del bloque. En este caso, tampoco se registra en la captura un grupo de 3 mensajes con el mismo TTL, sino que son solo dos los que tienen un TTL con valor 9.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img15_hu9398501352487109486.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img15_hu9398501352487109486.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por último, se registra un último bloque de mensajes ICMP. En él se incluyen dos mensajes que realmente pertenecen al bloque anterior y, aunque no aparezcan los primeros en este bloque, si se revisa el campo “stream index” de cada uno de ellos, se puede comprobar que, en realidad, se transmitieron antes del primer mensaje capturado en este bloque (resaltado en azul en la captura de pantalla).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img16_hu1853593226802927308.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img16_hu1853593226802927308.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por tanto, la última parte relevante de esta captura de tráfico es este bloque de 8 paquetes ICMP de tipo 3 (destination unreachable) y código 3 (port unreachable). Se trata de mensajes que se envian desde la IP pública de <a href="https://www.rae.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.rae.es</a> destinados al ordenador. Todos ellos hacen referencia a un número de puerto determinado dentro del rango que se ha usado para enviar los mensajes UDP comentados anteriormente. En concreto, los puertos que han devuelto mensajes de este tipo son los puertos del 33452 al 33459.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="614"
+            height="207"
+            src="/images/redes/practica6/img17_hu14368966852323382391.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img17_hu14368966852323382391.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="análisis-del-triple-apretón-de-manos-3-way-handshake">Análisis del triple apretón de manos (3-way handshake)</h1>
+<p>Durante la captura de tráfico planteada en este ejercicio (solicitar la página web <a href="https://www.nba.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.nba.com</a> desde un navegador), se han registrado un total de 9824 paquetes TCP o UDP. De ellos, 8583 son paquetes UDP y los 1241 restantes son paquetes TCP.</p>
+<p>Con la herramienta para seguir el flujo TCP se puede comprobar que, en este caso, se ha realizado una petición HTTP al servidor web que ha tenido su correspondiente respuesta.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="930"
+            height="759"
+            src="/images/redes/practica6/img18_hu14024121070655683951.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img18_hu14024121070655683951.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Gracias a esta opción, se pueden seguir en la captura todos los paquetes transmitidos entre cliente y servidor en este proceso.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1368"
+            height="743"
+            src="/images/redes/practica6/img19_hu13566669405088222541.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img19_hu13566669405088222541.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras aplicar el filtro que permite esta herramienta aparecen tres paquetes TCP marcados como SYN, SYN-ACK y ACK respectivamente, que hacen referencia al mecanismo de TCP 3-Way Handshake (triple apretón de manos) para crear la sesión entre cliente y servidor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="94"
+            src="/images/redes/practica6/img20_hu8751881330497344043.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img20_hu8751881330497344043.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>A partir de aquí, cliente y servidor empiezan a intercambiar información HTTP. ya pueden empezar a enviar toda la información HTTP. El primer mensaje que envía el cliente al servidor tras el establecimiento de la conexión es una petición tipo GET con destino al puerto 80 de la IP pública del servidor web.</p>
+<p>En la cabecera del nivel de aplicación de este mensaje se puede comprobar que el cliente solicita la web <a href="https://www.nba.com"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.nba.com</a> e indica que la versión HTTP empleada es la 1.1. Esta cabecera recoge también información sobre el host o servidor en el que está alojada esta web.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1344"
+            height="246"
+            src="/images/redes/practica6/img21_hu14966755990665106041.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img21_hu14966755990665106041.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El siguiente mensaje en el flujo TCP analizado es la respuesta HTTP que el servidor devuelve al cliente. Esta respuesta incluye un código de estado 301, que indica que el recurso solicitado ha sido movido permanentemente y redirige a dicho recurso. Al seleccionar el paquete en wireshark, se puede acceder a todas las cabeceras del mensaje que contienen información relevante en este sentido.</p>
+<p>Finalmente, se sucede un bloque de peticiones y respuestas marcadas como ACK, FIN – ACK y RST que indican la finalización de la conexión entre el cliente y el servidor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1344"
+            height="90"
+            src="/images/redes/practica6/img22_hu16504203028209124470.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img22_hu16504203028209124470.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="identificar-ficheros-descargados-vía-http-con-wireshark">Identificar ficheros descargados vía HTTP con Wireshark</h1>
+<p>En primer lugar, con un filtro de captura que permita registrar sólo los paquetes relacionados con HTTPS, por ejemplo, aquellos que usen un puerto 80, se captura el tráfico de una petición web en la que se descargue algún fichero.</p>
+<p>Entonces se debe localizar la línea de la petición GET en la captura de tráfico para acceder, desde ahí al seguimiento del flujo HTTP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="930"
+            height="759"
+            src="/images/redes/practica6/img23_hu1517454192627266357.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img23_hu1517454192627266357.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En la ventana emergente de seguimiento del flujo HTTP se pueden ver las peticiones del cliente al servidor en rojo y las respuestas del servidor en azul.</p>
+<p>Cada respuesta viene precedida de un encabezado con información sobre el tipo de petición, tipo de conexión, tamaño del contenido, tipo de servidor, última modificación de la web, fecha de la petición y otros datos de interés. A continuación, se puede ver el contenido del fichero descargado vía HTTP.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="930"
+            height="759"
+            src="/images/redes/practica6/img24_hu807845734686630671.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img24_hu807845734686630671.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>De forma sucesiva, aparecen en este registro todas las peticiones con sus correspondientes respuestas así como todos los ficheros descargados con cada una de las respuestas.</p>
+<h1 id="la-opción-expert-information-de-wireshark">La opción Expert Information de Wireshark</h1>
+<p>La opción Expert Information de Wireshark es un diálogo que permite registrar información de las posibles anomalías y elementos de interés que forman parte de un fichero de captura. Su objetivo es aportar una mejor idea del comportamiento inesperado en una red, de manera que se puedan localizar e identificar los posibles problemas de manera más rápida y ágil que con una búsqueda manual a través de la lista de paquetes.</p>
+<p>El cuadro de diálogo Expert Information agrupa los sucesos que recoge por nivel de gravedad y los muestra con un código de color. Así, usa el azul para aquellos eventos propios del transcurso normal de una red, el cian para eventos relevantes como códigos de errores comunes, el amarillo para advertencias de sucesos como que una aplicación devuelva un código de error poco común y el rojo para errores como la recepción de paquetes dañados.</p>
+<p>Junto al nivel de gravedad del suceso recogido, este cuadro de diálogo también muestra otra información como un breve resumen de cada entrada, así como el tipo de incidencia por la que se ha incluido en el diálogo cada elemento y el protocolo que utiliza.
+Desde las preferencias de Wireshark, se puede añadir a la lista de paquetes capturados que el programa muestra por defecto una nueva columna en la que se añade el nivel de gravedad de aquellos paquetes que constituyan una incidencia recogida en “expert information”.</p>
+<p>Como ejemplo, en el cuadro de diálogo “Expert information” de la captura de tráfico anterior se recogen las siguientes incidencias:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="839"
+            height="759"
+            src="/images/redes/practica6/img25_hu9286909930121590242.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img25_hu9286909930121590242.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Como se puede ver en la imagen, aparecen agrupadas por gravedad, de mayor a menor, junto a su descripción, tipo y protocolo. En este caso, todas las incidencias forman parte del grupo “sequence”, esto es, se trata problemas relacionados con el número de secuencia de los paquetes, es decir, se representan en esta lista paquetes que se han recibido desordenados o que han necesitado ser retransmitidos.</p>
+<p>En este otro ejemplo, aparecen elementos que forman parte de otros grupos, por ejemplo, el grupo “protocol”, que indica que se ha producido una violación de las especificaciones del protocolo, o el grupo “undecoded”, que indica que ese paquete contiene información que no ha podido ser decodificada correctamente.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="839"
+            height="759"
+            src="/images/redes/practica6/img26_hu15759071727145562323.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img26_hu15759071727145562323.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por último, en este otro caso, se observa como algunas incidencias incluyen una posible explicación en su campo de resumen. Por ejemplo, en la segunda fila aparece un elemento del protocolo TCP con la marca de gravedad advertencia y del grupo secuencia que indica en su descripción que se ha incluido como tal porque el segmento anterior no se capturó. Sin embargo, en este mismo campo se añade una aclaración: se trata de un error común al inicio de las capturas.</p>
+<p>Por otra parte, cada una de estas filas de incidencias permiten desplegar un contenido que muestra todos aquellos paquetes a los que hacen referencia, incluyendo su número en la secuencia de registro de la captura junto a la información del paquete que se aporta en la ventana principal de capturas de Wireshark, así como el grupo al que pertenece la incidencia y el protocolo que usa el paquete. Esto aporta más información relevante como, por ejemplo, si se trata de errores en paquetes consecutivos o aislados, si las incidencias pueden estar o no relacionadas y más información sobre los paquetes concretos implicados en cada una de estas entradas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="839"
+            height="759"
+            src="/images/redes/practica6/img27_hu13364394478350593220.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica6\/img27_hu13364394478350593220.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-12-11-uso-basico-wireshark-tutorial%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-12-11-uso-basico-wireshark-tutorial%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-12-11-uso-basico-wireshark-tutorial%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fredes%2f2023-12-11-uso-basico-wireshark-tutorial%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
+      Funcionamiento básico de Linux Bridge
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Un bridge o puente en Linux es un dispositivo de red virtual que permite que las máquinas virtuales alojadas en una máquina física usen su tarjeta de red. En este post se muestra un ejemplo de configuración de un Bridge en una máquina Debian.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+      Cómo simular un servidor MariaDB en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

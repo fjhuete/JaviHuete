@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SLAAC on Javi Huete</title>
+    <link>/tags/slaac/</link>
+    <description>Recent content in SLAAC on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 14 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/slaac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Así funciona IPv6: configuración en router Linux y Cisco</title>
+      <link>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</guid>
+      <description>&lt;p&gt;IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

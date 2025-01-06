@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Javi Huete</title>
+    <link>/tags/linux/</link>
+    <description>Recent content in Linux on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 02 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Convulsión en el mundo del software libre</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/</guid>
+      <description>En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida por red de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</guid>
+      <description>En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</link>
+      <pubDate>Thu, 21 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</guid>
+      <description>Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</description>
+    </item>
+    <item>
+      <title>Manejo y modificación de módulos del kernel </title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/</guid>
+      <description>Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</description>
+    </item>
+    <item>
+      <title>Trabajo con el kernel de Linux</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</link>
+      <pubDate>Sat, 02 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/</guid>
+      <description>En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</description>
+    </item>
+    <item>
+      <title>Conceptos de gestión de paquetería en Debian</title>
+      <link>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</link>
+      <pubDate>Mon, 30 Sep 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</description>
+    </item>
+    <item>
+      <title>Manejo y uso del comando mkisofs</title>
+      <link>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</guid>
+      <description>En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</description>
+    </item>
+    <item>
+      <title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+      <link>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</guid>
+      <description>&lt;p&gt;OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de Debian 12 bajo LVM en Proxmox</title>
+      <link>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</guid>
+      <description>&lt;p&gt;Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para el control de procesos</title>
+      <link>/blog/sistemas/2024-03-17-comandos-control-procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-03-17-comandos-control-procesos/</guid>
+      <description>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</description>
+    </item>
+    <item>
+      <title>Guía de instalación de MongoDB en Debian 12</title>
+      <link>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</guid>
+      <description>En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</description>
+    </item>
+    <item>
+      <title>Gestión de permisos UGOA y ACL en Debian</title>
+      <link>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</guid>
+      <description>El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</description>
+    </item>
+    <item>
+      <title>Creación de usuarios y políticas de seguridad en Debian</title>
+      <link>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</link>
+      <pubDate>Sun, 18 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</guid>
+      <description>En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</description>
+    </item>
+    <item>
+      <title>Creación y configuración de un sistema de ficheros en Debian 12</title>
+      <link>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</link>
+      <pubDate>Sun, 04 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</guid>
+      <description>&lt;p&gt;En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos</title>
+      <link>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</guid>
+      <description>&lt;p&gt;Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso del comando parted en Debian</title>
+      <link>/blog/fundamentos-hardware/2024-02-01-comando-parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-02-01-comando-parted/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Parted&lt;/code&gt; es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para la programación de tareas</title>
+      <link>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</guid>
+      <description>La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</description>
+    </item>
+    <item>
+      <title>El comando xargs</title>
+      <link>/blog/sistemas/2023-11-24-comando-xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-24-comando-xargs/</guid>
+      <description>El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso de comandos básicos en Debian</title>
+      <link>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</guid>
+      <description>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</description>
+    </item>
+    <item>
+      <title>Empaquetadores y compresores/descompresores en Debian</title>
+      <link>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</guid>
+      <description>Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</description>
+    </item>
+    <item>
+      <title>Conceptos básicos del gestor de paquetes apt</title>
+      <link>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</link>
+      <pubDate>Wed, 25 Oct 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</description>
+    </item>
+  </channel>
+</rss>

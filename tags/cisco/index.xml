@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cisco on Javi Huete</title>
+    <link>/tags/cisco/</link>
+    <description>Recent content in Cisco on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 21 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Túneles IPv6: túneles 6to4</title>
+      <link>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</guid>
+      <description>&lt;p&gt;En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Así funciona IPv6: configuración en router Linux y Cisco</title>
+      <link>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</guid>
+      <description>&lt;p&gt;IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Enrutamiento dinámico con OSPF usando routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</guid>
+      <description>OSPF (Open Shortest Path First), &amp;ldquo;Abrir el camino más corto primero&amp;rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-03-25-nat-router-cisco-gns3/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-cisco-gns3/</guid>
+      <description>NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Cómo configurar un servidor DHCP en un router Cisco</title>
+      <link>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/</guid>
+      <description>La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</description>
+    </item>
+    <item>
+      <title>Configuración de ACL en routers Cisco</title>
+      <link>/blog/redes/2024-03-03-acl-router-cisco/</link>
+      <pubDate>Sun, 03 Mar 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-03-acl-router-cisco/</guid>
+      <description>&lt;p&gt;Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo importar dispositivos a GNS3</title>
+      <link>/blog/redes/2024-01-28-importar-dispositivos-gns3/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-01-28-importar-dispositivos-gns3/</guid>
+      <description>&lt;p&gt;En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

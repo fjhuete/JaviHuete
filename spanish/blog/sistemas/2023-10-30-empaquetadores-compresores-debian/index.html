@@ -1,0 +1,1391 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Empaquetadores y compresores/descompresores en Debian</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Empaquetadores y compresores/descompresores en Debian" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/" />
+
+
+<meta name="twitter:title" content="Empaquetadores y compresores/descompresores en Debian" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Empaquetadores Y Compresores/Descompresores en Debian</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Empaquetadores y compresores/descompresores en Debian
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <h1 id="empaquetador-tar">Empaquetador <code>tar</code></h1>
+<h2 id="definición">Definición</h2>
+<p>El empaquetador <code>tar</code>  crea y manipula archivos que son, en realidad, colecciones de varios ficheros. <code>Tar</code> ofrece un método sistematizado y organizado de controlar grandes volúmenes de datos.</p>
+<p>El programa <code>tar</code> se usa para crear y manipular archivos <code>tar</code>, que son archivos individuales que contienen el contenido de varios ficheros cuyos nombres, propietarios y otra información pueden conservar.</p>
+<p>Los ficheros contenidos en estos archivos se llaman miembros (members). El término extracción se refiere al proceso de copiar estos archivos miembros en un fichero en el sistema de ficheros. A la acción de extraer todos los miembros de un archivo también se la llama “extraer el archivo”. El término desempaque<code>tar</code> también se puede usar para referirse a la extracción de varios o todos los miembros de un archivo.</p>
+<p>Extraer un archivo no destruye la estructura del archivo, de la misma forma que crear un archivo no destruye las copias de los ficheros que existen fuera del archivo.</p>
+<p><code>Tar</code> ofrece la posibilidad de crear archivos <code>tar</code>, así como extraer ficheros de archivos previamente creados, almacenar fichero adicionales o actualizar la lista de ficheros que han sido almacenados en un archivo.</p>
+<p>Originalmente, <code>tar</code> se usaba para almacenar archivos en cintas magnéticas y el nombre del programa viene de “tape archiver” (archivador de cinta). Sin embargo, <code>tar</code> puede enviar su salida a cualquier dispositivo disponible, ficheros o programas, a través de tuberías (pipes). Incluso puede acceder a dispositivos o ficheros remotos.</p>
+<p>El programa <code>tar</code> se usa con mucha frecuencia para almacenar ficheros relacionados para su transferencia a través de una red, de manera que se puedan transferir como una única unidad. Los archivos <code>tar</code> también se suelen usar para almacenamiento de larga duración.</p>
+<p>Otro uso habitual de <code>tar</code> es el de las copias de seguridad. Los archivos <code>tar</code> conservan la información de los ficheros y la estructura de directorios, lo que hace que <code>tar</code> sea usado habitualmente para crear copias de seguridad de discos. Una copia de seguridad guarda una colección de ficheros y directorios en un disco, protegiendo la información contra una posible destrucción accidental. El programa <code>tar</code> tiene funcionalidades especiales que permiten que se pueda usar para hacer volcados de todos los ficheros de un sistema de ficheros.</p>
+<p>Por último, otro uso habitual de <code>tar</code> es la transferencia de información. Con <code>tar</code> se puede crear un archivo en un sistema, transferirlo a otro y extraerlo en él. De esta forma, se puede transferir un grupo de ficheros de un sistema a otro de forma cómoda y ordenada.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización">Opciones más comunes y ejemplos de utilización</h2>
+<p>Algunas de las opciones más comunes y su ejemplo de utilización para <code>tar</code> son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -A [OPTIONS] ARCHIVE ARCHIVE
+</span></span><span style="display:flex;"><span>tar {--catenate|--concatenate} [OPTIONS] ARCHIVE ARCHIVE
+</span></span></code></pre></div><p>Empaqueta un archivo al final del otro. Los argumentos son los nombres de los archivos que se van a empaque<code>tar</code>. Todos los archivos deben tener el mismo formato que el resto de archivos con los que se van a empaque<code>tar</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -c [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span><span style="display:flex;"><span>tar --create [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span></code></pre></div><p>Crea un nuevo archivo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -d [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span><span style="display:flex;"><span>tar {--diff|--compare} [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span></code></pre></div><p>Encuentra las diferencias entre el archivo y el sistema de ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar --delete [--file ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></code></pre></div><p>Elimina ficheros o miembros del archivo. Los argumentos se refieren al nombre de los archivos miembros que se van a eliminar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -r [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span><span style="display:flex;"><span>tar --append [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></code></pre></div><p>Empaqueta ficheros al final de un archivo. Los argumentos se usan igual que con <code>-c</code> (&ndash;create).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -t [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span><span style="display:flex;"><span>tar --list [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></code></pre></div><p>Lista el contenido de un archivo. Los argumentos son opcionales y especifican los nombres de los miembros que se deben lis<code>tar</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar --test-label [--file ARCHIVE] [OPTIONS] [LABEL…]
+</span></span></code></pre></div><p>Prueba la etiqueta de volumen y sale. Sin argumentos devuelve el volumen y sale, si se usan argumentos compara la etiqueta de volumen de cada argumento y devuelve un 0 si encuentra alguna coincidencia y un 1 si no.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -u [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span><span style="display:flex;"><span>tar --update [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span><span style="display:flex;"><span>tar --update [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></code></pre></div><p>Empaqueta ficheros que son más nuevos que la copia correspondiente en el archivo. Los argumentos tienen el mismo significado que con <code>-c</code> y <code>-r</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -x [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span><span style="display:flex;"><span>tar {--extract|--get} [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></code></pre></div><p>Extrae ficheros de un archivo. Los argumentos son opcionales. Especifican el nombre de los miembros del archivo que se van a extraer.</p>
+<h2 id="extensión-de-los-ficheros">Extensión de los ficheros</h2>
+<p>Los ficheros empaquetados con <code>tar</code> tienen la extensión .<code>tar</code>.</p>
+<h2 id="paquete-donde-se-encuentra">Paquete donde se encuentra</h2>
+<p><code>tar</code> se encuentra en el paquete <code>tar</code>, ubicado en la ruta <code>/usr/bin/tar</code>.</p>
+<h1 id="compresordescompresor-gzip">Compresor/descompresor <code>gzip</code></h1>
+<h2 id="definición-1">Definición</h2>
+<p>La orden <code>gzip</code> reduce el tamaño del archivo nombrado usando el código Lempel-Ziv (LZ77). Cuando sea posible, cada fichero se reemplaza por una con extensión .gz manteniendo la propiedad, acceso y fecha de modificación.</p>
+<p>Si el fichero tiene un nombre demasiado largo para el sistema de ficheros, <code>gzip</code> también puede truncar el nombre. Por defecto, mantiene el mismo nombre en los ficheros comprimidos.
+Además, <code>gzip</code> también puede descomprimir ficheros creados por <code>gzip</code>, <code>zip</code>, <code>comrpess</code> o <code>pack</code>.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-1">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de <code>gzip</code> es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>gzip [OPTION]… [FILE]…
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-c</code>, <code>--stdout</code>. Escribe el fichero en salida estándar y mantiene sin cambio los ficheros originales.</li>
+<li><code>-d</code>, <code>--decompress</code>. Descomprime los ficheros indicados.</li>
+<li><code>-f</code>, <code>--force</code>. Fuerza la sobreescritura del fichero de salida y comprime los enlaces.</li>
+<li><code>-h</code>, <code>--help</code>. Muestra la ayuda del comando.</li>
+<li><code>-k</code>, <code>--keep</code>. Conserva el fichero de entrada.</li>
+<li><code>-l</code>, <code>--list</code>. Lista el contenido de los ficheros comprimidos</li>
+<li><code>-n</code>, <code>--no-name</code>. No conserva ni recupera el nombre y la hora de modificación del fichero original.</li>
+<li><code>-N</code>, <code>--name</code>. Guarda y recupera el nombre y la hora de modificación del fichero original.</li>
+<li><code>-r</code>, <code>--recursive</code>. Opera de forma recursiva en directorios.</li>
+<li><code>-t</code>, <code>--test</code>. Comprueba la integridad de los ficheros comprimidos.</li>
+<li><code>-v</code>, <code>--verbose</code>. Modo verboso</li>
+<li><code>-V</code>, <code>--version</code>. Muestra el número de versión.</li>
+<li><code>-1</code>, <code>--fast</code>. Comprime más rápido.</li>
+<li><code>-9</code>, <code>--best</code>. Comprime mejor.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-1">Extensión de los ficheros</h2>
+<p>Los ficheros empaquetados con <code>gzip</code> tienen la extensión .gz.</p>
+<h2 id="paquete-donde-se-encuentra-1">Paquete donde se encuentra</h2>
+<p><code>Gzip</code> se encuentra en el paquete gzip, ubicado en la ruta <code>/usr/bin/gzip</code> y en el paquete klibc-utils, ubicado en la ruta <code>/usr/lib/klibc/bin/gzip</code>.</p>
+<h1 id="compresordescompresor-xz">Compresor/descompresor <code>xz</code></h1>
+<h2 id="definición-2">Definición</h2>
+<p>El programa <code>xz</code> es una herramienta de compresión de datos de propósito general con una sintaxis de línea de comando similar a <code>gzip</code> y <code>bzip2</code>. Soporta el formato nativo .xz pero también .lzma.</p>
+<p>Con <code>xz</code> se pueden comprimir o descomprimir cada fichero según un modo de operación seleccionado.
+El nombre del fichero comprimido deriva del fichero original. Al comprimir, se añade al fichero original el sufijo .xz o .lzma. Al descomprimir, se elimina el sufijo. Además, xz también reconoce las extensiones .txz y .tlz y las sustituye por .tar.</p>
+<p>Tras comprimir o descomprimir un fichero, <code>xz</code> copia también el propietario, grupo, permisos, hora de acceso y de modificación del fichero origen.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-2">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de xz es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>xz [OPTION]… [FILE]…
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-z</code>, <code>--compress</code>. Comprime el fichero. Es el modo de operación por defecto.</li>
+<li><code>-d</code>, <code>--decompress</code>, <code>--uncompress</code>. Descomprime el fichero.</li>
+<li><code>-t</code>, <code>--test</code>. Comprueba la integridad de los ficheros comprimidos.</li>
+<li><code>-l</code>, <code>--list</code>. Lista información sobre los ficheros comprimidos. No se produce ninguna descompresión.</li>
+<li><code>-k</code>, <code>--keep</code>. No elimina los ficheros de entrada.</li>
+<li><code>-f</code>, <code>--force</code>. Realiza varias acciones:
+<ul>
+<li>Si el fichero objetivo existe, lo elimina antes de comprimirlo o descomprimirlo.</li>
+<li>Comprime o descomprime aunque el fichero sea un enlace simbólico de un fichero normal.</li>
+</ul>
+</li>
+<li><code>-c</code>, <code>--stdout</code>, <code>--to-stdout</code>. Escribe la información comprimida o descomprimida a la salida estándar en vez de a un fichero.</li>
+<li><code>-S .suf</code>, <code>--suffix=.suf</code>. Permite seleccionar la extensión del archivo. Al comprimir, se puede elegir una extensión diferente a .xz y .lzma. Al descomprimir, reconocer los ficheros con el sufijo indicado además de .xz, .lzma, .txz, .tlz o .lz.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-2">Extensión de los ficheros</h2>
+<p>Los ficheros empaquetados con <code>xz</code> tienen la extensión .xz o .lzma. También reconoce y descomprime ficheros con extensiones como .txz, .tlz o .tz.</p>
+<h2 id="paquete-donde-se-encuentra-2">Paquete donde se encuentra</h2>
+<p><code>Xz</code> se encuentra en el paquete xz, ubicado en la ruta <code>/usr/bin/xz</code>.</p>
+<h1 id="compresordescompresor-bzip2">Compresor/descompresor <code>bzip2</code></h1>
+<h2 id="definición-3">Definición</h2>
+<p>El programa <code>bzip2</code> comprime ficheros usando la compresión de Burrows-Wheeler y el código de Huffman. Esta compresión es, generalmente, mejor que la obtenida con compresores más convencionales basados en LZ77/LZ78. Está consturido sobre la librería libbzip2, una librería flexible para el manejo de datos comprimidos en formato bzip2.</p>
+<p>Las opciones de <code>bzip2</code> son muy similares a las de gzip pero no idénticas. Cada fichero se sustituye por una versión comprimida de sí mismo con el nombre original y la extensión .bz2. Los ficheros comprimidos conservan la fecha de modificación, permisos y, cuando es posible, propiedad que el original. <code>Bzip2</code> no sobreescribe los ficheros originales por defecto.
+Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .bz, .tbz2 o .tbz), <code>bzip2</code> advierte de que no se ha podido averiguar la extensión y usa el nombre del fichero original con la extensión .out.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-3">Opciones más comunes y ejemplos de utilización</h2>
+<p>Algunos ejemplos de utilización de <code>bzip2</code> son los siguientes:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bzip2 [OPTION]… [FILE]…
+</span></span><span style="display:flex;"><span>bunzip2 [OPTION]… [FILE]…
+</span></span><span style="display:flex;"><span>bzcat [OPTION]… [FILE]…
+</span></span><span style="display:flex;"><span>bzip2recover FILE
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-c</code> <code>--stdout</code>. Comprime o descomprime a la salida estándar.</li>
+<li><code>-d</code> <code>--decompress</code>. Descomprime el fichero indicado.</li>
+<li><code>-z</code> <code>--compress</code>. Comprime el fichero indicado.</li>
+<li><code>-t</code> <code>--test</code>. Comprueba la integridad de los ficheros comprimidos.</li>
+<li><code>-f</code> <code>--force</code>. Fuerza la sobreescritura del fichero de salida. Por defecto, bzip2 no sobreescribe los ficheros de salida.</li>
+<li><code>-k</code> <code>--keep</code>. Conserva los ficheros de entrada durante la compresión o descompresión.</li>
+<li><code>-s</code> <code>--small</code>. Reduce el uso de memoria para la compresión, descompresión y comprobación de los ficheros.</li>
+<li><code>-v</code> <code>--verbose</code>. Modo verboso. Muestra el ratio de compresión para cada fichero.</li>
+<li><code>-L</code> <code>--license</code> <code>-V</code> <code>--version</code>. Muestra la versión, licencia, términos y condiciones del software.</li>
+<li><code>-1</code> (or <code>--fast</code>) to <code>-9</code> (or <code>--best</code>). Determina el tamaño de los bloques de compresión.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-3">Extensión de los ficheros</h2>
+<p>Los ficheros empaquetados con <code>bzip2</code> tienen la extensión .bz2. También reconoce y descomprime ficheros con extensiones como .bz, .tbz2 o .tbz.</p>
+<h2 id="paquete-donde-se-encuentra-3">Paquete donde se encuentra</h2>
+<p><code>bzip2</code> se encuentra en el paquete bzip2, ubicado en la ruta <code>/usr/bin/bzip2</code>.</p>
+<h1 id="compresordescompresor-7z">Compresor/descompresor 7z</h1>
+<h2 id="definición-4">Definición</h2>
+<p>7-Zip es software de fuente abierta. La mayor parte del código fuente se distribuye bajo la licencia GNU LGPL. Algunas partes del código están bajo la licencia BSD de 3 cláusulas.</p>
+<p>7-Zip es un archivador de ficheros que soporta 7z, que implementa la compresión algorítmica LZMA con una ratio de compresión muy alta. El ratio de compresión en 7z es entre un 30% y un 50% mejor que en el formato zip.</p>
+<p>Cada fichero indicado se comprime a uno con extesión .7z y después se elimina.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-4">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de <code>p7zip</code> es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>p7zip [OPTION]… [FILE]…
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-c</code>, <code>--stdout</code>, <code>--to-stdout</code>. Escribe la salida a la salida estándar.</li>
+<li><code>-d</code>, <code>--decompress</code>, <code>--uncompress</code>. Descomprime los archivos.</li>
+<li><code>-f</code>, <code>--force</code>. Fuerza la compresión o descompresión.</li>
+<li><code>-k</code>, <code>--keep</code>. No elimina el fichero de entrada.</li>
+<li><code>--</code>. Trata todos los argumentos que siguen como nombres de ficheros aunque comiencen con un guión (-).</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-4">Extensión de los ficheros</h2>
+<p>La extensión de los ficheros comprimidos con 7z es .7z.</p>
+<h2 id="paquete-donde-se-encuentra-4">Paquete donde se encuentra</h2>
+<p>7z se encuentra en el paquete <code>p7zip</code>, ubicado en la ruta <code>/usr/bin/p7zip</code>. P7zip también es una librería ubicada en la ruta /usr/lib/p7zip.</p>
+<h1 id="compresordescompresor-zip">Compresor/descompresor <code>zip</code></h1>
+<h2 id="definición-5">Definición</h2>
+<p><code>Zip</code> empaqueta y comprime ficheros. <code>Zip</code> es una utilidad de compresión y empaquetado de ficheros análoga a una combinación de los comandos tar y compress de Unix y es compatible con PKZIP.</p>
+<p>Este programa es útil para empaquetar un conjunto de ficheros para su distribución, para archivar ficheros y para ahorrar espacio en el disco duro comprimiendo temporalmente ficheros y directorios que no se usan.</p>
+<p><code>Zip</code> almacena uno o varios ficheros comprimidos en un único archivo zip, junto con información sobre los ficheros (nombre, ruta, fecha y hora de la última modificación, protección e información de comprobación de la integridad del fichero). Una estructura de directorios completa se puede empaquetar en un fichero zip con un único comando. <code>Zip</code> puede comprimir los ficheros o guardarlos sin compresión.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-5">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de <code>zip</code> es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>zip [OPTION]... [FILE]... [INPATH]...
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-f</code>  <code>--freshen</code>. Reemplaza una entrada existente en el archivo zip sólo si se ha modificado más recientemente que la versión que ya se encuentra en el archivo.</li>
+<li><code>-u</code>  <code>--update</code>. Afecta sólo a ficheros nuevos o modificados.</li>
+<li><code>-d</code> <code>--delete</code>. Elimina entradas de un archivo zip.</li>
+<li><code>-m</code> <code>--move</code>. Mueve ficheros a un archivo zip.</li>
+<li><code>-r</code> <code>--recurse-path</code>. Afecta recursivamente al contenido de un directorio.</li>
+<li><code>-j</code> <code>--junk-path</code>. No guarda los nombres de los directorios.</li>
+<li><code>-0</code> <code>--output-file</code>. Solo almacena los ficheros sin comprimirlos.</li>
+<li><code>-#</code> (<code>-0</code> … <code>-9</code>). Indica la velocidad de compresión. <code>-1</code> comprime más rápido; <code>-9</code> comprime mejor.</li>
+<li><code>-v</code> <code>--verbose</code>. Modo verboso. Muestra información por pantalla.</li>
+<li><code>-c</code> <code>--entry-comments</code>. Añade comentarios de una línea para cada fichero.</li>
+<li><code>-z</code> <code>--archive-comment</code>. Añade comentarios de varias líneas al archivo completo.</li>
+<li><code>-@</code> <code>--names-stdin</code>. Toma la lista de ficheros de entrada de la entrada estándar.</li>
+<li><code>-o</code> <code>--latest-time</code>. Asigna la fecha de modificación del fichero más antiguo al archivo zip.</li>
+<li><code>-x</code> <code>--exclude</code>. Excluye los ficheros indicados</li>
+<li><code>-i</code> <code>--include</code>. Incluye los ficheros indicados.</li>
+<li><code>-F</code> <code>--fix</code>. Se usa si alguna falta alguna parte del acrhivo. <code>-FF</code> <code>–fixfix</code> se usa si el archivo está demasiado dañado.</li>
+<li><code>-D</code> <code>--no-dir-entries</code>. No crea entradas para directorios en el archivo zip.</li>
+<li><code>-A</code> <code>--adjust-sfx</code>. Hace un archivo ejecutable que se extrae automáticamente.</li>
+<li><code>-J</code> <code>--junk-sfx</code>. Almacena el nombre del fichero guardado pero no los nombres de los directorios.</li>
+<li><code>-T</code> <code>--test</code>. Comprueba la integridad de los ficheros</li>
+<li><code>-X</code> <code>--no-extra</code>. No almacena atributos extra de los ficheros.</li>
+<li><code>-e</code> <code>--encrypt</code>. Encripta el contenido del archivo.</li>
+<li><code>-n</code> <code>--suffixes</code>. No comprime los fiches con la extensión indicada.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-5">Extensión de los ficheros</h2>
+<p>La extensión de los ficheros comprimidos con <code>zip</code> es .zip.</p>
+<h2 id="paquete-donde-se-encuentra-5">Paquete donde se encuentra</h2>
+<p><code>zip</code> se encuentra en el paquete zip, ubicado en la ruta <code>/usr/bin/zip</code>.</p>
+<h1 id="compresordescompresor-rar">Compresor/descompresor <code>rar</code></h1>
+<h2 id="definición-6">Definición</h2>
+<p><code>Rar</code> es un compresor y archivador que empaqueta ficheros con compresión.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-6">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de zip es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rar &lt;command&gt; [-&lt;switch 1&gt; -&lt;switch N&gt;] archive [files…]
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-a</code>. Añade ficheros al archivo.</li>
+<li><code>-c</code>. Añade comentarios al archivo.</li>
+<li><code>-cf</code>. Añade comentarios al fichero.</li>
+<li><code>-cw</code>. Añade un comentario a un fichero especificado.</li>
+<li><code>-d</code>. Elimina ficheros del archivo.</li>
+<li><code>-e</code>. Extrae ficheros del directorio actual. No crea subdirectorios.</li>
+<li><code>-f</code>. Actualiza los ficheros del archivo.</li>
+<li><code>-k</code>. Bloquea los archivos.</li>
+<li><code>-l[t]</code>. Lista el contenido del archivo</li>
+<li><code>-m[f]</code>. Mueve los archivos. Con f se mueven solo los ficheros y no se eliminan los directorios.</li>
+<li><code>-p</code>. Muestra el fichero por la salida estándar.</li>
+<li><code>-r</code>. Repara el archivo</li>
+<li><code>-t</code>. Comprieba la integridad de los ficheros.</li>
+<li><code>-u</code>. Actualiza los ficheros de un archivo.</li>
+<li><code>-v[t]</code>. Modo verboso. Muestra información del archivo.</li>
+<li><code>-x</code>. Extra ficheros sin la ruta completa.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-6">Extensión de los ficheros</h2>
+<p>La extensión de los ficheros comprimidos con <code>rar</code> es .rar.</p>
+<h2 id="paquete-donde-se-encuentra-6">Paquete donde se encuentra</h2>
+<p><code>rar</code> se encuentra en el paquete rar, ubicado en la ruta /usr/bin/rar.</p>
+<h1 id="compresordescompresor-unzip">Compresor/descompresor <code>unzip</code></h1>
+<h2 id="definición-7">Definición</h2>
+<p>Lista, comprueba y extrae los ficheros almacenados en un archivo zip. Por defecto, <code>unzip</code> extrae los ficheros en el directorio de trabajo.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-7">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de <code>unzip</code> es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>unzip [OPTION]… [FILE]…
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-p</code>. Extrae los ficheros a una tubería.</li>
+<li><code>-f</code>. Actualiza los ficheros existentes y no crea ninguno nuevo.</li>
+<li><code>-u</code>. Actualiza los ficheros y crea los que sean necesarios.</li>
+<li><code>-v</code>. Lista en modo verboso y muestra información de la versión.</li>
+<li><code>-x</code>. Excluye los ficheros indicados.</li>
+<li><code>-n</code>. No sobreescribe ficheros existentes.</li>
+<li><code>-o</code>. Sobreescribe ficheros</li>
+<li><code>-j</code>. No crea directorios.</li>
+<li><code>-K</code>. Conserva los permisos de setuid/setgid/tracky</li>
+<li><code>-l</code>. Lista los ficheros en formato corto.</li>
+<li><code>-t</code>. Comprueba la integridad de los ficheros comprimidos.</li>
+<li><code>-z</code>. Muestra sólo los comentarios.</li>
+<li><code>-T</code>. Usa la marca temporal más antigua para el archivo.</li>
+<li><code>-d</code>. Extrae los ficheros a exdir.</li>
+<li><code>-a</code>. Convierte automáticamente cualquier fichero de texto.</li>
+<li><code>-aa</code>. Trata todos los ficheros como ficheros de texto.</li>
+<li><code>-M</code>. Muestra el resultado en el paginador “more”.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-7">Extensión de los ficheros</h2>
+<p><code>Unzip</code> descomprime archivos con formato .zip.</p>
+<h2 id="paquete-donde-se-encuentra-7">Paquete donde se encuentra</h2>
+<p><code>Unzip</code> se encuentra en el paquete unzip, ubicado en la ruta <code>/usr/bin/unzip</code>.</p>
+<h1 id="compresordescompresor-unrar">Compresor/descompresor <code>unrar</code></h1>
+<h2 id="definición-8">Definición</h2>
+<p>El programa <code>unrar</code> extrae ficheros de archivos rar.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-8">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de unzip es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>unrar  command  [-switch ...] archive [file ...] [@listfiles ...] [path...] [path_to_extract/]
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>e</code>. Extrae los ficheros al directorio de trabajo.</li>
+<li><code>l</code>. Lista el contenido del archivo.</li>
+<li><code>t</code>. Comprueba la integridad de los ficheros</li>
+<li><code>v</code>. Lista el contenido del archivo en modo verboso.</li>
+<li><code>x</code>. Extrae los ficheros con una ruta completa.</li>
+<li><code>-ag</code>. Genera nombres de archivo usando la fecha actual.</li>
+<li><code>-ai</code>. Ignora los atributos de los ficheros.</li>
+<li><code>-c-</code>. Deshabilita los comentarios.</li>
+<li><code>-cl</code>. Convierte los nombres de los ficheros a minúsculas.</li>
+<li><code>-cu</code>. Convierte los nombres de los ficheros a mayúsculas.</li>
+<li><code>-ep</code>. Excluye las rutas de los nombres.</li>
+<li><code>-kb</code>. Mantiene los ficheros extraídos rotos.</li>
+<li><code>-o+</code>. Sobreescribe ficheros existentes.</li>
+<li><code>-o-</code>. No sobreescribe los ficheros existentes.</li>
+<li><code>-or</code>. Renombra los ficheros automáticamente.</li>
+<li><code>-r</code>. Afecta recursivamente a los subdirectorios.</li>
+<li><code>-sl&lt;tamaño&gt;</code>. Procesa los ficheros con un tamaño menor del especificado.</li>
+<li><code>-sm&lt;tamaño&gt;</code>. Procesa los ficheros con un tamaño mayor del especificado.</li>
+<li><code>-u</code>. Actualiza los ficheros</li>
+<li><code>-v</code>. Lista todos los volúmenes.</li>
+<li><code>-x&lt;fichero&gt;</code>. Excluye el fichero especificado</li>
+<li><code>-x@&lt;lista&gt;</code>. Excluye los ficheros de la lista especificada.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-8">Extensión de los ficheros</h2>
+<p><code>unrar</code> descomprime archivos con formato .rar.</p>
+<h2 id="paquete-donde-se-encuentra-8">Paquete donde se encuentra</h2>
+<p><code>unrar</code> se encuentra en el paquete unrar, ubicado en la ruta <code>/usr/bin/unrar</code>.</p>
+<h1 id="compresordescompresor-compress">Compresor/descompresor <code>compress</code></h1>
+<h2 id="definición-9">Definición</h2>
+<p><code>Compress</code> reduce el tamaño de los ficheros indicados usando el código adaptativo Lempel-Ziv. Cuando sea posible, cada fichero se reemplaza por uno con la extensión .Z y se mantienen la propiedad de los ficheros y la hora de acceso y modificación. Si no se especifican los ficheros, se comprimen los ficheros de la entrada estándar a la salida estándar. <code>Compress</code> sólo intenta comprimir ficheros normales e ignora los enlaces simbólicos. Los ficheros comprimidos usando <code>compress</code> se pueden restaurar a su forma original usando uncompress.real.</p>
+<h2 id="opciones-más-comunes-y-ejemplos-de-utilización-9">Opciones más comunes y ejemplos de utilización</h2>
+<p>Un ejemplo de utilización de <code>compress</code> es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>compress [OPTION]… [NAME]…
+</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<ul>
+<li><code>-c</code>. Escribe a la salida estándar. No modifica los ficheros.</li>
+<li><code>-r</code>. Opera de forma recursiva. Si algún fichero especificado es un directorio, compress accede al directorio y comprime todos los ficheros que encuentre en él.</li>
+<li><code>-V</code>. Muestra la versión antes de realizar ninguna compresión o descompresión.</li>
+<li><code>-b</code>. Indica el nivel de compresión en n.º de bits.</li>
+<li><code>-v</code>. Muestra el porcentaje de reducción de cada fichero comprimido.</li>
+<li><code>--</code>. Indica que todo el resto de argumentos se deben tratar como rutas.</li>
+</ul>
+<h2 id="extensión-de-los-ficheros-9">Extensión de los ficheros</h2>
+<p><code>Compress</code> comprime archivos en formato .Z.</p>
+<h2 id="paquete-donde-se-encuentra-9">Paquete donde se encuentra</h2>
+<p><code>Compress</code> se encuentra en el paquete ncompress, ubicado en la ruta <code>/usr/bin/ncompress</code>.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

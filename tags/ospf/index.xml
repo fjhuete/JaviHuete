@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSPF on Javi Huete</title>
+    <link>/tags/ospf/</link>
+    <description>Recent content in OSPF on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 22 Apr 2024 02:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/ospf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enrutamiento dinámico con OSPF usando routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/</guid>
+      <description>OSPF (Open Shortest Path First), &amp;ldquo;Abrir el camino más corto primero&amp;rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</description>
+    </item>
+    <item>
+      <title>Enrutamiento dinámico con OSPF usando routers Linux en GNS3</title>
+      <link>/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/</guid>
+      <description>&lt;p&gt;En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &amp;ldquo;Los juegos del hambre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

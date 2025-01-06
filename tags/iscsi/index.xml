@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ISCSI on Javi Huete</title>
+    <link>/tags/iscsi/</link>
+    <description>Recent content in ISCSI on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 10 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/iscsi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de un servidor SAN</title>
+      <link>/blog/servicios/2024-11-10-configuracion-servidor-san/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-configuracion-servidor-san/</guid>
+      <description>En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</description>
+    </item>
+  </channel>
+</rss>

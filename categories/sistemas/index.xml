@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sistemas on Javi Huete</title>
+    <link>/categories/sistemas/</link>
+    <description>Recent content in Sistemas on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 17 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/categories/sistemas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de política de grupo en Windows Active Directory</title>
+      <link>/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/</guid>
+      <description>&lt;p&gt;Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell</title>
+      <link>/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/</link>
+      <pubDate>Tue, 07 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/</guid>
+      <description>&lt;p&gt;Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gestión de dispositivos de almacenamiento con Powershell</title>
+      <link>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</link>
+      <pubDate>Sun, 05 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/</guid>
+      <description>&lt;p&gt;El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+      <link>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</guid>
+      <description>&lt;p&gt;OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para el control de procesos</title>
+      <link>/blog/sistemas/2024-03-17-comandos-control-procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-03-17-comandos-control-procesos/</guid>
+      <description>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</description>
+    </item>
+    <item>
+      <title>Gestión de permisos UGOA y ACL en Debian</title>
+      <link>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</guid>
+      <description>El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</description>
+    </item>
+    <item>
+      <title>Creación de usuarios y políticas de seguridad en Debian</title>
+      <link>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</link>
+      <pubDate>Sun, 18 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</guid>
+      <description>En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</description>
+    </item>
+    <item>
+      <title>Creación y configuración de un sistema de ficheros en Debian 12</title>
+      <link>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</link>
+      <pubDate>Sun, 04 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/</guid>
+      <description>&lt;p&gt;En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos</title>
+      <link>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</guid>
+      <description>&lt;p&gt;Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos para la programación de tareas</title>
+      <link>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</guid>
+      <description>La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</description>
+    </item>
+    <item>
+      <title>El comando xargs</title>
+      <link>/blog/sistemas/2023-11-24-comando-xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-24-comando-xargs/</guid>
+      <description>El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso de comandos básicos en Debian</title>
+      <link>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/</guid>
+      <description>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</description>
+    </item>
+    <item>
+      <title>Empaquetadores y compresores/descompresores en Debian</title>
+      <link>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</guid>
+      <description>Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</description>
+    </item>
+    <item>
+      <title>Conceptos básicos del gestor de paquetes apt</title>
+      <link>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</link>
+      <pubDate>Wed, 25 Oct 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-25-conceptos-basicos-apt/</guid>
+      <description>En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</description>
+    </item>
+  </channel>
+</rss>

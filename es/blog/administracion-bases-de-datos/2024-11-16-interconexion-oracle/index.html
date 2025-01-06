@@ -1,0 +1,1710 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Interconexión entre dos servidores Oracle</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Interconexión entre dos servidores Oracle" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/" />
+
+
+<meta name="twitter:title" content="Interconexión entre dos servidores Oracle" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Interconexión entre dos servidores Oracle
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/administracion-bbdd/"
+                    class=""
+                    >Administracion bbdd
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              16 de noviembre de 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#enlace-entre-dos-servidores-oracle">Enlace entre dos servidores Oracle</a>
+      <ol>
+        <li><a href="#configuración-de-acceso-remoto-al-servidor">Configuración de acceso remoto al servidor</a></li>
+        <li><a href="#configuración-del-segundo-servidor">Configuración del segundo servidor</a></li>
+        <li><a href="#configuración-de-la-conexión-entre-servidores">Configuración de la conexión entre servidores</a></li>
+        <li><a href="#demostración-del-funcionamiento-de-la-interconexión-entre-servidores-oracle">Demostración del funcionamiento de la interconexión entre servidores Oracle</a></li>
+        <li><a href="#resolución-de-errores">Resolución de errores</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <h1 id="enlace-entre-dos-servidores-oracle">Enlace entre dos servidores Oracle</h1>
+<h2 id="configuración-de-acceso-remoto-al-servidor">Configuración de acceso remoto al servidor</h2>
+<p>Antes de configurar la conexión entre dos servidores Oracle es necesario garantizar que es posible conectarse de forma remota desde un cliente a cada uno de ellos. Para permitir este tipo de conexiones hay un fichero que es imprescindible configurar: el fichero listener.ora.</p>
+<p>Este fichero se encuentra en el directorio /opt/oracle/homes/OraDBHome21cEE/network/admin/listener.ora y contiene la información de la interfaz y el puerto por el que escucha el servidor. En el caso del servidor 1, el contenido de este fichero es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>LISTENER =
+</span></span><span style="display:flex;"><span>   (DESCRIPTION_LIST =
+</span></span><span style="display:flex;"><span>     (DESCRIPTION =
+</span></span><span style="display:flex;"><span>       (ADDRESS = (PROTOCOL = TCP)(HOST = oracleserver)(PORT = 1521))
+</span></span><span style="display:flex;"><span>       (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+</span></span><span style="display:flex;"><span>     )
+</span></span><span style="display:flex;"><span>   )
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span> SID_LIST_LISTENER=
+</span></span><span style="display:flex;"><span>   (SID_LIST=
+</span></span><span style="display:flex;"><span>     (SID_DESC=
+</span></span><span style="display:flex;"><span>       (GLOBAL_DBNAME=ORCLCDB)
+</span></span><span style="display:flex;"><span>       (ORACLE_HOME=/opt/oracle/product/21c/dbhome_1)
+</span></span><span style="display:flex;"><span>       (SID_NAME=ORCLCDB))
+</span></span><span style="display:flex;"><span>   )
+</span></span></code></pre></div><p>Para poder indicar en el host el nombre del servidor en lugar de su dirección IP es necesario también añadir el el fichero /etc/hosts una línea en la que se asocien ambos datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>127.0.0.1	localhost
+</span></span><span style="display:flex;"><span>127.0.1.1	oracleserver
+</span></span><span style="display:flex;"><span>::1		localhost ip6-localhost ip6-loopback
+</span></span><span style="display:flex;"><span>ff02::1		ip6-allnodes
+</span></span><span style="display:flex;"><span>ff02::2		ip6-allrouters
+</span></span><span style="display:flex;"><span>10.0.0.179	oracleserver
+</span></span></code></pre></div><p>Con esta configuración, ya es posible conectarse desde un cliente remoto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@oracle2:~$ sqlplus usuario/usuario@//10.0.0.179:1521/ORCLCDB
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL*Plus: Release 12.2.0.1.0 Production on Sun Oct 20 11:06:40 2024
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Hora de Ultima Conexion Correcta: Dom Oct 20 2024 11:06:24 +00:00
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Conectado a:
+</span></span><span style="display:flex;"><span>Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL&gt;
+</span></span></code></pre></div><p>Adicionalmente, si el en fichero tnsnames del cliente remoto se añade una configuración similar a esta, la cadena de conexión se hace más sencilla. Este fichero se encuentra en el directorio /opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora (ver <a href="#resoluci%c3%b3n-de-errores"
+
+
+
+ 
+
+
+>resolución de errores</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ORCLCDB=
+</span></span><span style="display:flex;"><span>        (DESCRIPTION =
+</span></span><span style="display:flex;"><span>              (ADDRESS_LIST =
+</span></span><span style="display:flex;"><span>                (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.0.179)(PORT = 1521))
+</span></span><span style="display:flex;"><span>              )
+</span></span><span style="display:flex;"><span>         (CONNECT_DATA =
+</span></span><span style="display:flex;"><span>                (SERVICE_NAME = ORCLCDB)
+</span></span><span style="display:flex;"><span>         )
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><p>De esta manera, el cliente ya tiene acceso al servidor indicando, simplemente, el nombre del servicio configurado en el fichero tnsnames.ora.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@oracle2:~$ sqlplus usuario/usuario@ORCLCDB
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL*Plus: Release 12.2.0.1.0 Production on Sun Oct 20 11:24:29 2024
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Hora de Ultima Conexion Correcta: Dom Oct 20 2024 11:08:24 +00:00
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Conectado a:
+</span></span><span style="display:flex;"><span>Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL&gt;
+</span></span></code></pre></div><h2 id="configuración-del-segundo-servidor">Configuración del segundo servidor</h2>
+<p>Ahora que el primer servidor es accesible desde otro cliente de la red local, es momento de configurar el segundo servidor. Para facilitar el proceso de configuración previa a la instalación del servidor, se puede usar un <a href="https://github.com/fjhuete/instalacion_oracle"
+
+
+
+
+ target="_blank"
+ 
+
+
+>script de configuración</a> y posteriormente se puede instalar un paquete .deb convertido usando la herramienta <code>alien</code> a partir del paquete .rpm que distribuye Oracle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@oracle2:~$ sudo dpkg -i oracle-database-ee-21c_1.0-2_amd64.deb 
+</span></span><span style="display:flex;"><span>(Leyendo la base de datos ... 27566 ficheros o directorios instalados actualmente.)
+</span></span><span style="display:flex;"><span>Preparando para desempaquetar oracle-database-ee-21c_1.0-2_amd64.deb ...
+</span></span><span style="display:flex;"><span>ln: fallo al crear el enlace simbólico &#39;/bin/awk&#39;: El fichero ya existe
+</span></span><span style="display:flex;"><span>Desempaquetando oracle-database-ee-21c (1.0-2) ...
+</span></span><span style="display:flex;"><span>Configurando oracle-database-ee-21c (1.0-2) ...
+</span></span><span style="display:flex;"><span>[INFO] Executing post installation scripts...
+</span></span><span style="display:flex;"><span>[INFO] Oracle home installed successfully and ready to be configured.
+</span></span><span style="display:flex;"><span>To configure a sample Oracle Database you can execute the following service configuration script as root: /etc/init.d/oracledb_ORCLCDB-21c configure
+</span></span><span style="display:flex;"><span>Procesando disparadores para libc-bin (2.36-9+deb12u8) ...
+</span></span></code></pre></div><p>Antes de configurar el nuevo servicio se añaden al fichero .bashrc las variables necesarias para el funcionamiento de Oracle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ORACLE_HOME<span style="color:#f92672">=</span>/opt/oracle/product/21c/dbhome_1
+</span></span><span style="display:flex;"><span>export ORACLE_SID<span style="color:#f92672">=</span>ORCLCDB
+</span></span><span style="display:flex;"><span>export ORACLE_BASE<span style="color:#f92672">=</span>/opt/oracle
+</span></span><span style="display:flex;"><span>export LD_LIBRARY_PATH<span style="color:#f92672">=</span>$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$ORACLE_HOME/bin:$PATH
+</span></span><span style="display:flex;"><span>export NLS_LANG<span style="color:#f92672">=</span>SPANISH_SPAIN.UTF8
+</span></span></code></pre></div><p>Y se ejecuta como root el script de configuración que indica el instalador de Oracle.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@oracle2:~$ sudo /etc/init.d/oracledb_ORCLCDB-21c configure
+</span></span><span style="display:flex;"><span>Configuring Oracle Database ORCLCDB.
+</span></span><span style="display:flex;"><span>Preparar para funcionamiento de base de datos
+</span></span><span style="display:flex;"><span>8% completado
+</span></span><span style="display:flex;"><span>Copiando archivos de base de datos
+</span></span><span style="display:flex;"><span>31% completado
+</span></span><span style="display:flex;"><span>Creando e iniciando instancia Oracle
+</span></span><span style="display:flex;"><span>32% completado
+</span></span><span style="display:flex;"><span>36% completado
+</span></span><span style="display:flex;"><span>40% completado
+</span></span><span style="display:flex;"><span>43% completado
+</span></span><span style="display:flex;"><span>46% completado
+</span></span><span style="display:flex;"><span>Terminando creación de base de datos
+</span></span><span style="display:flex;"><span>51% completado
+</span></span><span style="display:flex;"><span>54% completado
+</span></span><span style="display:flex;"><span>Creando Bases de Datos de Conexión
+</span></span><span style="display:flex;"><span>58% completado
+</span></span><span style="display:flex;"><span>77% completado
+</span></span><span style="display:flex;"><span>Ejecutando acciones posteriores a la configuración
+</span></span><span style="display:flex;"><span>100% completado
+</span></span><span style="display:flex;"><span>Creación de la base de datos terminada. Consulte los archivos log de /opt/oracle/cfgtoollogs/dbca/ORCLCDB
+</span></span><span style="display:flex;"><span> para obtener más información.
+</span></span><span style="display:flex;"><span>Información de Base de Datos:
+</span></span><span style="display:flex;"><span>Nombre de la Base de Datos Global:ORCLCDB
+</span></span><span style="display:flex;"><span>Identificador del Sistema (SID):ORCLCDB
+</span></span><span style="display:flex;"><span>Para obtener información detallada, consulte el archivo log &#34;/opt/oracle/cfgtoollogs/dbca/ORCLCDB/ORCLCDB.log&#34;.
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Database configuration completed successfully. The passwords were auto generated, you must change them by connecting to the database using &#39;sqlplus / as sysdba&#39; as the oracle user.
+</span></span></code></pre></div><p>Para poder acceder a sqlplus con el usuario debian es necesario que esté incluido en el grupo dba.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo usermod -a -G dba debian
+</span></span></code></pre></div><h2 id="configuración-de-la-conexión-entre-servidores">Configuración de la conexión entre servidores</h2>
+<p>Como en el caso del otro servidor, para permitir la conexión remota desde otro equipo de la red también se debe configurar el fichero listener.ora. En el caso de este segundo servidor, su contenido es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>LISTENER =
+</span></span><span style="display:flex;"><span>   (DESCRIPTION_LIST =
+</span></span><span style="display:flex;"><span>     (DESCRIPTION =
+</span></span><span style="display:flex;"><span>       (ADDRESS = (PROTOCOL = TCP)(HOST = oracle2)(PORT = 1521))
+</span></span><span style="display:flex;"><span>       (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+</span></span><span style="display:flex;"><span>     )
+</span></span><span style="display:flex;"><span>   )
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span> SID_LIST_LISTENER=
+</span></span><span style="display:flex;"><span>   (SID_LIST=
+</span></span><span style="display:flex;"><span>     (SID_DESC=
+</span></span><span style="display:flex;"><span>       (GLOBAL_DBNAME=ORCLCDB)
+</span></span><span style="display:flex;"><span>       (ORACLE_HOME=/opt/oracle/product/21c/dbhome_1)
+</span></span><span style="display:flex;"><span>       (SID_NAME=ORCLCDB))
+</span></span><span style="display:flex;"><span>   )
+</span></span></code></pre></div><p>Y para poder usar el hostname en el parámetro host, el fichero /etc/hosts tiene que recoger la IP a la que corresponde ese hostname.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>127.0.0.1	localhost
+</span></span><span style="display:flex;"><span>127.0.1.1	oracle2
+</span></span><span style="display:flex;"><span>::1		localhost ip6-localhost ip6-loopback
+</span></span><span style="display:flex;"><span>ff02::1		ip6-allnodes
+</span></span><span style="display:flex;"><span>ff02::2		ip6-allrouters
+</span></span><span style="display:flex;"><span>10.0.0.26	oracle2
+</span></span></code></pre></div><p>Tras realizar esta configuración en el servidor 2 ya se puede acceder a la base de datos recién creada desde el servidor 1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@oracleserver:~$ sqlplus dos/dos@//10.0.0.26:1521/ORCLCDB
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL*Plus: Release 21.0.0.0.0 - Production on Dom Oct 20 12:11:00 2024
+</span></span><span style="display:flex;"><span>Version 21.3.0.0.0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Hora de Última Conexión Correcta: Dom Oct 20 2024 12:10:38 +00:00
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Conectado a:
+</span></span><span style="display:flex;"><span>Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+</span></span><span style="display:flex;"><span>Version 21.3.0.0.0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>SQL&gt; 
+</span></span></code></pre></div><h2 id="demostración-del-funcionamiento-de-la-interconexión-entre-servidores-oracle">Demostración del funcionamiento de la interconexión entre servidores Oracle</h2>
+<p>Para demostrar el funcionamiento de la interconexión entre servidores se usa, en este caso, el esquema Scott. En el servidor 1 se crea y rellena la tabla de departamentos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">connect</span> uno<span style="color:#f92672">/</span>uno
+</span></span><span style="display:flex;"><span>Conectado.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> DEPT
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>   DEPTNO NUMBER(<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>   DNAME VARCHAR2(<span style="color:#ae81ff">14</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>   LOC VARCHAR2(<span style="color:#ae81ff">13</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6</span>   <span style="color:#66d9ef">CONSTRAINT</span> PK_DEPT <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (DEPTNO)
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">7</span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Tabla creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> DEPT <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;ACCOUNTING&#39;</span>, <span style="color:#e6db74">&#39;NEW YORK&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> DEPT <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;RESEARCH&#39;</span>, <span style="color:#e6db74">&#39;DALLAS&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> DEPT <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">30</span>, <span style="color:#e6db74">&#39;SALES&#39;</span>, <span style="color:#e6db74">&#39;CHICAGO&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> DEPT <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">40</span>, <span style="color:#e6db74">&#39;OPERATIONS&#39;</span>, <span style="color:#e6db74">&#39;BOSTON&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span></code></pre></div><p>En el servidor 2 se crea y rellena la tabla de empleados.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">connect</span> dos<span style="color:#f92672">/</span>dos
+</span></span><span style="display:flex;"><span>Conectado.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> EMP
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>   EMPNO NUMBER(<span style="color:#ae81ff">4</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>   ENAME VARCHAR2(<span style="color:#ae81ff">10</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>   JOB VARCHAR2(<span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">6</span>   MGR NUMBER(<span style="color:#ae81ff">4</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">7</span>   HIREDATE DATE,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">8</span>   SAL NUMBER(<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9</span>   COMM NUMBER(<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">10</span>   DEPTNO NUMBER(<span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">11</span>   <span style="color:#66d9ef">CONSTRAINT</span> PK_EMP <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (EMPNO)
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">12</span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Tabla creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7369</span>, <span style="color:#e6db74">&#39;SMITH&#39;</span>, <span style="color:#e6db74">&#39;CLERK&#39;</span>, <span style="color:#ae81ff">7902</span>,TO_DATE(<span style="color:#e6db74">&#39;17-DIC-1980&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">800</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7369</span>, <span style="color:#e6db74">&#39;SMITH&#39;</span>, <span style="color:#e6db74">&#39;CLERK&#39;</span>, <span style="color:#ae81ff">7902</span>,TO_DATE(<span style="color:#e6db74">&#39;17-DIC-1980&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">800</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7499</span>, <span style="color:#e6db74">&#39;ALLEN&#39;</span>, <span style="color:#e6db74">&#39;SALESMAN&#39;</span>, <span style="color:#ae81ff">7698</span>,TO_DATE(<span style="color:#e6db74">&#39;20-FEB-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">1600</span>, <span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7521</span>, <span style="color:#e6db74">&#39;WARD&#39;</span>, <span style="color:#e6db74">&#39;SALESMAN&#39;</span>, <span style="color:#ae81ff">7698</span>,TO_DATE(<span style="color:#e6db74">&#39;22-FEB-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">1250</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7566</span>, <span style="color:#e6db74">&#39;JONES&#39;</span>, <span style="color:#e6db74">&#39;MANAGER&#39;</span>, <span style="color:#ae81ff">7839</span>,TO_DATE(<span style="color:#e6db74">&#39;2-ABR-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">2975</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7654</span>, <span style="color:#e6db74">&#39;MARTIN&#39;</span>, <span style="color:#e6db74">&#39;SALESMAN&#39;</span>, <span style="color:#ae81ff">7698</span>,TO_DATE(<span style="color:#e6db74">&#39;28-SEP-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">1250</span>, <span style="color:#ae81ff">1400</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7698</span>, <span style="color:#e6db74">&#39;BLAKE&#39;</span>, <span style="color:#e6db74">&#39;MANAGER&#39;</span>, <span style="color:#ae81ff">7839</span>,TO_DATE(<span style="color:#e6db74">&#39;1-MAY-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">2850</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7782</span>, <span style="color:#e6db74">&#39;CLARK&#39;</span>, <span style="color:#e6db74">&#39;MANAGER&#39;</span>, <span style="color:#ae81ff">7839</span>,TO_DATE(<span style="color:#e6db74">&#39;9-JUN-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">2450</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7788</span>, <span style="color:#e6db74">&#39;SCOTT&#39;</span>, <span style="color:#e6db74">&#39;ANALYST&#39;</span>, <span style="color:#ae81ff">7566</span>,TO_DATE(<span style="color:#e6db74">&#39;09-DIC-1982&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">3000</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7839</span>, <span style="color:#e6db74">&#39;KING&#39;</span>, <span style="color:#e6db74">&#39;PRESIDENT&#39;</span>, <span style="color:#66d9ef">NULL</span>,TO_DATE(<span style="color:#e6db74">&#39;17-NOV-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">5000</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7844</span>, <span style="color:#e6db74">&#39;TURNER&#39;</span>, <span style="color:#e6db74">&#39;SALESMAN&#39;</span>, <span style="color:#ae81ff">7698</span>,TO_DATE(<span style="color:#e6db74">&#39;8-SEP-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">1500</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7876</span>, <span style="color:#e6db74">&#39;ADAMS&#39;</span>, <span style="color:#e6db74">&#39;CLERK&#39;</span>, <span style="color:#ae81ff">7788</span>,TO_DATE(<span style="color:#e6db74">&#39;12-ENE-1983&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">1100</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7900</span>, <span style="color:#e6db74">&#39;JAMES&#39;</span>, <span style="color:#e6db74">&#39;CLERK&#39;</span>, <span style="color:#ae81ff">7698</span>,TO_DATE(<span style="color:#e6db74">&#39;3-DIC-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">950</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> EMP <span style="color:#66d9ef">VALUES</span>(<span style="color:#ae81ff">7902</span>, <span style="color:#e6db74">&#39;FORD&#39;</span>, <span style="color:#e6db74">&#39;ANALYST&#39;</span>, <span style="color:#ae81ff">7566</span>,TO_DATE(<span style="color:#e6db74">&#39;3-DIC-1981&#39;</span>, <span style="color:#e6db74">&#39;DD-MON-YYYY&#39;</span>), <span style="color:#ae81ff">3000</span>, <span style="color:#66d9ef">NULL</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> fila creada.
+</span></span></code></pre></div><p>Desde alguno de los dos servidores se crea la interconexión al otro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> link empleados
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  <span style="color:#66d9ef">connect</span> <span style="color:#66d9ef">to</span> dos
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  identified <span style="color:#66d9ef">by</span> dos
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  <span style="color:#66d9ef">using</span> <span style="color:#e6db74">&#39;ORCL2&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enlace con la base de datos creado.
+</span></span></code></pre></div><p>Tras establecer esta configuración para la interconexión entre los servidores de bases de datos de Oracle aparece este error al intentar consultar la tabla de un servidor desde el otro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">SELECT</span> ename <span style="color:#66d9ef">from</span> emp<span style="color:#f92672">@</span>empleados;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> ename <span style="color:#66d9ef">from</span> emp<span style="color:#f92672">@</span>empleados
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>ERROR en línea <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>ORA<span style="color:#f92672">-</span><span style="color:#ae81ff">12504</span>: TNS:el listener <span style="color:#66d9ef">no</span> ha recibido el SERVICE_NAME en CONNECT_DATA
+</span></span></code></pre></div><p>La interconexión también se puede crear haciendo referencia a la IP del servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> link empleados <span style="color:#66d9ef">connect</span> <span style="color:#66d9ef">to</span> dos identified <span style="color:#66d9ef">by</span> dos <span style="color:#66d9ef">using</span> <span style="color:#e6db74">&#39;//10.0.0.26:1521/ORCLCDB&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enlace con la base de datos creado.
+</span></span></code></pre></div><p>Usando este formato en la cadena de conexión ya es posible hacer consultas desde un servidor de la base de datos usando la información almacenada en el otro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">select</span> ename
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  <span style="color:#66d9ef">from</span> emp<span style="color:#f92672">@</span>empleados
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  <span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> deptno
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  		<span style="color:#66d9ef">from</span> dept
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>  		<span style="color:#66d9ef">where</span> dname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SALES&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ENAME
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ALLEN
+</span></span><span style="display:flex;"><span>WARD
+</span></span><span style="display:flex;"><span>MARTIN
+</span></span><span style="display:flex;"><span>BLAKE
+</span></span><span style="display:flex;"><span>TURNER
+</span></span><span style="display:flex;"><span>JAMES
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span> filas seleccionadas.
+</span></span></code></pre></div><h2 id="resolución-de-errores">Resolución de errores</h2>
+<p>El error mencionado anteriormente se produce por un problema con la ubicación del fichero tnsnames.ora. Este fichero se instala en diferentes ubicaciones del servidor al instalar Oracle. Sin embargo, el servidor sólo usa uno de estos ficheros para establecer las conexiones. En este caso el fichero que se estaba editando (/opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora) no coincidía con el que estaba usando el servidor (/opt/oracle/product/21c/dbhome_1/network/admin/tnsnames.ora).</p>
+<p>Solucionar este problema es tan sencillo como copiar el fichero de configuración en la ubicación correcta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo cp /opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora /opt/oracle/product/21c/dbhome_1/network/admin/tnsnames.ora
+</span></span></code></pre></div><p>Tras ubicar correctamente el fichero, ambos servidores de Oracle se pueden comunicar usando el nombre configurado en el fichero tnsnames.ora.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">database</span> link empleados;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enlace con la base de datos borrado.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> link empleados
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  <span style="color:#66d9ef">connect</span> <span style="color:#66d9ef">to</span> dos
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  identified <span style="color:#66d9ef">by</span> dos
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  <span style="color:#66d9ef">using</span> <span style="color:#e6db74">&#39;ORCL2&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enlace con la base de datos creado.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">select</span> ename
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span>  <span style="color:#66d9ef">from</span> emp<span style="color:#f92672">@</span>empleados
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span>  <span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> (<span style="color:#66d9ef">select</span> deptno
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">4</span>  		<span style="color:#66d9ef">from</span> dept
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">5</span>  		<span style="color:#66d9ef">where</span> dname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SALES&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ENAME
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ALLEN
+</span></span><span style="display:flex;"><span>WARD
+</span></span><span style="display:flex;"><span>MARTIN
+</span></span><span style="display:flex;"><span>BLAKE
+</span></span><span style="display:flex;"><span>TURNER
+</span></span><span style="display:flex;"><span>JAMES
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span> filas seleccionadas.
+</span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-bases-de-datos%2f2024-11-16-interconexion-oracle%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-bases-de-datos%2f2024-11-16-interconexion-oracle%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-bases-de-datos%2f2024-11-16-interconexion-oracle%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-bases-de-datos%2f2024-11-16-interconexion-oracle%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
+      Manejo y modificación de módulos del kernel 
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orquestación on Javi Huete</title>
+    <link>/tags/orquestaci%C3%B3n/</link>
+    <description>Recent content in Orquestación on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 10 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/orquestaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Funcionamiento básico de ansible</title>
+      <link>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</guid>
+      <description>Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</description>
+    </item>
+  </channel>
+</rss>

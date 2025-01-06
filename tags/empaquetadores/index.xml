@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Empaquetadores on Javi Huete</title>
+    <link>/tags/empaquetadores/</link>
+    <description>Recent content in Empaquetadores on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 03 Nov 2023 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/empaquetadores/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Empaquetadores y compresores/descompresores en Debian</title>
+      <link>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/</guid>
+      <description>Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</description>
+    </item>
+  </channel>
+</rss>

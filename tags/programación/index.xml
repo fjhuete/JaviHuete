@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programación on Javi Huete</title>
+    <link>/tags/programaci%C3%B3n/</link>
+    <description>Recent content in Programación on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 07 Jan 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/programaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comandos para la programación de tareas</title>
+      <link>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/</guid>
+      <description>La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</description>
+    </item>
+  </channel>
+</rss>

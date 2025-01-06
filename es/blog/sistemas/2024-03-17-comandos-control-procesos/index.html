@@ -1,0 +1,1759 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/sistemas/2024-03-17-comandos-control-procesos/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Comandos para el control de procesos</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Comandos para el control de procesos" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/sistemas/2024-03-17-comandos-control-procesos/" />
+
+
+<meta name="twitter:title" content="Comandos para el control de procesos" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Comandos para el control de procesos
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/sistemas/"
+                    class=""
+                    >Sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              17 de marzo de 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#el-comando-ps">El comando <code>ps</code></a>
+      <ol>
+        <li><a href="#definición">Definición</a>
+          <ol>
+            <li><a href="#sintaxis">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-top">El comando <code>top</code></a>
+      <ol>
+        <li><a href="#definición-1">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-1">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-1">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-1">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-htop">El comando <code>htop</code></a>
+      <ol>
+        <li><a href="#definición-2">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-2">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-2">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-2">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-kill">El comando <code>kill</code></a>
+      <ol>
+        <li><a href="#definción">Definción</a>
+          <ol>
+            <li><a href="#sintaxis-3">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-3">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-3">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-jobs">El comando <code>jobs</code></a>
+      <ol>
+        <li><a href="#definición-3">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-4">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-4">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-4">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-nohup">El comando <code>nohup</code></a>
+      <ol>
+        <li><a href="#definición-4">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-5">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-5">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-5">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-disown">El comando <code>disown</code></a>
+      <ol>
+        <li><a href="#definición-5">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-6">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-6">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-6">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-nice">El comando <code>nice</code></a>
+      <ol>
+        <li><a href="#definición-6">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-7">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-7">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-7">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-renice">El comando <code>renice</code></a>
+      <ol>
+        <li><a href="#definición-7">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-8">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-8">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-8">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-killall">El comando <code>killall</code></a>
+      <ol>
+        <li><a href="#definición-8">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-9">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-9">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-9">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-pidof">El comando <code>pidof</code></a>
+      <ol>
+        <li><a href="#definición-9">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-10">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-10">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-10">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-bg">El comando <code>bg</code></a>
+      <ol>
+        <li><a href="#definición-10">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-11">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-11">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-11">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+    <li><a href="#el-comando-fg">El comando <code>fg</code></a>
+      <ol>
+        <li><a href="#definición-11">Definición</a>
+          <ol>
+            <li><a href="#sintaxis-12">Sintaxis</a></li>
+          </ol>
+        </li>
+        <li><a href="#opciones-12">Opciones</a></li>
+        <li><a href="#ejemplos-de-uso-12">Ejemplos de uso</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</p>
+<h1 id="el-comando-ps">El comando <code>ps</code></h1>
+<h2 id="definición">Definición</h2>
+<p>El comando <code>ps</code> muestra información sobre procesos activos. Esta información se muestra de forma estática. Para obtener información actualizada se puede usar el comando top.</p>
+<p>Este comando acepta varias opciones. Por una parte, permite usar opciones UNIX, precedidas por un guión y que se pueden agrupar. Por otra, se pueden usar opciones BSD que se pueden agrupar pero no van precedidas de guión. Además, se pueden usar opciones largas GNU, que van precedidas de un doble guión.</p>
+<p>Esto hace que opciones similares tengan funcionamiento diferente. Por ejemplo, <code>ps aux</code> y <code>ps -aux</code> son comandos diferentes. Mientras que <code>ps -aux</code> muestra todos los procesos que pertenecen a un usuario llamado x (<code>-a</code>: todos los procesos, <code>-u</code>: pertenecientes a un usuario, x: nombre del usuario), <code>ps aux</code> muestra una lista de todos los procesos activos del sistema.</p>
+<h3 id="sintaxis">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ps [opciones]
+</span></span></code></pre></div><h2 id="opciones">Opciones</h2>
+<ul>
+<li><code>a</code>: Muestra todos los procesos y no sólo los del usuario.</li>
+<li><code>-A</code> / <code>-e</code>: Muestra todos los procesos.</li>
+<li><code>-a</code>: Muestra todos los procesos excepto aquellos que no están asociados a una terminal y los líderes de sesión.</li>
+<li><code>-d</code>: Muestra todos los procesos excepto los líderes de sesión.</li>
+<li><code>-N</code> / <code>--deselect</code>: Muestra todos los procesos excepto los que cumplen la condición indicada.</li>
+<li><code>T</code>: Muestra todos los procesos relacionados con la terminal vigente.</li>
+<li><code>r</code>: Muestra sólo los procesos en ejecución</li>
+<li><code>x</code>: Muestra los procesos que no tienen una terminal asociada.</li>
+<li><code>--pid</code> / <code>-p</code> / <code>p</code> / <code>-&lt;número&gt;</code> / <code>&lt;número&gt;</code>: Indica el número de proceso que se quiere mostrar.</li>
+<li><code>-c</code>: Muestra los procesos asociados a un comando indicado.</li>
+<li><code>-G</code> / <code>--Group</code>: Muestra los procesos asociados a un grupo indicado.</li>
+<li><code>t</code> / <code>-t</code> / <code>--tty</code>: Muestra los procesos asociados a una terminal indicada.</li>
+<li><code>-u</code> / <code>U</code> / <code>--user</code>: Muestra los procesos asociados a un usuario.</li>
+<li><code>-l</code> / <code>l</code>: Muestra la salida en formato largo.</li>
+</ul>
+<h2 id="ejemplos-de-uso">Ejemplos de uso</h2>
+<p>El comando ps se puede usar para ver todos los procesos activos en el sistema:</p>
+<p><code>ps -e</code> (notación UNIX)</p>
+<p><code>ps aux</code> (notación BSD)</p>
+<p>También permite mostrar un árbol de procesos:</p>
+<p><code>ps -ejH</code> (notación UNIX)</p>
+<p><code>ps axjf</code> (notación BSD)</p>
+<p>Además, se puede consultar información sobre los hilos de procesos:</p>
+<p><code>ps -eLf</code> (notación UNIX)</p>
+<p><code>ps -axms</code> (notación BSD)</p>
+<h1 id="el-comando-top">El comando <code>top</code></h1>
+<h2 id="definición-1">Definición</h2>
+<p>El comando <code>top</code> Muestra una vista dinámica en tiempo real de los procesos que se ejecutan en el sistema. Además, muestra un resumen de la información del sistema. La información del sistema que muestra <code>top</code>, así como el orden y tamaño de la información de los procesos puede configurarse.</p>
+<h3 id="sintaxis-1">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>top [opciones]
+</span></span></code></pre></div><h2 id="opciones-1">Opciones</h2>
+<ul>
+<li><code>-b</code>: Arranca top en modo batch para enviar la salida a un fichero u otro programa. Se ejecuta durante un número de iteraciones indicado o hasta que se detiene el proceso.</li>
+<li><code>-d</code>: Indica el tiempo de refresco de la información que muestra top.</li>
+<li><code>-H</code>: Muestra cada hilo de forma individual en vez de una suma de todos los hilos de cada proceso.</li>
+<li><code>-n</code>: Muestra el número de iteraciones máximas antes de que se cierre el programa.</li>
+<li><code>-p</code>: Muestra únicamente la información relativa al proceso indicado.</li>
+<li><code>-s</code>: Arranca en modo seguro incluso si lo ejecuta el root. Este modo impide el uso de algunos comandos interactivos.</li>
+</ul>
+<p>Además, top permite usar comandos interactivos durante la ejecución del programa como:</p>
+<ul>
+<li><code>H</code>: Muestra todos los hilos de cada uno de los procesos en vez de una suma de ellos para cada proceso.</li>
+<li><code>k</code>: Envía una señal a un proceso.</li>
+<li><code>q</code>: Sale del programa.</li>
+<li><code>r</code>: Modifica la prioridad de un proceso.</li>
+<li><code>W</code>: guarda las opciones de configuración de top a un fichero.</li>
+</ul>
+<h2 id="ejemplos-de-uso-1">Ejemplos de uso</h2>
+<p>El comando <code>top</code> se puede usar para mostrar los procesos del sistema:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>top
+</span></span></code></pre></div><p>Se puede indicar el número de lecturas que debe mostrar antes de terminar su ejecución:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>top -5
+</span></span></code></pre></div><p>Y también se puede parar un proceso de manera interactiva desde este programa:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>top 
+</span></span><span style="display:flex;"><span>k
+</span></span><span style="display:flex;"><span>PID
+</span></span></code></pre></div><h1 id="el-comando-htop">El comando <code>htop</code></h1>
+<h2 id="definición-2">Definición</h2>
+<p>El comando <code>htop</code> es un visor de procesos similar a top pero que permite desplazarse tanto vertical como horizontalmente a través de la vista, así como interactuar con el ratón. Muestra todos los procesos del sistema junto con sus comandos y también los muestra en modo de árbol. Permite enviar órdenes a los procesos sin indicar su PID.</p>
+<p>Además, el paquete htop también incluye <code>pcp htop</code>, una versión de <code>htop</code> que usa la API Performance Co-Pilot Metrics que permite que <code>htop</code> muestre valores de métricas arbitrarias.</p>
+<h3 id="sintaxis-2">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>htop [opciones]
+</span></span></code></pre></div><h2 id="opciones-2">Opciones</h2>
+<ul>
+<li><code>-d</code>: Indica el tiempo de refresco de la información.</li>
+<li><code>-C</code>: Usa el modo monocromo.</li>
+<li><code>-F</code>: Filtra los procesos que se muestran.</li>
+<li><code>-p</code>: Muestra sólo los procesos indicados.</li>
+<li><code>-s</code>: Ordena la información por la columna indicada.</li>
+<li><code>-u</code>: Muestra sólo los procesos del usuario indicado.</li>
+<li><code>-t</code>: Muestra los procesos en forma de árbol.</li>
+</ul>
+<p>Adicionalmente, <code>htop</code> ofrece comandos interactivos durante su ejecución para funciones como la navegación a través de la información, el etiquetado de procesos o el filtrado de la información. Los comandos interactivos más relevantes se muestran en la parte inferior de la terminal durante la ejecución del programa.</p>
+<h2 id="ejemplos-de-uso-2">Ejemplos de uso</h2>
+<p>El uso más habitual de <code>htop</code> es revisar el uso que los diferentes procesos que se están ejecutando en el equipo hacen de los recursos del sistema.</p>
+<h1 id="el-comando-kill">El comando <code>kill</code></h1>
+<h2 id="definción">Definción</h2>
+<p>El comando <code>kill</code> envía señales a procesos. La señal por defecto es TERM, que termina el proceso. También permite enviar otras señales como <code>HUP</code>, <code>INT</code>, <code>KILL</code>, <code>STOP</code> o <code>CONT</code>.</p>
+<h3 id="sintaxis-3">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>kill [opciones] pid
+</span></span></code></pre></div><h2 id="opciones-3">Opciones</h2>
+<ul>
+<li><code>-s</code>: Indica la señal que se debe enviar.</li>
+<li><code>-l</code>: Lista el nombre de las señales.</li>
+<li><code>-L</code>: Lista las señales en forma de tabla.</li>
+</ul>
+<h2 id="ejemplos-de-uso-3">Ejemplos de uso</h2>
+<p>El comando kill se usa para enviar señales a procesos, por ejemplo:</p>
+<ul>
+<li><code>kill -9 -1</code>: envía la señal KILL a todos los procesos que se puedan matar.</li>
+<li><code>kill -l 11</code>: Muestra el nombre de la señal número 11.</li>
+<li><code>kill -L</code>: Muestra la lista de señales que se pueden enviar en forma de tabla.</li>
+<li><code>kill 123 456 2615 431</code>: Envía la señal por defecto (SIGTERM) a los procesos indicados.</li>
+</ul>
+<h1 id="el-comando-jobs">El comando <code>jobs</code></h1>
+<h2 id="definición-3">Definición</h2>
+<p>El comando <code>jobs</code> muestra el estado de los trabajos iniciados en el entorno de shell actual.</p>
+<h3 id="sintaxis-4">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>jobs [opciones] [id del trabajo]
+</span></span></code></pre></div><h2 id="opciones-4">Opciones</h2>
+<p>Este comando sólo tiene cinco opciones:</p>
+<ul>
+<li><code>-l</code>: Muestra más información sobre cada trabajo listado como el número de trabajo, el ID del grupo del proceso, el estado o el comando que ha generado el trabajo.</li>
+<li><code>-n</code>: Sólo muestra los procesos que han cambiado de estado desde la última notificación</li>
+<li><code>-p</code>: Muestra sólo el ID del proceso.</li>
+<li><code>-r</code>: Muestra sólo los trabajos en ejecución.</li>
+<li><code>-s</code>: Muestra sólo los trabajos detenidos.</li>
+</ul>
+<h2 id="ejemplos-de-uso-4">Ejemplos de uso</h2>
+<p>El uso habitual de <code>jobs</code> es listar los trabajos que se están desarrollando en un entorno de shell determinado. Para ello se puede usar <code>jobs</code> o <code>jobs -l</code> para mostrar una información más amplia.</p>
+<h1 id="el-comando-nohup">El comando <code>nohup</code></h1>
+<h2 id="definición-4">Definición</h2>
+<p>El comando <code>nohup</code> hace que otro comando pueda ignorar la señal de cierre durante su ejecución.</p>
+<h3 id="sintaxis-5">Sintaxis</h3>
+<p>La sintaxis de <code>nohup</code> es:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nohup comando [argumento].
+</span></span></code></pre></div><p>Adicionalmente, se puede usar la sintaxis <code>nohup opción</code> para usar alguna de las dos opciones de las que dispone el comando.</p>
+<h2 id="opciones-5">Opciones</h2>
+<p>Las únicas dos opciones que se pueden usar con nohup son:</p>
+<ul>
+<li><code>--help</code>: Muestra la ayuda del comando.</li>
+<li><code>--version</code>: Muestra la versión del comando.</li>
+</ul>
+<h2 id="ejemplos-de-uso-5">Ejemplos de uso</h2>
+<p>El comando <code>nohup</code> se suele usar habitualmente para invocar procesos que se deben seguir ejecutando tras el cierre de la terminal desde la que se han invocado. Un caso de uso concreto puede ser descargar un fichero a través de wget:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nohup wget URL
+</span></span></code></pre></div><p>Además, también permite redirigir la salida de un comando a un fichero. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nohup find / &gt; búsqueda_sistema.out
+</span></span></code></pre></div><h1 id="el-comando-disown">El comando <code>disown</code></h1>
+<h2 id="definición-5">Definición</h2>
+<p>El comando <code>disown</code> quita trabajos del shell actual. Para ello, elimina el trabajo correspondiente al ID indicado en el comando de la tabla de trabajos activos de la terminal.</p>
+<h3 id="sintaxis-6">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>disown [opción] [idtrabajo | pid]
+</span></span></code></pre></div><h2 id="opciones-6">Opciones</h2>
+<p>Este comando tiene tres opciones:</p>
+<ul>
+<li><code>-a</code>: Quita todos los trabajos si no se proporciona un ID de trabajo o proceso.</li>
+<li><code>-:</code> Marca cada trabajo para que no se le envíe una señal SIGHUP si el shell se cierra.</li>
+<li><code>-r</code>: Quita sólo los trabajos en ejecución.</li>
+</ul>
+<h2 id="ejemplos-de-uso-6">Ejemplos de uso</h2>
+<p>El comando <code>disown</code> se usa para eliminar trabajos del entorno de una terminal. Se suele usar en combinación con el comando <code>jobs</code> de manera que para listar los trabajos activos en una terminal se usa <code>jobs</code> o <code>jobs -l</code> y para eliminar trabajos de esa lista se usa <code>disown %n</code>, donde n es el número de trabajo que se desea eliminar o <code>disown -a</code> si se quieren eliminar todos los trabajos.</p>
+<h1 id="el-comando-nice">El comando <code>nice</code></h1>
+<h2 id="definición-6">Definición</h2>
+<p>El comando <code>nice</code> muestra el orden en el que un proceso está en cola para su ejecución en el sistema o ejecuta un comando modificando su prioridad de ejecución. Este comando se puede usar de dos formas: si se ejecuta sin argumentos, muestra el orden de ejecución de los procesos en cola; si se indica un comando como argumento, lo ejecuta con el nivel de prioridad indicado. Por defecto, <code>nice</code> incrementa la prioridad de los procesos que ejecuta en 10.</p>
+<p>El rango mínimo de prioridad para los procesos va desde el -20 para los procesos más prioritarios hasta el 19 para los procesos con un nivel de prioridad más bajo.</p>
+<p>Sin embargo, el nivel de prioridad que indica el comando <code>nice</code> a los procesos no es de obligado cumplimiento para el orden de ejecución de los procesos. Además, <code>nice</code> no puede ejecutar comandos que formen parte de las funciones internas de bash.</p>
+<h3 id="sintaxis-7">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nice [opción] [comando]
+</span></span></code></pre></div><h2 id="opciones-7">Opciones</h2>
+<p>Este comando sólo puede usar una opción:</p>
+<ul>
+<li><code>-n</code>: Indica el nivel de prioridad que se añade o sustrae a la hora de ejecutar el comando indicado. Esta opción va seguida de un operando, que debe ser el número de niveles de prioridad que se modifica en la ejecución del comando indicado a continuación, por defecto, 10. Si el número es positivo, se aumenta la prioridad en la ejecución del comando; si es negativo, se disminuye. Para indicar un ajuste negativo, se debe contar con los privilegios necesarios.</li>
+</ul>
+<h2 id="ejemplos-de-uso-7">Ejemplos de uso</h2>
+<p>El comando <code>nice</code> se suele usar para indicar una prioridad en la ejecución de un proceso. Por ejemplo, se puede usar para indicar que la ejecución del proceso de descarga de un fichero no es prioritaria:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo nice -n -10 wget URL
+</span></span></code></pre></div><h1 id="el-comando-renice">El comando <code>renice</code></h1>
+<h2 id="definición-7">Definición</h2>
+<p>Por su parte, el comando <code>renice</code> modifica la prioridad de ejecución de un proceso. Este comando acepta dos argumentos: el primero de ellos indica el nivel de prioridad que se asigna a un proceso determinado; el segundo argumento indica el identificador del proceso o de los procesos cuyos niveles de prioridad debe modificar el comando <code>renice</code>.</p>
+<p>Para la ejecución de este comando se puede indicar el identificador del proceso, por defecto, pero también el del grupo o el del usuario. También acepta nombres de usuario. Si se usa el identificador de un grupo de procesos se modifica la prioridad de todos los procesos del grupo; si se usa el identificador de usuario o nombre de usuario, la prioridad de todos los procesos que pertenecen a ese usuario se modifica.</p>
+<h3 id="sintaxis-8">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>renice [-n] prioridad [-g|-p|-u] identificador
+</span></span></code></pre></div><h2 id="opciones-8">Opciones</h2>
+<p>Hay dos tipos de opciones que se pueden usar con el comando <code>renice</code>:</p>
+<ul>
+<li>Para indicar el nivel de prioridad se usa la opción <code>-n</code>. Con <code>-n</code> se especifica la prioridad que debe usar el proceso, grupo o usuario. Debe ser el primer argumento.</li>
+<li>En segundo lugar se pueden usar las opciones <code>-g</code>, <code>-p</code> o <code>-u</code> para indicar si el ID corresponde a un grupo de procesos, a un proceso o a un usuario.</li>
+<li>Además, este comando acepta las opciones <code>-h</code> y <code>-V</code> para mostrar la ayuda y la versión del comando.</li>
+</ul>
+<h2 id="ejemplos-de-uso-8">Ejemplos de uso</h2>
+<p>El uso de <code>renice</code> es muy similar al de <code>nice</code>. Siguiendo con el ejemplo anterior y suponiendo que el PID del proceso iniciado es el 1735, se puede alterar la prioridad de ejecución de un proceso como la descarga de un fichero si se necesita aumentar su prioridad:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>renice -n 10 -p 1735
+</span></span></code></pre></div><h1 id="el-comando-killall">El comando <code>killall</code></h1>
+<h2 id="definición-8">Definición</h2>
+<p>El comando <code>killall</code> envía una señal a todos los procesos que ejecutan un comando determinado. Las señales se pueden especificar tanto pro nombre como por su código numérico. Este proceso nunca se termina a sí mismo.</p>
+<h3 id="sintaxis-9">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>killall [opciones] nombre_proceso
+</span></span></code></pre></div><h2 id="opciones-9">Opciones</h2>
+<p>Este comando acepta una gran variedad de opciones. Algunas de las más relevantes son:</p>
+<ul>
+<li><code>-e</code>: Indica que la coincidencia con el nombre debe ser exacta.</li>
+<li><code>-I</code>: Ignora la diferencia entre mayúsculas y minúsculas en la cadena de búsqueda.</li>
+<li><code>-g</code>: Envía la señal al grupo de procesos al que pertenece el proceso indicado. La señal sólo se envía una vez por grupo aunque haya varios procesos que pertenezcan al mismo grupo.</li>
+<li><code>-i</code>: Modo interactivo. Pide confirmación antes de enviar la señal a cada proceso.</li>
+<li><code>-l</code>: Muestra una lista con todas las señales que se pueden enviar a los procesos.</li>
+<li><code>-n</code>: Tiene en cuenta los espacios en la cadena de búsqueda.</li>
+<li><code>-o</code>: Considera coincidencia sólo los procesos que comenzaron antes de un período de tiempo indicado. El período de tiempo se puede indicar como un decimal seguido de las unidades s, m, h, d, w, M, y para segundos, minutos, horas, días, semanas, meses y años respectivamente.</li>
+<li><code>-r</code>: Interpreta la cadena de búsqueda como una expresión regular.</li>
+<li><code>-s</code>: Indica la señal que se debe enviar al proceso o a los procesos indicados.</li>
+<li><code>-u</code>: Envía la señal sólo a los procesos que sean propiedad del usuario especificado. En este caso no es necesario indicar un nombre de proceso. Si no se indica un nombre de proceso, envía la señal a todos los procesos que pertenecen al usuario.</li>
+<li><code>-w</code>: Espera hasta que los procesos a los que se ha enviado una señal terminen. Verifica si se han terminado los procesos indicados una vez por segundo.</li>
+<li><code>-y</code>: Considera coincidencia sólo los procesos que comenzaron después de un período de tiempo indicado. El período de tiempo se puede indicar como un decimal seguido de las unidades s, m, h, d, w, M, y para segundos, minutos, horas, días, semanas, meses y años respectivamente.</li>
+<li><code>-Z</code>: Envía la señal sólo a los procesos que tienen un contexto de seguridad que se corresponde con una expresión regular determinada.</li>
+</ul>
+<h2 id="ejemplos-de-uso-9">Ejemplos de uso</h2>
+<p>Con las opciones indicadas, existen varios ejemplos de uso del comando <code>killall</code>:</p>
+<p><code>killall -l</code> muestra la lista de señales que se pueden enviar.</p>
+<p><code>killall -s STOP wget </code>envía una señal para parar al proceso que depende del comando wget.</p>
+<p><code>killall -y 20m</code> envía una señal para terminar a todos los procesos iniciados en los últimos 20 minutos.</p>
+<p><code>killall -u debian</code> envía una señal para terminar a todos los procesos del usuario debian.</p>
+<h1 id="el-comando-pidof">El comando <code>pidof</code></h1>
+<h2 id="definición-9">Definición</h2>
+<p>El comando <code>pidof</code> busca el ID del proceso que corresponde a un programa en ejecución. Este comando devuelve el PID de un proceso a partir de su nombre.</p>
+<h3 id="sintaxis-10">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>pidof [opciones] programa
+</span></span></code></pre></div><h2 id="opciones-10">Opciones</h2>
+<p>Algunas de las opciones más relevantes del comando pidof son:</p>
+<ul>
+<li><code>-s</code>: Devuelve sólo un ID de proceso.</li>
+<li><code>-c</code>: Sólo devuelve el ID de los procesos que se estén ejecutando en el mismo directorio de root. Esta opción no se puede usar desde usuarios que no sean root.</li>
+<li><code>-q</code>: No devuelve los ID de los procesos, sino que simplemente indica con un valor booleano si la búsqueda ha devuelto algún resultado o no.</li>
+<li><code>-x</code>: Devuelve también el ID del proceso de la shell que ejecuta un script determinado.</li>
+<li><code>-z</code>: Intenta detectar procesos que estén en estado zombi. Habitualmente estos procesos se ignoran porque pueden provocar que herramientas como pidof se cuelguen.</li>
+<li><code>-d</code>: Indica un separador en la salida si devuelve más de un ID de proceso. El separador por defecto es el espacio.</li>
+<li><code>-o</code>: Omite el proceso con el ID indicado. Se puede usar para ignorar el ID del proceso padre desde el que se ejecuta el comando, ya sea una shell o un script.</li>
+</ul>
+<h2 id="ejemplos-de-uso-10">Ejemplos de uso</h2>
+<p>El uso habitual de este comando es encontrar el ID que corresponde a un proceso determinado. Por ejemplo <code>pidof bash</code>.</p>
+<h1 id="el-comando-bg">El comando <code>bg</code></h1>
+<h2 id="definición-10">Definición</h2>
+<p>El comando <code>bg</code> mueve trabajos al segundo plano. Este comando coloca los trabajos cuyo ID se indique como si se hubieran iniciado con <code>&amp;</code>.</p>
+<h3 id="sintaxis-11">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bg [id_trabajo]
+</span></span></code></pre></div><h2 id="opciones-11">Opciones</h2>
+<p>Este comando no tiene opciones.</p>
+<h2 id="ejemplos-de-uso-11">Ejemplos de uso</h2>
+<p>El uso habitual de <code>bg</code> es mover trabajos al segundo plano. Por ejemplo, en un entorno de shell en el que se está llevando a cabo una actualización de la paquetería del sistema con <code>apt upgrade -y</code> y este trabajo tiene el identificador 1, se puede mover al segundo plano con <code>bg 1</code> para poder seguir haciendo uso de la terminal mientras el trabajo se desarrolla.</p>
+<h1 id="el-comando-fg">El comando <code>fg</code></h1>
+<h2 id="definición-11">Definición</h2>
+<p>El comando <code>fg</code> mueve un trabajo al primer plano. Este comando ubica el trabajo  cuyo ID se indique en el primer plano y lo hace el trabajo actual.</p>
+<h3 id="sintaxis-12">Sintaxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bg [id_trabajo]
+</span></span></code></pre></div><h2 id="opciones-12">Opciones</h2>
+<p>Este comando no tiene opciones.</p>
+<h2 id="ejemplos-de-uso-12">Ejemplos de uso</h2>
+<p>El uso habitual de <code>fg</code> es mover trabajos al primer plano. Por ejemplo, si en un entorno de shell se está llevando a cabo una actualización de la paquetería del sistema con <code>apt upgrade</code> en segundo plano y este trabajo tiene el identificador 1, se puede mover al segundo plano con <code>fg 1</code> para interactuar con el comando cuando pida confirmación para la instalación o actualización de un determinado paquete.</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fsistemas%2f2024-03-17-comandos-control-procesos%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fsistemas%2f2024-03-17-comandos-control-procesos%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fsistemas%2f2024-03-17-comandos-control-procesos%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fsistemas%2f2024-03-17-comandos-control-procesos%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+      Instalación desatendida de Debian12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
+      Creación de usuarios y políticas de seguridad en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+      Conceptos básicos del gestor de paquetes apt
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

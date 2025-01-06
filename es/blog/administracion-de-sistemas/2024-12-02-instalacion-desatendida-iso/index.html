@@ -1,0 +1,1701 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/es/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Instalación desatendida de Debian12</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Instalación desatendida de Debian12" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/es/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/" />
+
+
+<meta name="twitter:title" content="Instalación desatendida de Debian12" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/es/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/es/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/es/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/es/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Instalación desatendida de Debian12
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/es/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/es/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              21 de noviembre de 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#creación-del-fichero-de-preseed">Creación del fichero de preseed</a></li>
+    <li><a href="#creación-de-la-iso">Creación de la iso</a></li>
+    <li><a href="#toques-finales">Toques finales</a></li>
+  </ol>
+</nav>
+</details>
+
+            <h1 id="creación-del-fichero-de-preseed">Creación del fichero de preseed</h1>
+<p>Para configurar una instalación desatendida de Debian 12 se usa un fichero de configuración llamado preseed. Este fichero usa las diferentes órdenes del comando debian-installer para responder de forma automática a las preguntas que se muestran durante el proceso habitual de instalación del sistema operativo.</p>
+<p>La distribución ofrece una <a href="https://www.debian.org/releases/bullseye/amd64/apb.es.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>amplia documentación</a> sobre el procedimiento para llevar a cabo la instalación desatendida del sistema operativo. Además, también ofrece un <a href="https://www.debian.org/releases/stable/example-preseed.txt"
+
+
+
+
+ target="_blank"
+ 
+
+
+>fichero de ejemplo</a> extensamente comentado que se puede usar como guía en el proceso de elaboración de un fichero personalizado.</p>
+<p>Además, en el <a href="https://www.debian.org/releases/bullseye/amd64/apbs04.es.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>punto 4</a> del apéndice del manual del administrador de Debian sobre instalación desatendida se desarrolla, punto por punto, cada una de las partes que debe contener este fichero.</p>
+<p>Como se explica en la documentación oficial, el fichero de preseed siempre debe comenzar con la línea <code>#_preseed_V1</code>. A continuación se incluyen las diferentes órdenes que ejecuta durante el proceso de instalación el comando debian-installer para responder a las preguntas del instalador.</p>
+<p>El primer segmento del documento configura el lenguaje, país y distribución de teclas del teclado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Localization</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Selección del lenguale, país y configuración de &#34;locale&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i debian-installer/locale string es_ES</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Selección del teclado</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i keyboard-configuration/xkb-keymap select es</span>
+</span></span></code></pre></div><p>A continuación, se añaden las órdenes relacionadas con la configuración de red. Entre ellas, se establece la interfaz predeterminada para la instalación, se establece el nombre de host y de dominio de la máquina y se puede indicar que se cargue el firmware non-free si es necesario para detectar y configurar el hardware de red. Este opción puede ser necesaria para algunas tarjetas de red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Network configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Netcfg elige automáticamente una interfaz de red con conexión para evitar que </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># se muestre la lista de interfaces si hay más de una</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i netcfg/choose_interface select auto</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Respuestas a las preguntas sobre nombre de host y dominio</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i netcfg/get_hostname string deb-12</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i netcfg/get_domain string gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Disable that annoying WEP key dialog.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i netcfg/wireless_wep string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Intenta cargar el non-free firmware si es necesario para el hardware de red.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i hw-detect/load_firmware boolean true</span>
+</span></span></code></pre></div><p>El siguiente apartado del fichero configura el mirror que se utiliza posteriormente en el proceso de instalación para cargar la configuración de la paquetería del sistema a través de APT.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Mirror settings</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Mirror protocol (http por defecto):</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i mirror/country string ES</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i mirror/http/hostname string ftp.es.debian.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i mirror/http/directory string /debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i mirror/http/proxy string</span>
+</span></span></code></pre></div><p>Después se crean los usuarios en el equipo. Existen varias opciones de configuración análogas a las que se pueden establecer de manera interactiva durante la instalación del sistema. Por ejemplo, se puede indicar que no se cree un usuario root y el usuario normal tendrá privilegios a través de sudo. También se pueden crear una cuenta para root y otra par el usuario. En ambos casos la contraseña se puede indicar en texto claro o encriptada usando un crypt hash.</p>
+<p>Para generar contraseña cifrada que se puede usar en el fichero de preseed se puede usar el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkpasswd -m sha-512
+</span></span></code></pre></div><p>Así, un ejemplo de configuración de las cuentas de usuario en el sistema puede ser el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Account setup</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Contraseña de root en texto claro:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i passwd/root-password password r00tme</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i passwd/root-password-again password r00tme</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o encriptada usando un crypt(3)  hash.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i passwd/root-password-crypted password $6$IJQob.S9vlI2AuBC$Uc9b6E3/aqIH8RwP56KPxsp1PiZ1zZYakuafyzG.XXUS/ecQtStwtM.zwcQpUwWunEQHalP.J8q/sMnQ82Zrk.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para crear una cuenta de usuario</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i passwd/user-fullname string debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i passwd/username string debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># La contraseña de usuario se puede indicar en texto claro</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i passwd/user-password password insecure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i passwd/user-password-again password insecure</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o encriptada usando un crypt(3) hash.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i passwd/user-password-crypted password $6$SwwB64plkjSfzkWG$m0XWCN69GBiozd3gE.we2KFZVviFYif6L0LMF6ds3ZewvsLAWknH/beeSUDr.HbC4nbtaWdA2lnI7BSKly1VS1</span>
+</span></span></code></pre></div><p>A continuación se configuran también el reloj y la zona horaria</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Clock and time zone setup</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Controla si el reloj de hardware se establece en UTC</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i clock-setup/utc boolean true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Este campo deve ser cualquier valor válido para $TZ; los valores válidos</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># se pueden consultar en el directorio /usr/share/zoneinfo/</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i time/zone string Europe/Madrid</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Controla el uso de NTP para establecer la hora del reloj durante la instalación</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i clock-setup/ntp boolean true</span>
+</span></span></code></pre></div><p>Uno de los apartados más críticos del fichero de preseed es el del particionado del disco. Desde la configuración de este fichero se pueden elegir tres modos de particionado: el normal, que usa particiones del disco duro; el particionado con volúmenes lógicos, que usa LVM para particionar el disco; y el particionado encriptado, que genera particiones encriptadas.</p>
+<p>En este caso, se usa la opción lvm para crear las particiones en un grupo de volúmenes.</p>
+<p>En este fichero también se puede definir la cantidad de espacio usada por el grupo de volúmenes, en este caso, el máximo disponible.</p>
+<p>Además, también se puede configurar la eliminación automática de los LVM y RAID que existan en el disco antes de la instalación del sistema operativo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Partitioning</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Los modos de particionado disponibles actualmente son:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - regular: usa los tipos de particiones habituales de la arquitectura</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - lvm:     usa LVM para particionar el disco</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - crypto:  usa LVM con particiones encriptadas</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-auto/method string lvm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Crear un grupo de volúmenes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i partman-auto-lvm/new_vg_name string vg1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Se define la cantidad de espacio usada por el grupo de volúemenes. Puede ser</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># un tamaño en unidades, un porcentaje del espacio libre o la plabra</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># clave &#39;max&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-auto-lvm/guided_size string max</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Eliminación automática de LVM y RAID si existen</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Si alguno de los discos que se van a particionar contiene una</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># configuración LVM previa, el usuario recibiría un aviso. Esto lo evita</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-lvm/device_remove_lvm boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lo mismo ocurre con los RAID preexistentes</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-md/device_remove_md boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Y lo mismo con la confirmación para escribir las particiones lvm</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-lvm/confirm boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-lvm/confirm_nooverwrite boolean true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Esto hace que partman particione el disco automáticamente sin confirmación</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># usando uno de los métodos anteriores</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-partitioning/confirm_write_new_label boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman/choose_partition select finish</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman/confirm boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman/confirm_nooverwrite boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman/ignore_warnings boolean true</span>
+</span></span></code></pre></div><p>El particionado del disco se define usando lo que debian-installer llama &ldquo;recetas&rdquo;. Una receta es una guía que establece el número, tamaño y tipo de las particiones que se crean en el disco durante la instalación del sistema operativo.</p>
+<p>Con el fichero de preseed de debian-installer se pueden usar cuatro opciones de particionado: la opción atomic genera una única partición en la que se incluyen todos los ficheros del sistema, la opción home crea una partición separada de la raíz para el directorio /home y la opción multi instala el sistema operativo con particiones separadas para los directorios /home, /var y /tmp. Adicionalmente, debian-installer ofrece la opción de indicar una receta personalizada para establecer un esquema de particionado definido por el usuario.</p>
+<p>En el <a href="https://salsa.debian.org/installer-team/debian-installer/tree/master/doc/devel"
+
+
+
+
+ target="_blank"
+ 
+
+
+>repositorio de debian-installer</a> hay disponible documentación adicional específica sobre el uso de las recetas personalizadas para el particionado.</p>
+<p>En este caso, se define una partición efi de pequeño tamaño con sistema de ficheros fat32 que se monta en el directorio /boot/efi. Después se indica la creación de la partición /boot ya con sistema de ficheros ext4 y con un tamaño de 512M. Dentro del grupo de volúmenes se crean varios volúmenes lógicos para montar en ellos diferentes directorios del sistema. El menor tamaño se le asigna a la swap y el mayor tamaño se le asigna a la partición raíz. Con tamaños intermedios se crean también las particiones /home y /var.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># Se puede elegir una de las tres recetas de particionado predefinidas:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - atomic: todos los ficheros en una partición</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - home:   partición /home separada</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># - multi:  particiones /home, /var y /tmp separadas</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># o una receta de experto definida a continuación</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-auto/choose_recipe select bootlvm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Receta para el particionado con LVM</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i partman-auto/expert_recipe string                         \</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">bootlvm :</span>:                                                    <span style="color:#ae81ff">\</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">256</span> <span style="color:#ae81ff">256</span> <span style="color:#ae81ff">256</span> <span style="color:#ae81ff">fat32                                         \</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">$primary{ } $bootable{ }                          \</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">method{ format } format{ }                        \</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">use_filesystem{ } filesystem{ fat32 }             \</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">mountpoint{ /boot/efi }                           \</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">set_flags{ boot }                                 \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">.                                                         \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">512</span> <span style="color:#ae81ff">512</span> <span style="color:#ae81ff">512</span> <span style="color:#ae81ff">ext4                                          \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">$primary{ } $bootable{ }                              \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">method{ format } format{ }                            \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">use_filesystem{ } filesystem{ ext4 }                  \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">mountpoint{ /boot }                                   \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">.                                                         \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">256</span> <span style="color:#ae81ff">256</span> <span style="color:#ae81ff">512</span> <span style="color:#ae81ff">linux-swap                                    \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">$defaultignore{ } $lvmok{ }                           \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">lv_name{ swap }                                       \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">in_vg { vg1 }                                         \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">method{ swap } format{ }                              \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">.                                                         \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4096</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">1000000</span> <span style="color:#ae81ff">ext4                                   \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">$defaultignore{ } $lvmok{ }                           \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">lv_name{ raiz }                                       \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">in_vg { vg1 }                                         \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">method{ format } format{ }                            \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">use_filesystem{ } filesystem{ ext4 }                  \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">mountpoint{ / }                                       \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">.                                                         \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">10000000</span> <span style="color:#ae81ff">ext4                                   \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">$defaultignore{ } $lvmok{ }                           \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">lv_name{ var }                                        \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">in_vg { vg1 }                                         \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">method{ format } format{ }                            \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">use_filesystem{ } filesystem{ ext4 }                  \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">mountpoint{ /var }                                    \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">.                                                         \</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">1024</span> <span style="color:#ae81ff">5000</span> <span style="color:#ae81ff">10000000</span> <span style="color:#ae81ff">ext4                                   \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">$defaultignore{ } $lvmok{ }                           \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">lv_name{ home }                                       \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">in_vg { vg1 }                                         \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">method{ format } format{ }                            \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">use_filesystem{ } filesystem{ ext4 }                  \</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">mountpoint{ /home }                                   \</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">.</span>
+</span></span></code></pre></div><p>Tras el particionado, se indican diferentes parámetros para la configuración del gestor de paquetes apt, que realiza en este punto de la instalación la primera instalación de la paquetería básica del equipo. Entre otros, se puede indicar si se deben escanear medios adicionales de instalación, si se debe instalar software que sea non-free o contrib o definir los servicios de actualización que se añadirán al fichero /etc/apt/sources.list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Apt setup</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Elige si se escanean medios de instalación adicionales (por defecto: false)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/cdrom/set-first boolean false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Descomenta esto para usar un mirror de red</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/use_mirror boolean false</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalación de non-free firmware.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/non-free-firmware boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalación de non-free and contrib software.</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/non-free boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/contrib boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Descomenta esta línea si no quieres tener la entrada de la imagen de</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># instalación de DVD/BD en sources.list activa en el sistema instalado</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/disable-cdrom-entries boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Elige qué servicios de actualización usar; define los mirrors a usar</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/services-select multiselect security, updates</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i apt-setup/security_host string security.debian.org</span>
+</span></span></code></pre></div><p>Para terminar, se seleccionan los paquetes que instala tasksel al final del proceso de instalación del sistema operativo, se acepta o rechaza la participación en el concurso de popularidad de los paquetes de apt y se instala el gestor de arranque grub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e">### Package selection</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">tasksel tasksel/first multiselect standard, ssh-server</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Selección de la opción de participar en el concurso de popularidad de Debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">popularity-contest popularity-contest/participate boolean false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Boot loader installation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instalación automática del grub en la partición UEFI si no hay otro sistema</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># operativo detectado en la máquina</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i grub-installer/only_debian boolean true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Esto hace que grup-installer instale en la partición UEFI el grub aunque haya</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># otro sistema operativo en la máquina, lo que es menos seguro porque puede</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># hacer que no arranque el otro sistema operativo</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i grub-installer/with_other_os boolean true</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Debido principalmente al uso de memorias USB, no siempre se puede determinar </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># con seguridad la unidad de disco principal, por lo que necesita especificar </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># lo siguiente:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#d-i grub-installer/bootdev  string /dev/sda</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Para instalar el cargador arranque en la unidad de disco principal </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (asumiendo que no sea una memoria USB):</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i grub-installer/bootdev string default</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Finishing up the installation</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Evita el último mensaje sobre la instalación completa</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">d-i finish-install/reboot_in_progress note</span>
+</span></span></code></pre></div><h1 id="creación-de-la-iso">Creación de la iso</h1>
+<p>Para llevar esta configuración a la máquina hay que incluir el fichero de preseed en una imagen iso instalable junto al sistema operativo. Como punto de partida se puede usar la imagen de instalación del sistema operativo que se puede descargar desde su <a href="https://www.debian.org/distrib/netinst"
+
+
+
+
+ target="_blank"
+ 
+
+
+>página web oficial</a>. También se puede usar, si es el caso, una imagen iso modificada. En la <a href="https://wiki.debian.org/DebianInstaller/Preseed/EditIso"
+
+
+
+
+ target="_blank"
+ 
+
+
+>documentación de la herramienta debian-installer</a> se recogen de manera detallada las instrucciones para llevar a cabo este procedimiento.</p>
+<p>El primer paso es extraer el contenido de la imagen iso distribuida por Debian a un directorio del sistema para poder trabajar con sus contenidos. Esto se puede hacer de diferentes formas y usando diferentes herramientas. Una de ellas es <code>xorriso</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install xorriso
+</span></span></code></pre></div><p>Esta herramienta permite trabajar de diferentes formas con ficheros de imagen iso. En este caso, se usa para extraer el contenido del fichero iso a un directorio del sistema de manera que se pueda navegar a través de él como se haría con cualquier otro esquema de directorios. Así, los contenidos del archivo de imagen se hacen accesibles y se pueden modificar para incluir en ellos la información necesaria para que el proceso de instalación se ejecute de forma automática.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>xorriso -osirrox on -indev debian-12.1.0-amd64-netinst.iso -extract / ./iso
+</span></span></code></pre></div><p>En este caso, el contenido de la imagen iso se extrae a un directorio llamado iso. Este directorio contiene todos los ficheros de la imagen iso distribuida por Debian. Para que el proceso de instalación se ejecute de forma desatendida, hay que incluir las órdenes del fichero de preseed en el fichero /install.amd/initrd de la iso. Se trata de un fichero comprimido así que hay que darle permisos de escritura y descomprimirlo. Después se vuelca el contenido del fichero de preseed al fichero initrd y, finalmente, se vuelve a comprimir. Antes de terminar, se le devuelven los permisos originales.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>chmod +w -R iso/install.amd
+</span></span><span style="display:flex;"><span>gunzip iso/install.amd/initrd.gz
+</span></span><span style="display:flex;"><span>echo preseed.cfg | cpio -H newc -o -A -F iso/install.amd/initrd
+</span></span><span style="display:flex;"><span>gzip iso/install.amd/initrd
+</span></span><span style="display:flex;"><span>chmod -w -R iso/install.amd
+</span></span></code></pre></div><p>Como se ha cambiado el contenido de un fichero de la imagen iso, el hash de verificación del fichero también será diferente, por tanto, es necesario regenerar el fichero md5sum.txt que verifica la integridad de los ficheros que componen la imagen iso. Para ello, desde el directorio de la iso se le otorgan permisos de escritura sobre el fichero al usuario, se genera un nuevo fichero con los hashes correspondientes a los ficheros actualizados y se devuelven los permisos originales.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd iso/
+</span></span><span style="display:flex;"><span>chmod +w md5sum.txt
+</span></span><span style="display:flex;"><span>sudo rm md5sum.txt
+</span></span><span style="display:flex;"><span>sudo find -follow -type f ! -name md5sum.txt -print0 | xargs -0 md5sum &gt; md5sum.txt
+</span></span><span style="display:flex;"><span>sudo chmod -w md5sum.txt
+</span></span></code></pre></div><p>Durante la ejecución de este comando se muestra una advertencia que no afecta al proceso.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>find: Se ha detectado un bucle en el sistema de ficheros; ‘./debian’ es parte del mismo bucle de sistema de ficheros que ‘.’.
+</span></span></code></pre></div><p>El último paso es generar una nueva imagen iso que sea arrancable desde un equipo a partir del directorio iso con el que se ha estado trabajando. De nuevo existen múltiples herramientas para este propósito. En este caso, se usa genisoimage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install genisoimage
+</span></span></code></pre></div><p>Esta herramienta permite generar un fichero de imagen arrancalbe de tipo iso a partir de un directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo genisoimage -r -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o preseed-debian-12.iso ../iso/
+</span></span></code></pre></div><p>Este fichero de imagen ya contiene el conjunto de órdenes definido en el fichero de preseed, que va a hacer que la instalación del sistema operativo se lleve a cabo de principio a fin de forma destendida y sin requerir la interacción del usuario en ningún momento.</p>
+<h1 id="toques-finales">Toques finales</h1>
+<p>Hay que tener en cuenta que esta configuración volcada al archivo de imagen iso usando el fichero de preseed sólo ejecuta la instalación desatendida del sistema operativo si se accede al instalador desde el modo &ldquo;install&rdquo; y no desde el modo de instalación gráfica. Una práctica interesante para evitar elegir un modo de instalación inadecuado accidentalmente puede ser editar el menú de arranque del instalador.</p>
+<p>Este menú se define el en fichero /isolinux/menu.cfg (ruta absoluta desde la raíz del archivo de imagen iso). En él cada línea define una entrada del menú del instalador. Algunas de ellas llaman a otros ficheros de configuración en los que se define más detalladamente cada opción de instalación.</p>
+<p>Así, la línea <code>include gtk.cfg</code> llama al fichero en el que se describe la opción de instalación gráfica y la línea <code>include txt.cfg</code> llama al fichero en el que se describe la opción de instalación usando sólo el menú de texto. Esta opción es la que permite el correcto funcionamiento del procedimiento de instalación desatendida usando el fichero de preseed.</p>
+<p>Por tanto, una posible modificación del menú de la iso es la siguiente, en la que se eliminan todas las líneas que describen otras opciones de instalación como la instalación desatendida (a través de red), la instalación con audiodescripción o la instalación gráfica, que no permite que se ejecuten de forma automática las órdenes configuradas en el fichero de preseed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>menu hshift 4
+</span></span><span style="display:flex;"><span>menu width 70
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>menu title Debian GNU/Linux installer menu (BIOS mode)
+</span></span><span style="display:flex;"><span>include stdmenu.cfg
+</span></span><span style="display:flex;"><span>include txt.cfg
+</span></span><span style="display:flex;"><span>label help
+</span></span><span style="display:flex;"><span>	menu label ^Help
+</span></span><span style="display:flex;"><span>	text help
+</span></span><span style="display:flex;"><span>   Display help screens; type &#39;menu&#39; at boot prompt to return to this menu
+</span></span><span style="display:flex;"><span>	endtext
+</span></span><span style="display:flex;"><span>	config prompt.cfg
+</span></span></code></pre></div><p>Este menú muestra únicamente la línea &ldquo;install&rdquo;, que ejecuta la instalación desatendida y la línea &ldquo;help&rdquo; que permite acceder a información y ayuda relevante sobre el sistema operativo y el instalador.</p>
+<p>En una edición un poco más meticulosa de este fichero se pueden mantener todas las opciones compatibles con la instalación desatendida. En este caso se muestra una entrada para la opción de instalación, una entrada para el menú de alto contraste, que facilita la accesibilidad a personas con discapacidad visual y el menú de ayuda.</p>
+<p>Para maximizar la compatibilidad con la configuración de instalación desatendida, el menú de alto contraste también cuenta únicamente con las opciones de instalación (compatible con la configuración esteblecida en el fichero de preseed) y ayuda.</p>
+<p>Las opciones de instalación con audiodescripción no están presentes en este menú porque no son compatibles con la instalación desatendida configurada a través del fichero de preseed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>menu hshift 4
+</span></span><span style="display:flex;"><span>menu width 70
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>menu title Debian GNU/Linux Menu de instalacion desatendida (BIOS mode)
+</span></span><span style="display:flex;"><span>include stdmenu.cfg
+</span></span><span style="display:flex;"><span>include txt.cfg
+</span></span><span style="display:flex;"><span>menu begin dark
+</span></span><span style="display:flex;"><span>    menu label ^Menu de instalacion en alto contraste
+</span></span><span style="display:flex;"><span>	menu title Opciones de instalacion accesible
+</span></span><span style="display:flex;"><span>	include drkmenu.cfg
+</span></span><span style="display:flex;"><span>	label mainmenu
+</span></span><span style="display:flex;"><span>		menu label ^Atras..
+</span></span><span style="display:flex;"><span>		menu exit
+</span></span><span style="display:flex;"><span>	include drk.cfg
+</span></span><span style="display:flex;"><span>	label help
+</span></span><span style="display:flex;"><span>		menu label ^Ayuda
+</span></span><span style="display:flex;"><span>		text help
+</span></span><span style="display:flex;"><span>   Muestra la pantalla de ayuda; escribe &#39;menu&#39; en el prompt para volver
+</span></span><span style="display:flex;"><span>		endtext
+</span></span><span style="display:flex;"><span>		config prompt.cfg
+</span></span><span style="display:flex;"><span>menu end
+</span></span><span style="display:flex;"><span>label help
+</span></span><span style="display:flex;"><span>	menu label ^Ayuda
+</span></span><span style="display:flex;"><span>	text help
+</span></span><span style="display:flex;"><span>   Muestra la pantalla de ayuda; escribe &#39;menu&#39; en el prompt para volver
+</span></span><span style="display:flex;"><span>	endtext
+</span></span><span style="display:flex;"><span>	config prompt.cfg
+</span></span></code></pre></div><p>La edición de este fichero permite también mostrar el menú del instalador traducido, como en este ejemplo anterior. Para que todas las opciones se muestren en castellano es también necesario traducir el texto de los ficheros txt.cfg y drk.cfg, que incluyen detalles de los menús de instalación.</p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalacion-desatendida-iso%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalacion-desatendida-iso%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalacion-desatendida-iso%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fes%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalacion-desatendida-iso%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+      Cómo importar dispositivos a GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
+      Conceptos de gestión de paquetería en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/es/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+      Cómo configurar un servidor DHCP en un router Cisco
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/es/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/es/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/es/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/es/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

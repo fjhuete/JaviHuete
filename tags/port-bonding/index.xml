@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Port Bonding on Javi Huete</title>
+    <link>/tags/port-bonding/</link>
+    <description>Recent content in Port Bonding on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 28 Jan 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/port-bonding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de switches en GNS3</title>
+      <link>/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/</guid>
+      <description>&lt;p&gt;En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

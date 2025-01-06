@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usuarios on Javi Huete</title>
+    <link>/tags/usuarios/</link>
+    <description>Recent content in Usuarios on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 27 Feb 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/usuarios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gestión de permisos UGOA y ACL en Debian</title>
+      <link>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/</guid>
+      <description>El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</description>
+    </item>
+    <item>
+      <title>Creación de usuarios y políticas de seguridad en Debian</title>
+      <link>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</link>
+      <pubDate>Sun, 18 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/</guid>
+      <description>En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</description>
+    </item>
+  </channel>
+</rss>

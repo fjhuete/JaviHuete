@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NAT on Javi Huete</title>
+    <link>/tags/nat/</link>
+    <description>Recent content in NAT on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 25 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/nat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración NAT en routers Cisco en GNS3</title>
+      <link>/blog/redes/2024-03-25-nat-router-cisco-gns3/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-cisco-gns3/</guid>
+      <description>NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Linux en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-linux-openstack/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-linux-openstack/</guid>
+      <description>En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Mikrotik en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</guid>
+      <description>En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+  </channel>
+</rss>

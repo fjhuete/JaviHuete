@@ -1,0 +1,1783 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Instalación de un CMS Python usando Django</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Página personal de Javi Huete" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Instalación de un CMS Python usando Django" />
+<meta property="og:description" content="Página personal de Javi Huete" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/" />
+
+
+<meta name="twitter:title" content="Instalación de un CMS Python usando Django" />
+<meta name="twitter:description" content="Página personal de Javi Huete" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Instalación de un CMS Python usando Django
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/implantacion/"
+                    class=""
+                    >Implantacion
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              December 3, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-del-servidor-apache2">Configuración del servidor Apache2</a></li>
+    <li><a href="#migración-del-cms">Migración del CMS</a>
+      <ol>
+        <li><a href="#volcado-del-proyecto">Volcado del proyecto</a></li>
+        <li><a href="#configuración-del-servidor-de-aplicaciones">Configuración del servidor de aplicaciones</a></li>
+        <li><a href="#configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p>
+<p>Para ello, en primer lugar, se crea un entorno virtual en el que se instala la aplicación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd venv/
+</span></span><span style="display:flex;"><span>python3 -m venv cms
+</span></span><span style="display:flex;"><span>source cms/bin/activate
+</span></span><span style="display:flex;"><span>pip install django-cms
+</span></span></code></pre></div><p>Para crear un proyecto se usa el comando <code>djangocms</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ djangocms javiblog
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Clone template using django-admin
+</span></span><span style="display:flex;"><span>django-admin startproject &#34;javiblog&#34; --template https://github.com/django-cms/cms-template/archive/4.1.tar.gz
+</span></span><span style="display:flex;"><span>cd &#34;/home/debian/javiblog&#34;
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Install requirements in /home/debian/javiblog/requirements.in
+</span></span><span style="display:flex;"><span>python -m pip install -r &#34;/home/debian/javiblog/requirements.in&#34;
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Run migrations
+</span></span><span style="display:flex;"><span>python -m manage migrate
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Create superuser
+</span></span><span style="display:flex;"><span>python -m manage createsuperuser
+</span></span><span style="display:flex;"><span>Username (leave blank to use &#39;debian&#39;): admin
+</span></span><span style="display:flex;"><span>Email address: admin@javiblog.org
+</span></span><span style="display:flex;"><span>Password: 
+</span></span><span style="display:flex;"><span>Password (again): 
+</span></span><span style="display:flex;"><span>The password is too similar to the username.
+</span></span><span style="display:flex;"><span>This password is too short. It must contain at least 8 characters.
+</span></span><span style="display:flex;"><span>This password is too common.
+</span></span><span style="display:flex;"><span>Bypass password validation and create user anyway? [y/N]: y
+</span></span><span style="display:flex;"><span>Superuser created successfully.
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Check installation
+</span></span><span style="display:flex;"><span>python -m manage cms check
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>***************************************
+</span></span><span style="display:flex;"><span>django CMS 4.1.4 installed successfully
+</span></span><span style="display:flex;"><span>***************************************
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Congrat
+</span></span></code></pre></div><p>Para probar la instalación se puede ejecutar un servidor de pruebas con <code>python3 manage.py runserver 0.0.0.0:8080</code>.</p>
+<h1 id="configuración-del-servidor-apache2">Configuración del servidor Apache2</h1>
+<p>Para poder servir el CMS en Apache2 hay que configurar el VirtualHost indicando el ServerName, DocumentRoot y también aportando la información necesaria para que funcione el módulo wsgi de Apache2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#bb9af7">&lt;VirtualHost</span> <span style="color:#9ece6a">*:80</span><span style="color:#bb9af7">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ServerName</span> portal.javi.org
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ServerAdmin</span> webmaster@localhost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">DocumentRoot</span> <span style="color:#9ece6a">/home/debian/javiblog</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIDaemonProcess</span> javiblog python-path=/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/site-packages
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIProcessGroup</span> javiblog
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIScriptAlias</span> / <span style="color:#9ece6a">/home/debian/javiblog/javiblog/wsgi.py</span> process-group=javiblog
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;Directory</span> <span style="color:#9ece6a">/home/debian/javiblog</span><span style="color:#bb9af7">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#9ece6a">Require</span> <span style="color:#bb9af7">all</span> granted
+</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">Alias</span> <span style="color:#9ece6a">/static/</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;Directory</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span><span style="color:#bb9af7">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#9ece6a">Require</span> <span style="color:#bb9af7">all</span> granted
+</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ErrorLog</span> ${APACHE_LOG_DIR}/error.log
+</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">CustomLog</span> ${APACHE_LOG_DIR}/access.log combined
+</span></span><span style="display:flex;"><span><span style="color:#bb9af7">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><p>Después se activa el VirtualHost.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo a2ensite djangocms.conf 
+</span></span><span style="display:flex;"><span>Enabling site djangocms.
+</span></span><span style="display:flex;"><span>To activate the new configuration, you need to run:
+</span></span><span style="display:flex;"><span>  systemctl reload apache2
+</span></span><span style="display:flex;"><span>❯ sudo systemctl reload apache2.service 
+</span></span></code></pre></div><p>A continuación se usa el comando <code>collectstatic</code> para generar un directorio de ficheros estáticos en el directorio del proyecto con todos los ficheros estáticos. Para que este comando funcione, se debe indicar la URL base de los ficheros estáticos en el fichero settings.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>STATIC_ROOT = os.path.join(BASE_DIR, &#39;static&#39;)
+</span></span></code></pre></div><p>Y después se puede ejecutar el comando <code>collectstatic</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ python3 manage.py collectstatic
+</span></span><span style="display:flex;"><span>Found another file with the destination path &#39;admin/img/search.svg&#39;. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>1159 static files copied to &#39;/home/debian/javiblog/static&#39;.
+</span></span></code></pre></div><p>Accediendo al servidor se puede usar el CMS instalado.</p>
+<h1 id="migración-del-cms">Migración del CMS</h1>
+<h2 id="volcado-del-proyecto">Volcado del proyecto</h2>
+<p>En este caso, la aplicación django no está en un repositorio de GitHub, sino que se ha instalado localmente en el entorno de desarrollo. Para llevar el CMS al entorno de producción se puede crear un repositorio en GitHub y clonarlo o, directamente, sucar scp para copiar el directorio en el servidor en producción.</p>
+<p>Antes de llevar el directorio al entorno de producción conviene crear todos los ficheros necesarios como el fichero de respaldo del contenido de la base de datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ python3 manage.py dumpdata &gt; cms.json
+</span></span></code></pre></div><p>Para copiar el directorio al entorno de producción se puede usar el comando <code>scp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ scp -r javiblog/ debian@pignite.javihuete.site:/home/debian
+</span></span></code></pre></div><p>En el entorno de desarrollo también se crea un entorno virtual y se instala el CMS y sus dependencias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd venv/
+</span></span><span style="display:flex;"><span>python3 -m venv cms
+</span></span><span style="display:flex;"><span>source venv/cms/bin/activate
+</span></span><span style="display:flex;"><span>cd
+</span></span><span style="display:flex;"><span>pip install django-cms
+</span></span><span style="display:flex;"><span>cd javiblog
+</span></span><span style="display:flex;"><span>pip install -r requirements.in
+</span></span><span style="display:flex;"><span>pip install mysqlclient
+</span></span></code></pre></div><p>Para poder hacer la migración se crea la base de datos para la aplicación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> cms;
+</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">1</span> row <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">002</span> sec)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> <span style="color:#9ece6a">&#39;cms&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;*****&#39;</span>;
+</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">002</span> sec)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> cms.<span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">to</span> <span style="color:#9ece6a">&#39;cms&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;*****&#39;</span>;
+</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">flush</span> <span style="color:#bb9af7">privileges</span>;
+</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
+</span></span></code></pre></div><p>Y en el fichero settings.py del proyecto se deben indicar los datos de la nueva base de datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># Database
+</span></span><span style="display:flex;"><span># https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>DATABASES = {
+</span></span><span style="display:flex;"><span>    &#39;default&#39;: {
+</span></span><span style="display:flex;"><span>        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+</span></span><span style="display:flex;"><span>        &#39;NAME&#39;: &#39;cms&#39;,
+</span></span><span style="display:flex;"><span>        &#39;USER&#39;: &#39;cms&#39;,
+</span></span><span style="display:flex;"><span>        &#39;PASSWORD&#39;: &#39;djangocms&#39;,
+</span></span><span style="display:flex;"><span>        &#39;HOST&#39;: &#39;localhost&#39;,
+</span></span><span style="display:flex;"><span>        &#39;PORT&#39;: &#39;&#39;,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finalmente, se puede migrar la estructura de la base de datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>python3 manage.py migrate
+</span></span></code></pre></div><p>Y, por último, el contenido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>python3 manage.py loaddata cms.json 
+</span></span></code></pre></div><p>Antes de terminar con la configuración de la aplicación en el entorno de producción hay que permitir el acceso a través de la URL en el fichero settings.py.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ALLOWED_HOSTS = [&#34;portal.javihuete.site&#34;]
+</span></span></code></pre></div><h2 id="configuración-del-servidor-de-aplicaciones">Configuración del servidor de aplicaciones</h2>
+<p>Para poder usar el servidor de aplicaciones <code>uwsgi</code> desde el entorno virtual del CMS hay que instalarlo dentro de este entorno virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>pip install uwsgi
+</span></span></code></pre></div><p>Para configurar el servidor de aplciaciones, en primer lugar, se genera el fichero .ini en el directorio del entorno virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#bb9af7">[uwsgi]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">http</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">:8083</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">chdir</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">/home/debian/javiblog/javiblog</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">wsgi-file</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">wsgi.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">processes</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">threads</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">2</span>
+</span></span></code></pre></div><p>A partir de este fichero se puede configurar la unidad de systemd que controla este servicio en el directorio /etc/systemd/system/uwsgi-cms.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#bb9af7">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Description</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">uwsgi-cms  </span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">After</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">WantedBy</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">multi-user.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">User</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Group</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Restart</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">always</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecStart</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/home/debian/venv/cms/bin/uwsgi /home/debian/venv/cms/cms.ini</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecReload</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/bin/kill -s HUP $MAINPID</span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecStop</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/bin/kill -s TERM $MAINPID</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">WorkingDirectory</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/home/debian/javiblog            </span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Environment</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">PYTHONPATH=&#39;/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/s&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">PrivateTmp</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">true</span>
+</span></span></code></pre></div><p>Para habilitar y arrancar el servicio se usa <code>systemctl</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl enable uswgi-cms.service
+</span></span><span style="display:flex;"><span>sudo systemctl start uswgi-cms.service
+</span></span></code></pre></div><h2 id="configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</h2>
+<p>Para que Nginx dirija el tráfico al servidor de aplicaciones uwsgi se crea un VirtualHost con la siguiente configuración:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#bb9af7">server</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#414868;font-style:italic">#listen 80;
+</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#server_name  python.javihuete.site;
+</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#server_tokens off;
+</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#return 301 https://$server_name$request_uri;
+</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">listen</span> <span style="color:#e0af68">443</span> <span style="color:#9ece6a">ssl</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">server_name</span> <span style="color:#9ece6a">portal.javihuete.site</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">ssl_certificate</span> <span style="color:#9ece6a">/etc/letsencrypt/live/javihuete.site/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_certificate_key</span> <span style="color:#9ece6a">/etc/letsencrypt/live/javihuete.site/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_protocols</span>       <span style="color:#9ece6a">TLSv1</span> <span style="color:#9ece6a">TLSv1.1</span> <span style="color:#9ece6a">TLSv1.2</span> <span style="color:#9ece6a">TLSv1.3</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_ciphers</span>         <span style="color:#9ece6a">HIGH:!aNULL:!MD5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">root</span> <span style="color:#9ece6a">/home/debian/javiblog</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">proxy_pass</span> <span style="color:#9ece6a">http://localhost:8083</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#414868;font-style:italic">#include proxy_params;
+</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	}	
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/static/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">alias</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">error_log</span> <span style="color:#9ece6a">/var/log/nginx/cms_error.log</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">access_log</span> <span style="color:#9ece6a">/var/log/nginx/cms_access.log</span>;   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Por último, para habilitar el sitio se crea el enlace simbólico y se reinicia el servidor web.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ln -s ../sites-available/cms
+</span></span><span style="display:flex;"><span>sudo systemctl restart nginx.service
+</span></span></code></pre></div><p>Al poner en producción el CMS, se usa el protocolo HTTPS para el acceso a la página web. Esto hace que sea necesario añadir la siguiente línea al fichero settings.py de la aplicación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>CSRF_TRUSTED_ORIGINS = [&#34;https://portal.javihuete.site&#34;,]
+</span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/python/">
+                        Python
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/django/">
+                        Django
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/framework/">
+                        Framework
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/nginx/">
+                        Nginx
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servidor-web/">
+                        Servidor web
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/lemp/">
+                        Lemp
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/cms/">
+                        Cms
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/implantacion/">
+                        Implantacion
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/implantaci%c3%b3n-de-aplicaciones-web/">
+                        Implantación de aplicaciones web
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-instalacion-cms-python%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-instalacion-cms-python%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-instalacion-cms-python%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fimplantacion-aplicaciones-web%2f2024-12-03-instalacion-cms-python%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
+      Funcionamiento básico de Linux Bridge
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Un bridge o puente en Linux es un dispositivo de red virtual que permite que las máquinas virtuales alojadas en una máquina física usen su tarjeta de red. En este post se muestra un ejemplo de configuración de un Bridge en una máquina Debian.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+      Cómo simular un servidor PostgreSQL en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Blog</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GNU/Linux on Javi Huete</title>
+    <link>/tags/gnu/linux/</link>
+    <description>Recent content in GNU/Linux on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/gnu/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comandos de supervisión de redes</title>
+      <link>/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/</guid>
+      <description>El uso de algunos comandos es fundamental en la administración de redes. Diferentes sistemas operativos usan distintos comandos pero todos ellos cumplen funciones relevantes</description>
+    </item>
+  </channel>
+</rss>

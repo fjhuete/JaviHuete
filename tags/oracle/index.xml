@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oracle on Javi Huete</title>
+    <link>/tags/oracle/</link>
+    <description>Recent content in Oracle on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sat, 16 Nov 2024 01:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interconexión entre dos servidores Oracle</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</guid>
+      <description>Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</description>
+    </item>
+    <item>
+      <title>Instalación de MySQL en Debian</title>
+      <link>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</guid>
+      <description>El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</description>
+    </item>
+  </channel>
+</rss>

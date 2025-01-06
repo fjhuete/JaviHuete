@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>File System on Javi Huete</title>
+    <link>/tags/file-system/</link>
+    <description>Recent content in File System on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 06 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/file-system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manejo y uso del comando mkisofs</title>
+      <link>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</guid>
+      <description>En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</description>
+    </item>
+  </channel>
+</rss>

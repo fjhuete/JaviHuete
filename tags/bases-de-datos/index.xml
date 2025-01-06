@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bases De Datos on Javi Huete</title>
+    <link>/tags/bases-de-datos/</link>
+    <description>Recent content in Bases De Datos on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 17 Nov 2024 01:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/bases-de-datos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interconexión entre dos servidores Postgres</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</guid>
+      <description>En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</description>
+    </item>
+    <item>
+      <title>Interconexión entre dos servidores Oracle</title>
+      <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</guid>
+      <description>Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</description>
+    </item>
+    <item>
+      <title>Instalación de MySQL en Debian</title>
+      <link>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</guid>
+      <description>El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor MariaDB en GNS3</title>
+      <link>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</guid>
+      <description>MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor PostgreSQL en GNS3</title>
+      <link>/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/</guid>
+      <description>PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</description>
+    </item>
+  </channel>
+</rss>

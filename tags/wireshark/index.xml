@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wireshark on Javi Huete</title>
+    <link>/tags/wireshark/</link>
+    <description>Recent content in Wireshark on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 14 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Así funciona IPv6: configuración en router Linux y Cisco</title>
+      <link>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</guid>
+      <description>&lt;p&gt;IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo simular un servidor web en GNS3</title>
+      <link>/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/</link>
+      <pubDate>Sun, 03 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/</guid>
+      <description>&lt;p&gt;Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Uso básico de Wireshark</title>
+      <link>/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/</link>
+      <pubDate>Mon, 11 Dec 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/</guid>
+      <description>&lt;p&gt;Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Escenario de enrutamiento en GNS3</title>
+      <link>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-11-24-escenario-enrutamiento-gns3/</guid>
+      <description>&lt;p&gt;En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de Wireshark y GNS3 en Debian 12 y Windows 10</title>
+      <link>/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/</link>
+      <pubDate>Tue, 31 Oct 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/</guid>
+      <description>Wireshark y GNS3 son dos programas fundamentales para el trabajo de un administrador de redes pero instalarlos puede suponer algunos desafíos. Aquí se incluye una guía de instalación de Wireshark y GNS3 en Windows 10 y en Debian 12</description>
+    </item>
+  </channel>
+</rss>

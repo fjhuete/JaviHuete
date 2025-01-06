@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Javi Huete</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMS</title>
+      <link>/tags/cms/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/cms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Django</title>
+      <link>/tags/django/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/django/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Framework</title>
+      <link>/tags/framework/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/framework/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantacion</title>
+      <link>/tags/implantacion/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/implantacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantación De Aplicaciones Web</title>
+      <link>/tags/implantaci%C3%B3n-de-aplicaciones-web/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/implantaci%C3%B3n-de-aplicaciones-web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LEMP</title>
+      <link>/tags/lemp/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/lemp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nginx</title>
+      <link>/tags/nginx/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/nginx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servidor Web</title>
+      <link>/tags/servidor-web/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/servidor-web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administracion-Sistemas</title>
+      <link>/tags/administracion-sistemas/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/administracion-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AlmaLinux</title>
+      <link>/tags/almalinux/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/almalinux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CentOS</title>
+      <link>/tags/centos/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/centos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GPL</title>
+      <link>/tags/gpl/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/gpl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IBM</title>
+      <link>/tags/ibm/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ibm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redhat</title>
+      <link>/tags/redhat/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/redhat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/tags/sistemas/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Libre</title>
+      <link>/tags/software-libre/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/software-libre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administración De Sistemas</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache2</title>
+      <link>/tags/apache2/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/apache2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Balanceador De Carga</title>
+      <link>/tags/balanceador-de-carga/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/balanceador-de-carga/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuración Básica</title>
+      <link>/tags/configuraci%C3%B3n-b%C3%A1sica/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/configuraci%C3%B3n-b%C3%A1sica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian Installer</title>
+      <link>/tags/debian-installer/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/debian-installer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dnsmasq</title>
+      <link>/tags/dnsmasq/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HAProxy</title>
+      <link>/tags/haproxy/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/haproxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Instalación</title>
+      <link>/tags/instalaci%C3%B3n/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/instalaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Instalación Desatendida</title>
+      <link>/tags/instalaci%C3%B3n-desatendida/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/instalaci%C3%B3n-desatendida/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iventoy</title>
+      <link>/tags/iventoy/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/iventoy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PHP</title>
+      <link>/tags/php/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Preseed</title>
+      <link>/tags/preseed/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/preseed/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PXE</title>
+      <link>/tags/pxe/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/pxe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>/tags/servicios/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios De Red E Internet</title>
+      <link>/tags/servicios-de-red-e-internet/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios-de-red-e-internet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TFTP</title>
+      <link>/tags/tftp/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/tftp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Entorno De Producción</title>
+      <link>/tags/entorno-de-producci%C3%B3n/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/entorno-de-producci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flask</title>
+      <link>/tags/flask/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/flask/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LAMP</title>
+      <link>/tags/lamp/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/lamp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Migración De Aplicaciones</title>
+      <link>/tags/migraci%C3%B3n-de-aplicaciones/</link>
+      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/migraci%C3%B3n-de-aplicaciones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administración De Sistemas Gestores De Bases De Datos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administracion-Bbdd</title>
+      <link>/tags/administracion-bbdd/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/administracion-bbdd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bases De Datos</title>
+      <link>/tags/bases-de-datos/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/bases-de-datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interconexion De Servidores</title>
+      <link>/tags/interconexion-de-servidores/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/interconexion-de-servidores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postgresql</title>
+      <link>/tags/postgresql/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oracle</title>
+      <link>/tags/oracle/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/oracle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proxy</title>
+      <link>/tags/proxy/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/proxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Proxy Inverso</title>
+      <link>/tags/proxy-inverso/</link>
+      <pubDate>Sat, 16 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/proxy-inverso/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comandos</title>
+      <link>/tags/comandos/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/comandos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kernel</title>
+      <link>/tags/kernel/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Módulos</title>
+      <link>/tags/m%C3%B3dulos/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/m%C3%B3dulos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysctl</title>
+      <link>/tags/sysctl/</link>
+      <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/sysctl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Almacenamiento</title>
+      <link>/tags/almacenamiento/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/almacenamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ansible</title>
+      <link>/tags/ansible/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ansible/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certbot</title>
+      <link>/tags/certbot/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/certbot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dev-Ops</title>
+      <link>/tags/dev-ops/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dev-ops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dispositivos De Bloque</title>
+      <link>/tags/dispositivos-de-bloque/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dispositivos-de-bloque/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fpm-Php</title>
+      <link>/tags/fpm-php/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/fpm-php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTPS</title>
+      <link>/tags/https/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/https/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infraestructura Como Código</title>
+      <link>/tags/infraestructura-como-c%C3%B3digo/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/infraestructura-como-c%C3%B3digo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ISCSI</title>
+      <link>/tags/iscsi/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/iscsi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>/tags/lets-encrypt/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orquestación</title>
+      <link>/tags/orquestaci%C3%B3n/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/orquestaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAN</title>
+      <link>/tags/san/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/san/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tgt</title>
+      <link>/tags/tgt/</link>
+      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/tgt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apt</title>
+      <link>/tags/apt/</link>
+      <pubDate>Sat, 02 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/apt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paquetes</title>
+      <link>/tags/paquetes/</link>
+      <pubDate>Sat, 02 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/paquetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bookworm</title>
+      <link>/tags/bookworm/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/bookworm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian 12</title>
+      <link>/tags/debian-12/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/debian-12/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Instalacion</title>
+      <link>/tags/instalacion/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/instalacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>/tags/mysql/</link>
+      <pubDate>Mon, 21 Oct 2024 01:00:00 +0000</pubDate>
+      <guid>/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dpkg</title>
+      <link>/tags/dpkg/</link>
+      <pubDate>Mon, 30 Sep 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dpkg/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bonding</title>
+      <link>/tags/bonding/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/bonding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bridge</title>
+      <link>/tags/bridge/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/bridge/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Planificación Y Administración De Redes</title>
+      <link>/tags/planificaci%C3%B3n-y-administraci%C3%B3n-de-redes/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/planificaci%C3%B3n-y-administraci%C3%B3n-de-redes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redes</title>
+      <link>/tags/redes/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/redes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Router</title>
+      <link>/tags/router/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/router/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Router Linux</title>
+      <link>/tags/router-linux/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/router-linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualización</title>
+      <link>/tags/virtualizaci%C3%B3n/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/virtualizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VLAN</title>
+      <link>/tags/vlan/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/vlan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cisco</title>
+      <link>/tags/cisco/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GNS3</title>
+      <link>/tags/gns3/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/gns3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IPv6</title>
+      <link>/tags/ipv6/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ipv6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Túeneles IPv6</title>
+      <link>/tags/t%C3%BAeneles-ipv6/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/t%C3%BAeneles-ipv6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Túneles 6to4</title>
+      <link>/tags/t%C3%BAneles-6to4/</link>
+      <pubDate>Tue, 21 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/t%C3%BAneles-6to4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Active Directory</title>
+      <link>/tags/active-directory/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Directorio Activo</title>
+      <link>/tags/directorio-activo/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/directorio-activo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GPO</title>
+      <link>/tags/gpo/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/gpo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantación De Sistemas Operativos</title>
+      <link>/tags/implantaci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/implantaci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Políticas De Grupo</title>
+      <link>/tags/pol%C3%ADticas-de-grupo/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/pol%C3%ADticas-de-grupo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PowerShell</title>
+      <link>/tags/powershell/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DHCPv6</title>
+      <link>/tags/dhcpv6/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dhcpv6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SLAAC</title>
+      <link>/tags/slaac/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/slaac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireshark</title>
+      <link>/tags/wireshark/</link>
+      <pubDate>Tue, 14 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/wireshark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cmd</title>
+      <link>/tags/cmd/</link>
+      <pubDate>Tue, 07 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/cmd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Controlador De Dominio</title>
+      <link>/tags/controlador-de-dominio/</link>
+      <pubDate>Tue, 07 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/controlador-de-dominio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recursos Compartidos</title>
+      <link>/tags/recursos-compartidos/</link>
+      <pubDate>Tue, 07 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/recursos-compartidos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File System</title>
+      <link>/tags/file-system/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/file-system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fundamentos De Hardware</title>
+      <link>/tags/fundamentos-de-hardware/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/fundamentos-de-hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iso</title>
+      <link>/tags/iso/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/iso/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mkisofs</title>
+      <link>/tags/mkisofs/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mkisofs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dispositivos De Almacenamiento</title>
+      <link>/tags/dispositivos-de-almacenamiento/</link>
+      <pubDate>Sun, 05 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dispositivos-de-almacenamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistema De Ficheros</title>
+      <link>/tags/sistema-de-ficheros/</link>
+      <pubDate>Sun, 05 May 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/sistema-de-ficheros/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OSPF</title>
+      <link>/tags/ospf/</link>
+      <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/ospf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenStack</title>
+      <link>/tags/openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/openstack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cortafuegos</title>
+      <link>/tags/cortafuegos/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/cortafuegos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hunger Games</title>
+      <link>/tags/hunger-games/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/hunger-games/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iptables</title>
+      <link>/tags/iptables/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/iptables/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Los Juegos Del Hambre</title>
+      <link>/tags/los-juegos-del-hambre/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/los-juegos-del-hambre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sinsajo</title>
+      <link>/tags/sinsajo/</link>
+      <pubDate>Fri, 12 Apr 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/sinsajo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lvm</title>
+      <link>/tags/lvm/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/lvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Snapshot</title>
+      <link>/tags/snapshot/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/snapshot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volúmenes Lógicos</title>
+      <link>/tags/vol%C3%BAmenes-l%C3%B3gicos/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/vol%C3%BAmenes-l%C3%B3gicos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mikrotik</title>
+      <link>/tags/mikrotik/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mikrotik/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NAT</title>
+      <link>/tags/nat/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/nat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DHCP</title>
+      <link>/tags/dhcp/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/dhcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mariadb</title>
+      <link>/tags/mariadb/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mariadb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servidores</title>
+      <link>/tags/servidores/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/servidores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comandos Básicos</title>
+      <link>/tags/comandos-b%C3%A1sicos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/comandos-b%C3%A1sicos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Disown</title>
+      <link>/tags/disown/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/disown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Killall</title>
+      <link>/tags/killall/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/killall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pidof</title>
+      <link>/tags/pidof/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/pidof/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Procesos</title>
+      <link>/tags/procesos/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/procesos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ps</title>
+      <link>/tags/ps/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Renice</title>
+      <link>/tags/renice/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/renice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Top</title>
+      <link>/tags/top/</link>
+      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/top/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gestión De Bases De Datos</title>
+      <link>/tags/gesti%C3%B3n-de-bases-de-datos/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/gesti%C3%B3n-de-bases-de-datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MongoDB</title>
+      <link>/tags/mongodb/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NoSQL</title>
+      <link>/tags/nosql/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/nosql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SGBD</title>
+      <link>/tags/sgbd/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/sgbd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ACL</title>
+      <link>/tags/acl/</link>
+      <pubDate>Sun, 03 Mar 2024 02:00:00 +0200</pubDate>
+      <guid>/tags/acl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache</title>
+      <link>/tags/apache/</link>
+      <pubDate>Sun, 03 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/apache/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Enrutamiento</title>
+      <link>/tags/enrutamiento/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/enrutamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ip Route</title>
+      <link>/tags/ip-route/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ip-route/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Permisos</title>
+      <link>/tags/permisos/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/permisos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>/tags/seguridad/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tcpdump</title>
+      <link>/tags/tcpdump/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/tcpdump/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ugoa</title>
+      <link>/tags/ugoa/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/ugoa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Usuarios</title>
+      <link>/tags/usuarios/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/usuarios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ARP</title>
+      <link>/tags/arp/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/arp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caché ARP</title>
+      <link>/tags/cach%C3%A9-arp/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/cach%C3%A9-arp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MAC</title>
+      <link>/tags/mac/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MAC Flooding</title>
+      <link>/tags/mac-flooding/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mac-flooding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MAC Spoofing</title>
+      <link>/tags/mac-spoofing/</link>
+      <pubDate>Wed, 07 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/mac-spoofing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kvm</title>
+      <link>/tags/kvm/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/kvm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Qemu</title>
+      <link>/tags/qemu/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/qemu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtmanager</title>
+      <link>/tags/virtmanager/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/virtmanager/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtualizacion</title>
+      <link>/tags/virtualizacion/</link>
+      <pubDate>Sat, 03 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/virtualizacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Parted</title>
+      <link>/tags/parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/parted/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Port Bonding</title>
+      <link>/tags/port-bonding/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/port-bonding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Port Mirroring</title>
+      <link>/tags/port-mirroring/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/port-mirroring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Switch</title>
+      <link>/tags/switch/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/switch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tinycore Linux</title>
+      <link>/tags/tinycore-linux/</link>
+      <pubDate>Sun, 28 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/tinycore-linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crontab</title>
+      <link>/tags/crontab/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/crontab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sleep</title>
+      <link>/tags/sleep/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/sleep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Watch</title>
+      <link>/tags/watch/</link>
+      <pubDate>Sun, 07 Jan 2024 01:00:00 +0200</pubDate>
+      <guid>/tags/watch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xargs</title>
+      <link>/tags/xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/xargs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GNU/Linux</title>
+      <link>/tags/gnu/linux/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0200</pubDate>
+      <guid>/tags/gnu/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cd</title>
+      <link>/tags/cd/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cp</title>
+      <link>/tags/cp/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/cp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ls</title>
+      <link>/tags/ls/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/ls/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mkdir</title>
+      <link>/tags/mkdir/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/mkdir/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mv</title>
+      <link>/tags/mv/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/mv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rm</title>
+      <link>/tags/rm/</link>
+      <pubDate>Fri, 10 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/rm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>7z Comandos</title>
+      <link>/tags/7z-comandos/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/7z-comandos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Compresores</title>
+      <link>/tags/compresores/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/compresores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Compress</title>
+      <link>/tags/compress/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/compress/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Empaquetadores</title>
+      <link>/tags/empaquetadores/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/empaquetadores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gzip</title>
+      <link>/tags/gzip/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/gzip/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rar</title>
+      <link>/tags/rar/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/rar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tar</title>
+      <link>/tags/tar/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/tar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xz</title>
+      <link>/tags/xz/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/xz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zip</title>
+      <link>/tags/zip/</link>
+      <pubDate>Fri, 03 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/tags/zip/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nextjs</title>
+      <link>/tags/nextjs/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/tags/nextjs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Silicon</title>
+      <link>/tags/silicon/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/tags/silicon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software</title>
+      <link>/tags/software/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/tags/software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tailwind</title>
+      <link>/tags/tailwind/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/tags/tailwind/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>/tags/technology/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/tags/technology/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

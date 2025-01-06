@@ -1,0 +1,1690 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/servicios/2024-11-10-configuracion-servidor-san/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración de un servidor SAN</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración de un servidor SAN" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/servicios/2024-11-10-configuracion-servidor-san/" />
+
+
+<meta name="twitter:title" content="Configuración de un servidor SAN" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Configuración De Un Servidor SAN</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Configuración de un servidor SAN
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <h1 id="gestión-de-volúmenes-en-el-servidor-san">Gestión de volúmenes en el servidor SAN</h1>
+<p>El servidor SAN cuenta con 3 discos duros de 2G cada uno. A partir de estos discos se crea un Raid5 y se convierte en un grupo de volúmenes. En este grupo de volúmenes se crean un volumen de 1G que se comparte con un cliente GNU/Linux y dos volúmenes de 512M que se comparten con un cliente Windows.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
+</span></span><span style="display:flex;"><span>mdadm --detail --scan --verbose &gt;&gt; /etc/mdadm/mdadm.conf
+</span></span><span style="display:flex;"><span>update-initramfs -u -k all
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>vgcreate vg1 /dev/md0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>lvcreate -L 1G -n lv1 vg1
+</span></span><span style="display:flex;"><span>lvcreate -L 512M -n lv2 vg1
+</span></span><span style="display:flex;"><span>lvcreate -L 512M -n lv3 vg1
+</span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-gnulinux">Creación de un target para compartir con un cliente GNU/Linux</h1>
+<h2 id="creación-del-target-en-el-servidor-san">Creación del target en el servidor SAN</h2>
+<p>El primer paso es crear el target en el servidor SAN. Es necesario instalar previamente la herramienta <code>tgtadm</code> del paquete <code>tgt</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install tgt
+</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode target --tid 1 -T iqn.2024-10.org.javi:target1
+</span></span></code></pre></div><p>Además, para compartir el volumen lógico con el cliente hay que añadirlo como Unidad Lógica (LUN) al target recién creado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 1 --lun 1 -b /dev/vg1/lv1
+</span></span></code></pre></div><p>Ahora hay disponible en el servidor un target con una LUN que se puede compartir.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@san:~$ sudo tgtadm --lld iscsi --op show --mode target
+</span></span><span style="display:flex;"><span>Target 1: iqn.2024-10.org.javi:target1
+</span></span><span style="display:flex;"><span>    System information:
+</span></span><span style="display:flex;"><span>        Driver: iscsi
+</span></span><span style="display:flex;"><span>        State: ready
+</span></span><span style="display:flex;"><span>    I_T nexus information:
+</span></span><span style="display:flex;"><span>    LUN information:
+</span></span><span style="display:flex;"><span>        LUN: 0
+</span></span><span style="display:flex;"><span>            Type: controller
+</span></span><span style="display:flex;"><span>            SCSI ID: IET     00010000
+</span></span><span style="display:flex;"><span>            SCSI SN: beaf10
+</span></span><span style="display:flex;"><span>            Size: 0 MB, Block size: 1
+</span></span><span style="display:flex;"><span>            Online: Yes
+</span></span><span style="display:flex;"><span>            Removable media: No
+</span></span><span style="display:flex;"><span>            Prevent removal: No
+</span></span><span style="display:flex;"><span>            Readonly: No
+</span></span><span style="display:flex;"><span>            SWP: No
+</span></span><span style="display:flex;"><span>            Thin-provisioning: No
+</span></span><span style="display:flex;"><span>            Backing store type: null
+</span></span><span style="display:flex;"><span>            Backing store path: None
+</span></span><span style="display:flex;"><span>            Backing store flags: 
+</span></span><span style="display:flex;"><span>        LUN: 1
+</span></span><span style="display:flex;"><span>            Type: disk
+</span></span><span style="display:flex;"><span>            SCSI ID: IET     00010001
+</span></span><span style="display:flex;"><span>            SCSI SN: beaf11
+</span></span><span style="display:flex;"><span>            Size: 1074 MB, Block size: 512
+</span></span><span style="display:flex;"><span>            Online: Yes
+</span></span><span style="display:flex;"><span>            Removable media: No
+</span></span><span style="display:flex;"><span>            Prevent removal: No
+</span></span><span style="display:flex;"><span>            Readonly: No
+</span></span><span style="display:flex;"><span>            SWP: No
+</span></span><span style="display:flex;"><span>            Thin-provisioning: No
+</span></span><span style="display:flex;"><span>            Backing store type: rdwr
+</span></span><span style="display:flex;"><span>            Backing store path: /dev/vg1/lv1
+</span></span><span style="display:flex;"><span>            Backing store flags: 
+</span></span><span style="display:flex;"><span>    Account information:
+</span></span><span style="display:flex;"><span>    ACL information:
+</span></span></code></pre></div><p>Antes de acceder al target desde el cliente (192.168.0.5) hay que hacer que esté disponible a través de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op bind --mode target --tid 1 -I 192.168.0.5
+</span></span></code></pre></div><p>Esta configuración desaparece con el apagado de la máquina. Para hacerla persistente a reinicios se debe volcar a un fichero de configuración. Esta operación se puede realizar con la herramienta <code>tgt-admin</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
+</span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente">Configuración del volumen en el cliente</h2>
+<p>Para configurar un target como volumen en el cliente es necesario usar la herramienta <code>iscasiadm</code>, disponible en el paquete <code>open-iscsi</code>. La instalación de esta herramienta genera el fichero de configuración /etc/iscsi/initiatorname.iscsi, que crea un initiator en el cliente para permitirle usar los volúmenes que comparte el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install open-iscsi
+</span></span></code></pre></div><p>Antes de configurar la conexión, es necesario conocer cuáles son los targets que ofrece el servidor SAN (192.168.0.4) disponibles en la red para el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode discovery --type sendtargets --portal 192.168.0.4
+</span></span><span style="display:flex;"><span>192.168.0.4:3260,1 iqn.2024-10.org.javi:target1
+</span></span></code></pre></div><p>Con el nombre del target que se recibe desde el servidor se puede configurar la conexión.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 --login
+</span></span><span style="display:flex;"><span>Logging in to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260]
+</span></span><span style="display:flex;"><span>Login to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260] successful.
+</span></span></code></pre></div><p>El volumen ya está disponible en el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ lsblk
+</span></span><span style="display:flex;"><span>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+</span></span><span style="display:flex;"><span>sda      8:0    0    1G  0 disk 
+</span></span></code></pre></div><p>También se puede crear un sistema de ficheros en este disco duro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo mkfs.ext4 /dev/sda
+</span></span><span style="display:flex;"><span>mke2fs 1.47.0 (5-Feb-2023)
+</span></span><span style="display:flex;"><span>Creating filesystem with 262144 4k blocks and 65536 inodes
+</span></span><span style="display:flex;"><span>Filesystem UUID: 631106dd-f545-4129-840c-f4e4560504bd
+</span></span><span style="display:flex;"><span>Superblock backups stored on blocks: 
+</span></span><span style="display:flex;"><span>    32768, 98304, 163840, 229376
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Allocating group tables: done                            
+</span></span><span style="display:flex;"><span>Writing inode tables: done                            
+</span></span><span style="display:flex;"><span>Creating journal (8192 blocks): done
+</span></span><span style="display:flex;"><span>Writing superblocks and filesystem accounting information: done
+</span></span></code></pre></div><h2 id="montar-el-volumen-de-forma-persistente-en-el-cliente-usando-systemd-mount">Montar el volumen de forma persistente en el cliente usando <code>systemd mount</code></h2>
+<p>Para que el proceso de descubrimiento y login del target sea persistente a los reinicios es necesario comprobar que el parámetro <code>node.startup</code> del fichero de configuración /etc/iscsi/iscsid.conf tiene el valor <code>automatic</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#*****************
+</span></span><span style="display:flex;"><span># Startup settings
+</span></span><span style="display:flex;"><span>#*****************
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span># To request that the iscsi service scripts startup a session, use <span style="color:#e6db74">&#34;automatic&#34;</span>:
+</span></span><span style="display:flex;"><span> node.startup = automatic
+</span></span><span style="display:flex;"><span>#
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># To manually startup the session, use &#34;manual&#34;. The default is manual.</span>
+</span></span><span style="display:flex;"><span>#node.startup <span style="color:#f92672">=</span> manual
+</span></span></code></pre></div><p>Además, hay que añadir el nodo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -o new
+</span></span><span style="display:flex;"><span>New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 192.168.0.4,3260,-1 iqn.2024-10.org.javi:target1] added
+</span></span></code></pre></div><p>Y, en el registro del nodo cambiar el valor del parámetro <code>discovery.sendtargets.use_discoveryd</code> a <code>Yes</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.use_discoveryd -v Yes
+</span></span></code></pre></div><p>Por último, se debe establecer también un valor al parámetro <code>discovery.sendtargets.discoveryd_poll_inval</code>. En este caso, <code>30</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.discoveryd_poll_inval -v 30
+</span></span></code></pre></div><p>Una vez que el volumen es accesible desde el cliente se puede crear un punto de montaje con systemd para hacerlo persistente. Systemd es un demonio que gestiona y adminisra el sistema y los servicios, entre ellos, el montaje de discos.</p>
+<p>Para hacer un montaje persisten con systemd es necesario un archivo de montaje que se crea en el directorio /etc/systemd/system/&lt;nombre&gt;.mount.</p>
+<p>Al igual que en el fichero /etc/fstab, en el fichero de montaje se pueden especificar el punto de montaje del disco, el sistema de ficheros que usa y las opciones de montaje.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo nano /etc/systemd/system/san.mount
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Nuevo disco montado-san</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">iscsid.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Requires</span><span style="color:#f92672">=</span><span style="color:#e6db74">iscsid.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Mount]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">What</span><span style="color:#f92672">=</span><span style="color:#e6db74">/dev/sda</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Where</span><span style="color:#f92672">=</span><span style="color:#e6db74">/san</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">ext4</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Options</span><span style="color:#f92672">=</span><span style="color:#e6db74">defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Para que systemd detecte los cambios se reinicia el daemon.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl daemon-reload
+</span></span></code></pre></div><p>Una vez que el montaje del dispositivo está configurado a través de systemctl este volumen se puede montar con el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl start san.mount
+</span></span></code></pre></div><p>Para hacer persistente a los reinicios el montaje del dispositivo simplemente hay que habilitarlo de la misma forma que se habilitan otros servicios en systemctl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo systemctl enable san.mount
+</span></span><span style="display:flex;"><span>Created symlink /etc/systemd/system/multi-user.target.wants/san.mount → /etc/systemd/system/san.mount.
+</span></span></code></pre></div><p>Además, se pueden usar otras funciones de systemctl como el status para ver el estado del dispositivo. Así, tras reiniciar el cliente, se puede comprobar que el dispositivo se ha vuelto a montar correctamente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo systemctl status san.mount 
+</span></span><span style="display:flex;"><span>● san.mount - Nuevo disco montado-san
+</span></span><span style="display:flex;"><span>     Loaded: loaded (/etc/systemd/system/san.mount; enabled; preset: enabled)
+</span></span><span style="display:flex;"><span>     Active: active (mounted) since Fri 2024-11-01 19:20:34 CET; 22s ago
+</span></span><span style="display:flex;"><span>      Where: /san
+</span></span><span style="display:flex;"><span>       What: /dev/sda
+</span></span><span style="display:flex;"><span>      Tasks: 0 (limit: 1098)
+</span></span><span style="display:flex;"><span>     Memory: 160.0K
+</span></span><span style="display:flex;"><span>        CPU: 4ms
+</span></span><span style="display:flex;"><span>     CGroup: /system.slice/san.mount
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>nov 01 19:20:34 cliente systemd[1]: Mounting san.mount - Nuevo disco montado-san...
+</span></span><span style="display:flex;"><span>nov 01 19:20:34 cliente systemd[1]: Mounted san.mount - Nuevo disco montado-san.
+</span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-windows">Creación de un target para compartir con un cliente Windows</h1>
+<h2 id="creación-del-target-en-el-servidor-san-1">Creación del target en el servidor SAN</h2>
+<p>El target que se va a compartir con el cliente Windows cuenta con dos unidades lógicas de 512M cada una.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode target --tid 2 -T iqn.2024-11.org.javi:target2
+</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 1 -b /dev/vg1/lv2
+</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 2 -b /dev/vg1/lv3
+</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op bind --mode target --tid 2 -I 192.168.0.6
+</span></span></code></pre></div><p>La autenticación CHAP se puede habilitar a través de la línea de comandos con la herramienta <code>tgtadm</code> pero la herramienta <code>tgt-admin</code> no es capaz de volcar esta información al fichero de configuración persistente, así que para poder configurar la autenticación es necesrio editar directamente el fichero de configuración.</p>
+<p>En la declaración del target en este fichero hay que añadir el parámetro <code>incominguser</code> que tiene dos valores. El primero de ellos es el usuario y el segundo la contraseña.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>sudo nano /etc/tgt/conf.d/san.conf
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>&lt;target iqn.2024-11.org.javi:target2&gt;
+</span></span><span style="display:flex;"><span>        backing-store /dev/vg1/lv2
+</span></span><span style="display:flex;"><span>        backing-store /dev/vg1/lv3
+</span></span><span style="display:flex;"><span>        initiator-address 192.168.0.6
+</span></span><span style="display:flex;"><span>        incominguser usuario usuariousuario
+</span></span><span style="display:flex;"><span>&lt;/target&gt;
+</span></span></code></pre></div><p>Para cargar esta modificación en el fichero hay que reiniciar el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart tgt
+</span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente-1">Configuración del volumen en el cliente</h2>
+<p>Para configurar un volumen compartido en un cliente Windows se usa la herramienta iSCSI initiator, que está instalada en el sistema operativo por defecto.</p>
+<p>Al iniciar esta herramienta se muestra un mensaje en el que se avisa de que el servicio iSCSI de Microsoft no se ha activado y pregunta si se quiere iniciar. Tras iniciar el servicio se abre la herramienta del iniciador o cliente iscsi en la que se puede configurar una nueva conexión.</p>
+<p>Con esta herramienta se puede establecer una conexión rápida al servidor iscsi con la que se puede detectar un destino e inicar sesión en él indicando el nombre de domino o la dirección IP del servidor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="497"
+            height="180"
+            src="/images/servicios/san/p3_c1_hu3913001309016120820.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c1_hu3913001309016120820.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>Tras detectar los targets creados en el servidor y compartidos con el cliente, estos se muestran en la lista de destinos detectados. Para conectarse al target hay que seleccionarlo y pulsar el botón &ldquo;conectar&rdquo;.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="497"
+            height="717"
+            src="/images/servicios/san/p3_c2_hu16630072945554834780.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c2_hu16630072945554834780.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Este botón abre una ventana emergente en la que se establece la conexión al servidor SAN. En esta ventana hay que seleccionar las opciones avanzadas y marcar la casilla de autenticación CHAP. Igualmente, es necesario indicar también el nombre de usuario y la contraseña que se han establecido para este target en la configuración del servidor. El cliente iscsi de Windows requiere que estas contraseñas tengan una longitud de, al menos, 12 caracteres.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="538"
+            height="641"
+            src="/images/servicios/san/p3_c3_hu14451167632641132517.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c3_hu14451167632641132517.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras establecer la conexión, en la herramienta de administración de discos ya aparecen los dos volúmenes asociados al target compartido por el servidor. Desde esta herramienta se pueden formatear y montar en el cliente Windows.</p>
+<p>En este caso se formatean como dos nuevos volúmenes simples identificados por las letras <code>E:</code> y <code>F:</code>. Tras montarlos y formatearlos ya son accesibles y utilizables desde el cliente y se puede comenzar a almacenar ficheros en ellos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="762"
+            height="604"
+            src="/images/servicios/san/p3_c4_hu16522034985484298249.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c4_hu16522034985484298249.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

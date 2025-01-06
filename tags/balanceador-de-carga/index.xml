@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Balanceador De Carga on Javi Huete</title>
+    <link>/tags/balanceador-de-carga/</link>
+    <description>Recent content in Balanceador De Carga on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/balanceador-de-carga/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración del balanceador de carga HAProxy</title>
+      <link>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</guid>
+      <description>En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</description>
+    </item>
+  </channel>
+</rss>

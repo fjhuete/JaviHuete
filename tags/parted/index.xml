@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parted on Javi Huete</title>
+    <link>/tags/parted/</link>
+    <description>Recent content in Parted on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 01 Feb 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/parted/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ejemplos de uso del comando parted en Debian</title>
+      <link>/blog/fundamentos-hardware/2024-02-01-comando-parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-02-01-comando-parted/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Parted&lt;/code&gt; es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

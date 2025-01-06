@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Javi Huete</title>
+    <link>/categories/</link>
+    <description>Recent content in Categories on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implantacion</title>
+      <link>/categories/implantacion/</link>
+      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/implantacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administracion-Sistemas</title>
+      <link>/categories/administracion-sistemas/</link>
+      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/administracion-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>/categories/servicios/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/servicios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administracion-Bbdd</title>
+      <link>/categories/administracion-bbdd/</link>
+      <pubDate>Sun, 17 Nov 2024 01:00:00 +0000</pubDate>
+      <guid>/categories/administracion-bbdd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redes</title>
+      <link>/categories/redes/</link>
+      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/redes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/categories/sistemas/</link>
+      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fundamentos-Hardware</title>
+      <link>/categories/fundamentos-hardware/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/fundamentos-hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bases-De-Datos</title>
+      <link>/categories/bases-de-datos/</link>
+      <pubDate>Thu, 07 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/categories/bases-de-datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Application</title>
+      <link>/categories/application/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/categories/application/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>/categories/architecture/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/categories/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data</title>
+      <link>/categories/data/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/categories/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software</title>
+      <link>/categories/software/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/categories/software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>/categories/technology/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>/categories/technology/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

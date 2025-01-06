@@ -1,0 +1,1695 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/redes/2024-03-25-nat-router-linux-openstack/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración NAT en routers Linux en Openstack</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración NAT en routers Linux en Openstack" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/redes/2024-03-25-nat-router-linux-openstack/" />
+
+
+<meta name="twitter:title" content="Configuración NAT en routers Linux en Openstack" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Configuración NAT en Routers Linux en Openstack</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Configuración NAT en routers Linux en Openstack
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <p>Como se explica en <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack"
+
+
+
+ 
+
+
+>este post</a>, Openstack puede usar ficheros YAML como plantilla para la creación en lote de máquinas virtuales y redes. En este caso, se usa una plantilla de este tipo para crear el siguiente escenario:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="902"
+            height="600"
+            src="/images/redes/practica13/img1_hu16336523051638233059.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img1_hu16336523051638233059.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>El direccionamiento de los dispositivos es el siguiente:</p>
+<ul>
+<li>Ordenadores:
+<ul>
+<li>PC1: DHCP</li>
+<li>PC2: DHCP</li>
+<li>Servidor 1: 10.0.0.2/24</li>
+<li>Servidor 2: 10.0.0.3/24</li>
+<li>Servidor 3: 10.0.0.2/24</li>
+<li>Servidor 4: 10.0.0.3/24</li>
+</ul>
+</li>
+<li>Routers:
+<ul>
+<li>Empresa 1 f0/0: 10.0.0.1/24</li>
+<li>Empresa 1 f1/0: 100.10.0.1/24</li>
+<li>Empresa 2 f0/0: 10.0.0.1/24</li>
+<li>Empresa 2 f1/0: 100.20.0.1/24</li>
+<li>Internet 1 f0/0: 100.10.0.2/24</li>
+<li>Internet 1 f1/0: 100.20.0.2/24</li>
+<li>Internet 1 f1/1: 100.30.0.1/24</li>
+<li>Internet 2 f0/0: 100.30.0.2/24</li>
+<li>Internet 2 f1/0: 100.40.0.1/24</li>
+<li>Casa f0/0: 100.40.0.2/24</li>
+<li>Casa f1/0: 192.168.0.1/24</li>
+</ul>
+</li>
+</ul>
+<p>Tras definir los parámetros que se usarán a lo largo de la plantilla, se definen los recursos que se van a montar en el escenario. Se empieza por las redes. En este caso, hay 7 redes y a cada una de ellas se le asigna un nombre:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">red1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Net</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Red 1&#34;</span>
+</span></span></code></pre></div><p>A continuación, se definen las subredes. En ellas, se especifican propiedades como el rango de direcciones IP que se va a asignar a las instancias de cada red. También es en este punto del fichero donde se puede habilitar o deshabilitar el protocolo DHCP para cada una de las redes. En este ejercicio, el protocolo DHCP está deshabilitado para todas las redes excepto para la 7, en la que el enunciado especifica que los ordenadores reciben su dirección IP por DHCP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">subnet1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Subnet</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">red1 }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">#Rango de IP en cada red</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">cidr</span>: <span style="color:#ae81ff">10.0.0.0</span><span style="color:#ae81ff">/24</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enable_dhcp</span>: <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><p>El siguiente recurso que se define es cada una de las tarjetas de red o puertos de las instancias. En esta parte de la plantilla se elige el número de interfaces con las que va a contar cada equipo. Además, en el caso de los routers, es importante habilitar la opción de pares de direcciones permitidas, un campo que indica las direcciones IP cuyo tráfico se debe permitir a través de ese puerto. Para que se permita el tráfico de todas las IP se usa la 0.0.0.0/0.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">servidor2_red1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Port</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">red1 }</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">r1_red1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Port</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">red1 }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">allowed_address_pairs</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">ip_address</span>: <span style="color:#ae81ff">0.0.0.0</span><span style="color:#ae81ff">/0 </span>
+</span></span></code></pre></div><p>Finalmente, el último recurso que se define en la plantilla es cada una de las instancias que se crearán en el escenario. En este apartado se indica el nombre de las instancias y también se les asigna el sabor y la imagen que se va a usar para su creación. Además, en el apartado networks se referencia cada una de las interfaces de red con las que van a contar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">servidor2</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Nova::Server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Servidor 2&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">flavor</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">flavor }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">image_servidores }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">port</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">servidor2_red1 } } </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">r1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Nova::Server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;Empresa 1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">flavor</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">flavor }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">image }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">port</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">r1_red1 } }</span>
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">port</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">r1_red3 } }</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pc1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Nova::Server</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;PC 1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">flavor</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">flavor }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">image</span>: { <span style="color:#f92672">get_param</span>: <span style="color:#ae81ff">image_pc }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>        - { <span style="color:#f92672">port</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">pc1_red7 } }</span>
+</span></span></code></pre></div><p>La última parte de la plantilla se corresponde a los outputs. En este apartado se da nombre a cada una de las direcciones MAC que Openstack asignará automáticamente a las diferentes interfaces que conforman el escenario durante su creación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">mac_r1_red1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;Empresa 1 - Red 1&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">value</span>: { <span style="color:#f92672">get_attr</span>: [<span style="color:#ae81ff">r1_red1, mac_address] }</span>
+</span></span></code></pre></div><p>Para lanzar el escenario en Openstack se han usado tres imágenes diferentes. Los routers usan una imagen con el sistema básico de Debian 12, al que a penas se la ha aplicado la configuración mínima durante el proceso de instalación; los ordenadores clientes están basados en una imagen de Debian 12 con los clientes de MariaDB y PostgreSQL instalados; y, por último, los servidores se basan en una imagen de Debian 12 con los servicios de <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache"
+
+
+
+ 
+
+
+>Apache</a>, <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3"
+
+
+
+ 
+
+
+>PostgreSQL</a>, SSH y <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3"
+
+
+
+ 
+
+
+>MariaDB</a> instalados y configurados para su funcionamiento.</p>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice tip">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
+      </svg><p>Tip</p>
+  </div>
+  <div class="notice-body"><p>Usar imágenes con el software que se va  usar previamente instalado evita tener que configurar el enrutamiento y un router que permita a todas las máquinas de la red acceder a Internet para poder instalar los paquetes necesarios.</p></div>
+</div>
+
+<h1 id="enrutamiento-de-routers-linux-en-openstack">Enrutamiento de routers Linux en Openstack</h1>
+<h2 id="direccionamiento-del-escenario">Direccionamiento del escenario</h2>
+<p>Tras generar el escenario en Openstack con el fichero yaml se deben asignar manualmente las direcciones IP indicadas más arriba a cada una de las interfaces de las máquinas del escenario. Después, hay que activar todas las interfaces de cada equipo. Por ejemplo, para el router Empresa 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip a add 10.0.0.1/24 dev ens3
+</span></span><span style="display:flex;"><span>ip a add 100.10.0.1/24 dev ens4
+</span></span><span style="display:flex;"><span>ip l set ens3 up
+</span></span><span style="display:flex;"><span>ip l set ens4 up
+</span></span></code></pre></div><p>Así se configurarán, sucesivamente, todas las máquinas presentes en el escenario.</p>
+<h2 id="enrutamiento-del-escenario">Enrutamiento del escenario</h2>
+<p>Con el escenario establecido en Openstack, todas las direcciones IP asignadas y tras comprobar el correcto funcionamiento de todos los servidores dentro de su red local, se puede llevar a cabo el enrutamiento de las diferentes redes que configuran el escenario. Previamente, conviene activar en todos los dispositivos que funcionan como router el bit de forwarding que les permita transmitir paquetes de una a otra de sus tarjetas de red.</p>
+<h3 id="bit-de-forwarding">Bit de forwarding</h3>
+<p>El bit de forwarding permite que las máquinas linux enruten paquetes entre las diferentes redes a las que estén conectadas sus tarjetas de red. Existen diferentes formas de activarlo pero para hacer la configuración persistente entre reinicios es necesario añadir la línea &ldquo;net.ipv4.ip_forward = 1&rdquo; al fichero de configuración /etc/sysctl.conf.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo “net.ipv4.ip_forward = 1” » /etc/sysctl.conf
+</span></span></code></pre></div><h3 id="tablas-de-enrutamiento">Tablas de enrutamiento</h3>
+<p>En este caso, se usan las mismas tablas de enrutamiento que en <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3#tablas-de-enrutamiento"
+
+
+
+ 
+
+
+>este otro post</a>.</p>
+<h4 id="empresa-1">Empresa 1</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default 100.10.0.2
+</span></span></code></pre></div><h4 id="empresa-2">Empresa 2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 100.20.0.2
+</span></span></code></pre></div><h4 id="casa">Casa</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 100.40.0.1
+</span></span></code></pre></div><h4 id="internet-1">Internet 1</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>route add 100.40.0.0/24 via 100.30.0.2
+</span></span></code></pre></div><h4 id="internet-2">Internet 2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add default via 100.30.0.1
+</span></span></code></pre></div><h2 id="posibles-incidencias-durante-el-enrutamiento">Posibles incidencias durante el enrutamiento</h2>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>Las incidencias que se recogen a continuación pueden darse o no según la configuración de Openstack en cada caso.</p></div>
+</div>
+
+<p>Una vez realizada esta configuración, surgieron varias incidencias al comprobar el correcto funcionamiento del enrutamiento. La primera de ellas está relacionada con el direccionamiento de las máquinas. Aunque en el fichero de creación del escenario se desactivó la opción de usar el protocolo DHCP para asignar una dirección IP a las máquinas con la intención de otorgar las IP de forma manual para reutilizar el direccionamiento de la primera parte de esta práctica, al asignar a cada interfaz una IP manual diferente a la indicada por Openstack durante la creación del escenario, el resto de equipos no reconocen la nueva IP manual. Por tanto, las direcciones IP anteriormente indicadas se han tenido que modificar por las IP automáticas que la plataforma ha asignado a cada equipo durante la creación del escenario.</p>
+<p>En segundo lugar, las instancias de Openstack no cuentan con el fichero de configuración /etc/network/interfaces, lo que dificulta la configuración de direccionamiento. Si se crea, el sistema lo ignora y no reconoce la información incluida en él a la hora de configurar las diferentes interfaces de red en el reinicio de las máquinas.</p>
+<p>Finalmente, la incidencia más relevante que surge en este punto es la imposibilidad de establecer la comunicación entre las diferentes máquinas a pesar de haber corregido el enrutamiento y el direccionamiento IP. El origen de esta incidencia se encuentra en el propio fichero de creación del escenario. Para que las máquinas permitan el tráfico a través de sus puertos, se debe indicar en su configuración el rango de direcciones IP cuyo tráfico deben permitir o 0.0.0.0/0 para todas las IP. Esta información se debe incluir en el campo allowed_address_pairs cuando se definen las tarjetas de red de los routers.</p>
+<p>La ausencia de este permiso en el fichero de creación del escenario impide que el tráfico pase a través de los puertos de sus routers. Aunque el origen del problema está en la creación del escenario, se puede solucionar posteriormente desde la interfaz de Openstack. Para ello se debe navegar hasta red &gt; redes &gt; red[n] &gt; puertos &gt; NombreDelPuerto &gt; Pares de direcciones permitidas. Esta ventana incluye el botón “añadir pares de direcciones permitidas” desde el que se puede añadir una IP cuyo tráfico se debe permitir a través de ese puerto. En este caso, se indica la dirección 0.0.0.0/0 para que se permita el tráfico de todas las IP:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1441"
+            height="263"
+            src="/images/redes/practica13/img5_hu3746150492552806476.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img5_hu3746150492552806476.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Esta configuración se debe establecer para cada uno de los puertos que corresponden a una tarjeta de red de un router en el escenario.</p>
+<h1 id="configuración-del-servidor-dhcp-en-openstack">Configuración del servidor DHCP en Openstack</h1>
+<p>A diferencia del escenario en GNS3, en este caso para habilitar el protocolo DHCP en la red local formada por el router Casa y los PC 1 y 2 se debe configurar también la interfaz de Openstack si no se ha hecho en la plantilla de creación del escenario. Para ello se debe navegar a  la red en la que se quiere activar el protocolo DHCP (red &gt; redes &gt; red 7) y pulsar en “editar subred”. En la ventana emergente, se puede habilitar el protocolo DHCP para la red:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="746"
+            height="641"
+            src="/images/redes/practica13/img6_hu10884351603632209693.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img6_hu10884351603632209693.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Alternativamente, también se puede añadir esta configuración en el fichero de creación del escenario si se marca como verdadera la opción de habilitar el DHCP en la red indicada:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">subnet7</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">OS::Neutron::Subnet</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">network</span>: { <span style="color:#f92672">get_resource</span>: <span style="color:#ae81ff">red7 }</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">cidr</span>: <span style="color:#ae81ff">192.168.0.0</span><span style="color:#ae81ff">/24</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">enable_dhcp</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h1 id="configuración-del-snat-en-el-router-casa">Configuración del SNAT en el router Casa</h1>
+<p>Una forma de configurar SNAT en un router Linux como Casa en este escenario es usar iptables.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o ens3 -j SNAT –to 100.40.0.103
+</span></span></code></pre></div><p>Con la ejecución de este comando se añade una nueva regla a la tabla POSTROUTING de iptables. Esta regla indica que todos los paquetes que lleguen al router desde la red 192.168.0.0/24 y se enruten para salir por la interfaz ens3 deben hacerlo con la dirección IP modificada a la 100.40.0.103 a través del protocolo SNAT.</p>
+<p>De esta manera, desde los PC de la red de Casa ahora se puede establecer comunicación fuera de la red.</p>
+<h1 id="configuración-del-nat-en-los-routers-de-las-empresas">Configuración del NAT en los routers de las empresas</h1>
+<h2 id="configuración-del-snat-en-los-routers-de-las-empresas">Configuración del SNAT en los routers de las empresas</h2>
+<p>En el caso de Empresa 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o ens4 -j SNAT --to 100.10.0.50
+</span></span></code></pre></div><p>Este comando indica que se debe añadir a la tabla de iptables POSTROUTING una regla por la que todos los paquetes que provengan de la red 10.0.0.0/24 y se enruten por la interfaz ens4 deben ver su dirección IP modificada a la 100.10.0.50 a través de SNAT.</p>
+<p>Una vez configurado el SNAT en el router Empresa 1, los servidores de su red pueden salir al resto de redes del escenario.</p>
+<p>Para el router Empresa 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o ens4 -j SNAT --to 100.20.0.39
+</span></span></code></pre></div><p>Se añade una regla a la tabla POSTROUTING de iptables que indica que se debe cambiar la IP de los paquetes de la red 10.0.0.0/24 que se enruten por la interfaz ens4 a la 100.20.0.39.</p>
+<p>De la misma manera que ocurre con los equipos de las redes locales de Casa y Empresa 1, con esta configuración SNAT en el router Empresa 2, los servidores de la red pueden salir al resto del escenario.</p>
+<h2 id="configuración-del-dnat-en-los-routers-de-las-empresas">Configuración del DNAT en los routers de las empresas</h2>
+<p>El comando <code>iptables</code> también se puede usar para configurar el DNAT en los routers Linux.</p>
+<p>En primer lugar, para dirigir el tráfico web que reciba el router Empresa 1 al servidor web hay que indicarle al router que reenvíe el tráfico de los puertos 80 y 443 a la IP correspondiente a la tarjeta de red del servidor web. Para dirigir el tráfico de PostgreSQL al servidor 2 se debe indicar su puerto de destino, el 5432, y su dirección IP en el comando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens4 -j DNAT --to 10.0.0.190
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens4 -j DNAT --to 10.0.0.190
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens4 -j DNAT --to 10.0.0.211
+</span></span></code></pre></div><p>Igualmente, para hacer llegar el SSH al servidor dedicado a este protocolo en la red de la Empresa 2 se debe configurar, a través de iptables, el DNAT en el router Empresa 2. Y, finalmente, el tráfico entre los clientes y el servidor de MariaDB también se debe dirigir en este router a la máquina adecuada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 22 -i ens4 -j DNAT --to 10.0.0.139
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 3306 -i ens4 -j DNAT --to 10.0.0.113
+</span></span></code></pre></div><h2 id="hacer-el-nat-persistente-en-routers-linux">Hacer el NAT persistente en routers Linux</h2>
+<p>Para que la configuración NAT sea persistente entre reinicios en routers Linux es necesario configurar un servicio que lance un pequeño script que ejecute las reglas de iptables cada vez que se inicie la máquina. Para ello, el primer paso es guardar las reglas que se han configurado en el router en un fichero con una redirección: <code>iptables-save &gt; /etc/iptables/rules.v4</code> y, posteriormente, el contenido de este fichero se vuelca al script con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>iptables-restore &lt; /etc/iptables/rules.v4
+</span></span></code></pre></div><p>Este script se guarda en el directorio /usr/local/bin con el nombre iptables.sh y se le otorgan permisos de ejecución.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>chmod +x /usr/local/bin/iptables.sh
+</span></span></code></pre></div><p>Para que este script se ejecute en cada reinicio de la máquina, se debe crear el servicio en /etc/systemd/system/iptables.services y darle al fichero el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Reglas de iptables&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">systemd-sysctl.service</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/bin/iptables.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Finalmente, se activa y se arranca el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>systemctl enable iptables.service
+</span></span><span style="display:flex;"><span>systemctl start iptables.service
+</span></span></code></pre></div><p>Para que el NAT funcione correctamente a través de los reinicios, este procedimiento para hacer la configuración persistente se debe repetir en los otros dos routers del escenario.</p>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>En este blog también puedes encontrar este mismo caso práactico resuelto usando <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3"
+
+
+
+ 
+
+
+>routers Cisco en GNS3</a> y usando <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak"
+
+
+
+ 
+
+
+>routers Mikrotik en Openstack</a>.</p></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

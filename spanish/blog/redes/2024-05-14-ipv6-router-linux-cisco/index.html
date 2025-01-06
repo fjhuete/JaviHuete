@@ -1,0 +1,2630 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/redes/2024-05-14-ipv6-router-linux-cisco/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Así funciona IPv6: configuración en router Linux y Cisco</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Así funciona IPv6: configuración en router Linux y Cisco" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/redes/2024-05-14-ipv6-router-linux-cisco/" />
+
+
+<meta name="twitter:title" content="Así funciona IPv6: configuración en router Linux y Cisco" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Así Funciona IPv6: Configuración en Router Linux Y Cisco</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Así funciona IPv6: configuración en router Linux y Cisco
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <p>IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.</p>
+<h1 id="dirección-ipv6-de-enlace-local">Dirección IPv6 de enlace local</h1>
+<p>El funcionamiento de las direcciones IPv6 de enlace local se puede comprobar en un escenario simulado en GNS3 con dos máquinas Debian conectadas al mismo switch.</p>
+<p>Para conseguir una dirección IPv6 es necesario encender las interfaces que, en estas máquinas, están apagadas por defecto. Para ello, se usa el comando <code>sudo ip l set ens4 up</code> e inmediatamente después ya se puede consultar la dirección IPv6 de enlace local de cada máquina.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-PC1">
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid"
+            width="707"
+            height="61"
+            src="/images/redes/practica16/img1_hu13256082401298360122.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img1_hu13256082401298360122.png'" />
+      
+        <figcaption id="caption-PC1" class="caption-PC1">
+          PC1
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-PC2">
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid"
+            width="707"
+            height="61"
+            src="/images/redes/practica16/img2_hu16080065112219940055.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img2_hu16080065112219940055.png'" />
+      
+        <figcaption id="caption-PC2" class="caption-PC2">
+          PC2
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para comprobar la conectividad entre ambos equipos se puede hacer un ping, por ejemplo, de PC1 a PC2 con el comando <code>ping6 -c 3 fe80::ea4:e8ff:fe35:0</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="727"
+            height="174"
+            src="/images/redes/practica16/img3_hu12654004025810710119.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img3_hu12654004025810710119.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="direcciones-globales-por-slaac-con-un-router-linux">Direcciones globales por SLAAC con un router Linux</h1>
+<p>En este caso, se añade una tercera máquina Debian al escenario que funciona como router.</p>
+<p>Para que esta nueva máquina funcione como router se debe activar el bit de forwarding para IPv6 descomentando la línea <code>net.ipv6.conf.all.forwarding=1</code> en el fichero /etc/sysctl.conf.</p>
+<p>Además, para que el router pueda ofrecer la información sobre el prefijo de red necesaria para que las máquinas generen su IPv6 global mediante SLAAC, debe tener instalado y configurado un daemon que cumpla este propósito. En este caso, se usa radvd. Este daemon se instala con el gestor de paquetes apt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install radvd
+</span></span></code></pre></div><p>Al comprobar el estado del daemon tras la instalación con <code>systemctl status radvd</code>, la salida del comando muestra una advertencia sobre la ausencia del fichero de configuración. En este caso, la instalación no genera los ficheros de configuración necesarios para la gestión del daemon y se deben crear a mano.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="808"
+            height="163"
+            src="/images/redes/practica16/img4_hu12168467044719087540.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img4_hu12168467044719087540.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Este fichero de configuración se debe alojar en la ubicación /etc/radvd.conf y contiene información como el nombre de la interfaz, los intervalos mínimos y máximos en los que el router debe enviar mensajes Router Advertisement o el prefijo que debe indicar a las máquinas de la red que lo soliciten con una estructura como esta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>interface ens4
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>MinRtrAdvInterval 3;
+</span></span><span style="display:flex;"><span>MaxRtrAdvInterval 4;
+</span></span><span style="display:flex;"><span>AdvSendAdvert on;
+</span></span><span style="display:flex;"><span>AdvManagedFlag on;
+</span></span><span style="display:flex;"><span>prefix 2001:db8::/64
+</span></span><span style="display:flex;"><span>{ AdvValidLifetime 14300; AdvPreferredLifetime 14200; }
+</span></span><span style="display:flex;"><span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Tras aplicar esta configuración y reiniciar el daemon, se ejecuta con éxito.</p>
+<p>Al volver a consultar la dirección IPv6 de las máquinas conectadas a la red, éstas ya cuentan con una dirección global:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-PC1">
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid"
+            width="715"
+            height="101"
+            src="/images/redes/practica16/img5_hu10183714245169609516.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img5_hu10183714245169609516.png'" />
+      
+        <figcaption id="caption-PC1" class="caption-PC1">
+          PC1
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      <figure
+        class="img-center"
+        role="group"
+        aria-describedby="caption-PC2">
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid"
+            width="715"
+            height="101"
+            src="/images/redes/practica16/img6_hu7070451094511928562.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img6_hu7070451094511928562.png'" />
+      
+        <figcaption id="caption-PC2" class="caption-PC2">
+          PC2
+        </figcaption>
+      </figure>
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>De nuevo, para comprobar la conectividad, se puede hacer un ping, esta vez a la dirección global de PC2 desde PC1, por ejemplo con <code>ping6 -c 3 2001:db8::ea4:e8ff:fe35:0</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="728"
+            height="175"
+            src="/images/redes/practica16/img7_hu15156261934702885984.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img7_hu15156261934702885984.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Finalmente, para hacer persistente esta configuración en las interfaces de las máquinas se añade la siguientes líneas al fichero /etc/network/interfaces:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>auto ens4
+</span></span><span style="display:flex;"><span>iface ens4 inet6 auto
+</span></span></code></pre></div><h1 id="servidor-dhcpv6-en-router-linux">Servidor DHCPv6 en router Linux</h1>
+<p>Las direcciones IPv6 de la red también se pueden otorgar a las máquinas a través de DHCPv6. Para ello, el router debe contar con un servidor DHCPv6, en este caso, dhcp6s.</p>
+<p>Antes de comenzar la instalación del servidor y la configuración por DHCPv6 de las máquinas de la red, los comandos <code>sudo systemctl stop radvd.service</code> y <code>sudo systemctl disable radvd.service</code> paran y deshabilitan el daemon configurado en el punto anterior.</p>
+<p>El servidor DHCPv6 dhcp6s requiere ser configurado tras su instalación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install wide-dhcp6-server
+</span></span></code></pre></div><p>El instalador lanza un asistente de configuración que guía el proceso. En primer lugar, se configura la interfaz por la que el servidor escucha las peticiones DHCP. A continuación se debe completar la configuración editando el fichero /etc/wide-dhcpv6/dhcp6s.conf a partir de los ejemplos recogidos en el directorio /usr/share/doc/wide-dhcpv6-server/examples.</p>
+<p>Este fichero de ejemplo se puede copiar a la ubicación en el directorio /etc con el comando sudo cp /usr/share/doc/wide-dhcpv6-server/examples/dhcp6s.conf.sample /etc/wide-dhcpv6/dhcp6s.conf. Entre las opciones de configuración que permite el servidor, están la de indicar una dirección de DNS a las máquinas, asignar un pool de direcciones IPv6 que puede ofrecer o reservar direcciones estáticas a equipos concretos. En este caso, se configura un pool que concede direcciones desde la 2001:db8:1:2::1000 a la 2001:db8:1:2::2000 durante 3600 segundos. Además, indica a todas las máquinas que la dirección del DNS es la  2001:db8::35.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>option domain-name-servers 2001:db8:2::45;
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>interface ens4 {
+</span></span><span style="display:flex;"><span>        address-pool pool1 3600;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>pool pool1 {
+</span></span><span style="display:flex;"><span>        range 2001:db8:1:2::1000 to 2001:db8:1:2::2000 ;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Para que los clientes puedan recibir la configuración IPv6 que ofrece este servidor deben tener instalado el paquete dhcp6c.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install wide-dhcpv6-client.
+</span></span></code></pre></div><p>En este caso se debe indicar durante el proceso de instalación la interfaz por la que el cliente solicitará las direcciones IPv6.</p>
+<p>El paquete del cliente también genera ejemplos de configuración durante la instalación, en este caso, en el directorio /usr/share/doc/wide-dhcpv6-client/examples/. Desde este fichero de ejemplo, se puede copiar y adaptar el siguiente contenido al fichero de configuración:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>interface ens4 {
+</span></span><span style="display:flex;"><span>       send ia-na 0;
+</span></span><span style="display:flex;"><span>       send rapid-commit;
+</span></span><span style="display:flex;"><span>       send domain-name-servers;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>id-assoc na {
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Con esta configuración el cliente devuelve los siguientes errores al intentar obtener una dirección IPv6 desde el servidor DHCP.</p>
+<p>Otra opción para otorgar direcciones por DHCPv6 es el servidor DHCPv6 Kea, del ISC. Para instalar este servidor se debe añadir primero el repositorio al sistema con el comando</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>curl -1sLf \
+</span></span><span style="display:flex;"><span>  &#39;https://dl.cloudsmith.io/public/isc/kea-2-0/setup.deb.sh&#39; \
+</span></span><span style="display:flex;"><span>  | sudo -E bash.
+</span></span></code></pre></div><p>A continuación se puede instalar el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install isc-kea-dhcp6-server
+</span></span></code></pre></div><p>La configuración del servidor se establece en el fichero /etc/kea/kea-dhcp6.conf. Comienza con las siguientes líneas, en las que se indica al servidor por qué interfaces debe escuchar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>&#34;Dhcp6&#34;: {
+</span></span><span style="display:flex;"><span>    &#34;interfaces-config&#34;: {
+</span></span><span style="display:flex;"><span>        &#34;interfaces&#34;: [ens4]
+</span></span><span style="display:flex;"><span>    },
+</span></span></code></pre></div><p>A continuación, se indica en qué tipo de base de datos debe almacenar la información sobre las direcciones concedidas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>    &#34;lease-database&#34;: {
+</span></span><span style="display:flex;"><span>        &#34;type&#34;: &#34;memfile&#34;,
+</span></span><span style="display:flex;"><span>        “persist”: true,
+</span></span><span style="display:flex;"><span>        &#34;lfc-interval&#34;: 3600
+</span></span><span style="display:flex;"><span>    },
+</span></span></code></pre></div><p>Posteriormente se puede indicar cómo debe gestionar el servidor las concesiones que han expirado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>    &#34;expired-leases-processing&#34;: {
+</span></span><span style="display:flex;"><span>        &#34;reclaim-timer-wait-time&#34;: 10,
+</span></span><span style="display:flex;"><span>        &#34;flush-reclaimed-timer-wait-time&#34;: 25,
+</span></span><span style="display:flex;"><span>        &#34;hold-reclaimed-time&#34;: 3600,
+</span></span><span style="display:flex;"><span>        &#34;max-reclaim-leases&#34;: 100,
+</span></span><span style="display:flex;"><span>        &#34;max-reclaim-time&#34;: 250,
+</span></span><span style="display:flex;"><span>        &#34;unwarned-reclaim-cycles&#34;: 5
+</span></span><span style="display:flex;"><span>    },
+</span></span></code></pre></div><p>Además, en este fichero se establece una configuración genérica para el tiempo de las concesiones, en la que se puede indicar el tiempo que debe esperar el servidor antes de renovar una concesión, el tiempo de vida de la concesión por defecto y el tiempo válido, entre otros parámetros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>&#34;renew-timer&#34;: 1000,
+</span></span><span style="display:flex;"><span>    &#34;rebind-timer&#34;: 2000,
+</span></span><span style="display:flex;"><span>    &#34;preferred-lifetime&#34;: 3000,
+</span></span><span style="display:flex;"><span>    &#34;valid-lifetime&#34;: 4000,
+</span></span></code></pre></div><p>En el campo option-data se puede añadir otra información relacionada con la configuración IP que se concede a las máquinas cliente como, por ejemplo, las direcciones de DNS o la opción unicast (“code”: 12) que indica la dirección IPv6 por la que escucha el router.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>&#34;option-data&#34;: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            &#34;name&#34;: &#34;dns-servers&#34;,
+</span></span><span style="display:flex;"><span>            &#34;data&#34;: &#34;2001:db8:2::45, 2001:db8:2::100&#34;
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            &#34;code&#34;: 12,
+</span></span><span style="display:flex;"><span>            &#34;data&#34;: &#34;2001:db8::1&#34;
+</span></span><span style="display:flex;"><span>        },
+</span></span></code></pre></div><p>Después se define también la subred con la que trabaja el servidor con la opción “subnet6”. En ella se define el prefijo de la red que se usa en las direcciones que se otorgan a los clientes, así como los pools de direcciones que el servidor puede asignar. Este campo también cuenta con la opción “option-data” que se aplica sólo a las máquinas de la subred y que sobrescribe la configuración general si se usa. Además, permite reservar direcciones IPv6 para determinados clientes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>&#34;subnet6&#34;: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>           &#34;subnet&#34;: &#34;2001:db8:1::/64&#34;,
+</span></span><span style="display:flex;"><span>            &#34;pools&#34;: [ { &#34;pool&#34;: &#34;2001:db8:1::/80&#34; } ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}.
+</span></span></code></pre></div><p>El servidor isc-dhcp también cuenta con soporte para IPv6. Este servidor se instala con <code>sudo apt install isc-dhcp-server</code> y se configura en el fichero /etc/dhcp/dhcpd6.conf. En este fichero se indican valores como el tiempo por defecto de las concesiones, el tiempo de vida de la concesión o el tiempo de renovación por defecto. Además, también se indica en este fichero el DNS por defecto. Finalmente, se declara la subred con su prefijo y el rango de direcciones que el servidor podrá conceder dentro de esa red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>default-lease-time 2592000;
+</span></span><span style="display:flex;"><span>preferred-lifetime 604800;
+</span></span><span style="display:flex;"><span>option dhcp-renewal-time 3600;
+</span></span><span style="display:flex;"><span>option dhcp-rebinding-time 7200;
+</span></span><span style="display:flex;"><span>option dhcp6.name-servers 2001:db8:2::45, 2001:db8:2::100;
+</span></span><span style="display:flex;"><span>subnet6 2001:db8:1::/64 {
+</span></span><span style="display:flex;"><span>        interface ens4;
+</span></span><span style="display:flex;"><span>        range6 2001:db8:1::1000 2001:db8:1::2000;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Adicionalmente, en el fichero /etc/default/isc-dhcp-server hay que descomentar la linea que indica la ruta al fichero de configuración para el servidor y añadir las interfaces por las que este servidor escucha.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>DHCPDv6_CONF=/etc/dhcp/dhcpd6.conf
+</span></span><span style="display:flex;"><span>OPTIONS=&#34;-6&#34;
+</span></span><span style="display:flex;"><span>INTERFACESv6=&#34;ens4&#34;
+</span></span></code></pre></div><p>También hay que crear el fichero que el servidor usa como base de datos para almacenar la información sobre las concesiones que ofrece a los equipos de la red con sudo touch /var/lib/dhcp/dhcpd6.leases.
+Además, se asigna a la interfaz por la que escucha el servidor una IPv6 estática con el mismo prefijo de las direcciones que concede el servidor DHCPv6 pero fuera del rango de direcciones configurado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>auto ens4 
+</span></span><span style="display:flex;"><span>iface ens4 inet6 static
+</span></span><span style="display:flex;"><span>        address 2001:db8:1::1
+</span></span><span style="display:flex;"><span>        netmask 64 
+</span></span></code></pre></div><p>Finalmente, al arrancar el servidor con <code>sudo dhcpd -6 -cf /etc/dhcp/dhcpd6.conf</code>, comienza a funcionar.</p>
+<p>Sin embargo, el servidor continúa devolviendo un error. Este error parece estar relacionado con un proceso que ya existe como se muestra en la siguiente línea de la salida del comando <code>sudo service isc-dhcp-server status</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="808"
+            height="55"
+            src="/images/redes/practica16/img8_hu17088211795394776729.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img8_hu17088211795394776729.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Solucionarlo es bastante sencillo: sólo hay que eliminar el fichero asociado al proceso existente y volver a iniciar el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo rm -r /var/run/dhcpd6.pid
+</span></span><span style="display:flex;"><span>sudo service isc-dhcp-server start
+</span></span></code></pre></div><h1 id="el-proceso-de-autoconfiguración-de-direcciones-por-slaac">El proceso de autoconfiguración de direcciones por SLAAC</h1>
+<p>En la siguiente captura de Wireshark se muestra el proceso de autoconfiguración de la dirección IPv6 del PC1 usando SLAAC:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1251"
+            height="384"
+            src="/images/redes/practica16/img9_hu10210475259673120180.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img9_hu10210475259673120180.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Antes del encendido de la tarjeta de red, la captura de tráfico detecta varios mensajes Router Advertisement (paquetes 9 y 10) desde la IPv6 del router. Estos son los mensajes que el daemon están enviando constantemente a la red para indicar al resto de equipos el prefijo de red que deben usar al asignarse direcciones IPv6.</p>
+<p>Cuando se enciende la tarjeta de red, el PC1 envía varios mensajes, entre ellos, dos mensajes multicast. En concreto, el que forma parte del proceso de autoconfiguración por SLAAC es el paquete número 15 de la captura, un mensaje enviado a la IPv6 ff02::2, la dirección multicast que se usa para comunicarse con los routers de la red, y que contiene un mensaje Router Solicitation, en el que se solicita la información necesaria para generar la IPv6 global.</p>
+<p>Tras la solicitud del PC1, se captura un paquete, el número 16, que también es de tipo Router Advertisement pero que, a diferencia del resto de paquetes de este tipo, no se dirige a la dirección ff02::1, dirección multicast que envía los mensajes a todos los nodos de la red, sino a la fe80::e42:f1ff:fef4:0, es decir, la IPv6 de enlace local del PC1 desde la que ha solicitado el prefijo de red para configurar su dirección global en el mensaje Router Solicitation anterior. Por tanto, el mensaje número 16 en la captura es la respuesta del router al mensaje número 15.</p>
+<p>Después de eso, se siguen sucediendo mensajes Router Advertisement, nuevamente dirigidos a la dirección multicast ff02::1 porque el router los envía de forma automática pero el PC1 ya ha generado su IPv6 a partir del prefijo que el router le ha facilitado en su respuesta al mensaje Router Solicitation.</p>
+<p>También es relevante en el proceso de autoconfiguración el paquete número 18 en esta captura de tráfico. Se trata de un mensaje Neighbor Solicitation que el PC1 envía a la dirección de nodo solicitado para comprobar que la dirección que se ha configurado a partir del prefijo aportado por el router no se repite en la red. Como se puede comprobar, ningún otro equipo de la red contesta este mensaje, por tanto, esto significa que esta dirección IPv6 no está duplicada en la red y PC1 la puede usar.</p>
+<h1 id="el-proceso-de-autoconfiguración-de-direcciones-por-dhcpv6">El proceso de autoconfiguración de direcciones por DHCPv6</h1>
+<p>En la siguiente captura de tráfico se muestra el proceso de autoconfiguración de la dirección IPv6 del PC2 usando DHCPv6:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1316"
+            height="290"
+            src="/images/redes/practica16/img10_hu725177465363429808.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img10_hu725177465363429808.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Antes de solicitar una configuración IPv6 con sudo dhclient -6, por el cable que conecta al PC2 con el router R1 circulan varios mensajes de tipo multicast como los neigbor solicitation o los router solicitation.</p>
+<p>Cuando el PC2 solicita una configuración IPv6 al servidor DHCP, envía un mensaje de tipo solicit (paquete 9 de la captura). Este mensaje es de tpo multicast y se envía a la dirección IPv6 reservada ff02::1:2. Esta dirección reservada se usa para hacer llegar el mensaje a todos los dispositivos de la red. Con este mensaje, el ordenador solicita la respuesta de algún equipo de la red que tenga instalado un servidor DHCPv6 en funcionamiento.</p>
+<p>El siguiente mensaje registrado en la captura (paquete 10) es un mensaje advertise, en el que el router contesta la solicitud del PC2. En este caso se trata de un mensaje de tipo unicast que tiene como origen la IP de enlace local del router y como destino la IP de enlace local del PC. Con este mensaje, el router informa al PC2 de que tiene un servidor DHCPv6 que puede atender su petición.</p>
+<p>En este mensaje, el servidor DHCP ya incluye información sobre la dirección IPv6 que ofrece al ordenador (2001:db8:1::2000, la última del rango), así como el tiempo de concesión de la configuración.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="593"
+            height="293"
+            src="/images/redes/practica16/img11_hu94750174639360532.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img11_hu94750174639360532.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Estos paquetes también incluyen un identificador del cliente y un identificador del servidor que cuenta con información como el DUID de cada uno de los equipos (un identificador único en numeración hexadecimal), el tipo de conexión, la fecha y hora del mensaje o la dirección MAC de cada uno de los equipos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="499"
+            height="335"
+            src="/images/redes/practica16/img12_hu12075948193401445612.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica16\/img12_hu12075948193401445612.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Posteriormente, el PC2 envía un mensaje request al router, también de tipo multicast y dirigido a la misma dirección que el anterior. Con este segundo mensaje, el ordenador solicita al servidor DHCP del router la configuración de IPv6 ofrecida en la respuesta anterior.</p>
+<p>Finalmente, el servidor DHCPv6 del router contesta con un mensaje de tipo reply en el que, definitivamente, concede la configuración IPv6 indicada al PC2, como se puede ver en el paquete número 12 de la captura.</p>
+<p>El resto de paquetes capturados corresponden a mensajes multicast de tipo neigbor solicitation o advertisement o router solicitation que no forman parte de la comunicación por la que el servidor DHCPv6 concede una dirección al PC.</p>
+<h1 id="acceder-a-un-servidor-web-con-ipv6">Acceder a un servidor web con IPv6</h1>
+<p>El PC2 cuenta con un servidor web Apache. Se puede acceder a él desde el PC1 usando el comando <code>curl</code> pero para hacerlo es necesario usar la dirección IPv6 global de PC2 puesto que el servidor web no responde peticiones que lleguen a la dirección de enlace local aunque lo hagan por la misma interfaz y desde maquinas de la misma red.</p>
+<p>Para que PC1 pueda llegar es necesario configurar la entrada por defecto de las tablas de enrutamiento de los ordenadores.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ip -6 route add default via fe80::ede:a4ff:fec9:0 dev ens4
+</span></span></code></pre></div><p>Para comunicarse con el router los equipos de la red usan su dirección de enlace local.</p>
+<p>Una vez que la red esta enrutada, el PC1 puede acceder al servidor web del PC2 usando su dirección global con el comando <code>curl</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>curl &#39;http://[2001:db8:1::2000]&#39;
+</span></span></code></pre></div>
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>Las direcciones IPv6 se cierran entre corchetes en las URL.</p></div>
+</div>
+
+<h1 id="acceder-al-servidor-web-desde-otra-red-sin-hacer-nat">Acceder al servidor web desde otra red sin hacer NAT</h1>
+<p>Una nueva máquina se conecta a otra interfaz del router.</p>
+<p>Para poder acceder al servidor web de PC2 esta máquina necesita una dirección IPv6 de una red diferente a la de los PC1 y 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip l set dev ens4 up
+</span></span><span style="display:flex;"><span>sudo ip -6 a add 2001:db8:2::abba dev ens4
+</span></span></code></pre></div><p>También necesita una línea en su tabla de enrutamiento que le indique que, por defecto, debe enviar todos los mensajes al router R1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ip -6 route add default via fe80::ede:a4ff:fec9:1 dev ens4
+</span></span></code></pre></div><p>Además, la interfaz del router que da al PC3 tiene que contar con una dirección global /64 de la misma red que el ordenador en la interfaz que conecta a ambos dispositivos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ip -6 a add 2001:db8:2::1/64 dev ens5
+</span></span></code></pre></div><p>Con estas condiciones, el PC3 ya puede acceder al servidor web del PC2 desde una red diferente, pasando por un router intermedio y sin necesidad de hacer NAT en ningún punto del recorrido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>curl &#39;http://[2001:db8:1::2000]&#39;
+</span></span></code></pre></div><h1 id="configuración-de-slaac-en-un-router-cisco">Configuración de SLAAC en un router Cisco</h1>
+<p>Para poder trabajar con IPv6 en routers Cisco se debe habilitar la opción IPv6 unicast routing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config)#ipv6 unicast-routing.
+</span></span></code></pre></div><p>Después se asigna la dirección global a la interfaz del router que se conecta a la red a cuyos equipos tiene que enviar la información necesaria a través de SLAAC.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1#conf t
+</span></span><span style="display:flex;"><span>R1(config)#interface fastEthernet 0/0
+</span></span><span style="display:flex;"><span>R1(config-if)#ipv6 address 2001:db8:1::1/64 
+</span></span><span style="display:flex;"><span>R1(config-if)#no shutdown 
+</span></span><span style="display:flex;"><span>R1(config-if)#end
+</span></span><span style="display:flex;"><span>R1#wr
+</span></span></code></pre></div><p>Tras arrancar la interfaz, el router ha rellenado automáticamente su tabla de enrutamiento (<code>show ipv6 route</code>) con la información de la red a la que está conectado.</p>
+<p>Al reiniciar las tarjetas de red de los equipos, ambos renuevan sus direcciones IPv6 usando el protocolo SLAAC y, con estas nuevas direcciones, pueden comunicarse entre ellos a través de sus IPv6 globales.</p>
+<p>A diferencia de lo que ocurre en los routers Linux, donde se necesita configurar un daemon para habilitar el protocolo SLAAC para la autoconfiguración de las direcciones IPv6 por parte de los equipos de la red, en los routers Cisco esta opción se incluye por defecto y comienza a funcionar en cuanto se habilita y configura el direccionamiento IPv6 en el router.</p>
+<p>Sin embargo, de esta forma no se puede enviar información sobre el DNS a los equipos de la red cómo sí permite el daemon radvd en los routers Linux. Para poder comunicar esta información a los equipos de la red, los routers Cisco usan un método llamado DHCPv6 stateless, que combina el proceso de autoconfiguración de direcciones IPv6 por SLAAC con el protocolo DHCPv6 sólo para trasladar información sobre la dirección del DNS. En este caso, el direccionamiento se otorga por SLAAC y no por DHCPv6.</p>
+<p>Para habilitar esta función se crea, en primer lugar, un pool DHCPv6:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config)# ipv6 dhcp pool IPV6-STATELESS
+</span></span></code></pre></div><p>Después se indica, dentro del pool, la dirección IPv6 del DNS que se va a indicar a los equipos de la red como preferido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config-dhcpv6)# dns-server 2001:db8:1::45
+</span></span></code></pre></div><p>Finalmente, se asigna el pool a la interfaz por la que el router contesta las peticiones de la red. Desde el modo de configuración de la interfaz se asignan las direcciones IPv6 de enlace local y global de la interfaz (si no las tenía previamente asignadas) y se vincula el pool DHCPv6 configurado anteriormente. Además, para que el DHCPv6 funcione en modo stateless es necesario activar la bandera other-config, que cambia el bit O de los paquetes DHCP de 0 a 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config)# interface fastEthernet 0/0
+</span></span><span style="display:flex;"><span>R1(config-if)# description Link to LAN
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 address fe80::1 link-local
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 address 2001:db8:1::1/64
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 nd other-config-flag
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 dhcp server IPV6-STATELESS
+</span></span><span style="display:flex;"><span>R1(config-if)# no shut
+</span></span><span style="display:flex;"><span>R1(config-if)# end
+</span></span></code></pre></div><p>Con esta configuración los equipos de la red reciben una dirección IPv6 por SLAAC pero, además, reciben también la información necesaria para configurar su servidor DNS por defecto.</p>
+<h1 id="configuración-de-dhcpv6-en-un-router-cisco">Configuración de DHCPv6 en un router Cisco</h1>
+<p>La configuración del servidor DHCPv6 en los routers Cisco para conceder direcciones IPv6 así como una dirección del servidor DNS por defecto es similar a la contemplada en el apartado anterior durante la configuración del direccionamiento por SLAAC con DHCPv6 stateless.</p>
+<p>En este caso, para que le servidor DHCPv6 conceda también direcciones IPv6, se debe usar el modo stateful. La principal diferencia en la configuración del router está en las banderas que se deben activar al asignar el pool DHCP a la interfaz de escucha del router. De esta forma, en primer lugar, tras activar IPv6 en el router se crea un nuevo pool DHCP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config)# ipv6 dhcp pool IPV6-STATEFUL
+</span></span></code></pre></div><p>En él se indica el prefijo a partir del cuál se deben generar las direcciones IPv6 que se otorgan a los equipos de la red y la dirección del servidor DNS por defecto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config-dhcpv6)# address prefix 2001:db8:1::/64
+</span></span><span style="display:flex;"><span>R1(config-dhcpv6)# dns-server 2001:db8:1::45
+</span></span></code></pre></div><p>Y, finalmente, se asocia el pool DHCP a la interfaz por la que el servidor escucha las peticiones de los equipos de la red local. En este caso, como el modo del servidor es stateful se cambia la bandera M de 0 a 1 con <code>ipv6 nd managed-config-flag</code>, así como la bandera A con el comando <code>ipv6 nd prefix default no-autoconfig</code>. Esta bandera indica al cliente que no use SLAAC para autoconfigurar su dirección IPv6, sino que tome la que le concede el servidor DHCPv6, de manera que evita posibles problemas derivados de las interferencias entre ambos protocolos. Además, en este paso también se puede asignar una dirección de enlace local y una dirección global a la interfaz, si no las tenía asignadas previamente y se une el pool a ella con ipv6 dhcp server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1(config)# interface fastEthernet 0/0
+</span></span><span style="display:flex;"><span>R1(config-if)# description Link to LAN
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 address fe80::1 link-local
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 address 2001:db8:1::1/64
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 nd managed-config-flag
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 nd prefix default no-autoconfig
+</span></span><span style="display:flex;"><span>R1(config-if)# ipv6 dhcp server IPV6-STATEFUL
+</span></span><span style="display:flex;"><span>R1(config-if)# no shut
+</span></span><span style="display:flex;"><span>R1(config-if)# end
+</span></span></code></pre></div><p>Así, el router funciona como servidor DHCPv6 y concede una configuración IPv6 completa a los clientes de la red local que la soliciten.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

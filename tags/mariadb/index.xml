@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mariadb on Javi Huete</title>
+    <link>/tags/mariadb/</link>
+    <description>Recent content in Mariadb on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Mar 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/mariadb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo simular un servidor MariaDB en GNS3</title>
+      <link>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</link>
+      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/</guid>
+      <description>MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1189 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Ejemplos de uso de comandos básicos en Debian</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Ejemplos de uso de comandos básicos en Debian" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/" />
+
+
+<meta name="twitter:title" content="Ejemplos de uso de comandos básicos en Debian" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Ejemplos De Uso De Comandos Básicos en Debian</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Ejemplos de uso de comandos básicos en Debian
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <p>En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</p>
+<h1 id="ejemplos-de-uso-del-comando-ls">Ejemplos de uso del comando <code>ls</code></h1>
+<h2 id="listar-todos-los-archivos-del-directorio-bin">Listar todos los archivos del directorio bin</h2>
+<p>Para realizar esta acción hay que acceder en primer  lugar al directorio bin usando <code>cd /./bin</code> y, posteriormente, se pueden listar los archivos que contiene con <code>ls -lh</code>, para que muestre el contenido en forma de lista y el tamaño de los archivos en términos más fácilmente comprensibles.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./bin
+</span></span><span style="display:flex;"><span>ls -lh
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-tmp">Listar todos los archivos del directorio tmp</h2>
+<p>En este caso, se debe repetir el mismo procedimiento que en el ejercicio anterior sustituyendo el directorio bin por tmp. Primero se accede con <code>cd /./tmp</code> y posteriormente se listan los archivos con <code>ls -lRh</code>. En este caso, se ha usado también la opción <code>-R </code>para listar recursivamente en los directorios dentro del directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./tmp
+</span></span><span style="display:flex;"><span>ls -lRh
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-empiecen-por-t-en-orden-inverso">Listar todos los archivos del directorio etc que empiecen por &ldquo;t&rdquo; en orden inverso</h2>
+<p>Al igual que en los casos anteriores, se accede al directorio con <code>cd /./etc</code> y después se listan los archivos con ls <code>-lr t*</code>. En este caso, la opción <code>-r</code> muestra el resultado en orden inverso y el argumento <code>t*</code> pide que se listen todos los archivos que empiezan por &ldquo;t&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./etc
+</span></span><span style="display:flex;"><span>ls -lr t*
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-tengan-5-caracteres">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y tengan 5 caracteres</h2>
+<p>En este caso, se accede con <code>cd /./dev</code> y, posteriormente, se listan los archivos con <code>ls -lh tty??</code>. Los signos de interrogación, a diferencia del asterisco, sustituyen a un único carácter cada uno.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
+</span></span><span style="display:flex;"><span>ls -lh tty??
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-acaben-en-123-ó-4">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y acaben en &ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;3&rdquo; ó &ldquo;4&rdquo;</h2>
+<p>En ls -lh tty*[1,2,3,4] el asterisco en este caso indica que se puede sustituir por uno o varios caracteres y la lista recoge todas las opciones de caracteres que se quieren listar como último carácter.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
+</span></span><span style="display:flex;"><span>ls -lh tty*[1,2,3,4]
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-t-y-acaben-en-c1">Listar todos los archivos del directorio dev que empiecen por &ldquo;t&rdquo; y acaben en &ldquo;C1&rdquo;.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
+</span></span><span style="display:flex;"><span>ls -lh t*C1
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-incluidos-los-ocultos-del-directorio-raíz">Listar todos los archivos, incluidos los ocultos, del directorio raíz</h2>
+<p>Con el comando <code>cd /</code> se navega hasta el directorio raíz. Una vez allí, con el comando <code>ls -la</code> se listan todos sus archivos. La opción -a hace que se muestren también los archivos que empiezan por un ., es decir, los ocultos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /
+</span></span><span style="display:flex;"><span>ls -la
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-no-empiecen-por-t">Listar todos los archivos del directorio etc que no empiecen por &ldquo;t&rdquo;</h2>
+<p>En primer lugar se debe navegar al directorio etc con <code>cd /./etc</code> y, después listar los archivos con <code>ls -l [!t]*</code>. Para ello, se usa el carácter ! para indicar indicar una cadena de texto en la que el primer carácter sea distinto de &ldquo;t&rdquo; y el * para indicar que el resto de caracteres es indiferente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /etc
+</span></span><span style="display:flex;"><span>ls -l [!t]*
+</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-usr-y-sus-subdirectorios">Listar todos los archivos del directorio usr y sus subdirectorios</h2>
+<p>Para listar los archivos y subdirectorios de usr hay que cambiar al directorio /usr en primer lugar con <code>cd /usr</code> y, después, listar los archivos con <code>ls -lR</code>. En este caso, la opción <code>-R</code> fuerza la búsqueda recursiva dentro de los subdirectorios del directorio actual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /usr
+</span></span><span style="display:flex;"><span>ls -lR
+</span></span></code></pre></div><h1 id="mostrar-el-día-y-la-hora-actual">Mostrar el día y la hora actual</h1>
+<p>Para mostrar el día y la hora se usa el comando <code>date</code>.</p>
+<h1 id="comandos-para-navegar-entre-directorios">Comandos para navegar entre directorios</h1>
+<h2 id="cambiarse-al-directorio-tmp">Cambiarse al directorio tmp</h2>
+<p>Con el comando <code>cd /tmp</code> se cambia el directorio actual al directorio tmp.</p>
+<h2 id="verificar-que-el-directorio-actual-ha-cambiado">Verificar que el directorio actual ha cambiado</h2>
+<p>Para verificar que el directorio actual ha cambiado se usa el comando <code>pwd</code>, que devuelve la ruta del directorio actual, en este caso /tmp en vez de /home/usuario, donde usuario corresponde al nombre de usuario que tiene la sesión iniciada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>~$ cd /tmp
+</span></span><span style="display:flex;"><span>/tmp$ pwd
+</span></span><span style="display:flex;"><span>/tmp
+</span></span></code></pre></div><h2 id="con-un-solo-comando-posicionarse-en-el-directorio-home">Con un solo comando posicionarse en el directorio $HOME</h2>
+<p>Para cambiar al directorio home, se puede usar el comando <code>cd ~</code>, que navega del directorio actual al directorio /home/usuario.</p>
+<h2 id="listar-todos-los-ficheros-del-directorio-home-mostrando-su-número-de-inodo">Listar todos los ficheros del directorio HOME mostrando su número de inodo</h2>
+<p>Para este ejercicio se usa el comando <code>ls -lia</code> para listar los archivos. Con la opción <code>-i</code> se muestra el número de inodo y con la opción <code>-a</code> se muestran los archivos ocultos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd ~
+</span></span><span style="display:flex;"><span>ls -lia
+</span></span></code></pre></div><h2 id="crear-en-vuestro-directorio-de-inicio-un-directorio-prueba">Crear en vuestro directorio de inicio, un directorio prueba</h2>
+<p>Para crear un directorio se usa el comando <code>mkdir</code> seguido del nombre del directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir prueba
+</span></span></code></pre></div><h2 id="crear-los-directorios-dir1-dir2-y-dir3-en-el-directorio-prueba-dentro-de-dir1-crear-el-directorio-dir11-dentro-del-directorio-dir3-crear-el-directorio-dir31-dentro-del-directorio-dir31-crear-los-directorios-dir311-y-dir312">Crear los directorios dir1, dir2 y dir3 en el directorio prueba. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312</h2>
+<p>En primer lugar, con <code>mkdir</code> se crean los directorios dentro de prueba: dir1, dir2 y dir 3 con una lista entre llaves. A continuación, dentro de dir1 se crea dir 11 y dentro de dir3, dir31.</p>
+<p>Finalmente, haciendo uso de una nueva lista, se crean los directorios dir311 y dir312 dentro
+de dir31.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir -p prueba/{dir1,dir2,dir3} prueba/dir1/dir11 prueba/dir3/dir31 prueba/dir3/dir31/{dir311,dir312}
+</span></span></code></pre></div><h1 id="copiar-mover-y-borrar-ficheros">Copiar, mover y borrar ficheros</h1>
+<h2 id="copiar-el-archivo-etcmotd-a-un-archivo-llamado-mensaje-de-nuestro-directorio-prueba">Copiar el archivo /etc/motd a un archivo llamado mensaje de nuestro directorio prueba</h2>
+<p>Para copiar un archivo se usa el comando <code>cp</code> con la ruta del archivo que se quiere copiar como primer argumento y la ruta de destino de la copia como segundo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /etc/mod ~/prueba/mensaje
+</span></span></code></pre></div><h2 id="copiar-el-archivo-mensaje-en-dir1-dir2-y-dir3">Copiar el archivo mensaje en dir1, dir2 y dir3</h2>
+<p>Nuevamente, para copiar el archivo se usa el comando <code>cp</code> con la ruta del archivo que se quiere copiar como primer argumento y la ruta de destino de la copia como segundo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir1
+</span></span><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir2
+</span></span><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir3
+</span></span></code></pre></div><h2 id="copiar-los-archivos-del-directorio-rc2d-que-se-encuentra-en-etc-al-directorio-dir31">Copiar los archivos del directorio rc2.d que se encuentra en /etc al directorio dir31</h2>
+<p>En este caso se usa la opción <code>-r</code> del comando <code>cp</code> para copiar de forma recursiva todo el contenido del directorio /etc/rc2.d.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /etc/rc2.d ~/prueba/dir3/dir31
+</span></span></code></pre></div><h2 id="copiar-en-el-directorio-dir311-los-archivos-de-bin-que-tengan-una-a-como-segunda-letra-y-su-nombre-tenga-cuatro-letras">Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras</h2>
+<p>En este ejemplo se usa la expresión regular [A-z] para indicar que una letra ocupa esa posición en el nombre del archivo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /bin/[A-z]a[A-z][A-z] ~/prueba/dir3/dir31/dir311
+</span></span></code></pre></div><h2 id="copiar-el-directorio-de-otro-usuario-y-sus-subdirectorios-debajo-de-dir11-incluido-el-propio-directorio">Copiar el directorio de otro usuario y sus subdirectorios debajo de dir11 (incluido el propio directorio)</h2>
+<p>Para copiar el directorio y subdirectorios de otro usuario se usa la opción <code>-a</code> del comando <code>cp</code>, que copia recursivamente los subdirectorios dentro del directorio indicado conservando los atributos de los archivos incluidos en ellos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -a /home/usuario ~/prueba/dir1/dir11
+</span></span></code></pre></div><h2 id="mover-el-directorio-dir31-y-sus-subdirectorios-debajo-de-dir2">Mover el directorio dir31 y sus subdirectorios debajo de dir2</h2>
+<p>Para mover un directorio se usa el comando <code>mv</code> con la ruta del directorio que se quiere mover como primer argumento y la ruta del directorio destino como segundo argumento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mv ~/prueba/dir3/dir31 ~/prueba/dir2
+</span></span></code></pre></div><h2 id="mostrar-por-pantalla-los-archivos-ordinarios-del-directorio-home-y-sus-subdirectorios">Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios</h2>
+<p>Para mostrar todos los archivos del directorio home y sus subdirectorios se puede usar el comando <code>find</code> con la opción <code>-type</code> para filtrar la lista por tipo de ficheros y <code>f</code> para obtener sólo los ficheros de tipo ordinario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>find -type f
+</span></span></code></pre></div><h2 id="ocultar-el-archivo-mensaje-del-directorio-dir3">Ocultar el archivo mensaje del directorio dir3</h2>
+<p>En GNU/Linux los archivos ocultos son aquellos que empiezan por un ., por tanto, para ocultar el archivo solo hay que renombrarlo con un . delante usando, por ejemplo, el comando <code>cp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp ~/prueba/dir3/mensaje ~/prueba/dir3/.mensaje
+</span></span></code></pre></div><h2 id="borrar-los-archivos-y-directorios-de-dir1-incluido-el-propio-directorio">Borrar los archivos y directorios de dir1, incluido el propio directorio</h2>
+<p>El comando <code>rm</code>, seguido de una ruta de un directorio lo elimina. La opción <code>-r</code> hace que se eliminen recursivamente todos los directorios que contiene.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rm -r ~/prueba/dir1
+</span></span></code></pre></div><h2 id="copiar-al-directorio-dir312-los-ficheros-del-directorio-dev-que-empiecen-por-t-acaben-en-una-letra-que-vaya-de-la-a-a-la-b-y-tengan-cinco-letras-en-su-nombre">Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por &ldquo;t&rdquo;, acaben en una letra que vaya de la &ldquo;a&rdquo; a la &ldquo;b&rdquo; y tengan cinco letras en su nombre</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /dev/t[A-z][A-z][A-z][a-b] ~/prueba/dir3/dir31/dir312
+</span></span></code></pre></div><h2 id="borrar-los-archivos-de-dir312-que-no-acaben-en-b-y-tengan-una-q-como-cuarta-letra">Borrar los archivos de dir312 que no acaben en &ldquo;b&rdquo; y tengan una &ldquo;q&rdquo; como cuarta letra</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rm ~/prueba/dir3/dir31/dir312/???q*[!b]
+</span></span></code></pre></div><h1 id="mover-el-directorio-dir312-debajo-de-dir3">Mover el directorio dir312 debajo de dir3</h1>
+<p>De nuevo, para mover un directorio se usa el comando <code>mv</code> con la ruta del directorio que se quiere mover como primer argumento y la ruta del directorio destino como segundo argumento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mv ~/prueba/dir3/dir31/dir312 ~/prueba/dir3
+</span></span></code></pre></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

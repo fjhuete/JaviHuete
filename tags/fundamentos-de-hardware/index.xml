@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fundamentos De Hardware on Javi Huete</title>
+    <link>/tags/fundamentos-de-hardware/</link>
+    <description>Recent content in Fundamentos De Hardware on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 06 May 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/fundamentos-de-hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manejo y uso del comando mkisofs</title>
+      <link>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</guid>
+      <description>En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</description>
+    </item>
+    <item>
+      <title>Instalación de Debian 12 bajo LVM en Proxmox</title>
+      <link>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</guid>
+      <description>&lt;p&gt;Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ejemplos de uso del comando parted en Debian</title>
+      <link>/blog/fundamentos-hardware/2024-02-01-comando-parted/</link>
+      <pubDate>Thu, 01 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-02-01-comando-parted/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Parted&lt;/code&gt; es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

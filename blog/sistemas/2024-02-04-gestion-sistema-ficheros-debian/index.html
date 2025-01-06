@@ -1,0 +1,3847 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Creación y configuración de un sistema de ficheros en Debian 12</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Página personal de Javi Huete" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Creación y configuración de un sistema de ficheros en Debian 12" />
+<meta property="og:description" content="Página personal de Javi Huete" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/" />
+
+
+<meta name="twitter:title" content="Creación y configuración de un sistema de ficheros en Debian 12" />
+<meta name="twitter:description" content="Página personal de Javi Huete" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Creación y configuración de un sistema de ficheros en Debian 12
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/sistemas/"
+                    class=""
+                    >Sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              February 4, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#particionado-de-los-discos">Particionado de los discos</a>
+      <ol>
+        <li><a href="#disco-de-origen">Disco de origen</a></li>
+        <li><a href="#disco-de-destino">Disco de destino</a></li>
+      </ol>
+    </li>
+    <li><a href="#creación-del-sistema-de-ficheros">Creación del sistema de ficheros</a></li>
+    <li><a href="#montaje-del-nuevo-disco">Montaje del nuevo disco</a></li>
+    <li><a href="#volcado-de-información-al-nuevo-disco">Volcado de información al nuevo disco</a>
+      <ol>
+        <li><a href="#directorio-home">Directorio /home</a></li>
+        <li><a href="#directorio-var">Directorio /var</a></li>
+        <li><a href="#directorio-usr">Directorio /usr</a></li>
+        <li><a href="#partición-efi">Partición EFI</a></li>
+        <li><a href="#directorio-boot">Directorio /boot</a></li>
+        <li><a href="#directorio-raíz">Directorio raíz</a></li>
+      </ol>
+    </li>
+    <li><a href="#arrancar-con-el-nuevo-disco-duro-y-resolución-de-problemas">Arrancar con el nuevo disco duro y resolución de problemas</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.</p>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>Para este post se usan qemu/kvm y VirtManager como software de virtualización. Aquí te explico <a href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian"
+
+
+
+ 
+
+
+>cómo instalarlo en Debian</a>.</p></div>
+</div>
+
+<h1 id="particionado-de-los-discos">Particionado de los discos</h1>
+<h2 id="disco-de-origen">Disco de origen</h2>
+<p>Durante el proceso de instalación de Debian12 en la máquina virtual se definen las siguientes particiones:</p>
+<ul>
+<li>Partición efi: 50MB.</li>
+<li>Partición /: 2GB.</li>
+<li>Swap: el resto de espacio sobrante.</li>
+</ul>
+<h2 id="disco-de-destino">Disco de destino</h2>
+<p>Para crear un nuevo disco duro en VirtManager es necesario acceder a la ventana “añadir hardware” desde la configuración de la máquina virtual. A continuación, se debe indicar el tamaño del dispositivo y, por último, pulsar el botón de crear. Tras seguir estos pasos, el nuevo disco duro se habrá añadido a la máquina virtual y ya estará disponible en la lista de dispositivos que aparece en la ventana de configuración.</p>
+<p>Al listar los dispositivos de bloque con el comando <code>lsblk -f</code> también deberían aparecer en la máquina tanto el disco duro original (vda), de 2GB, como el segundo disco duro (vdb), de 10GB.</p>
+<p>Para crear el particionado del disco duro en Debian se pueden usar aplicaciones como <code>fdisk</code> o <code>gdisk</code>. En este caso se ha optado por el uso del comando <code>fdisk</code>. En primer lugar, se debe establecer una nueva tabla de particiones GPT vacía con el comando <code>g</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="734"
+            height="47"
+            src="/images/sistemas/practica9/img1_hu470719072073248960.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img1_hu470719072073248960.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>Posteriormente, para cada partición, se crea, se le asigna un número, primer y último sector (tamaño).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="875"
+            height="787"
+            src="/images/sistemas/practica9/img2_hu2240413551739235656.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img2_hu2240413551739235656.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras crear todas las particiones necesarias en el disco duro, el comando <code>fdisk</code> permite también asignarles un tipo determinado hasta llegar a tener una tabla de particiones como la siguiente:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="598"
+            height="252"
+            src="/images/sistemas/practica9/img3_hu4220567442584259605.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img3_hu4220567442584259605.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="creación-del-sistema-de-ficheros">Creación del sistema de ficheros</h1>
+<p>Para asignar un sistema de ficheros a cada partición se usa el comando <code>mkfs</code> seguido de <code>.fs</code> donde &ldquo;fs&rdquo; es el sistema de ficheros que se busca asignar a cada partición. La primera de las particiones listadas anteriormente usará un sistema de ficheros de tipo vfat y el resto uno de tipo ext4. Para poder asignar el sistema de ficheros FAT32 a la partición de tipo EFI se debe instalar previamente el paquete <code>dosfstools</code>.</p>
+<p>Tras la instalación de este paquete se pueden usar los comandos <code>mkfs.vfat</code> y <code>mkfs.ext4</code> para dar formato a cada una de las particiones. Por último, para darle un sistema de ficheros de tipo swap a la última partición del nuevo disco duro se puede usar el comando <code>mkswap</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkfs.vfat /deb/vdb1
+</span></span><span style="display:flex;"><span>mkfs.ext4 /deb/vdb2
+</span></span><span style="display:flex;"><span>mkfs.ext4 /deb/vdb3
+</span></span><span style="display:flex;"><span>mkfs.ext4 /deb/vdb4
+</span></span><span style="display:flex;"><span>mkfs.ext4 /deb/vdb5
+</span></span><span style="display:flex;"><span>mkfs.ext4 /deb/vdb6
+</span></span><span style="display:flex;"><span>mkswap /dev/vdb7
+</span></span></code></pre></div><h1 id="montaje-del-nuevo-disco">Montaje del nuevo disco</h1>
+<p>El primer paso para montar el nuevo disco en la máquina es crear un punto de montaje. Para ello, se usará el directorio /mnt y en él, se habilitarán nuevos directorios con <code>mkdir</code> que sirvan de punto de montaje para cada una de las particiones del nuevo disco duro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir -p /mnt/vdb/vdb{1..7}
+</span></span></code></pre></div><p>A continuación, se pueden montar las diferentes particiones sobre cada uno de sus nuevos puntos de montaje y también se puede habilitar la nueva partición swap en el equipo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount /dev/vdb1 /mnt/vdb/vdb1
+</span></span><span style="display:flex;"><span>mount /dev/vdb2 /mnt/vdb/vdb2
+</span></span><span style="display:flex;"><span>mount /dev/vdb3 /mnt/vdb/vdb3
+</span></span><span style="display:flex;"><span>mount /dev/vdb4 /mnt/vdb/vdb4
+</span></span><span style="display:flex;"><span>mount /dev/vdb5 /mnt/vdb/vdb5
+</span></span><span style="display:flex;"><span>mount /dev/vdb6 /mnt/vdb/vdb6
+</span></span><span style="display:flex;"><span>swapon /dev/vdb7
+</span></span></code></pre></div><p>En este punto, todas las particiones del nuevo disco duro están montadas en sus respectivos puntos de montaje y funcionando con el sistema de ficheros adecuado que se le ha asignado previamente durante este proceso.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="746"
+            height="247"
+            src="/images/sistemas/practica9/img4_hu15466841379942369513.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img4_hu15466841379942369513.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="volcado-de-información-al-nuevo-disco">Volcado de información al nuevo disco</h1>
+<p>Una vez que el nuevo disco está funcionando en la máquina, se debe trasladar la información a sus nuevas ubicaciones. Para ello se usará el comando cp para copiar los contenidos de los diferentes directorios del disco original (vda), de 2GB al nuevo disco (vdb) de 10GB.</p>
+<h2 id="directorio-home">Directorio /home</h2>
+<p>El primer directorio que se trasladará al nuevo disco será el directorio /home. Para ello, el primer paso debe ser copiar el contenido del directorio /home del disco duro original en la partición 4 del nuevo disco duro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /home/* /mnt/vdb/vdb4
+</span></span></code></pre></div><p>A continuación, se habilitará como punto de montaje de esta partición el directorio /home del sistema en el fichero de configuración /etc/fstab con el formato</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>PARTLABEL=&#34;/home&#34;   /home   ext4    defaults    0   0
+</span></span></code></pre></div><p>Adicionalmente, se puede copiar el contenido de este directorio en el disco duro original con el nombre /home.old para garantizar que no se pierde esta información.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /home /home.old
+</span></span></code></pre></div><h2 id="directorio-var">Directorio /var</h2>
+<p>Para volcar la información del directorio /var al nuevo disco se debe seguir el mismo procedimiento. De esta manera, en primer lugar se copiará la información del directorio a la partición del disco que se montará a continuación en este punto, en este caso la partición 5.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /var/* /mnt/vdb/vdb5
+</span></span></code></pre></div><p>El siguiente paso es añadir este nuevo punto de montaje al fichero de configuración /etc/fstab.</p>
+<h2 id="directorio-usr">Directorio /usr</h2>
+<p>De la misma forma que en los casos anteriores, para volcar la información de este directorio al nuevo disco se usa el comando <code>cp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /usr/* /mnt/vdb/vdb6
+</span></span></code></pre></div><p>A continuación, se configura este nuevo punto de montaje en el fichero /etc/fstab.</p>
+<h2 id="partición-efi">Partición EFI</h2>
+<p>Una vez que todos los directorios están copiados y montados en sus nuevos puntos de montaje, se debe repetir la misma operación con la EFI, el directorio de arranque /boot, en el que está el kernel del sistema operativo y el resto de contenidos del directorio raíz.</p>
+<p>Para trasladar la EFI a su nuevo disco, se procede de la misma forma. La información de arranque del sistema se encuentra en el directorio /boot/efi, por lo que será éste el que se copie a la partición 1 del nuevo disco duro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /boot/efi/* /mnt/vdb/vdb1
+</span></span></code></pre></div><p>Y, al igual que en los casos anteriores, se indicará el nuevo punto de montaje de la EFI en el fichero de configuración /etc/fstab. En este caso, además para evitar duplicidades con el punto de montaje, se debe comentar la línea correspondiente a la partición EFI del anterior disco duro.</p>
+<h2 id="directorio-boot">Directorio /boot</h2>
+<p>La siguiente modificación que se puede aplicar es la del directorio /boot. Para ello se procederá como con el resto de directorios que ya se han trasladado con éxito al nuevo disco duro.</p>
+<p>En primer lugar se copia el contenido del directorio a la partición correspondiente del nuevo disco.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /boot/* /mnt/vdb/vdb2
+</span></span></code></pre></div><p>Y, a continuación, se indica el nuevo punto de montaje en el fichero de configuración fstab.</p>
+<h2 id="directorio-raíz">Directorio raíz</h2>
+<p>En este punto llega el momento de trasladar todo el resto del sistema al nuevo disco duro.  Para esta tarea se puede usar la opción <code>-t</code> del comando <code>cp</code>, que copia todos los ficheros indicados como origen en un directorio marcado como destino con esa opción. Pero durante el proceso de copia de todos estos directorios, que suponen un gran volumen de información, el comando <code>cp</code> devuelve los siguientes mensajes de error debido a la falta de espacio en el dispositivo.</p>
+<p>Se da una situación llamativa puesto que el espacio del directorio raíz completo en el disco original es de sólo 1,8GB, mientras que en el nuevo disco duro parece que ya se han ocupado los 3,4GB destinados a esta partición.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="481"
+            height="113"
+            src="/images/sistemas/practica9/img5_hu15401651994751043143.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img5_hu15401651994751043143.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para solucionar este problema, se puede arrancar la máquina en modo recuperación con sistema operativo live y, desde el intérprete de comandos, montar, por una parte, el directorio raíz del antiguo disco duro, en este caso en el directorio /mnt/vda/vda3, y, por otra parte, la partición del nuevo disco duro donde se quiere trasladar esa información, en este caso, en el directorio /mnt/vdb/vdb3. Con ambas particiones montadas en el directorio /mnt del sistema operativo live, ya se puede ejecutar el comando de copia como se muestra en la siguiente captura de pantalla.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /mnt/vda/vda3/bin/ /mnt/vda/vda3/dev/ /mnt/vda/vda3/etc/ /mnt/vda/vda3/initrd.img /mnt/vda/vda3/initrd.img.old /mnt/vda/vda3/lib/ /mnt/vda/vda3/lib32/ /mnt/vda/vda3/lib64/ /mnt/vda/vda3/libx32/ /mnt/vda/vda3/lost+found/ /mnt/vda/vda3/media/ /mnt/vda/vda3/mnt/ /mnt/vda/vda3/opt/ /mnt/vda/vda3/proc/ /mnt/vda/vda3/root/ /mnt/vda/vda3/run/ /mnt/vda/vda3/sbin/ /mnt/vda/vda3/srv/ /mnt/vda/vda3/sys/ /mnt/vda/vda3/tmp/ /mnt/vda/vda3/vmlinuz /mnt/vda/vda3/vmlinuz.old -t /mnt/vdb/vdb3
+</span></span></code></pre></div><p>Tras esta copia, todo el contenido del directorio raíz del disco duro original se ha copiado en la partición del nuevo disco duro que debe albergar todo ese contenido, excepto los directorios que ya se han movido a sus correspondientes nuevas particiones.</p>
+<p>En este caso, también resulta llamativa la diferencia de tamaño entre el directorio raíz del disco duro original y el directorio raíz del nuevo disco duro: 1,7GB frente a sólo 3,8MB. Esta diferencia se puede explicar, en parte, porque en este nuevo directorio raíz ya no están directorios como el /var o el /usr, que contienen una parte importante de la información del sistema.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="576"
+            height="113"
+            src="/images/sistemas/practica9/img6_hu7241699067354251639.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img6_hu7241699067354251639.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El sistema operativo live puede ser un buen entorno para terminar de conformar el nuevo fichero de configuración /etc/fstab en este segundo disco duro antes de volver a arrancar la máquina.</p>
+<p>Si tenemos en cuenta que este debería ser el nuevo fichero fstab del equipo, cabe eliminar las líneas que dirigían a particiones del anterior disco duro e indicar, exclusivamente, en qué punto del sistema se deben montar las nuevas particiones que, en este punto de la instalación, deberían contener ya toda la información para el funcionando del equipo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="784"
+            height="428"
+            src="/images/sistemas/practica9/img7_hu1710482522242054961.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img7_hu1710482522242054961.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="arrancar-con-el-nuevo-disco-duro-y-resolución-de-problemas">Arrancar con el nuevo disco duro y resolución de problemas</h1>
+<p>Para el siguiente arranque de la máquina se configura el nuevo disco duro como dispositivo de arranque pero, al intentar arrancar la máquina sin el disco original, el equipo no consigue comenzar a funcionar.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="668"
+            height="489"
+            src="/images/sistemas/practica9/img8_hu13901453677642038187.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img8_hu13901453677642038187.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras comprobar que todos los ficheros y directorios del sistema se han copiado correctamente a sus particiones de destino se encuentran dos errores importantes para el funcionamiento del sistema.</p>
+<p>En primer lugar, durante el proceso de volcado de la información al nuevo disco duro no se habían creado los directorios /boot, /home, /var y /usr en el directorio raíz y, por tanto, estas particiones no tenían un punto en el que montarse. Para crear estos directorios que servirán como punto de montaje a las diferentes particiones se puede montar el dispositivo de bloques en el entorno del instalador de un sistema operativo live.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="802"
+            height="602"
+            src="/images/sistemas/practica9/img9_hu15372294641593292794.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img9_hu15372294641593292794.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Se debe montar la partición que contiene la raíz, en este caso /dev/vdb3 y, a continuación, crear en ella los directorios indicados anteriormente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir -p /mnt/vdb/vdb3/boot
+</span></span><span style="display:flex;"><span>mkdir -p /mnt/vdb/vdb3/home
+</span></span><span style="display:flex;"><span>mkdir -p /mnt/vdb/vdb3/var
+</span></span><span style="display:flex;"><span>mkdir -p /mnt/vdb/vdb3/usr
+</span></span></code></pre></div><p>Tras haber creado estos directorios en el sistema del nuevo disco duro, ya se puede ejecutar este sistema de archivos desde una terminal en el sistema operativo live. Pero al consultar los dispositivos de bloque montados en el sistema llama la atención que en el punto de montaje /boot/efi no se monta la partición del nuevo disco duro, sino la del disco original de 2GB.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="758"
+            height="346"
+            src="/images/sistemas/practica9/img10_hu8744798136499251285.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img10_hu8744798136499251285.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Esto lleva a comprobar el fichero de configuración /etc/fstab en el que se indican los puntos de montaje de cada una de las partes del sistema. Parece que todas las particiones están correctamente configuradas, en concreto, la partición EFI no presenta ningún error que llame la atención en un primer momento y, como se puede ver, la partición del disco duro original está comentada, por lo que no se debería montar.</p>
+<p>Un forma alternativa de montar la partición puede ser referirse a ella por UUID en vez de usar el nombre del partlabel. Pero, al consultar este identificador, se descubre cuál es el problema que estaba haciendo que se montase la partición EFI del disco vda, en vez de la del disco vdb: las etiquetas partlabel se habían intercambiado en el fichero fstab. Como muestra la salida del comando <code>blkid</code>, la etiqueta de la partición EFI nueva es “UEFI” y no “efi”, como indicaba el fichero fstab y que, en realidad, estaba indicando que se debía montar la partición EFI del dispositivo de bloques /dev/vda.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="758"
+            height="182"
+            src="/images/sistemas/practica9/img11_hu18355882948642673204.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img11_hu18355882948642673204.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras localizar el error, la solución es tan sencilla como cambiar la etiqueta de la partición en el fichero de configuración.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="758"
+            height="476"
+            src="/images/sistemas/practica9/img12_hu7366220518024456431.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img12_hu7366220518024456431.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice warning">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+      </svg><p>Warning</p>
+  </div>
+  <div class="notice-body"><p>Es recomendable extremar la precaución a la hora de usar el campo PARTLABEL para identificar particiones o usar métodos alternativos como el identificador único UUID para evitar este tipo de errores.</p></div>
+</div>
+
+<p>Una vez hecho esto, se debe reinstalar el cargador de arranque grub en el nuevo sistema. En este caso, se puede hacer desde la interfaz gráfica del modo rescate del sistema operativo live.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="799"
+            height="604"
+            src="/images/sistemas/practica9/img13_hu14600607165973636611.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img13_hu14600607165973636611.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras realizar estos pasos, se puede comprobar que, al reiniciar el equipo el sistema ya lanza el grub con las diferentes opciones de arranque.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1282"
+            height="1026"
+            src="/images/sistemas/practica9/img14_hu13189225313606960665.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img14_hu13189225313606960665.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Además, si se accede a la configuración del firmware de la UEFI ya aparece como primera opción en el menú de arranque el sistema operativo que se ha configurado a lo largo de esta práctica en el nuevo disco duro. Pero este sistema aún no permite el arranque. Al lanzarlo se muestra un error que indica que no se encuentra uno de los dispositivos y tampoco localiza uno de los ficheros que debería estar ubicado en el directorio /boot.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="520"
+            height="160"
+            src="/images/sistemas/practica9/img15_hu3520085804918150603.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img15_hu3520085804918150603.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para localizar el dispositivo que está resultando problemático se puede ejecutar el sistema usando un sistema operativo live y, una vez que se esté trabajando con él se puede buscar a qué dispositivo hace referencia ese UUID.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="782"
+            height="112"
+            src="/images/sistemas/practica9/img16_hu17207444621174012625.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img16_hu17207444621174012625.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En concreto, se trata del disco /dev/vda3, que es la partición del disco original que contiene el sistema. Este disco no debería montarse durante el arranque, puesto que debería producirse con el nuevo disco configurado.</p>
+<p>En segundo lugar, el fichero que no se ha podido encontrar debería estar en la partición que contiene el directorio boot en el nuevo disco duro. Al montar esta partición en un entorno de instalador y listar su contenido, el fichero no encontrado aparece ubicado correctamente en la partición del disco duro.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="604"
+            height="362"
+            src="/images/sistemas/practica9/img17_hu14242294491048525694.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img17_hu14242294491048525694.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>También en la partición que contiene la raíz se encuentra el enlace que apunta al fichero que no se había encontrado en el directorio /boot.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="782"
+            height="437"
+            src="/images/sistemas/practica9/img18_hu15248124187793493963.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img18_hu15248124187793493963.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para intentar solucionar estos errores, se puede intentar reinstalar el grub desde la terminal que proporciona este sistema operativo live con el sistema del nuevo disco duro arrancado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>grub-install
+</span></span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="511"
+            height="125"
+            src="/images/sistemas/practica9/img19_hu5497165538529554559.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img19_hu5497165538529554559.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Durante el proceso se indica que el sistema no soporta las variables EFI. Para solventar este problema se deben cargar estas variables.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount -t efivarfs none /sys/firmware/efi/efivars/
+</span></span></code></pre></div><p>En este caso, el grub se instala sin devolver ninguna advertencia.</p>
+<p>El siguiente paso necesario tras la instalación del grub es su actualización. Durante este proceso, parece que el grub ha conseguido encontrar los ficheros que, en el anterior inicio no se habían podido localizar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>update-grub
+</span></span></code></pre></div><p>Finalmente, después de haber reinstalado y actualizado el grub a través de la terminal, el nuevo sistema ha arrancado en el siguiente reinicio sin ningún problema y se han montado correctamente todas las particiones en los puntos de montaje indicados.</p>
+<p>En este punto, el sistema se ha trasladado completamente al nuevo disco duro, que ya ofrece un sistema 100% funcional con el espacio de almacenamiento más ampliado.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="986"
+            height="540"
+            src="/images/sistemas/practica9/img20_hu2692962831424149503.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/sistemas\/practica9\/img20_hu2692962831424149503.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/comandos/">
+                        Comandos
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistema-de-ficheros/">
+                        Sistema de ficheros
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/implantaci%c3%b3n-de-sistemas-operativos/">
+                        Implantación de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fsistemas%2f2024-02-04-gestion-sistema-ficheros-debian%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fsistemas%2f2024-02-04-gestion-sistema-ficheros-debian%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fsistemas%2f2024-02-04-gestion-sistema-ficheros-debian%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fsistemas%2f2024-02-04-gestion-sistema-ficheros-debian%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
+      Configuración del protocolo HTTPS para el acceso a una aplicación web
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+      Configuración de switches en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
+      Configurar una agregación de enlaces (bonding) en bridges Linux
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Una agregación de enlaces, link aggregation o port bonding combina varias interfaces de red de forma paralela para aumentar el ancho de banda de una conexión y aportar redundancia ante fallos de una de ellas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Blog</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xargs on Javi Huete</title>
+    <link>/tags/xargs/</link>
+    <description>Recent content in Xargs on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Fri, 24 Nov 2023 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/xargs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El comando xargs</title>
+      <link>/blog/sistemas/2023-11-24-comando-xargs/</link>
+      <pubDate>Fri, 24 Nov 2023 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2023-11-24-comando-xargs/</guid>
+      <description>El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</description>
+    </item>
+  </channel>
+</rss>

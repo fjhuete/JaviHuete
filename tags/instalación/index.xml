@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Instalación on Javi Huete</title>
+    <link>/tags/instalaci%C3%B3n/</link>
+    <description>Recent content in Instalación on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/instalaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación desatendida por red de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</link>
+      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</guid>
+      <description>En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</description>
+    </item>
+    <item>
+      <title>Instalación desatendida de Debian12</title>
+      <link>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</link>
+      <pubDate>Thu, 21 Nov 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/</guid>
+      <description>Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</description>
+    </item>
+    <item>
+      <title>Manejo y uso del comando mkisofs</title>
+      <link>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</link>
+      <pubDate>Mon, 06 May 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/</guid>
+      <description>En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</description>
+    </item>
+    <item>
+      <title>Instalación de Debian 12 bajo LVM en Proxmox</title>
+      <link>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</link>
+      <pubDate>Thu, 04 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/</guid>
+      <description>&lt;p&gt;Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,2114 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/blog/2024-11-16-interconexion-oracle/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Interconexión entre dos servidores Oracle</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Interconexión entre dos servidores Oracle" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/blog/2024-11-16-interconexion-oracle/" />
+
+
+<meta name="twitter:title" content="Interconexión entre dos servidores Oracle" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No results for";
+  let search_initial_message = "Type something to search..";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Home</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >About</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/elements"
+              >Elements</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Pages
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/404">
+                    404 Page
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Authors
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/blog">
+                    Blog
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categories
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/contact">
+                    Contact
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+        <li class="mt-4 inline-block lg:hidden">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="/contact">
+            get a quote
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+        <a
+          href="/contact"
+          class="btn btn-outline-primary btn-sm hidden lg:inline-block">
+          get a quote
+        </a>
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Search Post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Type something to search..
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Interconexión entre dos servidores Oracle
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors//">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-bbdd/"
+                    class=""
+                    >Administracion bbdd
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              November 16, 2024
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Table of Contents
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-de-acceso-remoto-al-servidor">Configuración de acceso remoto al servidor</a></li>
+    <li><a href="#configuración-del-segundo-servidor">Configuración del segundo servidor</a></li>
+    <li><a href="#configuración-de-la-conexión-entre-servidores">Configuración de la conexión entre servidores</a></li>
+    <li><a href="#demostración-del-funcionamiento-de-la-interconexión-entre-servidores-oracle">Demostración del funcionamiento de la interconexión entre servidores Oracle</a></li>
+    <li><a href="#resolución-de-errores">Resolución de errores</a></li>
+  </ol>
+</nav>
+</details>
+
+            <h1 id="enlace-entre-dos-servidores-oracle">Enlace entre dos servidores Oracle</h1>
+<h2 id="configuración-de-acceso-remoto-al-servidor">Configuración de acceso remoto al servidor</h2>
+<p>Antes de configurar la conexión entre dos servidores Oracle es necesario garantizar que es posible conectarse de forma remota desde un cliente a cada uno de ellos. Para permitir este tipo de conexiones hay un fichero que es imprescindible configurar: el fichero listener.ora.</p>
+<p>Este fichero se encuentra en el directorio /opt/oracle/homes/OraDBHome21cEE/network/admin/listener.ora y contiene la información de la interfaz y el puerto por el que escucha el servidor. En el caso del servidor 1, el contenido de este fichero es el siguiente:</p>
+<pre tabindex="0"><code>LISTENER =
+   (DESCRIPTION_LIST =
+     (DESCRIPTION =
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oracleserver)(PORT = 1521))
+       (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+     )
+   )
+
+ SID_LIST_LISTENER=
+   (SID_LIST=
+     (SID_DESC=
+       (GLOBAL_DBNAME=ORCLCDB)
+       (ORACLE_HOME=/opt/oracle/product/21c/dbhome_1)
+       (SID_NAME=ORCLCDB))
+   )
+</code></pre><p>Para poder indicar en el host el nombre del servidor en lugar de su dirección IP es necesario también añadir el el fichero /etc/hosts una línea en la que se asocien ambos datos.</p>
+<pre tabindex="0"><code>127.0.0.1	localhost
+127.0.1.1	oracleserver
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+10.0.0.179	oracleserver
+</code></pre><p>Con esta configuración, ya es posible conectarse desde un cliente remoto.</p>
+<pre tabindex="0"><code>debian@oracle2:~$ sqlplus usuario/usuario@//10.0.0.179:1521/ORCLCDB
+
+SQL*Plus: Release 12.2.0.1.0 Production on Sun Oct 20 11:06:40 2024
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+Hora de Ultima Conexion Correcta: Dom Oct 20 2024 11:06:24 +00:00
+
+Conectado a:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+
+SQL&gt;
+</code></pre><p>Adicionalmente, si el en fichero tnsnames del cliente remoto se añade una configuración similar a esta, la cadena de conexión se hace más sencilla. Este fichero se encuentra en el directorio /opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora (ver <a href="#resoluci%c3%b3n-de-errores"
+
+
+
+ 
+
+
+>resolución de errores</a>).</p>
+<pre tabindex="0"><code>ORCLCDB=
+        (DESCRIPTION =
+              (ADDRESS_LIST =
+                (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.0.179)(PORT = 1521))
+              )
+         (CONNECT_DATA =
+                (SERVICE_NAME = ORCLCDB)
+         )
+        )
+</code></pre><p>De esta manera, el cliente ya tiene acceso al servidor indicando, simplemente, el nombre del servicio configurado en el fichero tnsnames.ora.</p>
+<pre tabindex="0"><code>debian@oracle2:~$ sqlplus usuario/usuario@ORCLCDB
+
+SQL*Plus: Release 12.2.0.1.0 Production on Sun Oct 20 11:24:29 2024
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+Hora de Ultima Conexion Correcta: Dom Oct 20 2024 11:08:24 +00:00
+
+Conectado a:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+
+SQL&gt;
+</code></pre><h2 id="configuración-del-segundo-servidor">Configuración del segundo servidor</h2>
+<p>Ahora que el primer servidor es accesible desde otro cliente de la red local, es momento de configurar el segundo servidor. Para facilitar el proceso de configuración previa a la instalación del servidor, se puede usar un <a href="https://github.com/fjhuete/instalacion_oracle"
+
+
+
+
+ target="_blank"
+ 
+
+
+>script de configuración</a> y posteriormente se puede instalar un paquete .deb convertido usando la herramienta <code>alien</code> a partir del paquete .rpm que distribuye Oracle.</p>
+<pre tabindex="0"><code>debian@oracle2:~$ sudo dpkg -i oracle-database-ee-21c_1.0-2_amd64.deb 
+(Leyendo la base de datos ... 27566 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar oracle-database-ee-21c_1.0-2_amd64.deb ...
+ln: fallo al crear el enlace simbólico &#39;/bin/awk&#39;: El fichero ya existe
+Desempaquetando oracle-database-ee-21c (1.0-2) ...
+Configurando oracle-database-ee-21c (1.0-2) ...
+[INFO] Executing post installation scripts...
+[INFO] Oracle home installed successfully and ready to be configured.
+To configure a sample Oracle Database you can execute the following service configuration script as root: /etc/init.d/oracledb_ORCLCDB-21c configure
+Procesando disparadores para libc-bin (2.36-9+deb12u8) ...
+</code></pre><p>Antes de configurar el nuevo servicio se añaden al fichero .bashrc las variables necesarias para el funcionamiento de Oracle.</p>
+<pre tabindex="0"><code>export ORACLE_HOME=/opt/oracle/product/21c/dbhome_1
+export ORACLE_SID=ORCLCDB
+export ORACLE_BASE=/opt/oracle
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+export PATH=$ORACLE_HOME/bin:$PATH
+export NLS_LANG=SPANISH_SPAIN.UTF8
+</code></pre><p>Y se ejecuta como root el script de configuración que indica el instalador de Oracle.</p>
+<pre tabindex="0"><code>debian@oracle2:~$ sudo /etc/init.d/oracledb_ORCLCDB-21c configure
+Configuring Oracle Database ORCLCDB.
+Preparar para funcionamiento de base de datos
+8% completado
+Copiando archivos de base de datos
+31% completado
+Creando e iniciando instancia Oracle
+32% completado
+36% completado
+40% completado
+43% completado
+46% completado
+Terminando creación de base de datos
+51% completado
+54% completado
+Creando Bases de Datos de Conexión
+58% completado
+77% completado
+Ejecutando acciones posteriores a la configuración
+100% completado
+Creación de la base de datos terminada. Consulte los archivos log de /opt/oracle/cfgtoollogs/dbca/ORCLCDB
+ para obtener más información.
+Información de Base de Datos:
+Nombre de la Base de Datos Global:ORCLCDB
+Identificador del Sistema (SID):ORCLCDB
+Para obtener información detallada, consulte el archivo log &#34;/opt/oracle/cfgtoollogs/dbca/ORCLCDB/ORCLCDB.log&#34;.
+
+Database configuration completed successfully. The passwords were auto generated, you must change them by connecting to the database using &#39;sqlplus / as sysdba&#39; as the oracle user.
+</code></pre><p>Para poder acceder a sqlplus con el usuario debian es necesario que esté incluido en el grupo dba.</p>
+<pre tabindex="0"><code>sudo usermod -a -G dba debian
+</code></pre><h2 id="configuración-de-la-conexión-entre-servidores">Configuración de la conexión entre servidores</h2>
+<p>Como en el caso del otro servidor, para permitir la conexión remota desde otro equipo de la red también se debe configurar el fichero listener.ora. En el caso de este segundo servidor, su contenido es el siguiente:</p>
+<pre tabindex="0"><code>LISTENER =
+   (DESCRIPTION_LIST =
+     (DESCRIPTION =
+       (ADDRESS = (PROTOCOL = TCP)(HOST = oracle2)(PORT = 1521))
+       (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+     )
+   )
+
+ SID_LIST_LISTENER=
+   (SID_LIST=
+     (SID_DESC=
+       (GLOBAL_DBNAME=ORCLCDB)
+       (ORACLE_HOME=/opt/oracle/product/21c/dbhome_1)
+       (SID_NAME=ORCLCDB))
+   )
+</code></pre><p>Y para poder usar el hostname en el parámetro host, el fichero /etc/hosts tiene que recoger la IP a la que corresponde ese hostname.</p>
+<pre tabindex="0"><code>127.0.0.1	localhost
+127.0.1.1	oracle2
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+10.0.0.26	oracle2
+</code></pre><p>Tras realizar esta configuración en el servidor 2 ya se puede acceder a la base de datos recién creada desde el servidor 1.</p>
+<pre tabindex="0"><code>debian@oracleserver:~$ sqlplus dos/dos@//10.0.0.26:1521/ORCLCDB
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Dom Oct 20 12:11:00 2024
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Hora de Última Conexión Correcta: Dom Oct 20 2024 12:10:38 +00:00
+
+Conectado a:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL&gt; 
+</code></pre><h2 id="demostración-del-funcionamiento-de-la-interconexión-entre-servidores-oracle">Demostración del funcionamiento de la interconexión entre servidores Oracle</h2>
+<p>Para demostrar el funcionamiento de la interconexión entre servidores se usa, en este caso, el esquema Scott. En el servidor 1 se crea y rellena la tabla de departamentos.</p>
+<pre tabindex="0"><code>SQL&gt; connect uno/uno
+Conectado.
+SQL&gt; CREATE TABLE DEPT
+  2  (
+  3   DEPTNO NUMBER(2),
+  4   DNAME VARCHAR2(14),
+  5   LOC VARCHAR2(13),
+  6   CONSTRAINT PK_DEPT PRIMARY KEY (DEPTNO)
+  7  );
+
+Tabla creada.
+
+SQL&gt; INSERT INTO DEPT VALUES (10, &#39;ACCOUNTING&#39;, &#39;NEW YORK&#39;);
+INSERT INTO DEPT VALUES (20, &#39;RESEARCH&#39;, &#39;DALLAS&#39;);
+INSERT INTO DEPT VALUES (30, &#39;SALES&#39;, &#39;CHICAGO&#39;);
+
+1 fila creada.
+
+SQL&gt; 
+1 fila creada.
+
+SQL&gt; 
+1 fila creada.
+
+SQL&gt; INSERT INTO DEPT VALUES (40, &#39;OPERATIONS&#39;, &#39;BOSTON&#39;);
+
+1 fila creada.
+</code></pre><p>En el servidor 2 se crea y rellena la tabla de empleados.</p>
+<pre tabindex="0"><code>SQL&gt; connect dos/dos
+Conectado.
+SQL&gt; CREATE TABLE EMP
+  2  (
+  3   EMPNO NUMBER(4),
+  4   ENAME VARCHAR2(10),
+  5   JOB VARCHAR2(9),
+  6   MGR NUMBER(4),
+  7   HIREDATE DATE,
+  8   SAL NUMBER(7, 2),
+  9   COMM NUMBER(7, 2),
+ 10   DEPTNO NUMBER(2),
+ 11   CONSTRAINT PK_EMP PRIMARY KEY (EMPNO)
+ 12  );
+
+Tabla creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7369, &#39;SMITH&#39;, &#39;CLERK&#39;, 7902,TO_DATE(&#39;17-DIC-1980&#39;, &#39;DD-MON-YYYY&#39;), 800, NULL, 20);
+INSERT INTO EMP VALUES(7369, &#39;SMITH&#39;, &#39;CLERK&#39;, 7902,TO_DATE(&#39;17-DIC-1980&#39;, &#39;DD-MON-YYYY&#39;), 800, NULL, 20);
+INSERT INTO EMP VALUES(7499, &#39;ALLEN&#39;, &#39;SALESMAN&#39;, 7698,TO_DATE(&#39;20-FEB-1981&#39;, &#39;DD-MON-YYYY&#39;), 1600, 300, 30);
+INSERT INTO EMP VALUES(7521, &#39;WARD&#39;, &#39;SALESMAN&#39;, 7698,TO_DATE(&#39;22-FEB-1981&#39;, &#39;DD-MON-YYYY&#39;), 1250, 500, 30);
+INSERT INTO EMP VALUES(7566, &#39;JONES&#39;, &#39;MANAGER&#39;, 7839,TO_DATE(&#39;2-ABR-1981&#39;, &#39;DD-MON-YYYY&#39;), 2975, NULL, 20);
+
+1 fila creada.
+
+SQL&gt; 
+1 fila creada.
+
+SQL&gt; 
+1 fila creada.
+
+SQL&gt; 
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7654, &#39;MARTIN&#39;, &#39;SALESMAN&#39;, 7698,TO_DATE(&#39;28-SEP-1981&#39;, &#39;DD-MON-YYYY&#39;), 1250, 1400, 30);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7698, &#39;BLAKE&#39;, &#39;MANAGER&#39;, 7839,TO_DATE(&#39;1-MAY-1981&#39;, &#39;DD-MON-YYYY&#39;), 2850, NULL, 30);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7782, &#39;CLARK&#39;, &#39;MANAGER&#39;, 7839,TO_DATE(&#39;9-JUN-1981&#39;, &#39;DD-MON-YYYY&#39;), 2450, NULL, 10);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7788, &#39;SCOTT&#39;, &#39;ANALYST&#39;, 7566,TO_DATE(&#39;09-DIC-1982&#39;, &#39;DD-MON-YYYY&#39;), 3000, NULL, 20);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7839, &#39;KING&#39;, &#39;PRESIDENT&#39;, NULL,TO_DATE(&#39;17-NOV-1981&#39;, &#39;DD-MON-YYYY&#39;), 5000, NULL, 10);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7844, &#39;TURNER&#39;, &#39;SALESMAN&#39;, 7698,TO_DATE(&#39;8-SEP-1981&#39;, &#39;DD-MON-YYYY&#39;), 1500, 0, 30);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7876, &#39;ADAMS&#39;, &#39;CLERK&#39;, 7788,TO_DATE(&#39;12-ENE-1983&#39;, &#39;DD-MON-YYYY&#39;), 1100, NULL, 20);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7900, &#39;JAMES&#39;, &#39;CLERK&#39;, 7698,TO_DATE(&#39;3-DIC-1981&#39;, &#39;DD-MON-YYYY&#39;), 950, NULL, 30);
+
+1 fila creada.
+
+SQL&gt; INSERT INTO EMP VALUES(7902, &#39;FORD&#39;, &#39;ANALYST&#39;, 7566,TO_DATE(&#39;3-DIC-1981&#39;, &#39;DD-MON-YYYY&#39;), 3000, NULL, 20);
+
+1 fila creada.
+</code></pre><p>Desde alguno de los dos servidores se crea la interconexión al otro.</p>
+<pre tabindex="0"><code>SQL&gt; create database link empleados
+  2  connect to dos
+  3  identified by dos
+  4  using &#39;ORCL2&#39;;
+
+Enlace con la base de datos creado.
+</code></pre><p>Tras establecer esta configuración para la interconexión entre los servidores de bases de datos de Oracle aparece este error al intentar consultar la tabla de un servidor desde el otro.</p>
+<pre tabindex="0"><code>SQL&gt; SELECT ename from emp@empleados;
+SELECT ename from emp@empleados
+                      *
+ERROR en línea 1:
+ORA-12504: TNS:el listener no ha recibido el SERVICE_NAME en CONNECT_DATA
+</code></pre><p>La interconexión también se puede crear haciendo referencia a la IP del servidor.</p>
+<pre tabindex="0"><code>SQL&gt; create database link empleados connect to dos identified by dos using &#39;//10.0.0.26:1521/ORCLCDB&#39;;
+
+Enlace con la base de datos creado.
+</code></pre><p>Usando este formato en la cadena de conexión ya es posible hacer consultas desde un servidor de la base de datos usando la información almacenada en el otro.</p>
+<pre tabindex="0"><code>SQL&gt; select ename
+  2  from emp@empleados
+  3  where deptno = (select deptno
+  4  		from dept
+  5  		where dname = &#39;SALES&#39;);
+
+ENAME
+------------------------------
+ALLEN
+WARD
+MARTIN
+BLAKE
+TURNER
+JAMES
+
+6 filas seleccionadas.
+</code></pre><h2 id="resolución-de-errores">Resolución de errores</h2>
+<p>El error mencionado anteriormente se produce por un problema con la ubicación del fichero tnsnames.ora. Este fichero se instala en diferentes ubicaciones del servidor al instalar Oracle. Sin embargo, el servidor sólo usa uno de estos ficheros para establecer las conexiones. En este caso el fichero que se estaba editando (/opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora) no coincidía con el que estaba usando el servidor (/opt/oracle/product/21c/dbhome_1/network/admin/tnsnames.ora).</p>
+<p>Solucionar este problema es tan sencillo como copiar el fichero de configuración en la ubicación correcta.</p>
+<pre tabindex="0"><code>sudo cp /opt/oracle/homes/OraDBHome21cEE/network/admin/tnsnames.ora /opt/oracle/product/21c/dbhome_1/network/admin/tnsnames.ora
+</code></pre><p>Tras ubicar correctamente el fichero, ambos servidores de Oracle se pueden comunicar usando el nombre configurado en el fichero tnsnames.ora.</p>
+<pre tabindex="0"><code>SQL&gt; drop database link empleados;
+
+Enlace con la base de datos borrado.
+
+SQL&gt; create database link empleados
+  2  connect to dos
+  3  identified by dos
+  4  using &#39;ORCL2&#39;;
+
+Enlace con la base de datos creado.
+
+SQL&gt; select ename
+  2  from emp@empleados
+  3  where deptno = (select deptno
+  4  		from dept
+  5  		where dname = &#39;SALES&#39;);
+
+ENAME
+------------------------------
+ALLEN
+WARD
+MARTIN
+BLAKE
+TURNER
+JAMES
+
+6 filas seleccionadas.
+</code></pre>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Share :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fblog%2f2024-11-16-interconexion-oracle%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Share&amp;url=%2f%2flocalhost%3a1313%2fblog%2f2024-11-16-interconexion-oracle%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Share&amp;body=%2f%2flocalhost%3a1313%2fblog%2f2024-11-16-interconexion-oracle%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fblog%2f2024-11-16-interconexion-oracle%2f&amp;resubmit=true&amp;title=Share"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "themefisher-template" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Related Posts</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/image-placeholder_hu14898866438330350576.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu3366426647807776041.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu15761394040035298493.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu9923120856516670921.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/image-placeholder_hu10538127647789974651.png"
+            class=" mb-6 w-full rounded img"
+            alt="How to build an Application with modern Technology"
+            width="1096"
+            height="480" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/post-3/">
+      How to build an Application with modern Technology
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/john-doe/">
+          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/software/"
+            class="ms-1"
+            >Software
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/post-3/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  
+    
+      
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+    
+    
+    
+
+
+    
+    
+      
+      
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+        
+
+
+        <picture>
+          <source
+            
+              srcset="/images/image-placeholder_hu14898866438330350576.webp"
+            
+            media="(max-width: 575px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu3366426647807776041.webp"
+            
+            media="(max-width: 767px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu15761394040035298493.webp"
+            
+            media="(max-width: 991px)" />
+          <source
+            
+              srcset="/images/image-placeholder_hu9923120856516670921.webp"
+             />
+          <img
+            
+              loading="lazy" decoding="async"
+              src="/images/image-placeholder_hu10538127647789974651.png"
+            class=" mb-6 w-full rounded img"
+            alt="How to build an Application with modern Technology"
+            width="1096"
+            height="480" />
+        </picture>
+      
+      
+    
+    
+  
+
+
+  
+
+
+  
+  <h4 class="mb-3">
+    <a href="/blog/post-1/">
+      How to build an Application with modern Technology
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/john-doe/">
+          <i class="fa-regular fa-circle-user mr-2"></i>John Doe
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/application/"
+            class="ms-1"
+            >Application
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/data/"
+            class="ms-1"
+            >Data
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/post-1/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/admin-bbdd/2024-10-21-instalacion-mysql-debian/">
+      Instalación de MySQL en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><h1 id="instalación-mysql-en-debian-12">Instalación MySQL en Debian 12</h1>
+<p>En teoría MySQL se puede instalar de forma directa desde los repositorios de Debian. Sin embargo, el gestor de paquetes apt no tiene acceso al paquete mysql-server a través del repositorio de la rama estable (bookworm) de Debian. Oracle ofrece un paquete .deb instalable en su web de descargas, que hay que configurar para que el gestor de paquetes apt pueda instalar la versión deseada de MySQL. El paquete que ofrece Oracle instala tanto el servidor como el cliente en la misma máquina.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/admin-bbdd/2024-10-21-instalacion-mysql-debian/">
+    Read More
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >About</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /elements
+                "
+                >Elements</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /privacy-policy
+                "
+                >Privacy Policy</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="facebook"
+                rel="nofollow noopener"
+                href="https://www.facebook.com/">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="twitter"
+                rel="nofollow noopener"
+                href="https://twitter.com/">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenStack on Javi Huete</title>
+    <link>/tags/openstack/</link>
+    <description>Recent content in OpenStack on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 14 Apr 2024 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo crear una instancia basada en un volumen en OpenStack</title>
+      <link>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</link>
+      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/</guid>
+      <description>&lt;p&gt;OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Linux en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-linux-openstack/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-linux-openstack/</guid>
+      <description>En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+    <item>
+      <title>Configuración NAT en routers Mikrotik en Openstack</title>
+      <link>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</link>
+      <pubDate>Mon, 25 Mar 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-03-25-nat-router-mikrotik-openstak/</guid>
+      <description>En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</description>
+    </item>
+    <item>
+      <title>Cómo enrutar una red en OpenStack</title>
+      <link>/blog/redes/2024-02-27-enrutamiento-red-openstack/</link>
+      <pubDate>Tue, 27 Feb 2024 01:00:00 +0200</pubDate>
+      <guid>/blog/redes/2024-02-27-enrutamiento-red-openstack/</guid>
+      <description>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</description>
+    </item>
+  </channel>
+</rss>

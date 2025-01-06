@@ -1,0 +1,2171 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/spanish/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración de reglas de cortafuegos en router Linux usando iptables</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Boilerplate, Hugo" />
+
+
+
+
+<meta
+  name="description"
+  content="Hugo &amp; Tailwindcss Starter" />
+
+
+
+  <meta name="author" content="zeon.studio" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="900" />
+      <meta property="og:image:height" content="600" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración de reglas de cortafuegos en router Linux usando iptables" />
+<meta property="og:description" content="Hugo &amp; Tailwindcss Starter" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/spanish/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/" />
+
+
+<meta name="twitter:title" content="Configuración de reglas de cortafuegos en router Linux usando iptables" />
+<meta name="twitter:description" content="Hugo &amp; Tailwindcss Starter" />
+
+
+  <meta name="twitter:site" content="@zeon_studio" />
+
+
+  <meta name="twitter:creator" content="@zeon.studio" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "0 results for";
+  let search_initial_message = "";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="" />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            to navigate
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            to select
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> to close
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section>
+  <div class="container text-center">
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>Configuración De Reglas De Cortafuegos en Router Linux Usando Iptables</h1>
+      
+
+
+
+
+<ul class="mt-6 inline-flex space-x-1 capitalize">
+  <li>
+    <a class="text-primary dark:text-darkmode-primary" href="//localhost:1313/">
+      Home
+    </a>
+    <span class="inlin-block mr-1">/</span>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/">
+          
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+    
+      <li>
+        <a
+          class="text-primary dark:text-darkmode-primary"
+          href="/spanish/blog/">
+          Blog de prácticas
+        </a>
+        <span class="inlin-block mr-1">/</span>
+      </li>
+    
+  
+  <li>
+    <span class="text-primary dark:text-darkmode-primary">
+      Configuración de reglas de cortafuegos en router Linux usando iptables
+    </span>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <div class="content">
+            <p>Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;, que ya sirvió de inspiración para <a href="/blog/redes/2024-03-03-acl-router-cisco"
+
+
+
+ 
+
+
+>este otro post</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="807"
+            height="483"
+            src="/images/redes/practica14/img1_hu12958602033135096033.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica14\/img1_hu12958602033135096033.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>En este caso, todos los ordenadores que tienen el nombre de un participante masculino tienen instalado un servidor SSH, un <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache"
+
+
+
+ 
+
+
+>servidor web</a> y un cliente de base de datos. Los ordenadores que tienen nombre de una participante femenina cuentan con un <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3"
+
+
+
+ 
+
+
+>servidor de base de datos</a>. Además, la máquina del Distrito 13 aloja tanto un servidor web como un servidor de base de datos.</p>
+<h1 id="direccionamiento-del-escenario">Direccionamiento del escenario</h1>
+<p>Las direcciones IP de los diferentes ordenadores son:</p>
+<ul>
+<li>Marvel: 10.0.1.2</li>
+<li>Glimmer: 10.0.1.3</li>
+<li>Cato: 10.0.2.2</li>
+<li>Clover: 10.0.2.3</li>
+<li>Thresh: 10.0.11.2</li>
+<li>Rue: 10.0.11.3</li>
+<li>Peeta: 10.0.12.2</li>
+<li>Katniss: 10.0.12.3</li>
+</ul>
+<p>Las interfaces de los routers tienen las siguientes direcciones IP:</p>
+<ul>
+<li>R1
+<ul>
+<li>f0/0: 11.0.1.1</li>
+<li>f0/1: 173.23.0.1</li>
+<li>f1/0: 193.168.1.2</li>
+</ul>
+</li>
+<li>R2
+<ul>
+<li>f0/0: 11.0.11.1</li>
+<li>f0/1: 173.23.0.2</li>
+<li>f1/0: 173.24.0.1</li>
+<li>f1/1: 193.168.11.2</li>
+</ul>
+</li>
+<li>R3
+<ul>
+<li>f0/0: 11.0.2.1</li>
+<li>f0/1: 173.25.0.1</li>
+<li>f1/0: 193.168.2.2</li>
+</ul>
+</li>
+<li>R4
+<ul>
+<li>f0/0: 11.0.12.1</li>
+<li>f0/1: 173.24.0.2</li>
+<li>f1/0: 193.168.12.2</li>
+<li>f1/1: 173.25.0.2</li>
+</ul>
+</li>
+<li>R5
+<ul>
+<li>f0/0: 193.168.11.1</li>
+<li>f0/1: 193.168.12.1</li>
+<li>f1/0: 193.168.1.1</li>
+<li>f1/1: 193.168.2.1</li>
+<li>f2/0: 11.0.13.1</li>
+</ul>
+</li>
+</ul>
+<p>Para asignar una dirección IP estática a cada una de las máquinas que componen el escenario, se debe editar el fichero de configuración /etc/network/interfaces. En él se indica la dirección IP de cada una de las interfaces del dispositivo, su máscara de red y puerta de enlace.</p>
+<p>Por ejemplo, el fichero /etc/network/interfaces de Marvel debe incluir las siguientes líneas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Static config <span style="color:#66d9ef">for</span> ens4
+</span></span><span style="display:flex;"><span>auto ens4
+</span></span><span style="display:flex;"><span>iface ens4 inet static
+</span></span><span style="display:flex;"><span>        address 10.0.1.2
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>        gateway 10.0.1.1
+</span></span><span style="display:flex;"><span>        dns-nameservers 10.0.1.1
+</span></span></code></pre></div><p>De la misma manera, el fichero /etc/network/interfaces del router R1 debe incluir estas líneas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Static config <span style="color:#66d9ef">for</span> ens4
+</span></span><span style="display:flex;"><span>auto ens4
+</span></span><span style="display:flex;"><span>iface ens4 inet static
+</span></span><span style="display:flex;"><span>        address 10.0.1.1
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>#Static config <span style="color:#66d9ef">for</span> ens5
+</span></span><span style="display:flex;"><span>auto ens5
+</span></span><span style="display:flex;"><span>iface ens5 inet static
+</span></span><span style="display:flex;"><span>        address 173.23.0.1
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>#Static config <span style="color:#66d9ef">for</span> ens6
+</span></span><span style="display:flex;"><span>auto ens6
+</span></span><span style="display:flex;"><span>iface ens6 inet static
+</span></span><span style="display:flex;"><span>        address 193.168.1.2
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span></code></pre></div><p>En el caso de los routers, como tienen más de una tarjeta de red, no se puede indicar la puerta de enlace en este fichero puesto que los sistemas Linux sólo pueden aceptar una puerta de enlace por dispositivo y no se puede indicar una diferente para cada una de las redes a las que pertenecen los routers.</p>
+<p>Así se configuran todas las tarjetas de red de todos los dispositivos del escenario.</p>
+<h1 id="activar-el-bit-de-forwarding">Activar el bit de forwarding</h1>
+<p>Para configurar las máquinas Linux para que funcionen como router es necesario poner a 1 el bit de forwarding. Esto se puede conseguir de varias formas, tanto de manera temporal como persistente. En este caso, para hacerlo de manera persistente y conseguir que la configuración no se modifique a través de los reinicios de las diferentes máquinas, se usa la opción de incluir la línea <code>net.ipv4.ip_forward = 1</code> en el fichero de configuración /etc/sysctl.conf.
+Para activar esta línea al fichero se puede editar el mismo con un editor de texto y descomentarla o, de manera más sencilla, usar un echo para redireccionar el texto al fichero y anexarlo al final de su contenido: <code>echo “net.ipv4.ip_forward = 1” » /etc/sysctl.conf</code>.</p>
+<p>Este paso se repite en todos los router.</p>
+<h1 id="enrutamiento-del-escenario">Enrutamiento del escenario</h1>
+<h2 id="tablas-de-enrutamiento">Tablas de enrutamiento</h2>
+<h3 id="ordenadores">Ordenadores</h3>
+<h4 id="marvel">Marvel</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.1.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.1.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="glimmer">Glimmer</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.1.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.1.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="cato">Cato</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.2.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.2.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="clove">Clove</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.2.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.2.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="thresh">Thresh</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.11.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.11.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="rue">Rue</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.11.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.11.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="peeta">Peeta</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.12.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.12.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="katniss">Katniss</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.12.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.12.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="distrito-13">Distrito 13</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.13.0/24</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>0.0.0.0</td>
+          <td>10.0.13.1</td>
+          <td>ens4</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="routers">Routers</h3>
+<h4 id="r1">R1</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.1.0</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>173.23.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.24.0.0</td>
+          <td>173.23.0.2</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.25.0.0</td>
+          <td>193.168.1.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.1.0</td>
+          <td>0.0.0.0</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.2.0</td>
+          <td>173.23.0.2</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>193.168.11.0</td>
+          <td>193.168.1.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.12.0</td>
+          <td>193.168.1.1</td>
+          <td>ens6</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="r2">R2</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.11.0</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>173.23.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.24.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>173.25.0.0</td>
+          <td>173.24.0.2</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.1.0</td>
+          <td>173.23.0.1</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>193.168.2.0</td>
+          <td>193.168.11.1</td>
+          <td>ens7</td>
+      </tr>
+      <tr>
+          <td>193.168.11.0</td>
+          <td>0.0.0.0</td>
+          <td>ens7</td>
+      </tr>
+      <tr>
+          <td>193.168.12.0</td>
+          <td>173.24.0.2</td>
+          <td>ens6</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="r3">R3</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.2.0</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>173.23.0.0</td>
+          <td>193.168.2.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>173.24.0.0</td>
+          <td>173.25.0.2</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.25.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>193.168.1.0</td>
+          <td>193.168.2.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.2.0</td>
+          <td>0.0.0.0</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.11.0</td>
+          <td>193.168.2.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.12.0</td>
+          <td>173.25.0.2</td>
+          <td>ens5</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="r4">R4</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.12.0</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>173.23.0.0</td>
+          <td>173.24.0.1</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.24.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>173.25.0.0</td>
+          <td>0.0.0.0</td>
+          <td>ens7</td>
+      </tr>
+      <tr>
+          <td>193.168.1.0</td>
+          <td>193.168.12.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.2.0</td>
+          <td>173.24.0.1</td>
+          <td>ens5</td>
+      </tr>
+      <tr>
+          <td>193.168.11.0</td>
+          <td>193.168.12.1</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.12.0</td>
+          <td>0.0.0.0</td>
+          <td>ens6</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="r5">R5</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Destino</th>
+          <th>Siguiente router</th>
+          <th>Interfaz de salida</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10.0.13.0</td>
+          <td>0.0.0.0</td>
+          <td>ens8</td>
+      </tr>
+      <tr>
+          <td>173.23.0.0</td>
+          <td>193.168.1.2</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>173.24.0.0</td>
+          <td>193.168.11.2</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>173.25.0.0</td>
+          <td>193.168.2.2</td>
+          <td>ens7</td>
+      </tr>
+      <tr>
+          <td>193.168.1.0</td>
+          <td>0.0.0.0</td>
+          <td>ens6</td>
+      </tr>
+      <tr>
+          <td>193.168.2.0</td>
+          <td>0.0.0.0</td>
+          <td>ens7</td>
+      </tr>
+      <tr>
+          <td>193.168.11.0</td>
+          <td>0.0.0.0</td>
+          <td>ens4</td>
+      </tr>
+      <tr>
+          <td>193.168.12.0</td>
+          <td>0.0.0.0</td>
+          <td>ens5</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="configuración-del-enrutamiento-en-los-routers-linux">Configuración del enrutamiento en los routers Linux</h2>
+<p>Para trasladar la información de las tablas de enrutamiento a las máquinas Linux tanto de los participantes como a los routers existen varias opciones. La primera de ellas es añadir líneas a la tabla de enrutamiento usando el comando <code>ip route add</code> pero esta forma de volcar al información conlleva un problema: al reiniciar el equipo, la información se pierde.</p>
+<p>Para hacer persistente la configuración de la tabla de enrutamiento se puede atender a otras alternativas. Por ejemplo, se puede guardar en el directorio /etc/network/if-up.d un script que añada las líneas de la tabla de enrutamiento cada vez que el estado de una interfaz del router cambie de apagado (down) a encendido (up).</p>
+<p>Otra posibilidad es añadir esta información al fichero de configuración /etc/network/interfaces. Por ejemplo, este fichero en el caso del PC de Marvel quedaría así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Static config <span style="color:#66d9ef">for</span> ens4
+</span></span><span style="display:flex;"><span>auto ens4
+</span></span><span style="display:flex;"><span>iface ens4 inet static
+</span></span><span style="display:flex;"><span>        address 10.0.1.2
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>        gateway 10.0.1.1
+</span></span><span style="display:flex;"><span>        dns-nameservers 10.0.1.1
+</span></span><span style="display:flex;"><span>        up ip route add default via 10.0.1.1
+</span></span></code></pre></div><p>Y en el router R1 contendría la siguiente información:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Static config <span style="color:#66d9ef">for</span> ens4
+</span></span><span style="display:flex;"><span>auto ens4
+</span></span><span style="display:flex;"><span>iface ens4 inet static
+</span></span><span style="display:flex;"><span>        address 10.0.1.1
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>#Static config <span style="color:#66d9ef">for</span> ens5
+</span></span><span style="display:flex;"><span>auto ens5
+</span></span><span style="display:flex;"><span>iface ens5 inet static
+</span></span><span style="display:flex;"><span>        address 173.23.0.1
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>        up ip route add 173.24.0.0/24 via 173.23.0.2
+</span></span><span style="display:flex;"><span>        up ip route add 193.168.2.0/24 via 173.23.0.2
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>#Static config <span style="color:#66d9ef">for</span> ens6
+</span></span><span style="display:flex;"><span>auto ens6
+</span></span><span style="display:flex;"><span>iface ens6 inet static
+</span></span><span style="display:flex;"><span>        address 193.168.1.2
+</span></span><span style="display:flex;"><span>        netmask 255.255.255.0
+</span></span><span style="display:flex;"><span>        up ip route add 173.25.0.0/24 via 193.168.1.1
+</span></span><span style="display:flex;"><span>        up ip route add 193.168.11.0/24 via 193.168.1.1
+</span></span><span style="display:flex;"><span>        up ip route add 193.168.12.0/24 via 193.168.1.1
+</span></span></code></pre></div><p>De esta manera, se configuran las tablas de enrutamiento de todos los dispositivos del escenario.</p>
+<h1 id="configuración-del-nat">Configuración del NAT</h1>
+<h2 id="nat-en-r1">NAT en R1</h2>
+<p>En este escenario, cada router tiene una interfaz que da a una red privada y dos o más interfaces que dan a Internet. Por tanto, la configuración NAT se vuelve algo más compleja.</p>
+<p>En cada router, se deben aplicar tantas reglas SNAT como interfaces con IP públicas tengan, de manera que todos los paquetes que los atraviesan modifiquen su contenido de IP de origen tanto si salen por una interfaz o por otra.</p>
+<p>Por ejemplo, en el caso del router R1, es necesario aplicar dos reglas de SNAT correspondientes a cada una de sus dos interfaces públicas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -o ens5 -j SNAT --to 173.23.0.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -o ens6 -j SNAT --to 193.168.1.2
+</span></span></code></pre></div><p>De esta manera, en los paquetes que salen por la interfaz ens5 hacia el router R2 se modifica su IP de origen de la 10.0.1.2 ó 10.0.1.3 a la 173.23.0.1. En el caso de que los paquetes salgan del router por la interfaz ens6 hacia el router R5, la IP de origen cambia de la 10.0.1.2 ó 10.0.1.3 a la 193.168.1.2.</p>
+<p>En el caso del DNAT, en cambio, parece que la opción más adecuada es eliminar del comando de iptables la opción -i, que especifica la interfaz de entrada de los paquetes, de manera que todos los paquetes que lleven como puerto de destino uno de los puertos por los que escuchan los diferentes servidores instalados en la red, cambian su IP de destino por la IP del equipo que ofrece ese servicio, independientemente de la interfaz por la que el router reciba ese paquete.</p>
+<p>Por ejemplo, en el router R1, se pueden añadir las siguientes reglas DNAT:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 8085 -i ens5 -j DNAT --to 10.0.1.2:80
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 8085 -i ens6 -j DNAT --to 10.0.1.2:80
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens5 -j DNAT --to 10.0.1.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens6 -j DNAT --to 10.0.1.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens5 -j DNAT --to 10.0.1.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens6 -j DNAT --to 10.0.1.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens5 -j DNAT --to 10.0.1.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens6 -j DNAT --to 10.0.1.3
+</span></span></code></pre></div><p>Con esta configuración, todos los paquetes dirigidos al servidor web (puertos 80 y 443) cambian su IP de destino de la 173.23.0.1 ó la 193.168.1.2 a la 10.0.1.2, la del ordenador que aloja este servidor; los dirigidos al servidor SSH (puerto 22) modifican su IP de destino de la  173.23.0.1, si llegan desde el router R2, ó la 193.168.1.2, si llegan desde el router R5, a la 10.0.1.2; y los dirigidos al servidor Postgres (puerto 5432) la modifican de una de las dos IP públicas del router a la privada de la máquina que cuenta con ese servidor: la 10.0.1.3.</p>
+<p>Como último paso para aplicar a cada router la configuración NAT necesaria para permitir el acceso a todos los participantes a todos los servicios del escenario, se puede hacer que las reglas NAT sean persistentes en el sistema. Para ello, es imprescindible contar con un fichero que almacene el contenido de las tablas con las que trabaja <code>iptables</code>. Para volcar esta información se usa el comando <code>iptables-save</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables-save &gt; /etc/iptables/rules.v4.
+</span></span></code></pre></div><p>La información contenida en este fichero se puede recuperar usando el comando <code>iptables-restore</code>. Para hacerlo de forma automatizada, se puede incluir este comando en un script con permiso de ejecución con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>iptables-restore &lt; /etc/iptables/rules.v4
+</span></span></code></pre></div><p>De esta manera, al ejecutar el script, se carga en memoria toda la información almacenada en el fichero de reglas de <code>iptables</code> que, en este caso, se llama rules.v4 y está almacenado en el directorio /etc/iptables/.</p>
+<p>Para terminar de configurar este proceso y garantizar que la configuración de <code>iptables</code> se cargue de forma totalmente automática en cada reinicio del sistema, se puede crear, además, un servicio que se encargue de ejecutar este script cada vez que arranque al máquina. Para crear un servicio hay que generar un fichero en el directorio /etc/systemd/system/ con el nombre del servicio, en este caso, iptables.service, por ejemplo.</p>
+<p>En este fichero, se guarda la configuración del servicio:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Reglas de iptables</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">systemd-sysctl.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/bin/iptables.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>Y, tras haberlo creado, se habilita y se activa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>systemctl enable
+</span></span><span style="display:flex;"><span>systemctl start
+</span></span></code></pre></div><p>Es importante tener en cuenta que cada vez que se modifique el contenido de las tablas de iptables se debe volcar la nueva configuración al fichero rules.v4, que será la que el servicio creado restaurará tras cada reinicio.</p>
+<p>Para hacer posible la comunicación entre todos los participantes a través de  las IP públicas, la configuración NAT se tiene que implementar en todos los routers del escenario.</p>
+<h2 id="nat-en-r2">NAT en R2</h2>
+<p>Las reglas SNAT y DNAT son muy similares para todos los routers. Por ejemplo, el SNAT para el router R2 se configura con las reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.11.0/24 -o ens5 -j SNAT --to 173.23.0.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.11.0/24 -o ens6 -j SNAT --to 173.24.0.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.11.0/24 -o ens7 -j SNAT --to 193.168.11.2
+</span></span></code></pre></div><p>Y el DNAT de este router incluye las reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens5 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens6 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens7 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens5 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens6 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens7 -j DNAT --to 10.0.11.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens5 -j DNAT --to 10.0.11.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens6 -j DNAT --to 10.0.11.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens7 -j DNAT --to 10.0.11.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens5 -j DNAT --to 10.0.11.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens6 -j DNAT --to 10.0.11.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens7 -j DNAT --to 10.0.11.3
+</span></span></code></pre></div><h2 id="nat-en-r3">NAT en R3</h2>
+<p>En el caso del router R3 se indican las siguientes reglas para el SNAT:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -o ens5 -j SNAT --to 173.25.0.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -o ens6 -j SNAT --to  193.168.2.2
+</span></span></code></pre></div><p>Y para el DNAT:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens5 -j DNAT --to 10.0.2.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens6 -j DNAT --to 10.0.2.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens5 -j DNAT --to 10.0.2.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens6 -j DNAT --to 10.0.2.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens5 -j DNAT --to 10.0.2.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens6 -j DNAT --to 10.0.2.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens5 -j DNAT --to 10.0.2.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens6 -j DNAT --to 10.0.2.3
+</span></span></code></pre></div><h2 id="nat-en-r4">NAT en R4</h2>
+<p>Si se toma como ejemplo el router R4, las reglas para el SNAT con las que debe contar son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.12.0/24 -o ens5 -j SNAT --to 173.24.0.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.12.0/24 -o ens6 -j SNAT --to 193.168.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.12.0/24 -o ens7 -j SNAT --to 173.25.0.2
+</span></span></code></pre></div><p>Y en el caso del DNAT:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens5 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens6 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens7 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens5 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens6 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens7 -j DNAT --to 10.0.12.2
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens6 -j DNAT --to 10.0.12.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens7 -j DNAT --to 10.0.12.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens5 -j DNAT --to 10.0.12.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens6 -j DNAT --to 10.0.12.3
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens7 -j DNAT --to 10.0.12.3
+</span></span></code></pre></div><h2 id="nat-en-r5">NAT en R5</h2>
+<p>Por último, las reglas para el router R5 presentan algunas diferencias puesto que a él sólo se conecta un servidor y, en cambio, cuenta con más interfaces públicas que el resto de routers del escenario. Para hacer SNAT necesita las siguientes reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.13.0/24 -o ens4 -j SNAT --to 193.168.11.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.13.0/24 -o ens5 -j SNAT --to 193.168.12.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.13.0/24 -o ens6 -j SNAT --to 193.168.1.1
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -s 10.0.13.0/24 -o ens7 -j SNAT --to 193.168.2.1
+</span></span></code></pre></div><p>Y para hacer DNAT se deben indicar estas reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens4 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens5 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens6 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 80 -i ens7 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens4 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens5 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens6 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 443 -i ens7 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens4 -j DNAT --to 10.0.13.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens5 -j DNAT --to 10.0.13.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens6 -j DNAT --to 10.0.13.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 2222 -i ens7 -j DNAT --to 10.0.13.2:22
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens4 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens5 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens6 -j DNAT --to 10.0.13.2
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport 5432 -i ens7 -j DNAT --to 10.0.13.2
+</span></span></code></pre></div><h1 id="establecer-la-política-drop-por-defecto">Establecer la política DROP por defecto</h1>
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>En este caso, se configura un cortafuegos de lista blanca, que bloque cualquier tráfico que no esté permitido expresamente. Para ello se debe establecer una política DROP por defecto.</p></div>
+</div>
+
+<h2 id="conservar-el-acceso-a-los-routers-por-ssh">Conservar el acceso a los routers por SSH</h2>
+<p>Antes de establecer las reglas de cortafuegos que bloquean todo el tráfico en los routers, hay que garantizar el acceso por SSH a estos dispositivos para que sigan siendo accesibles para las tareas de administración. Para garantizar este acceso hay que incluir dos reglas de iptables.</p>
+<p>En primer lugar, es necesario añadir una regla a la tabla input que acepte el tráfico que tenga como destino el rango de IP de la red local del router y como puerto de destino el 22. Con esta regla, se abre el tráfico SSH de entrada al router para que pueda escuchar peticiones.</p>
+<p>Por otra parte, hay que añadir una regla a la tabla output que acepte la salida de tráfico hacia las direcciones IP del rango de la red local del router cuando tenga como puerto de origen el 22. De esta manera, se abre el tráfico SSH de salida del router hacia su red local para que pueda responder las peticiones.</p>
+
+
+
+<div class="tab" data-tab-group="">
+  <ul class="tab-nav" data-tab-nav>
+    
+      <li
+        class="tab-nav-item active"
+        data-tab="r1" tabindex="0">
+        R1
+      </li>
+    
+      <li
+        class="tab-nav-item "
+        data-tab="r2" tabindex="-1">
+        R2
+      </li>
+    
+      <li
+        class="tab-nav-item "
+        data-tab="r3" tabindex="-1">
+        R3
+      </li>
+    
+      <li
+        class="tab-nav-item "
+        data-tab="r4" tabindex="-1">
+        R4
+      </li>
+    
+      <li
+        class="tab-nav-item "
+        data-tab="r5" tabindex="-1">
+        R5
+      </li>
+    
+  </ul>
+  <div class="tab-content" data-tab-content>
+    
+      <div
+        class="tab-content-panel active"
+        data-tab-panel="r1">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -s 10.0.1.0/24 -p tcp --dport 22 -j ACCEPT 
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -s 10.0.1.0/24 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div>
+      </div>
+    
+      <div
+        class="tab-content-panel "
+        data-tab-panel="r2">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -s 10.0.11.0/24 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -s 10.0.11.0/24 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div>
+      </div>
+    
+      <div
+        class="tab-content-panel "
+        data-tab-panel="r3">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -s 10.0.2.0/24 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -s 10.0.2.0/24 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div>
+      </div>
+    
+      <div
+        class="tab-content-panel "
+        data-tab-panel="r4">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -s 10.0.12.0/24 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -s 10.0.12.0/24 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div>
+      </div>
+    
+      <div
+        class="tab-content-panel "
+        data-tab-panel="r5">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -s 10.0.13.0/24 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -s 10.0.13.0/24 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div>
+      </div>
+    
+  </div>
+</div>
+
+<h2 id="establecer-la-política-drop-por-defecto-para-el-resto-del-tráfico">Establecer la política DROP por defecto para el resto del tráfico</h2>
+<p>Con el tráfico SSH garantizado para poder acceder a los routers desde cada una de sus redes locales, se puede implementar en todos ellos la política DROP que bloquee todo el resto del tráfico. Para establecer esta política de bloque se usa la opción -P de iptables, que permite establecer una política por defecto (DROP o ACCEPT) en cada una de las tablas de los routers: INPUT, OUTPUT y FORWARD. En concreto, en cada router hay que ejecutar los siguientes tres comandos: <code>iptables -P INPUT DROP</code>; <code>iptables -P OUTPUT DROP</code>; <code>iptables -P FORWARD DROP</code>.</p>
+<p>Tras aplicar esta configuración, los servicios de cada uno de los distritos tienen que se inaccesibles para los participantes del resto. Una forma sencilla de comprobar que esta configuración se ha aplicado correctamente es ver cómo desde dentro de la propia red local se puede acceder al router por SSH pero no se puede hacer ping a su IP.</p>
+<h2 id="hacer-persistente-la-configuración-de-iptables">Hacer persistente la configuración de <code>iptables</code></h2>
+<p>Para hacer persistente la configuración de iptables se pueden reutilizar el servicio y el script creados en el punto 4 para hacer persistente el NAT. Simplemente es necesario volver a volcar al fichero /etc/iptables/rulesv.4 toda la información que devuelve el comando <code>iptables-save</code> cada vez que se modifique el contenido de las tablas.</p>
+<h1 id="configuración-de-las-reglas-de-cortafuegos">Configuración de las reglas de cortafuegos</h1>
+<h2 id="los-indigentes-pueden-acceder-al-servidor-de-bases-de-datos-de-los-pobres">Los indigentes pueden acceder al servidor de bases de datos de los pobres</h2>
+<p>Para permitir a los indigentes acceder al servidor de bases de datos de los pobres es necesario configurar, por una parte, el router R2 y, por otra, el router R4.</p>
+<p>En el router R2, se deben incluir reglas que permitan el tráfico de entrada de los paquetes que tengan como destino el puerto 5432 y de salida de los que tengan como origen ese mismo puerto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -p tcp --dport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -p tcp --sport 5432 -j ACCEPT
+</span></span></code></pre></div><p>En el router R4, en cambio, se deben incluir reglas que permitan el tráfico de entrada de los paquetes que tengan como origen el puerto 5432 y de salida de los que tengan como destino ese mismo puerto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -p tcp --sport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -p tcp --dport 5432 -j ACCEPT
+</span></span></code></pre></div><h2 id="los-indigentes-y-los-pobres-pueden-acceder-al-servidor-ssh-del-distrito-13">Los indigentes y los pobres pueden acceder al servidor SSH del distrito 13</h2>
+<p>Para permitir a los indigentes y los pobres acceder al servidor SSH del distrito 13 se deben configurar los routers R2, R4 y R5.</p>
+<p>En el router R2 se deben incluir reglas que permitan el tráfico desde la 193.168.11.1 dirigido al puerto 2222 y hacia la misma IP que llegue desde el puerto de origen 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.11.1 -p tcp --sport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.11.1 -p tcp --dport 2222 -j ACCEPT
+</span></span></code></pre></div><p>En el router R4 se deben incluir reglas que permitan el tráfico desde la IP 193.168.12.1 dirigido al puerto 2222 y hacia la misma IP que llegue con puerto de origen también 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.1 -p tcp --sport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.1 -p tcp --dport 2222 -j ACCEPT
+</span></span></code></pre></div><p>Por último, en el router R5 se deben incluir reglas que permitan el paso del tráfico con origen en las IP 193.168.12.2 ó 193.168.11.2 y con puerto de destino 22 y el que tenga destino en las IP  193.168.11.1 ó  193.168.12.1 y puerto de origen 22.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.2 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.11.2 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.1 -p tcp --sport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.11.2 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div><h2 id="los-pijos-pueden-acceder-al-servidor-web-de-thresh-pero-solo-de-08-a-15-horas">Los pijos pueden acceder al servidor web de Thresh, pero solo de 08 a 15 horas</h2>
+<p>Para que los pijos puedan acceder al servidor web de Thresh de 8 a 15h se configuran reglas de cortafuegos en los routers R2, R3 y R4.</p>
+<p>En el router R2 se tiene que permitir el tráfico con origen en la IP 193.168.2.2 y destino en el puerto 80 y el que tiene destino en esa misma IP y origen también en el puerto 80.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 173.25.0.1 -p tcp --dport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.25.0.1 -p tcp --sport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span></code></pre></div><p>En el router R3 se permite el tráfico que va desde la el puerto 80 de la IP  193.168.11.2 y el que se dirige al mismo puerto de esa IP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 173.24.0.1 -p tcp --sport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.24.0.1 -p tcp --dport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span></code></pre></div><p>Finalmente, en el router R4 se configuran reglas que permitan el tráfico que sale desde la IP  193.168.2.2 hacia la  193.168.11.2 y el puerto 80 y el que tiene como origen el puerto 80 de la IP  193.168.11.2 y como destino la dirección  193.168.2.2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 173.25.0.1 -d 173.24.0.1 -p tcp --dport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 173.24.0.1 -d 173.25.0.1 -p tcp --sport 80 -m time --timestart 8:00 --timestop 15:00 -j ACCEPT
+</span></span></code></pre></div><h2 id="clover-puede-acceder-a-los-servidores-de-los-superpijos-excepto-al-ssh">Clover puede acceder a los servidores de los superpijos, excepto al SSH</h2>
+<p>Para que Clover pueda acceder al servidor web de los superpijos se deben configurar reglas de cortafuegos en los routers R1, R3 y R5.</p>
+<p>En el router R1, hay que establecer reglas que permitan el tráfico que tiene origen en la IP 193.168.2.2 y destino en el puerto 80 (después de que el router haya hecho DNAT) y el que tiene destino en la misma IP y origen también en el puerto 80 (antes de que el router haya hecho SNAT).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.2 -p tcp --dport 80 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.2 -p tcp --sport 80 -j ACCEPT
+</span></span></code></pre></div><p>En el router R3 se establecen reglas que permitan el tráfico desde la IP 193.168.1.2 y el puerto 8085 y también las que permitan el tráfico desde la IP de Clove (10.0.2.3) a la  193.168.1.2 por el puerto 8085.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.1.2 -p tcp --sport 8085 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 10.0.2.3 -d 193.168.1.2 -p tcp --dport 8085 -j ACCEPT
+</span></span></code></pre></div><p>Por último, en el router R5 se permite el tráfico desde la IP 193.168.2.2 hacia la  193.168.1.2 hacia el puerto 8085 y desde la 193.168.1.2 hacia la 193.168.2.2 con origen en el puerto 8085.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.2 -d 193.168.1.2 -p tcp --dport 8085 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.2 -s 193.168.1.2 -p tcp --sport 8085 -j ACCEPT
+</span></span></code></pre></div><p>Para permitir su acceso al servidor Postgres se utilizan las mismas reglas sustituyendo el número de puerto por el del servidor de bases de datos en todos los casos.</p>
+<p>En el router R1, hay que establecer reglas que permitan el tráfico que tiene origen en la IP 193.168.2.2 y destino en el puerto 5432 y el que tiene destino en la misma IP y origen también en el puerto 5432.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.2 -p tcp --dport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.2 -p tcp --sport 5432 -j ACCEPT
+</span></span></code></pre></div><p>En el router R3 se establecen reglas que permitan el tráfico desde la IP 193.168.1.2 y el puerto 5432 y también las que permitan el tráfico desde la IP de Clove (10.0.2.3) a la  193.168.1.2 por el puerto 5432.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.1.2 -p tcp --sport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 10.0.2.3 -d 193.168.1.2 -p tcp --dport 5432 -j ACCEPT
+</span></span></code></pre></div><p>Por último, en el router R5 se permite el tráfico desde la IP 193.168.2.2 hacia la  193.168.1.2 hacia el puerto 5432 y desde la 193.168.1.2 hacia la 193.168.2.2 con origen en el puerto 5432.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.2 -d 193.168.1.2 -p tcp --dport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.2 -s 193.168.1.2 -p tcp --sport 5432 -j ACCEPT
+</span></span></code></pre></div><h2 id="peeta-puede-entrar-al-servidor-web-de-marvel-por-el-puerto-8085">Peeta puede entrar al servidor web de Marvel por el puerto 8085</h2>
+<p>Para permitir que Peeta pueda acceder al servidor web de Marvel por el puerto 8085 se deben establecer reglas de cortafuegos en los routers R1, R4 y R5.</p>
+<p>En el router R1, hay que establecer reglas que permitan el tráfico que tiene origen en la IP 193.168.12.2 y destino en el puerto 80 (después de que el router haya hecho DNAT) y el que tiene destino en la misma IP y origen también en el puerto 80 (antes de que el router haya hecho SNAT).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.2 -p tcp --dport 80 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.2 -p tcp --sport 80 -j ACCEPT
+</span></span></code></pre></div><p>En el router R4, se establecen reglas que permiten el tráfico con origen en la IP 193.168.1.2 y el puerto 8085 y el que tiene destino en esa misma IP y ese puerto y origen en la 10.0.12.2 para que sólo Peeta y no Katniss pueda comunicarse con Marvel.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.1.2 -p tcp --sport 8085 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.1.2 -s 10.0.12.2 -p tcp --dport 8085 -j ACCEPT
+</span></span></code></pre></div><p>En el router R5 se establecen reglas que permiten el tráfico que sale de la IP 193.168.12.2 y va a la 193.168.1.2 hacia el puerto 8085 así como el que sale desde la  193.168.1.2 hacia la 193.168.12.2 y el puerto 8085.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.2 -d 193.168.1.2 -p tcp --dport 8085 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.2 -s 193.168.1.2 -p tcp --sport 8085 -j ACCEPT
+</span></span></code></pre></div><h2 id="los-pijos-pueden-acceder-al-servidor-postgres-del-distrito-13">Los pijos pueden acceder al servidor Postgres del distrito 13</h2>
+<p>Para que los pijos puedan acceder al servidor de bases de datos del distrito 13 se configura el cortafuegos de los routers R3 y R5.</p>
+<p>En el router R3 se permite el tráfico desde la dirección 193.168.2.1 y el puerto 5432, así como el que se dirige a esa misma dirección IP y ese puerto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.1 -p tcp --sport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.1 -p tcp --dport 5432 -j ACCEPT
+</span></span></code></pre></div><p>En el router R5, el tráfico que se permite es el que sale de la IP 193.168.2.2 hacia el puerto 5432 y el que se dirige a esa misma dirección desde ese puerto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.2.2 -p tcp --dport 5432 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.2.2 -p tcp --sport 5432 -j ACCEPT
+</span></span></code></pre></div><h2 id="katniss-puede-acceder-a-los-servidores-ssh-de-todos-los-distritos">Katniss puede acceder a los servidores SSH de todos los distritos</h2>
+<p>Que Katniss pueda acceder a los servidores SSH de todos los distritos requiere la incorporación de reglas a todos los routers del escenario.</p>
+<p>En primer lugar, el router R4 tiene que permitir que salgan las peticiones SSH de Katniss a todas las redes y que le lleguen las respuestas desde cualquier otro distrito. Para ello se indican reglas que permitan el tráfico que tiene como destino la IP de Katniss (10.0.12.3) y como origen el puerto 2222 y el que tiene como origen la IP de Katniss (10.0.12.3) y como destino el puerto 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.2 -p tcp --sport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.0.24.2 -p tcp --sport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.25.0.2 -p tcp --sport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 10.0.12.3 -p tcp --dport 2222 -j ACCEPT
+</span></span></code></pre></div><p>Para que pueda acceder al distrito 1 (superpijos) el router R1 debe permitir el tráfico que sale desde la IP 193.168.12.2 y tiene como puerto de destino el 22 (después del DNAT) y el que va hacia la 193.168.12.2 desde el puerto 22 (antes del SNAT). Además, el router R5 tiene que permitir el tráfico desde la 193.168.12.2 hacia la  193.168.1.2 y el puerto 2222 y, al contrario el tráfico desde el puerto 2222 de la IP 193.168.1.2 que va hacia la 193.168.12.2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#R1
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.2 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.2 -p tcp --sport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>#R5
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.12.2 -d 193.168.1.2 -p tcp --dport 2222 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 193.168.12.2 -s 193.168.1.2 -p tcp --sport 2222 -j ACCEPT
+</span></span></code></pre></div><p>De la misma forma, para acceder al distrito 2 (pijos) necesita que el router R2 permita el tráfico que va desde la IP 173.24.0.2 hacia el puerto de destino el 22 y el que va hacia la misma IP desde el puerto 22.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 173.25.0.2 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.25.0.2 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div><p>En el caso del distrito 11 (pobres) el router R2 debe incorporar reglas que permitan el tráfico con origen en la IP 173.24.0.2 y destino en el puerto 22 y el que tiene destino en la misma IP y origen en el puerto 22.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 173.24.0.2 -p tcp --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>iptables -A FORWARD -d 173.24.0.2 -p tcp --sport 22 -j ACCEPT
+</span></span></code></pre></div><p>Por último, como Katniss forma parte del distrito 12 (indigentes) ya cuenta con las reglas de cortafuegos configuradas <a href="#los-indigentes-y-los-pobres-pueden-acceder-al-servidor-ssh-del-distrito-13"
+
+
+
+ 
+
+
+>anteriormente</a>. tanto en el router R4 como en el R5 que le permiten acceder al servidor SSH del distrito 13.</p>
+<h2 id="rechazar-un-ataque-de-denegación-de-servicios-por-escaneo-de-puertos-al-distrito-13-desde-los-superpijos">Rechazar un ataque de denegación de servicios por escaneo de puertos al distrito 13 desde los superpijos</h2>
+<p>Para prevenir un ataque de denegación de servicios al distrito 13, se pueden implementar algunas reglas de cortafuegos en el router R5.</p>
+<p>En primer lugar, se pueden bloquear los paquetes mal formados, que se usan para escanear los puertos de un servidor en busca de vulnerabilidades. Para ello se rechazan los paquetes nulos que no tienen ninguna flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -p tcp --tcp-flags ALL NONE -j DROP
+</span></span></code></pre></div><p>Con esta regla el cortafuegos filtra los paquetes que pasen por el router R5 y busca en ellos todas las flags (primer argumento del modificador <code>--tcp-flags</code>). Si de ellas no tiene ninguna (segundo argumento del modificador <code>--tcp-flags</code>), entonces rechaza el paquete.</p>
+<p>También se pueden rechazar paquetes cuyas flags revelen otros patrones habituales de ataque. Por ejemplo, se puede indicar con el modificador <code>--tcp-flags</code> que se busquen las flags <code>SYN</code> y <code>FIN</code> (primer argumento del modificador <code>--tcp-flags</code>) y que rechace aquellos paquetes que contengan ambas (segundo argumento del modificador <code>--tcp-flags</code>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
+</span></span></code></pre></div><p>Igualmente, se puede aplicar un filtro similar al patrón basado en las flags SYN y RST:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A INPUT -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+</span></span></code></pre></div><p>Todas estas reglas se añaden en primer lugar, de manera que se evita que el cortafuegos tenga que analizar y comparar todo el fichero de reglas antes de rechazar los paquetes de este tipo que lleguen al router en su camino al servidor del distrito 13.</p>
+<p>Adicionalmente, para evitar otro tipo de ataques de denegación de servicio, se puede limitar el tráfico que puede pasar por el router R5 que tenga como origen la IP 193.168.1.2 usando el módulo limit en cada regla de cortafuegos que se refiera a ese tipo de tráfico, si  en algún momento la hubiese.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iptables -A FORWARD -s 193.168.1.2 [OTROS CRITERIOS] -p tcp -m limit --limit 10/s -j ACCEPT
+</span></span></code></pre></div><h1 id="configuración-de-un-servidor-dhcp-en-el-router-r1">Configuración de un servidor DHCP en el Router R1</h1>
+<h2 id="instalación-del-servidor-dhcp">Instalación del servidor DHCP</h2>
+<p>Aunque hay varias opciones para configurar un servidor DHCP en un router linux, la más habitual es usar el servidor isc-dhcp. Para poder usarlo se debe instalar desde los repositorios de Debian:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install isc-dhcp-server
+</span></span></code></pre></div><h2 id="configuración-del-servidor-dhcp">Configuración del servidor DHCP</h2>
+<p>Antes de poner en funcionamiento el servidor DHCP se configura, en primer lugar, la interfaz por la que acepta conexiones en el fichero /etc/default/isc-dhcp-server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>INTERFACESV4=&#34;ens4&#34;
+</span></span></code></pre></div><p>El resto de la configuración necesaria se puede establecer en el fichero /etc/dhcp/dhcpd.conf, donde se indican, por ejemplo, la dirección de los servidores DNS, la red y rango de IP que el servidor DHCP debe entregar o el tiempo durante el cual los clientes pueden hacer uso de esas direcciones:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-iscdhcpd" data-lang="iscdhcpd"><span style="display:flex;"><span><span style="color:#66d9ef">subnet</span> <span style="color:#ae81ff">10.0.1.0</span> <span style="color:#66d9ef">netmask</span> <span style="color:#ae81ff">255.255.255.0</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">range</span> <span style="color:#ae81ff">10.0.1.2</span> <span style="color:#ae81ff">10.0.1.6</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">option</span> routers <span style="color:#ae81ff">10.0.1.1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">option</span> broadcast-address <span style="color:#ae81ff">10.0.1.255</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finalmente, se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>systemctl restart isc-dhcp-server.service
+</span></span></code></pre></div><p>Para que los equipos de la red local puedan solicitar direcciones IP por DHCP primero se habilita en el fichero /etc/network/interfaces la configuración por DHCP de la tarjeta de red y se deshabilita la configuración estática.</p>
+<p>Posteriormente, tras reiniciar el servicio con <code>sudo systemctl restart networking.service</code>, la máquina solicita una dirección IP al servidor DHCP.</p>
+<h2 id="consecuencias-del-uso-del-direccionamiento-por-dhcp">Consecuencias del uso del direccionamiento por DHCP</h2>
+<p>Al configurar por DHCP, la dirección IP de los equipos cambia periódicamente. Esto genera varios problemas relevantes en el escenario planteado para esta práctica.</p>
+<p>En primer lugar, en lo relativo a los cortafuegos, el uso del DHCP dentro de las redes locales sólo afectaría a aquellas reglas en las que se indica que una de las máquinas de la red puede acceder a determinados servidores y otras no, como es el caso de Katniss, Peeta o Cato. Para poder mantener estas reglas si estas redes usasen direcciones IP dinámicas habría que configurar el cortafuegos usando la dirección MAC de estos equipos en lugar de su IP.</p>
+<p>En el caso de la red 10.0.1.0/24 este caso no se da y, por tanto, la configuración de cortafuegos planteada en la práctica sería posible incluso aunque los equipos no tuviesen un direccionamiento estático.</p>
+<p>Sin embargo ,en este escenario hay que tener en cuenta que los equipos de cada red local no sólo actúan como clientes, sino también como servidores de otros equipos ubicados en otras redes. Esto hace que todos los routers tengan que implementar reglas de DNAT, incluido el router R1. Para que el DNAT funcione correctamente, es imprescindible que los servidores cuenten con una IP estática a la que el router pueda redirigir los paquetes según el puerto al que se dirijan.</p>
+<p>Para hacer compatibles el uso del DHCP con el DNAT, sería necesario asignar direcciones IP reservadas en el servidor DHCP a aquellas máquinas que funcionan como servidores, en este caso, ambas máquinas de la red local. Por tanto, es imposible hacer que las reglas planteadas en la práctica funcionen en este supuesto, no por la configuración del cortafuegos, sino por la del DNAT.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu4114262549785978686.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu7137767845088484273.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu8742296558546396051.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu4471933895487503573.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Designed &amp; Developed by <a href="https://zeon.studio"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Zeon Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>
