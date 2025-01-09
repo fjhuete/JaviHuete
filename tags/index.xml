@@ -6,8 +6,99 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distrobox</title>
+      <link>/tags/distrobox/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/distrobox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fedora</title>
+      <link>/tags/fedora/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/fedora/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ficheros Compartidos</title>
+      <link>/tags/ficheros-compartidos/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/ficheros-compartidos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MicroOS</title>
+      <link>/tags/microos/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/microos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenSUSE</title>
+      <link>/tags/opensuse/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/opensuse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Red Hat</title>
+      <link>/tags/red-hat/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/red-hat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistema De Archivos</title>
+      <link>/tags/sistema-de-archivos/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sistema-de-archivos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/tags/sistemas/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sshfs</title>
+      <link>/tags/sshfs/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sshfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systemd</title>
+      <link>/tags/systemd/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/systemd/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CMS</title>
       <link>/tags/cms/</link>
@@ -72,13 +163,6 @@
       <description></description>
     </item>
     <item>
-      <title>Administración De Sistemas Operativos</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Administracion-Sistemas</title>
       <link>/tags/administracion-sistemas/</link>
       <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
@@ -114,24 +198,10 @@
       <description></description>
     </item>
     <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Redhat</title>
       <link>/tags/redhat/</link>
       <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
       <guid>/tags/redhat/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sistemas</title>
-      <link>/tags/sistemas/</link>
-      <pubDate>Mon, 02 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/sistemas/</guid>
       <description></description>
     </item>
     <item>
@@ -167,13 +237,6 @@
       <link>/tags/configuraci%C3%B3n-b%C3%A1sica/</link>
       <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/configuraci%C3%B3n-b%C3%A1sica/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debian</title>
-      <link>/tags/debian/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/debian/</guid>
       <description></description>
     </item>
     <item>

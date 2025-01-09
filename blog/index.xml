@@ -6,8 +6,22 @@
     <description>Recent content in Blog de prácticas on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Compartición de sistemas de ficheros con sshfs y systemd</title>
+      <link>/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/</guid>
+      <description>En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</description>
+    </item>
+    <item>
+      <title>Sistemas operativos inmutables</title>
+      <link>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</guid>
+      <description>La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar. En este post se analizan algunos de estos sistemas operativos y se valoran sus ventajas e inconvenientes.</description>
+    </item>
     <item>
       <title>Instalación de un CMS Python usando Django</title>
       <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>

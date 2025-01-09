@@ -3,13 +3,64 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-sistemas/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/distrobox/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/fedora/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/ficheros-compartidos/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/microos/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/opensuse/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/red-hat/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sistema-de-archivos/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sistemas/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sshfs/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/systemd/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/cms/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
@@ -44,16 +95,7 @@
     <loc>/tags/servidor-web/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
-    <lastmod>2024-12-02T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/administracion-sistemas/</loc>
-    <lastmod>2024-12-02T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/administracion-sistemas/</loc>
     <lastmod>2024-12-02T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/almalinux/</loc>
@@ -71,13 +113,7 @@
     <loc>/tags/ibm/</loc>
     <lastmod>2024-12-02T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2024-12-02T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/redhat/</loc>
-    <lastmod>2024-12-02T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/sistemas/</loc>
     <lastmod>2024-12-02T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/software-libre/</loc>
@@ -96,9 +132,6 @@
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/</loc>
-    <lastmod>2024-11-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/debian/</loc>
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/debian-installer/</loc>
