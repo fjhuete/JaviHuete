@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MicroOS on Javi Huete</title>
+    <link>/tags/microos/</link>
+    <description>Recent content in MicroOS on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/microos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sistemas operativos inmutables</title>
+      <link>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</guid>
+      <description>La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar. En este post se analizan algunos de estos sistemas operativos y se valoran sus ventajas e inconvenientes.</description>
+    </item>
+  </channel>
+</rss>

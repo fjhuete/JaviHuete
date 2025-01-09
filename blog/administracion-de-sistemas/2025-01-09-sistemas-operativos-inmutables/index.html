@@ -1,0 +1,4448 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Sistemas operativos inmutables</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Sistemas operativos inmutables" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/" />
+
+
+<meta name="twitter:title" content="Sistemas operativos inmutables" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Sistemas operativos inmutables
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              January 9, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#la-inmutabilidad-en-sistemas-operativos">La inmutabilidad en sistemas operativos</a>
+      <ol>
+        <li><a href="#qué-es-la-inmutabilidad">¿Qué es la inmutabilidad?</a></li>
+        <li><a href="#fundamentos-de-los-sistemas-operativos-inmutables">Fundamentos de los sistemas operativos inmutables</a></li>
+        <li><a href="#a-qué-sector-van-destinados">¿A qué sector van destinados?</a></li>
+        <li><a href="#distribuciones-inmutables-actuales">Distribuciones inmutables actuales</a></li>
+        <li><a href="#en-conclusión">En conclusión</a></li>
+      </ol>
+    </li>
+    <li><a href="#los-so-inmutables-de-opensuse-y-red-hat">Los SO inmutables de OpenSUSE y Red Hat</a>
+      <ol>
+        <li><a href="#opensuse-microos">OpenSUSE MicroOS</a></li>
+        <li><a href="#fedora-silverblue">Fedora Silverblue</a></li>
+        <li><a href="#instalación-de-microos-y-silverblue">Instalación de MicroOS y Silverblue</a>
+          <ol>
+            <li><a href="#instalación-de-microos">Instalación de MicroOS</a></li>
+            <li><a href="#instalación-de-silverblue">Instalación de Silverblue</a></li>
+          </ol>
+        </li>
+        <li><a href="#gestión-de-paquetes-y-aplicaciones-en-microos-y-silverblue">Gestión de paquetes y aplicaciones en MicroOS y Silverblue</a>
+          <ol>
+            <li><a href="#gestión-de-paquetes-y-aplicaciones-en-microos">Gestión de paquetes y aplicaciones en MicroOS</a></li>
+            <li><a href="#gestión-de-paquetes-y-aplicaciones-en-silverblue">Gestión de paquetes y aplicaciones en Silverblue</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+</details>
+
+            <h1 id="la-inmutabilidad-en-sistemas-operativos">La inmutabilidad en sistemas operativos</h1>
+<h2 id="qué-es-la-inmutabilidad">¿Qué es la inmutabilidad?</h2>
+<p>La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar.</p>
+<p>Estos sistemas operativos suelen incluir unos elementos básicos que se aíslan del resto de aplicaciones como el sistema de ficheros raíz, el entorno de escritorio, herramientas básicas del sistema y bibliotecas esenciales para el sistema operativo. Este conjunto de elementos constituye el núcleo del sistema que el usuario no puede modificar.</p>
+<p>Para la instalación de otro tipo de aplicaciones, se usan sistemas de paquetería universal como Flatpak o Snap que permiten la instalación en entornos más aislados sin interactuar con el sistema raíz como hacen los gestores de paquetes tradicionales, así como contenedores que aíslan las aplicaciones del resto del sistema.</p>
+<h2 id="fundamentos-de-los-sistemas-operativos-inmutables">Fundamentos de los sistemas operativos inmutables</h2>
+<p>Este tipo de sistemas operativos se basa en tres conceptos clave para mantener la filosofía de la inmutabilidad y conseguir hacer sistemas funcionales pero en los que el usuario no necesite interactuar con el sistema raíz.</p>
+<ul>
+<li>
+<p><strong>Contenedores de aplicaciones</strong>. Los sistemas operativos inmutables usan gestores de contenedores como <code>distrobox</code>, <code>docker</code> o <code>podman</code> para instalar aplicaciones aisladas del sistema operativo en contenedores. Esta forma de instalar aplicaciones permite que no interactúen con los ficheros del sistema de archivos raíz del sistema operativo.</p>
+</li>
+<li>
+<p><strong>Sistemas de paquetería universales</strong>. Los gestores de paquetes universales como <code>flatpak</code> o <code>snap</code> facilitan la instalación de aplicaciones de forma independiente a la distribución sobre la que se instalen. Consiguen esto haciendo paquetes más pesados pero que incluyen la mayor parte de las dependencias necesarias para el funcionamiento de la aplicación. Esto permite que la aplicación se instale y se ejecute sin interactuar con el sistema de ficheros raíz y de forma mucho más aislada que las aplicaciones instaladas usando gestores de paquetes tradicionales como <code>apt</code> o <code>dnf</code>.</p>
+</li>
+<li>
+<p><strong>Sanpshots</strong>. Para garantizar la consistencia del sistema en todo momento, los sistemas operativos inmutables dependen enormemente del uso de snapshots o instantáneas que almacenan el estado del sistema operativo antes de hacer cualquier modificación en el sistema de ficheros raíz. Así, este tipo de sistemas operativos genera una instantánea del sistema cada vez que se modifica un fichero de configuración o se instala una herramienta usando el gestor de paquetes tradicional propio de la distribución.</p>
+</li>
+</ul>
+<h2 id="a-qué-sector-van-destinados">¿A qué sector van destinados?</h2>
+<p>Por sus características, no parece que los sistemas operativos inmutables se vayan a convertir en una opción extendida en entornos profesionales de servidores. Se trata de sistemas que requieren un cambio de perspectiva a la hora de trabajar con ellos en cuanto a la interacción con el propio sistema operativo. Esto hace que cualquier operación sobre el sistema de ficheros raíz se ralentice mucho respecto a la dinámica de trabajo previa. Además, este tipo de sistemas operativos exigen muchos más recursos en cuanto a capacidad de almacenamiento, por ejemplo.</p>
+<p>Aún así, cabe tener en cuenta que la creciente popularidad de los contenedores en el despliegue de aplicaciones puede suponer un cambio de paradigma en la gestión de servidores para el despliegue de aplicaciones si se combina con el uso de sistemas operativos inmutables en los servidores.</p>
+<p>En cambio, parece que el planteamiento de este tipo de sistemas operativos se orienta más hacia las versiones de escritorio. Mientras que las distribuciones con las que se trabajan en entornos de servidores permiten el uso de una enorme variedad de herramientas que se ejecutan desde la línea de comandos, los sistemas de paquetería universal están más dirigidos a la distribución de aplicaciones con interfaz gráfica, diseñadas para su ejecución en un entorno de escritorio.</p>
+<p>Además, los ordenadores que se usan como equipos personales o de trabajo en entornos de escritorio son menos sensibles a los requisitos de almacenamiento que conlleva el uso de los sistemas operativos inmutables, de manera que mientras que almacenar una instantánea de todo el sistema para cada modificación del sistema raíz en un servidor puede suponer un coste demasiado grande, en el caso de los ordenadores de escritorio, el uso de almacenamiento no suele ser tan intensivo y es más habitual que los dispositivos cuenten con espacio suficiente para almacenar estas instantáneas sin suponer un problema de rendimiento para los usuarios.</p>
+<p>Aunque el uso de sistemas operativos inmutables puede llevar más comodidad a los usuarios de ordenadores personales en el entorno doméstico, su principal potencial puede estar en los entornos profesionales en los que personas que no tienen conocimientos relacionados con la informática deben trabajar con estos equipos en su día a día. Este tipo de sistemas operativos permite que estos ordenadores de escritorio cuenten con las herramientas necesarias para que el trabajador desarrolle sus tareas pero impide que pueda ejecutar cualquier modificación sobre el sistema operativo que afecte al correcto funcionamiento del mismo, haciéndolo mucho más robusto y minimizando la probabilidad de que un error humano genere una incidencia en el parque informático de la empresa.</p>
+<h2 id="distribuciones-inmutables-actuales">Distribuciones inmutables actuales</h2>
+<p>Casi todas las principales distribuciones de GNU/Linux cuentan con una versión de su sistema operativo inmutable a día de hoy. Algunos ejemplos son:</p>
+<ul>
+<li>
+<p><strong>Fedora Silverblue</strong>. Silverblue es la versión inmutable de la distribución Fedora derivada de Fedora Workstation. Esta distribución usa Flatpak como gestor de paquetes universales y Podman como gestor de contenedores. Silverblue usa GNOME como entorno de escritorio pero Fedora cuenta con otras opciones de sistemas operativos inmutables que usan otros entornos de escritorio diferentes.</p>
+</li>
+<li>
+<p><strong>openSUSE MicroOS</strong>. MicroOS es la versión inmutable de openSUSE. De entre todas las distribuciones de sistemas operativos inmutables es una de las más orientadas al entorno de servidores. Usa el gestor de paquetes Flatpak y pretende aportar la robustez y seguridad que permiten los sistemas operativos inmutables al entorno de servidores. Está especialmente destinado al trabajo en servidores pequeños que ofrecen aplicaciones en contenedores o microservicios. También está destinado a su uso en dispositivos inteligentes.</p>
+</li>
+<li>
+<p><strong>Vanilla OS</strong>. Vanilla OS es la distribución inmutable de Ubuntu. Desarrollada por Canonical, mantiene la filosofía de sencillez y facilidad de uso que caracteriza a Ubuntu aportando, además, las ventajas de los sistemas operativos inmutables en cuanto a seguridad de la integridad del sistema operativo. Vanilla OS usa el gestor de paquetes Snap, desarrollado también por Canonical.</p>
+</li>
+<li>
+<p><strong>NixOS</strong>. NixOS es una distribución concebida para funcionar como un sistema operativo inmutable. Usa su propio sistema gestor de paquetería universal.</p>
+</li>
+<li>
+<p><strong>Ubuntu Core</strong>. Otro sistema operativo inmutable derivado de Ubuntu es Ubuntu Core. Este sistema operativo está especialmente diseñado para su uso en dispositivos inteligentes.</p>
+</li>
+<li>
+<p><strong>Bottlerocket</strong>. Bottlerocket es un sistema operativo inmutable desarrollado por Amazon que se puede usar al crear una instancia en Amazon Web Services. Este sistema operativo está diseñado para ejecutar aplicaciones sobre contenedores y suponer un mantenimiento mínimo a los usuarios de la plataforma.</p>
+</li>
+<li>
+<p><strong>SteamOS</strong>. Algunas distribuciones de sistemas operativos no inmutables tienen están diseñadas con una utilidad más concreta y no son de propósito generalista. Es el caso de SteamOS, una distribución basada en Debian y desarrollada por Valve que está optimizada para videojuegos. Entre sus características cuenta con una gran compatibilidad con hardware de lo más variado.</p>
+</li>
+<li>
+<p><strong>Endless OS</strong>. Otro sistema operativo inmutable de nicho es Endless OS, orientado a entornos educativos. El propio sistema operativo cuenta con una importante variedad de aplicaciones y contenido educativo preinstalado, con el planteamiento de que el usuario final no necesite instalar ninguna aplicación más para poder usar el equipo.</p>
+</li>
+</ul>
+<p>Además de los sistemas operativos listados, no paran de surgir nuevas distribuciones que se basan en la inmutabilidad del sistema operativo. Algunas de ellas están destinadas al uso en equipos de escritorio mientras que otras muchas se orientan al despliegue de aplicaciones en contenedores, como <strong>Talos Linux</strong>, que está diseñado para el uso de Kubernetes.</p>
+<h2 id="en-conclusión">En conclusión</h2>
+<p>Aunque no es la primera vez que la idea de los sistemas operativos inmutables aparece en el mundo de la informática (ya hace décadas que existen los sistemas operativos live en CD sobre los que no se pueden hacer modificaciones), todo apunta a que esta vez han llegado para quedarse.</p>
+<p>Y es que se dan varias circunstancias que, en conjunto, pueden suponer un cambio de paradigma en la forma en que se conciben los sistemas operativos.</p>
+<p>Es evidente que los sistemas operativos inmutables tienen importantes ventajas como la seguridad y estabilidad que ofrecen o la facilidad para instalar aplicaciones a través de los sistemas de paquetería universal. Además, estas aplicaciones, al estar más aisladas, son mucho más fáciles de actualizar hasta el punto de que en un mismo sistema pueden convivir varias versiones de la misma aplicación.</p>
+<p>Aunque también conllevan algunas desventajas como el consumo de espacio en disco, la limitación en el número de aplicaciones que actualmente están disponibles en los sistemas de paquetería universal y la reconversión que supone también para el usuario adaptarse a este nuevo paradigma.</p>
+<p>Sin embargo, el auge del uso de contenedores para el despliegue de aplicaciones tanto en entornos de escritorio como en entorno de servidores puede suponer el caldo de cultivo perfecto para la proliferación de este tipo de sistemas operativos.</p>
+<h1 id="los-so-inmutables-de-opensuse-y-red-hat">Los SO inmutables de OpenSUSE y Red Hat</h1>
+<h2 id="opensuse-microos">OpenSUSE MicroOS</h2>
+<p>MicroOS es el sistema operativo inmutable de OpenSUSE. Se trata de un sistema operativo Linux de creación relativamente reciente que usa imágenes pequeñas y ligeras, fácilmente escalable, con actualizaciones automáticas y continuas que no afectan al sistema y resistente a fallos, con una gran facilidad para la recuperación al permitir volver al estado de la última instantánea en cualquier momento.</p>
+<p>Según sus desarrolladores, se trata de un sistema operativo del que el usuario no tiene que preocuparse y que está específicamente diseñado para el alojamiento de contenedores pero enfocado a un entorno de grandes implantaciones.</p>
+<blockquote>
+<p>openSUSE MicroOS hereda los conocimientos de openSUSE Tumbleweed y SUSE Linux Enterprise, al tiempo que redefine el sistema operativo en una distribución pequeña, eficiente y fiable.
+openSUSE</p>
+</blockquote>
+<p>El sistema operativo MicroOS cuenta con un sistema de ficheros raíz de sólo lectura que evita las modificaciones accidentales del sistema. Además, cuenta con la tecnología Transactional Updates, que aprovecha las instantáneas de btrfs (el sistema de ficheros que usa este sistema operativo) para aplicar actualizaciones de paquetes sin interferir con el sistema en funcionamiento.</p>
+<p>Otras herramientas presentes en este sistema operativo son health-checker, que verifica el correcto funcionamiento del sistema y revierte los cambios que produzcan problemas; cloud-init, que configura el sistema durante su primer arranque en la nube; o Combustion e Ignition, que cumplen la misma función en el resto de imágenes.</p>
+<p>Cabe destacar, además, que MicroOS es un sistema operativo de tipo rolling release, es decir, que cada nueva versión o instantánea liberada de openSUSE Tumbleweed produce automáticamente una nueva versión de este sistema operativo.</p>
+<p>La innovación más reciente en el marco de este sistema operativo es que está en un proceso de modificación de nombre. Se están desarrollando dos nuevas versiones paralelas de MicroOS: Aeon y Kalpa. Cuando termine el desarrollo de estas nuevas versiones, openSUSE MicroOS pasará a llamarse Aeon cuando use un entorno de escritorio Gnome o Kalpa cuando use un entorno de escritorio Plasma. Ambos sistemas operativos están aún en desarrollo y todavía no se recomienda implementarlos en entornos de producción.</p>
+<h2 id="fedora-silverblue">Fedora Silverblue</h2>
+<p>Fedora Silverblue es un sistema operativo inmutable basado en Fedora, la distribución rolling release del ecosistema Red Hat. Una de las características principales de este sistema operativo del proyecto fedora es la fiabilidad. Cada versión de Silverblue se actualiza durante unos 13 meses y cada actualización se aplica automáticamente en el reinicio del equipo, de manera que el sistema se mantiene consistente. Incluso se puede seguir trabajando en el equipo mientras se aplican las actualizaciones.</p>
+<p>Además, se trata de un sistema operativo atómico, que se sólo se actualiza si la actualización se puede efectuar sin problemas. Si durante el proceso de actualización surge algún inconveniente, el sistema se revierte al último estado consistente y la actualización no se aplica.</p>
+<p>Como el resto de sistemas operativos inmutables, Silverblue almacena instantáneas de la última versión funcional del sistema, a la que se puede recurrir en caso de que fuese necesario. Igualmente, las aplicaciones gráficas se instalan de forma aislada usando el gestor de paquetería universal Flatpak, que las mantiene separadas del sistema raíz.</p>
+<p>Este sistema operativo también cuenta con una herramienta orientada al trabajo de los desarrolladores, toolbox, que facilita mantener la gestión de diferentes versiones de las mismas herramientas organizadas por proyectos sin que se afecten unas a otras o al propio sistema operativo.</p>
+<p>El entorno de escritorio elegido por Fedora para desarrollar Silverblue es Gnome. Para la gestión de la paquetería propia del sistema operativo, esta distribución usa rpm-ostree, una sistema híbrido de paquetería e instantáneas basado en el gestor de paquetes RPM que permite actualizaciones atómicas y seguras del sistema raíz.</p>
+<p>Otros proyectos de sistemas operativos inmutables relacionados con Silverblue son Fedora Kinoite, que usa el entorno de escritorio Plasma o Fedora CoreOS, que es un sistema operativo inmutable minimalista, monolítico y que se actualiza automáticamente orientado al trabajo con contenedores y especialmente optimizado para el uso de Kubernetes.</p>
+<h2 id="instalación-de-microos-y-silverblue">Instalación de MicroOS y Silverblue</h2>
+<h3 id="instalación-de-microos">Instalación de MicroOS</h3>
+<p>La imagen iso de openSUSE MicroOS se puede descargar desde la <a href="https://get.opensuse.org/microos/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>página de descargas</a> de la distribución. A diferencia de lo que ocurre con la mayoría de distribuciones de GNU/Linux tradicionales, que a penas exigen unos requisitos mínimos muy báicos, MicroOS necesita, como mínimo 1GB de memoria RAM, 5GB de disco para la partición raíz y otros 5GB de disco para la partición /var. Sin embargo, openSUSE recomienda contar con 2GB de RAM y 60GB de disco duro (20 para la raíz y 40 para la partición /var) en las máquinas en las que se vaya a instalar este sistema operativo.</p>
+<p>Otra diferencia relevante entre MicroOS y los sistemas operativos tradicionales de GNU/Linux es que, generalmente, las imágenes de estos sistemas operativos suelen ser bastante ligeras. Al menos, suelen contar con una versión para instalación a través de internet que cuenta con la estructura mínima del sistema operativo e instala el resto de la paquetería desde los repositorios de la distribución. En el caso de MicroOS, las imágenes son, en geneeral, algo más pesadas, de unos 2,5GB.</p>
+<p>Al iniciar la imagen iso de MicroOS se muestra un menú de arranque que incluye las opciones de arrancar desde el disco duro o instalar el sistema operativo junto con un menú de opciones avanzadas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="800"
+            height="607"
+            src="/images/aso/soinmutables/MicroOS1_hu12021145399575898812.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS1_hu12021145399575898812.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>Al seleccionar la opción de instalación, lo primero que hace el sistema es inicializar la configuración de red. Para ello detecta los dispositivos de red y sus drivers, analiza el estado de la red, y lee la configuración tanto de los dispositivos como de la red.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/MicroOS2_hu3377247808113382670.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS2_hu3377247808113382670.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>La primera parte (y, prácticamente, la única) interactiva del proceso de instalación consiste en elegir la función del sistema. A diferencia del proceso de instalación de la mayoría de distribuciones de GNU/Linux en la que el usuario debe configurar los diferentes elementos del sistema, el instalador de MicroOS muestra una lista de posibles funciones que puede tomar el sistema que se instala para que el usuario elija la instalación predeterminada que mejor se adapte a la función que le va a dar a la máquina.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="764"
+            src="/images/aso/soinmutables/MicroOS3_hu16992652851505195331.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS3_hu16992652851505195331.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Según la opción que se elija, el instalador solicita una información u otra como, por ejemplo, el nombre de usuario y la contraseña o el servidor NTP para sincronizar el reloj del equipo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="764"
+            src="/images/aso/soinmutables/MicroOS4_hu1257110331934925030.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS4_hu1257110331934925030.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para hacer una configuración más específica de la instalación: por ejemplo, para elegir determinado software durante la instalación o hacer un determinado particionado manual hay que acceder a cada uno de los apartados del resumen de instalación que muestra el asistente al finalizar el proceso.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="636"
+            src="/images/aso/soinmutables/MicroOS5_hu2245029864603021458.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS5_hu2245029864603021458.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por defecto, MicroOS crea en el disco duro una pequeña partición de arranque y dos particiones más de un tamaño similar entre ellas en las que monta los directorios raíz y /var. En un sistema operativo inmutable en el que las snapshots tienen una importancia crucial tiene especial sentido que el directorio /var, donde se suelen almacenar las instantáneas, esté separado de la raíz del sistema. Ambas particiones se crean usando un sistema de archivos btrfs.</p>
+<p>Desde esa misma pantalla se puede pulsar el botón &ldquo;instalar&rdquo; para lanzar el instalador, que instala en el sistema toda la paquetería básica necesaria para su funcionamiento, así como los paquetes específicos que se hayan indicado en el menú de instalación.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="767"
+            src="/images/aso/soinmutables/MicroOS6_hu8714234859623480935.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS6_hu8714234859623480935.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h3 id="instalación-de-silverblue">Instalación de Silverblue</h3>
+<p>La imagen para la instalación de Fedora Silverblue se puede descargar desde la <a href="https://fedoraproject.org/atomic-desktops/silverblue/download"
+
+
+
+
+ target="_blank"
+ 
+
+
+>página de descargas</a> del sistema operativo. A diferencia de MicroOS, Silverblue no especifica en su página de descargas los requisitos mínimos con los que debe contar la máquina sobre la que se instala el sistema. Sin embargo, las imágnes sí son de un tamaño similar a las que distribuye openSUSE. En este caso, la iso de Fedora Silverblue es de 2,8GB, mucho mayor que las imágenes netinstall de otras distribuciones como Debian, que a penas llegan a los 500MB.</p>
+<p>El menú de arranque del instalador de Fedora Silverblue muestra diferentes opciones para instalar directamente el sistema operativo, instalarlo tras probarlo o resolver posible problemas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue1_hu4200399418045683495.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue1_hu4200399418045683495.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>La interfaz del instalador de Fedora Silverblue es muy similar a las del resto de distribuciones del ecosistema de Red Hat (como RHEL, CentOS, Fedora y otras distribuciones derivdas como AlmaLinux o Rocky Linux). La principal diferencia es que Silverblue casi no permite configurar ningún elemento del sistema durante la instalación, de hecho, el único aspecto del sistema al que se puede acceder desde el instalador es el de particionado.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="768"
+            src="/images/aso/soinmutables/Silverblue2_hu5417063799996643363.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue2_hu5417063799996643363.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>El menú de particionado es análogo al que usan el resto de distribuciones basadas en Red Hat. Sin embargo, tal y como avisan en su <a href="https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>documentación</a>, &ldquo;Fedora Silverblue no ofrece una experiencia totalmente funcional para el arranque dual o el particionado manual&rdquo; y, por tanto, es recomendable hacer la instalación usando el particionado automático.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="768"
+            src="/images/aso/soinmutables/Silverblue3_hu3165725933150919434.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue3_hu3165725933150919434.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras acceder al menú de particionado y validar el tipo de particionado deseado en la instalación, se puede lanzar el instalador.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="768"
+            src="/images/aso/soinmutables/Silverblue4_hu11421275465446778849.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue4_hu11421275465446778849.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Este instalador prerpara el disco, lo particiona e instala el sistema operativo con todos los paquetes necesarios para su funcionamiento. Si el proceso de instalación de openSUSE MicroOS es poco interactivo, la capacidad del usuario para intervenir en la instalación de Silverblue es mínima hasta el punto de que no se puede crear un usuario o elegir la paquetería que se instala junto al sistema operativo base.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="768"
+            src="/images/aso/soinmutables/Silverblue5_hu8277955953810276984.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue5_hu8277955953810276984.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Tras finalizar el proceso de instalación, se reinicia el sistema.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1023"
+            height="765"
+            src="/images/aso/soinmutables/Silverblue6_hu12342710427327456434.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue6_hu12342710427327456434.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En el primer inicio de Silverblue, se muestra un asistente de configuración del sistema. Durante esta configuración, se puede configurar la privacidad, se puede activar el software de terceros y, además, se crea el usuario sin privilegios del sistema.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1026"
+            height="768"
+            src="/images/aso/soinmutables/Silverblue7_hu8703827975197171726.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue7_hu8703827975197171726.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="gestión-de-paquetes-y-aplicaciones-en-microos-y-silverblue">Gestión de paquetes y aplicaciones en MicroOS y Silverblue</h2>
+<h3 id="gestión-de-paquetes-y-aplicaciones-en-microos">Gestión de paquetes y aplicaciones en MicroOS</h3>
+<p>Aunque el gestor de paquetes de los diferentes sistemas operativos de openSUSE es <code>zypper</code>, en el caso de MicroOS este gestor de paquetes no puede efectuar ningún cambio en el sistema raíz. Para getionar la paquetería del sistema operativo se usa en esta distribución la herramienta <code>transactional-update</code>. Esta herramienta hace una instantánea del sistema en el momento previo a la instalación o actualización del paquete y, posteriormente, lo instala. De esta manera, el sistema garantiza que ante un posible fallo durante la instalación o actualización del paquete se puede volver al estado anterior.</p>
+<p>Por ejemplo, para actualizar la paquetería del sistema se usa el comando <code>transactional-update</code>, que genera una instantánea del sistema operativo antes de usar <code>zypper</code> para instalar todas las actualizaciones necesarias en el sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # transactional-update
+</span></span><span style="display:flex;"><span>Checking for newer version.
+</span></span><span style="display:flex;"><span>transactional-update 4.8.3 started
+</span></span><span style="display:flex;"><span>Options: 
+</span></span><span style="display:flex;"><span>Separate /var detected.
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:40 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:40 Options: -c1 open 
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:42 Using snapshot 1 as base for new snapshot 2.
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:42 /var/lib/overlay/1/etc
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:42 No previous snapshot to sync with - skipping
+</span></span><span style="display:flex;"><span>Relabeled /var from system_u:object_r:unlabeled_t:s0 to system_u:object_r:var_t:s0
+</span></span><span style="display:flex;"><span>Relabeled /var/lib from unconfined_u:object_r:unlabeled_t:s0 to unconfined_u:object_r:var_lib_t:s0
+</span></span><span style="display:flex;"><span>ID: 2
+</span></span><span style="display:flex;"><span>2024-12-18 16:57:45 Transaction completed.
+</span></span><span style="display:flex;"><span>Calling zypper --no-cd dup
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:26 Application returned with exit status 0.
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:28 Transaction completed.
+</span></span><span style="display:flex;"><span>Trying to rebuild kdump initrd
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:30 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:30 Options: call 2 /sbin/mkdumprd 
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:32 Executing `/sbin/mkdumprd`:
+</span></span><span style="display:flex;"><span>/var/lib/kdump not writable, not regenerating initrd.
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:32 Application returned with exit status 0.
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:33 Transaction completed.
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:33 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:33 Options: close 2 
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:35 New default snapshot is #2 (/.snapshots/2/snapshot).
+</span></span><span style="display:flex;"><span>2024-12-18 16:59:35 Transaction completed.
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Please reboot your machine to activate the changes and avoid data loss.
+</span></span><span style="display:flex;"><span>New default snapshot is #2 (/.snapshots/2/snapshot).
+</span></span><span style="display:flex;"><span>transactional-update finished
+</span></span></code></pre></div><p>Como se muestra en la salida del comando, el último paso que realiza la herramienta <code>transactional-update</code> tras instalar todas las actualizaciones pendientes y mostrar el mensaje <code>Transaction completed</code> es generar una nueva instantánea en el directorio oculto .snapshots dentro del directorio raíz. Tras realizar un reinicio del sistema, se cargará esta nueva instantánea que ya contará con todas las actualizaciones instaladas. Mientras no se haga este reinicio, las actualizaciones aún no se aplicarán al sistema.</p>
+<p>Este mecanismo de respaldo del sistema basado en las instantáneas permite, por ejemplo, arrancar el sistema desde una imagen previamente guardada en modo de sólo lectura desde el gestor de arranque grub. Esta opción puede ser muy útil en caso de necesitar acceder a un estado consistente previo del sistema para poder solventar algún error en el mismo.</p>
+<p>De igual modo se instalan nuevos paquetes en el sistema. En este caso, al comando <code>transactional-update</code> hay que añadirle la orden <code>pkg install</code> seguida del nombre del paquete que se quiere instalar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # transactional-update pkg in tree
+</span></span><span style="display:flex;"><span>Checking for newer version.
+</span></span><span style="display:flex;"><span>transactional-update 4.8.3 started
+</span></span><span style="display:flex;"><span>Options: pkg in tree
+</span></span><span style="display:flex;"><span>Separate /var detected.
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 Options: -c2 open 
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 Using snapshot 2 as base for new snapshot 4.
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 /var/lib/overlay/2/etc
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 Syncing /etc of previous snapshot 1 as base into new snapshot &#34;/.snapshots/4/snapshot&#34;
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:47 SELinux is enabled.
+</span></span><span style="display:flex;"><span>ID: 4
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:50 Transaction completed.
+</span></span><span style="display:flex;"><span>Calling zypper install
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:53 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:53 Options: callext 4 zypper -R {} install tree 
+</span></span><span style="display:flex;"><span>2024-12-18 17:06:55 Executing `zypper -R /tmp/transactional-update-8QTVUT install tree`:
+</span></span><span style="display:flex;"><span>Loading repository data...
+</span></span><span style="display:flex;"><span>Reading installed packages...
+</span></span><span style="display:flex;"><span>Resolving package dependencies...
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>The following NEW package is going to be installed:
+</span></span><span style="display:flex;"><span>  tree
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>1 new package to install.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Retrieving: tree-2.2.1-1.1.x86_64 (openSUSE-Tumbleweed-Oss) (1/1),  78.1 KiB    
+</span></span><span style="display:flex;"><span>Retrieving: tree-2.2.1-1.1.x86_64.rpm [...done (15.2 KiB/s)]
+</span></span><span style="display:flex;"><span>(1/1) Installing: tree-2.2.1-1.1.x86_64 [..done]
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:30 Application returned with exit status 0.
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:30 Transaction completed.
+</span></span><span style="display:flex;"><span>Trying to rebuild kdump initrd
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:32 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:32 Options: call 4 /sbin/mkdumprd 
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:33 Executing `/sbin/mkdumprd`:
+</span></span><span style="display:flex;"><span>/var/lib/kdump not writable, not regenerating initrd.
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:33 Application returned with exit status 0.
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:34 Transaction completed.
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:34 tukit 4.8.3 started
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:34 Options: close 4 
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:36 New default snapshot is #4 (/.snapshots/4/snapshot).
+</span></span><span style="display:flex;"><span>2024-12-18 17:07:36 Transaction completed.
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Please reboot your machine to activate the changes and avoid data loss.
+</span></span><span style="display:flex;"><span>New default snapshot is #4 (/.snapshots/4/snapshot).
+</span></span><span style="display:flex;"><span>transactional-update finished
+</span></span></code></pre></div><p>Nuevamente, la herramienta <code>transactional-update</code> genera una instantánea del sistema con el nuevo paquete instalado e indica que se debe reiniciar el sistema para aplicar los cambios. Sin embargo, este sistema operativo también permite cargar una instantánea del sistema en caliente para aplicar estos cambios sin necesidad de reiniciar la máquina.</p>
+<p>Siguiendo con este ejemplo, tras haber generado la snapshot número 4 durante la ejecución del comando anterior, esta orden hace que el sistema cargue la nueva instantánea y la use para remplazar la instantánea sobre la que se basa el sistema en ejecución.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # transactional-update apply
+</span></span><span style="display:flex;"><span>Checking for newer version.
+</span></span><span style="display:flex;"><span>transactional-update 4.8.3 started
+</span></span><span style="display:flex;"><span>Options: apply
+</span></span><span style="display:flex;"><span>Separate /var detected.
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Using default snapshot 4 to replace running system...
+</span></span><span style="display:flex;"><span>Applying /usr...
+</span></span><span style="display:flex;"><span>Applying /etc...
+</span></span><span style="display:flex;"><span>Applying /boot...
+</span></span><span style="display:flex;"><span>Executing systemctl daemon-reexec...
+</span></span><span style="display:flex;"><span>Executing create_dirs_from_rpmdb...
+</span></span><span style="display:flex;"><span>Executing systemd-tmpfiles --create...
+</span></span><span style="display:flex;"><span>=&gt; Applied default snapshot as new base for running system!
+</span></span><span style="display:flex;"><span>   Running processes will not be restarted automatically.
+</span></span><span style="display:flex;"><span>transactional-update finished
+</span></span></code></pre></div><p>Tras aplicar los cambios, el nuevo paquete está disponible en el sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # tree
+</span></span><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── Desktop
+</span></span><span style="display:flex;"><span>│   ├── Home.desktop
+</span></span><span style="display:flex;"><span>│   └── trash.desktop
+</span></span><span style="display:flex;"><span>├── Documents
+</span></span><span style="display:flex;"><span>├── Downloads
+</span></span><span style="display:flex;"><span>├── Music
+</span></span><span style="display:flex;"><span>├── Pictures
+</span></span><span style="display:flex;"><span>├── Public
+</span></span><span style="display:flex;"><span>├── Templates
+</span></span><span style="display:flex;"><span>├── Videos
+</span></span><span style="display:flex;"><span>├── bin
+</span></span><span style="display:flex;"><span>└── inst-sys
+</span></span><span style="display:flex;"><span>    └── yast2-screen-shots
+</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
+</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>12 directories, 2 files
+</span></span></code></pre></div><p>Otra práctica habitual en este tipo de sistemas operativos inmutables es el uso de sistemas de paquetería universal para la instalación de aplicaciones de escritorio. En este caso, MicroOS usa Flatpak como gestor de paquetería universal.</p>
+<p>Aunque se puede usar desde la línea de comandos, el método más habitual de usar Flatpak es desde la herramienta gráfica de gestión de aplicaciones del sistema operativo. En el caso de MicroOS esta aplicación se llama Discover. Al acceder a ella por primera vez es necesario configurar las fuentes de Flatpak desde las que se van a descargar las aplicaciones. Para hacerlo, sólo hay que pulsar el botón en el que pone &ldquo;Add Flathub&rdquo;. Flathub es uno de los repositorios más populares de aplicaciones en Flatpak.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="940"
+            height="634"
+            src="/images/aso/soinmutables/MicroOS7_hu17261043614941549058.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS7_hu17261043614941549058.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Igualmente, la pestaña &ldquo;Settings&rdquo; de la aplicación &ldquo;Discover&rdquo; permite añadir una lista de repositorios de Flatpak a partir de su URL.</p>
+<p>Tras añadir el repositorio a Flatpak, en la pestaña principal de &ldquo;Discover&rdquo; se muestra una lista de aplicaciones disponibles en Flatpak y que se pueden instalar en el sistema. Estas aplicaciones se instalan aisladas del sistema raíz, sin afectar al mismo y sin interactuar con él, lo que mantiene la inmutabilidad del sistema operativo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="940"
+            height="634"
+            src="/images/aso/soinmutables/MicroOS8_hu14724033307124079163.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/MicroOS8_hu14724033307124079163.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Una tercera opción alternativa para la instalación de aplicaciones en este sistema operativo es el uso de contenedores. Es el caso de distrobox, una herramienta que permite gestionar contenedores para ejecutar aplicaciones con independencia del sistema operativo sobre el que lo hagan.</p>
+<p>Esta herramienta se debe instalar como un paquete usando el sistema de instalación propio de MicroOS <code>transactional-update</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # transactional-update pkg install distrobox
+</span></span><span style="display:flex;"><span>localhost:~ # transactional-update apply
+</span></span></code></pre></div><p>Esta herramienta permite crear contenedores a partir de imágenes de otros sistemas operativos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>localhost:~ # distrobox create --name debian01 --image debian:latest
+</span></span><span style="display:flex;"><span>localhost:~ # distrobox enter debian01
+</span></span></code></pre></div><p>En ellos se pueden instalar y ejecutar aplicaciones disponibles en esos sistemas opeativos y, además, exportar un acceso directo a esas aplicaciones al panel de aplicaciones del sistema.</p>
+<h3 id="gestión-de-paquetes-y-aplicaciones-en-silverblue">Gestión de paquetes y aplicaciones en Silverblue</h3>
+<p>Como es habitual en los sistemas operativos inmutables, la versión Silverblue de Fedora tampoco permite el uso del gestor de paquetes propio del ecosistema Red Hat, <code>dnf</code>. La herramienta usada en Fedora Silverblue para interactuar con el sistema raíz y poder instalar y actualizar la paquetería del sistema es <code>rpm-ostree</code>. De forma análoga a <code>transactional-update</code>, esta herramienta hace una instantánea que guarda el estado presente del sistema operativo antes de efectuar ninguna modificación. Posteriormente, se instalan o actualizan los paquetes necesarios y, finalmente, se crea una nueva instantánea si los cambios han sido existosos. De nuevo, para aplicar los cambios es necesario reinicar el sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>root@fedora:~# rpm-ostree update
+</span></span><span style="display:flex;"><span>⠤ Receiving objects; 99% (15311/15315) 2,8 MB/s 974,2 MB                        2641 metadata, 12674 content objects fetched; 951438 KiB transferred in 428 seconds; 2,2 GB content written
+</span></span><span style="display:flex;"><span>Receiving objects; 99% (15311/15315) 2,8 MB/s 974,2 MB... done
+</span></span><span style="display:flex;"><span>Staging deployment... done
+</span></span><span style="display:flex;"><span>Upgraded:
+</span></span><span style="display:flex;"><span>  ImageMagick 1:7.1.1.38-1.fc41 -&gt; 1:7.1.1.41-1.fc41
+</span></span><span style="display:flex;"><span>  ImageMagick-libs 1:7.1.1.38-1.fc41 -&gt; 1:7.1.1.41-1.fc41
+</span></span><span style="display:flex;"><span>  PackageKit-glib 1.2.8-7.fc41 -&gt; 1.2.8-8.fc41
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>  xorg-x11-xinit-1.4.2-3.fc41.x86_64
+</span></span><span style="display:flex;"><span>  xrdb-1.2.2-4.fc41.x86_64
+</span></span><span style="display:flex;"><span>Added:
+</span></span><span style="display:flex;"><span>  OpenCL-ICD-Loader-3.0.6-1.20241023git5907ac1.fc41.x86_64
+</span></span><span style="display:flex;"><span>  bootc-1.1.2-2.fc41.x86_64
+</span></span><span style="display:flex;"><span>  hiredis-1.2.0-3.fc41.x86_64
+</span></span><span style="display:flex;"><span>  opensc-libs-0.26.0-1.fc41.x86_64
+</span></span><span style="display:flex;"><span>Run &#34;systemctl reboot&#34; to start a reboot
+</span></span></code></pre></div><p>Silverblue se refiere a cada una de las instantáneas que crea para guardar el estado del sistema operativo como &ldquo;despliegues&rdquo;. Tras aplicar alguna instalación o actualización, es necesario reiniciar el sistema para aplicar el nuevo &ldquo;despliegue&rdquo;.</p>
+<p>De la misma forma se pueden instalar nuevos paquetes en el sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>oot@fedora:~# rpm-ostree install cmatrix
+</span></span><span style="display:flex;"><span>Checking out tree e3782ee... done
+</span></span><span style="display:flex;"><span>Enabled rpm-md repositories: fedora-cisco-openh264 updates fedora updates-archive
+</span></span><span style="display:flex;"><span>Importing rpm-md... done
+</span></span><span style="display:flex;"><span>rpm-md repo &#39;fedora-cisco-openh264&#39; (cached); generated: 2024-03-11T19:22:31Z solvables: 3
+</span></span><span style="display:flex;"><span>rpm-md repo &#39;updates&#39; (cached); generated: 2024-12-17T03:55:59Z solvables: 13865
+</span></span><span style="display:flex;"><span>rpm-md repo &#39;fedora&#39; (cached); generated: 2024-10-24T13:55:59Z solvables: 76624
+</span></span><span style="display:flex;"><span>rpm-md repo &#39;updates-archive&#39; (cached); generated: 2024-12-17T04:21:09Z solvables: 16853
+</span></span><span style="display:flex;"><span>Resolving dependencies... done
+</span></span><span style="display:flex;"><span>Will download: 1 package (40,1 kB)
+</span></span><span style="display:flex;"><span>Downloading from &#39;fedora&#39;... done
+</span></span><span style="display:flex;"><span>Importing packages... done
+</span></span><span style="display:flex;"><span>Checking out packages... done
+</span></span><span style="display:flex;"><span>Running pre scripts... done
+</span></span><span style="display:flex;"><span>Running post scripts... done
+</span></span><span style="display:flex;"><span>Running posttrans scripts... done
+</span></span><span style="display:flex;"><span>Writing rpmdb... done
+</span></span><span style="display:flex;"><span>Writing OSTree commit... done
+</span></span><span style="display:flex;"><span>Staging deployment... done
+</span></span><span style="display:flex;"><span>Added:
+</span></span><span style="display:flex;"><span>  cmatrix-2.0-10.fc41.x86_64
+</span></span><span style="display:flex;"><span>Changes queued for next boot. Run &#34;systemctl reboot&#34; to start a reboot
+</span></span></code></pre></div><p>Al igual que MicroOS, Silverblue también permite cambiar en caliente entre estos diferentes &ldquo;despliegues&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>root@fedora:~# rpm-ostree apply-live
+</span></span><span style="display:flex;"><span>Computing /etc diff to preserve... done
+</span></span><span style="display:flex;"><span>Updating /usr... done
+</span></span><span style="display:flex;"><span>Updating /etc... done
+</span></span><span style="display:flex;"><span>Running systemd-tmpfiles for /run and /var... done
+</span></span><span style="display:flex;"><span>Added:
+</span></span><span style="display:flex;"><span>  cmatrix-2.0-10.fc41.x86_64
+</span></span><span style="display:flex;"><span>Successfully updated running filesystem tree.
+</span></span></code></pre></div><p>Por otra parte, en Silverblue también se pueden instalar las aplicaciones del gestor de paquetería universal Flatpak. Por defecto, la herramienta gráfica de instalación de software de Fedora Silverblue tiene configurado los repositorios de Flatpak de la propia distribución. En estos repositorios hay disponible una gran variedad de aplicaciones que se instalan de forma aisladas en el sistema sin interactuar con el sistema de ficheros raíz.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1027"
+            height="636"
+            src="/images/aso/soinmutables/Silverblue8_hu14035346812127005137.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue8_hu14035346812127005137.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Además, desde el menú de repositorios de software se pueden añadir nuevos repositorios a Flatpak como, por ejemplo, el repositorio Flathub, uno de los más usados por la comunidad de GNU/Linux.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1027"
+            height="636"
+            src="/images/aso/soinmutables/Silverblue9_hu6723351999701835924.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue9_hu6723351999701835924.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Por último, cabe destacar que, tal y como se ha documentado en el apartado anterior, en Fedora Silverblue también se pueden ejecutar aplicaciones en contenedores usando gestores de contenedores como, por ejemplo, Distrobox.</p>
+<p>En el repostorio Flathub de Flatpak se incluye una herramienta de interfaz gráfica que permite gestionar los contenedores creados con la herramienta Distrobox en los entornos de escritorio basados en Gnome. Desde su interfaz se pueden crear nuevos contenedores, acceder a la terminal de cada uno de ellos, cambiar el nombre, elegir el sistema operativo que usan, ver las aplicaciones instaladas en ellos, etc.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue10_hu5561196004640484849.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue10_hu5561196004640484849.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Para que BoxBuddy pueda funcionar, primero es necesario instalar Distrobox en el equipo. Esta instalación se debe hacer usando la opción de instalación de la distribución que permite la instalación de paquetes en el sistema raíz, en el caso de Fedora Silverblue, con <code>rpm-ostree</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rpm-ostree install distrobox
+</span></span><span style="display:flex;"><span>sudo rpm-ostree apply-live
+</span></span></code></pre></div><p>Pulsando el botón <code>+</code> de la ventana de BoxBuddy se abre el menú de creación de un nuevo contenedor. En este menú se puede indicar el nombre y distribución del contenedor y, con el botón <code>crear</code>, se inica su proceso de creación.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue12_hu8673724424377351416.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue12_hu8673724424377351416.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Cuando crea el contenedor, BoxBuddy abre una terminal desde la que se puede interactuar con este sistema. Además, desde la interfaz de esta herramienta se pueden ejecutar algunas acciones relevantes sobre el contenedor como abrir una terminal, actualizarlo, ver las aplicaciones instaladas en él, instalar aplicaciones desde un fichero .deb almacenado localmente, clonar el contenedor o eliminarlo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue13_hu17690759347297696423.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue13_hu17690759347297696423.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En la terminal del contenedor se puede trabajar como en cualquier otro contenedor de distrobox. Por ejemplo, se puede instalar una aplicación determinada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install deepin-calculator
+</span></span></code></pre></div><p>Cuando finaliza la instalación de la paquetería necesaria, la aplicación aparece en la lista de aplicaciones que se muestra en la interfaz gráfica de BoxBuddy. Esta ventana permite no sólo ver las aplicaciones que están instaladas en el contenedor sino también ejecutarlas y exportarlas con el botón <code>Añadir al Menú</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue14_hu7618620411684583940.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue14_hu7618620411684583940.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Cuando se exporta una aplicación con este botón, aparece en el panel de aplicaciones de Gnome (esquina inferior izquierda en la siguiente captura de pantalla) al igual que si se hubiese exportado desde la terminal del contenedor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue15_hu14791899385770045368.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue15_hu14791899385770045368.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Otra herramienta interesante para usar en este tipo de sistemas operativos inmutables es Flatseal. Flatseal es una aplicación gráfica que permite gestionar los accesos de las diferentes aplicaciones instaladas con el gestor de paquetería universal Flatpak.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1024"
+            height="637"
+            src="/images/aso/soinmutables/Silverblue11_hu867025495275538782.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/soinmutables\/Silverblue11_hu867025495275538782.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="fuentes">Fuentes</h1>
+<p><a href="https://openexpoeurope.com/es/los-sistemas-inmutables-en-linux/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Los sistemas operativos inmutables en Linux</a></p>
+<p><a href="https://www.adslzone.net/noticias/tecnologia/distro-inmutable-linux-ventajas/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Qué es una distro inmutable de Linux y por qué tienen tantas ventajas</a></p>
+<p><a href="https://www.genbeta.com/linux/que-linux-inmutable-estas-ventajas-que-ofrece-esta-nueva-categoria-sistema-operativo"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Qué es un Linux &lsquo;inmutable&rsquo;: estas son las ventajas que ofrece esta nueva categoría de sistema operativo</a></p>
+<p><a href="https://itsfoss.com/immutable-linux-distros/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>12 Immutable Linux Distributions for Those Looking to Embrace the Future</a></p>
+<p><a href="https://microos.opensuse.org/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>openSUSE MicroOS</a></p>
+<p><a href="https://es.opensuse.org/Portal:MicroOS"
+
+
+
+
+ target="_blank"
+ 
+
+
+>MicroOS</a></p>
+<p><a href="https://www.linuxadictos.com/que-es-fedora-silverblue-todavia-hay-espacio-para-distribuciones-originales.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Qué es Fedora Silverblue. Todavía hay espacio para distribuciones originales</a></p>
+<p><a href="https://fedoraproject.org/atomic-desktops/silverblue/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Fedora Silverblue</a></p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/microos/">
+                        Micro os
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/fedora/">
+                        Fedora
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/red-hat/">
+                        Red hat
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/distrobox/">
+                        Distrobox
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/opensuse/">
+                        Open suse
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
+                        Administración de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2025-01-09-sistemas-operativos-inmutables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2025-01-09-sistemas-operativos-inmutables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2025-01-09-sistemas-operativos-inmutables%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2025-01-09-sistemas-operativos-inmutables%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+      Cómo simular un servidor PostgreSQL en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+      Configuración de un proxy inverso en Apache2 y Nginx
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu18267478939233474524.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>
