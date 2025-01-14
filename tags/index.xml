@@ -6,20 +6,111 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Administración De Sistemas Operativos</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <title>Administración De Sistemas</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Almacenamiento</title>
+      <link>/tags/almacenamiento/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/almacenamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud-Init</title>
+      <link>/tags/cloud-init/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/cloud-init/</guid>
       <description></description>
     </item>
     <item>
       <title>Debian</title>
       <link>/tags/debian/</link>
-      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gestión De Almacenamiento</title>
+      <link>/tags/gesti%C3%B3n-de-almacenamiento/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/gesti%C3%B3n-de-almacenamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gestión De Redes</title>
+      <link>/tags/gesti%C3%B3n-de-redes/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/gesti%C3%B3n-de-redes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IaaS</title>
+      <link>/tags/iaas/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/iaas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Libvirt</title>
+      <link>/tags/libvirt/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/libvirt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenStack</title>
+      <link>/tags/openstack/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/openstack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenStack Client</title>
+      <link>/tags/openstack-client/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/openstack-client/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redes</title>
+      <link>/tags/redes/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/redes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>/tags/servicios/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios De Red E Internet</title>
+      <link>/tags/servicios-de-red-e-internet/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios-de-red-e-internet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
       <description></description>
     </item>
     <item>
@@ -212,13 +303,6 @@
       <description></description>
     </item>
     <item>
-      <title>Administración De Sistemas</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Apache2</title>
       <link>/tags/apache2/</link>
       <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
@@ -300,20 +384,6 @@
       <link>/tags/pxe/</link>
       <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/pxe/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Servicios</title>
-      <link>/tags/servicios/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/servicios/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Servicios De Red E Internet</title>
-      <link>/tags/servicios-de-red-e-internet/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/servicios-de-red-e-internet/</guid>
       <description></description>
     </item>
     <item>
@@ -433,13 +503,6 @@
       <link>/tags/sysctl/</link>
       <pubDate>Tue, 12 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/sysctl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Almacenamiento</title>
-      <link>/tags/almacenamiento/</link>
-      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/almacenamiento/</guid>
       <description></description>
     </item>
     <item>
@@ -594,13 +657,6 @@
       <link>/tags/planificaci%C3%B3n-y-administraci%C3%B3n-de-redes/</link>
       <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
       <guid>/tags/planificaci%C3%B3n-y-administraci%C3%B3n-de-redes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Redes</title>
-      <link>/tags/redes/</link>
-      <pubDate>Tue, 28 May 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/redes/</guid>
       <description></description>
     </item>
     <item>
@@ -804,13 +860,6 @@
       <link>/tags/ospf/</link>
       <pubDate>Mon, 22 Apr 2024 02:00:00 +0200</pubDate>
       <guid>/tags/ospf/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpenStack</title>
-      <link>/tags/openstack/</link>
-      <pubDate>Sun, 14 Apr 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/openstack/</guid>
       <description></description>
     </item>
     <item>
