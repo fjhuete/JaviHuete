@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Libvirt on Javi Huete</title>
+    <link>/tags/libvirt/</link>
+    <description>Recent content in Libvirt on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 13 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/libvirt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uso de cloud-init con libvirt</title>
+      <link>/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/</guid>
+      <description>OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</description>
+    </item>
+  </channel>
+</rss>
