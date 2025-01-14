@@ -9,18 +9,18 @@
     <lastBuildDate>Mon, 13 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/redes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gestión de almacenamiento en Openstack</title>
-      <link>/blog/servicios/2025-01-13-creacion-escenario-openstack/</link>
-      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2025-01-13-creacion-escenario-openstack/</guid>
-      <description>En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</description>
-    </item>
-    <item>
       <title>Gestión de redes en Openstack</title>
       <link>/blog/servicios/2025-01-13-gestion-de-redes-openstack/</link>
       <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/blog/servicios/2025-01-13-gestion-de-redes-openstack/</guid>
       <description>&lt;p&gt;En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Uso de Openstack para crear un escenario de despliegue</title>
+      <link>/blog/servicios/2025-01-13-creacion-escenario-openstack/</link>
+      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-01-13-creacion-escenario-openstack/</guid>
+      <description>&lt;p&gt;En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configurar redes virtuales (VLAN) en bridges Linux</title>

@@ -29,9 +29,6 @@
     <loc>/tags/gesti%C3%B3n-de-almacenamiento/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/blog/servicios/2025-01-13-creacion-escenario-openstack/</loc>
-    <lastmod>2025-01-13T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/blog/servicios/2025-01-13-gestion-del-almacenamiento/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
@@ -72,6 +69,9 @@
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/</loc>
+    <lastmod>2025-01-13T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-01-13-creacion-escenario-openstack/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
