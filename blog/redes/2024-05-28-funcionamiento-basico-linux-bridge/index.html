@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -877,13 +877,13 @@
             <p>Un bridge o puente en Linux es un dispositivo de red virtual que permite que las máquinas virtuales alojadas en una máquina física usen su tarjeta de red. En este post se muestra un ejemplo de configuración de un Bridge en una máquina Debian.</p>
 <h1 id="configuración-de-un-bridge-en-una-máquina-debian">Configuración de un bridge en una máquina Debian</h1>
 <p>Para configurar un Bridge en Linux que permita que la interfaz externa se pueda utilizar por máquinas virtuales se debe conocer, en primer lugar, el nombre de esta interfaz. En este caso, es ens3. Con esta información se puede crear un primer bridge que incluya esta interfaz. Para ello, se crea primero un bridge. A continuación, se le añade la interfaz externa del equipo físico.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>brctl addbr br0
-</span></span><span style="display:flex;"><span>brctl addif br0 ens3
-</span></span></code></pre></div><p>Cuando se añade la interfaz al bridge, el equipo se desconecta de la red porque la interfaz bridge no está funcionando en ese momento. Para solucionarlo, sólo hay que levantar la interfaz</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip l set dev br0 up
-</span></span></code></pre></div><p>Además se le puede asignar una dirección IP al bridge:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip a add 10.0.0.166/24 dev br0
-</span></span></code></pre></div><p>De esta manera, el direccionamiento queda definido en el dispositivo br0 y la interfaz ens3 está incluida como un puerto del mismo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">brctl addbr br0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl addif br0 ens3
+</span></span></span></code></pre></div><p>Cuando se añade la interfaz al bridge, el equipo se desconecta de la red porque la interfaz bridge no está funcionando en ese momento. Para solucionarlo, sólo hay que levantar la interfaz</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip l set dev br0 up
+</span></span></span></code></pre></div><p>Además se le puede asignar una dirección IP al bridge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip a add 10.0.0.166/24 dev br0
+</span></span></span></code></pre></div><p>De esta manera, el direccionamiento queda definido en el dispositivo br0 y la interfaz ens3 está incluida como un puerto del mismo.</p>
 
 
 
@@ -975,9 +975,9 @@
             class="img img-fluid img-center"
             width="888"
             height="340"
-            src="/images/redes/practica19/img1_hu1770117327143870373.png"
+            src="/images/redes/practica19/img1_hu_e5a65e96dfb1c24d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img1_hu1770117327143870373.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img1_hu_e5a65e96dfb1c24d.png'" />
       
     
 
@@ -998,12 +998,12 @@
 
 <p>Sin embargo, con esta configuración la máquina no se puede volver a conectar a la red y la interfaz ens3 queda inutilizada. Ante la imposibilidad de solucionar este problema, se opta por intentar hacer la práctica en otra máquina.</p>
 <p>En este caso, tras instalar el paquete bridge-utils, se crea el bridge br0 directamente desde el fichero de configuración /etc/network/interfaces. De esta forma, además, la configuración del bridge se hace persistente a los reinicios.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>auto br0
-</span></span><span style="display:flex;"><span>iface br0 inet dhcp
-</span></span><span style="display:flex;"><span>bridge_ports ens18
-</span></span></code></pre></div><p>Y, posteriormente se levanta la interfaz con ifup br0:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ifup br0
-</span></span></code></pre></div><p>La configuración establecida en el fichero se aplica, de manera que con el comando <code>brctl show</code> ya se puede ver el bridge br0 en el sistema:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">auto br0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iface br0 inet dhcp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bridge_ports ens18
+</span></span></span></code></pre></div><p>Y, posteriormente se levanta la interfaz con ifup br0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ifup br0
+</span></span></span></code></pre></div><p>La configuración establecida en el fichero se aplica, de manera que con el comando <code>brctl show</code> ya se puede ver el bridge br0 en el sistema:</p>
 
 
 
@@ -1095,9 +1095,9 @@
             class="img img-fluid img-center"
             width="470"
             height="50"
-            src="/images/redes/practica19/img2_hu11001094513493783361.png"
+            src="/images/redes/practica19/img2_hu_e222a4e889a930b2.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img2_hu11001094513493783361.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img2_hu_e222a4e889a930b2.png'" />
       
     
 
@@ -1202,9 +1202,9 @@
             class="img img-fluid img-center"
             width="558"
             height="336"
-            src="/images/redes/practica19/img3_hu7332810610759208783.png"
+            src="/images/redes/practica19/img3_hu_5966b100a0c199d3.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img3_hu7332810610759208783.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img3_hu_5966b100a0c199d3.png'" />
       
     
 
@@ -1219,12 +1219,12 @@
 
 <h1 id="funcionamiento-del-bridge-con-una-máquina-virtual">Funcionamiento del bridge con una máquina virtual</h1>
 <p>Para comprobar el funcionamiento del bridge con una máquina virtual es necesario crear una en el equipo local en el que se ha creado el bridge. Primero se debe descargar el fichero de imagen .iso del sistema operativo que va a usar la máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.5.0-amd64-netinst.iso
-</span></span></code></pre></div><p>A continuación se usa kvm para crear una imagen qcow2 de este sistema. Para poder trabajar con el virtualizador qemu/kvm en la máquina Debian primero se deben instalar los paquetes necesarios.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>apt install qemu-utils qemu-system-x86 qemu-system-gui
-</span></span></code></pre></div><p>Una vez que las herramientas de qemu/kvm se han instalado en el equipo se puede convertir la imagen ISO de Debian a un fichero de imagen de tipo qcow2.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>qemu-img create -f qcow2 deb12.qcow2 10G
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.5.0-amd64-netinst.iso
+</span></span></span></code></pre></div><p>A continuación se usa kvm para crear una imagen qcow2 de este sistema. Para poder trabajar con el virtualizador qemu/kvm en la máquina Debian primero se deben instalar los paquetes necesarios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install qemu-utils qemu-system-x86 qemu-system-gui
+</span></span></span></code></pre></div><p>Una vez que las herramientas de qemu/kvm se han instalado en el equipo se puede convertir la imagen ISO de Debian a un fichero de imagen de tipo qcow2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">qemu-img create -f qcow2 deb12.qcow2 10G
+</span></span></span></code></pre></div>
 
 
   
@@ -1252,14 +1252,14 @@
 </div>
 
 <p>El siguiente paso es crear una interfaz de tipo tap y después se añade la interfaz al bridge.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tuntap add mode tap user user
-</span></span><span style="display:flex;"><span>brctl addif br0 tap0
-</span></span><span style="display:flex;"><span>ip l set dev tap0 up
-</span></span></code></pre></div><p>Posteriormente, se genera una MAC aleatoria para la máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span></code></pre></div><p>Con esta información, ya se puede crear la máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>kvm -m 512 -hda deb12.qcow2 -cdrom debian-12.5.0-amd64-netinst.iso -device virtio-net,netdev=n0,mac=$MAC0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no
-</span></span></code></pre></div><p>Este comando lanza una ventana para la instalación del sistema operativo de la máquina virtual:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tuntap add mode tap user user
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl addif br0 tap0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap0 up
+</span></span></span></code></pre></div><p>Posteriormente, se genera una MAC aleatoria para la máquina virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span></code></pre></div><p>Con esta información, ya se puede crear la máquina virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12.qcow2 -cdrom debian-12.5.0-amd64-netinst.iso -device virtio-net,netdev=n0,mac=$MAC0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no
+</span></span></span></code></pre></div><p>Este comando lanza una ventana para la instalación del sistema operativo de la máquina virtual:</p>
 
 
 
@@ -1351,9 +1351,9 @@
             class="img img-fluid img-center"
             width="516"
             height="392"
-            src="/images/redes/practica19/img4_hu12857003613181074859.png"
+            src="/images/redes/practica19/img4_hu_f1cae68f55eab1c2.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img4_hu12857003613181074859.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img4_hu_f1cae68f55eab1c2.png'" />
       
     
 
@@ -1458,9 +1458,9 @@
             class="img img-fluid img-center"
             width="799"
             height="227"
-            src="/images/redes/practica19/img5_hu5441313513818541524.png"
+            src="/images/redes/practica19/img5_hu_dcdf704d440c0b94.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img5_hu5441313513818541524.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img5_hu_dcdf704d440c0b94.png'" />
       
     
 
@@ -1565,9 +1565,9 @@
             class="img img-fluid img-center"
             width="416"
             height="204"
-            src="/images/redes/practica19/img6_hu14885069427466894733.png"
+            src="/images/redes/practica19/img6_hu_3366815a8c40c03.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img6_hu14885069427466894733.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img6_hu_3366815a8c40c03.png'" />
       
     
 
@@ -1801,8 +1801,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
-      Cómo simular un servidor web en GNS3
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
     </a>
   </h4>
   
@@ -1825,8 +1825,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
     Leer
   </a>
 </div>
@@ -1838,8 +1838,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
-      Despliegue de aplicaciones escritas en Python
+    <a href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+      Creación de una VPN punto a punto con IPSec
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
+      Instalación de un CMS Python usando Django
     </a>
   </h4>
   
@@ -1862,45 +1899,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-      Convulsión en el mundo del software libre
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
+  <p class="mb-6"><p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
     Leer
   </a>
 </div>
@@ -2006,9 +2006,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -2016,9 +2016,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

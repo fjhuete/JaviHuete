@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -878,24 +878,24 @@
             <p>MongoDB es un sistema de base de datos NoSQL, orientado a documentos y de código abierto. Este SGBD no guarda los documentos y tablas como ocurre con los relacionales (Oracle, PostgreSQL, MariaDB, MySQL&hellip;), sino que lo hace en estrucuturas de datos en formato BSON llamadas documentos. En este post te cuento cómo puedes instalar este sistema gestor de base de datos en un servidor con Debian 12.</p>
 <h1 id="instalación-de-mongodb">Instalación de MongoDB</h1>
 <p>Para instalar MongoDB, en primer lugar, se deben instalar los paquetes pnupg y curl.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt-get install gnupg curl
-</span></span></code></pre></div><p>A continuación se debe importar la clave pública de Mongo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
-</span></span><span style="display:flex;"><span>   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
-</span></span><span style="display:flex;"><span>   --dearmor
-</span></span></code></pre></div><p>Posteriormente se debe crear un fichero de fuentes en el directorio sorurces.list.d:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo &#34;deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main&#34; | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-</span></span></code></pre></div><p>A partir de este punto, para instalar MongoDB se puede seguir el procedimiento habitual: actualizar apt e instalar el paquete:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt install mongodb-org
-</span></span></code></pre></div><p>Se puede comprobar porque tras finalizar el proceso de instalación se han creado los directorios /var/lib/mongodb y /var/log/mongodb.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ls -l /var/lib/ | grep mongodb
-</span></span><span style="display:flex;"><span>ls -l /var/log/ | grep mongodb
-</span></span></code></pre></div><h1 id="configuración-de-mongodb">Configuración de MongoDB</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt-get install gnupg curl
+</span></span></span></code></pre></div><p>A continuación se debe importar la clave pública de Mongo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   --dearmor
+</span></span></span></code></pre></div><p>Posteriormente se debe crear un fichero de fuentes en el directorio sorurces.list.d:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo &#34;deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main&#34; | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+</span></span></span></code></pre></div><p>A partir de este punto, para instalar MongoDB se puede seguir el procedimiento habitual: actualizar apt e instalar el paquete:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install mongodb-org
+</span></span></span></code></pre></div><p>Se puede comprobar porque tras finalizar el proceso de instalación se han creado los directorios /var/lib/mongodb y /var/log/mongodb.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ls -l /var/lib/ | grep mongodb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -l /var/log/ | grep mongodb
+</span></span></span></code></pre></div><h1 id="configuración-de-mongodb">Configuración de MongoDB</h1>
 <p>Antes de comenzar a usar MongoDB es necesario arrancar el servidor y comprobar su estado:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl start mongodb
-</span></span><span style="display:flex;"><span>sudo systemctl status mongodb
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start mongodb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl status mongodb
+</span></span></span></code></pre></div>
 
 
 
@@ -986,9 +986,9 @@
             class="img img-fluid img-center"
             width="724"
             height="301"
-            src="/images/bbdd/img1_hu17171016368437732399.png"
+            src="/images/bbdd/img1_hu_946960109746f9ee.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/bbdd\/img1_hu17171016368437732399.png'" />
+            onerror="this.onerror='null';this.src='\/images\/bbdd\/img1_hu_946960109746f9ee.png'" />
       
     
 
@@ -1008,8 +1008,8 @@
 
 
 <p>Además, se debe habilitar el servicio para que su funcionamiento sea persistente durante los reinicios de la máquina:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl enable mongodb
-</span></span></code></pre></div><h1 id="acceder-al-servidor-de-mongodb">Acceder al servidor de MongoDB</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable mongodb
+</span></span></span></code></pre></div><h1 id="acceder-al-servidor-de-mongodb">Acceder al servidor de MongoDB</h1>
 <p>Finalmente, se puede acceder al servicio de MongoDB instalado en la máquina local ejecutando el comando <code>mongosh</code>:</p>
 
 
@@ -1102,9 +1102,9 @@
             class="img img-fluid img-center"
             width="788"
             height="686"
-            src="/images/bbdd/img2_hu575488332040143106.png"
+            src="/images/bbdd/img2_hu_32f916dd50b043c3.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/bbdd\/img2_hu575488332040143106.png'" />
+            onerror="this.onerror='null';this.src='\/images\/bbdd\/img2_hu_32f916dd50b043c3.png'" />
       
     
 
@@ -1358,8 +1358,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
-      Configurar redes virtuales (VLAN) en bridges Linux
+    <a href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
+      Comandos para el control de procesos
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+      Cómo importar dispositivos a GNS3
     </a>
   </h4>
   
@@ -1382,8 +1419,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Este post pretende demostrar el funcionamiento y guiar en la configuración de redes virtuales en un bridge creado en una máquina Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
+  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
     Leer
   </a>
 </div>
@@ -1395,8 +1432,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
-      Gestión de almacenamiento en Openstack
+    <a href="/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/">
+      Uso de cloud-init con libvirt
     </a>
   </h4>
   
@@ -1419,45 +1456,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/">
     Leer
   </a>
 </div>
@@ -1563,9 +1563,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1573,9 +1573,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

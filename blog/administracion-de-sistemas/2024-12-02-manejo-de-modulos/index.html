@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -895,390 +895,390 @@
             <h1 id="ejercicios-de-manejo-de-módulos">Ejercicios de manejo de módulos</h1>
 <h2 id="comprueba-los-módulos-cargados-en-tu-equipo">Comprueba los módulos cargados en tu equipo</h2>
 <p>Los módulos cargados en el equipo se pueden listar con el comando <code>lsmod</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>lsmod
-</span></span><span style="display:flex;"><span>Module                  Size  Used by
-</span></span><span style="display:flex;"><span>ip6t_REJECT            16384  6
-</span></span><span style="display:flex;"><span>nf_reject_ipv6         20480  1 ip6t_REJECT
-</span></span><span style="display:flex;"><span>rpcsec_gss_krb5        36864  0
-</span></span><span style="display:flex;"><span>nfsv4                1052672  0
-</span></span><span style="display:flex;"><span>dns_resolver           16384  1 nfsv4
-</span></span><span style="display:flex;"><span>nfs                   520192  1 nfsv4
-</span></span><span style="display:flex;"><span>fscache               380928  1 nfs
-</span></span><span style="display:flex;"><span>netfs                  57344  1 fscache
-</span></span><span style="display:flex;"><span>veth                   36864  0
-</span></span><span style="display:flex;"><span>nft_masq               16384  1
-</span></span><span style="display:flex;"><span>vhost_net              36864  9
-</span></span><span style="display:flex;"><span>vhost                  57344  1 vhost_net
-</span></span><span style="display:flex;"><span>vhost_iotlb            16384  1 vhost
-</span></span><span style="display:flex;"><span>tap                    28672  1 vhost_net
-</span></span><span style="display:flex;"><span>tun                    61440  19 vhost_net
-</span></span><span style="display:flex;"><span>snd_seq_dummy          16384  0
-</span></span><span style="display:flex;"><span>snd_hrtimer            16384  1
-</span></span><span style="display:flex;"><span>snd_seq                90112  7 snd_seq_dummy
-</span></span><span style="display:flex;"><span>snd_seq_device         16384  1 snd_seq
-</span></span><span style="display:flex;"><span>xt_CHECKSUM            16384  5
-</span></span><span style="display:flex;"><span>xt_MASQUERADE          20480  12
-</span></span><span style="display:flex;"><span>xt_conntrack           16384  4
-</span></span><span style="display:flex;"><span>ipt_REJECT             16384  18
-</span></span><span style="display:flex;"><span>nf_reject_ipv4         16384  1 ipt_REJECT
-</span></span><span style="display:flex;"><span>xt_tcpudp              20480  0
-</span></span><span style="display:flex;"><span>nft_compat             20480  45
-</span></span><span style="display:flex;"><span>nft_chain_nat          16384  3
-</span></span><span style="display:flex;"><span>nf_nat                 57344  3 nft_masq,nft_chain_nat,xt_MASQUERADE
-</span></span><span style="display:flex;"><span>nf_conntrack          188416  4 xt_conntrack,nf_nat,nft_masq,xt_MASQUERADE
-</span></span><span style="display:flex;"><span>nf_defrag_ipv6         24576  1 nf_conntrack
-</span></span><span style="display:flex;"><span>nf_defrag_ipv4         16384  1 nf_conntrack
-</span></span><span style="display:flex;"><span>nf_tables             303104  983 nft_compat,nft_masq,nft_chain_nat
-</span></span><span style="display:flex;"><span>nfnetlink              20480  2 nft_compat,nf_tables
-</span></span><span style="display:flex;"><span>qrtr                   49152  2
-</span></span><span style="display:flex;"><span>bridge                311296  0
-</span></span><span style="display:flex;"><span>stp                    16384  1 bridge
-</span></span><span style="display:flex;"><span>llc                    16384  2 bridge,stp
-</span></span><span style="display:flex;"><span>binfmt_misc            28672  1
-</span></span><span style="display:flex;"><span>intel_rapl_msr         20480  0
-</span></span><span style="display:flex;"><span>intel_rapl_common      32768  1 intel_rapl_msr
-</span></span><span style="display:flex;"><span>nls_ascii              16384  1
-</span></span><span style="display:flex;"><span>nls_cp437              20480  1
-</span></span><span style="display:flex;"><span>x86_pkg_temp_thermal    20480  0
-</span></span><span style="display:flex;"><span>intel_powerclamp       20480  0
-</span></span><span style="display:flex;"><span>vfat                   24576  1
-</span></span><span style="display:flex;"><span>fat                    90112  1 vfat
-</span></span><span style="display:flex;"><span>coretemp               20480  0
-</span></span><span style="display:flex;"><span>kvm_intel             380928  6
-</span></span><span style="display:flex;"><span>kvm                  1146880  1 kvm_intel
-</span></span><span style="display:flex;"><span>irqbypass              16384  27 kvm
-</span></span><span style="display:flex;"><span>ghash_clmulni_intel    16384  0
-</span></span><span style="display:flex;"><span>ath9k                 143360  0
-</span></span><span style="display:flex;"><span>cryptd                 28672  1 ghash_clmulni_intel
-</span></span><span style="display:flex;"><span>ath9k_common           24576  1 ath9k
-</span></span><span style="display:flex;"><span>sha512_ssse3           49152  0
-</span></span><span style="display:flex;"><span>sha512_generic         16384  1 sha512_ssse3
-</span></span><span style="display:flex;"><span>ath9k_hw              512000  2 ath9k_common,ath9k
-</span></span><span style="display:flex;"><span>snd_hda_codec_realtek   172032  1
-</span></span><span style="display:flex;"><span>snd_hda_codec_generic    98304  1 snd_hda_codec_realtek
-</span></span><span style="display:flex;"><span>ledtrig_audio          16384  1 snd_hda_codec_generic
-</span></span><span style="display:flex;"><span>ath                    36864  3 ath9k_common,ath9k,ath9k_hw
-</span></span><span style="display:flex;"><span>mac80211             1175552  1 ath9k
-</span></span><span style="display:flex;"><span>snd_hda_codec_hdmi     81920  1
-</span></span><span style="display:flex;"><span>sha256_ssse3           32768  1
-</span></span><span style="display:flex;"><span>libarc4                16384  1 mac80211
-</span></span><span style="display:flex;"><span>snd_hda_intel          57344  2
-</span></span><span style="display:flex;"><span>snd_intel_dspcfg       36864  1 snd_hda_intel
-</span></span><span style="display:flex;"><span>snd_intel_sdw_acpi     20480  1 snd_intel_dspcfg
-</span></span><span style="display:flex;"><span>snd_hda_codec         184320  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
-</span></span><span style="display:flex;"><span>sha1_ssse3             32768  0
-</span></span><span style="display:flex;"><span>cfg80211             1146880  4 ath9k_common,ath9k,ath,mac80211
-</span></span><span style="display:flex;"><span>pcspkr                 16384  0
-</span></span><span style="display:flex;"><span>rapl                   20480  0
-</span></span><span style="display:flex;"><span>snd_hda_core          122880  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
-</span></span><span style="display:flex;"><span>iTCO_wdt               16384  0
-</span></span><span style="display:flex;"><span>intel_pmc_bxt          16384  1 iTCO_wdt
-</span></span><span style="display:flex;"><span>snd_hwdep              16384  1 snd_hda_codec
-</span></span><span style="display:flex;"><span>snd_pcm               159744  4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
-</span></span><span style="display:flex;"><span>rfkill                 36864  6 ath9k,cfg80211
-</span></span><span style="display:flex;"><span>mei_hdcp               24576  0
-</span></span><span style="display:flex;"><span>snd_timer              49152  3 snd_seq,snd_hrtimer,snd_pcm
-</span></span><span style="display:flex;"><span>iTCO_vendor_support    16384  1 iTCO_wdt
-</span></span><span style="display:flex;"><span>intel_cstate           20480  0
-</span></span><span style="display:flex;"><span>snd                   126976  16 snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm
-</span></span><span style="display:flex;"><span>soundcore              16384  1 snd
-</span></span><span style="display:flex;"><span>watchdog               45056  1 iTCO_wdt
-</span></span><span style="display:flex;"><span>intel_uncore          217088  0
-</span></span><span style="display:flex;"><span>at24                   28672  0
-</span></span><span style="display:flex;"><span>sg                     40960  0
-</span></span><span style="display:flex;"><span>mei_me                 53248  1
-</span></span><span style="display:flex;"><span>evdev                  28672  11
-</span></span><span style="display:flex;"><span>mei                   159744  3 mei_hdcp,mei_me
-</span></span><span style="display:flex;"><span>nfsd                  704512  5
-</span></span><span style="display:flex;"><span>auth_rpcgss           159744  2 nfsd,rpcsec_gss_krb5
-</span></span><span style="display:flex;"><span>msr                    16384  0
-</span></span><span style="display:flex;"><span>nfs_acl                16384  1 nfsd
-</span></span><span style="display:flex;"><span>lockd                 131072  2 nfsd,nfs
-</span></span><span style="display:flex;"><span>grace                  16384  2 nfsd,lockd
-</span></span><span style="display:flex;"><span>sunrpc                692224  21 nfsd,nfsv4,auth_rpcgss,lockd,rpcsec_gss_krb5,nfs_acl,nfs
-</span></span><span style="display:flex;"><span>parport_pc             40960  1
-</span></span><span style="display:flex;"><span>ppdev                  24576  0
-</span></span><span style="display:flex;"><span>efi_pstore             16384  0
-</span></span><span style="display:flex;"><span>lp                     20480  0
-</span></span><span style="display:flex;"><span>parport                69632  3 parport_pc,lp,ppdev
-</span></span><span style="display:flex;"><span>fuse                  176128  7
-</span></span><span style="display:flex;"><span>configfs               57344  1
-</span></span><span style="display:flex;"><span>loop                   32768  0
-</span></span><span style="display:flex;"><span>ip_tables              36864  0
-</span></span><span style="display:flex;"><span>x_tables               61440  8 xt_conntrack,nft_compat,xt_tcpudp,xt_CHECKSUM,ipt_REJECT,ip_tables,xt_MASQUERADE,ip6t_REJECT
-</span></span><span style="display:flex;"><span>autofs4                53248  2
-</span></span><span style="display:flex;"><span>xfs                  1957888  3
-</span></span><span style="display:flex;"><span>btrfs                1794048  0
-</span></span><span style="display:flex;"><span>zstd_compress         294912  1 btrfs
-</span></span><span style="display:flex;"><span>efivarfs               24576  1
-</span></span><span style="display:flex;"><span>raid10                 65536  0
-</span></span><span style="display:flex;"><span>raid456               180224  0
-</span></span><span style="display:flex;"><span>async_raid6_recov      24576  1 raid456
-</span></span><span style="display:flex;"><span>async_memcpy           20480  2 raid456,async_raid6_recov
-</span></span><span style="display:flex;"><span>async_pq               20480  2 raid456,async_raid6_recov
-</span></span><span style="display:flex;"><span>async_xor              20480  3 async_pq,raid456,async_raid6_recov
-</span></span><span style="display:flex;"><span>async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
-</span></span><span style="display:flex;"><span>xor                    24576  2 async_xor,btrfs
-</span></span><span style="display:flex;"><span>raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
-</span></span><span style="display:flex;"><span>libcrc32c              16384  6 nf_conntrack,nf_nat,btrfs,nf_tables,xfs,raid456
-</span></span><span style="display:flex;"><span>crc32c_generic         16384  0
-</span></span><span style="display:flex;"><span>raid1                  53248  0
-</span></span><span style="display:flex;"><span>raid0                  24576  0
-</span></span><span style="display:flex;"><span>multipath              20480  0
-</span></span><span style="display:flex;"><span>linear                 20480  0
-</span></span><span style="display:flex;"><span>md_mod                192512  6 raid1,raid10,raid0,linear,raid456,multipath
-</span></span><span style="display:flex;"><span>dm_mod                184320  6
-</span></span><span style="display:flex;"><span>hid_generic            16384  0
-</span></span><span style="display:flex;"><span>usbhid                 65536  0
-</span></span><span style="display:flex;"><span>hid                   159744  2 usbhid,hid_generic
-</span></span><span style="display:flex;"><span>i915                 3055616  73
-</span></span><span style="display:flex;"><span>sd_mod                 65536  4
-</span></span><span style="display:flex;"><span>t10_pi                 16384  1 sd_mod
-</span></span><span style="display:flex;"><span>crc64_rocksoft         20480  1 t10_pi
-</span></span><span style="display:flex;"><span>crc64                  20480  1 crc64_rocksoft
-</span></span><span style="display:flex;"><span>crc_t10dif             20480  1 t10_pi
-</span></span><span style="display:flex;"><span>crct10dif_generic      16384  0
-</span></span><span style="display:flex;"><span>drm_buddy              20480  1 i915
-</span></span><span style="display:flex;"><span>i2c_algo_bit           16384  1 i915
-</span></span><span style="display:flex;"><span>drm_display_helper    184320  1 i915
-</span></span><span style="display:flex;"><span>cec                    61440  2 drm_display_helper,i915
-</span></span><span style="display:flex;"><span>ahci                   49152  3
-</span></span><span style="display:flex;"><span>rc_core                69632  1 cec
-</span></span><span style="display:flex;"><span>libahci                49152  1 ahci
-</span></span><span style="display:flex;"><span>ttm                    94208  1 i915
-</span></span><span style="display:flex;"><span>libata                401408  2 libahci,ahci
-</span></span><span style="display:flex;"><span>drm_kms_helper        212992  2 drm_display_helper,i915
-</span></span><span style="display:flex;"><span>xhci_pci               24576  0
-</span></span><span style="display:flex;"><span>xhci_hcd              315392  1 xhci_pci
-</span></span><span style="display:flex;"><span>scsi_mod              286720  3 sd_mod,libata,sg
-</span></span><span style="display:flex;"><span>crct10dif_pclmul       16384  1
-</span></span><span style="display:flex;"><span>crct10dif_common       16384  3 crct10dif_generic,crc_t10dif,crct10dif_pclmul
-</span></span><span style="display:flex;"><span>ehci_pci               20480  0
-</span></span><span style="display:flex;"><span>ehci_hcd              102400  1 ehci_pci
-</span></span><span style="display:flex;"><span>drm                   614400  18 drm_kms_helper,drm_display_helper,drm_buddy,i915,ttm
-</span></span><span style="display:flex;"><span>i2c_i801               36864  0
-</span></span><span style="display:flex;"><span>i2c_smbus              20480  1 i2c_i801
-</span></span><span style="display:flex;"><span>crc32_pclmul           16384  0
-</span></span><span style="display:flex;"><span>scsi_common            16384  3 scsi_mod,libata,sg
-</span></span><span style="display:flex;"><span>r8169                  94208  0
-</span></span><span style="display:flex;"><span>lpc_ich                28672  0
-</span></span><span style="display:flex;"><span>realtek                36864  1
-</span></span><span style="display:flex;"><span>crc32c_intel           24576  1
-</span></span><span style="display:flex;"><span>mdio_devres            16384  1 r8169
-</span></span><span style="display:flex;"><span>usbcore               348160  5 xhci_hcd,ehci_pci,usbhid,ehci_hcd,xhci_pci
-</span></span><span style="display:flex;"><span>libphy                180224  3 r8169,mdio_devres,realtek
-</span></span><span style="display:flex;"><span>usb_common             16384  3 xhci_hcd,usbcore,ehci_hcd
-</span></span><span style="display:flex;"><span>fan                    20480  0
-</span></span><span style="display:flex;"><span>video                  65536  1 i915
-</span></span><span style="display:flex;"><span>wmi                    36864  1 video
-</span></span><span style="display:flex;"><span>button                 24576  0
-</span></span></code></pre></div><h2 id="cuenta-el-número-de-módulos-disponibles-en-el-núcleo-que-estás-usando">Cuenta el número de módulos disponibles en el núcleo que estás usando</h2>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo find /lib/modules/$(uname -r) -type f -iname &#39;*.ko&#39; | wc -l
-</span></span><span style="display:flex;"><span>4024
-</span></span></code></pre></div><p>En el kernel instalado en el equipo hay disponibles un total de 4024 módulos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">lsmod
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Module                  Size  Used by
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip6t_REJECT            16384  6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_reject_ipv6         20480  1 ip6t_REJECT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rpcsec_gss_krb5        36864  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nfsv4                1052672  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dns_resolver           16384  1 nfsv4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nfs                   520192  1 nfsv4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">fscache               380928  1 nfs
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">netfs                  57344  1 fscache
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">veth                   36864  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nft_masq               16384  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vhost_net              36864  9
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vhost                  57344  1 vhost_net
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vhost_iotlb            16384  1 vhost
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tap                    28672  1 vhost_net
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tun                    61440  19 vhost_net
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_seq_dummy          16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hrtimer            16384  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_seq                90112  7 snd_seq_dummy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_seq_device         16384  1 snd_seq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xt_CHECKSUM            16384  5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xt_MASQUERADE          20480  12
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xt_conntrack           16384  4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ipt_REJECT             16384  18
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_reject_ipv4         16384  1 ipt_REJECT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xt_tcpudp              20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nft_compat             20480  45
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nft_chain_nat          16384  3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_nat                 57344  3 nft_masq,nft_chain_nat,xt_MASQUERADE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_conntrack          188416  4 xt_conntrack,nf_nat,nft_masq,xt_MASQUERADE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_defrag_ipv6         24576  1 nf_conntrack
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_defrag_ipv4         16384  1 nf_conntrack
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nf_tables             303104  983 nft_compat,nft_masq,nft_chain_nat
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nfnetlink              20480  2 nft_compat,nf_tables
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">qrtr                   49152  2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bridge                311296  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">stp                    16384  1 bridge
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">llc                    16384  2 bridge,stp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">binfmt_misc            28672  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_rapl_msr         20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_rapl_common      32768  1 intel_rapl_msr
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nls_ascii              16384  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nls_cp437              20480  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">x86_pkg_temp_thermal    20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_powerclamp       20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vfat                   24576  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">fat                    90112  1 vfat
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">coretemp               20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">kvm_intel             380928  6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">kvm                  1146880  1 kvm_intel
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">irqbypass              16384  27 kvm
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ghash_clmulni_intel    16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ath9k                 143360  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cryptd                 28672  1 ghash_clmulni_intel
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ath9k_common           24576  1 ath9k
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sha512_ssse3           49152  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sha512_generic         16384  1 sha512_ssse3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ath9k_hw              512000  2 ath9k_common,ath9k
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_codec_realtek   172032  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_codec_generic    98304  1 snd_hda_codec_realtek
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ledtrig_audio          16384  1 snd_hda_codec_generic
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ath                    36864  3 ath9k_common,ath9k,ath9k_hw
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mac80211             1175552  1 ath9k
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_codec_hdmi     81920  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sha256_ssse3           32768  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">libarc4                16384  1 mac80211
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_intel          57344  2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_intel_dspcfg       36864  1 snd_hda_intel
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_intel_sdw_acpi     20480  1 snd_intel_dspcfg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_codec         184320  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sha1_ssse3             32768  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cfg80211             1146880  4 ath9k_common,ath9k,ath,mac80211
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">pcspkr                 16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rapl                   20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hda_core          122880  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iTCO_wdt               16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_pmc_bxt          16384  1 iTCO_wdt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_hwdep              16384  1 snd_hda_codec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_pcm               159744  4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rfkill                 36864  6 ath9k,cfg80211
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mei_hdcp               24576  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd_timer              49152  3 snd_seq,snd_hrtimer,snd_pcm
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iTCO_vendor_support    16384  1 iTCO_wdt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_cstate           20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">snd                   126976  16 snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">soundcore              16384  1 snd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">watchdog               45056  1 iTCO_wdt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intel_uncore          217088  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">at24                   28672  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sg                     40960  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mei_me                 53248  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">evdev                  28672  11
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mei                   159744  3 mei_hdcp,mei_me
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nfsd                  704512  5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">auth_rpcgss           159744  2 nfsd,rpcsec_gss_krb5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">msr                    16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nfs_acl                16384  1 nfsd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lockd                 131072  2 nfsd,nfs
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">grace                  16384  2 nfsd,lockd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sunrpc                692224  21 nfsd,nfsv4,auth_rpcgss,lockd,rpcsec_gss_krb5,nfs_acl,nfs
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">parport_pc             40960  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ppdev                  24576  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">efi_pstore             16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lp                     20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">parport                69632  3 parport_pc,lp,ppdev
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">fuse                  176128  7
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">configfs               57344  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">loop                   32768  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip_tables              36864  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">x_tables               61440  8 xt_conntrack,nft_compat,xt_tcpudp,xt_CHECKSUM,ipt_REJECT,ip_tables,xt_MASQUERADE,ip6t_REJECT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">autofs4                53248  2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xfs                  1957888  3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">btrfs                1794048  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zstd_compress         294912  1 btrfs
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">efivarfs               24576  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">raid10                 65536  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">raid456               180224  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">async_raid6_recov      24576  1 raid456
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">async_memcpy           20480  2 raid456,async_raid6_recov
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">async_pq               20480  2 raid456,async_raid6_recov
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">async_xor              20480  3 async_pq,raid456,async_raid6_recov
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">async_tx               20480  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xor                    24576  2 async_xor,btrfs
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">raid6_pq              122880  4 async_pq,btrfs,raid456,async_raid6_recov
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">libcrc32c              16384  6 nf_conntrack,nf_nat,btrfs,nf_tables,xfs,raid456
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc32c_generic         16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">raid1                  53248  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">raid0                  24576  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">multipath              20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linear                 20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">md_mod                192512  6 raid1,raid10,raid0,linear,raid456,multipath
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dm_mod                184320  6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">hid_generic            16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usbhid                 65536  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">hid                   159744  2 usbhid,hid_generic
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">i915                 3055616  73
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sd_mod                 65536  4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">t10_pi                 16384  1 sd_mod
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc64_rocksoft         20480  1 t10_pi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc64                  20480  1 crc64_rocksoft
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc_t10dif             20480  1 t10_pi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crct10dif_generic      16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">drm_buddy              20480  1 i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">i2c_algo_bit           16384  1 i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">drm_display_helper    184320  1 i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cec                    61440  2 drm_display_helper,i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ahci                   49152  3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rc_core                69632  1 cec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">libahci                49152  1 ahci
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ttm                    94208  1 i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">libata                401408  2 libahci,ahci
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">drm_kms_helper        212992  2 drm_display_helper,i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xhci_pci               24576  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">xhci_hcd              315392  1 xhci_pci
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scsi_mod              286720  3 sd_mod,libata,sg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crct10dif_pclmul       16384  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crct10dif_common       16384  3 crct10dif_generic,crc_t10dif,crct10dif_pclmul
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ehci_pci               20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ehci_hcd              102400  1 ehci_pci
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">drm                   614400  18 drm_kms_helper,drm_display_helper,drm_buddy,i915,ttm
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">i2c_i801               36864  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">i2c_smbus              20480  1 i2c_i801
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc32_pclmul           16384  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scsi_common            16384  3 scsi_mod,libata,sg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">r8169                  94208  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lpc_ich                28672  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">realtek                36864  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">crc32c_intel           24576  1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mdio_devres            16384  1 r8169
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usbcore               348160  5 xhci_hcd,ehci_pci,usbhid,ehci_hcd,xhci_pci
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">libphy                180224  3 r8169,mdio_devres,realtek
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usb_common             16384  3 xhci_hcd,usbcore,ehci_hcd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">fan                    20480  0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">video                  65536  1 i915
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">wmi                    36864  1 video
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">button                 24576  0
+</span></span></span></code></pre></div><h2 id="cuenta-el-número-de-módulos-disponibles-en-el-núcleo-que-estás-usando">Cuenta el número de módulos disponibles en el núcleo que estás usando</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo find /lib/modules/$(uname -r) -type f -iname &#39;*.ko&#39; | wc -l
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">4024
+</span></span></span></code></pre></div><p>En el kernel instalado en el equipo hay disponibles un total de 4024 módulos.</p>
 <h2 id="conecta-un-lápiz-usb-y-observa-la-salida-de-la-instrucción-sudo-dmesg">Conecta un lápiz USB y observa la salida de la instrucción sudo dmesg</h2>
 <p>Al conectar un dispoisitivo USB al equipo, se cargan en memoria los módulos del kernel que contienen los drivers necesarios para gestionar el dispositivo. En este caso, se observa en la salida del comando <code>sudo dmesg</code> cómo se cargan los módulos <code>usb 2-1</code>, <code>usb-storage</code>, <code>scsi host4</code> o <code>usbcore</code>. Además, se muestran algunos de los pocesos relacionados con la detección, identificación y montaje del nuevo dispositivo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo dmesg
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>[14561.684067] usb 2-1: new high-speed USB device number 5 using xhci_hcd
-</span></span><span style="display:flex;"><span>[14562.325600] usb 2-1: New USB device found, idVendor=125f, idProduct=1036, bcdDevice= 1.00
-</span></span><span style="display:flex;"><span>[14562.325605] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-</span></span><span style="display:flex;"><span>[14562.325607] usb 2-1: Product: USB Flash Drive
-</span></span><span style="display:flex;"><span>[14562.325609] usb 2-1: Manufacturer: USB 2.0
-</span></span><span style="display:flex;"><span>[14562.325610] usb 2-1: SerialNumber: 9701b097f311bd
-</span></span><span style="display:flex;"><span>[14563.248344] usb-storage 2-1:1.0: USB Mass Storage device detected
-</span></span><span style="display:flex;"><span>[14563.249769] scsi host4: usb-storage 2-1:1.0
-</span></span><span style="display:flex;"><span>[14563.251217] usbcore: registered new interface driver usb-storage
-</span></span><span style="display:flex;"><span>[14563.358101] usbcore: registered new interface driver uas
-</span></span><span style="display:flex;"><span>[14564.280602] scsi 4:0:0:0: Direct-Access     USB 2.0  USB Flash Drive  0.00 PQ: 0 ANSI: 2
-</span></span><span style="display:flex;"><span>[14564.281193] sd 4:0:0:0: Attached scsi generic sg2 type 0
-</span></span><span style="display:flex;"><span>[14564.281424] sd 4:0:0:0: [sdb] 7897088 512-byte logical blocks: (4.04 GB/3.77 GiB)
-</span></span><span style="display:flex;"><span>[14564.281802] sd 4:0:0:0: [sdb] Write Protect is off
-</span></span><span style="display:flex;"><span>[14564.281807] sd 4:0:0:0: [sdb] Mode Sense: 00 00 00 00
-</span></span><span style="display:flex;"><span>[14564.282150] sd 4:0:0:0: [sdb] Asking for cache data failed
-</span></span><span style="display:flex;"><span>[14564.282156] sd 4:0:0:0: [sdb] Assuming drive cache: write through
-</span></span><span style="display:flex;"><span>[14564.350308]  sdb:
-</span></span><span style="display:flex;"><span>[14564.419487] sd 4:0:0:0: [sdb] Attached SCSI removable disk
-</span></span><span style="display:flex;"><span>[14569.357025] FAT-fs (sdb): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
-</span></span></code></pre></div><h2 id="elimina-el-módulo-correspondiente-a-algún-dispotivo-no-esencial-y-comprueba-qué-ocurre-vuelve-a-cargarlo">Elimina el módulo correspondiente a algún dispotivo no esencial y comprueba qué ocurre. Vuelve a cargarlo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo dmesg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14561.684067] usb 2-1: new high-speed USB device number 5 using xhci_hcd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14562.325600] usb 2-1: New USB device found, idVendor=125f, idProduct=1036, bcdDevice= 1.00
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14562.325605] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14562.325607] usb 2-1: Product: USB Flash Drive
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14562.325609] usb 2-1: Manufacturer: USB 2.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14562.325610] usb 2-1: SerialNumber: 9701b097f311bd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14563.248344] usb-storage 2-1:1.0: USB Mass Storage device detected
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14563.249769] scsi host4: usb-storage 2-1:1.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14563.251217] usbcore: registered new interface driver usb-storage
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14563.358101] usbcore: registered new interface driver uas
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.280602] scsi 4:0:0:0: Direct-Access     USB 2.0  USB Flash Drive  0.00 PQ: 0 ANSI: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.281193] sd 4:0:0:0: Attached scsi generic sg2 type 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.281424] sd 4:0:0:0: [sdb] 7897088 512-byte logical blocks: (4.04 GB/3.77 GiB)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.281802] sd 4:0:0:0: [sdb] Write Protect is off
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.281807] sd 4:0:0:0: [sdb] Mode Sense: 00 00 00 00
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.282150] sd 4:0:0:0: [sdb] Asking for cache data failed
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.282156] sd 4:0:0:0: [sdb] Assuming drive cache: write through
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.350308]  sdb:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14564.419487] sd 4:0:0:0: [sdb] Attached SCSI removable disk
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[14569.357025] FAT-fs (sdb): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+</span></span></span></code></pre></div><h2 id="elimina-el-módulo-correspondiente-a-algún-dispotivo-no-esencial-y-comprueba-qué-ocurre-vuelve-a-cargarlo">Elimina el módulo correspondiente a algún dispotivo no esencial y comprueba qué ocurre. Vuelve a cargarlo</h2>
 <p>Cuando se descarga de memoria el módulo <code>ath9k</code>, que está relacionado con los drivers de la tarjeta de red inalámbrica.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo modprobe -r ath9k
-</span></span></code></pre></div><p>La ejecución del comando <code>sudo dmesg</code> muestra la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>[17980.371067] ath9k: ath9k: Driver unloaded
-</span></span></code></pre></div><p>Si se vuelve a cargar el módulo en memoria</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo modprobe ath9k
-</span></span></code></pre></div><p>Se vuelve a cargar la información relacionada con la tarjeta de red inalámbrica en el sistema.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>[18041.354113] ath: EEPROM regdomain: 0x809c
-</span></span><span style="display:flex;"><span>[18041.354117] ath: EEPROM indicates we should expect a country code
-</span></span><span style="display:flex;"><span>[18041.354118] ath: doing EEPROM country-&gt;regdmn map search
-</span></span><span style="display:flex;"><span>[18041.354118] ath: country maps to regdmn code: 0x52
-</span></span><span style="display:flex;"><span>[18041.354119] ath: Country alpha2 being used: CN
-</span></span><span style="display:flex;"><span>[18041.354120] ath: Regpair used: 0x52
-</span></span><span style="display:flex;"><span>[18041.355354] ieee80211 phy1: Selected rate control algorithm &#39;minstrel_ht&#39;
-</span></span><span style="display:flex;"><span>[18041.379127] ieee80211 phy1: Atheros AR9287 Rev:2 mem=0x000000009cd2f86f, irq=17
-</span></span><span style="display:flex;"><span>[18041.579207] ath9k 0000:04:00.0 wlp4s0: renamed from wlan0
-</span></span></code></pre></div><h2 id="selecciona-un-módulo-que-esté-en-uso-en-tu-equipo-y-configura-el-arranque-para-que-no-se-cargue-automáticamente">Selecciona un módulo que esté en uso en tu equipo y configura el arranque para que no se cargue automáticamente</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo modprobe -r ath9k
+</span></span></span></code></pre></div><p>La ejecución del comando <code>sudo dmesg</code> muestra la siguiente línea:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">[17980.371067] ath9k: ath9k: Driver unloaded
+</span></span></span></code></pre></div><p>Si se vuelve a cargar el módulo en memoria</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo modprobe ath9k
+</span></span></span></code></pre></div><p>Se vuelve a cargar la información relacionada con la tarjeta de red inalámbrica en el sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">[18041.354113] ath: EEPROM regdomain: 0x809c
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.354117] ath: EEPROM indicates we should expect a country code
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.354118] ath: doing EEPROM country-&gt;regdmn map search
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.354118] ath: country maps to regdmn code: 0x52
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.354119] ath: Country alpha2 being used: CN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.354120] ath: Regpair used: 0x52
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.355354] ieee80211 phy1: Selected rate control algorithm &#39;minstrel_ht&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.379127] ieee80211 phy1: Atheros AR9287 Rev:2 mem=0x000000009cd2f86f, irq=17
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[18041.579207] ath9k 0000:04:00.0 wlp4s0: renamed from wlan0
+</span></span></span></code></pre></div><h2 id="selecciona-un-módulo-que-esté-en-uso-en-tu-equipo-y-configura-el-arranque-para-que-no-se-cargue-automáticamente">Selecciona un módulo que esté en uso en tu equipo y configura el arranque para que no se cargue automáticamente</h2>
 <p>Una forma de configurar el kernel para que no cargue automáticamente un módulo en el arranque es usando el directorio /etc/modprobe.d/&lt;modulo&gt;.conf. Por ejemplo, en el caso del módulo <code>ath9k</code> habría que crea el fichero /etc/modprobe.d/ath9k.conf y en él añadir la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>blacklist ath9k
-</span></span></code></pre></div><p>Realmente, el nombe del fichero dentro del directorio /etc/modprobe.d/ no es relevante. De esta manera, si hay una lista más o menos amplia de módulos cuya carga automática en el arranque se quiere evitar se puede crear un fichero /etc/modprobe.d/blacklis.conf y en él añadir una línea con el contenido <code>blacklist &lt;módulo&gt;</code> por cada uno de los módulos a los que se quiera aplicar esta configuración.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">blacklist ath9k
+</span></span></span></code></pre></div><p>Realmente, el nombe del fichero dentro del directorio /etc/modprobe.d/ no es relevante. De esta manera, si hay una lista más o menos amplia de módulos cuya carga automática en el arranque se quiere evitar se puede crear un fichero /etc/modprobe.d/blacklis.conf y en él añadir una línea con el contenido <code>blacklist &lt;módulo&gt;</code> por cada uno de los módulos a los que se quiera aplicar esta configuración.</p>
 <h2 id="carga-el-módulo-loop-obtén-información-de-qué-es-y-para-qué-sirve-lista-el-contenido-de-sysmodulesloopparameters-y-configura-el-equipo-para-que-se-puedan-cargar-como-máximo-12-dispositvos-loop-la-próxima-vez-que-se-arranque">Carga el módulo loop, obtén información de qué es y para qué sirve. Lista el contenido de /sys/modules/loop/parameters y configura el equipo para que se puedan cargar como máximo 12 dispositvos loop la próxima vez que se arranque</h2>
 <p>Tras cargar el módulo loop con el comando <code>modprobe</code> se puede comprobar que, efectivamente, este módulo está cargado con el comando <code>lsmod</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo modprobe loop
-</span></span><span style="display:flex;"><span>sudo lsmod | grep loop
-</span></span><span style="display:flex;"><span>loop                   32768  0
-</span></span></code></pre></div><p>El comando <code>modinfo</code> devuelve cierta infomación sobre el módulo <code>loop</code>. Se trata del módulo que gestiona los dispositivos de tipo loop en el sistema. Este módulo no tiene dependencias y tiene tres parámetros: <code>max_loop</code>, que indica el número máximo de dispositivos de tipo loop que se pueden habilitar en el equipo, <code>max_part</code>, que indica el número máximo de particiones que puede tener cada uno de estos dispositivos y <code>hw_queue_depth</code>, que indica la profundida de la cola de cada dispositivo y que, por defecto, tiene un valor de 128.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo modinfo loop
-</span></span><span style="display:flex;"><span>filename:       /lib/modules/6.1.0-26-amd64/kernel/drivers/block/loop.ko
-</span></span><span style="display:flex;"><span>alias:          devname:loop-control
-</span></span><span style="display:flex;"><span>alias:          char-major-10-237
-</span></span><span style="display:flex;"><span>alias:          block-major-7-*
-</span></span><span style="display:flex;"><span>license:        GPL
-</span></span><span style="display:flex;"><span>depends:
-</span></span><span style="display:flex;"><span>retpoline:      Y
-</span></span><span style="display:flex;"><span>intree:         Y
-</span></span><span style="display:flex;"><span>name:           loop
-</span></span><span style="display:flex;"><span>vermagic:       6.1.0-26-amd64 SMP preempt mod_unload modversions
-</span></span><span style="display:flex;"><span>sig_id:         PKCS#7
-</span></span><span style="display:flex;"><span>signer:         Debian Secure Boot CA
-</span></span><span style="display:flex;"><span>sig_key:        32:A0:28:7F:84:1A:03:6F:A3:93:C1:E0:65:C4:3A:E6:B2:42:26:43
-</span></span><span style="display:flex;"><span>sig_hashalgo:   sha256
-</span></span><span style="display:flex;"><span>signature:      9A:13:9A:8A:39:48:35:B1:0C:B1:32:B9:F6:58:16:95:98:7C:1A:8F:
-</span></span><span style="display:flex;"><span>		37:7A:44:CB:6B:B6:8D:80:B6:60:83:B3:4B:9E:0F:AB:62:50:12:0A:
-</span></span><span style="display:flex;"><span>		5F:4D:FB:56:7F:02:DA:3E:93:7F:5C:EB:9A:7F:E7:DB:37:BD:BC:2F:
-</span></span><span style="display:flex;"><span>		47:78:64:8C:52:F0:EE:DE:8A:2E:56:FB:6F:64:40:EC:95:FB:41:76:
-</span></span><span style="display:flex;"><span>		AE:28:8F:61:39:F9:20:7B:F3:EA:B5:D7:4A:11:DA:BD:CF:A1:33:1D:
-</span></span><span style="display:flex;"><span>		2B:9D:F8:99:1F:12:09:6F:1F:B2:32:79:E4:A6:2C:3A:09:B7:9B:02:
-</span></span><span style="display:flex;"><span>		13:25:0D:0F:71:38:4D:2B:31:10:78:4E:9E:0B:03:8C:6A:1D:93:FB:
-</span></span><span style="display:flex;"><span>		1F:2F:DC:35:CF:10:26:C2:40:E0:CA:50:D2:1F:93:EA:8A:5C:48:42:
-</span></span><span style="display:flex;"><span>		E7:D5:B3:F7:7C:15:95:49:B3:13:E6:89:D6:E9:44:C3:6D:BF:AF:CF:
-</span></span><span style="display:flex;"><span>		6F:A2:72:18:2C:69:6E:60:AA:E6:1A:5E:B7:D2:AC:68:D6:4D:66:8B:
-</span></span><span style="display:flex;"><span>		06:2E:E3:F0:D1:C5:CF:9C:7C:69:FD:5E:3A:F0:64:CE:6C:CF:88:F1:
-</span></span><span style="display:flex;"><span>		62:AB:9B:B8:6D:B9:7A:87:84:7D:0A:4A:AF:CC:F3:E1:4D:15:C2:6A:
-</span></span><span style="display:flex;"><span>		43:98:8D:58:68:5A:36:5E:03:EF:0F:60:46:AC:57:C3
-</span></span><span style="display:flex;"><span>parm:           max_loop:Maximum number of loop devices
-</span></span><span style="display:flex;"><span>parm:           max_part:Maximum number of partitions per loop device (int)
-</span></span><span style="display:flex;"><span>parm:           hw_queue_depth:Queue depth for each hardware queue. Default: 128
-</span></span></code></pre></div><p>Estos parámetros también se pueden acceder listando el contenido del dierctorio /sys/module/loop/parameters/.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ls -l /sys/module/loop/parameters/
-</span></span><span style="display:flex;"><span>total 0
-</span></span><span style="display:flex;"><span>-r--r--r-- 1 root root 4096 oct 24 14:23 hw_queue_depth
-</span></span><span style="display:flex;"><span>-r--r--r-- 1 root root 4096 oct 24 14:23 max_loop
-</span></span><span style="display:flex;"><span>-r--r--r-- 1 root root 4096 oct 24 14:23 max_part
-</span></span></code></pre></div><p>El parámetro <code>max_loop</code> del módulo loop define la cantidad de dispositivos de tipo loop que se pueden montar de forma simultánea en el equipo. En este caso, tiene un valor de 8.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo cat /sys/module/loop/parameters/max_loop
-</span></span><span style="display:flex;"><span>8
-</span></span></code></pre></div><p>Para que se puedan montar, como máximo, 12 dispositivos de tipo loop, este parámetro debe tomar el valor <code>12</code>. Para cambiar el valor de este parámetro y, además, hacerlo de forma persistente, se debe usar un fichero de configuración almacenado en el directorio /etc/modprobe.d. En él, se crea un fichero con el mismo nombre del módulo y la extensión .conf y que debe tener como contendio el nuevo valor del parámetro.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nano /etc/modprobe.d/loop.conf
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>options loop max_loop=12
-</span></span></code></pre></div><p>Para que esta modificación sea efectiva, se debe actualizar el initramfs y reiniciar el equipo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo update-initramfs -u
-</span></span><span style="display:flex;"><span>sudo reboot
-</span></span></code></pre></div><p>Tras reiniciar el contenido del fichero en el que se almacena la información de este parámtro se ha actualizado.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo cat /sys/module/loop/parameters/max_loop
-</span></span><span style="display:flex;"><span>12
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo modprobe loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo lsmod | grep loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">loop                   32768  0
+</span></span></span></code></pre></div><p>El comando <code>modinfo</code> devuelve cierta infomación sobre el módulo <code>loop</code>. Se trata del módulo que gestiona los dispositivos de tipo loop en el sistema. Este módulo no tiene dependencias y tiene tres parámetros: <code>max_loop</code>, que indica el número máximo de dispositivos de tipo loop que se pueden habilitar en el equipo, <code>max_part</code>, que indica el número máximo de particiones que puede tener cada uno de estos dispositivos y <code>hw_queue_depth</code>, que indica la profundida de la cola de cada dispositivo y que, por defecto, tiene un valor de 128.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo modinfo loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">filename:       /lib/modules/6.1.0-26-amd64/kernel/drivers/block/loop.ko
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">alias:          devname:loop-control
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">alias:          char-major-10-237
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">alias:          block-major-7-*
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">license:        GPL
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">depends:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">retpoline:      Y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">intree:         Y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">name:           loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vermagic:       6.1.0-26-amd64 SMP preempt mod_unload modversions
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sig_id:         PKCS#7
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">signer:         Debian Secure Boot CA
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sig_key:        32:A0:28:7F:84:1A:03:6F:A3:93:C1:E0:65:C4:3A:E6:B2:42:26:43
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sig_hashalgo:   sha256
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">signature:      9A:13:9A:8A:39:48:35:B1:0C:B1:32:B9:F6:58:16:95:98:7C:1A:8F:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		37:7A:44:CB:6B:B6:8D:80:B6:60:83:B3:4B:9E:0F:AB:62:50:12:0A:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		5F:4D:FB:56:7F:02:DA:3E:93:7F:5C:EB:9A:7F:E7:DB:37:BD:BC:2F:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		47:78:64:8C:52:F0:EE:DE:8A:2E:56:FB:6F:64:40:EC:95:FB:41:76:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		AE:28:8F:61:39:F9:20:7B:F3:EA:B5:D7:4A:11:DA:BD:CF:A1:33:1D:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		2B:9D:F8:99:1F:12:09:6F:1F:B2:32:79:E4:A6:2C:3A:09:B7:9B:02:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		13:25:0D:0F:71:38:4D:2B:31:10:78:4E:9E:0B:03:8C:6A:1D:93:FB:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		1F:2F:DC:35:CF:10:26:C2:40:E0:CA:50:D2:1F:93:EA:8A:5C:48:42:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		E7:D5:B3:F7:7C:15:95:49:B3:13:E6:89:D6:E9:44:C3:6D:BF:AF:CF:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		6F:A2:72:18:2C:69:6E:60:AA:E6:1A:5E:B7:D2:AC:68:D6:4D:66:8B:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		06:2E:E3:F0:D1:C5:CF:9C:7C:69:FD:5E:3A:F0:64:CE:6C:CF:88:F1:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		62:AB:9B:B8:6D:B9:7A:87:84:7D:0A:4A:AF:CC:F3:E1:4D:15:C2:6A:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		43:98:8D:58:68:5A:36:5E:03:EF:0F:60:46:AC:57:C3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">parm:           max_loop:Maximum number of loop devices
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">parm:           max_part:Maximum number of partitions per loop device (int)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">parm:           hw_queue_depth:Queue depth for each hardware queue. Default: 128
+</span></span></span></code></pre></div><p>Estos parámetros también se pueden acceder listando el contenido del dierctorio /sys/module/loop/parameters/.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo ls -l /sys/module/loop/parameters/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-r--r--r-- 1 root root 4096 oct 24 14:23 hw_queue_depth
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-r--r--r-- 1 root root 4096 oct 24 14:23 max_loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-r--r--r-- 1 root root 4096 oct 24 14:23 max_part
+</span></span></span></code></pre></div><p>El parámetro <code>max_loop</code> del módulo loop define la cantidad de dispositivos de tipo loop que se pueden montar de forma simultánea en el equipo. En este caso, tiene un valor de 8.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo cat /sys/module/loop/parameters/max_loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">8
+</span></span></span></code></pre></div><p>Para que se puedan montar, como máximo, 12 dispositivos de tipo loop, este parámetro debe tomar el valor <code>12</code>. Para cambiar el valor de este parámetro y, además, hacerlo de forma persistente, se debe usar un fichero de configuración almacenado en el directorio /etc/modprobe.d. En él, se crea un fichero con el mismo nombre del módulo y la extensión .conf y que debe tener como contendio el nuevo valor del parámetro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">nano /etc/modprobe.d/loop.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">options loop max_loop=12
+</span></span></span></code></pre></div><p>Para que esta modificación sea efectiva, se debe actualizar el initramfs y reiniciar el equipo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo update-initramfs -u
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo reboot
+</span></span></span></code></pre></div><p>Tras reiniciar el contenido del fichero en el que se almacena la información de este parámtro se ha actualizado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo cat /sys/module/loop/parameters/max_loop
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">12
+</span></span></span></code></pre></div><hr>
 <h1 id="ejercicios-de-modificación-de-parámetros-del-kernel">Ejercicios de modificación de parámetros del kernel</h1>
 <h2 id="deshabilita-apparmor-en-el-arranque">Deshabilita apparmor en el arranque</h2>
 <p>AppArmor es un servicio que limita la cantidad de recursos a los que puede tener acceso un determinado programa. Esta limitación se establece a través de perfiles que se cargan en el kernel</p>
 <p>Como otros muchos servicios en Debian, AppArmor se puede gestionar a través del comando <code>systemctl</code>. Así, para deshabilitar apparmor en el arranque se puede ejecutar el siguiente comando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo systemctl disable apparmor
-</span></span><span style="display:flex;"><span>Synchronizing state of apparmor.service with SysV service script with /lib/systemd/systemd-sysv-install.
-</span></span><span style="display:flex;"><span>Executing: /lib/systemd/systemd-sysv-install disable apparmor
-</span></span><span style="display:flex;"><span>Removed &#34;/etc/systemd/system/sysinit.target.wants/apparmor.service&#34;.
-</span></span></code></pre></div><h2 id="deshabilita-si-es-posible-el-kernel-mode-setting-ksm-de-la-tarjeta-gráfica">Deshabilita si es posible el Kernel Mode Setting (KSM) de la tarjeta gráfica</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo systemctl disable apparmor
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Synchronizing state of apparmor.service with SysV service script with /lib/systemd/systemd-sysv-install.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Executing: /lib/systemd/systemd-sysv-install disable apparmor
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Removed &#34;/etc/systemd/system/sysinit.target.wants/apparmor.service&#34;.
+</span></span></span></code></pre></div><h2 id="deshabilita-si-es-posible-el-kernel-mode-setting-ksm-de-la-tarjeta-gráfica">Deshabilita si es posible el Kernel Mode Setting (KSM) de la tarjeta gráfica</h2>
 <p>KSM (Kernel Samepage Merging) es una característica de ahorro de memoia habilitada con el parámetro <code>CONFIG_KSM=y</code> del kernel incluida desde el kernel 2.6.32. Esta característica, usada por KVM, permite a varias máquinas virtuales compartir páginas de memoria idénticas. Estas páginas de memoria compartidas suelen ser librerías comunes a todas las máquinas u otros tipos de información idéntica frecuentemente usada por varias máquinas.</p>
 <p>Algunos de los parámetros del kernel, incluidos alguno relacionados con KSM, se pueden modificar en el directorio /proc/sys pero estas modificaciones no son persistentes a reinicios.</p>
 <p>Estos parámetros también se pueden gestionar usando el comando <code>sysctl</code>. Además, este comando cuenta con la peculiaridad de que permite modificar los valores del kernel durante la ejecución, es decir, en caliente. Los parámetros que puede gestiona el comando <code>sysctl</code> están listados en el directorio /proc/sys/.</p>
 <p>En este caso, no es posible deshabilitar la característica KSM del kernel puesto que no está incluída en el kernel de este equipo. Al buscar los parámetros relacionados con KSM en el directorio /proc/sys no se muestra ninguno disponible.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo find /proc/sys -iname &#39;*ksm*&#39;
-</span></span></code></pre></div><h2 id="cambia-provisionalmente-la-swappiness-para-que-la-swap-de-tu-equipo-se-active-cuando-se-use-más-de-un-90-de-la-ram">Cambia provisionalmente la swappiness para que la swap de tu equipo se active cuando se use más de un 90% de la RAM</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo find /proc/sys -iname &#39;*ksm*&#39;
+</span></span></span></code></pre></div><h2 id="cambia-provisionalmente-la-swappiness-para-que-la-swap-de-tu-equipo-se-active-cuando-se-use-más-de-un-90-de-la-ram">Cambia provisionalmente la swappiness para que la swap de tu equipo se active cuando se use más de un 90% de la RAM</h2>
 <p>Swappiness también es una característica del kernel que se puede modificar. El valor de este parámetro se almacena en el directorio /proc/sys. Para encontrar dónde se alamacena este parámetro se puede hacer una búsqueda en este directorio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo find /proc/sys -iname &#39;*swappiness*&#39;
-</span></span><span style="display:flex;"><span>/proc/sys/vm/swappiness
-</span></span></code></pre></div><p>Se puede conocer el valor que tiene este parámetro del kernel consultado el contenido de este fichero.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ cat /proc/sys/vm/swappiness
-</span></span><span style="display:flex;"><span>60
-</span></span></code></pre></div><p>Con esta configuración, la swap del equipo se activa cuando se usa más del 60% de la RAM. Para modificar este valor se puede usar el comando <code>sysctl</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo sysctl vm.swappiness=90
-</span></span><span style="display:flex;"><span>vm.swappiness = 90
-</span></span></code></pre></div><p>Tras ejecutar este comando, el valor de este parámetro del kernel se ha modificado en el fichero /proc/sys.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ cat /proc/sys/vm/swappiness
-</span></span><span style="display:flex;"><span>90
-</span></span></code></pre></div><p>Pero esta configuración no es persistente al reinicio y sólo se aplica hasta el próximo apagado de la máquina.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo find /proc/sys -iname &#39;*swappiness*&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/vm/swappiness
+</span></span></span></code></pre></div><p>Se puede conocer el valor que tiene este parámetro del kernel consultado el contenido de este fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ cat /proc/sys/vm/swappiness
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">60
+</span></span></span></code></pre></div><p>Con esta configuración, la swap del equipo se activa cuando se usa más del 60% de la RAM. Para modificar este valor se puede usar el comando <code>sysctl</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo sysctl vm.swappiness=90
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vm.swappiness = 90
+</span></span></span></code></pre></div><p>Tras ejecutar este comando, el valor de este parámetro del kernel se ha modificado en el fichero /proc/sys.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ cat /proc/sys/vm/swappiness
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">90
+</span></span></span></code></pre></div><p>Pero esta configuración no es persistente al reinicio y sólo se aplica hasta el próximo apagado de la máquina.</p>
 <h2 id="haz-que-el-cambio-de-la-swappiness-sea-permanente">Haz que el cambio de la swappiness sea permanente</h2>
 <p>Existen varias formas de hacer persistente al reinicio esta configuración. Una de las más comunes consiste en utilizar el fichero /etc/sysctl.conf. En este fichero se pueden configurar los valores de los parámetros del kernel que se cargan en cada reinicio del equipo.</p>
 <p>En este caso, se puede añadir el nuevo valor de este parámetro a este fichero para hacer esta configuración permanente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ echo &#34;vm.swappiness=90&#34; &gt;&gt; /etc/sysctl.conf
-</span></span></code></pre></div><p>Tras ejecutar este comando, este parámetro del kernel toma su nuevo valor en el fichero de configuración de sysctl.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ cat /etc/sysctl.conf | grep &#39;swappiness&#39;
-</span></span><span style="display:flex;"><span>vm.swappiness=90
-</span></span></code></pre></div><p>Para que esta nueva configuración sea efectiva hay que volver a carga el fichero sysctl.conf.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo sysctl -p
-</span></span><span style="display:flex;"><span>vm.swappiness = 90
-</span></span></code></pre></div><p>La salida del comando muestra la lista de parámetros que se han modificado al cargar el nuevo fichero de configuración de parámetros del kernel. En este caso, sólo se muestar el nuevo valo de la swappiness.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ echo &#34;vm.swappiness=90&#34; &gt;&gt; /etc/sysctl.conf
+</span></span></span></code></pre></div><p>Tras ejecutar este comando, este parámetro del kernel toma su nuevo valor en el fichero de configuración de sysctl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ cat /etc/sysctl.conf | grep &#39;swappiness&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vm.swappiness=90
+</span></span></span></code></pre></div><p>Para que esta nueva configuración sea efectiva hay que volver a carga el fichero sysctl.conf.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo sysctl -p
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vm.swappiness = 90
+</span></span></span></code></pre></div><p>La salida del comando muestra la lista de parámetros que se han modificado al cargar el nuevo fichero de configuración de parámetros del kernel. En este caso, sólo se muestar el nuevo valo de la swappiness.</p>
 <h2 id="muestra-el-valor-del-bit-de-forward-para-ipv6">Muestra el valor del bit de forward para IPv6</h2>
 <p>El bit de forward para las redes IPv6 se puede configurar para cada una de las interfaces de red de forma independiente o de forma general para todas ellas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ find /proc/sys -iname &#39;forwarding&#39; | grep ipv6
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/all/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/br-intra/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/br-intra2/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/br0/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/default/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/enp2s0/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/lo/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/lxcbr0/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/veth0zlkeI/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vethigCamC/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vethj7iUWu/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr0/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr1/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr2/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr3/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr4/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr5/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/virbr6/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet0/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet1/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet16/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet17/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet18/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet19/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet2/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet20/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/vnet21/forwarding
-</span></span><span style="display:flex;"><span>/proc/sys/net/ipv6/conf/wlp4s0/forwarding
-</span></span></code></pre></div><p>Para conocer si el bit de forward de cada una de estas interfaces está activado se puede consultar el valor de cada uno de estos ficheros, que será 0 si el bit no está activado o 1 si el bit está activado. En este caso, por ejemplo, el bit de forward para las interfaces IPv6 no está activado.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ cat $(find /proc/sys -iname &#39;forwarding&#39; | grep ipv6)
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span><span style="display:flex;"><span>0
-</span></span></code></pre></div><h2 id="deshabilita-completamente-las-magic-sysrq-en-el-arranque-y-vuelve-a-habilitarlas-después-de-reiniciar">Deshabilita completamente las Magic Sysrq en el arranque y vuelve a habilitarlas después de reiniciar</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ find /proc/sys -iname &#39;forwarding&#39; | grep ipv6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/all/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/br-intra/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/br-intra2/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/br0/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/default/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/enp2s0/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/lo/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/lxcbr0/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/veth0zlkeI/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vethigCamC/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vethj7iUWu/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr0/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr1/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr2/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr3/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr4/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr5/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/virbr6/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet0/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet1/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet16/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet17/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet18/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet19/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet2/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet20/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/vnet21/forwarding
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/proc/sys/net/ipv6/conf/wlp4s0/forwarding
+</span></span></span></code></pre></div><p>Para conocer si el bit de forward de cada una de estas interfaces está activado se puede consultar el valor de cada uno de estos ficheros, que será 0 si el bit no está activado o 1 si el bit está activado. En este caso, por ejemplo, el bit de forward para las interfaces IPv6 no está activado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ cat $(find /proc/sys -iname &#39;forwarding&#39; | grep ipv6)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0
+</span></span></span></code></pre></div><h2 id="deshabilita-completamente-las-magic-sysrq-en-el-arranque-y-vuelve-a-habilitarlas-después-de-reiniciar">Deshabilita completamente las Magic Sysrq en el arranque y vuelve a habilitarlas después de reiniciar</h2>
 <p>Las Magic Sysrq es una combinación de teclas &ldquo;mágica&rdquo; a las que el kernel responde independientemente de lo que esté haciendo siempre y cuando no esté bloqueado. Esta combinación de teclas se activa a través del parámetro del kernel <code>CONFIG_MAGIC_SYSRQ</code>. El fichero /proc/sys/kernel/sysrq contiene el valor de este parámetro.</p>
 <p>En este fichero se puede configura uno de los siguientes valores:</p>
 <ul>
@@ -1293,37 +1293,37 @@
 <li>128 =  0x80 - allow reboot/poweroff</li>
 <li>256 = 0x100 - allow nicing of all RT tasks</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ cat /proc/sys/kernel/sysrq
-</span></span><span style="display:flex;"><span>438
-</span></span></code></pre></div><p>Actualmente, el valor de este parámtro en el kernel es <code>438</code>. Es decir, esta combinación de teclas está configurada de manera que permite las características habilitadas por los valores <code>256</code>, <code>128</code>, <code>32</code>, <code>16</code>, <code>4</code> y <code>2</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ cat /proc/sys/kernel/sysrq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">438
+</span></span></span></code></pre></div><p>Actualmente, el valor de este parámtro en el kernel es <code>438</code>. Es decir, esta combinación de teclas está configurada de manera que permite las características habilitadas por los valores <code>256</code>, <code>128</code>, <code>32</code>, <code>16</code>, <code>4</code> y <code>2</code>.</p>
 <p>Para deshabilitar las Magic Sysrq se puede cambiar el valor de este fichero a 0. Sin embargo, para que esta configuración sea persistente a los reinicios de la máquina, este parámetro se debe espcifica en el fichero /etc/sysctl.conf.</p>
 <p>En el fichero /etc/sysctl.conf está especificado el mismo valor que en el fichero /proc/sys/kernel/sysrq aunque esta líea está comentada.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo cat /etc/sysctl.conf | grep sysrq
-</span></span><span style="display:flex;"><span># 0<span style="color:#9ece6a;font-weight:bold">=</span>disable, 1<span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">enable</span> all, &gt;1 bitmask of sysrq functions
-</span></span><span style="display:flex;"><span># See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
-</span></span><span style="display:flex;"><span>#kernel.sysrq<span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#e0af68">438</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo cat /etc/sysctl.conf | grep sysrq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> <span style="color:#40ffff">0</span>=disable, <span style="color:#40ffff">1</span>=<span style="color:#24909d">enable</span> all, &gt;1 bitmask of sysrq functions
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>kernel.sysrq=<span style="color:#3677a9">438</span>
 </span></span></code></pre></div><p>Para deshabilitar esta característica del kernel se puede editar este fichero, descomentar esta línea y sustituir el valor <code>438</code> por <code>0</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo cat /etc/sysctl.conf | grep sysrq
-</span></span><span style="display:flex;"><span># 0<span style="color:#9ece6a;font-weight:bold">=</span>disable, 1<span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">enable</span> all, &gt;1 bitmask of sysrq functions
-</span></span><span style="display:flex;"><span># See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
-</span></span><span style="display:flex;"><span>kernel.sysrq=0
-</span></span></code></pre></div><p>Para que esta modificación sea efectiva, hay que cargar la nueva configuración del fichero.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo sysctl -p
-</span></span><span style="display:flex;"><span>kernel.sysrq = 0
-</span></span><span style="display:flex;"><span>vm.swappiness = 90
-</span></span></code></pre></div><p>Tras reiniciar el equipo se puede devolver la configuración al valor por defecto en el fichero de configuración.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo cat /etc/sysctl.conf | grep sysrq
-</span></span><span style="display:flex;"><span># 0<span style="color:#9ece6a;font-weight:bold">=</span>disable, 1<span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">enable</span> all, &gt;1 bitmask of sysrq functions
-</span></span><span style="display:flex;"><span># See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
-</span></span><span style="display:flex;"><span>kernel.sysrq=438
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>❯ sudo sysctl -p
-</span></span><span style="display:flex;"><span>kernel.sysrq = 438
-</span></span><span style="display:flex;"><span>vm.swappiness = 90
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>❯ cat /proc/sys/kernel/sysrq
-</span></span><span style="display:flex;"><span>438
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo cat /etc/sysctl.conf | grep sysrq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> <span style="color:#40ffff">0</span>=disable, <span style="color:#40ffff">1</span>=<span style="color:#24909d">enable</span> all, &gt;1 bitmask of sysrq functions
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kernel.sysrq=0
+</span></span></span></code></pre></div><p>Para que esta modificación sea efectiva, hay que cargar la nueva configuración del fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo sysctl -p
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">kernel.sysrq = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vm.swappiness = 90
+</span></span></span></code></pre></div><p>Tras reiniciar el equipo se puede devolver la configuración al valor por defecto en el fichero de configuración.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo cat /etc/sysctl.conf | grep sysrq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> <span style="color:#40ffff">0</span>=disable, <span style="color:#40ffff">1</span>=<span style="color:#24909d">enable</span> all, &gt;1 bitmask of sysrq functions
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kernel.sysrq=438
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">❯ sudo sysctl -p
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">kernel.sysrq = 438
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">vm.swappiness = 90
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">❯ cat /proc/sys/kernel/sysrq
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">438
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1568,82 +1568,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
-      Comandos para la programación de tareas
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
-      Trabajo con el kernel de Linux
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
-      Configuración de switches en GNS3
+    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
+      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
     </a>
   </h4>
   
@@ -1666,8 +1592,82 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+      Ejemplos de uso del comando parted en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/fundamentos-hardware/"
+            class="ms-1"
+            >Fundamentos hardware
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
+      Ejemplos de uso de comandos básicos en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
     Leer
   </a>
 </div>
@@ -1773,9 +1773,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1783,9 +1783,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

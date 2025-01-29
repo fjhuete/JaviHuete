@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -968,9 +968,9 @@
             class="img img-fluid img-center"
             width="1282"
             height="1026"
-            src="/images/redes/practica12/img2_hu762646669016008146.png"
+            src="/images/redes/practica12/img2_hu_4701b056d71a1cd2.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img2_hu762646669016008146.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img2_hu_4701b056d71a1cd2.png'" />
       
     
 
@@ -1081,9 +1081,9 @@
             class="img img-fluid img-center"
             width="899"
             height="218"
-            src="/images/redes/practica12/img5_hu16672841260176435535.png"
+            src="/images/redes/practica12/img5_hu_4ecc2c972df10f33.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img5_hu16672841260176435535.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img5_hu_4ecc2c972df10f33.png'" />
       
     
 
@@ -1188,9 +1188,9 @@
             class="img img-fluid img-center"
             width="899"
             height="263"
-            src="/images/redes/practica12/img6_hu4134863278601637670.png"
+            src="/images/redes/practica12/img6_hu_959233de46d1c402.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img6_hu4134863278601637670.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img6_hu_959233de46d1c402.png'" />
       
     
 
@@ -1295,9 +1295,9 @@
             class="img img-fluid img-center"
             width="746"
             height="476"
-            src="/images/redes/practica12/img7_hu11765489585194986019.png"
+            src="/images/redes/practica12/img7_hu_3fc72e06711b0673.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img7_hu11765489585194986019.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img7_hu_3fc72e06711b0673.png'" />
       
     
 
@@ -1313,21 +1313,21 @@
 <h1 id="instalación-y-configuración-del-servidor-web">Instalación y configuración del servidor web</h1>
 <p>Para instalar el servidor web, ya sea Nginx o Apache, en la máquina Debian 11 del escenario de GNS3 es necesario que se pueda conectar a Internet. Con este objetivo se puede añadir de forma provisional una nube NAT al escenario que permita la conexión entra la máquina Debian e Internet, de manera que se puedan actualizar los paquetes instalados y descargar nuevos.</p>
 <p>Una vez que la máquina está incorporada al escenario y conectada a la nube nat, se puede arrancar y acceder a ella. Lo primero que se debe hacer es establecer una configuración TCP/IP que le permita conectarse a Internet. En este caso, como la nube NAT cuenta con un servidor DHCP se puede hacer usando el comando dhclient:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo dhclient
-</span></span></code></pre></div><p>Con la conexión a Internet configurada y establecida es necesario actualizar la paquetería de la máquina antes de proceder a instalar cualquier paquete nuevo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update &amp;&amp; sudo apt upgrade
-</span></span><span style="display:flex;"><span>sudo apt install nginx
-</span></span></code></pre></div><p>Con el sistema actualizado, se puede instalar el servidor web elegido, por ejemplo, Nginx</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install nginx
-</span></span></code></pre></div><p>o Apache</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install apache2
-</span></span></code></pre></div><p>Para comprobar que tras el proceso de instalación el servicio de Nginx o Apache se arranca de forma automática se puede ejecutar el comando correspondiente</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl status nginx.service
-</span></span><span style="display:flex;"><span>sudo systemctl status apache2.service
-</span></span></code></pre></div><p>Si no se ha arrancado, se puede hacer con el comando</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl start nginx
-</span></span><span style="display:flex;"><span>sudo systemctl start apache2
-</span></span></code></pre></div><p>Una vez que se ha Nginx está funcionando en el servidor se debe configurar la dirección IP estática de esta máquina a la que el resto de ordenadores deberá acceder para consultar el contenido alojado en él. En este caso se usa la IP 10.0.13.2. Esta información se debe indicar en el fichero de configuración /etc/network/interfaces:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo dhclient
+</span></span></span></code></pre></div><p>Con la conexión a Internet configurada y establecida es necesario actualizar la paquetería de la máquina antes de proceder a instalar cualquier paquete nuevo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update &amp;&amp; sudo apt upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install nginx
+</span></span></span></code></pre></div><p>Con el sistema actualizado, se puede instalar el servidor web elegido, por ejemplo, Nginx</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install nginx
+</span></span></span></code></pre></div><p>o Apache</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install apache2
+</span></span></span></code></pre></div><p>Para comprobar que tras el proceso de instalación el servicio de Nginx o Apache se arranca de forma automática se puede ejecutar el comando correspondiente</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl status nginx.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl status apache2.service
+</span></span></span></code></pre></div><p>Si no se ha arrancado, se puede hacer con el comando</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start nginx
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start apache2
+</span></span></span></code></pre></div><p>Una vez que se ha Nginx está funcionando en el servidor se debe configurar la dirección IP estática de esta máquina a la que el resto de ordenadores deberá acceder para consultar el contenido alojado en él. En este caso se usa la IP 10.0.13.2. Esta información se debe indicar en el fichero de configuración /etc/network/interfaces:</p>
 
 
 
@@ -1419,9 +1419,9 @@
             class="img img-fluid img-center"
             width="786"
             height="533"
-            src="/images/redes/practica12/img8_hu14129667797755931870.png"
+            src="/images/redes/practica12/img8_hu_aaf3ebb073310dbc.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img8_hu14129667797755931870.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img8_hu_aaf3ebb073310dbc.png'" />
       
     
 
@@ -1435,8 +1435,8 @@
 
 
 <p>Tras editar el fichero /etc/network/interfaces se reinicia el servicio networking.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart networking.service
-</span></span></code></pre></div><p>Adicionalmente, como paso final de la configuración se puede añadir contenido al servidor editando el fichero /var/www/html/index.html y, si fuera necesario, añadiendo directorios y ficheros a esta estructura para crear la web.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart networking.service
+</span></span></span></code></pre></div><p>Adicionalmente, como paso final de la configuración se puede añadir contenido al servidor editando el fichero /var/www/html/index.html y, si fuera necesario, añadiendo directorios y ficheros a esta estructura para crear la web.</p>
 
           </div>
           <div class="row items-start justify-between">
@@ -1666,8 +1666,82 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-      Configuración NAT en routers Mikrotik en Openstack
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/bases-de-datos/"
+            class="ms-1"
+            >Bases de datos
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-11-24-comando-xargs/">
+      El comando xargs
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-24-comando-xargs/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
+      Configurar redes virtuales (VLAN) en bridges Linux
     </a>
   </h4>
   
@@ -1690,82 +1764,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
-      Uso de Openstack para crear un escenario de despliegue
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
-      Instalación de Debian 12 bajo LVM en Proxmox
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/fundamentos-hardware/"
-            class="ms-1"
-            >Fundamentos hardware
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+  <p class="mb-6">Este post pretende demostrar el funcionamiento y guiar en la configuración de redes virtuales en un bridge creado en una máquina Debian.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
     Leer
   </a>
 </div>
@@ -1871,9 +1871,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1881,9 +1881,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

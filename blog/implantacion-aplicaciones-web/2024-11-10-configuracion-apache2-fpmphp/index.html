@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -870,25 +870,25 @@
 </details>
 
             <p>Primero se comprueba si el módulo PHP de Apache2 está instalado y se desinstala.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>apache2ctl -M | grep php
-</span></span><span style="display:flex;"><span>a2dismod php8.2
-</span></span></code></pre></div><p>Para instalar fpm-php</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>apt install php8.2-fpm php8.2
-</span></span></code></pre></div><p>Para que Apache2 use fpm-php se activan los módulos <code>proxy_fcgi</code> y <code>setenvif</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>a2enmod proxy_fcgi setenvif
-</span></span></code></pre></div><p>Se puede configurar el servidor de aplicaciones en todos el host virtual en /etc/apache2/sites-available/<host>.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Por TCP
-</span></span><span style="display:flex;"><span>    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/&lt;host&gt;/$1
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>#Por socket UNIX
-</span></span><span style="display:flex;"><span>    ProxyPassMatch ^/(.*\.php)$ unix:/run/php/php8.2-fpm.sock|fcgi://127.0.0.1/var/www/&lt;host&gt;
-</span></span></code></pre></div><p>O para todos los hosts del servidor web en el fichero /etc/apache2/conf-available</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Por TCP
-</span></span><span style="display:flex;"><span>    SetHandler &#34;proxy:fcgi://127.0.0.1:9000&#34;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>#Por socket UNIX
-</span></span><span style="display:flex;"><span>    SetHandler &#34;proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost&#34;
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apache2ctl -M | grep php
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">a2dismod php8.2
+</span></span></span></code></pre></div><p>Para instalar fpm-php</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install php8.2-fpm php8.2
+</span></span></span></code></pre></div><p>Para que Apache2 use fpm-php se activan los módulos <code>proxy_fcgi</code> y <code>setenvif</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">a2enmod proxy_fcgi setenvif
+</span></span></span></code></pre></div><p>Se puede configurar el servidor de aplicaciones en todos el host virtual en /etc/apache2/sites-available/<host>.conf</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>Por TCP
+</span></span><span style="display:flex;"><span><span style="color:#ccc">    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/&lt;host&gt;/$1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span>Por socket UNIX
+</span></span><span style="display:flex;"><span><span style="color:#ccc">    ProxyPassMatch ^/(.*\.php)$ unix:/run/php/php8.2-fpm.sock|fcgi://127.0.0.1/var/www/&lt;host&gt;
+</span></span></span></code></pre></div><p>O para todos los hosts del servidor web en el fichero /etc/apache2/conf-available</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>Por TCP
+</span></span><span style="display:flex;"><span><span style="color:#ccc">    SetHandler &#34;proxy:fcgi://127.0.0.1:9000&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>Por socket UNIX
+</span></span><span style="display:flex;"><span><span style="color:#ccc">    SetHandler &#34;proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost&#34;
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1109,8 +1109,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
-      Qué es ARP y cómo funciona
+    <a href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
+      Migración de aplicaciones web PHP al entorno de producción
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
+      Instalación de Wireshark y GNS3 en Debian 12 y Windows 10
     </a>
   </h4>
   
@@ -1133,8 +1170,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+  <p class="mb-6">Wireshark y GNS3 son dos programas fundamentales para el trabajo de un administrador de redes pero instalarlos puede suponer algunos desafíos. Aquí se incluye una guía de instalación de Wireshark y GNS3 en Windows 10 y en Debian 12</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
     Leer
   </a>
 </div>
@@ -1146,45 +1183,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
-      Sistemas operativos inmutables
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar. En este post se analizan algunos de estos sistemas operativos y se valoran sus ventajas e inconvenientes.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
-      Gestión de redes en Openstack
+    <a href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+      Instalación de WordPress en Rocky Linux 9
     </a>
   </h4>
   
@@ -1207,8 +1207,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
+  <p class="mb-6"><p>En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache <code>httpd</code> y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
     Leer
   </a>
 </div>
@@ -1314,9 +1314,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1324,9 +1324,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

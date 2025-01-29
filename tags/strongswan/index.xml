@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StrongSwan on Javi Huete</title>
+    <link>/tags/strongswan/</link>
+    <description>Recent content in StrongSwan on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/strongswan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de una VPN de acceso remoto con IPSec</title>
+      <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/</guid>
+      <description>&lt;p&gt;Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

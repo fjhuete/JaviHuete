@@ -1,0 +1,1911 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Recolección centralizada de logs de sistema mediante jouranld</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Recolección centralizada de logs de sistema mediante jouranld" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/" />
+
+
+<meta name="twitter:title" content="Recolección centralizada de logs de sistema mediante jouranld" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Recolección centralizada de logs de sistema mediante jouranld
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              January 27, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-de-journald-usando-http">Configuración de journald usando HTTP</a>
+      <ol>
+        <li><a href="#configuración-del-cliente">Configuración del cliente</a></li>
+        <li><a href="#configuración-del-servidor">Configuración del servidor</a></li>
+      </ol>
+    </li>
+    <li><a href="#configuración-de-journald-usando-https">Configuración de journald usando HTTPS</a>
+      <ol>
+        <li><a href="#creación-y-firma-de-certificados">Creación y firma de certificados</a></li>
+        <li><a href="#configuración-del-servidor-1">Configuración del servidor</a></li>
+        <li><a href="#configuración-de-los-clientes">Configuración de los clientes</a></li>
+        <li><a href="#comprobación-del-funcionamiento">Comprobación del funcionamiento</a></li>
+      </ol>
+    </li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p>
+<p>Con esta herramienta cliente y servidor establecen una comunicación usando HTTP o HTTPS para transferir los ficheros de log desde los clientes al servidor. El servidor se puede configurar en modo activo para que solicite periódicamente los logs a los clientes de la red o en modo pasivo para que reciba los logs cada vez que los clientes los envíen.</p>
+<p>En este caso, se configura un cliente y un servidor en modo activo que usan HTTP para centralizar el registro de logs de la red.</p>
+<h1 id="configuración-de-journald-usando-http">Configuración de journald usando HTTP</h1>
+<h2 id="configuración-del-cliente">Configuración del cliente</h2>
+<p>Para que un equipo de una red local pueda funcionar como cliente de un servidor de logs necesita tener instalada la utilidad <code>systemd-journal-upload</code>, que se incluye en el paquete <code>systemd-journal-remote</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install systemd-journal-remote
+</span></span></span></code></pre></div><p>En el fichero /etc/systemd/journal-upload.conf se configura la dirección IP del servidor de logs, así como el puerto de escucha del servidor para recibir los ficheros de journald de los clientes que, por defecto, es el 19532.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Upload]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">URL</span>=<span style="color:#ed9d13">http://10.0.0.157:19532</span>
+</span></span></code></pre></div><p>Para poner en funcionamiento el cliente hay que arrancar el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start systemd-journal-upload.service
+</span></span></span></code></pre></div><p>Este servicio se puede hacer persistente a los reinicios del sistema habilitando su ejecución durante el arranque.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable systemd-journal-upload.service
+</span></span></span></code></pre></div><h2 id="configuración-del-servidor">Configuración del servidor</h2>
+<p>En el servidor también hay que instalar el componente de systemd que permite centralizar el registro de logs de los equipos de la red a través de journald.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install systemd-journal-remote
+</span></span></span></code></pre></div><p>Como se puede ver en el fichero /lib/systemd/system/systemd-journal-remote.socket, el puerto de escucha configurado por defecto es el 19532.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  SPDX-License-Identifier: LGPL-2.1-or-later</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  This file is part of systemd.</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  systemd is free software; you can redistribute it and/or modify it</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  under the terms of the GNU Lesser General Public License as published by</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  the Free Software Foundation; either version 2.1 of the License, or</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  (at your option) any later version.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Description</span>=<span style="color:#ed9d13">Journal Remote Sink Socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Socket]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ListenStream</span>=<span style="color:#ed9d13">19532</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WantedBy</span>=<span style="color:#ed9d13">sockets.target</span>
+</span></span></code></pre></div><p>La configuración por defecto del servicio <code>systemd-journal-remote</code> se recoge en el fichero cat /lib/systemd/system/systemd-journal-remote.service.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  SPDX-License-Identifier: LGPL-2.1-or-later</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  This file is part of systemd.</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  systemd is free software; you can redistribute it and/or modify it</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  under the terms of the GNU Lesser General Public License as published by</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  the Free Software Foundation; either version 2.1 of the License, or</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  (at your option) any later version.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Description</span>=<span style="color:#ed9d13">Journal Remote Sink Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Documentation</span>=<span style="color:#ed9d13">man:systemd-journal-remote(8) man:journal-remote.conf(5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Requires</span>=<span style="color:#ed9d13">systemd-journal-remote.socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecStart</span>=<span style="color:#ed9d13">/lib/systemd/systemd-journal-remote --listen-https=-3 --output=/var/log/journal/remote/</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LockPersonality</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LogsDirectory</span>=<span style="color:#ed9d13">journal/remote</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">MemoryDenyWriteExecute</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">NoNewPrivileges</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateDevices</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateNetwork</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateTmp</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectProc</span>=<span style="color:#ed9d13">invisible</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectClock</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectControlGroups</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectHome</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectHostname</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelLogs</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelModules</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelTunables</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectSystem</span>=<span style="color:#ed9d13">strict</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictAddressFamilies</span>=<span style="color:#ed9d13">AF_UNIX AF_INET AF_INET6</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictNamespaces</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictRealtime</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictSUIDSGID</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">SystemCallArchitectures</span>=<span style="color:#ed9d13">native</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">User</span>=<span style="color:#ed9d13">systemd-journal-remote</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WatchdogSec</span>=<span style="color:#ed9d13">3min</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># If there are many split up journal files we need a lot of fds to access them</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># all in parallel.</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LimitNOFILE</span>=<span style="color:#ed9d13">524288</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Also</span>=<span style="color:#ed9d13">systemd-journal-remote.socket</span>
+</span></span></code></pre></div><p>Para configurar el servicio para que use HTTP en vez de HTTPS se debe cambiar la opción <code>--listen-https=-3</code> del comando indicado en el parámetro <code>ExecStart</code> del servicio por la opción <code>--listen-http=-3</code>. Sin embargo es conveniente no editar directamente este fichero, sino hacer una copia en otra ubicación para mantener la integridad del fichero original con la configuración del servicio por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo cp /lib/systemd/system/systemd-journal-remote.service /etc/systemd/system/systemd-journal-remote.service
+</span></span></span></code></pre></div><p>La copia del fichero se puede modificar para adaptar las opciones por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  SPDX-License-Identifier: LGPL-2.1-or-later</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  This file is part of systemd.</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  systemd is free software; you can redistribute it and/or modify it</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  under the terms of the GNU Lesser General Public License as published by</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  the Free Software Foundation; either version 2.1 of the License, or</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#  (at your option) any later version.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Description</span>=<span style="color:#ed9d13">Journal Remote Sink Service</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Documentation</span>=<span style="color:#ed9d13">man:systemd-journal-remote(8) man:journal-remote.conf(5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Requires</span>=<span style="color:#ed9d13">systemd-journal-remote.socket</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecStart</span>=<span style="color:#ed9d13">/lib/systemd/systemd-journal-remote --listen-http=-3 --output=/var/log/journal/remote/</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LockPersonality</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LogsDirectory</span>=<span style="color:#ed9d13">journal/remote</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">MemoryDenyWriteExecute</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">NoNewPrivileges</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateDevices</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateNetwork</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateTmp</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectProc</span>=<span style="color:#ed9d13">invisible</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectClock</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectControlGroups</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectHome</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectHostname</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelLogs</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelModules</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectKernelTunables</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ProtectSystem</span>=<span style="color:#ed9d13">strict</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictAddressFamilies</span>=<span style="color:#ed9d13">AF_UNIX AF_INET AF_INET6</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictNamespaces</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictRealtime</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">RestrictSUIDSGID</span>=<span style="color:#ed9d13">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">SystemCallArchitectures</span>=<span style="color:#ed9d13">native</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">User</span>=<span style="color:#ed9d13">systemd-journal-remote</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WatchdogSec</span>=<span style="color:#ed9d13">3min</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># If there are many split up journal files we need a lot of fds to access them</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># all in parallel.</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">LimitNOFILE</span>=<span style="color:#ed9d13">524288</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Also</span>=<span style="color:#ed9d13">systemd-journal-remote.socket</span>
+</span></span></code></pre></div><p>Por último, se puede habilitar y activar el servicio para que el servidor empiece a recibir los logs de los equipos de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable systemd-journal-remote.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start systemd-journal-remote.service
+</span></span></span></code></pre></div><p>El componente <code>systemd-journal-remote</code> genera en el directorio configurado en el fichero de configuración de la unidad de <code>systemd</code> un fichero de log para cada cliente de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@debian12:~$ ls -l /var/log/journal/remote/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 24580
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r----- 1 systemd-journal-remote systemd-journal-remote 25165824 Jan 17 09:09 remote-10.0.0.57.journal
+</span></span></span></code></pre></div><p>Para ver el contenido de los logs se puede usar el comando <code>journalctl</code> que permite leer los logs de un fichero o directorio.</p>
+<h1 id="configuración-de-journald-usando-https">Configuración de journald usando HTTPS</h1>
+<p>Para configurar un servidor de recolección centralizada de logs usando journald a través de HTTPS es necesario contar con una autoridad certificadora que firme los certificados tanto del servidor como de los clientes cuyos ficheros de log recolecta.</p>
+<h2 id="creación-y-firma-de-certificados">Creación y firma de certificados</h2>
+<p>Para la creación y firma de los certificados se usa la herramienta Easy-RSA. Esta herramienta se instala desde los repositorios de Debian con el paquete <code>easy-rsa</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">apt install easy-rsa
+</span></span></span></code></pre></div><p>Para poder configurar la Autoridad Certificadora se parte del fichero /usr/share/easy-rsa/vars.example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /usr/share/easy-rsa/vars.example /usr/share/easy-rsa/vars
+</span></span></span></code></pre></div><p>En este fichero se editan los campos necesarios para cumplimentar la información tanto de la Autoridad Certificadora como de los diferentes certificados de cada una de las máquinas del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">set_var EASYRSA_REQ_COUNTRY     &#34;ES&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">set_var EASYRSA_REQ_PROVINCE    &#34;Andalucia&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">set_var EASYRSA_REQ_CITY        &#34;Dos Hermanas&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">set_var EASYRSA_REQ_ORG         &#34;JaviHueteCA&#34;
+</span></span></span></code></pre></div><p>A continuación, la herramienta Easy-RSA permite inicializar un nuevo directorio de la Autoridad Certificadora en el que se trabajará para generar y firmar de forma sencilla los diferentes certificados necesarios, así como crear la Autoridad Certificadora a partir de la configuración especificada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">./easyrsa init-pki
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa build-ca
+</span></span></span></code></pre></div><p>Tanto el servidor, <code>luffy</code> como cada cliente necesitan una clave privada y un certificado. La solicitud de certificados también se puede generar con Easy-RSA. Para evitar problemas de desencriptación de la clave privada en la configuración tanto de los clientes como del servidor de recolección de ficheros de log, las solicitudes de certificado se generan con la opción <code>nopass</code>, que crea una clave privada sin frase de paso a la que <code>systemd</code> podrá acceder sin problema para identificar a los clientes frente al servidor y viceversa de forma segura.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">./easyrsa gen-req luffy nopass
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa gen-req nami nopass
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa gen-req sanji nopass
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa gen-req zoro nopass
+</span></span></span></code></pre></div><p>Esta misma herramienta también facilita la firma de estos certificados por parte de la CA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">./easyrsa sign-req server luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa sign-req server nami
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa sign-req server sanji
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">./easyrsa sign-req server zoro
+</span></span></span></code></pre></div><p>Tras firmar los certificados, cada máquina del escenario debe contar con los siguientes ficheros:</p>
+<ul>
+<li>El certificado autofirmado de la Autoridad Certificadora (cacert.pem)</li>
+<li>Una clave privada (máquina.key)</li>
+<li>Un certificado firmado por la CA (máquita.crt)</li>
+</ul>
+<p>Estos ficheros se pasan desde el equipo en el que se han creado y firmado, en este caso el servidor <code>luffy</code>, al resto de equipos de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">scp pki/ca.crt usuario@nami:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/ca.crt usuario@sanji:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/ca.crt usuario@zoro:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/private/nami.key usuario@nami:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/private/sanji.key usuario@sanji:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/private/zoro.key usuario@zoro:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/issued/nami.crt usuario@nami:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/issued/sanji.crt usuario@nami:/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">scp pki/issued/zoro.crt usuario@zoro:/home/usuario
+</span></span></span></code></pre></div><p>En el servidor, se recomienda ubicar estos ficheros en el directorio /etc/ssl/. En él, la clave se guarda en el directorio private/ y los certificados, tanto del servidor como de la CA en el directorio certs/.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp pki/ca.crt /etc/ssl/certs/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cp pki/private/luffy.key /etc/ssl/certs/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cp pki/issued/luffy.crt /etc/ssl/private/
+</span></span></span></code></pre></div><h2 id="configuración-del-servidor-1">Configuración del servidor</h2>
+<p>En este escenario, <code>luffy</code> funciona como servidor de logs para el resto de máquinas de la red. Así, la configuración del servidor se realiza en esta máquina. En el servidor hay que instalar el componente de systemd que permite centralizar el registro de logs de los equipos de la red a través de journald.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install systemd-journal-remote
+</span></span></span></code></pre></div><p>En el fichero /lib/systemd/system/systemd-journal-remote.socket se define el puerto de escucha del servidor. En este caso, el 19532, el puerto de escucha por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Socket]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ListenStream</span>=<span style="color:#ed9d13">19532</span>
+</span></span></code></pre></div><p>Igualmente, en el fichero /lib/systemd/system/systemd-journal-remote.service se recoge la configuración del servicio. Como en este escenario los clientes deben usar HTTPS para enviar sus logs al servidor, en este fichero de configuración el parámetro <code>ExecStart</code> debe incluir la opción <code>--listen-https=-3</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecStart</span>=<span style="color:#ed9d13">/lib/systemd/systemd-journal-remote --listen-https=-3 --output=/var/log/journal/remote/</span>
+</span></span></code></pre></div><p>Finalmente, para configurar la conexión HTTPS entre el servidor y los clientes se edita el fichero /etc/systemd/journal-remote.conf en el que hay que indicar la ruta a los ficheros del certificado tanto de la CA como del servidor, junto a la ruta a la clave privada del servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Remote]</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Seal=false</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># SplitMode=host</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ServerKeyFile</span>=<span style="color:#ed9d13">/etc/ssl/private/luffy.key</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ServerCertificateFile</span>=<span style="color:#ed9d13">/etc/ssl/certs/luffy.crt</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">TrustedCertificateFile</span>=<span style="color:#ed9d13">/etc/ssl/certs/ca.crt</span>
+</span></span></code></pre></div><p>Para garantizar el correcto funcionamiento del servidor es necesario verificar que el usuario systemd-journal-remote puede acceder a los certificados y la clave privada. En este caso, ha sido necesario cambiar el grupo de los certificados y el propietario del directorio /etc/ssl/private en el que está la clave privada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">chown root:systemd-journal-remote /etc/ssl/certs/luffy.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">chown root:systemd-journal-remote /etc/ssl/certs/ca.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">chown -R systemd-journal-remote: /etc/ssl/private
+</span></span></span></code></pre></div><p>Para aplicar la configuración se reinicia el servicio y para hacer que se ejecuta tras cada reinicio de la máquina, se habilita.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">systemctl start systemd-journal-remote.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">systemctl enable systemd-journal-remote.service
+</span></span></span></code></pre></div><h2 id="configuración-de-los-clientes">Configuración de los clientes</h2>
+<p>Para que el resto de equipos de la red pueda funcionar como clientes del servidor de logs necesita tener instalada la utilidad <code>systemd-journal-upload</code>, que se incluye en el paquete <code>systemd-journal-remote</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install systemd-journal-remote
+</span></span></span></code></pre></div><p>La configuración de los clientes del escenario es mucho más sencilla. El fichero de configuración más relevante es /etc/systemd/journal-upload.conf, que recoge la dirección del servidor al que los clientes deben enviar los logs junto al puerto de escucha configurado en el servidor. Además, en esta configuración también se apunta a los certificados, tanto del cliente como de la Autoridad Certificadora, así como a la clave privada del cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Upload]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">URL</span>=<span style="color:#ed9d13">https://luffy.javi.gonzalonazareno.org:19532</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ServerKeyFile</span>=<span style="color:#ed9d13">/etc/ssl/private/nami.key</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ServerCertificateFile</span>=<span style="color:#ed9d13">/etc/ssl/certs/nami.crt</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">TrustedCertificateFile</span>=<span style="color:#ed9d13">/etc/ssl/certs/ca.crt</span>
+</span></span></code></pre></div><p>Para que el servicio se puede ejecutar correctamente, es necesario establecer una pequeña modificación en el fichero de la unidad de <code>systemd</code> que define el servicio. En /lib/systemd/system/systemd-journal-upload.service se cambia el parámetro <code>DynamicUser</code> a <code>no</code> y en el parámetro <code>User</code> hay que corregir el usuario de <code>systemd-journal-upload</code>, que no se instala al instalar el paquete a <code>systemd-journal-remote</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">DynamicUser</span>=<span style="color:#ed9d13">no</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">User</span>=<span style="color:#ed9d13">systemd-journal-remote</span>
+</span></span></code></pre></div><p>Otra alternativa para solucionar este error es crear el usuario <code>systemd-journal-upload</code> sin permisos para iniciar sesión.</p>
+<p>Además, es fundamental que el usuario que ejecuta el servicio, en este caso <code>systemd-journal-remote</code>, tenga los permisos necesarios para acceder a todos los ficheros a los que se apunta desde la configuración.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">chown systemd-journal-remote: /etc/ssl/certs/zoro.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">chown systemd-journal-remote: /etc/ssl/certs/ca.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">chown -R systemd-journal-remote: /etc/ssl/private
+</span></span></span></code></pre></div><p>La misma configuración se replica en el resto de clientes de la red, de manera que, una vez que se ha configurado el servicio tanto en el servidor como en todos los clientes el directorio configurado en el servidor para almacenar los logs de la red contiene un fichero de log para cada uno de los clientes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ ls -l /var/log/journal/remote/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 40972
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r----- 1 systemd-journal-remote systemd-journal-remote 16777216 Jan 24 18:01 remote-172.16.0.200.journal
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r----- 1 systemd-journal-remote systemd-journal-remote 16777216 Jan 24 18:17 remote-192.168.0.2.journal
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r----- 1 systemd-journal-remote systemd-journal-remote  8388608 Jan 24 19:00 remote-192.168.0.3.journal
+</span></span></span></code></pre></div><h2 id="comprobación-del-funcionamiento">Comprobación del funcionamiento</h2>
+<p>Para verificar que los clientes envían correctamente sus registros de log al servidor se genera un mensaje manualmente usando la herramienta <code>logger</code> desde uno de ellos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">logger
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Mensaje escrito manualmente
+</span></span></span></code></pre></div><p>En el servidor se leen los ficheros de log registrados.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">journalctl -D /var/log/journal/remote/
+</span></span></span></code></pre></div><p>Y, entre los logs recibidos, aparece el mensaje escrito en los logs del cliente.</p>
+<div class="highlight"><div style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">3
+</span><span style="background-color:#363636"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">4
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#686868">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:28 nami systemd[2194]: Reached target Main User Target.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:28 nami systemd[2194]: Startup finished in 44ms.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:28 nami systemd[1]: Started Session 244 of User usuario.
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#ccc">Jan 24 08:37:43 nami usuario[2218]: Mensaje escrito manualmente
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:50 nami sshd[2209]: Received disconnect from 192.168.0.1 port 4575&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:50 nami sshd[2209]: Disconnected from user usuario 192.168.0.1 por&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Jan 24 08:37:50 nami sshd[2191]: pam_unix(sshd:session): session closed for use&gt;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="fuentes">Fuentes</h1>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-centralize-logs-with-journald-on-debian-10"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How To Centralize Logs With Journald on Debian 10</a></p>
+<p><a href="https://serverfault.com/questions/758244/how-to-configure-systemd-journal-remote"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How to configure systemd journal-remote?</a></p>
+<p><a href="https://github.com/systemd/systemd/issues/4092"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd-journal-remote using HTTPS &amp; TrustedCertificateFile neither requires nor verifies client certificates</a></p>
+<p><a href="https://linuxconfig.org/introduction-to-the-systemd-journal"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Introduction to the Systemd journal</a></p>
+<p><a href="https://wiki.archlinux.org/title/Systemd_%28Espa%C3%B1ol%29/Journal_%28Espa%C3%B1ol%29"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd (Español)/Journal (Español)</a></p>
+<p><a href="https://manpages.debian.org/stretch/systemd-journal-remote/systemd-journal-remote.8.en.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>SYSTEMD-JOURNAL-REMOTE(8)</a></p>
+<p><a href="https://access.redhat.com/solutions/7013013"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How to configure systemd journal remote logging </a></p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/systemd/">
+                        Systemd
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/journald/">
+                        Journald
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/log/">
+                        Log
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
+                        Administración de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2025-01-27-systemd-journal-remote%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2025-01-27-systemd-journal-remote%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2025-01-27-systemd-journal-remote%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2025-01-27-systemd-journal-remote%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
+      Guía básica de configuración de Nginx
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/bases-de-datos/"
+            class="ms-1"
+            >Bases de datos
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+      Creación de una VPN punto a punto con IPSec
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

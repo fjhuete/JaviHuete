@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenVPN on Javi Huete</title>
+    <link>/tags/openvpn/</link>
+    <description>Recent content in OpenVPN on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/openvpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de una VPN de acceso remoto con OpenVPN y certificados x509</title>
+      <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/</guid>
+      <description>&lt;p&gt;En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

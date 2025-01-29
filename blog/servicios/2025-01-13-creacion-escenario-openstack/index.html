@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -883,97 +883,97 @@
             <p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p>
 <h1 id="creación-de-la-infraestructura-de-red">Creación de la infraestructura de red</h1>
 <p>El primer paso en la creación de la infraestructura de red de este escenario es crear un nuevo router en el proyecto de OpenStack.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack router create RouterPractica
-</span></span></code></pre></div><p>Este router está conectado a una red llamada <code>Red Intra</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack network create &#39;Red Intra&#39;
-</span></span><span style="display:flex;"><span>openstack subnet create --network &#39;Red Intra&#39; --subnet-range 10.0.200.0/24 --dns-nameserver 172.22.0.1 --gateway 10.0.200.1 --dhcp subred-intra
-</span></span><span style="display:flex;"><span>openstack router set RouterPractica --external-gateway ext-net
-</span></span><span style="display:flex;"><span>openstack router add subnet RouterPractica subred-intra
-</span></span></code></pre></div><p>En el escenario hay una segunda red.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack network create &#39;Red DMZ de fhuemej702&#39;
-</span></span><span style="display:flex;"><span>openstack subnet create --network &#39;Red DMZ&#39; --subnet-range 172.16.0.0/16 --no-dhcp --gateway none subred-dmz
-</span></span></code></pre></div><p>Para conectar esta nueva red al router se necesita un puerto que le configure la IP estática para que esta interfaz del router funcione como puerta de enlace de la red DMZ.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack port create --network &#39;Red DMZ&#39; --fixed-ip ip-address=172.16.0.1 luffy
-</span></span></code></pre></div><h1 id="creación-de-instancias">Creación de instancias</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack router create RouterPractica
+</span></span></span></code></pre></div><p>Este router está conectado a una red llamada <code>Red Intra</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack network create &#39;Red Intra&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack subnet create --network &#39;Red Intra&#39; --subnet-range 10.0.200.0/24 --dns-nameserver 172.22.0.1 --gateway 10.0.200.1 --dhcp subred-intra
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack router set RouterPractica --external-gateway ext-net
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack router add subnet RouterPractica subred-intra
+</span></span></span></code></pre></div><p>En el escenario hay una segunda red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack network create &#39;Red DMZ de fhuemej702&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack subnet create --network &#39;Red DMZ&#39; --subnet-range 172.16.0.0/16 --no-dhcp --gateway none subred-dmz
+</span></span></span></code></pre></div><p>Para conectar esta nueva red al router se necesita un puerto que le configure la IP estática para que esta interfaz del router funcione como puerta de enlace de la red DMZ.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack port create --network &#39;Red DMZ&#39; --fixed-ip ip-address=172.16.0.1 luffy
+</span></span></span></code></pre></div><h1 id="creación-de-instancias">Creación de instancias</h1>
 <p>Las instancias del escenario se configuran usando un fichero cloud-init.</p>
 <h2 id="luffy">Luffy</h2>
 <p>El contenido del fichero cloud-init de <code>Luffy</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#cloud-config</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Actualiza los paquetes</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_update</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_upgrade</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Configura el hostname y el fqdn</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">fqdn</span>: luffy.javi.gonzalonazareno.org
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">hostname</span>: luffy
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">manage_etc_hosts</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: usuario
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">sudo</span>: ALL=(ALL) NOPASSWD:ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">ssh_authorized_keys</span>: 
-</span></span><span style="display:flex;"><span>      - ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: profesor
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">sudo</span>: ALL=(ALL) NOPASSWD:ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">ssh_authorized_keys</span>:
-</span></span><span style="display:flex;"><span>      - ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>      
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Cambia las contraseña a los usuarios creados</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">chpasswd</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">expire</span>: <span style="color:#e0af68">False</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span></code></pre></div><p>Tras escribir el fichero, se puede usar para crear una instancia. En su creación, esta instancia se asocia a un volumen y a dos interfaces de red.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server create --flavor vol.medium --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --boot-from-volume 15 --user-data cloud-config-luffy.yaml --network &#39;Red Intra&#39; --port luffy luffy
-</span></span></code></pre></div><h2 id="zoro">Zoro</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#cloud-config</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Actualiza los paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_update</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_upgrade</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Configura el hostname y el fqdn</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">fqdn</span>:<span style="color:#666"> </span>luffy.javi.gonzalonazareno.org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">hostname</span>:<span style="color:#666"> </span>luffy<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">manage_etc_hosts</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">sudo</span>:<span style="color:#666"> </span>ALL=(ALL) NOPASSWD:ALL<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">ssh_authorized_keys</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>profesor<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">sudo</span>:<span style="color:#666"> </span>ALL=(ALL) NOPASSWD:ALL<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">ssh_authorized_keys</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Cambia las contraseña a los usuarios creados</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">chpasswd</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">expire</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">False</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span></code></pre></div><p>Tras escribir el fichero, se puede usar para crear una instancia. En su creación, esta instancia se asocia a un volumen y a dos interfaces de red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server create --flavor vol.medium --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --boot-from-volume 15 --user-data cloud-config-luffy.yaml --network &#39;Red Intra&#39; --port luffy luffy
+</span></span></span></code></pre></div><h2 id="zoro">Zoro</h2>
 <p>El fichero cloud-init de <code>zoro</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#cloud-config</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Actualiza los paquetes</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_update</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_upgrade</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Configura el hostname y el fqdn</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">fqdn</span>: zoro.javi.gonzalonazareno.org
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">hostname</span>: zoro
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">manage_etc_hosts</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: usuario
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">sudo</span>: ALL=(ALL) NOPASSWD:ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">ssh_authorized_keys</span>: 
-</span></span><span style="display:flex;"><span>      - ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: profesor
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">sudo</span>: ALL=(ALL) NOPASSWD:ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">ssh_authorized_keys</span>:
-</span></span><span style="display:flex;"><span>      - ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>      
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Cambia las contraseña a los usuarios creados</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">chpasswd</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">expire</span>: <span style="color:#e0af68">False</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span></code></pre></div><p>Para crear esta instancia se crea un volumen basado en la imagen de Rocky Linux 9.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack volume create --image &#39;Rocky Linux 9&#39; --size 15 zoro
-</span></span></code></pre></div><p>Y, a partir de este volumen, se crea la instancia.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server create --flavor vol.medium --volume zoro --security-group default --key-name ClaveSSH --user-data cloud-config-zoro.yaml --network &#39;Red Intra&#39; zoro
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#cloud-config</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Actualiza los paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_update</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_upgrade</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Configura el hostname y el fqdn</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">fqdn</span>:<span style="color:#666"> </span>zoro.javi.gonzalonazareno.org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">hostname</span>:<span style="color:#666"> </span>zoro<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">manage_etc_hosts</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">sudo</span>:<span style="color:#666"> </span>ALL=(ALL) NOPASSWD:ALL<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">ssh_authorized_keys</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>profesor<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">sudo</span>:<span style="color:#666"> </span>ALL=(ALL) NOPASSWD:ALL<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">ssh_authorized_keys</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Cambia las contraseña a los usuarios creados</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">chpasswd</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">expire</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">False</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span></code></pre></div><p>Para crear esta instancia se crea un volumen basado en la imagen de Rocky Linux 9.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack volume create --image &#39;Rocky Linux 9&#39; --size 15 zoro
+</span></span></span></code></pre></div><p>Y, a partir de este volumen, se crea la instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server create --flavor vol.medium --volume zoro --security-group default --key-name ClaveSSH --user-data cloud-config-zoro.yaml --network &#39;Red Intra&#39; zoro
+</span></span></span></code></pre></div>
 
 
   
@@ -994,116 +994,116 @@
 </div>
 
 <p>Para conectar esta instancia a la <code>Red DMZ</code> hay que usar un puerto que le permita mantener un direccionamiento IP estático.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack port create --network &#39;Red DMZ&#39; --fixed-ip ip-address=172.16.0.200 zoro
-</span></span></code></pre></div><p>A continuación, se debe desconectar la instancia de la <code>Red Intra</code> y conectar al puerto recién creado en la <code>Red DMZ</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server remove port zoro 8d6dd153-862c-4773-aaa8-74f04cade4b6
-</span></span><span style="display:flex;"><span>openstack server add port zoro zoro
-</span></span></code></pre></div><p>Al llevar a cabo este cambio, es necesario configurar la interfaz de red de <code>zoro</code> de forma manual. Esta instancia usa un sistema operativo Rocky Linux 9 y, por tanto, configura sus interfaces de red con <code>Network Manager</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>nmcli con edit id &#39;Wired connection 1&#39;
-</span></span><span style="display:flex;"><span>nmcli&gt; set ipv4.addresses 172.16.0.200
-</span></span><span style="display:flex;"><span>nmcli&gt; set ipv4.gateway 172.16.0.1
-</span></span><span style="display:flex;"><span>nmcli&gt; set ipv4.dns 172.22.0.1
-</span></span><span style="display:flex;"><span>nmcli&gt; save
-</span></span><span style="display:flex;"><span>nmcli con up id &#39;Wired connection 1&#39;
-</span></span></code></pre></div><p>Por último, para que <code>zoro</code> pueda tener acceso a Internet hay que configurar el funcionamiento de <code>luffy</code> como router.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>apt install iptables iptables-persistent
-</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -o ens3 -s 172.16.0.0/16 -j MASQUERADE
-</span></span><span style="display:flex;"><span>iptables-save &gt; /etc/iptables/rules.v4
-</span></span><span style="display:flex;"><span>echo &#34;net.ipv4.ip_forward=1&#34; &gt;&gt; /etc/sysctl.conf
-</span></span></code></pre></div><p>Además, hay que eliminar los grupos de seguridad de los puertos implicados para que la instancia pueda enrutar el tráfico.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack port set --no-security-group --disable-port-security luffy
-</span></span><span style="display:flex;"><span>openstack port set --no-security-group --disable-port-security 09edfc05-0ddf-47ba-8f24-d5a4752b424b
-</span></span><span style="display:flex;"><span>openstack port set --no-security-group --disable-port-security zoro
-</span></span></code></pre></div><p>Tras configurar adecuadamente las instancias, se puede generar una instantánea de los volúmenes asociados para facilitar su recuperación en caso de que sea necesario.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack volume snapshot create --force --volume zoro zoro-backup
-</span></span><span style="display:flex;"><span>openstack volume snapshot create --force --volume 3fb035f6-74f4-4ecf-928a-98ce00b04978 luffy-backup
-</span></span></code></pre></div><h1 id="creación-de-contenedores">Creación de contenedores</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack port create --network &#39;Red DMZ&#39; --fixed-ip ip-address=172.16.0.200 zoro
+</span></span></span></code></pre></div><p>A continuación, se debe desconectar la instancia de la <code>Red Intra</code> y conectar al puerto recién creado en la <code>Red DMZ</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server remove port zoro 8d6dd153-862c-4773-aaa8-74f04cade4b6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack server add port zoro zoro
+</span></span></span></code></pre></div><p>Al llevar a cabo este cambio, es necesario configurar la interfaz de red de <code>zoro</code> de forma manual. Esta instancia usa un sistema operativo Rocky Linux 9 y, por tanto, configura sus interfaces de red con <code>Network Manager</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">nmcli con edit id &#39;Wired connection 1&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nmcli&gt; set ipv4.addresses 172.16.0.200
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nmcli&gt; set ipv4.gateway 172.16.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nmcli&gt; set ipv4.dns 172.22.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nmcli&gt; save
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nmcli con up id &#39;Wired connection 1&#39;
+</span></span></span></code></pre></div><p>Por último, para que <code>zoro</code> pueda tener acceso a Internet hay que configurar el funcionamiento de <code>luffy</code> como router.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install iptables iptables-persistent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iptables -t nat -A POSTROUTING -o ens3 -s 172.16.0.0/16 -j MASQUERADE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iptables-save &gt; /etc/iptables/rules.v4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">echo &#34;net.ipv4.ip_forward=1&#34; &gt;&gt; /etc/sysctl.conf
+</span></span></span></code></pre></div><p>Además, hay que eliminar los grupos de seguridad de los puertos implicados para que la instancia pueda enrutar el tráfico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack port set --no-security-group --disable-port-security luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack port set --no-security-group --disable-port-security 09edfc05-0ddf-47ba-8f24-d5a4752b424b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack port set --no-security-group --disable-port-security zoro
+</span></span></span></code></pre></div><p>Tras configurar adecuadamente las instancias, se puede generar una instantánea de los volúmenes asociados para facilitar su recuperación en caso de que sea necesario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack volume snapshot create --force --volume zoro zoro-backup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">openstack volume snapshot create --force --volume 3fb035f6-74f4-4ecf-928a-98ce00b04978 luffy-backup
+</span></span></span></code></pre></div><h1 id="creación-de-contenedores">Creación de contenedores</h1>
 <p>Las dos máquinas restantes en el escenario son contenedores LXC en la instancia <code>luffy</code>.</p>
 <p>El primer paso para poder tener contenedores alojados en la instancia es crear un bridge al que se puedan conectar para tener acceso a Internet. La creación del bridge se puede hacer con varias herramientas. En este caso, se usa <code>bridge-utils</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install bridge-utils
-</span></span></code></pre></div><p>Para configurar el bridge se debe modificar el fichero de configuración de la instancia. Aunque <code>luffy</code> usa un sistema operativo Debian 12, las instancias de cloud de Debian configuran sus interfaces de red usando <code>netplan</code> por compatibilidad con <code>cloud-init</code>. Así, para crear el bridge al que se van a conectar los contenedores desde un fichero de configuración se debe editar el fichero /etc/netplan/50-cloud-init.yaml</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#bb9af7">bridges</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">br-intra</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#e0af68">192.168.0.1</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">mtu</span>: <span style="color:#e0af68">1442</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">nameservers</span>:
-</span></span><span style="display:flex;"><span>          <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>          - <span style="color:#e0af68">172.22.0.1</span>
-</span></span></code></pre></div><p>Finalmente, se aplica la configuración añadida en el fichero:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo netplan apply
-</span></span></code></pre></div><p>Una vez que la instancia ya cuenta con el bridge al que se tienen que conectar los contenedores, se pueden crear las dos nuevas máquinas. Para ello se instala <code>LXC</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install lxc
-</span></span></code></pre></div><p>Y se crean los contenedores para las nuevas máquinas: <code>nami</code> y <code>sanji</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo lxc-create -n nami -t ubuntu -- -r jammy
-</span></span><span style="display:flex;"><span>sudo lxc-create -n sanji -t ubuntu -- -r jammy
-</span></span></code></pre></div><p>Para conectar los contenedores al bridge hay que editar los ficheros de configuración de cada uno de ellos para añadir la siguiente línea. El de <code>nami</code> es /var/lib/lxc/nami/config. En este fichero se puede configurar también el mtu para que se adapte al que usa la instalación de OpenStack en la que se está trabajando.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>lxc.net.0.link = br-intra
-</span></span><span style="display:flex;"><span>lxc.net.0.mtu = 1442
-</span></span></code></pre></div><p>Y el de <code>sanji</code> es /var/lib/lxc/sanji/config.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>lxc.net.0.link = br-intra
-</span></span><span style="display:flex;"><span>lxc.net.0.mtu = 1442
-</span></span></code></pre></div><p>Para configurar el direccionamiento estático en cada uno de los contenedores, hay que acceder a ellos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo lxc-start nami
-</span></span><span style="display:flex;"><span>sudo lxc-attach nami
-</span></span></code></pre></div><p>Primero, <code>nami</code> tendrá la dirección IP 192.168.0.2. Como el contenedor usa un sistema operativo Ubuntu, este direccionamiento se configura en el fichero /etc/netplan/10-lxc.yaml.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#bb9af7">network</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">version</span>: <span style="color:#e0af68">2</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">ethernets</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">eth0</span>: 
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">dhcp4</span>: <span style="color:#e0af68">false</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e0af68">192.168.0.2</span>/24
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">routes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#bb9af7">to</span>: default
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">via</span>: <span style="color:#e0af68">192.168.0.1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">mtu</span>: <span style="color:#e0af68">1442</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">nameservers</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#e0af68">172.22.0.1</span>
-</span></span></code></pre></div><p>Después, se aplica la nueva configuración</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>netplan apply
-</span></span></code></pre></div><p>Para configurar <code>sanji</code> se le asigna la IP 192.168.0.3 en el fichero /etc/netplan/10-lxc.yaml. Para acceder al contenedor:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo lxc-start sanji
-</span></span><span style="display:flex;"><span>sudo lxc-attach sanji
-</span></span></code></pre></div><p>Se modifica el fichero de configuración de red:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#bb9af7">network</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">version</span>: <span style="color:#e0af68">2</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">ethernets</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">eth0</span>: 
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">dhcp4</span>: <span style="color:#e0af68">false</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#e0af68">192.168.0.3</span>/24
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">routes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#bb9af7">to</span>: default
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">via</span>: <span style="color:#e0af68">192.168.0.1</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">mtu</span>: <span style="color:#e0af68">1442</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">nameservers</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">addresses</span>:
-</span></span><span style="display:flex;"><span>        - <span style="color:#e0af68">172.22.0.1</span>
-</span></span></code></pre></div><p>Y, por último, se aplica la nueva configuración:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>netplan apply
-</span></span></code></pre></div><p>Adicionalmente, se puede hacer que los contenedores se enciendan al iniciar <code>luffy</code> añadiendo en su fichero de configuración la línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>lxc.start.auto = 1
-</span></span></code></pre></div><p>Los contenedores creados en <code>luffy</code> están conectados al bridge <code>br-intra</code> pero no tienen conexión a Internet. Para que puedan salir al exterior hay que añadir una regla de <code>iptables</code> en <code>luffy</code> para que haga SNAT.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo iptables -t nat -A POSTROUTING -o ens3 -s 192.168.0.0/24 -j MASQUERADE
-</span></span><span style="display:flex;"><span>iptables-save &gt; /etc/iptables/rules.v4
-</span></span></code></pre></div><p>En este caso práctico se pide que cada contenedor tenga los paquetes de la distribución actualizados, el FQDN y el hostname correctamente configurado y dos usuarios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install bridge-utils
+</span></span></span></code></pre></div><p>Para configurar el bridge se debe modificar el fichero de configuración de la instancia. Aunque <code>luffy</code> usa un sistema operativo Debian 12, las instancias de cloud de Debian configuran sus interfaces de red usando <code>netplan</code> por compatibilidad con <code>cloud-init</code>. Así, para crear el bridge al que se van a conectar los contenedores desde un fichero de configuración se debe editar el fichero /etc/netplan/50-cloud-init.yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">bridges</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">br-intra</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">mtu</span>:<span style="color:#666"> </span><span style="color:#3677a9">1442</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">nameservers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span>- <span style="color:#3677a9">172.22.0.1</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Finalmente, se aplica la configuración añadida en el fichero:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo netplan apply
+</span></span></span></code></pre></div><p>Una vez que la instancia ya cuenta con el bridge al que se tienen que conectar los contenedores, se pueden crear las dos nuevas máquinas. Para ello se instala <code>LXC</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install lxc
+</span></span></span></code></pre></div><p>Y se crean los contenedores para las nuevas máquinas: <code>nami</code> y <code>sanji</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-create -n nami -t ubuntu -- -r jammy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-create -n sanji -t ubuntu -- -r jammy
+</span></span></span></code></pre></div><p>Para conectar los contenedores al bridge hay que editar los ficheros de configuración de cada uno de ellos para añadir la siguiente línea. El de <code>nami</code> es /var/lib/lxc/nami/config. En este fichero se puede configurar también el mtu para que se adapte al que usa la instalación de OpenStack en la que se está trabajando.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">lxc.net.0.link = br-intra
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lxc.net.0.mtu = 1442
+</span></span></span></code></pre></div><p>Y el de <code>sanji</code> es /var/lib/lxc/sanji/config.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">lxc.net.0.link = br-intra
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lxc.net.0.mtu = 1442
+</span></span></span></code></pre></div><p>Para configurar el direccionamiento estático en cada uno de los contenedores, hay que acceder a ellos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-start nami
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-attach nami
+</span></span></span></code></pre></div><p>Primero, <code>nami</code> tendrá la dirección IP 192.168.0.2. Como el contenedor usa un sistema operativo Ubuntu, este direccionamiento se configura en el fichero /etc/netplan/10-lxc.yaml.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">network</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">version</span>:<span style="color:#666"> </span><span style="color:#3677a9">2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">ethernets</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">eth0</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">dhcp4</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#3677a9">192.168.0.2</span>/24<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">routes</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#6ab825;font-weight:bold">to</span>:<span style="color:#666"> </span>default<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">via</span>:<span style="color:#666"> </span><span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">mtu</span>:<span style="color:#666"> </span><span style="color:#3677a9">1442</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">nameservers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#3677a9">172.22.0.1</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Después, se aplica la nueva configuración</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">netplan apply
+</span></span></span></code></pre></div><p>Para configurar <code>sanji</code> se le asigna la IP 192.168.0.3 en el fichero /etc/netplan/10-lxc.yaml. Para acceder al contenedor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-start sanji
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo lxc-attach sanji
+</span></span></span></code></pre></div><p>Se modifica el fichero de configuración de red:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">network</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">version</span>:<span style="color:#666"> </span><span style="color:#3677a9">2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">ethernets</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">eth0</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">dhcp4</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#3677a9">192.168.0.3</span>/24<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">routes</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#6ab825;font-weight:bold">to</span>:<span style="color:#666"> </span>default<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">via</span>:<span style="color:#666"> </span><span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">mtu</span>:<span style="color:#666"> </span><span style="color:#3677a9">1442</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">nameservers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#3677a9">172.22.0.1</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Y, por último, se aplica la nueva configuración:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">netplan apply
+</span></span></span></code></pre></div><p>Adicionalmente, se puede hacer que los contenedores se enciendan al iniciar <code>luffy</code> añadiendo en su fichero de configuración la línea:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">lxc.start.auto = 1
+</span></span></span></code></pre></div><p>Los contenedores creados en <code>luffy</code> están conectados al bridge <code>br-intra</code> pero no tienen conexión a Internet. Para que puedan salir al exterior hay que añadir una regla de <code>iptables</code> en <code>luffy</code> para que haga SNAT.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo iptables -t nat -A POSTROUTING -o ens3 -s 192.168.0.0/24 -j MASQUERADE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iptables-save &gt; /etc/iptables/rules.v4
+</span></span></span></code></pre></div><p>En este caso práctico se pide que cada contenedor tenga los paquetes de la distribución actualizados, el FQDN y el hostname correctamente configurado y dos usuarios.</p>
 <p>Para actualizar los paquetes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update &amp;&amp; sudo apt upgrade
-</span></span></code></pre></div><p>Para configurar el FQDN se modifica el fichero /etc/hosts, que debe contar con una línea como esta:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>127.0.1.1   nami.javi.gonzalonazareno.org nami
-</span></span></code></pre></div><p>Finalmente se crean los dos usuarios. Primero uno que se llama así, <code>usuario</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>adduser usuario
-</span></span></code></pre></div><p>Y se configura el acceso por SSH.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>su - usuario
-</span></span><span style="display:flex;"><span>mkdir .ssh
-</span></span><span style="display:flex;"><span>cd .ssh
-</span></span><span style="display:flex;"><span>nano authorized_keys
-</span></span></code></pre></div><p>En el fichero authorized_keys se añade la clave pública del usuario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update &amp;&amp; sudo apt upgrade
+</span></span></span></code></pre></div><p>Para configurar el FQDN se modifica el fichero /etc/hosts, que debe contar con una línea como esta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">127.0.1.1   nami.javi.gonzalonazareno.org nami
+</span></span></span></code></pre></div><p>Finalmente se crean los dos usuarios. Primero uno que se llama así, <code>usuario</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">adduser usuario
+</span></span></span></code></pre></div><p>Y se configura el acceso por SSH.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">su - usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mkdir .ssh
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd .ssh
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nano authorized_keys
+</span></span></span></code></pre></div><p>En el fichero authorized_keys se añade la clave pública del usuario.</p>
 <p>Para que el usuario pueda usar sudo sin contraseña se edita el fichero /etc/sudoers para añadir la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario ALL=(ALL) NOPASSWD:ALL
-</span></span></code></pre></div><p>El mismo proceso se repite en ambos contenedores y para la creación de los dos usuarios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario ALL=(ALL) NOPASSWD:ALL
+</span></span></span></code></pre></div><p>El mismo proceso se repite en ambos contenedores y para la creación de los dos usuarios.</p>
 
           </div>
           <div class="row items-start justify-between">
@@ -1349,8 +1349,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/bases-de-datos/"
+            class="ms-1"
+            >Bases de datos
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
+      Instalación de Wireshark y GNS3 en Debian 12 y Windows 10
     </a>
   </h4>
   
@@ -1373,8 +1410,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
+  <p class="mb-6">Wireshark y GNS3 son dos programas fundamentales para el trabajo de un administrador de redes pero instalarlos puede suponer algunos desafíos. Aquí se incluye una guía de instalación de Wireshark y GNS3 en Windows 10 y en Debian 12</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
     Leer
   </a>
 </div>
@@ -1386,8 +1423,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
-      Creación de política de grupo en Windows Active Directory
+    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
+      Compartición de sistemas de ficheros con sshfs y systemd
     </a>
   </h4>
   
@@ -1402,53 +1439,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Sistemas
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
-      Cómo simular un servidor PostgreSQL en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
     Leer
   </a>
 </div>
@@ -1554,9 +1554,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1564,9 +1564,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

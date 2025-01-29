@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -871,20 +871,20 @@
 
             <p>Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.</p>
 <p>Antes de comenzar con la instalación de estos paquetes es necesario saber si el equipo tiene capacidad para virtualizar. Con <code>lshw</code> se comprueba que el ordenador ofrece esta posibilidad. Para ello se busca la bandera “vmx” o “smv”, que indica si el microprocesador tiene activada esta opción:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>lshw | egrep -o ‘vmx|smv’
-</span></span></code></pre></div><p>Además, con <code>cpu-checker</code> se puede comprobar si el ordenador tiene capacidad para virtualizar con kvm con el comando <code>kvm-ok</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">lshw | egrep -o ‘vmx|smv’
+</span></span></span></code></pre></div><p>Además, con <code>cpu-checker</code> se puede comprobar si el ordenador tiene capacidad para virtualizar con kvm con el comando <code>kvm-ok</code>.</p>
 <p>Posteriormente se instalan los paquetes necesarios.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt install qemu-system libvirt-clients libvirt-daemon-system bridge-utils virt-manager
-</span></span></code></pre></div><p>Para comprobar si la instalación ha generado los grupos kvm y libvirt se consulta el fichero de configuración /etc/group.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install qemu-system libvirt-clients libvirt-daemon-system bridge-utils virt-manager
+</span></span></span></code></pre></div><p>Para comprobar si la instalación ha generado los grupos kvm y libvirt se consulta el fichero de configuración /etc/group.</p>
 <p>Con <code>adduser ‘nombre de usuario’ ‘nombre de grupo’</code> se añade el usuario a los grupos kvm y libvirt.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>adduser usuario kvm
-</span></span><span style="display:flex;"><span>adduser usuario libvirt
-</span></span></code></pre></div><p>Se usa el comando <code>systemctl</code> con la opción <code>status</code> y el argumento <code>libvirtd</code> para comprobar si el servicio está funcionando. Con las opciones <code>start</code> o <code>enable</code> se arranca o activa el arranque automático del servicio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl status libvirtd
-</span></span><span style="display:flex;"><span>sudo systemctl enable libvirtd
-</span></span><span style="display:flex;"><span>sudo systemctl start libvirtd
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">adduser usuario kvm
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">adduser usuario libvirt
+</span></span></span></code></pre></div><p>Se usa el comando <code>systemctl</code> con la opción <code>status</code> y el argumento <code>libvirtd</code> para comprobar si el servicio está funcionando. Con las opciones <code>start</code> o <code>enable</code> se arranca o activa el arranque automático del servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl status libvirtd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable libvirtd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start libvirtd
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1129,82 +1129,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-      Convulsión en el mundo del software libre
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
-      Gestión de dispositivos de almacenamiento con Powershell
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
-      Cómo importar dispositivos a GNS3
+    <a href="/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/">
+      Comandos de supervisión de redes
     </a>
   </h4>
   
@@ -1227,8 +1153,82 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+  <p class="mb-6">El uso de algunos comandos es fundamental en la administración de redes. Diferentes sistemas operativos usan distintos comandos pero todos ellos cumplen funciones relevantes</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+      Creación de política de grupo en Windows Active Directory
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
     Leer
   </a>
 </div>
@@ -1334,9 +1334,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1344,9 +1344,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

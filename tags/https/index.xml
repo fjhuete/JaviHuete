@@ -6,8 +6,15 @@
     <description>Recent content in HTTPS on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 10 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificado HTTP y SSL</title>
+      <link>/blog/seguridad/2025-01-14-certificado-http-ssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-certificado-http-ssl/</guid>
+      <description>En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</description>
+    </item>
     <item>
       <title>Configuración del protocolo HTTPS para el acceso a una aplicación web</title>
       <link>/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/</link>

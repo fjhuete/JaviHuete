@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CA on Javi Huete</title>
+    <link>/tags/ca/</link>
+    <description>Recent content in CA on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 14 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/ca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificado HTTP y SSL</title>
+      <link>/blog/seguridad/2025-01-14-certificado-http-ssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-certificado-http-ssl/</guid>
+      <description>En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</description>
+    </item>
+  </channel>
+</rss>

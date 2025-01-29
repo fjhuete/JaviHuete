@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -882,203 +882,203 @@
 
             <p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p>
 <p>Para ello, en primer lugar, se crea un entorno virtual en el que se instala la aplicación.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd venv/
-</span></span><span style="display:flex;"><span>python3 -m venv cms
-</span></span><span style="display:flex;"><span>source cms/bin/activate
-</span></span><span style="display:flex;"><span>pip install django-cms
-</span></span></code></pre></div><p>Para crear un proyecto se usa el comando <code>djangocms</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ djangocms javiblog
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Clone template using django-admin
-</span></span><span style="display:flex;"><span>django-admin startproject &#34;javiblog&#34; --template https://github.com/django-cms/cms-template/archive/4.1.tar.gz
-</span></span><span style="display:flex;"><span>cd &#34;/home/debian/javiblog&#34;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Install requirements in /home/debian/javiblog/requirements.in
-</span></span><span style="display:flex;"><span>python -m pip install -r &#34;/home/debian/javiblog/requirements.in&#34;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Run migrations
-</span></span><span style="display:flex;"><span>python -m manage migrate
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Create superuser
-</span></span><span style="display:flex;"><span>python -m manage createsuperuser
-</span></span><span style="display:flex;"><span>Username (leave blank to use &#39;debian&#39;): admin
-</span></span><span style="display:flex;"><span>Email address: admin@javiblog.org
-</span></span><span style="display:flex;"><span>Password: 
-</span></span><span style="display:flex;"><span>Password (again): 
-</span></span><span style="display:flex;"><span>The password is too similar to the username.
-</span></span><span style="display:flex;"><span>This password is too short. It must contain at least 8 characters.
-</span></span><span style="display:flex;"><span>This password is too common.
-</span></span><span style="display:flex;"><span>Bypass password validation and create user anyway? [y/N]: y
-</span></span><span style="display:flex;"><span>Superuser created successfully.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Check installation
-</span></span><span style="display:flex;"><span>python -m manage cms check
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>***************************************
-</span></span><span style="display:flex;"><span>django CMS 4.1.4 installed successfully
-</span></span><span style="display:flex;"><span>***************************************
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Congrat
-</span></span></code></pre></div><p>Para probar la instalación se puede ejecutar un servidor de pruebas con <code>python3 manage.py runserver 0.0.0.0:8080</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd venv/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python3 -m venv cms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">source cms/bin/activate
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">pip install django-cms
+</span></span></span></code></pre></div><p>Para crear un proyecto se usa el comando <code>djangocms</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ djangocms javiblog
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Clone template using django-admin
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">django-admin startproject &#34;javiblog&#34; --template https://github.com/django-cms/cms-template/archive/4.1.tar.gz
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd &#34;/home/debian/javiblog&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Install requirements in /home/debian/javiblog/requirements.in
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python -m pip install -r &#34;/home/debian/javiblog/requirements.in&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Run migrations
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python -m manage migrate
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Create superuser
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python -m manage createsuperuser
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Username (leave blank to use &#39;debian&#39;): admin
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Email address: admin@javiblog.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Password (again): 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">The password is too similar to the username.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This password is too short. It must contain at least 8 characters.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This password is too common.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Bypass password validation and create user anyway? [y/N]: y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Superuser created successfully.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Check installation
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python -m manage cms check
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">***************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">django CMS 4.1.4 installed successfully
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">***************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Congrat
+</span></span></span></code></pre></div><p>Para probar la instalación se puede ejecutar un servidor de pruebas con <code>python3 manage.py runserver 0.0.0.0:8080</code>.</p>
 <h1 id="configuración-del-servidor-apache2">Configuración del servidor Apache2</h1>
 <p>Para poder servir el CMS en Apache2 hay que configurar el VirtualHost indicando el ServerName, DocumentRoot y también aportando la información necesaria para que funcione el módulo wsgi de Apache2.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#bb9af7">&lt;VirtualHost</span> <span style="color:#9ece6a">*:80</span><span style="color:#bb9af7">&gt;</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ServerName</span> portal.javi.org
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">&lt;VirtualHost</span> <span style="color:#ed9d13">*:80</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">ServerName</span> portal.javi.org
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ServerAdmin</span> webmaster@localhost
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">ServerAdmin</span> webmaster@localhost
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">DocumentRoot</span> <span style="color:#9ece6a">/home/debian/javiblog</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">DocumentRoot</span> <span style="color:#ffa500">/home/debian/javiblog</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIDaemonProcess</span> javiblog python-path=/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/site-packages
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIProcessGroup</span> javiblog
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">WSGIScriptAlias</span> / <span style="color:#9ece6a">/home/debian/javiblog/javiblog/wsgi.py</span> process-group=javiblog
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">WSGIDaemonProcess</span> javiblog python-path=/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/site-packages
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">WSGIProcessGroup</span> javiblog
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">WSGIScriptAlias</span> / <span style="color:#ffa500">/home/debian/javiblog/javiblog/wsgi.py</span> process-group=javiblog
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;Directory</span> <span style="color:#9ece6a">/home/debian/javiblog</span><span style="color:#bb9af7">&gt;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#9ece6a">Require</span> <span style="color:#bb9af7">all</span> granted
-</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">&lt;Directory</span> <span style="color:#ed9d13">/home/debian/javiblog</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#24909d">Require</span> <span style="color:#6ab825;font-weight:bold">all</span> granted
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">&lt;/Directory&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">Alias</span> <span style="color:#9ece6a">/static/</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;Directory</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span><span style="color:#bb9af7">&gt;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#9ece6a">Require</span> <span style="color:#bb9af7">all</span> granted
-</span></span><span style="display:flex;"><span>	<span style="color:#bb9af7">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">Alias</span> <span style="color:#ffa500">/static/</span> <span style="color:#ffa500">/home/debian/javiblog/static/</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">&lt;Directory</span> <span style="color:#ed9d13">/home/debian/javiblog/static/</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#24909d">Require</span> <span style="color:#6ab825;font-weight:bold">all</span> granted
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">&lt;/Directory&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">ErrorLog</span> ${APACHE_LOG_DIR}/error.log
-</span></span><span style="display:flex;"><span>	<span style="color:#9ece6a">CustomLog</span> ${APACHE_LOG_DIR}/access.log combined
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">&lt;/VirtualHost&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">ErrorLog</span> ${APACHE_LOG_DIR}/error.log
+</span></span><span style="display:flex;"><span>	<span style="color:#24909d">CustomLog</span> ${APACHE_LOG_DIR}/access.log combined
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">&lt;/VirtualHost&gt;</span>
 </span></span></code></pre></div><p>Después se activa el VirtualHost.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo a2ensite djangocms.conf 
-</span></span><span style="display:flex;"><span>Enabling site djangocms.
-</span></span><span style="display:flex;"><span>To activate the new configuration, you need to run:
-</span></span><span style="display:flex;"><span>  systemctl reload apache2
-</span></span><span style="display:flex;"><span>❯ sudo systemctl reload apache2.service 
-</span></span></code></pre></div><p>A continuación se usa el comando <code>collectstatic</code> para generar un directorio de ficheros estáticos en el directorio del proyecto con todos los ficheros estáticos. Para que este comando funcione, se debe indicar la URL base de los ficheros estáticos en el fichero settings.py</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>STATIC_ROOT = os.path.join(BASE_DIR, &#39;static&#39;)
-</span></span></code></pre></div><p>Y después se puede ejecutar el comando <code>collectstatic</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ python3 manage.py collectstatic
-</span></span><span style="display:flex;"><span>Found another file with the destination path &#39;admin/img/search.svg&#39;. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>1159 static files copied to &#39;/home/debian/javiblog/static&#39;.
-</span></span></code></pre></div><p>Accediendo al servidor se puede usar el CMS instalado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo a2ensite djangocms.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enabling site djangocms.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">To activate the new configuration, you need to run:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  systemctl reload apache2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ sudo systemctl reload apache2.service 
+</span></span></span></code></pre></div><p>A continuación se usa el comando <code>collectstatic</code> para generar un directorio de ficheros estáticos en el directorio del proyecto con todos los ficheros estáticos. Para que este comando funcione, se debe indicar la URL base de los ficheros estáticos en el fichero settings.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">STATIC_ROOT = os.path.join(BASE_DIR, &#39;static&#39;)
+</span></span></span></code></pre></div><p>Y después se puede ejecutar el comando <code>collectstatic</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ python3 manage.py collectstatic
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Found another file with the destination path &#39;admin/img/search.svg&#39;. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">1159 static files copied to &#39;/home/debian/javiblog/static&#39;.
+</span></span></span></code></pre></div><p>Accediendo al servidor se puede usar el CMS instalado.</p>
 <h1 id="migración-del-cms">Migración del CMS</h1>
 <h2 id="volcado-del-proyecto">Volcado del proyecto</h2>
 <p>En este caso, la aplicación django no está en un repositorio de GitHub, sino que se ha instalado localmente en el entorno de desarrollo. Para llevar el CMS al entorno de producción se puede crear un repositorio en GitHub y clonarlo o, directamente, sucar scp para copiar el directorio en el servidor en producción.</p>
 <p>Antes de llevar el directorio al entorno de producción conviene crear todos los ficheros necesarios como el fichero de respaldo del contenido de la base de datos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ python3 manage.py dumpdata &gt; cms.json
-</span></span></code></pre></div><p>Para copiar el directorio al entorno de producción se puede usar el comando <code>scp</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ scp -r javiblog/ debian@pignite.javihuete.site:/home/debian
-</span></span></code></pre></div><p>En el entorno de desarrollo también se crea un entorno virtual y se instala el CMS y sus dependencias.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd venv/
-</span></span><span style="display:flex;"><span>python3 -m venv cms
-</span></span><span style="display:flex;"><span>source venv/cms/bin/activate
-</span></span><span style="display:flex;"><span>cd
-</span></span><span style="display:flex;"><span>pip install django-cms
-</span></span><span style="display:flex;"><span>cd javiblog
-</span></span><span style="display:flex;"><span>pip install -r requirements.in
-</span></span><span style="display:flex;"><span>pip install mysqlclient
-</span></span></code></pre></div><p>Para poder hacer la migración se crea la base de datos para la aplicación.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> cms;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">1</span> row <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">002</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> <span style="color:#9ece6a">&#39;cms&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;*****&#39;</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">002</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> cms.<span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">to</span> <span style="color:#9ece6a">&#39;cms&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;*****&#39;</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">flush</span> <span style="color:#bb9af7">privileges</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span></code></pre></div><p>Y en el fichero settings.py del proyecto se deben indicar los datos de la nueva base de datos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># Database
-</span></span><span style="display:flex;"><span># https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>DATABASES = {
-</span></span><span style="display:flex;"><span>    &#39;default&#39;: {
-</span></span><span style="display:flex;"><span>        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
-</span></span><span style="display:flex;"><span>        &#39;NAME&#39;: &#39;cms&#39;,
-</span></span><span style="display:flex;"><span>        &#39;USER&#39;: &#39;cms&#39;,
-</span></span><span style="display:flex;"><span>        &#39;PASSWORD&#39;: &#39;djangocms&#39;,
-</span></span><span style="display:flex;"><span>        &#39;HOST&#39;: &#39;localhost&#39;,
-</span></span><span style="display:flex;"><span>        &#39;PORT&#39;: &#39;&#39;,
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Finalmente, se puede migrar la estructura de la base de datos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>python3 manage.py migrate
-</span></span></code></pre></div><p>Y, por último, el contenido.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>python3 manage.py loaddata cms.json 
-</span></span></code></pre></div><p>Antes de terminar con la configuración de la aplicación en el entorno de producción hay que permitir el acceso a través de la URL en el fichero settings.py.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ALLOWED_HOSTS = [&#34;portal.javihuete.site&#34;]
-</span></span></code></pre></div><h2 id="configuración-del-servidor-de-aplicaciones">Configuración del servidor de aplicaciones</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ python3 manage.py dumpdata &gt; cms.json
+</span></span></span></code></pre></div><p>Para copiar el directorio al entorno de producción se puede usar el comando <code>scp</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ scp -r javiblog/ debian@pignite.javihuete.site:/home/debian
+</span></span></span></code></pre></div><p>En el entorno de desarrollo también se crea un entorno virtual y se instala el CMS y sus dependencias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd venv/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">python3 -m venv cms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">source venv/cms/bin/activate
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">pip install django-cms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd javiblog
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">pip install -r requirements.in
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">pip install mysqlclient
+</span></span></span></code></pre></div><p>Para poder hacer la migración se crea la base de datos para la aplicación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">database</span><span style="color:#666"> </span>cms;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666"> </span>row<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">002</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">user</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;cms&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;*****&#39;</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">002</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">grant</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">all</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">on</span><span style="color:#666"> </span>cms.*<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">to</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;cms&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;*****&#39;</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">flush</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span></code></pre></div><p>Y en el fichero settings.py del proyecto se deben indicar los datos de la nueva base de datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> Database
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">DATABASES = {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &#39;default&#39;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;NAME&#39;: &#39;cms&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;USER&#39;: &#39;cms&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;PASSWORD&#39;: &#39;djangocms&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;HOST&#39;: &#39;localhost&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#39;PORT&#39;: &#39;&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><p>Finalmente, se puede migrar la estructura de la base de datos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">python3 manage.py migrate
+</span></span></span></code></pre></div><p>Y, por último, el contenido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">python3 manage.py loaddata cms.json 
+</span></span></span></code></pre></div><p>Antes de terminar con la configuración de la aplicación en el entorno de producción hay que permitir el acceso a través de la URL en el fichero settings.py.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ALLOWED_HOSTS = [&#34;portal.javihuete.site&#34;]
+</span></span></span></code></pre></div><h2 id="configuración-del-servidor-de-aplicaciones">Configuración del servidor de aplicaciones</h2>
 <p>Para poder usar el servidor de aplicaciones <code>uwsgi</code> desde el entorno virtual del CMS hay que instalarlo dentro de este entorno virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>pip install uwsgi
-</span></span></code></pre></div><p>Para configurar el servidor de aplciaciones, en primer lugar, se genera el fichero .ini en el directorio del entorno virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#bb9af7">[uwsgi]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">http</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">:8083</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">chdir</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">/home/debian/javiblog/javiblog</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">wsgi-file</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">wsgi.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">processes</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">4</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">threads</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">2</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">pip install uwsgi
+</span></span></span></code></pre></div><p>Para configurar el servidor de aplciaciones, en primer lugar, se genera el fichero .ini en el directorio del entorno virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[uwsgi]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">http</span> = <span style="color:#ed9d13">:8083</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">chdir</span> = <span style="color:#ed9d13">/home/debian/javiblog/javiblog</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">wsgi-file</span> = <span style="color:#ed9d13">wsgi.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">processes</span> = <span style="color:#ed9d13">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">threads</span> = <span style="color:#ed9d13">2</span>
 </span></span></code></pre></div><p>A partir de este fichero se puede configurar la unidad de systemd que controla este servicio en el directorio /etc/systemd/system/uwsgi-cms.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#bb9af7">[Unit]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Description</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">uwsgi-cms  </span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">After</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">network.target</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Description</span>=<span style="color:#ed9d13">uwsgi-cms  </span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">After</span>=<span style="color:#ed9d13">network.target</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Install]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">WantedBy</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">multi-user.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WantedBy</span>=<span style="color:#ed9d13">multi-user.target</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Service]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">User</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">debian</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Group</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">debian</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Restart</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">always</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">User</span>=<span style="color:#ed9d13">debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Group</span>=<span style="color:#ed9d13">debian</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Restart</span>=<span style="color:#ed9d13">always</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecStart</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/home/debian/venv/cms/bin/uwsgi /home/debian/venv/cms/cms.ini</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecReload</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/bin/kill -s HUP $MAINPID</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">ExecStop</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/bin/kill -s TERM $MAINPID</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecStart</span>=<span style="color:#ed9d13">/home/debian/venv/cms/bin/uwsgi /home/debian/venv/cms/cms.ini</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecReload</span>=<span style="color:#ed9d13">/bin/kill -s HUP $MAINPID</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ExecStop</span>=<span style="color:#ed9d13">/bin/kill -s TERM $MAINPID</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">WorkingDirectory</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/home/debian/javiblog            </span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Environment</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">PYTHONPATH=&#39;/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/s&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WorkingDirectory</span>=<span style="color:#ed9d13">/home/debian/javiblog            </span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Environment</span>=<span style="color:#ed9d13">PYTHONPATH=&#39;/home/debian/javiblog:/home/debian/venv/cms/lib/python3.11/s&gt;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">PrivateTmp</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">PrivateTmp</span>=<span style="color:#ed9d13">true</span>
 </span></span></code></pre></div><p>Para habilitar y arrancar el servicio se usa <code>systemctl</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl enable uswgi-cms.service
-</span></span><span style="display:flex;"><span>sudo systemctl start uswgi-cms.service
-</span></span></code></pre></div><h2 id="configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable uswgi-cms.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start uswgi-cms.service
+</span></span></span></code></pre></div><h2 id="configuración-de-nginx-como-proxy-inverso">Configuración de Nginx como proxy inverso</h2>
 <p>Para que Nginx dirija el tráfico al servidor de aplicaciones uwsgi se crea un VirtualHost con la siguiente configuración:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#bb9af7">server</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#414868;font-style:italic">#listen 80;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#server_name  python.javihuete.site;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#server_tokens off;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#return 301 https://$server_name$request_uri;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">listen</span> <span style="color:#e0af68">443</span> <span style="color:#9ece6a">ssl</span>;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">server</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#999;font-style:italic">#listen 80;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#server_name  python.javihuete.site;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#server_tokens off;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#return 301 https://$server_name$request_uri;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">listen</span> <span style="color:#3677a9">443</span> <span style="color:#ed9d13">ssl</span>;
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">server_name</span> <span style="color:#9ece6a">portal.javihuete.site</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">server_name</span> <span style="color:#ed9d13">portal.javihuete.site</span>;
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">ssl_certificate</span> <span style="color:#9ece6a">/etc/letsencrypt/live/javihuete.site/fullchain.pem</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_certificate_key</span> <span style="color:#9ece6a">/etc/letsencrypt/live/javihuete.site/privkey.pem</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_protocols</span>       <span style="color:#9ece6a">TLSv1</span> <span style="color:#9ece6a">TLSv1.1</span> <span style="color:#9ece6a">TLSv1.2</span> <span style="color:#9ece6a">TLSv1.3</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">ssl_ciphers</span>         <span style="color:#9ece6a">HIGH:!aNULL:!MD5</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">ssl_certificate</span> <span style="color:#ed9d13">/etc/letsencrypt/live/javihuete.site/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">ssl_certificate_key</span> <span style="color:#ed9d13">/etc/letsencrypt/live/javihuete.site/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">ssl_protocols</span>       <span style="color:#ed9d13">TLSv1</span> <span style="color:#ed9d13">TLSv1.1</span> <span style="color:#ed9d13">TLSv1.2</span> <span style="color:#ed9d13">TLSv1.3</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">ssl_ciphers</span>         <span style="color:#ed9d13">HIGH:!aNULL:!MD5</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">root</span> <span style="color:#9ece6a">/home/debian/javiblog</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">root</span> <span style="color:#ed9d13">/home/debian/javiblog</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">proxy_pass</span> <span style="color:#9ece6a">http://localhost:8083</span>;
-</span></span><span style="display:flex;"><span>		<span style="color:#414868;font-style:italic">#include proxy_params;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	}	
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">location</span> <span style="color:#ed9d13">/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#6ab825;font-weight:bold">proxy_pass</span> <span style="color:#ed9d13">http://localhost:8083</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#999;font-style:italic">#include proxy_params;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	}	
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/static/</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">alias</span> <span style="color:#9ece6a">/home/debian/javiblog/static/</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">location</span> <span style="color:#ed9d13">/static/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#6ab825;font-weight:bold">alias</span> <span style="color:#ed9d13">/home/debian/javiblog/static/</span>;
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">error_log</span> <span style="color:#9ece6a">/var/log/nginx/cms_error.log</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">access_log</span> <span style="color:#9ece6a">/var/log/nginx/cms_access.log</span>;   
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">error_log</span> <span style="color:#ed9d13">/var/log/nginx/cms_error.log</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">access_log</span> <span style="color:#ed9d13">/var/log/nginx/cms_access.log</span>;   
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Por último, para habilitar el sitio se crea el enlace simbólico y se reinicia el servidor web.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo ln -s ../sites-available/cms
-</span></span><span style="display:flex;"><span>sudo systemctl restart nginx.service
-</span></span></code></pre></div><p>Al poner en producción el CMS, se usa el protocolo HTTPS para el acceso a la página web. Esto hace que sea necesario añadir la siguiente línea al fichero settings.py de la aplicación:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>CSRF_TRUSTED_ORIGINS = [&#34;https://portal.javihuete.site&#34;,]
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo ln -s ../sites-available/cms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart nginx.service
+</span></span></span></code></pre></div><p>Al poner en producción el CMS, se usa el protocolo HTTPS para el acceso a la página web. Esto hace que sea necesario añadir la siguiente línea al fichero settings.py de la aplicación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">CSRF_TRUSTED_ORIGINS = [&#34;https://portal.javihuete.site&#34;,]
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1323,8 +1323,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
-      Migración de aplicaciones web PHP al entorno de producción
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
     </a>
   </h4>
   
@@ -1339,16 +1339,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/bases-de-datos/"
             class="ms-1"
-            >Implantacion
+            >Bases de datos
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
     Leer
   </a>
 </div>
@@ -1360,8 +1360,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
-      Trabajo con el kernel de Linux
+    <a href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+      Configuración de un proxy inverso en Apache2 y Nginx
     </a>
   </h4>
   
@@ -1376,16 +1376,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Administracion sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
+  <p class="mb-6">En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
     Leer
   </a>
 </div>
@@ -1397,32 +1397,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
-      Cómo simular un servidor MariaDB en GNS3
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
+      Creación de una VPN de acceso remoto con WireGuard
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Redes
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+  <p class="mb-6"><p>En este escenario un servidor VPN permite el acceso a un equipo conectado a su red interna a los clientes conectados a él a través de la red VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
     Leer
   </a>
 </div>
@@ -1528,9 +1528,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1538,9 +1538,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

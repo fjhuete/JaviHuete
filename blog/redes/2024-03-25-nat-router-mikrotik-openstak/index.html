@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -993,9 +993,9 @@
             class="img img-fluid img-center"
             width="902"
             height="600"
-            src="/images/redes/practica13/img1_hu16336523051638233059.png"
+            src="/images/redes/practica13/img1_hu_85cc0a958a2f0375.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img1_hu16336523051638233059.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img1_hu_85cc0a958a2f0375.png'" />
       
     
 
@@ -1053,72 +1053,72 @@
 
 
 >a través de la interfaz gráfica</a> de la plataforma o desde la plantilla para la creación del escenario. En este caso, se ha especificado la opción <code>enable_dhcp: true</code> en la red 7, a la que pertenecen los ordenadores conectados al router Casa.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#bb9af7">subnet7</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">type</span>: OS::Neutron::Subnet
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">properties</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">network</span>: { <span style="color:#bb9af7">get_resource</span>: red7 }
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">cidr</span>: <span style="color:#e0af68">192.168.0.0</span>/24
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">enable_dhcp</span>: <span style="color:#e0af68">true</span>
-</span></span></code></pre></div><p>Sin embargo, a continuación, se documenta el proceso para la configuración de un servidor DHCP en un router Mikrotik en otros entornos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">subnet7</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>OS::Neutron::Subnet<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">properties</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">network</span>:<span style="color:#666"> </span>{<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">get_resource</span>:<span style="color:#666"> </span>red7 }<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">cidr</span>:<span style="color:#666"> </span><span style="color:#3677a9">192.168.0.0</span>/24<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">enable_dhcp</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Sin embargo, a continuación, se documenta el proceso para la configuración de un servidor DHCP en un router Mikrotik en otros entornos.</p>
 <p>Se trata de un proceso muy sencillo. Al ejecutar el comando ip dhcp-server setup en un router, el propio equipo pide el resto de información necesaria para configurar el servidor de manera interactiva. Así, se deben aportar datos como la interfaz del servidor DHCP, el rango de la red, la puerta de enlace para la red, el rango de direcciones que el servidor puede asignar, el servidor DNS y el tiempo de préstamo de la configuración que ofrece el servidor DHCP.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip dhcp-server setup
-</span></span><span style="display:flex;"><span>Select interface to run DHCP server on
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>dhcp server interface: ether2
-</span></span><span style="display:flex;"><span>Select network for DHCP addresses
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>dhcp address space: 192.168.0.0/24
-</span></span><span style="display:flex;"><span>Select gateway for given network
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>gateway for dhcp network: 192.168.0.50
-</span></span><span style="display:flex;"><span>Select pool of ip addresses given out by DHCP server
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>addresses to give out: 192.168.0.1-192.168.0.49,192.168.0.51-192.168.0.254
-</span></span><span style="display:flex;"><span>Select DNS servers
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>dns servers: 8.8.8.8
-</span></span><span style="display:flex;"><span>Select lease time
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>lease time: 10m
-</span></span></code></pre></div><h1 id="enrutamiento-de-los-routers-mikrotik-en-openstack">Enrutamiento de los routers Mikrotik en Openstack</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip dhcp-server setup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select interface to run DHCP server on
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">dhcp server interface: ether2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select network for DHCP addresses
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">dhcp address space: 192.168.0.0/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select gateway for given network
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">gateway for dhcp network: 192.168.0.50
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select pool of ip addresses given out by DHCP server
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">addresses to give out: 192.168.0.1-192.168.0.49,192.168.0.51-192.168.0.254
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select DNS servers
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">dns servers: 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Select lease time
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">lease time: 10m
+</span></span></span></code></pre></div><h1 id="enrutamiento-de-los-routers-mikrotik-en-openstack">Enrutamiento de los routers Mikrotik en Openstack</h1>
 <h2 id="direccionamiento-de-los-routers-del-escenario">Direccionamiento de los routers del escenario</h2>
 <p>Para asignar la dirección IP otorgada por Openstack a cada tarjeta de red de los routers del escenario se usa el comando <code>interface ethernet print</code> para mostrar la dirección MAC de cada puerto. Con esta información se debe comprobar a qué dirección IP de Openstack corresponde la interfaz. Una vez que se conozca esta información se puede pasar al router. Por ejemplo, si la IP de la interfaz ether1 del router Casa es 100.40.0.146:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip address add address=100.40.0.146/24 interface=ether1
-</span></span></code></pre></div><p>Esta configuración se aplica a todas las tarjetas de red de todos los routers, así como a las interfaces de los servidores. A los clientes no es necesario asignarles una IP de forma manual porque ya la han recibido a través del protocolo DHCP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip address add address=100.40.0.146/24 interface=ether1
+</span></span></span></code></pre></div><p>Esta configuración se aplica a todas las tarjetas de red de todos los routers, así como a las interfaces de los servidores. A los clientes no es necesario asignarles una IP de forma manual porque ya la han recibido a través del protocolo DHCP.</p>
 <h2 id="enrutamiento-de-los-routers-del-escenario">Enrutamiento de los routers del escenario</h2>
 <h3 id="empresa-1">Empresa 1</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.10.0.114
-</span></span></code></pre></div><h3 id="empresa-2">Empresa 2</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.20.0.45
-</span></span></code></pre></div><h3 id="casa">Casa</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.40.0.202
-</span></span></code></pre></div><h3 id="internet-1">Internet 1</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=100.40.0.0/0 gateway=100.30.0.70
-</span></span></code></pre></div><h3 id="internet-2">Internet 2</h3>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip route add dst-address=0.0.0.0/0 gateway=100.30.0.111
-</span></span></code></pre></div><h1 id="configuración-del-snat-en-el-router-casa">Configuración del SNAT en el router Casa</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip route add dst-address=0.0.0.0/0 gateway=100.10.0.114
+</span></span></span></code></pre></div><h3 id="empresa-2">Empresa 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip route add dst-address=0.0.0.0/0 gateway=100.20.0.45
+</span></span></span></code></pre></div><h3 id="casa">Casa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip route add dst-address=0.0.0.0/0 gateway=100.40.0.202
+</span></span></span></code></pre></div><h3 id="internet-1">Internet 1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip route add dst-address=100.40.0.0/0 gateway=100.30.0.70
+</span></span></span></code></pre></div><h3 id="internet-2">Internet 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip route add dst-address=0.0.0.0/0 gateway=100.30.0.111
+</span></span></span></code></pre></div><h1 id="configuración-del-snat-en-el-router-casa">Configuración del SNAT en el router Casa</h1>
 <p>Configurar el SNAT en un router es algo sencillo. Sólo es necesario ejecutar un comando.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=192.168.0.0/24 action=src-nat to-addresses=100.40.0.146 out-interface=ether1
-</span></span></code></pre></div><p>Con esto se indica al router que debe modificar la dirección de origen de todos los paquetes que provengan de la red 192.168.0.0/24 y que se enruten por la interfaz ether1 por la IP 100.40.0.146.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=srcnat src-address=192.168.0.0/24 action=src-nat to-addresses=100.40.0.146 out-interface=ether1
+</span></span></span></code></pre></div><p>Con esto se indica al router que debe modificar la dirección de origen de todos los paquetes que provengan de la red 192.168.0.0/24 y que se enruten por la interfaz ether1 por la IP 100.40.0.146.</p>
 <p>De esta manera, tras configurar el SNAT en el router Casa, los ordenadores PC1 y PC2 pueden comunicarse con direcciones IP de fuera de su red.</p>
 <h1 id="configuración-del-nat-en-los-routers-de-las-empresas">Configuración del NAT en los routers de las empresas</h1>
 <h2 id="configuración-del-snat-en-los-routers-de-las-empresas">Configuración del SNAT en los routers de las empresas</h2>
 <p>Para configurar SNAT en los routers de las empresas hay que repetir el mismo comando ejecutado en el router casa.</p>
 <p>Para Empresa 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.10.0.129 out-interface=ether2
-</span></span></code></pre></div><p>Para empresa 2</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.20.0.93 out-interface=ether2
-</span></span></code></pre></div><p>Ahora sólo queda realizar la configuración necesaria para que estos servidores también puedan recibir tráfico desde fuera de su red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.10.0.129 out-interface=ether2
+</span></span></span></code></pre></div><p>Para empresa 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=srcnat src-address=10.0.0.0/24 action=src-nat to-addresses=100.20.0.93 out-interface=ether2
+</span></span></span></code></pre></div><p>Ahora sólo queda realizar la configuración necesaria para que estos servidores también puedan recibir tráfico desde fuera de su red.</p>
 <h2 id="configuración-del-dnat-en-los-routers-de-las-empresas">Configuración del DNAT en los routers de las empresas</h2>
 <p>El comando que configura el DNAT en los routers Mikrotik es similar al que se ha usado previamente para la configuración SNAT.</p>
 <p>En el router Empresa 1</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=80 to-addresses=10.0.0.112 protocol=tcp 
-</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=443 to-addresses=10.0.0.112 protocol=tcp
-</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=5432 to-addresses=10.0.0.120 protocol=tcp
-</span></span></code></pre></div><p>En el router Empresa 2</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.93 dst-port=22 to-addresses=10.0.0.102 protocol=tcp
-</span></span><span style="display:flex;"><span>ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.39 dst-port=3306 to-addresses=10.0.0.198 protocol=tcp
-</span></span></code></pre></div><p>Esta configuración permite a los ordenadores PC1 y PC2 acceder, desde su red local, a los servidores en las empresas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=80 to-addresses=10.0.0.112 protocol=tcp 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=443 to-addresses=10.0.0.112 protocol=tcp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=dstnat action=dst-nat dst-address=100.10.0.129 dst-port=5432 to-addresses=10.0.0.120 protocol=tcp
+</span></span></span></code></pre></div><p>En el router Empresa 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.93 dst-port=22 to-addresses=10.0.0.102 protocol=tcp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip firewall nat add chain=dstnat action=dst-nat dst-address=100.20.0.39 dst-port=3306 to-addresses=10.0.0.198 protocol=tcp
+</span></span></span></code></pre></div><p>Esta configuración permite a los ordenadores PC1 y PC2 acceder, desde su red local, a los servidores en las empresas.</p>
 
 
 
@@ -1382,45 +1382,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
-      Guía básica de configuración de Nginx
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
-      Configurar redes virtuales (VLAN) en bridges Linux
+    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
+      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
     </a>
   </h4>
   
@@ -1443,8 +1406,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Este post pretende demostrar el funcionamiento y guiar en la configuración de redes virtuales en un bridge creado en una máquina Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-vlan-bridge-linux/">
+  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
     Leer
   </a>
 </div>
@@ -1456,8 +1419,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
-      Instalación de Debian 12 bajo LVM en Proxmox
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
     </a>
   </h4>
   
@@ -1472,16 +1435,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/redes/"
             class="ms-1"
-            >Fundamentos hardware
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+      Configuración de switches en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
     Leer
   </a>
 </div>
@@ -1587,9 +1587,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1597,9 +1597,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

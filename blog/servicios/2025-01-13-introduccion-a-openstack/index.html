@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -885,156 +885,156 @@
 
             <h1 id="instalación-y-configuración-de-openstack-client-en-un-entorno-virtual">Instalación y configuración de OpenStack Client en un entorno virtual</h1>
 <p>Primero se crea el entorno virtual y se instala OpenStack client usando pip.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ python3 -m venv os
-</span></span><span style="display:flex;"><span>❯ source os/bin/activate
-</span></span><span style="display:flex;"><span>❯ pip install python-openstackclient
-</span></span></code></pre></div><p>Para conectar a la cuenta de OpenStack hay que usar el fichero OpenStack RC. El fichero se descarga desde la interfaz web después de iniciar sesión y se ejecuta para autenticarse en OpenStack desde la línea de comandos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ source &#34;Proyecto de fhuemej702-openrc(1).sh&#34;
-</span></span><span style="display:flex;"><span>Please enter your OpenStack Password for project Proyecto de fhuemej702 as user fhuemej702: 
-</span></span></code></pre></div><h1 id="uso-de-openstack-client">Uso de OpenStack client</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ python3 -m venv os
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ source os/bin/activate
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ pip install python-openstackclient
+</span></span></span></code></pre></div><p>Para conectar a la cuenta de OpenStack hay que usar el fichero OpenStack RC. El fichero se descarga desde la interfaz web después de iniciar sesión y se ejecuta para autenticarse en OpenStack desde la línea de comandos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ source &#34;Proyecto de fhuemej702-openrc(1).sh&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Please enter your OpenStack Password for project Proyecto de fhuemej702 as user fhuemej702: 
+</span></span></span></code></pre></div><h1 id="uso-de-openstack-client">Uso de OpenStack client</h1>
 <h2 id="gestión-de-claves-ssh">Gestión de claves ssh</h2>
 <p>Para crear una clave ssh:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack keypair create --public-key ~/.ssh/id_rsa.pub ClaveSSH
-</span></span></code></pre></div><p>Para ver las claves creadas en el proyecto:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack keypair list
-</span></span><span style="display:flex;"><span>+----------+-------------------------------------------------+------+
-</span></span><span style="display:flex;"><span>| Name     | Fingerprint                                     | Type |
-</span></span><span style="display:flex;"><span>+----------+-------------------------------------------------+------+
-</span></span><span style="display:flex;"><span>| ClaveSSH | 6d:3c:7a:4d:a0:87:d5:b3:bf:94:2e:46:01:37:37:9f | ssh  |
-</span></span><span style="display:flex;"><span>+----------+-------------------------------------------------+------+
-</span></span></code></pre></div><h2 id="gestión-de-grupos-de-seguridad">Gestión de grupos de seguridad</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack keypair create --public-key ~/.ssh/id_rsa.pub ClaveSSH
+</span></span></span></code></pre></div><p>Para ver las claves creadas en el proyecto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack keypair list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------+-------------------------------------------------+------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| Name     | Fingerprint                                     | Type |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------+-------------------------------------------------+------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ClaveSSH | 6d:3c:7a:4d:a0:87:d5:b3:bf:94:2e:46:01:37:37:9f | ssh  |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------+-------------------------------------------------+------+
+</span></span></span></code></pre></div><h2 id="gestión-de-grupos-de-seguridad">Gestión de grupos de seguridad</h2>
 <p>Para abrir el puerto 443 en el grupo de seguridad <em>Default</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack security group rule create --protocol tcp --remote-ip 0.0.0.0/0 --dst-port 443 default
-</span></span></code></pre></div><h2 id="gestión-de-imágenes">Gestión de imágenes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack security group rule create --protocol tcp --remote-ip 0.0.0.0/0 --dst-port 443 default
+</span></span></span></code></pre></div><h2 id="gestión-de-imágenes">Gestión de imágenes</h2>
 <p>El cliente de OpenStack permite subir imágenes al proyecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack image create --container-format=bare --disk-format=qcow2 \
-</span></span><span style="display:flex;"><span> --file cirros-0.6.2-x86_64-disk.img &#34;Cirros 0.6.2&#34;
-</span></span></code></pre></div><p>También permite ver las imágenes disponibles en el proyecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack image list
-</span></span><span style="display:flex;"><span>❯ openstack image list
-</span></span><span style="display:flex;"><span>+----------------------------------+---------------------------------+--------+
-</span></span><span style="display:flex;"><span>| ID                               | Name                            | Status |
-</span></span><span style="display:flex;"><span>+----------------------------------+---------------------------------+--------+
-</span></span><span style="display:flex;"><span>| ce5ca1e6-30d6-4e6b-b2da-         | Cirros 0.6.2                    | active |
-</span></span><span style="display:flex;"><span>| f9ca654a1d9a                     |                                 |        |
-</span></span><span style="display:flex;"><span>| e7caa035-5bb0-47fb-b9e8-         | Debian 12 Bookworm              | active |
-</span></span><span style="display:flex;"><span>| ef73dce54499                     |                                 |        |
-</span></span><span style="display:flex;"><span>| 1a39c3de-                        | Fedora-Cloud-Base-37-1.7.x86_64 | active |
-</span></span><span style="display:flex;"><span>| cf79-4d17-a470-a490ba89b366      |                                 |        |
-</span></span><span style="display:flex;"><span>| 52f6e1bd-                        | Rocky Linux 9                   | active |
-</span></span><span style="display:flex;"><span>| edc0-49e8-87e2-c99a3f173d41      |                                 |        |
-</span></span><span style="display:flex;"><span>| d57c4744-177a-4f53-8db9-         | Ubuntu 22.04 LTS                | active |
-</span></span><span style="display:flex;"><span>| 6368dc17f979                     |                                 |        |
-</span></span><span style="display:flex;"><span>| e2cfdd56-7474-4772-a43c-         | Ubuntu 24.04 LTS                | active |
-</span></span><span style="display:flex;"><span>| ad0429f4b78e                     |                                 |        |
-</span></span><span style="display:flex;"><span>| ffebc834-5c2f-4319-b5b8-         | cirros-0.6.2-x86_64-disk        | active |
-</span></span><span style="display:flex;"><span>| a0c360050d4f                     |                                 |        |
-</span></span><span style="display:flex;"><span>+----------------------------------+---------------------------------+--------+
-</span></span></code></pre></div><p>También se pueden ver los sabores disponibles para crear instancias.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack flavor list
-</span></span><span style="display:flex;"><span>+----+------------+------+------+-----------+-------+-----------+
-</span></span><span style="display:flex;"><span>| ID | Name       |  RAM | Disk | Ephemeral | VCPUs | Is Public |
-</span></span><span style="display:flex;"><span>+----+------------+------+------+-----------+-------+-----------+
-</span></span><span style="display:flex;"><span>| 10 | vol.medium | 2048 |    0 |         0 |     2 | True      |
-</span></span><span style="display:flex;"><span>| 11 | vol.large  | 4096 |    0 |         0 |     2 | True      |
-</span></span><span style="display:flex;"><span>| 12 | vol.xlarge | 8192 |    0 |         0 |     4 | True      |
-</span></span><span style="display:flex;"><span>| 2  | m1.micro   |  256 |   10 |         0 |     1 | True      |
-</span></span><span style="display:flex;"><span>| 3  | m1.mini    |  512 |   10 |         0 |     1 | True      |
-</span></span><span style="display:flex;"><span>| 4  | m1.normal  | 1024 |   10 |         0 |     1 | True      |
-</span></span><span style="display:flex;"><span>| 5  | m1.medium  | 2048 |   20 |         0 |     2 | True      |
-</span></span><span style="display:flex;"><span>| 6  | m1.large   | 4096 |   20 |         0 |     2 | True      |
-</span></span><span style="display:flex;"><span>| 7  | m1.xlarge  | 8192 |   20 |         0 |     4 | True      |
-</span></span><span style="display:flex;"><span>| 8  | vol.mini   |  512 |    0 |         0 |     1 | True      |
-</span></span><span style="display:flex;"><span>| 9  | vol.normal | 1024 |    0 |         0 |     1 | True      |
-</span></span><span style="display:flex;"><span>+----+------------+------+------+-----------+-------+-----------+
-</span></span></code></pre></div><h2 id="creación-de-configuración-de-instancias-con-cloud-init">Creación de configuración de instancias con Cloud-init</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack image create --container-format=bare --disk-format=qcow2 \
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> --file cirros-0.6.2-x86_64-disk.img &#34;Cirros 0.6.2&#34;
+</span></span></span></code></pre></div><p>También permite ver las imágenes disponibles en el proyecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack image list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ openstack image list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------------------------------+---------------------------------+--------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ID                               | Name                            | Status |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------------------------------+---------------------------------+--------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ce5ca1e6-30d6-4e6b-b2da-         | Cirros 0.6.2                    | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| f9ca654a1d9a                     |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| e7caa035-5bb0-47fb-b9e8-         | Debian 12 Bookworm              | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ef73dce54499                     |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 1a39c3de-                        | Fedora-Cloud-Base-37-1.7.x86_64 | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| cf79-4d17-a470-a490ba89b366      |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 52f6e1bd-                        | Rocky Linux 9                   | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| edc0-49e8-87e2-c99a3f173d41      |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| d57c4744-177a-4f53-8db9-         | Ubuntu 22.04 LTS                | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 6368dc17f979                     |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| e2cfdd56-7474-4772-a43c-         | Ubuntu 24.04 LTS                | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ad0429f4b78e                     |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ffebc834-5c2f-4319-b5b8-         | cirros-0.6.2-x86_64-disk        | active |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| a0c360050d4f                     |                                 |        |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----------------------------------+---------------------------------+--------+
+</span></span></span></code></pre></div><p>También se pueden ver los sabores disponibles para crear instancias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack flavor list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----+------------+------+------+-----------+-------+-----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ID | Name       |  RAM | Disk | Ephemeral | VCPUs | Is Public |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----+------------+------+------+-----------+-------+-----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 10 | vol.medium | 2048 |    0 |         0 |     2 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 11 | vol.large  | 4096 |    0 |         0 |     2 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 12 | vol.xlarge | 8192 |    0 |         0 |     4 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 2  | m1.micro   |  256 |   10 |         0 |     1 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 3  | m1.mini    |  512 |   10 |         0 |     1 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 4  | m1.normal  | 1024 |   10 |         0 |     1 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 5  | m1.medium  | 2048 |   20 |         0 |     2 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 6  | m1.large   | 4096 |   20 |         0 |     2 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 7  | m1.xlarge  | 8192 |   20 |         0 |     4 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 8  | vol.mini   |  512 |    0 |         0 |     1 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 9  | vol.normal | 1024 |    0 |         0 |     1 | True      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+----+------------+------+------+-----------+-------+-----------+
+</span></span></span></code></pre></div><h2 id="creación-de-configuración-de-instancias-con-cloud-init">Creación de configuración de instancias con Cloud-init</h2>
 <p>Para crear una instancia se usa el comando <code>server create</code>. Los parámetros necesarios para la creación de la instancia se pueden consultar con los comandos <code>openstack flavor list</code>, <code>openstack image list</code>, <code>openstack netwrok list</code>, etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack server create --flavor m1.mini --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; Taller1
-</span></span></code></pre></div><p>En el fichero cloud-init se configura que esta instancia actualice los paquetes al iniciarse, que instale Apache2, que cree un usuario con contraseña y se le cambia el nombre y dominio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#cloud-config</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Actualiza los paquetes</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_update</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_upgrade</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Instala el paquete apache2</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">packages</span>:
-</span></span><span style="display:flex;"><span>  - apache2
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Configura el hostname y el fqdn</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">fqdn</span>: maquina1.example.org
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">hostname</span>: maquina1
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">manage_etc_hosts</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: usuario1
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Cambia las contraseña a los usuarios creados</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">chpasswd</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">expire</span>: <span style="color:#e0af68">False</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: usuario1
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span></code></pre></div><p>El fichero se debe indicar durante la creación de la instancia.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack server create --flavor m1.mini --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; --user-data cloud-init.yaml Taller1
-</span></span></code></pre></div><h2 id="conexión-a-instancias">Conexión a instancias</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack server create --flavor m1.mini --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; Taller1
+</span></span></span></code></pre></div><p>En el fichero cloud-init se configura que esta instancia actualice los paquetes al iniciarse, que instale Apache2, que cree un usuario con contraseña y se le cambia el nombre y dominio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#cloud-config</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Actualiza los paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_update</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_upgrade</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Instala el paquete apache2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">packages</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- apache2<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Configura el hostname y el fqdn</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">fqdn</span>:<span style="color:#666"> </span>maquina1.example.org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">hostname</span>:<span style="color:#666"> </span>maquina1<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">manage_etc_hosts</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario1<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Cambia las contraseña a los usuarios creados</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">chpasswd</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">expire</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">False</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>usuario1<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span></code></pre></div><p>El fichero se debe indicar durante la creación de la instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack server create --flavor m1.mini --image &#34;Debian 12 Bookworm&#34; --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; --user-data cloud-init.yaml Taller1
+</span></span></span></code></pre></div><h2 id="conexión-a-instancias">Conexión a instancias</h2>
 <p>Para conectarse a la instancia tiene que contar con una IP flotante. Se pueden ver las IP flotantes asignadas al proyecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack floating ip list
-</span></span></code></pre></div><p>Si todas están en uso, se debe crear una nueva.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯  openstack floating ip create ext-net
-</span></span><span style="display:flex;"><span>+---------------------+--------------------------------------+
-</span></span><span style="display:flex;"><span>| Field               | Value                                |
-</span></span><span style="display:flex;"><span>+---------------------+--------------------------------------+
-</span></span><span style="display:flex;"><span>| created_at          | 2024-12-02T08:52:19Z                 |
-</span></span><span style="display:flex;"><span>| description         |                                      |
-</span></span><span style="display:flex;"><span>| dns_domain          |                                      |
-</span></span><span style="display:flex;"><span>| dns_name            |                                      |
-</span></span><span style="display:flex;"><span>| fixed_ip_address    | None                                 |
-</span></span><span style="display:flex;"><span>| floating_ip_address | 172.22.201.193                       |
-</span></span><span style="display:flex;"><span>| floating_network_id |                                      |
-</span></span><span style="display:flex;"><span>| id                  | 02d9a479-fffc-4522-b80a-22cf10506b61 |
-</span></span><span style="display:flex;"><span>| name                | 172.22.201.193                       |
-</span></span><span style="display:flex;"><span>| port_details        | None                                 |
-</span></span><span style="display:flex;"><span>| port_id             | None                                 |
-</span></span><span style="display:flex;"><span>| project_id          |                                      |
-</span></span><span style="display:flex;"><span>| qos_policy_id       | None                                 |
-</span></span><span style="display:flex;"><span>| revision_number     | 0                                    |
-</span></span><span style="display:flex;"><span>| router_id           | None                                 |
-</span></span><span style="display:flex;"><span>| status              | DOWN                                 |
-</span></span><span style="display:flex;"><span>| subnet_id           | None                                 |
-</span></span><span style="display:flex;"><span>| tags                | []                                   |
-</span></span><span style="display:flex;"><span>| updated_at          | 2024-12-02T08:52:19Z                 |
-</span></span><span style="display:flex;"><span>+---------------------+--------------------------------------+
-</span></span></code></pre></div><p>Para asignarla a la nueva instancia:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack server add floating ip Taller1 172.22.201.193
-</span></span></code></pre></div><p>Con esta IP ya se puede establecer la conexión a la instancia.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ssh javi@172.22.201.193
-</span></span><span style="display:flex;"><span>Linux maquina1 6.1.0-28-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.119-1 (2024-11-22) x86_64
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>The programs included with the Debian GNU/Linux system are free software;
-</span></span><span style="display:flex;"><span>the exact distribution terms for each program are described in the
-</span></span><span style="display:flex;"><span>individual files in /usr/share/doc/*/copyright.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-</span></span><span style="display:flex;"><span>permitted by applicable law.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>javi@maquina1:~$ 
-</span></span></code></pre></div><h2 id="listar-y-eliminar-instancias">Listar y eliminar instancias</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack floating ip list
+</span></span></span></code></pre></div><p>Si todas están en uso, se debe crear una nueva.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯  openstack floating ip create ext-net
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+---------------------+--------------------------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| Field               | Value                                |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+---------------------+--------------------------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| created_at          | 2024-12-02T08:52:19Z                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| description         |                                      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| dns_domain          |                                      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| dns_name            |                                      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| fixed_ip_address    | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| floating_ip_address | 172.22.201.193                       |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| floating_network_id |                                      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| id                  | 02d9a479-fffc-4522-b80a-22cf10506b61 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| name                | 172.22.201.193                       |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| port_details        | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| port_id             | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| project_id          |                                      |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| qos_policy_id       | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| revision_number     | 0                                    |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| router_id           | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| status              | DOWN                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| subnet_id           | None                                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| tags                | []                                   |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| updated_at          | 2024-12-02T08:52:19Z                 |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+---------------------+--------------------------------------+
+</span></span></span></code></pre></div><p>Para asignarla a la nueva instancia:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack server add floating ip Taller1 172.22.201.193
+</span></span></span></code></pre></div><p>Con esta IP ya se puede establecer la conexión a la instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ ssh javi@172.22.201.193
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux maquina1 6.1.0-28-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.119-1 (2024-11-22) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">javi@maquina1:~$ 
+</span></span></span></code></pre></div><h2 id="listar-y-eliminar-instancias">Listar y eliminar instancias</h2>
 <p>Por último, el cliente por línea de comandos de OpenStack también permite listar las instancias creadas en el proyecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack server list
-</span></span><span style="display:flex;"><span>+--------------+----------+--------+--------------+----------------+-----------+
-</span></span><span style="display:flex;"><span>| ID           | Name     | Status | Networks     | Image          | Flavor    |
-</span></span><span style="display:flex;"><span>+--------------+----------+--------+--------------+----------------+-----------+
-</span></span><span style="display:flex;"><span>| 10b4710e-    | Taller1  | ACTIVE | Red de fhuem | Debian 12      | m1.mini   |
-</span></span><span style="display:flex;"><span>| 8769-406c-   |          |        |    =10.0.0 | Bookworm       |           |
-</span></span><span style="display:flex;"><span>| 895e-        |          |        | .202, 172.22 |                |           |
-</span></span><span style="display:flex;"><span>| 9224bf20a880 |          |        | .201.193     |                |           |
-</span></span><span style="display:flex;"><span>| add49a45-    | Debian12 | ACTIVE | Red de fhuem | Debian 12      | m1.normal |
-</span></span><span style="display:flex;"><span>| 82ac-4f6f-   |          |        |     =10.0.0 | Bookworm       |           |
-</span></span><span style="display:flex;"><span>| a03c-        |          |        | .87, 172.22. |                |           |
-</span></span><span style="display:flex;"><span>| 419786d8e9db |          |        | 200.247      |                |           |
-</span></span><span style="display:flex;"><span>+--------------+----------+--------+--------------+----------------+-----------+
-</span></span></code></pre></div><p>Y eliminarlas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ openstack server delete Taller1
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack server list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+--------------+----------+--------+--------------+----------------+-----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| ID           | Name     | Status | Networks     | Image          | Flavor    |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+--------------+----------+--------+--------------+----------------+-----------+
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 10b4710e-    | Taller1  | ACTIVE | Red de fhuem | Debian 12      | m1.mini   |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 8769-406c-   |          |        |    =10.0.0 | Bookworm       |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 895e-        |          |        | .202, 172.22 |                |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 9224bf20a880 |          |        | .201.193     |                |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| add49a45-    | Debian12 | ACTIVE | Red de fhuem | Debian 12      | m1.normal |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 82ac-4f6f-   |          |        |     =10.0.0 | Bookworm       |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| a03c-        |          |        | .87, 172.22. |                |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">| 419786d8e9db |          |        | 200.247      |                |           |
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">+--------------+----------+--------+--------------+----------------+-----------+
+</span></span></span></code></pre></div><p>Y eliminarlas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ openstack server delete Taller1
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1263,8 +1263,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
-      Qué es ARP y cómo funciona
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
     </a>
   </h4>
   
@@ -1287,8 +1287,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
     Leer
   </a>
 </div>
@@ -1300,8 +1300,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
-      Gestión de almacenamiento en Openstack
+    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+      Configuración de switches en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
+      Uso de Openstack para crear un escenario de despliegue
     </a>
   </h4>
   
@@ -1324,45 +1361,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
-      Creación de usuarios y políticas de seguridad en Debian
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
+  <p class="mb-6"><p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
     Leer
   </a>
 </div>
@@ -1468,9 +1468,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1478,9 +1478,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -871,10 +871,10 @@
 
             <p>Para simular un servidor PostgreSQL en GNS3 se necesita una máquina, en este caso Debian 11, con conexión a Internet a través de la nube NAT del simulador.</p>
 <p>Tras conectar la máquina a la nube NAT y solicitar una configuración IP a través de DHCP, se pueden actualizar los paquetes del equipo y, una vez que se ha actualizado el sistema, se puede instalar el servidor Postgres.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo dhclient
-</span></span><span style="display:flex;"><span>sudo apt update &amp;&amp; sudo apt upgrade
-</span></span><span style="display:flex;"><span>sudo apt install postgresql
-</span></span></code></pre></div><p>Tras instalar PostgreSQL y comprobar que el servicio se ha ejecutado con éxito usando el comando <code>systemctl status postgresql</code>, es necesario habilitar el acceso remoto para que los PC conectados a otras redes locales puedan llegar a él. Para ello, se deben modificar dos ficheros de configuración. El primero de ellos es el fichero postgresql.conf, en el que se debe indicar que el servidor debe escuchar en el puerto 5432 (por defecto) y de todas las direcciones IP (no sólo de localhost, por defecto) modificando en la línea listen_addresses  el valor ‘localhost’ por ‘*’.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo dhclient
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt update &amp;&amp; sudo apt upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install postgresql
+</span></span></span></code></pre></div><p>Tras instalar PostgreSQL y comprobar que el servicio se ha ejecutado con éxito usando el comando <code>systemctl status postgresql</code>, es necesario habilitar el acceso remoto para que los PC conectados a otras redes locales puedan llegar a él. Para ello, se deben modificar dos ficheros de configuración. El primero de ellos es el fichero postgresql.conf, en el que se debe indicar que el servidor debe escuchar en el puerto 5432 (por defecto) y de todas las direcciones IP (no sólo de localhost, por defecto) modificando en la línea listen_addresses  el valor ‘localhost’ por ‘*’.</p>
 
 
 
@@ -966,9 +966,9 @@
             class="img img-fluid img-center"
             width="786"
             height="533"
-            src="/images/redes/practica13/img2_hu10982813327118460397.png"
+            src="/images/redes/practica13/img2_hu_3413ec8f4dac61db.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img2_hu10982813327118460397.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img2_hu_3413ec8f4dac61db.png'" />
       
     
 
@@ -1081,9 +1081,9 @@
             class="img img-fluid img-center"
             width="786"
             height="533"
-            src="/images/redes/practica13/img3_hu14093019421424873714.png"
+            src="/images/redes/practica13/img3_hu_22344741e2d3894e.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img3_hu14093019421424873714.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica13\/img3_hu_22344741e2d3894e.png'" />
       
     
 
@@ -1098,8 +1098,8 @@
 
 <p>Finalmente, se le debe asignar su IP privada a la máquina que aloja este servidor a través del fichero de configuración de red /etc/network/interfaces.</p>
 <p>Para la conexión remota se usa el siguiente comando desde el equipo cliente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>psql -h IP_servidor -U usuario -d BaseDeDatos
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">psql -h IP_servidor -U usuario -d BaseDeDatos
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1320,82 +1320,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-      Configuración NAT en routers Mikrotik en Openstack
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
-      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
-      Gestión de almacenamiento en Openstack
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -1418,8 +1344,82 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
+      Uso de Openstack para crear un escenario de despliegue
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
     Leer
   </a>
 </div>
@@ -1525,9 +1525,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1535,9 +1535,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

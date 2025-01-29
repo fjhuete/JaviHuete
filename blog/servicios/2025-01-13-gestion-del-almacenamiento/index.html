@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -877,28 +877,28 @@
 
             <h1 id="creación-de-volúmenes">Creación de volúmenes</h1>
 <p>Para crear un volumen usando OpenStack Client se ejecuta el siguiente comando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack volume create --size 1 vol1
-</span></span></code></pre></div><p>Después se puede asociar el volumen a un instancia previamente creada.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server add volume --device /dev/sdb Debian12 vol1
-</span></span></code></pre></div><p>Desde la instancia, se puede dar un sistema de ficheros al volumen y montarlo en una partición de la máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo mkfs.ext4 /dev/vdb
-</span></span><span style="display:flex;"><span>sudo mount /dev/vdb /mnt
-</span></span></code></pre></div><h1 id="redimensionar-volúmenes">Redimensionar volúmenes</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack volume create --size 1 vol1
+</span></span></span></code></pre></div><p>Después se puede asociar el volumen a un instancia previamente creada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server add volume --device /dev/sdb Debian12 vol1
+</span></span></span></code></pre></div><p>Desde la instancia, se puede dar un sistema de ficheros al volumen y montarlo en una partición de la máquina virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo mkfs.ext4 /dev/vdb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo mount /dev/vdb /mnt
+</span></span></span></code></pre></div><h1 id="redimensionar-volúmenes">Redimensionar volúmenes</h1>
 <p>Para redimensionar un volumen primero hay que desasociarlo de la instancia a la que esté asociado.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server remove volume Debian12 vol1
-</span></span></code></pre></div><p>Después se puede asignar un nuevo tamaño al volumen.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack volume set --size 2 vol1
-</span></span></code></pre></div><p>Tras redimensionar el volumen se redimensiona el sistema de ficheros.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo e2fsck -f /dev/vdc
-</span></span><span style="display:flex;"><span>sudo resize2fs /dev/vdc 2G
-</span></span></code></pre></div><h1 id="creación-de-volúmenes-arrancalbes">Creación de volúmenes arrancalbes</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server remove volume Debian12 vol1
+</span></span></span></code></pre></div><p>Después se puede asignar un nuevo tamaño al volumen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack volume set --size 2 vol1
+</span></span></span></code></pre></div><p>Tras redimensionar el volumen se redimensiona el sistema de ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo e2fsck -f /dev/vdc
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo resize2fs /dev/vdc 2G
+</span></span></span></code></pre></div><h1 id="creación-de-volúmenes-arrancalbes">Creación de volúmenes arrancalbes</h1>
 <p>Para crear un volumen arrancable desde OpenStack Client se usa la opción <code>--bootable</code> del comando <code>openstack volume create</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack volume create --bootable --size 8 --image &#34;Debian 12 Bookworm&#34; Taller2
-</span></span></code></pre></div><p>Con este volumen se puede crear una instancia.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server create --flavor vol.mini --volume Taller2 --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; Taller2
-</span></span></code></pre></div><p>Para poder acceder a ella se le asocia una IP flotante.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>openstack server add floating ip Taller2 172.22.201.193
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack volume create --bootable --size 8 --image &#34;Debian 12 Bookworm&#34; Taller2
+</span></span></span></code></pre></div><p>Con este volumen se puede crear una instancia.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server create --flavor vol.mini --volume Taller2 --security-group default --key-name ClaveSSH --network &#34;Red de fhuemej702&#34; Taller2
+</span></span></span></code></pre></div><p>Para poder acceder a ella se le asocia una IP flotante.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">openstack server add floating ip Taller2 172.22.201.193
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1135,32 +1135,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
-      Empaquetadores y compresores/descompresores en Debian
+    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+      Cifrado asimétrico con GPG y OpenSSL
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Sistemas
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
     Leer
   </a>
 </div>
@@ -1172,8 +1172,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
-      Ejemplos de uso de comandos básicos en Debian
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -1188,16 +1188,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En esta entrada se recogen algunos ejercicios básicos que demuestran el uso de los comandos más usados en Debian y otras distribuciones GNU/Linux.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-10-ejemplos-comandos-basicos-debian/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
     Leer
   </a>
 </div>
@@ -1209,8 +1209,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
-      Túneles IPv6: túneles 6to4
+    <a href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
+      Instalación del servidor web Apache en Rocky Linux 9
     </a>
   </h4>
   
@@ -1225,16 +1225,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+  <p class="mb-6"><p>El de Apache es uno de los servidores web más usados del mundo. Aunque en otras distribuciones, como las basadas en Debian, este servidor se instala con el paquete <code>apache2</code> en las distribuciones basadas en Red Hat como CentOS o Rocky Linux, este servidor se instala con el paquete <code>httpd</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
     Leer
   </a>
 </div>
@@ -1340,9 +1340,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1350,9 +1350,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

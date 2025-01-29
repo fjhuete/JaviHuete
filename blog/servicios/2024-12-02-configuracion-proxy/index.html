@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -912,25 +912,25 @@
 
 >www.app1.org/nuevodirectorio</a>.</p>
 <p>Para permitir el acceso a las páginas de la red interna se tienen que activar los módulos necesarios de Apache</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo a2enmod proxy proxy_http
-</span></span></code></pre></div><p>Después se crea un virtualhost en el directorio /etc/apache2/sites-available para cada página en el que se indica la línea de proxy inverso para que se produzca el acceso al servidor interno.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#bb9af7">&lt;VirtualHost</span> <span style="color:#9ece6a">*:80</span><span style="color:#bb9af7">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">ServerName</span> www.app1.org
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo a2enmod proxy proxy_http
+</span></span></span></code></pre></div><p>Después se crea un virtualhost en el directorio /etc/apache2/sites-available para cada página en el que se indica la línea de proxy inverso para que se produzca el acceso al servidor interno.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">&lt;VirtualHost</span> <span style="color:#ed9d13">*:80</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">ServerName</span> www.app1.org
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">ServerAdmin</span> webmaster@localhost
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">ServerAdmin</span> webmaster@localhost
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">ProxyPass</span> <span style="color:#9ece6a">&#34;/&#34;</span> <span style="color:#9ece6a">&#34;http://interno.example1.org/&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">ProxyPassReverse</span> <span style="color:#9ece6a">&#34;/&#34;</span> <span style="color:#9ece6a">&#34;http://interno.example1.org/&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">ProxyPass</span> <span style="color:#ed9d13">&#34;/&#34;</span> <span style="color:#ed9d13">&#34;http://interno.example1.org/&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">ProxyPassReverse</span> <span style="color:#ed9d13">&#34;/&#34;</span> <span style="color:#ed9d13">&#34;http://interno.example1.org/&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">ErrorLog</span> ${APACHE_LOG_DIR}/error.log
-</span></span><span style="display:flex;"><span>        <span style="color:#9ece6a">CustomLog</span> ${APACHE_LOG_DIR}/access.log combined
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">ErrorLog</span> ${APACHE_LOG_DIR}/error.log
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">CustomLog</span> ${APACHE_LOG_DIR}/access.log combined
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">&lt;/VirtualHost&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">&lt;/VirtualHost&gt;</span>
 </span></span></code></pre></div><p>Después hay que activar los virtual host</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo a2ensite app1
-</span></span><span style="display:flex;"><span>sudo a2ensite app2
-</span></span><span style="display:flex;"><span>sudo systemctl reload apache2
-</span></span></code></pre></div><p>Desde el cliente se crea el direccionamiento estático en el fichero /etc/hosts y se puede acceder al destino desde el navegador del host.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo a2ensite app1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo a2ensite app2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl reload apache2
+</span></span></span></code></pre></div><p>Desde el cliente se crea el direccionamiento estático en el fichero /etc/hosts y se puede acceder al destino desde el navegador del host.</p>
 
           </div>
           <div class="row items-start justify-between">
@@ -1152,80 +1152,6 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
-      Introducción a Openstack Client
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
-      Creación de usuarios y políticas de seguridad en Debian
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
     <a href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
       Sistemas operativos inmutables
     </a>
@@ -1252,6 +1178,80 @@
   
   <p class="mb-6">La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar. En este post se analizan algunos de estos sistemas operativos y se valoran sus ventajas e inconvenientes.</p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
+      Cómo enrutar una red en OpenStack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
+      Instalación de MySQL en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
     Leer
   </a>
 </div>
@@ -1357,9 +1357,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1367,9 +1367,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

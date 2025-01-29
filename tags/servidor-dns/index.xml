@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servidor Dns on Javi Huete</title>
+    <link>/tags/servidor-dns/</link>
+    <description>Recent content in Servidor Dns on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 27 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/servidor-dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de vistas en el servidor DNS con  Bind9</title>
+      <link>/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/</link>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/</guid>
+      <description>&lt;p&gt;En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

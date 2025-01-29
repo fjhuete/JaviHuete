@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -891,26 +891,26 @@
 <p>También existe en la máquina anfitriona un fichero de imagen qcow2 con una versión comprimida de un sistema operativo debian 12 ya instalado.</p>
 <p>Por tanto, para crear y configurar las dos máquinas virtuales necesarias para el desarrollo de esta parte de la práctica se usa la funcionalidad de aprovisionamiento ligero (thin provisioning) de las imágenes qcow2, que permite usar una imagen base para la creación de varias máquinas virtuales sin tener que repetir el proceso de instalación del sistema operativo en cada una de ellas.</p>
 <p>A partir de la imagen comprimida creada en la parte anterior de la práctica, deb12-min.qcow2, se pueden crear nuevos ficheros de imagen de aprovisionamiento ligero para las máquinas necesarias para esta parte de la práctica. En una primera aproximación, se necesitan dos máquinas con dos interfaces de red cada una. Por tanto, se crean dos nuevos ficheros de imagen a partir del fichero base.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-01.qcow2
-</span></span><span style="display:flex;"><span>qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-02.qcow2.
-</span></span></code></pre></div><p>Antes de lanzar las nuevas máquinas virtuales se deben configurar también sus interfaces de red. El primer ejercicio pide que ambas máquinas tengan conectividad hacia la red principal a través del bridge br0. Para ello, es necesario que cada una tenga asociada una interfaz virtual tap y que ambas interfaces formen parte de este bridge. Por tanto, se crean dos interfaces de tipo tap propiedad del usuario debian.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip tuntap list
-</span></span></code></pre></div><p>En primer lugar, las máquinas virtuales deben tener conexión no sólo entre ellas sino también hacia la red principal, por tanto, estas interfaces se deben incluir en el bridge br0 y se deben levantar. ip l set dev tap0 up y  ip l set dev tap up.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>brctl addif br0 tap0
-</span></span><span style="display:flex;"><span>brctl addif br0 tap1
-</span></span><span style="display:flex;"><span>ip l set dev tap0 up
-</span></span><span style="display:flex;"><span>ip l set dev tap up
-</span></span></code></pre></div><p>Finalmente, cada interfaz necesita una dirección MAC aleatoria que se puede asignar a una variable.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span><span style="display:flex;"><span>mac1=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span></code></pre></div><p>Con los ficheros de imagen qcow2 y las interfaces en el bridge se pueden lanzar las máquina virtuales necesarias para este caso práctico.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Debian1
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-01.qcow2 -device virtio-net,netdev=n0,mac=$mac0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no &amp;
-</span></span><span style="display:flex;"><span>#Debian2
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-0.qcow2 -device virtio-net,netdev=n0,mac=$mac1 -netdev tap,id=n0,ifname=tap1,script=no,downscript=no &amp;
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-01.qcow2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-02.qcow2.
+</span></span></span></code></pre></div><p>Antes de lanzar las nuevas máquinas virtuales se deben configurar también sus interfaces de red. El primer ejercicio pide que ambas máquinas tengan conectividad hacia la red principal a través del bridge br0. Para ello, es necesario que cada una tenga asociada una interfaz virtual tap y que ambas interfaces formen parte de este bridge. Por tanto, se crean dos interfaces de tipo tap propiedad del usuario debian.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip tuntap list
+</span></span></span></code></pre></div><p>En primer lugar, las máquinas virtuales deben tener conexión no sólo entre ellas sino también hacia la red principal, por tanto, estas interfaces se deben incluir en el bridge br0 y se deben levantar. ip l set dev tap0 up y  ip l set dev tap up.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">brctl addif br0 tap0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl addif br0 tap1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap0 up
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap up
+</span></span></span></code></pre></div><p>Finalmente, cada interfaz necesita una dirección MAC aleatoria que se puede asignar a una variable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mac1=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span></code></pre></div><p>Con los ficheros de imagen qcow2 y las interfaces en el bridge se pueden lanzar las máquina virtuales necesarias para este caso práctico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>Debian1
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-01.qcow2 -device virtio-net,netdev=n0,mac=$mac0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no &amp;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>Debian2
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-0.qcow2 -device virtio-net,netdev=n0,mac=$mac1 -netdev tap,id=n0,ifname=tap1,script=no,downscript=no &amp;
+</span></span></span></code></pre></div>
 
 
   
@@ -938,54 +938,54 @@
 <p>Hay dos formas de crear este segundo bridge: a través de <code>brctl addbr br1</code> o, para hacerlo persistente a los reinicios, editando el fichero de configuración /etc/network/interfaces.</p>
 <h2 id="añadir-una-segunda-interfaz-a-las-máquinas-virtuales-y-conectarlas-a-br1">Añadir una segunda interfaz a las máquinas virtuales y conectarlas a br1</h2>
 <p>Para que la máquinas virtuales creadas en el ejercicio anterior se conecten a través del nuevo bridge necesitan una segunda interfaz. El procedimiento para generarlas es el mismo que se ha seguido hasta ahora.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip tuntap list
-</span></span><span style="display:flex;"><span>ip l set dev tap2 up
-</span></span><span style="display:flex;"><span>ip l set dev tap3 up
-</span></span></code></pre></div><p>Además, para que estas interfaces permitan a las máquinas virtuales conectarse a través del bridge br1, se deben añadir ambas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>brctl addif br1 tap2
-</span></span><span style="display:flex;"><span>brctl addif br1 tap3
-</span></span><span style="display:flex;"><span>brctl show
-</span></span></code></pre></div><p>Finalmente, cada interfaz necesita una dirección MAC para poder asociarse a una máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span><span style="display:flex;"><span>mac1=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span></code></pre></div><p>Para que las máquinas estén efectivamente conectadas a estas interfaces, se deben lanzar con estos comandos, que presentan ciertas modificaciones respecto a los empleados en el ejercicio anterior:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#Debian1
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-01.qcow2 -device virtio-net,netdev=n0,mac=$mac0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no -device virtio-net,netdev=n0,mac=$mac2 -netdev tap,id=n0,ifname=tap2,script=no,downscript=no &amp;
-</span></span><span style="display:flex;"><span>#Debian2
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-0.qcow2 -device virtio-net,netdev=n0,mac=$mac1 -netdev tap,id=n0,ifname=tap1,script=no,downscript=no -device virtio-net,netdev=n0,mac=$mac3 -netdev tap,id=n0,ifname=tap3,script=no,downscript=no &amp;
-</span></span></code></pre></div><p>Con esta configuración debian1 y debian2 están conectadas tanto entre ellas a través de los bridges br0 y br1 como hacia el exterior a través de br0.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip tuntap list
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap2 up
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap3 up
+</span></span></span></code></pre></div><p>Además, para que estas interfaces permitan a las máquinas virtuales conectarse a través del bridge br1, se deben añadir ambas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">brctl addif br1 tap2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl addif br1 tap3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl show
+</span></span></span></code></pre></div><p>Finalmente, cada interfaz necesita una dirección MAC para poder asociarse a una máquina virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mac0=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mac1=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span></code></pre></div><p>Para que las máquinas estén efectivamente conectadas a estas interfaces, se deben lanzar con estos comandos, que presentan ciertas modificaciones respecto a los empleados en el ejercicio anterior:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>Debian1
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-01.qcow2 -device virtio-net,netdev=n0,mac=$mac0 -netdev tap,id=n0,ifname=tap0,script=no,downscript=no -device virtio-net,netdev=n0,mac=$mac2 -netdev tap,id=n0,ifname=tap2,script=no,downscript=no &amp;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>Debian2
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-0.qcow2 -device virtio-net,netdev=n0,mac=$mac1 -netdev tap,id=n0,ifname=tap1,script=no,downscript=no -device virtio-net,netdev=n0,mac=$mac3 -netdev tap,id=n0,ifname=tap3,script=no,downscript=no &amp;
+</span></span></span></code></pre></div><p>Con esta configuración debian1 y debian2 están conectadas tanto entre ellas a través de los bridges br0 y br1 como hacia el exterior a través de br0.</p>
 <h2 id="crear-dos-máquinas-virtuales-con-una-interfaz-de-red">Crear dos máquinas virtuales con una interfaz de red</h2>
 <p>De nuevo, los pasos que se deben seguir para crear dos máquinas virtuales con una interfaz de red cada una son los mismos que se han repetido en ejercicios anteriores de esta práctica.</p>
 <p>Primero, se tienen que crear y levantar las interfaces:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip tuntap add mode tap user debian
-</span></span><span style="display:flex;"><span>ip l set dev tap4 up
-</span></span><span style="display:flex;"><span>ip l set dev tap5 up
-</span></span></code></pre></div><p>Después, se generan los ficheros de imagen para estas máquinas:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-03.qcow2
-</span></span><span style="display:flex;"><span>qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-04.qcow2
-</span></span></code></pre></div><p>Posteriormente, se tienen que generar direcciones MAC aleatorias necesarias para la creación de la máquina virtual. Y finalmente, se ejecuta la máquina virtual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mac4=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span><span style="display:flex;"><span>mac5=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
-</span></span><span style="display:flex;"><span>#Debian3
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-03.qcow2 -device virtio-net,netdev=n0,mac=$mac4 -netdev tap,id=n0,ifname=tap4,script=no,downscript=no &amp;
-</span></span><span style="display:flex;"><span>#Debian4
-</span></span><span style="display:flex;"><span>kvm -m 512 -hda deb12-04.qcow2 -device virtio-net,netdev=n0,mac=$mac5 -netdev tap,id=n0,ifname=tap5,script=no,downscript=no &amp;
-</span></span></code></pre></div><h2 id="conectar-debian1-con-debian3-y-debian2-con-debian4-en-el-bridge-br1-usando-una-vlan">Conectar debian1 con debian3 y debian2 con debian4 en el bridge br1 usando una VLAN</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip tuntap add mode tap user debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap4 up
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ip l set dev tap5 up
+</span></span></span></code></pre></div><p>Después, se generan los ficheros de imagen para estas máquinas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-03.qcow2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">qemu-img create -b deb12-min.qcow2 -F qcow2 -f qcow2 deb12-04.qcow2
+</span></span></span></code></pre></div><p>Posteriormente, se tienen que generar direcciones MAC aleatorias necesarias para la creación de la máquina virtual. Y finalmente, se ejecuta la máquina virtual.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mac4=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mac5=$(echo &#34;02:&#34;`openssl rand -hex 5 | sed &#39;s/\(..\)/\1:/g; s/.$//&#39;`)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>Debian3
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-03.qcow2 -device virtio-net,netdev=n0,mac=$mac4 -netdev tap,id=n0,ifname=tap4,script=no,downscript=no &amp;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>Debian4
+</span></span><span style="display:flex;"><span><span style="color:#ccc">kvm -m 512 -hda deb12-04.qcow2 -device virtio-net,netdev=n0,mac=$mac5 -netdev tap,id=n0,ifname=tap5,script=no,downscript=no &amp;
+</span></span></span></code></pre></div><h2 id="conectar-debian1-con-debian3-y-debian2-con-debian4-en-el-bridge-br1-usando-una-vlan">Conectar debian1 con debian3 y debian2 con debian4 en el bridge br1 usando una VLAN</h2>
 <p>Para conectar las cuatro máquinas en el bridge br1 todas ellas tienen que tener alguna de sus interfaces en este bridge. Por tanto, el primer paso imprescindible para realizar este ejercicio es añadir al bridge br1 las interfaces de debian3 y debian4.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>brctl addif br1 tap4
-</span></span><span style="display:flex;"><span>brctl addif br1 tap5
-</span></span></code></pre></div><p>Posteriormente hay que activar en este bridge la funcionalidad de filtrado por vlan.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ip l set br0 type bridge vlan_filtering 1
-</span></span></code></pre></div><p>Además, hay que indicar la VLAN a la que pertenece cada una de las interfaces del bridge br1. Para cumplir con los requisitos del ejercicio, debian1 y debian3 deben pertenecer a una VLAN, por ejemplo, la VLAN 2 y debian2 y debian4 a otra, por ejemplo, la VLAN 3. Así, debian1 y debian 3 se añaden a la VLAN 2:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bridge vlan add dev tap1 vid 2 pvid untagged master
-</span></span><span style="display:flex;"><span>bridge vlan add dev tap4 vid 2 pvid untagged master
-</span></span></code></pre></div><p>Y debian2 y debian4 a la VLAN 3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bridge vlan add dev tap3 vid 3 pvid untagged master
-</span></span><span style="display:flex;"><span>bridge vlan add dev tap5 vid 3 pvid untagged master
-</span></span></code></pre></div><p>En primer lugar se tratará de demostrar la conectividad entre debian1 y debian3 a través de br1. Para ello, se configuran las interfaces de estas máquinas virtuales forman parte de este bridge. En debian1 es la ens4 y en debian3 la ens3. Se es asigna manualmente una dirección IP en el fichero de configuración /etc/network/interfaces: la 192.168.0.10 para debian1 y la 192.168.0.30 para debian3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">brctl addif br1 tap4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">brctl addif br1 tap5
+</span></span></span></code></pre></div><p>Posteriormente hay que activar en este bridge la funcionalidad de filtrado por vlan.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ip l set br0 type bridge vlan_filtering 1
+</span></span></span></code></pre></div><p>Además, hay que indicar la VLAN a la que pertenece cada una de las interfaces del bridge br1. Para cumplir con los requisitos del ejercicio, debian1 y debian3 deben pertenecer a una VLAN, por ejemplo, la VLAN 2 y debian2 y debian4 a otra, por ejemplo, la VLAN 3. Así, debian1 y debian 3 se añaden a la VLAN 2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">bridge vlan add dev tap1 vid 2 pvid untagged master
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bridge vlan add dev tap4 vid 2 pvid untagged master
+</span></span></span></code></pre></div><p>Y debian2 y debian4 a la VLAN 3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">bridge vlan add dev tap3 vid 3 pvid untagged master
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bridge vlan add dev tap5 vid 3 pvid untagged master
+</span></span></span></code></pre></div><p>En primer lugar se tratará de demostrar la conectividad entre debian1 y debian3 a través de br1. Para ello, se configuran las interfaces de estas máquinas virtuales forman parte de este bridge. En debian1 es la ens4 y en debian3 la ens3. Se es asigna manualmente una dirección IP en el fichero de configuración /etc/network/interfaces: la 192.168.0.10 para debian1 y la 192.168.0.30 para debian3.</p>
 
 
 
@@ -1077,9 +1077,9 @@
             class="img img-fluid img-center"
             width="628"
             height="105"
-            src="/images/redes/practica19/img7_hu9703050476230399548.png"
+            src="/images/redes/practica19/img7_hu_fabd1fb5b4d6a4c6.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img7_hu9703050476230399548.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img7_hu_fabd1fb5b4d6a4c6.png'" />
       
     
 
@@ -1190,9 +1190,9 @@
             class="img img-fluid img-center"
             width="630"
             height="105"
-            src="/images/redes/practica19/img8_hu8149775442742422696.png"
+            src="/images/redes/practica19/img8_hu_692e2649701e435d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img8_hu8149775442742422696.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img8_hu_692e2649701e435d.png'" />
       
     
 
@@ -1297,9 +1297,9 @@
             class="img img-fluid img-center"
             width="760"
             height="105"
-            src="/images/redes/practica19/img9_hu2582608968335667287.png"
+            src="/images/redes/practica19/img9_hu_9ffb0b58b07929bd.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img9_hu2582608968335667287.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img9_hu_9ffb0b58b07929bd.png'" />
       
     
 
@@ -1404,9 +1404,9 @@
             class="img img-fluid img-center"
             width="315"
             height="129"
-            src="/images/redes/practica19/img10_hu6950481082192479717.png"
+            src="/images/redes/practica19/img10_hu_e683371e189ed27e.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img10_hu6950481082192479717.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica19\/img10_hu_e683371e189ed27e.png'" />
       
     
 
@@ -1648,8 +1648,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
-      Túneles IPv6: túneles 6to4
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
     </a>
   </h4>
   
@@ -1664,16 +1664,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Redes
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
     Leer
   </a>
 </div>
@@ -1685,8 +1685,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
+    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
+      Introducción a Openstack Client
     </a>
   </h4>
   
@@ -1701,16 +1701,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
     Leer
   </a>
 </div>
@@ -1722,8 +1722,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
     </a>
   </h4>
   
@@ -1746,8 +1746,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
     Leer
   </a>
 </div>
@@ -1853,9 +1853,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1863,9 +1863,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

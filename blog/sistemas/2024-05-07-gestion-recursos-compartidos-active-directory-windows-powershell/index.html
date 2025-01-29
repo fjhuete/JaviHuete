@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -878,20 +878,20 @@
 <p>En este post se muestra cómo se puede compartir un directorio en el controlador de dominio desde la cmd y desde la PowerShell.</p>
 <h1 id="compartir-un-directorio-en-el-controlador-de-dominio-desde-cmd">Compartir un directorio en el controlador de dominio desde cmd</h1>
 <p>En primer lugar, se crea el directorio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir C:\RecursoCompartido
-</span></span></code></pre></div><p>Para establecer el directorio como recurso compartido:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>net share recursoCompartido=C:\RecursoCompartido
-</span></span></code></pre></div><p>El recurso compartido es visible para el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mkdir C:\RecursoCompartido
+</span></span></span></code></pre></div><p>Para establecer el directorio como recurso compartido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">net share recursoCompartido=C:\RecursoCompartido
+</span></span></span></code></pre></div><p>El recurso compartido es visible para el cliente.</p>
 <h1 id="compartir-un-directorio-en-el-controlador-de-dominio-desde-powershell">Compartir un directorio en el controlador de dominio desde PowerShell</h1>
 <p>Tras crear el directorio, se establece como recurso compartido</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#9ece6a">New-SmbShare</span> -Name recursoCompartido -Path C:\Compartido\
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">New-SmbShare</span> -Name recursoCompartido -Path C:\Compartido\
 </span></span></code></pre></div><p>Después, se concede permiso de lectura al grupo de usuarios de dominio y se revocan el resto de permisos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#9ece6a">Grant-SmbShareAccess</span> -Name recursoCompartido -AccountName <span style="color:#9ece6a">&#39;DOMA\Usuarios del dominio&#39;</span> -AccessRight Read
-</span></span><span style="display:flex;"><span><span style="color:#9ece6a">Revoke-SmbShareAccess</span> -Name recursoCompartido -AccountName <span style="color:#9ece6a">&#39;Todos&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">Grant-SmbShareAccess</span> -Name recursoCompartido -AccountName <span style="color:#ed9d13">&#39;DOMA\Usuarios del dominio&#39;</span> -AccessRight Read
+</span></span><span style="display:flex;"><span><span style="color:#24909d">Revoke-SmbShareAccess</span> -Name recursoCompartido -AccountName <span style="color:#ed9d13">&#39;Todos&#39;</span>
 </span></span></code></pre></div><p>El recurso compartido ya es visible para el cliente. Posteriormente, se crea una unidad con el recurso compartido.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#9ece6a">New-PSDrive</span> -Name Y -PSProvider FileSystem -Root \\DC1DOMA\recursoCompartido -Persist
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">New-PSDrive</span> -Name Y -PSProvider FileSystem -Root \\DC1DOMA\recursoCompartido -Persist
 </span></span></code></pre></div><p>Y, finalmente, el cliente puede mapear el recurso y acceder a él.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#9ece6a">New-SmbMapping</span> -LocalPath Y: -RemotPath \\DC1DOMA\recursoCompartido
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">New-SmbMapping</span> -LocalPath Y: -RemotPath \\DC1DOMA\recursoCompartido
 </span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
@@ -1145,8 +1145,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
-      Configuración de un servidor SAN
+    <a href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
+      Gestión de redes en Openstack
     </a>
   </h4>
   
@@ -1169,8 +1169,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+  <p class="mb-6"><p>En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
     Leer
   </a>
 </div>
@@ -1182,8 +1182,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
-      Configuración del protocolo HTTPS para el acceso a una aplicación web
+    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
+      Comandos para la programación de tareas
     </a>
   </h4>
   
@@ -1198,16 +1198,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Implantacion
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
+  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
     Leer
   </a>
 </div>
@@ -1219,8 +1219,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
-      Despliegue de aplicaciones escritas en Python
+    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+      Cómo importar dispositivos a GNS3
     </a>
   </h4>
   
@@ -1235,16 +1235,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/redes/"
             class="ms-1"
-            >Implantacion
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
+  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
     Leer
   </a>
 </div>
@@ -1350,9 +1350,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1360,9 +1360,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

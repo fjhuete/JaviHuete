@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -970,9 +970,9 @@
             class="img img-fluid img-center"
             width="819"
             height="526"
-            src="/images/redes/practica12/img1_hu13587774675808210097.png"
+            src="/images/redes/practica12/img1_hu_8a5f27d0583c398d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img1_hu13587774675808210097.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img1_hu_8a5f27d0583c398d.png'" />
       
     
 
@@ -1047,13 +1047,13 @@
 <h1 id="configurar-ospf-en-un-router-cisco">Configurar OSPF en un router Cisco</h1>
 <p>La configuración del protocolo OSPF en los routers Cisco requiere acceder al modo <code>config terminal</code> del router y, desde él, ejecutar en primer lugar el comando <code>router ospf &lt;id&gt;</code> en el que se inicia un proceso OSPF y se le asigna un identificador. Este comando abre el modo <code>config-router</code>. Entonces se indica un identificador para el router con el comando <code>router-id &lt;n.n.n.n&gt;</code> y se añaden las diferentes interfaces a las que se aplica este protocolo con el comando <code>network &lt;ip&gt; &lt;máscara comodín&gt;</code>.</p>
 <p>Por ejemplo, en el caso del router R1 en este escenario se accede al modo <code>config-rotuer</code> con <code>router ospf 1</code> y, a continuación, se indica un identificador al router con <code>router-id 1.1.1.1</code>. Finalmente, se añade la información sobre todas las redes a las que este dispositivo está conectado:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>R1#config terminal
-</span></span><span style="display:flex;"><span>R1(config)#router ospf 1
-</span></span><span style="display:flex;"><span>R1(config-router)#router-id 1.1.1.1
-</span></span><span style="display:flex;"><span>R1(config-router)#network 10.0.1.0 0.0.0.255 area 0
-</span></span><span style="display:flex;"><span>R1(config-router)#network 172.23.0.0 0.0.0.255 area 0
-</span></span><span style="display:flex;"><span>R1(config-router)#network 192.168.1.0 0.0.0.255 area 0
-</span></span></code></pre></div><p>La misma configuración se establece también pero indicando los valores correspondientes al resto de routers del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">R1#config terminal
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">R1(config)#router ospf 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">R1(config-router)#router-id 1.1.1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">R1(config-router)#network 10.0.1.0 0.0.0.255 area 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">R1(config-router)#network 172.23.0.0 0.0.0.255 area 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">R1(config-router)#network 192.168.1.0 0.0.0.255 area 0
+</span></span></span></code></pre></div><p>La misma configuración se establece también pero indicando los valores correspondientes al resto de routers del escenario.</p>
 <h1 id="rutas-elegidas-por-el-protocolo-ospf">Rutas elegidas por el protocolo OSPF</h1>
 <p>Tras configurar el OSPF en todos los routers del escenario, las tablas de enrutamiento de cada uno de ellos sufren modificaciones y, además contienen nueva información. Ahora las entradas de las tablas de enrutamiento son de dos tipos. Aquellas que se refieren a una dirección a la que el router está directamente conectado se marcan como C (conected) y el resto se marcan con una O (OSPF). Además, cada entrada incluye información del coste de la ruta. En una primera aproximación al uso de OSPF se establece en todos los routers la misma distancia por defecto para todas las rutas: 110. Junto a este valor de distancia, cada entrada de la tabla de enrutamiento recoge el número de saltos necesarios para llegar a la dirección de destino.</p>
 <p>Por ejemplo, en la tabla de enrutamiento del router R1 las rutas a las redes 172.23.0.0/24 y 192.168.1.0/24 está marcadas como conectadas. El resto de destinos se descubren y añaden a la tabla de enrutamiento gracias al protocolo OSPF. Todas las rutas que no están conectadas directamente a este dispositivo muestran una distancia administrativa por defecto de 110. Mientras que algunas de ellas cuentan con 2 saltos, otras requieren tres para llegar al destino. Además, en varios casos como ocurre con la red 172.25.0.0/24 o la 192.168.11.0/24 la tabla de enrutamiento de este router recoge dos opciones diferentes para llegar al mismo destino con diferente latencia.</p>
@@ -1149,9 +1149,9 @@
             class="img img-fluid img-center"
             width="723"
             height="239"
-            src="/images/redes/practica15/img1_hu949469993920715408.png"
+            src="/images/redes/practica15/img1_hu_902d413a31b1784b.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img1_hu949469993920715408.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img1_hu_902d413a31b1784b.png'" />
       
     
 
@@ -1256,9 +1256,9 @@
             class="img img-fluid img-center"
             width="407"
             height="141"
-            src="/images/redes/practica15/img2_hu12038940175558753786.png"
+            src="/images/redes/practica15/img2_hu_364b8a2217a40752.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img2_hu12038940175558753786.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img2_hu_364b8a2217a40752.png'" />
       
     
 
@@ -1363,9 +1363,9 @@
             class="img img-fluid img-center"
             width="318"
             height="217"
-            src="/images/redes/practica15/img3_hu4703143567865349113.png"
+            src="/images/redes/practica15/img3_hu_f8bdf9b2ca6fc3aa.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img3_hu4703143567865349113.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img3_hu_f8bdf9b2ca6fc3aa.png'" />
       
     
 
@@ -1475,9 +1475,9 @@
             class="img img-fluid img-center"
             width="799"
             height="47"
-            src="/images/redes/practica15/img4_hu17469690560001052198.png"
+            src="/images/redes/practica15/img4_hu_6c10a273f6f8a820.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img4_hu17469690560001052198.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img4_hu_6c10a273f6f8a820.png'" />
       
     
 
@@ -1583,9 +1583,9 @@
             class="img img-fluid img-center"
             width="714"
             height="237"
-            src="/images/redes/practica15/img5_hu9267431810778400319.png"
+            src="/images/redes/practica15/img5_hu_74c2ee5ac99eab7d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img5_hu9267431810778400319.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img5_hu_74c2ee5ac99eab7d.png'" />
       
     
 
@@ -1690,9 +1690,9 @@
             class="img img-fluid img-center"
             width="390"
             height="138"
-            src="/images/redes/practica15/img6_hu12477192902606345879.png"
+            src="/images/redes/practica15/img6_hu_c15955f49f8ca9f8.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img6_hu12477192902606345879.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img6_hu_c15955f49f8ca9f8.png'" />
       
     
 
@@ -1797,9 +1797,9 @@
             class="img img-fluid img-center"
             width="390"
             height="138"
-            src="/images/redes/practica15/img7_hu12878232181709321717.png"
+            src="/images/redes/practica15/img7_hu_ae967742c3b2d61e.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img7_hu12878232181709321717.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img7_hu_ae967742c3b2d61e.png'" />
       
     
 
@@ -2045,8 +2045,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
-      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
+    <a href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
+      Instalación de Wireshark y GNS3 en Debian 12 y Windows 10
     </a>
   </h4>
   
@@ -2061,16 +2061,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/redes/"
             class="ms-1"
-            >Sistemas
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+  <p class="mb-6">Wireshark y GNS3 son dos programas fundamentales para el trabajo de un administrador de redes pero instalarlos puede suponer algunos desafíos. Aquí se incluye una guía de instalación de Wireshark y GNS3 en Windows 10 y en Debian 12</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-10-31-instalaci%C3%B3n-wireshark-debian-12-bookworm-windows-10/">
     Leer
   </a>
 </div>
@@ -2082,8 +2082,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
-      Gestión de dispositivos de almacenamiento con Powershell
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
     </a>
   </h4>
   
@@ -2098,16 +2098,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
     Leer
   </a>
 </div>
@@ -2119,8 +2119,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
-      Creación de usuarios y políticas de seguridad en Debian
+    <a href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
+      Comandos para el control de procesos
     </a>
   </h4>
   
@@ -2143,8 +2143,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
+  <p class="mb-6">Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
     Leer
   </a>
 </div>
@@ -2250,9 +2250,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -2260,9 +2260,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

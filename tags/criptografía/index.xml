@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Criptografía on Javi Huete</title>
+    <link>/tags/criptograf%C3%ADa/</link>
+    <description>Recent content in Criptografía on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 14 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/criptograf%C3%ADa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autentificación SSH con cifrado asimétrico usando GPG</title>
+      <link>/blog/seguridad/2025-01-14-autentificacion-con-gpg/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-autentificacion-con-gpg/</guid>
+      <description>&lt;p&gt;Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Certificado HTTP y SSL</title>
+      <link>/blog/seguridad/2025-01-14-certificado-http-ssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-certificado-http-ssl/</guid>
+      <description>En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</description>
+    </item>
+    <item>
+      <title>Cifrado asimétrico con GPG y OpenSSL</title>
+      <link>/blog/seguridad/2025-01-14-criptografia-gpg-openssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-criptografia-gpg-openssl/</guid>
+      <description>En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</description>
+    </item>
+    <item>
+      <title>Correo electrónico cifrado con Thunderbird</title>
+      <link>/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/</guid>
+      <description>&lt;p&gt;En este tutorial se muestra cómo configurar el cliente de correo electrónico Mozilla Thunderbird para enviar y recibir correos electrónicos cifrados con un par de claves pública y privada generadas con GPG.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Firmas y autenticación con GPG</title>
+      <link>/blog/seguridad/2025-01-14-criptografia-integridad/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-criptografia-integridad/</guid>
+      <description>En esta entrada se explica cómo firmar claves públicas usando GPG.</description>
+    </item>
+    <item>
+      <title>Verificar la integridad de ficheros con GPG y apt-secure</title>
+      <link>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</guid>
+      <description>Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</description>
+    </item>
+  </channel>
+</rss>

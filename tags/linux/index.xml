@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recolección centralizada de logs de sistema mediante jouranld</title>
+      <link>/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/</link>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/</guid>
+      <description>&lt;p&gt;Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente &lt;code&gt;systemd-journal-remote&lt;/code&gt; instalado. Este componente de &lt;code&gt;systemd&lt;/code&gt; permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Compartición de sistemas de ficheros con sshfs y systemd</title>
       <link>/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/</link>

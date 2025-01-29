@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -890,15 +890,15 @@
             <h1 id="instalación-automática-usando-un-fichero-de-preseed-alojado-en-un-servidor-web">Instalación automática usando un fichero de preseed alojado en un servidor web</h1>
 <h2 id="configuración-del-servidor-web">Configuración del servidor web</h2>
 <p>El fichero de preseed para la instalación desatendida de Debian se puede aportar no sólo volcando su contenido al archivo de imagen iso del instalador sino también haciéndolo accesible para el cliente en el que se instala el sistema operativo desde un servidor web alojado en la red. Para usar este método de instalación desatendida, primero es necesario contar con un fichero de preseed correctamente configurado y con un servidor web accesible desde el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install apache2
-</span></span></code></pre></div><p>Este método se puede adaptar a las necesidades de la configuración del servidor web, ya sea creando un virtual host específico para alojar el fichero de preseed o estableciendo una resolución de nombres estática en la red local para que el servidor sea accesible por su nombre de host y no se necesario indicar su IP. Para el propósito de esta documentación, la configuración del servidor web se mantiene sencilla y se opta por la solución más simple: colocar el fichero de preseed en el document root por defecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp preseed.cfg /var/www/html
-</span></span></code></pre></div><p>Esto hace que el fichero sea accesible desde cualquier cliente conectado a la red que acceda a la ruta <code>http://IP_SERVIDOR/preseed.cfg</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install apache2
+</span></span></span></code></pre></div><p>Este método se puede adaptar a las necesidades de la configuración del servidor web, ya sea creando un virtual host específico para alojar el fichero de preseed o estableciendo una resolución de nombres estática en la red local para que el servidor sea accesible por su nombre de host y no se necesario indicar su IP. Para el propósito de esta documentación, la configuración del servidor web se mantiene sencilla y se opta por la solución más simple: colocar el fichero de preseed en el document root por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp preseed.cfg /var/www/html
+</span></span></span></code></pre></div><p>Esto hace que el fichero sea accesible desde cualquier cliente conectado a la red que acceda a la ruta <code>http://IP_SERVIDOR/preseed.cfg</code>.</p>
 <h2 id="acceso-al-fichero-de-preseed-desde-el-instalador">Acceso al fichero de preseed desde el instalador</h2>
 <p>Para que el instalador tenga acceso a este fichero el cliente tiene que arrancar con una iso que cargue el menú de instalación de Debian y, desde él, acceder a las <code>opciones avanzadas</code> y después a <code>instalación automática</code>.</p>
 <p>Esto lanza el proceso de instalación y, en un momento determinado, tras la configuración por DHCP del equipo y una vez que la máquina obtiene la configuración de red, se muestra un diálogo en el que se solicita la ubicación del fichero de preseed para ejecutar la instalación desatendida. En este ejemplo el cliente es una máquina virtual creada con libvirt-KVM y el servidor web está instalado en el host, así que la conexión se realiza a través de la red por defecto de libvirt-KVM.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>http://192.168.122.1/preseed.cfg
-</span></span></code></pre></div><p>A partir de este punto, el proceso de instalación continúa su ejecución de forma autónoma hasta finalizar con el reinicio del equipo, que en este punto ya cuenta con el nuevo sistema operativo instalado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">http://192.168.122.1/preseed.cfg
+</span></span></span></code></pre></div><p>A partir de este punto, el proceso de instalación continúa su ejecución de forma autónoma hasta finalizar con el reinicio del equipo, que en este punto ya cuenta con el nuevo sistema operativo instalado.</p>
 <h1 id="instalación-desatendida-desde-un-servidor-pxetftp">Instalación desatendida desde un servidor PXE/TFTP</h1>
 <p>Para esta instalación es necesario contar en el escenario con un servidor DHCP y un servidor TFTP. Ambos se pueden ejecutar en la misma máquina.</p>
 <h2 id="configuración-del-servidor-tftp">Configuración del servidor TFTP</h2>
@@ -912,15 +912,15 @@
 
 
 >la guía oficial de Debian</a> recomienda usar <code>tftpd-hpa</code> para un servidor Debian GNU/Linux. Está escrito por el mismo autor del gestor de arranque syslinux, y por ello menos proclive a generar problemas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install tftpd-hpa
-</span></span></code></pre></div><p>Existen dos formas de iniciar TFTP: desde el demonio del sistema o como un demonio independiente. Esta configuración se determina en el fichero /etc/default/tftpd-hpa, en el que se debe incluir la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>  RUN_DAEMON=&#34;yes&#34;
-</span></span></code></pre></div><p>Con esta orden se fuerza la ejecución del demonio. A continuación, se debe reiniciar el servicio para cargar esta nueva configuración</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart tftpd-hpa.service 
-</span></span></code></pre></div><h2 id="creación-del-archivo-de-instalación">Creación del archivo de instalación</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install tftpd-hpa
+</span></span></span></code></pre></div><p>Existen dos formas de iniciar TFTP: desde el demonio del sistema o como un demonio independiente. Esta configuración se determina en el fichero /etc/default/tftpd-hpa, en el que se debe incluir la siguiente línea:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  RUN_DAEMON=&#34;yes&#34;
+</span></span></span></code></pre></div><p>Con esta orden se fuerza la ejecución del demonio. A continuación, se debe reiniciar el servicio para cargar esta nueva configuración</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart tftpd-hpa.service 
+</span></span></span></code></pre></div><h2 id="creación-del-archivo-de-instalación">Creación del archivo de instalación</h2>
 <p>A diferencia de las instalaciones que usan medios físicos como CD, DVD o memorias extraíbles USB, donde se usa un fichero de imagen de tipo iso arrancable para cargar e instalar el sistema operativo en el equipo, para las instalaciones por red Debian distribuye imágenes de instalación comprimidas, generalmente, con el nombre <code>netboot.tar.gz</code>. Esta imagen se puede descargar desde los repositorios de Debian.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>wget http://ftp.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/netboot.tar.gz
-</span></span></code></pre></div><p>Para que el archivo de instalación esté disponible desde el resto de equipos conectados a la red hay que descomprimir el contenido de este archivo en el directorio que el servidor TFTP comparte con los clientes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">wget http://ftp.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/netboot.tar.gz
+</span></span></span></code></pre></div><p>Para que el archivo de instalación esté disponible desde el resto de equipos conectados a la red hay que descomprimir el contenido de este archivo en el directorio que el servidor TFTP comparte con los clientes.</p>
 <p>En este punto se abren dos posibilidades. La primera de ellas es modificar el contenido de este archivo de imagen de forma análoga a cuando se modifica el contenido de una imagen iso, de manera que las órdenes del fichero de preseed se carguen en el fichero initrd de la imagen comprimida y se ejecuten de forma automática durante el proceso de instalación.</p>
 <p>La otra opción es instalar junto al servidor TFTP y DHCP de este equipo un servidor web y alojar en él el fichero de preseed. De esta forma, se puede llevar a cabo una instalación automatizada obteniendo el fichero por red tal y como se ha descrito <a href="#instalaci%c3%b3n-autom%c3%a1tica-usando-un-fichero-de-preseed-alojado-en-un-servidor-web"
 
@@ -931,12 +931,12 @@
 
 >en el apartado anterior</a>. Como este procedimiento ya está documentado se sigue a continuación con la otra opción.</p>
 <p>Para volcar la configuración del fichero de preseed al fichero initrd del instalador de Debian hay que seguir unos pasos similares a los que se realizan para crear una imagen iso para la instalación desatendida con la diferencia de que, en este caso, no es necesario utilizar ninguna herramienta específica para descomprimir el archivo de instalación. Así, en primer lugar, se descomprime el archivo de instalación y, a continuación se descomprime también el fichero <code>initrd.gz</code> del directorio debian-installer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -xvf netboot.tar.gz 
-</span></span><span style="display:flex;"><span>gunzip debian-installer/amd64/initrd.gz
-</span></span></code></pre></div><p>A continuación, se vuelca el contenido del fichero de preseed con la configuración para la instalación desatendida en el fichero initrd y se vuelve a comprimir.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo preseed.cfg | cpio -H newc -o -A -F debian-installer/amd64/initrd
-</span></span><span style="display:flex;"><span>gzip debian-installer/amd64/initrd
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -xvf netboot.tar.gz 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gunzip debian-installer/amd64/initrd.gz
+</span></span></span></code></pre></div><p>A continuación, se vuelca el contenido del fichero de preseed con la configuración para la instalación desatendida en el fichero initrd y se vuelve a comprimir.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo preseed.cfg | cpio -H newc -o -A -F debian-installer/amd64/initrd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gzip debian-installer/amd64/initrd
+</span></span></span></code></pre></div>
 
 
   
@@ -968,8 +968,8 @@
 
 
 >la guía oficial de Debian</a> recomienda el uso del paquete <code>isc-dhcp-server</code> que instala el servidor dhcpd de ISC.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install isc-dhcp-server
-</span></span></code></pre></div><p>En su wiki, Debian recoge un <a href="https://www.debian.org/releases/stable/i386/ch04s05.es.html#dhcpd"
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install isc-dhcp-server
+</span></span></span></code></pre></div><p>En su wiki, Debian recoge un <a href="https://www.debian.org/releases/stable/i386/ch04s05.es.html#dhcpd"
 
 
 
@@ -980,22 +980,22 @@
 
 >ejemplo de configuración</a> básico del servidor DHCP para habilitar el arranque por PXE en las máquinas cliente que se conecten a la red. En este ejemplo, el servidor TFTP y el servidor DHCP están instalados en máquinas diferentes por lo que en el escenario que se plantea aquí la configuración es un poco más sencilla. Simplemente hay que añadir a la configuración habitual del servidor DHCP la línea <code>filename &quot;pxelinux.0&quot;;</code> dentro del párrafo que identifica la red.</p>
 <p>De esta manera, la configuración del fichero /etc/dhcp/dhcpd.conf sería similar a la siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>option domain-name &#34;example.org&#34;;
-</span></span><span style="display:flex;"><span>option domain-name-servers ns1.example.org, ns2.example.org;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>default-lease-time 600;
-</span></span><span style="display:flex;"><span>max-lease-time 7200;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>ddns-update-style none;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>subnet 10.0.0.0 netmask 255.255.255.224 {
-</span></span><span style="display:flex;"><span>  range 10.0.0.2 10.0.0.20;
-</span></span><span style="display:flex;"><span>  option routers 10.0.0.1;
-</span></span><span style="display:flex;"><span>  allow bootp;
-</span></span><span style="display:flex;"><span>  next-server 10.0.0.1;
-</span></span><span style="display:flex;"><span>  filename &#34;pxelinux.0&#34;;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">option domain-name &#34;example.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">option domain-name-servers ns1.example.org, ns2.example.org;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">default-lease-time 600;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">max-lease-time 7200;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">ddns-update-style none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">subnet 10.0.0.0 netmask 255.255.255.224 {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  range 10.0.0.2 10.0.0.20;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  option routers 10.0.0.1;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  allow bootp;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  next-server 10.0.0.1;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  filename &#34;pxelinux.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div>
 
 
   
@@ -1016,28 +1016,28 @@
 </div>
 
 <p>Para aplicar la configuración se tiene que reiniciar el servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart isc-dhcp-server.service
-</span></span></code></pre></div><p>Si la instalación de Debian requiere instalar paquetes desde los repositorios, el cliente debe tener acceso a internet. Esto se puede conseguir si el servidor DHCP/TFTP actúa también como router. Para ello, hay que activar el bit de forwarding.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>echo net.ipv4.ip_forward = 1 &gt; /etc/sysctl.conf 
-</span></span><span style="display:flex;"><span>sudo sysctl -p
-</span></span></code></pre></div><p>Además, también deberá contar con una regla de iptables que permite hacer NAT a los paquetes que reciba desde el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp1s0 -j MASQUERADE
-</span></span><span style="display:flex;"><span>sudo iptables-save &gt; /etc/iptables/rules.v4
-</span></span></code></pre></div><p>Tras completar esta configuración, cualquier cliente de la red que arranque usando la opción PXE obtendrá por DHCP la configuración de red que apunta al archivo de instalación almacenado en el servidor TFTP. Cuando el cliente acceda al fichero de arranque al que apunta el servidor DHCP cargará el menú de instalación por red de Debian. Como la imagen de instalación tiene cargadas las órdenes configuradas en el fichero de preseed, al arrancar la instalación desde este menú se produce de forma desatendida.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart isc-dhcp-server.service
+</span></span></span></code></pre></div><p>Si la instalación de Debian requiere instalar paquetes desde los repositorios, el cliente debe tener acceso a internet. Esto se puede conseguir si el servidor DHCP/TFTP actúa también como router. Para ello, hay que activar el bit de forwarding.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo net.ipv4.ip_forward = 1 &gt; /etc/sysctl.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo sysctl -p
+</span></span></span></code></pre></div><p>Además, también deberá contar con una regla de iptables que permite hacer NAT a los paquetes que reciba desde el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp1s0 -j MASQUERADE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo iptables-save &gt; /etc/iptables/rules.v4
+</span></span></span></code></pre></div><p>Tras completar esta configuración, cualquier cliente de la red que arranque usando la opción PXE obtendrá por DHCP la configuración de red que apunta al archivo de instalación almacenado en el servidor TFTP. Cuando el cliente acceda al fichero de arranque al que apunta el servidor DHCP cargará el menú de instalación por red de Debian. Como la imagen de instalación tiene cargadas las órdenes configuradas en el fichero de preseed, al arrancar la instalación desde este menú se produce de forma desatendida.</p>
 <h1 id="instalación-desatendida-con-dnsmasq">Instalación desatendida con dnsmasq</h1>
 <p>Dnsmasq es una herramienta que funciona como un DNS, un servidor DHCP y un servidor TFTP para redes pequeñas al mismo tiempo. Esto permite reducir el flujo de trabajo para la instalación de sistemas operativos por red al tener que usar sólo una herramienta en vez de trabajar con los diferentes servidores por separado.</p>
 <p>Para instalar dnsmasq:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install dnsmasq
-</span></span></code></pre></div><p>La configuración tanto de DHCP como de TFTP se realizan en el fichero /etc/dnsmasq.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>interface=enp7s0
-</span></span><span style="display:flex;"><span>dhcp-range=10.0.0.2,10.0.0.200,6h
-</span></span><span style="display:flex;"><span>dhcp-boot=pxelinux.0
-</span></span><span style="display:flex;"><span>enable-tftp
-</span></span><span style="display:flex;"><span>tftp-root=/srv/tftp
-</span></span></code></pre></div><p>La línea <code>interface</code> indica la interfaz por la que escucha y reparte direcciones el servidor DHCP, con <code>dhcp-range</code> se indica el rango de direcciones y el tiempo de concesión del servidor DHCP, la orden <code>dhcp-boot</code> apunta al fichero de arranque, la línea <code>enable-tftp</code> habilita el servidor TFTP y con <code>tftp-root</code> se apunta a la ruta donde están los ficheros alojados en el servidor TFTP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install dnsmasq
+</span></span></span></code></pre></div><p>La configuración tanto de DHCP como de TFTP se realizan en el fichero /etc/dnsmasq.conf</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">interface=enp7s0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dhcp-range=10.0.0.2,10.0.0.200,6h
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dhcp-boot=pxelinux.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">enable-tftp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tftp-root=/srv/tftp
+</span></span></span></code></pre></div><p>La línea <code>interface</code> indica la interfaz por la que escucha y reparte direcciones el servidor DHCP, con <code>dhcp-range</code> se indica el rango de direcciones y el tiempo de concesión del servidor DHCP, la orden <code>dhcp-boot</code> apunta al fichero de arranque, la línea <code>enable-tftp</code> habilita el servidor TFTP y con <code>tftp-root</code> se apunta a la ruta donde están los ficheros alojados en el servidor TFTP.</p>
 <p>Para aplicar los cambios en la configuración se reinicia el servicio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart dnsmasq.service 
-</span></span></code></pre></div><p>El contenido del directorio /srv/tftp y la configuración para que el servidor DHCP/PXE/TFTP haga de router para los clientes es igual al documentado en <a href="#instalaci%c3%b3n-desatendida-desde-un-servidor-pxetftp"
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart dnsmasq.service 
+</span></span></span></code></pre></div><p>El contenido del directorio /srv/tftp y la configuración para que el servidor DHCP/PXE/TFTP haga de router para los clientes es igual al documentado en <a href="#instalaci%c3%b3n-desatendida-desde-un-servidor-pxetftp"
 
 
 
@@ -1058,20 +1058,20 @@
 
 
 >repositorio de GitHub</a> en forma de archivo comprimido. Para instalarla en el servidor PXE de la red simplemente hay que descargar y descomprimir el archivo y ejecutar el script <code>iventoy.sh</code> que está en el directorio raíz al descomprimir este archivo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>wget https://github.com/ventoy/PXE/releases/download/v1.0.20/iventoy-1.0.20-linux-free.tar.gz
-</span></span><span style="display:flex;"><span>tar -xvf iventoy-1.0.20-linux-free.tar.gz
-</span></span><span style="display:flex;"><span>cd iventoy-1.0.20/
-</span></span><span style="display:flex;"><span>sudo bash iventoy.sh start
-</span></span></code></pre></div><p>Tras ejecutar la herramienta se puede acceder a la interfaz gráfica en el puerto 26000 del servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@preseedsrv:~/iventoy-1.0.20$ sudo bash iventoy.sh start
-</span></span><span style="display:flex;"><span>iventoy start SUCCESS PID=1164
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Please open your browser and visit http://127.0.0.1:26000 or 
-</span></span><span style="display:flex;"><span>http://x.x.x.x:26000 (x.x.x.x is any valid IP address)
-</span></span></code></pre></div><p>Desde ella se puede configurar el servidor iVentoy, establecer la configuración de DHCP, arrancar y parar el servicio y establecer una lista de equipos que tienen permiso o no para acceder al servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">wget https://github.com/ventoy/PXE/releases/download/v1.0.20/iventoy-1.0.20-linux-free.tar.gz
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar -xvf iventoy-1.0.20-linux-free.tar.gz
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd iventoy-1.0.20/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo bash iventoy.sh start
+</span></span></span></code></pre></div><p>Tras ejecutar la herramienta se puede acceder a la interfaz gráfica en el puerto 26000 del servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@preseedsrv:~/iventoy-1.0.20$ sudo bash iventoy.sh start
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iventoy start SUCCESS PID=1164
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Please open your browser and visit http://127.0.0.1:26000 or 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">http://x.x.x.x:26000 (x.x.x.x is any valid IP address)
+</span></span></span></code></pre></div><p>Desde ella se puede configurar el servidor iVentoy, establecer la configuración de DHCP, arrancar y parar el servicio y establecer una lista de equipos que tienen permiso o no para acceder al servidor.</p>
 <p>Para hace accesible una imagen iso a los equipos de la red a través de iVentoy simplemente hay que llevar el archivo de imagen iso al directorio iso/ dentro del directorio de iVentoy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp deb12-inst-desatendida.iso iventoy-1.0.20/iso/
-</span></span></code></pre></div><p>Desde la interfaz gráfica se puede también listar las máquinas que se han conectado al servidor para instalar una imagen desde él.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp deb12-inst-desatendida.iso iventoy-1.0.20/iso/
+</span></span></span></code></pre></div><p>Desde la interfaz gráfica se puede también listar las máquinas que se han conectado al servidor para instalar una imagen desde él.</p>
 <p>El uso de iVentoy aporta algunas ventajas frente a otras soluciones como la instalación de un servidor PXE/TFTP desde cero. La más evidente es que el proceso de instalación y configuración del servidor es mucho más simple en este caso puesto que no es necesario instalar cada uno de los servidores por separado y establecer la configuración específica para ellos.</p>
 <p>Por otra parte, iVentoy facilita el proceso de instalación desatendida de un sistema operativo en múltiples equipos porque permite distribuir imágenes iso, a diferencia del servidor PXE/TFTP que distribuye imágenes en ficheros netboot comprimidos. Esto permite que se pueda distribuir para instalar en un entorno real con múltiples equipos el mismo archivo de imagen iso que se puede instalar en una máquina virtual en un entorno local de pruebas.</p>
 
@@ -1351,8 +1351,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
-      Uso básico de Wireshark
+    <a href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
+      Gestión de permisos UGOA y ACL en Debian
     </a>
   </h4>
   
@@ -1367,16 +1367,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Redes
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+  <p class="mb-6">El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
     Leer
   </a>
 </div>
@@ -1388,8 +1388,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
-      Despliegue de aplicaciones escritas en Python
+    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
+      Comandos para la programación de tareas
     </a>
   </h4>
   
@@ -1404,16 +1404,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Implantacion
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
+  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
     Leer
   </a>
 </div>
@@ -1425,8 +1425,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
-      Configuración NAT en routers Cisco en GNS3
+    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+      Conceptos básicos del gestor de paquetes apt
     </a>
   </h4>
   
@@ -1441,16 +1441,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Redes
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
     Leer
   </a>
 </div>
@@ -1556,9 +1556,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1566,9 +1566,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

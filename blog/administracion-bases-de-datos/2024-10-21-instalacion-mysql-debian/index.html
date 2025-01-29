@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -875,45 +875,45 @@
 
             <h1 id="instalación-mysql-en-debian-12">Instalación MySQL en Debian 12</h1>
 <p>En teoría MySQL se puede instalar de forma directa desde los repositorios de Debian. Sin embargo, el gestor de paquetes apt no tiene acceso al paquete mysql-server a través del repositorio de la rama estable (bookworm) de Debian. Oracle ofrece un paquete .deb instalable en su web de descargas, que hay que configurar para que el gestor de paquetes apt pueda instalar la versión deseada de MySQL. El paquete que ofrece Oracle instala tanto el servidor como el cliente en la misma máquina.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@mysql:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
-</span></span><span style="display:flex;"><span>usuario@mysql:~$ sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
-</span></span></code></pre></div><p>Al ejecutar la instalación comienza un proceso interactivo en el que se deben elegir las diferentes opciones de configuración del paquete. En primer lugar, hay que indicar el producto que se va a configurar durante la instalación, en este caso, el servidor MySQL. Posteriormente, hay que indicar la versión para la instalación. En este caso se elige la versión 8.4, que es la versión estable con soporte a largo plazo actualmente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+</span></span></span></code></pre></div><p>Al ejecutar la instalación comienza un proceso interactivo en el que se deben elegir las diferentes opciones de configuración del paquete. En primer lugar, hay que indicar el producto que se va a configurar durante la instalación, en este caso, el servidor MySQL. Posteriormente, hay que indicar la versión para la instalación. En este caso se elige la versión 8.4, que es la versión estable con soporte a largo plazo actualmente.</p>
 <p>Tras configurar estas dos opciones en el paquete, hay que salir del menú interactivo y ejecutar una actualización de la paquetería del sistema. Posteriormente se instala el paquete mysql-server con el gestor de paquetes apt.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@mysql:~$ sudo apt update
-</span></span><span style="display:flex;"><span>usuario@mysql:~$ sudo apt install mysql-server
-</span></span></code></pre></div><p>Este proceso de instalación también es interactivo. En él hay que indicar la contraseña del usuario root del SGBD.
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ sudo apt install mysql-server
+</span></span></span></code></pre></div><p>Este proceso de instalación también es interactivo. En él hay que indicar la contraseña del usuario root del SGBD.
 La configuración del acceso remoto a este servidor se realiza en el fichero /etc/mysql/mysql.conf.d/mysqld.cnf añadiendo la siguiente línea.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bind-address    = 0.0.0.0
-</span></span></code></pre></div><p>En versiones posteriores a la 8.0, esta línea no aparece por defecto en el fichero de configuración y se debe añadir dentro de la sección <code>[mysqld]</code>. Para hacer efectiva la configuración se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">bind-address    = 0.0.0.0
+</span></span></span></code></pre></div><p>En versiones posteriores a la 8.0, esta línea no aparece por defecto en el fichero de configuración y se debe añadir dentro de la sección <code>[mysqld]</code>. Para hacer efectiva la configuración se reinicia el servicio.</p>
 <p>Mientras que Postgres permite especificar la conexión remota desde una IP concreta o desde una red, el fichero de configuración de MySQL sólo permite indicar si la conexión será desde la máquina local o desde cualquier otra IP.</p>
 <p>Para evitar el acceso de máquinas que no estén conectadas a la red local es necesario añadir una regla de cortafuegos en el servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@mysql:~$ sudo iptables -A INPUT -s 192.168.122.0/24 -p tcp --destination-port 3306 -j ACCEPT
-</span></span><span style="display:flex;"><span>usuario@mysql:~$ sudo iptables -A INPUT -p tcp --destination-port 3306 -j DROP
-</span></span></code></pre></div><p>Con la primera regla se permite el tráfico dirigido al puerto 3306, por el que escucha MySQL siempre que la IP de destino sea una IP de la red local. Con la siguiente regla se impide el paso de cualquier otra comunicación dirigida a ese puerto.
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ sudo iptables -A INPUT -s 192.168.122.0/24 -p tcp --destination-port 3306 -j ACCEPT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@mysql:~$ sudo iptables -A INPUT -p tcp --destination-port 3306 -j DROP
+</span></span></span></code></pre></div><p>Con la primera regla se permite el tráfico dirigido al puerto 3306, por el que escucha MySQL siempre que la IP de destino sea una IP de la red local. Con la siguiente regla se impide el paso de cualquier otra comunicación dirigida a ese puerto.
 Para hacer persistente esta configuración se usa el paquete <code>iptables-persistent</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>root@mysql:~$ iptables-save &gt;&gt; /etc/iptables/rules.v4
-</span></span></code></pre></div><p>Con esta configuración cualquier cliente de la red local puede acceder de forma remota al servidor MySQL instalado en esta máquina. Para ello, el cliente necesita una herramienta que le permita conectarse al servidor como, por ejemplo, mysql-client. Para instalarlo hay que seguir un procedimiento similar al de la instalación del servidor. En primer lugar, se descarga e instala el paquete para la configuración del respositorio de MySQL, disponible en su web de descargas. Posteriormente, se actualiza la paquetería del sistema y, por último, se instala el paquete mysql-cliente, que cuenta con la herramienta cliente para acceder de manera remota al servidor MySQL.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@clientesBBDD:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
-</span></span><span style="display:flex;"><span>usuario@clientesBBDD:~$ sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
-</span></span><span style="display:flex;"><span>usuario@clientesBBDD:~$ sudo apt update
-</span></span><span style="display:flex;"><span>usuario@clientesBBDD:~$ sudo apt install mysql-client
-</span></span></code></pre></div><p>Es posible que durante la instalación del cliente, como ocurre en el caso del servidor, haya que instalar algunas dependencias de forma sencilla con el gestor de paquetes APT. Finalmente, tras concluir el proceso, el cliente puede acceder de forma remota al servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>usuario@clientesBBDD:~$ mysql -h 192.168.122.47 -u usuario -p
-</span></span><span style="display:flex;"><span>Enter password: 
-</span></span><span style="display:flex;"><span>Welcome to the MySQL monitor.  Commands end with ; or \g.
-</span></span><span style="display:flex;"><span>Your MySQL connection id is 15
-</span></span><span style="display:flex;"><span>Server version: 8.4.2 MySQL Community Server - GPL
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Copyright (c) 2000, 2024, Oracle and/or its affiliates.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Oracle is a registered trademark of Oracle Corporation and/or its
-</span></span><span style="display:flex;"><span>affiliates. Other names may be trademarks of their respective
-</span></span><span style="display:flex;"><span>owners.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>mysql&gt; 
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@mysql:~$ iptables-save &gt;&gt; /etc/iptables/rules.v4
+</span></span></span></code></pre></div><p>Con esta configuración cualquier cliente de la red local puede acceder de forma remota al servidor MySQL instalado en esta máquina. Para ello, el cliente necesita una herramienta que le permita conectarse al servidor como, por ejemplo, mysql-client. Para instalarlo hay que seguir un procedimiento similar al de la instalación del servidor. En primer lugar, se descarga e instala el paquete para la configuración del respositorio de MySQL, disponible en su web de descargas. Posteriormente, se actualiza la paquetería del sistema y, por último, se instala el paquete mysql-cliente, que cuenta con la herramienta cliente para acceder de manera remota al servidor MySQL.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@clientesBBDD:~$ wget https://dev.mysql.com/get/mysql-apt-config_0.8.32-1_all.deb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@clientesBBDD:~$ sudo dpkg -i mysql-apt-config_0.8.32-1_all.deb
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@clientesBBDD:~$ sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@clientesBBDD:~$ sudo apt install mysql-client
+</span></span></span></code></pre></div><p>Es posible que durante la instalación del cliente, como ocurre en el caso del servidor, haya que instalar algunas dependencias de forma sencilla con el gestor de paquetes APT. Finalmente, tras concluir el proceso, el cliente puede acceder de forma remota al servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@clientesBBDD:~$ mysql -h 192.168.122.47 -u usuario -p
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Welcome to the MySQL monitor.  Commands end with ; or \g.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Your MySQL connection id is 15
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Server version: 8.4.2 MySQL Community Server - GPL
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Oracle is a registered trademark of Oracle Corporation and/or its
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">affiliates. Other names may be trademarks of their respective
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">owners.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">mysql&gt; 
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1150,8 +1150,8 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
+    <a href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
+      Configurar una agregación de enlaces (bonding) en bridges Linux
     </a>
   </h4>
   
@@ -1174,8 +1174,8 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
       </li>
     </ul>
   
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+  <p class="mb-6"><p>Una agregación de enlaces, link aggregation o port bonding combina varias interfaces de red de forma paralela para aumentar el ancho de banda de una conexión y aportar redundancia ante fallos de una de ellas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
     Leer
   </a>
 </div>
@@ -1187,8 +1187,45 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-      Cómo configurar un servidor DHCP en un router Cisco
+    <a href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+      Creación de política de grupo en Windows Active Directory
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
     </a>
   </h4>
   
@@ -1211,45 +1248,8 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
       </li>
     </ul>
   
-  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
-      Funcionamiento básico de ansible
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
     Leer
   </a>
 </div>
@@ -1355,9 +1355,9 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1365,9 +1365,9 @@ Para hacer persistente esta configuración se usa el paquete <code>iptables-pers
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

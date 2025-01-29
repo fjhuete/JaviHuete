@@ -6,8 +6,22 @@
     <description>Recent content in Servidor Web on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/servidor-web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de WordPress en Rocky Linux 9</title>
+      <link>/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/</link>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/</guid>
+      <description>&lt;p&gt;En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache &lt;code&gt;httpd&lt;/code&gt; y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación del servidor web Apache en Rocky Linux 9</title>
+      <link>/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/</link>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/</guid>
+      <description>&lt;p&gt;El de Apache es uno de los servidores web más usados del mundo. Aunque en otras distribuciones, como las basadas en Debian, este servidor se instala con el paquete &lt;code&gt;apache2&lt;/code&gt; en las distribuciones basadas en Red Hat como CentOS o Rocky Linux, este servidor se instala con el paquete &lt;code&gt;httpd&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalación de un CMS Python usando Django</title>
       <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>

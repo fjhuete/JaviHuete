@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -916,101 +916,101 @@
 <h1 id="ejemplos-de-uso-del-comando-ls">Ejemplos de uso del comando <code>ls</code></h1>
 <h2 id="listar-todos-los-archivos-del-directorio-bin">Listar todos los archivos del directorio bin</h2>
 <p>Para realizar esta acción hay que acceder en primer  lugar al directorio bin usando <code>cd /./bin</code> y, posteriormente, se pueden listar los archivos que contiene con <code>ls -lh</code>, para que muestre el contenido en forma de lista y el tamaño de los archivos en términos más fácilmente comprensibles.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./bin
-</span></span><span style="display:flex;"><span>ls -lh
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-tmp">Listar todos los archivos del directorio tmp</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./bin
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lh
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-tmp">Listar todos los archivos del directorio tmp</h2>
 <p>En este caso, se debe repetir el mismo procedimiento que en el ejercicio anterior sustituyendo el directorio bin por tmp. Primero se accede con <code>cd /./tmp</code> y posteriormente se listan los archivos con <code>ls -lRh</code>. En este caso, se ha usado también la opción <code>-R </code>para listar recursivamente en los directorios dentro del directorio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./tmp
-</span></span><span style="display:flex;"><span>ls -lRh
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-empiecen-por-t-en-orden-inverso">Listar todos los archivos del directorio etc que empiecen por &ldquo;t&rdquo; en orden inverso</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lRh
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-empiecen-por-t-en-orden-inverso">Listar todos los archivos del directorio etc que empiecen por &ldquo;t&rdquo; en orden inverso</h2>
 <p>Al igual que en los casos anteriores, se accede al directorio con <code>cd /./etc</code> y después se listan los archivos con ls <code>-lr t*</code>. En este caso, la opción <code>-r</code> muestra el resultado en orden inverso y el argumento <code>t*</code> pide que se listen todos los archivos que empiezan por &ldquo;t&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./etc
-</span></span><span style="display:flex;"><span>ls -lr t*
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-tengan-5-caracteres">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y tengan 5 caracteres</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./etc
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lr t*
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-tengan-5-caracteres">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y tengan 5 caracteres</h2>
 <p>En este caso, se accede con <code>cd /./dev</code> y, posteriormente, se listan los archivos con <code>ls -lh tty??</code>. Los signos de interrogación, a diferencia del asterisco, sustituyen a un único carácter cada uno.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
-</span></span><span style="display:flex;"><span>ls -lh tty??
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-acaben-en-123-ó-4">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y acaben en &ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;3&rdquo; ó &ldquo;4&rdquo;</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./dev
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lh tty??
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-tty-y-acaben-en-123-ó-4">Listar todos los archivos del directorio dev que empiecen por &ldquo;tty&rdquo; y acaben en &ldquo;1&rdquo;,&ldquo;2&rdquo;,&ldquo;3&rdquo; ó &ldquo;4&rdquo;</h2>
 <p>En ls -lh tty*[1,2,3,4] el asterisco en este caso indica que se puede sustituir por uno o varios caracteres y la lista recoge todas las opciones de caracteres que se quieren listar como último carácter.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
-</span></span><span style="display:flex;"><span>ls -lh tty*[1,2,3,4]
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-t-y-acaben-en-c1">Listar todos los archivos del directorio dev que empiecen por &ldquo;t&rdquo; y acaben en &ldquo;C1&rdquo;.</h2>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /./dev
-</span></span><span style="display:flex;"><span>ls -lh t*C1
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-incluidos-los-ocultos-del-directorio-raíz">Listar todos los archivos, incluidos los ocultos, del directorio raíz</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./dev
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lh tty*[1,2,3,4]
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-dev-que-empiecen-por-t-y-acaben-en-c1">Listar todos los archivos del directorio dev que empiecen por &ldquo;t&rdquo; y acaben en &ldquo;C1&rdquo;.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /./dev
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lh t*C1
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-incluidos-los-ocultos-del-directorio-raíz">Listar todos los archivos, incluidos los ocultos, del directorio raíz</h2>
 <p>Con el comando <code>cd /</code> se navega hasta el directorio raíz. Una vez allí, con el comando <code>ls -la</code> se listan todos sus archivos. La opción -a hace que se muestren también los archivos que empiezan por un ., es decir, los ocultos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /
-</span></span><span style="display:flex;"><span>ls -la
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-no-empiecen-por-t">Listar todos los archivos del directorio etc que no empiecen por &ldquo;t&rdquo;</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -la
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-etc-que-no-empiecen-por-t">Listar todos los archivos del directorio etc que no empiecen por &ldquo;t&rdquo;</h2>
 <p>En primer lugar se debe navegar al directorio etc con <code>cd /./etc</code> y, después listar los archivos con <code>ls -l [!t]*</code>. Para ello, se usa el carácter ! para indicar indicar una cadena de texto en la que el primer carácter sea distinto de &ldquo;t&rdquo; y el * para indicar que el resto de caracteres es indiferente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /etc
-</span></span><span style="display:flex;"><span>ls -l [!t]*
-</span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-usr-y-sus-subdirectorios">Listar todos los archivos del directorio usr y sus subdirectorios</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /etc
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -l [!t]*
+</span></span></span></code></pre></div><h2 id="listar-todos-los-archivos-del-directorio-usr-y-sus-subdirectorios">Listar todos los archivos del directorio usr y sus subdirectorios</h2>
 <p>Para listar los archivos y subdirectorios de usr hay que cambiar al directorio /usr en primer lugar con <code>cd /usr</code> y, después, listar los archivos con <code>ls -lR</code>. En este caso, la opción <code>-R</code> fuerza la búsqueda recursiva dentro de los subdirectorios del directorio actual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd /usr
-</span></span><span style="display:flex;"><span>ls -lR
-</span></span></code></pre></div><h1 id="mostrar-el-día-y-la-hora-actual">Mostrar el día y la hora actual</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /usr
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lR
+</span></span></span></code></pre></div><h1 id="mostrar-el-día-y-la-hora-actual">Mostrar el día y la hora actual</h1>
 <p>Para mostrar el día y la hora se usa el comando <code>date</code>.</p>
 <h1 id="comandos-para-navegar-entre-directorios">Comandos para navegar entre directorios</h1>
 <h2 id="cambiarse-al-directorio-tmp">Cambiarse al directorio tmp</h2>
 <p>Con el comando <code>cd /tmp</code> se cambia el directorio actual al directorio tmp.</p>
 <h2 id="verificar-que-el-directorio-actual-ha-cambiado">Verificar que el directorio actual ha cambiado</h2>
 <p>Para verificar que el directorio actual ha cambiado se usa el comando <code>pwd</code>, que devuelve la ruta del directorio actual, en este caso /tmp en vez de /home/usuario, donde usuario corresponde al nombre de usuario que tiene la sesión iniciada.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>~$ cd /tmp
-</span></span><span style="display:flex;"><span>/tmp$ pwd
-</span></span><span style="display:flex;"><span>/tmp
-</span></span></code></pre></div><h2 id="con-un-solo-comando-posicionarse-en-el-directorio-home">Con un solo comando posicionarse en el directorio $HOME</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">~$ cd /tmp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/tmp$ pwd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/tmp
+</span></span></span></code></pre></div><h2 id="con-un-solo-comando-posicionarse-en-el-directorio-home">Con un solo comando posicionarse en el directorio $HOME</h2>
 <p>Para cambiar al directorio home, se puede usar el comando <code>cd ~</code>, que navega del directorio actual al directorio /home/usuario.</p>
 <h2 id="listar-todos-los-ficheros-del-directorio-home-mostrando-su-número-de-inodo">Listar todos los ficheros del directorio HOME mostrando su número de inodo</h2>
 <p>Para este ejercicio se usa el comando <code>ls -lia</code> para listar los archivos. Con la opción <code>-i</code> se muestra el número de inodo y con la opción <code>-a</code> se muestran los archivos ocultos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cd ~
-</span></span><span style="display:flex;"><span>ls -lia
-</span></span></code></pre></div><h2 id="crear-en-vuestro-directorio-de-inicio-un-directorio-prueba">Crear en vuestro directorio de inicio, un directorio prueba</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd ~
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ls -lia
+</span></span></span></code></pre></div><h2 id="crear-en-vuestro-directorio-de-inicio-un-directorio-prueba">Crear en vuestro directorio de inicio, un directorio prueba</h2>
 <p>Para crear un directorio se usa el comando <code>mkdir</code> seguido del nombre del directorio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir prueba
-</span></span></code></pre></div><h2 id="crear-los-directorios-dir1-dir2-y-dir3-en-el-directorio-prueba-dentro-de-dir1-crear-el-directorio-dir11-dentro-del-directorio-dir3-crear-el-directorio-dir31-dentro-del-directorio-dir31-crear-los-directorios-dir311-y-dir312">Crear los directorios dir1, dir2 y dir3 en el directorio prueba. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mkdir prueba
+</span></span></span></code></pre></div><h2 id="crear-los-directorios-dir1-dir2-y-dir3-en-el-directorio-prueba-dentro-de-dir1-crear-el-directorio-dir11-dentro-del-directorio-dir3-crear-el-directorio-dir31-dentro-del-directorio-dir31-crear-los-directorios-dir311-y-dir312">Crear los directorios dir1, dir2 y dir3 en el directorio prueba. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312</h2>
 <p>En primer lugar, con <code>mkdir</code> se crean los directorios dentro de prueba: dir1, dir2 y dir 3 con una lista entre llaves. A continuación, dentro de dir1 se crea dir 11 y dentro de dir3, dir31.</p>
 <p>Finalmente, haciendo uso de una nueva lista, se crean los directorios dir311 y dir312 dentro
 de dir31.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mkdir -p prueba/{dir1,dir2,dir3} prueba/dir1/dir11 prueba/dir3/dir31 prueba/dir3/dir31/{dir311,dir312}
-</span></span></code></pre></div><h1 id="copiar-mover-y-borrar-ficheros">Copiar, mover y borrar ficheros</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mkdir -p prueba/{dir1,dir2,dir3} prueba/dir1/dir11 prueba/dir3/dir31 prueba/dir3/dir31/{dir311,dir312}
+</span></span></span></code></pre></div><h1 id="copiar-mover-y-borrar-ficheros">Copiar, mover y borrar ficheros</h1>
 <h2 id="copiar-el-archivo-etcmotd-a-un-archivo-llamado-mensaje-de-nuestro-directorio-prueba">Copiar el archivo /etc/motd a un archivo llamado mensaje de nuestro directorio prueba</h2>
 <p>Para copiar un archivo se usa el comando <code>cp</code> con la ruta del archivo que se quiere copiar como primer argumento y la ruta de destino de la copia como segundo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /etc/mod ~/prueba/mensaje
-</span></span></code></pre></div><h2 id="copiar-el-archivo-mensaje-en-dir1-dir2-y-dir3">Copiar el archivo mensaje en dir1, dir2 y dir3</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /etc/mod ~/prueba/mensaje
+</span></span></span></code></pre></div><h2 id="copiar-el-archivo-mensaje-en-dir1-dir2-y-dir3">Copiar el archivo mensaje en dir1, dir2 y dir3</h2>
 <p>Nuevamente, para copiar el archivo se usa el comando <code>cp</code> con la ruta del archivo que se quiere copiar como primer argumento y la ruta de destino de la copia como segundo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir1
-</span></span><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir2
-</span></span><span style="display:flex;"><span>cp ~/prueba/mensaje ~/prueba/dir3
-</span></span></code></pre></div><h2 id="copiar-los-archivos-del-directorio-rc2d-que-se-encuentra-en-etc-al-directorio-dir31">Copiar los archivos del directorio rc2.d que se encuentra en /etc al directorio dir31</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp ~/prueba/mensaje ~/prueba/dir1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cp ~/prueba/mensaje ~/prueba/dir2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cp ~/prueba/mensaje ~/prueba/dir3
+</span></span></span></code></pre></div><h2 id="copiar-los-archivos-del-directorio-rc2d-que-se-encuentra-en-etc-al-directorio-dir31">Copiar los archivos del directorio rc2.d que se encuentra en /etc al directorio dir31</h2>
 <p>En este caso se usa la opción <code>-r</code> del comando <code>cp</code> para copiar de forma recursiva todo el contenido del directorio /etc/rc2.d.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -r /etc/rc2.d ~/prueba/dir3/dir31
-</span></span></code></pre></div><h2 id="copiar-en-el-directorio-dir311-los-archivos-de-bin-que-tengan-una-a-como-segunda-letra-y-su-nombre-tenga-cuatro-letras">Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp -r /etc/rc2.d ~/prueba/dir3/dir31
+</span></span></span></code></pre></div><h2 id="copiar-en-el-directorio-dir311-los-archivos-de-bin-que-tengan-una-a-como-segunda-letra-y-su-nombre-tenga-cuatro-letras">Copiar en el directorio dir311 los archivos de /bin que tengan una a como segunda letra y su nombre tenga cuatro letras</h2>
 <p>En este ejemplo se usa la expresión regular [A-z] para indicar que una letra ocupa esa posición en el nombre del archivo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /bin/[A-z]a[A-z][A-z] ~/prueba/dir3/dir31/dir311
-</span></span></code></pre></div><h2 id="copiar-el-directorio-de-otro-usuario-y-sus-subdirectorios-debajo-de-dir11-incluido-el-propio-directorio">Copiar el directorio de otro usuario y sus subdirectorios debajo de dir11 (incluido el propio directorio)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /bin/[A-z]a[A-z][A-z] ~/prueba/dir3/dir31/dir311
+</span></span></span></code></pre></div><h2 id="copiar-el-directorio-de-otro-usuario-y-sus-subdirectorios-debajo-de-dir11-incluido-el-propio-directorio">Copiar el directorio de otro usuario y sus subdirectorios debajo de dir11 (incluido el propio directorio)</h2>
 <p>Para copiar el directorio y subdirectorios de otro usuario se usa la opción <code>-a</code> del comando <code>cp</code>, que copia recursivamente los subdirectorios dentro del directorio indicado conservando los atributos de los archivos incluidos en ellos.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp -a /home/usuario ~/prueba/dir1/dir11
-</span></span></code></pre></div><h2 id="mover-el-directorio-dir31-y-sus-subdirectorios-debajo-de-dir2">Mover el directorio dir31 y sus subdirectorios debajo de dir2</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp -a /home/usuario ~/prueba/dir1/dir11
+</span></span></span></code></pre></div><h2 id="mover-el-directorio-dir31-y-sus-subdirectorios-debajo-de-dir2">Mover el directorio dir31 y sus subdirectorios debajo de dir2</h2>
 <p>Para mover un directorio se usa el comando <code>mv</code> con la ruta del directorio que se quiere mover como primer argumento y la ruta del directorio destino como segundo argumento.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mv ~/prueba/dir3/dir31 ~/prueba/dir2
-</span></span></code></pre></div><h2 id="mostrar-por-pantalla-los-archivos-ordinarios-del-directorio-home-y-sus-subdirectorios">Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mv ~/prueba/dir3/dir31 ~/prueba/dir2
+</span></span></span></code></pre></div><h2 id="mostrar-por-pantalla-los-archivos-ordinarios-del-directorio-home-y-sus-subdirectorios">Mostrar por pantalla los archivos ordinarios del directorio HOME y sus subdirectorios</h2>
 <p>Para mostrar todos los archivos del directorio home y sus subdirectorios se puede usar el comando <code>find</code> con la opción <code>-type</code> para filtrar la lista por tipo de ficheros y <code>f</code> para obtener sólo los ficheros de tipo ordinario.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>find -type f
-</span></span></code></pre></div><h2 id="ocultar-el-archivo-mensaje-del-directorio-dir3">Ocultar el archivo mensaje del directorio dir3</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">find -type f
+</span></span></span></code></pre></div><h2 id="ocultar-el-archivo-mensaje-del-directorio-dir3">Ocultar el archivo mensaje del directorio dir3</h2>
 <p>En GNU/Linux los archivos ocultos son aquellos que empiezan por un ., por tanto, para ocultar el archivo solo hay que renombrarlo con un . delante usando, por ejemplo, el comando <code>cp</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp ~/prueba/dir3/mensaje ~/prueba/dir3/.mensaje
-</span></span></code></pre></div><h2 id="borrar-los-archivos-y-directorios-de-dir1-incluido-el-propio-directorio">Borrar los archivos y directorios de dir1, incluido el propio directorio</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp ~/prueba/dir3/mensaje ~/prueba/dir3/.mensaje
+</span></span></span></code></pre></div><h2 id="borrar-los-archivos-y-directorios-de-dir1-incluido-el-propio-directorio">Borrar los archivos y directorios de dir1, incluido el propio directorio</h2>
 <p>El comando <code>rm</code>, seguido de una ruta de un directorio lo elimina. La opción <code>-r</code> hace que se eliminen recursivamente todos los directorios que contiene.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rm -r ~/prueba/dir1
-</span></span></code></pre></div><h2 id="copiar-al-directorio-dir312-los-ficheros-del-directorio-dev-que-empiecen-por-t-acaben-en-una-letra-que-vaya-de-la-a-a-la-b-y-tengan-cinco-letras-en-su-nombre">Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por &ldquo;t&rdquo;, acaben en una letra que vaya de la &ldquo;a&rdquo; a la &ldquo;b&rdquo; y tengan cinco letras en su nombre</h2>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>cp /dev/t[A-z][A-z][A-z][a-b] ~/prueba/dir3/dir31/dir312
-</span></span></code></pre></div><h2 id="borrar-los-archivos-de-dir312-que-no-acaben-en-b-y-tengan-una-q-como-cuarta-letra">Borrar los archivos de dir312 que no acaben en &ldquo;b&rdquo; y tengan una &ldquo;q&rdquo; como cuarta letra</h2>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rm ~/prueba/dir3/dir31/dir312/???q*[!b]
-</span></span></code></pre></div><h1 id="mover-el-directorio-dir312-debajo-de-dir3">Mover el directorio dir312 debajo de dir3</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">rm -r ~/prueba/dir1
+</span></span></span></code></pre></div><h2 id="copiar-al-directorio-dir312-los-ficheros-del-directorio-dev-que-empiecen-por-t-acaben-en-una-letra-que-vaya-de-la-a-a-la-b-y-tengan-cinco-letras-en-su-nombre">Copiar al directorio dir312 los ficheros del directorio /dev que empiecen por &ldquo;t&rdquo;, acaben en una letra que vaya de la &ldquo;a&rdquo; a la &ldquo;b&rdquo; y tengan cinco letras en su nombre</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /dev/t[A-z][A-z][A-z][a-b] ~/prueba/dir3/dir31/dir312
+</span></span></span></code></pre></div><h2 id="borrar-los-archivos-de-dir312-que-no-acaben-en-b-y-tengan-una-q-como-cuarta-letra">Borrar los archivos de dir312 que no acaben en &ldquo;b&rdquo; y tengan una &ldquo;q&rdquo; como cuarta letra</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">rm ~/prueba/dir3/dir31/dir312/???q*[!b]
+</span></span></span></code></pre></div><h1 id="mover-el-directorio-dir312-debajo-de-dir3">Mover el directorio dir312 debajo de dir3</h1>
 <p>De nuevo, para mover un directorio se usa el comando <code>mv</code> con la ruta del directorio que se quiere mover como primer argumento y la ruta del directorio destino como segundo argumento.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mv ~/prueba/dir3/dir31/dir312 ~/prueba/dir3
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mv ~/prueba/dir3/dir31/dir312 ~/prueba/dir3
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1279,82 +1279,8 @@ de dir31.</p>
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
-      Gestión de permisos UGOA y ACL en Debian
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-11-24-comando-xargs/">
-      El comando xargs
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-24-comando-xargs/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
-      Trabajo con el kernel de Linux
+    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+      Recolección centralizada de logs de sistema mediante jouranld
     </a>
   </h4>
   
@@ -1377,8 +1303,82 @@ de dir31.</p>
       </li>
     </ul>
   
-  <p class="mb-6">En esta entrada se aborda la actualización del kernel de Linux y su instalación desde el código fuente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-trabajo-kernel-linux/">
+  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
+      Configurar una agregación de enlaces (bonding) en bridges Linux
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Una agregación de enlaces, link aggregation o port bonding combina varias interfaces de red de forma paralela para aumentar el ancho de banda de una conexión y aportar redundancia ante fallos de una de ellas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-configurar-bonding-bridge-linux/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
+      Certificado HTTP y SSL
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
     Leer
   </a>
 </div>
@@ -1484,9 +1484,9 @@ de dir31.</p>
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1494,9 +1494,9 @@ de dir31.</p>
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

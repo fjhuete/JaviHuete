@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -884,195 +884,195 @@
 <h1 id="instalación-del-servidor-lemp-y-de-las-dependencias-de-los-cms">Instalación del servidor LEMP y de las dependencias de los CMS:</h1>
 <p>En primer lugar se tienen que instalar en el VPS los paquetes necesarios para configurar el servidor LEMP: <code>nginx</code>, <code>mariadb-server</code> y <code>php</code>.</p>
 <p>Además, se instalan otros paquetes que corresponden a las dependencias necesarias para poder instalar en el servidor los CMS de Moodle y NextCloud.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install php php-curl php-cli php-mysql php-gd php-gmp libmagickcore-dev php-redis php-memcached php-common php-xml php-json php-intl php-pear php-dev php-common php-mbstring php-zip php-soap php-bz2 php-bcmath php-imagick nginx mariadb-server -y
-</span></span></code></pre></div><h1 id="creación-de-los-hosts-virtuales-en-el-vps">Creación de los hosts virtuales en el VPS</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install php php-curl php-cli php-mysql php-gd php-gmp libmagickcore-dev php-redis php-memcached php-common php-xml php-json php-intl php-pear php-dev php-common php-mbstring php-zip php-soap php-bz2 php-bcmath php-imagick nginx mariadb-server -y
+</span></span></span></code></pre></div><h1 id="creación-de-los-hosts-virtuales-en-el-vps">Creación de los hosts virtuales en el VPS</h1>
 <p>A continuación, se crean los hosts virtuales en el servidor web. En nginx esta configuración se guarda en un fichero con el nombre del virtual host en el directorio /etc/nginx/sites-available. En este fichero se indica el nombre del servidor para cada virtual host, el document root pero también es importante incluir en la lista de documentos de index que el servidor debe buscar el documento index.php que usan los CMS que se están instalando en este caso.</p>
 <p>El siguiente documento corresponde al virtual host de Moodle:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#bb9af7">debian@pignite:/etc/nginx/sites-available$</span> <span style="color:#9ece6a">cat</span> <span style="color:#9ece6a">moodle</span> 
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Virtual Host configuration for www.javihuete.site
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># You can move that to a different file under sites-available/ and symlink that
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># to sites-enabled/ to enable it.
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span><span style="color:#9ece6a">server</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">listen</span> <span style="color:#e0af68">80</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">listen</span> <span style="color:#9ece6a">[::]:80</span>;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">debian@pignite:/etc/nginx/sites-available$</span> <span style="color:#ed9d13">cat</span> <span style="color:#ed9d13">moodle</span> 
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Virtual Host configuration for www.javihuete.site
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># You can move that to a different file under sites-available/ and symlink that
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># to sites-enabled/ to enable it.
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#ed9d13">server</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">listen</span> <span style="color:#3677a9">80</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">listen</span> <span style="color:#ed9d13">[::]:80</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">server_name</span> <span style="color:#9ece6a">www.javihuete.site</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">server_name</span> <span style="color:#ed9d13">www.javihuete.site</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">root</span> <span style="color:#9ece6a">/var/www/moodle</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">index</span> <span style="color:#9ece6a">index.php</span> <span style="color:#9ece6a">index.html</span> <span style="color:#9ece6a">index.htm</span> <span style="color:#9ece6a">index.nginx-debian.html</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">root</span> <span style="color:#ed9d13">/var/www/moodle</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">index</span> <span style="color:#ed9d13">index.php</span> <span style="color:#ed9d13">index.html</span> <span style="color:#ed9d13">index.htm</span> <span style="color:#ed9d13">index.nginx-debian.html</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">try_files</span> $uri $uri/ =<span style="color:#e0af68">404</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">location</span> <span style="color:#ed9d13">/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#6ab825;font-weight:bold">try_files</span> <span style="color:#40ffff">$uri</span> <span style="color:#40ffff">$uri/</span> =<span style="color:#3677a9">404</span>;
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#414868;font-style:italic"># pass PHP scripts to FastCGI server
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#7dcfff">location</span> ~ <span style="color:#7dcfff">\.php$</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#414868;font-style:italic">#	include snippets/fastcgi-php.conf;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>		<span style="color:#414868;font-style:italic"># With php-fpm (or other unix sockets):
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>		<span style="color:#7dcfff">fastcgi_pass</span> <span style="color:#9ece6a">unix:/run/php/php8.2-fpm.sock</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#414868;font-style:italic">#	# With php-cgi (or other tcp sockets):
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	<span style="color:#414868;font-style:italic">#	fastcgi_pass 127.0.0.1:9000;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#999;font-style:italic"># pass PHP scripts to FastCGI server
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#6ab825;font-weight:bold">location</span> ~ <span style="color:#ed9d13">\.php$</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#999;font-style:italic">#	include snippets/fastcgi-php.conf;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>		<span style="color:#999;font-style:italic"># With php-fpm (or other unix sockets):
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>		<span style="color:#6ab825;font-weight:bold">fastcgi_pass</span> <span style="color:#ed9d13">unix:/run/php/php8.2-fpm.sock</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#999;font-style:italic">#	# With php-cgi (or other tcp sockets):
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	<span style="color:#999;font-style:italic">#	fastcgi_pass 127.0.0.1:9000;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>	}
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Y este documento configura el virtual host de NextCloud:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#bb9af7">debian@pignite:/etc/nginx/sites-available$</span> <span style="color:#9ece6a">cat</span> <span style="color:#9ece6a">nextcloud</span> 
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Virtual Host configuration for cloud.javihuete.site
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># You can move that to a different file under sites-available/ and symlink that
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># to sites-enabled/ to enable it.
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span><span style="color:#9ece6a">server</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">listen</span> <span style="color:#e0af68">80</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">listen</span> <span style="color:#9ece6a">[::]:80</span>;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">debian@pignite:/etc/nginx/sites-available$</span> <span style="color:#ed9d13">cat</span> <span style="color:#ed9d13">nextcloud</span> 
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Virtual Host configuration for cloud.javihuete.site
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># You can move that to a different file under sites-available/ and symlink that
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># to sites-enabled/ to enable it.
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#ed9d13">server</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">listen</span> <span style="color:#3677a9">80</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">listen</span> <span style="color:#ed9d13">[::]:80</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">server_name</span> <span style="color:#9ece6a">cloud.javihuete.site</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">server_name</span> <span style="color:#ed9d13">cloud.javihuete.site</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">root</span> <span style="color:#9ece6a">/var/www/nextcloud</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">index</span> <span style="color:#9ece6a">index.php</span> <span style="color:#9ece6a">index.html</span> <span style="color:#9ece6a">index.htm</span> <span style="color:#9ece6a">index.nginx-debian.html</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">root</span> <span style="color:#ed9d13">/var/www/nextcloud</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">index</span> <span style="color:#ed9d13">index.php</span> <span style="color:#ed9d13">index.html</span> <span style="color:#ed9d13">index.htm</span> <span style="color:#ed9d13">index.nginx-debian.html</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#7dcfff">location</span> <span style="color:#9ece6a">/</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#7dcfff">try_files</span> $uri $uri/ =<span style="color:#e0af68">404</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#6ab825;font-weight:bold">location</span> <span style="color:#ed9d13">/</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#6ab825;font-weight:bold">try_files</span> <span style="color:#40ffff">$uri</span> <span style="color:#40ffff">$uri/</span> =<span style="color:#3677a9">404</span>;
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>        <span style="color:#414868;font-style:italic"># pass PHP scripts to FastCGI server
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>        <span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>        <span style="color:#7dcfff">location</span> ~ <span style="color:#7dcfff">\.php$</span> {
-</span></span><span style="display:flex;"><span>                <span style="color:#7dcfff">include</span> <span style="color:#9ece6a">snippets/fastcgi-php.conf</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#414868;font-style:italic">#
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>                <span style="color:#414868;font-style:italic"># With php-fpm (or other unix sockets):
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>                <span style="color:#7dcfff">fastcgi_pass</span> <span style="color:#9ece6a">unix:/run/php/php8.2-fpm.sock</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#414868;font-style:italic">#       # With php-cgi (or other tcp sockets):
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>        <span style="color:#414868;font-style:italic">#       fastcgi_pass 127.0.0.1:9000;
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># pass PHP scripts to FastCGI server
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        <span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">location</span> ~ <span style="color:#ed9d13">\.php$</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">include</span> <span style="color:#ed9d13">snippets/fastcgi-php.conf</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic">#
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                <span style="color:#999;font-style:italic"># With php-fpm (or other unix sockets):
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                <span style="color:#6ab825;font-weight:bold">fastcgi_pass</span> <span style="color:#ed9d13">unix:/run/php/php8.2-fpm.sock</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic">#       # With php-cgi (or other tcp sockets):
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        <span style="color:#999;font-style:italic">#       fastcgi_pass 127.0.0.1:9000;
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>En nginx no existe un comando que ponga los virtual host en producción como el comando <code>a2ensite</code> de apache. Para hacerlo, en este caso hay que crear un enlace simbólico al fichero de configuración en el directorio /etc/nginx/sites-enabled de forma manual.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@pignite:/etc/nginx/sites-enabled$ sudo ln ../sites-available/moodle 
-</span></span><span style="display:flex;"><span>debian@pignite:/etc/nginx/sites-enabled$ sudo ln ../sites-available/nextcloud
-</span></span></code></pre></div><h1 id="compresión-de-los-ficheros-de-los-document-root-copia-al-vps-y-descompresión-de-los-ficheros-y-creación-del-document-root">Compresión de los ficheros de los document root, copia al VPS y descompresión de los ficheros y creación del document root</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:/etc/nginx/sites-enabled$ sudo ln ../sites-available/moodle 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:/etc/nginx/sites-enabled$ sudo ln ../sites-available/nextcloud
+</span></span></span></code></pre></div><h1 id="compresión-de-los-ficheros-de-los-document-root-copia-al-vps-y-descompresión-de-los-ficheros-y-creación-del-document-root">Compresión de los ficheros de los document root, copia al VPS y descompresión de los ficheros y creación del document root</h1>
 <p>Para trasladar los contenidos del document root de cada uno de los CMS al VPS, es necesario comprimir los directorios en el servidor de pruebas y copiar el archivo comprimido al VPS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@apache2:/var/www$ zip -r moodle moodle
-</span></span><span style="display:flex;"><span>debian@apache2:/var/www$ zip -r nextcloud nextcloud
-</span></span><span style="display:flex;"><span>debian@apache2:/var/www$ scp moodle.zip debian@pignite.javihuete.site:/home/debian
-</span></span><span style="display:flex;"><span>debian@apache2:/var/www$ scp nextcloud.zip debian@pignite.javihuete.site:/home/debian
-</span></span></code></pre></div><p>Después, el contenido del archivo comprimido se extrae y se copia en el document root correspondiente del VPS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@pignite:~$ sudo cp moodle.zip /var/www/
-</span></span><span style="display:flex;"><span>debian@pignite:/var/www$ sudo unzip moodle.zip
-</span></span><span style="display:flex;"><span>debian@pignite:~$ sudo cp nextcloud.zip /var/www/
-</span></span><span style="display:flex;"><span>debian@pignite:/var/www$ sudo unzip nextcloud.zip 
-</span></span></code></pre></div><h1 id="creación-de-la-base-de-datos-en-el-vps">Creación de la base de datos en el VPS</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@apache2:/var/www$ zip -r moodle moodle
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@apache2:/var/www$ zip -r nextcloud nextcloud
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@apache2:/var/www$ scp moodle.zip debian@pignite.javihuete.site:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@apache2:/var/www$ scp nextcloud.zip debian@pignite.javihuete.site:/home/debian
+</span></span></span></code></pre></div><p>Después, el contenido del archivo comprimido se extrae y se copia en el document root correspondiente del VPS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:~$ sudo cp moodle.zip /var/www/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:/var/www$ sudo unzip moodle.zip
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:~$ sudo cp nextcloud.zip /var/www/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:/var/www$ sudo unzip nextcloud.zip 
+</span></span></span></code></pre></div><h1 id="creación-de-la-base-de-datos-en-el-vps">Creación de la base de datos en el VPS</h1>
 <p>Para que cada CMS pueda acceder a su base de datos correspondiente, se crea una base de datos para cada uno con su correspondiente usuario y contraseña.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> moodle
-</span></span><span style="display:flex;"><span>    <span style="color:#9ece6a;font-weight:bold">-&gt;</span> ;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">1</span> row <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> <span style="color:#9ece6a">&#39;moodle&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> moodle.<span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">to</span> <span style="color:#9ece6a">&#39;moodle&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">flush</span> <span style="color:#bb9af7">privileges</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> nextcloud;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">1</span> row <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> <span style="color:#9ece6a">&#39;nextcloud&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>; 
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">002</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> nextcloud.<span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">to</span> <span style="color:#9ece6a">&#39;nextcloud&#39;</span><span style="color:#9ece6a;font-weight:bold">@</span><span style="color:#9ece6a">&#39;localhost&#39;</span> <span style="color:#bb9af7">identified</span> <span style="color:#bb9af7">by</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MariaDB [(none)]<span style="color:#9ece6a;font-weight:bold">&gt;</span> <span style="color:#bb9af7">flush</span> <span style="color:#bb9af7">privileges</span>;
-</span></span><span style="display:flex;"><span>Query OK, <span style="color:#e0af68">0</span> rows <span style="color:#7aa2f7">affected</span> (<span style="color:#e0af68">0</span>,<span style="color:#e0af68">001</span> sec)
-</span></span></code></pre></div><h1 id="realización-del-backup-de-la-base-de-datos-y-copia-al-vps">Realización del backup de la base de datos y copia al VPS</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">database</span><span style="color:#666"> </span>moodle<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>-&gt;<span style="color:#666"> </span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666"> </span>row<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">user</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;moodle&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;contraseña&#39;</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">grant</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">all</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">on</span><span style="color:#666"> </span>moodle.*<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">to</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;moodle&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;contraseña&#39;</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">flush</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">database</span><span style="color:#666"> </span>nextcloud;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666"> </span>row<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">create</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">user</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;nextcloud&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;contraseña&#39;</span>;<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">002</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">grant</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">all</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">on</span><span style="color:#666"> </span>nextcloud.*<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">to</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;nextcloud&#39;</span>@<span style="color:#ed9d13">&#39;localhost&#39;</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">identified</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">by</span><span style="color:#666"> </span><span style="color:#ed9d13">&#39;contraseña&#39;</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>MariaDB<span style="color:#666"> </span>[(none)]&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">flush</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">privileges</span>;<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Query<span style="color:#666"> </span>OK,<span style="color:#666"> </span><span style="color:#3677a9">0</span><span style="color:#666"> </span>rows<span style="color:#666"> </span><span style="color:#447fcf">affected</span><span style="color:#666"> </span>(<span style="color:#3677a9">0</span>,<span style="color:#3677a9">001</span><span style="color:#666"> </span>sec)<span style="color:#666">
+</span></span></span></code></pre></div><h1 id="realización-del-backup-de-la-base-de-datos-y-copia-al-vps">Realización del backup de la base de datos y copia al VPS</h1>
 <p>Para dar contenido a la base de datos creada previamente se crea un copia de la base de datos que está funcionando en el servidor de pruebas y se copia el fichero de respaldo al servidor VPS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@mysql:~$ mysqldump -u moodle -p moodle &gt; moodle.sql
-</span></span><span style="display:flex;"><span>debian@mysql:~$ scp moodle.sql debian@pignite.javihuete.site:/home/debian
-</span></span><span style="display:flex;"><span>moodle.sql                                   100% 1685KB   3.8MB/s   00:00    
-</span></span><span style="display:flex;"><span>debian@mysql:~$ mysqldump -u cloud -p nextcloud &gt; nextcloud.sql
-</span></span><span style="display:flex;"><span>Enter password: 
-</span></span><span style="display:flex;"><span>debian@mysql:~$ scp nextcloud.sql debian@pignite.javihuete.site:/home/debian
-</span></span><span style="display:flex;"><span>nextcloud.sql                                100% 3455KB   4.5MB/s   00:00
-</span></span></code></pre></div><p>En el VPS se rellenan las tablas de cada una de las bases de datos a partir del contenido del fichero de respaldo generado en el servidor local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian@pignite:~$ mysql -u moodle -p moodle &lt; moodle.sql 
-</span></span><span style="display:flex;"><span>Enter password: 
-</span></span><span style="display:flex;"><span>debian@pignite:~$ mysql -u nextcloud -p nextcloud &lt; nextcloud.sql 
-</span></span><span style="display:flex;"><span>Enter password: 
-</span></span></code></pre></div><h1 id="modificación-de-las-credenciales-en-el-fichero-de-configuración-del-cms">Modificación de las credenciales en el fichero de configuración del CMS</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@mysql:~$ mysqldump -u moodle -p moodle &gt; moodle.sql
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@mysql:~$ scp moodle.sql debian@pignite.javihuete.site:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">moodle.sql                                   100% 1685KB   3.8MB/s   00:00    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@mysql:~$ mysqldump -u cloud -p nextcloud &gt; nextcloud.sql
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@mysql:~$ scp nextcloud.sql debian@pignite.javihuete.site:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nextcloud.sql                                100% 3455KB   4.5MB/s   00:00
+</span></span></span></code></pre></div><p>En el VPS se rellenan las tablas de cada una de las bases de datos a partir del contenido del fichero de respaldo generado en el servidor local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:~$ mysql -u moodle -p moodle &lt; moodle.sql 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@pignite:~$ mysql -u nextcloud -p nextcloud &lt; nextcloud.sql 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter password: 
+</span></span></span></code></pre></div><h1 id="modificación-de-las-credenciales-en-el-fichero-de-configuración-del-cms">Modificación de las credenciales en el fichero de configuración del CMS</h1>
 <p>Para que los CMS puedan acceder a la base de datos hay que modificar los ficheros de configuración en los que se hace referencia a la ubicación de la base de datos a la que debe acceder el CMS. En el servidor local, la base de datos estaba en un servidor diferente al servidor web y, por tanto, este dato era la dirección IP del servidor de base de datos. Al pasar al VPS, la base de datos y el servidor web están en el mismo equipo y, por tanto, este campo del fichero de configuración tiene que apuntar al localhost. En estos ficheros de configuración también es necesario indicar correctamente el dominio del VPS, que es diferente al que se ha usado previamente en el servidor local de pruebas.</p>
 <p>En Moodle el fichero de configuración está en /var/www/moodle/config.php.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>pignite<span style="color:#9ece6a;font-weight:bold">:/</span><span style="color:#bb9af7">var</span><span style="color:#9ece6a;font-weight:bold">/</span>www<span style="color:#db4b4b">$</span> sudo nano moodle<span style="color:#9ece6a;font-weight:bold">/</span>config<span style="color:#9ece6a;font-weight:bold">.</span>php 
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>debian@pignite:/<span style="color:#6ab825;font-weight:bold">var</span>/www<span style="color:#a61717;background-color:#e3d2d2">$</span> sudo nano moodle/config.php 
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9ece6a;font-weight:bold">&lt;?</span>php  <span style="color:#414868;font-style:italic">// Moodle configuration file
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>unset($CFG);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">global</span> $CFG;
-</span></span><span style="display:flex;"><span>$CFG <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#bb9af7">new</span> <span style="color:#bb9af7">stdClass</span>();
+</span></span><span style="display:flex;"><span>&lt;?php  <span style="color:#999;font-style:italic">// Moodle configuration file
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>unset(<span style="color:#40ffff">$CFG</span>);
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">global</span> <span style="color:#40ffff">$CFG</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span> = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#6ab825;font-weight:bold">stdClass</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dbtype</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;mariadb&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dblibrary</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;native&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dbhost</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;localhost&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dbname</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;moodle&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dbuser</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;moodle&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dbpass</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">prefix</span>    <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;mdl_&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dboptions</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#bb9af7">array</span> (
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbpersist&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#e0af68">0</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbport&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#e0af68">3306</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbsocket&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbcollation&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;utf8mb4_general_ci&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dbtype</span>    = <span style="color:#ed9d13">&#39;mariadb&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dblibrary</span> = <span style="color:#ed9d13">&#39;native&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dbhost</span>    = <span style="color:#ed9d13">&#39;localhost&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dbname</span>    = <span style="color:#ed9d13">&#39;moodle&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dbuser</span>    = <span style="color:#ed9d13">&#39;moodle&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dbpass</span>    = <span style="color:#ed9d13">&#39;contraseña&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">prefix</span>    = <span style="color:#ed9d13">&#39;mdl_&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dboptions</span> = <span style="color:#6ab825;font-weight:bold">array</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbpersist&#39;</span> =&gt; <span style="color:#3677a9">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbport&#39;</span> =&gt; <span style="color:#3677a9">3306</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbsocket&#39;</span> =&gt; <span style="color:#ed9d13">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbcollation&#39;</span> =&gt; <span style="color:#ed9d13">&#39;utf8mb4_general_ci&#39;</span>,
 </span></span><span style="display:flex;"><span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">wwwroot</span>   <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;http://www.javihuete.site&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">dataroot</span>  <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;/var/www/moodledata&#39;</span>;
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">admin</span>     <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">&#39;admin&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">wwwroot</span>   = <span style="color:#ed9d13">&#39;http://www.javihuete.site&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">dataroot</span>  = <span style="color:#ed9d13">&#39;/var/www/moodledata&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">admin</span>     = <span style="color:#ed9d13">&#39;admin&#39;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$CFG<span style="color:#9ece6a;font-weight:bold">-&gt;</span><span style="color:#7aa2f7">directorypermissions</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#e0af68">0777</span>;
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CFG</span>-&gt;<span style="color:#bbb">directorypermissions</span> = <span style="color:#3677a9">0777</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">require_once</span>(<span style="color:#ff9e64">__DIR__</span> <span style="color:#9ece6a;font-weight:bold">.</span> <span style="color:#9ece6a">&#39;/lib/setup.php&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">require_once</span>(<span style="color:#40ffff">__DIR__</span> . <span style="color:#ed9d13">&#39;/lib/setup.php&#39;</span>);
 </span></span></code></pre></div><p>Y en NextCloud el fichero de configuración está en /var/www/nextcloud/config/config.php</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>pignite<span style="color:#9ece6a;font-weight:bold">:/</span><span style="color:#bb9af7">var</span><span style="color:#9ece6a;font-weight:bold">/</span>www<span style="color:#db4b4b">$</span> sudo nano nextcloud<span style="color:#9ece6a;font-weight:bold">/</span>config<span style="color:#9ece6a;font-weight:bold">/</span>config<span style="color:#9ece6a;font-weight:bold">.</span>php 
-</span></span><span style="display:flex;"><span><span style="color:#9ece6a;font-weight:bold">&lt;?</span>php
-</span></span><span style="display:flex;"><span>$CONFIG <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#bb9af7">array</span> (
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;instanceid&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;editado&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;passwordsalt&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;editado&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;secret&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;editado&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;trusted_domains&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">array</span> (
-</span></span><span style="display:flex;"><span>    <span style="color:#e0af68">0</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;cloud.javihuete.site&#39;</span>,
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>debian@pignite:/<span style="color:#6ab825;font-weight:bold">var</span>/www<span style="color:#a61717;background-color:#e3d2d2">$</span> sudo nano nextcloud/config/config.php 
+</span></span><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#40ffff">$CONFIG</span> = <span style="color:#6ab825;font-weight:bold">array</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;instanceid&#39;</span> =&gt; <span style="color:#ed9d13">&#39;editado&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;passwordsalt&#39;</span> =&gt; <span style="color:#ed9d13">&#39;editado&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;secret&#39;</span> =&gt; <span style="color:#ed9d13">&#39;editado&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;trusted_domains&#39;</span> =&gt; 
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">array</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#3677a9">0</span> =&gt; <span style="color:#ed9d13">&#39;cloud.javihuete.site&#39;</span>,
 </span></span><span style="display:flex;"><span>  ),
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;datadirectory&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;/var/www/nextcloud/data&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbtype&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;mysql&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;version&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;30.0.1.2&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;overwrite.cli.url&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;http://cloud.javihuete.site&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbname&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;nextcloud&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbhost&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;localhost&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbport&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbtableprefix&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;oc_&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;mysql.utf8mb4&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">true</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbuser&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;cloud&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;dbpassword&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#9ece6a">&#39;contraseña&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#9ece6a">&#39;installed&#39;</span> <span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;datadirectory&#39;</span> =&gt; <span style="color:#ed9d13">&#39;/var/www/nextcloud/data&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbtype&#39;</span> =&gt; <span style="color:#ed9d13">&#39;mysql&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;version&#39;</span> =&gt; <span style="color:#ed9d13">&#39;30.0.1.2&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;overwrite.cli.url&#39;</span> =&gt; <span style="color:#ed9d13">&#39;http://cloud.javihuete.site&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbname&#39;</span> =&gt; <span style="color:#ed9d13">&#39;nextcloud&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbhost&#39;</span> =&gt; <span style="color:#ed9d13">&#39;localhost&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbport&#39;</span> =&gt; <span style="color:#ed9d13">&#39;&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbtableprefix&#39;</span> =&gt; <span style="color:#ed9d13">&#39;oc_&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;mysql.utf8mb4&#39;</span> =&gt; <span style="color:#6ab825;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbuser&#39;</span> =&gt; <span style="color:#ed9d13">&#39;cloud&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;dbpassword&#39;</span> =&gt; <span style="color:#ed9d13">&#39;contraseña&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#39;installed&#39;</span> =&gt; <span style="color:#6ab825;font-weight:bold">true</span>,
 </span></span><span style="display:flex;"><span>);
 </span></span></code></pre></div><p>En el caso de Moodle, también es necesario configurar el fichero
 /etc/php/8.2/fpm/php.ini para añadir la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#414868;font-style:italic">; How many GET/POST/COOKIE input variables may be accepted</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">max_input_vars</span> <span style="color:#9ece6a;font-weight:bold">=</span> <span style="color:#9ece6a">5000</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#999;font-style:italic">; How many GET/POST/COOKIE input variables may be accepted</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">max_input_vars</span> = <span style="color:#ed9d13">5000</span>
 </span></span></code></pre></div><h1 id="registrar-las-nuevas-entradas-del-dns">Registrar las nuevas entradas del DNS</h1>
 <p>Finalmente, para que estos servicios sean accesibles desde el exterior, hay que añadir dos registros de tipo CNAME en el DNS que apunten a la máquina en la que están instalados los servidores.</p>
 <h1 id="resolución-de-problemas">Resolución de problemas</h1>
 <p>En el caso de la instalación de Moodle al no contar con el módulo php de Apache se produce un problema al cargar el CSS de la aplicación.
 Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por defecto para interpretar este tipo de url que, en el caso de Moodle, contienen ficheros .php en una parte intermedia de la ruta. Para solucionar el error hay que configurar la conexión con el servidor de aplicaciones en el virtual host de moodle de la siguiente forma:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span>    <span style="color:#bb9af7">location</span> ~ <span style="color:#7dcfff">[^/]\.php(/|$)</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">include</span> <span style="color:#9ece6a">fastcgi_params</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">fastcgi_split_path_info</span> <span style="color:#9ece6a">^(.+\.php)(/.*)</span>$;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">fastcgi_pass</span> <span style="color:#9ece6a">unix:/var/run/php/php7.4-fpm.sock</span>; <span style="color:#414868;font-style:italic"># Ajusta la versión de PHP si es diferente
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>        <span style="color:#7dcfff">fastcgi_index</span> <span style="color:#9ece6a">index.php</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">fastcgi_param</span> <span style="color:#9ece6a">SCRIPT_FILENAME</span> $document_root$fastcgi_script_name;
-</span></span><span style="display:flex;"><span>        <span style="color:#7dcfff">fastcgi_param</span> <span style="color:#9ece6a">PATH_INFO</span> $fastcgi_path_info;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">location</span> ~ <span style="color:#ed9d13">[^/]\.php(/|$)</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">include</span> <span style="color:#ed9d13">fastcgi_params</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">fastcgi_split_path_info</span> <span style="color:#ed9d13">^(.+\.php)(/.*)</span>$;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">fastcgi_pass</span> <span style="color:#ed9d13">unix:/var/run/php/php7.4-fpm.sock</span>; <span style="color:#999;font-style:italic"># Ajusta la versión de PHP si es diferente
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">fastcgi_index</span> <span style="color:#ed9d13">index.php</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">fastcgi_param</span> <span style="color:#ed9d13">SCRIPT_FILENAME</span> <span style="color:#40ffff">$document_root$fastcgi_script_name</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">fastcgi_param</span> <span style="color:#ed9d13">PATH_INFO</span> <span style="color:#40ffff">$fastcgi_path_info</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>La línea <code>fastcgi_split_path_info ^(.+\.php)(/.*)$;</code> es la que permite que Nginx interprete estas rutas que incluyen una referencia a un fichero .php en mitad de la URL y no sólo al final.</p>
 <p>Por su parte, en NextCloud se deben solucionar algunos errores como, por ejemplo, desactivar la opción &ldquo;output_buffering&rdquo; del fichero php.ini, agragar en el fichero de configuración del virtual host la configuración que permite a Nginx interpretar las rutas /.well-known o incluir también en este fichero las líneas que permiten al Nginx servir ficheros .mjs usando MIME.</p>
@@ -1322,8 +1322,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-      Convulsión en el mundo del software libre
+    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+      Ejemplos de uso del comando parted en Debian
     </a>
   </h4>
   
@@ -1338,16 +1338,16 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/fundamentos-hardware/"
             class="ms-1"
-            >Administracion sistemas
+            >Fundamentos hardware
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
+  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
     Leer
   </a>
 </div>
@@ -1359,8 +1359,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
-      Compartición de sistemas de ficheros con sshfs y systemd
+    <a href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
     </a>
   </h4>
   
@@ -1375,16 +1375,16 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Administracion sistemas
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
+  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
     Leer
   </a>
 </div>
@@ -1396,8 +1396,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
-      Cómo simular un servidor PostgreSQL en GNS3
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
     </a>
   </h4>
   
@@ -1412,16 +1412,16 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
     Leer
   </a>
 </div>
@@ -1527,9 +1527,9 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1537,9 +1537,9 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -870,39 +870,39 @@
 </details>
 
             <p>Para configurar una máquina virtual con cloud-init usando libvirt se necesitan tres ficheros: network-config, meta-data y user-data. En este caso, los dos primeros están vacíos. El fichero user-data incluye la configuración necesaria para actualizar los paquetes, instalar Apache2, crear un usuario y configurar el nombre de la máquina.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#414868;font-style:italic">#cloud-config</span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Actualiza los paquetes</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_update</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">package_upgrade</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Instala el paquete apache2</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">packages</span>:
-</span></span><span style="display:flex;"><span>  - apache2
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Configura el hostname y el fqdn</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">fqdn</span>: maquina-cloud.example.org
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">hostname</span>: maquina-cloud
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">manage_etc_hosts</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#bb9af7">name</span>: javi
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">sudo</span>: ALL=(ALL) NOPASSWD:ALL
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">shell</span>: /bin/bash
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">ssh_authorized_keys</span>: 
-</span></span><span style="display:flex;"><span>      - ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># Cambia las contraseña a los usuarios creados</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">chpasswd</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">expire</span>: <span style="color:#e0af68">False</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">users</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: root
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: javi
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">password</span>: usuario
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">type</span>: text
-</span></span></code></pre></div><p>Para poder ejecutar la configuración con cloud init es necesario instalar imágenes que tengan cloud init ya instalado. En el caso de Debian, estas imágenes están publicadas en <a href="https://cdimage.debian.org/images/cloud/bookworm/20241201-1948/"
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#cloud-config</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Actualiza los paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_update</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">package_upgrade</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Instala el paquete apache2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">packages</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- apache2<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Configura el hostname y el fqdn</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">fqdn</span>:<span style="color:#666"> </span>maquina-cloud.example.org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">hostname</span>:<span style="color:#666"> </span>maquina-cloud<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">manage_etc_hosts</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Crear dos usuarios, configura el acceso por sudo y añade clave pública ssh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>javi<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">sudo</span>:<span style="color:#666"> </span>ALL=(ALL) NOPASSWD:ALL<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">shell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">ssh_authorized_keys</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic"># Cambia las contraseña a los usuarios creados</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">chpasswd</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">expire</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">False</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">users</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>javi<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">password</span>:<span style="color:#666"> </span>usuario<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">type</span>:<span style="color:#666"> </span>text<span style="color:#666">
+</span></span></span></code></pre></div><p>Para poder ejecutar la configuración con cloud init es necesario instalar imágenes que tengan cloud init ya instalado. En el caso de Debian, estas imágenes están publicadas en <a href="https://cdimage.debian.org/images/cloud/bookworm/20241201-1948/"
 
 
 
@@ -913,8 +913,8 @@
 
 >su repositorio</a>.</p>
 <p>Los ficheros de cloud init se indican en el comando de creación de la instancia con <code>virt-install</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>virt-install --name DebianCloud --memory 1024 --os-variant debian11 --disk=size=10,backing_store=&#34;$(pwd)/debian-12-generic-amd64-20241201-1948.qcow2&#34; --cloud-init user-data=$(pwd)/user-data,meta-data=$(pwd)/meta-data,network-config=$(pwd)/network-config&#34;
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">virt-install --name DebianCloud --memory 1024 --os-variant debian11 --disk=size=10,backing_store=&#34;$(pwd)/debian-12-generic-amd64-20241201-1948.qcow2&#34; --cloud-init user-data=$(pwd)/user-data,meta-data=$(pwd)/meta-data,network-config=$(pwd)/network-config&#34;
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1151,32 +1151,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
-      Cómo simular un servidor MariaDB en GNS3
+    <a href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+      Creación de una VPN punto a punto con IPSec
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Redes
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+  <p class="mb-6"><p>Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
     Leer
   </a>
 </div>
@@ -1188,8 +1188,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/">
-      Cómo crear una instancia basada en un volumen en OpenStack
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -1204,16 +1204,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
     Leer
   </a>
 </div>
@@ -1225,32 +1225,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
-      Configuración del protocolo HTTPS para el acceso a una aplicación web
+    <a href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
+      Verificar la integridad de ficheros con GPG y apt-secure
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Implantacion
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
+  <p class="mb-6">Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
     Leer
   </a>
 </div>
@@ -1356,9 +1356,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1366,9 +1366,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

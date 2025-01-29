@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -877,111 +877,111 @@
             <h1 id="configuración-de-haproxy-como-balanceador-de-carga">Configuración de HAProxy como balanceador de carga</h1>
 <p>Este escenario está formado por un balanceador de carga que reparte el tráfico entre dos servidores web que sirven una aplicación web escrita en PHP.</p>
 <p>En el equipo que funciona como balanceador de carga se instala la herramienta <code>HAproxy</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install haproxy
-</span></span></code></pre></div><p>Para configurar el balanceador de carga de manera que reparta la carga entre los servidores de forma equitativa se añade la siguiente configuración en el fichero /etc/haproxy/haproxy.cfg</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>frontend servidores_web
-</span></span><span style="display:flex;"><span>	bind *:80 
-</span></span><span style="display:flex;"><span>	mode http
-</span></span><span style="display:flex;"><span>	stats enable
-</span></span><span style="display:flex;"><span>	stats uri /ha_stats
-</span></span><span style="display:flex;"><span>	stats auth cda:cda
-</span></span><span style="display:flex;"><span>	default_backend servidores_web_backend
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>backend servidores_web_backend
-</span></span><span style="display:flex;"><span>	mode http
-</span></span><span style="display:flex;"><span>	balance roundrobin
-</span></span><span style="display:flex;"><span>	server backend1 192.168.100.100:80 check
-</span></span><span style="display:flex;"><span>	server backend2 192.168.100.101:80 check
-</span></span></code></pre></div><p>Para poder acceder a la aplicación web se tiene que añadir la resolución estática al ficheo /etc/hosts del equipo local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>192.168.121.120	www.example.org
-</span></span></code></pre></div><p>De esta forma, al acceder de manera consecutiva al navegador, cada vez el balanceador redirigirá la conexión a uno de los dos servidores web del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install haproxy
+</span></span></span></code></pre></div><p>Para configurar el balanceador de carga de manera que reparta la carga entre los servidores de forma equitativa se añade la siguiente configuración en el fichero /etc/haproxy/haproxy.cfg</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">frontend servidores_web
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	bind *:80 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	mode http
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	stats enable
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	stats uri /ha_stats
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	stats auth cda:cda
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	default_backend servidores_web_backend
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">backend servidores_web_backend
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	mode http
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	balance roundrobin
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	server backend1 192.168.100.100:80 check
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	server backend2 192.168.100.101:80 check
+</span></span></span></code></pre></div><p>Para poder acceder a la aplicación web se tiene que añadir la resolución estática al ficheo /etc/hosts del equipo local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">192.168.121.120	www.example.org
+</span></span></span></code></pre></div><p>De esta forma, al acceder de manera consecutiva al navegador, cada vez el balanceador redirigirá la conexión a uno de los dos servidores web del escenario.</p>
 <p>Además, la herramienta <code>haproxy</code> ofrece una interfaz gráfica sencilla en la que muestra algunas estadísitcas del funcionamiento del balanceador de carga. Esta herramienta gráfica es accesible a través de una navegador web en la dirección del balanceador de carga <code>www.example.org/ht_stats</code>.</p>
 <p>Aunque los equipos cliente acceden al balanceador de carga, las peticiones que llegan a los servidores web lo hacen desde el balanceador de carga, por tanto, todas ellas muestran como IP de origen la IP de la red local del balanceador de carga y no las IP públicas desde las que acceden los clientes.</p>
 <h1 id="comprobar-el-rendimiento-del-balanceador-del-carga">Comprobar el rendimiento del balanceador del carga</h1>
 <p>Para comprobar el rendimiento del balanceador de carga se pueden usar herramientas como <code>ab</code> y <code>hatop</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install apache2-utils hatop
-</span></span></code></pre></div><p>Con <code>ab</code>(Apache Benchmark) se pueden hacer peticiones en lote a un servidore web y la salida del comando muestra el rendimiento del servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@balanceador:~$ ab -n 1000 -c 100 http://www.example.org/app.php
-</span></span><span style="display:flex;"><span>This is ApacheBench, Version 2.3 &lt;$Revision: 1913912 $&gt;
-</span></span><span style="display:flex;"><span>Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-</span></span><span style="display:flex;"><span>Licensed to The Apache Software Foundation, http://www.apache.org/
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Benchmarking www.example.org (be patient)
-</span></span><span style="display:flex;"><span>Completed 100 requests
-</span></span><span style="display:flex;"><span>Completed 200 requests
-</span></span><span style="display:flex;"><span>Completed 300 requests
-</span></span><span style="display:flex;"><span>Completed 400 requests
-</span></span><span style="display:flex;"><span>Completed 500 requests
-</span></span><span style="display:flex;"><span>Completed 600 requests
-</span></span><span style="display:flex;"><span>Completed 700 requests
-</span></span><span style="display:flex;"><span>Completed 800 requests
-</span></span><span style="display:flex;"><span>Completed 900 requests
-</span></span><span style="display:flex;"><span>Completed 1000 requests
-</span></span><span style="display:flex;"><span>Finished 1000 requests
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Server Software:        Apache/2.4.62
-</span></span><span style="display:flex;"><span>Server Hostname:        www.example.org
-</span></span><span style="display:flex;"><span>Server Port:            80
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Document Path:          /app.php
-</span></span><span style="display:flex;"><span>Document Length:        115 bytes
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Concurrency Level:      100
-</span></span><span style="display:flex;"><span>Time taken for tests:   19.640 seconds
-</span></span><span style="display:flex;"><span>Complete requests:      1000
-</span></span><span style="display:flex;"><span>Failed requests:        0
-</span></span><span style="display:flex;"><span>Non-2xx responses:      1000
-</span></span><span style="display:flex;"><span>Total transferred:      283000 bytes
-</span></span><span style="display:flex;"><span>HTML transferred:       115000 bytes
-</span></span><span style="display:flex;"><span>Requests per second:    50.92 [#/sec] (mean)
-</span></span><span style="display:flex;"><span>Time per request:       1964.009 [ms] (mean)
-</span></span><span style="display:flex;"><span>Time per request:       19.640 [ms] (mean, across all concurrent requests)
-</span></span><span style="display:flex;"><span>Transfer rate:          14.07 [Kbytes/sec] received
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Connection Times (ms)
-</span></span><span style="display:flex;"><span>              min  mean[+/-sd] median   max
-</span></span><span style="display:flex;"><span>Connect:        0    2   4.9      0      22
-</span></span><span style="display:flex;"><span>Processing:   104 1903 875.5   2015    4708
-</span></span><span style="display:flex;"><span>Waiting:       83 1903 875.6   2015    4708
-</span></span><span style="display:flex;"><span>Total:        104 1905 874.0   2020    4708
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Percentage of the requests served within a certain time (ms)
-</span></span><span style="display:flex;"><span>  50%   2020
-</span></span><span style="display:flex;"><span>  66%   2426
-</span></span><span style="display:flex;"><span>  75%   2584
-</span></span><span style="display:flex;"><span>  80%   2672
-</span></span><span style="display:flex;"><span>  90%   2967
-</span></span><span style="display:flex;"><span>  95%   3284
-</span></span><span style="display:flex;"><span>  98%   3648
-</span></span><span style="display:flex;"><span>  99%   3867
-</span></span><span style="display:flex;"><span> 100%   4708 (longest request)
-</span></span></code></pre></div><p>La herramienta <code>hatop</code> permite comprobar el rendimiento de los servidores, ver su estado, sus estadísticas y, además, permite interactuar con el balanceador de carga para conectar o desconectar algunos de los servidores web del backend para, por ejemplo, desconectarlos del balanceador y ponerlos en mantenimiento.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>HATop version 0.8.2                                   Wed Nov 20 11:29:10 2024 
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>  HAProxy Version: 2.6.12-1+deb12u1  (released: 2023/12/PID: 382 (proc 1)
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>         Node: balanceador (uptime 0d 0h06m47s)
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>        Pipes: [                                                       0/0]
-</span></span><span style="display:flex;"><span>  Connections: [                                                  0/262124]
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>  Procs:   1   Tasks:    14    Queue:     0    Proxies:   2   Services:    4
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>NAME            W STATUS CHECK   ACT BCK  QCUR  QMAX   SCUR   SMAX   SLIM   STOT
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>&gt;&gt;&gt; servidores_web
-</span></span><span style="display:flex;"><span>FRONTEND        0 OPEN             0   0     0     0      0    100 262124   1000
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>&gt;&gt;&gt; servidores_web_backend
-</span></span><span style="display:flex;"><span>backend1        1 UP     L4OK      1   0     0     0      0      0      0      0
-</span></span><span style="display:flex;"><span>backend2        1 UP     L4OK      1   0     0     0      0    100      0   1000
-</span></span><span style="display:flex;"><span>BACKEND         2 UP               2   0     0     0      0    100  26213   1000
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span> 1-STATUS  2-TRAFFIC  3-HTTP  4-ERRORS  5-CLI      ENTER=MENU SPACE=SEL [#3/#1] 
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install apache2-utils hatop
+</span></span></span></code></pre></div><p>Con <code>ab</code>(Apache Benchmark) se pueden hacer peticiones en lote a un servidore web y la salida del comando muestra el rendimiento del servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@balanceador:~$ ab -n 1000 -c 100 http://www.example.org/app.php
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This is ApacheBench, Version 2.3 &lt;$Revision: 1913912 $&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Licensed to The Apache Software Foundation, http://www.apache.org/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Benchmarking www.example.org (be patient)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 100 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 200 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 300 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 400 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 500 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 600 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 700 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 800 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 900 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Completed 1000 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Finished 1000 requests
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Server Software:        Apache/2.4.62
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Server Hostname:        www.example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Server Port:            80
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Document Path:          /app.php
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Document Length:        115 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Concurrency Level:      100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Time taken for tests:   19.640 seconds
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Complete requests:      1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Failed requests:        0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Non-2xx responses:      1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Total transferred:      283000 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">HTML transferred:       115000 bytes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Requests per second:    50.92 [#/sec] (mean)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Time per request:       1964.009 [ms] (mean)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Time per request:       19.640 [ms] (mean, across all concurrent requests)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Transfer rate:          14.07 [Kbytes/sec] received
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Connection Times (ms)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">              min  mean[+/-sd] median   max
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Connect:        0    2   4.9      0      22
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Processing:   104 1903 875.5   2015    4708
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Waiting:       83 1903 875.6   2015    4708
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Total:        104 1905 874.0   2020    4708
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Percentage of the requests served within a certain time (ms)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  50%   2020
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  66%   2426
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  75%   2584
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  80%   2672
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  90%   2967
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  95%   3284
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  98%   3648
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  99%   3867
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 100%   4708 (longest request)
+</span></span></span></code></pre></div><p>La herramienta <code>hatop</code> permite comprobar el rendimiento de los servidores, ver su estado, sus estadísticas y, además, permite interactuar con el balanceador de carga para conectar o desconectar algunos de los servidores web del backend para, por ejemplo, desconectarlos del balanceador y ponerlos en mantenimiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">HATop version 0.8.2                                   Wed Nov 20 11:29:10 2024 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  HAProxy Version: 2.6.12-1+deb12u1  (released: 2023/12/PID: 382 (proc 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">         Node: balanceador (uptime 0d 0h06m47s)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">        Pipes: [                                                       0/0]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Connections: [                                                  0/262124]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  Procs:   1   Tasks:    14    Queue:     0    Proxies:   2   Services:    4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">NAME            W STATUS CHECK   ACT BCK  QCUR  QMAX   SCUR   SMAX   SLIM   STOT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">&gt;</span>&gt;&gt; servidores_web
+</span></span><span style="display:flex;"><span><span style="color:#ccc">FRONTEND        0 OPEN             0   0     0     0      0    100 262124   1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">&gt;</span>&gt;&gt; servidores_web_backend
+</span></span><span style="display:flex;"><span><span style="color:#ccc">backend1        1 UP     L4OK      1   0     0     0      0      0      0      0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">backend2        1 UP     L4OK      1   0     0     0      0    100      0   1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">BACKEND         2 UP               2   0     0     0      0    100  26213   1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc"> 1-STATUS  2-TRAFFIC  3-HTTP  4-ERRORS  5-CLI      ENTER=MENU SPACE=SEL [#3/#1] 
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1210,8 +1210,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
-      Introducción a Openstack Client
+    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+      Qué es ARP y cómo funciona
     </a>
   </h4>
   
@@ -1226,53 +1226,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/">
-      Cómo crear una instancia basada en un volumen en OpenStack
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. Ofrece una estructura como servicio (IaaS) y permite virtualizar equipos en los servidores en los que esté configurado. En este post se muestra, a través de un ejemplo práctico cómo se puede crear una instancia basada en un volumen en OpenStack y cómo se puede volcar el contenido de un sistema a un nuevo volumen con mayor capacidad de almacenamiento.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-04-14-instancia-basada-volumen-openstack/">
+  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
     Leer
   </a>
 </div>
@@ -1310,6 +1273,43 @@
   
   <p class="mb-6">El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</p>
   <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-24-comando-xargs/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
+      Uso de Openstack para crear un escenario de despliegue
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
     Leer
   </a>
 </div>
@@ -1415,9 +1415,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1425,9 +1425,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

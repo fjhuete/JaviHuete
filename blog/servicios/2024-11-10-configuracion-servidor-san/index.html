@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -888,166 +888,166 @@
 
             <h1 id="gestión-de-volúmenes-en-el-servidor-san">Gestión de volúmenes en el servidor SAN</h1>
 <p>El servidor SAN cuenta con 3 discos duros de 2G cada uno. A partir de estos discos se crea un Raid5 y se convierte en un grupo de volúmenes. En este grupo de volúmenes se crean un volumen de 1G que se comparte con un cliente GNU/Linux y dos volúmenes de 512M que se comparten con un cliente Windows.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
-</span></span><span style="display:flex;"><span>mdadm --detail --scan --verbose &gt;&gt; /etc/mdadm/mdadm.conf
-</span></span><span style="display:flex;"><span>update-initramfs -u -k all
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>vgcreate vg1 /dev/md0
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>lvcreate -L 1G -n lv1 vg1
-</span></span><span style="display:flex;"><span>lvcreate -L 512M -n lv2 vg1
-</span></span><span style="display:flex;"><span>lvcreate -L 512M -n lv3 vg1
-</span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-gnulinux">Creación de un target para compartir con un cliente GNU/Linux</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mdadm --create /dev/md0 --level=5 --raid-devices=3 /dev/vdb /dev/vdc /dev/vdd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mdadm --detail --scan --verbose &gt;&gt; /etc/mdadm/mdadm.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">update-initramfs -u -k all
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">vgcreate vg1 /dev/md0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">lvcreate -L 1G -n lv1 vg1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lvcreate -L 512M -n lv2 vg1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lvcreate -L 512M -n lv3 vg1
+</span></span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-gnulinux">Creación de un target para compartir con un cliente GNU/Linux</h1>
 <h2 id="creación-del-target-en-el-servidor-san">Creación del target en el servidor SAN</h2>
 <p>El primer paso es crear el target en el servidor SAN. Es necesario instalar previamente la herramienta <code>tgtadm</code> del paquete <code>tgt</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install tgt
-</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode target --tid 1 -T iqn.2024-10.org.javi:target1
-</span></span></code></pre></div><p>Además, para compartir el volumen lógico con el cliente hay que añadirlo como Unidad Lógica (LUN) al target recién creado.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 1 --lun 1 -b /dev/vg1/lv1
-</span></span></code></pre></div><p>Ahora hay disponible en el servidor un target con una LUN que se puede compartir.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@san:~$ sudo tgtadm --lld iscsi --op show --mode target
-</span></span><span style="display:flex;"><span>Target 1: iqn.2024-10.org.javi:target1
-</span></span><span style="display:flex;"><span>    System information:
-</span></span><span style="display:flex;"><span>        Driver: iscsi
-</span></span><span style="display:flex;"><span>        State: ready
-</span></span><span style="display:flex;"><span>    I_T nexus information:
-</span></span><span style="display:flex;"><span>    LUN information:
-</span></span><span style="display:flex;"><span>        LUN: 0
-</span></span><span style="display:flex;"><span>            Type: controller
-</span></span><span style="display:flex;"><span>            SCSI ID: IET     00010000
-</span></span><span style="display:flex;"><span>            SCSI SN: beaf10
-</span></span><span style="display:flex;"><span>            Size: 0 MB, Block size: 1
-</span></span><span style="display:flex;"><span>            Online: Yes
-</span></span><span style="display:flex;"><span>            Removable media: No
-</span></span><span style="display:flex;"><span>            Prevent removal: No
-</span></span><span style="display:flex;"><span>            Readonly: No
-</span></span><span style="display:flex;"><span>            SWP: No
-</span></span><span style="display:flex;"><span>            Thin-provisioning: No
-</span></span><span style="display:flex;"><span>            Backing store type: null
-</span></span><span style="display:flex;"><span>            Backing store path: None
-</span></span><span style="display:flex;"><span>            Backing store flags: 
-</span></span><span style="display:flex;"><span>        LUN: 1
-</span></span><span style="display:flex;"><span>            Type: disk
-</span></span><span style="display:flex;"><span>            SCSI ID: IET     00010001
-</span></span><span style="display:flex;"><span>            SCSI SN: beaf11
-</span></span><span style="display:flex;"><span>            Size: 1074 MB, Block size: 512
-</span></span><span style="display:flex;"><span>            Online: Yes
-</span></span><span style="display:flex;"><span>            Removable media: No
-</span></span><span style="display:flex;"><span>            Prevent removal: No
-</span></span><span style="display:flex;"><span>            Readonly: No
-</span></span><span style="display:flex;"><span>            SWP: No
-</span></span><span style="display:flex;"><span>            Thin-provisioning: No
-</span></span><span style="display:flex;"><span>            Backing store type: rdwr
-</span></span><span style="display:flex;"><span>            Backing store path: /dev/vg1/lv1
-</span></span><span style="display:flex;"><span>            Backing store flags: 
-</span></span><span style="display:flex;"><span>    Account information:
-</span></span><span style="display:flex;"><span>    ACL information:
-</span></span></code></pre></div><p>Antes de acceder al target desde el cliente (192.168.0.5) hay que hacer que esté disponible a través de la red.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op bind --mode target --tid 1 -I 192.168.0.5
-</span></span></code></pre></div><p>Esta configuración desaparece con el apagado de la máquina. Para hacerla persistente a reinicios se debe volcar a un fichero de configuración. Esta operación se puede realizar con la herramienta <code>tgt-admin</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
-</span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente">Configuración del volumen en el cliente</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install tgt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op new --mode target --tid 1 -T iqn.2024-10.org.javi:target1
+</span></span></span></code></pre></div><p>Además, para compartir el volumen lógico con el cliente hay que añadirlo como Unidad Lógica (LUN) al target recién creado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 1 --lun 1 -b /dev/vg1/lv1
+</span></span></span></code></pre></div><p>Ahora hay disponible en el servidor un target con una LUN que se puede compartir.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@san:~$ sudo tgtadm --lld iscsi --op show --mode target
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Target 1: iqn.2024-10.org.javi:target1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    System information:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Driver: iscsi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        State: ready
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    I_T nexus information:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    LUN information:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        LUN: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Type: controller
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SCSI ID: IET     00010000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SCSI SN: beaf10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Size: 0 MB, Block size: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Online: Yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Removable media: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Prevent removal: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Readonly: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SWP: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Thin-provisioning: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store type: null
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store path: None
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store flags: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        LUN: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Type: disk
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SCSI ID: IET     00010001
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SCSI SN: beaf11
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Size: 1074 MB, Block size: 512
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Online: Yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Removable media: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Prevent removal: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Readonly: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            SWP: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Thin-provisioning: No
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store type: rdwr
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store path: /dev/vg1/lv1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Backing store flags: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    Account information:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ACL information:
+</span></span></span></code></pre></div><p>Antes de acceder al target desde el cliente (192.168.0.5) hay que hacer que esté disponible a través de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op bind --mode target --tid 1 -I 192.168.0.5
+</span></span></span></code></pre></div><p>Esta configuración desaparece con el apagado de la máquina. Para hacerla persistente a reinicios se debe volcar a un fichero de configuración. Esta operación se puede realizar con la herramienta <code>tgt-admin</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
+</span></span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente">Configuración del volumen en el cliente</h2>
 <p>Para configurar un target como volumen en el cliente es necesario usar la herramienta <code>iscasiadm</code>, disponible en el paquete <code>open-iscsi</code>. La instalación de esta herramienta genera el fichero de configuración /etc/iscsi/initiatorname.iscsi, que crea un initiator en el cliente para permitirle usar los volúmenes que comparte el servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install open-iscsi
-</span></span></code></pre></div><p>Antes de configurar la conexión, es necesario conocer cuáles son los targets que ofrece el servidor SAN (192.168.0.4) disponibles en la red para el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode discovery --type sendtargets --portal 192.168.0.4
-</span></span><span style="display:flex;"><span>192.168.0.4:3260,1 iqn.2024-10.org.javi:target1
-</span></span></code></pre></div><p>Con el nombre del target que se recibe desde el servidor se puede configurar la conexión.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 --login
-</span></span><span style="display:flex;"><span>Logging in to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260]
-</span></span><span style="display:flex;"><span>Login to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260] successful.
-</span></span></code></pre></div><p>El volumen ya está disponible en el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ lsblk
-</span></span><span style="display:flex;"><span>NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
-</span></span><span style="display:flex;"><span>sda      8:0    0    1G  0 disk 
-</span></span></code></pre></div><p>También se puede crear un sistema de ficheros en este disco duro.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo mkfs.ext4 /dev/sda
-</span></span><span style="display:flex;"><span>mke2fs 1.47.0 (5-Feb-2023)
-</span></span><span style="display:flex;"><span>Creating filesystem with 262144 4k blocks and 65536 inodes
-</span></span><span style="display:flex;"><span>Filesystem UUID: 631106dd-f545-4129-840c-f4e4560504bd
-</span></span><span style="display:flex;"><span>Superblock backups stored on blocks: 
-</span></span><span style="display:flex;"><span>    32768, 98304, 163840, 229376
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>Allocating group tables: done                            
-</span></span><span style="display:flex;"><span>Writing inode tables: done                            
-</span></span><span style="display:flex;"><span>Creating journal (8192 blocks): done
-</span></span><span style="display:flex;"><span>Writing superblocks and filesystem accounting information: done
-</span></span></code></pre></div><h2 id="montar-el-volumen-de-forma-persistente-en-el-cliente-usando-systemd-mount">Montar el volumen de forma persistente en el cliente usando <code>systemd mount</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install open-iscsi
+</span></span></span></code></pre></div><p>Antes de configurar la conexión, es necesario conocer cuáles son los targets que ofrece el servidor SAN (192.168.0.4) disponibles en la red para el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ iscsiadm --mode discovery --type sendtargets --portal 192.168.0.4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">192.168.0.4:3260,1 iqn.2024-10.org.javi:target1
+</span></span></span></code></pre></div><p>Con el nombre del target que se recibe desde el servidor se puede configurar la conexión.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 --login
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Logging in to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Login to [iface: default, target: iqn.2024-10.org.javi:target1, portal: 192.168.0.4,3260] successful.
+</span></span></span></code></pre></div><p>El volumen ya está disponible en el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ lsblk
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sda      8:0    0    1G  0 disk 
+</span></span></span></code></pre></div><p>También se puede crear un sistema de ficheros en este disco duro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ sudo mkfs.ext4 /dev/sda
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mke2fs 1.47.0 (5-Feb-2023)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Creating filesystem with 262144 4k blocks and 65536 inodes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Filesystem UUID: 631106dd-f545-4129-840c-f4e4560504bd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Superblock backups stored on blocks: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    32768, 98304, 163840, 229376
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Allocating group tables: done                            
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Writing inode tables: done                            
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Creating journal (8192 blocks): done
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Writing superblocks and filesystem accounting information: done
+</span></span></span></code></pre></div><h2 id="montar-el-volumen-de-forma-persistente-en-el-cliente-usando-systemd-mount">Montar el volumen de forma persistente en el cliente usando <code>systemd mount</code></h2>
 <p>Para que el proceso de descubrimiento y login del target sea persistente a los reinicios es necesario comprobar que el parámetro <code>node.startup</code> del fichero de configuración /etc/iscsi/iscsid.conf tiene el valor <code>automatic</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#*****************
-</span></span><span style="display:flex;"><span># Startup settings
-</span></span><span style="display:flex;"><span>#*****************
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span># To request that the iscsi service scripts startup a session, use <span style="color:#9ece6a">&#34;automatic&#34;</span>:
-</span></span><span style="display:flex;"><span> node.startup = automatic
-</span></span><span style="display:flex;"><span>#
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"># To manually startup the session, use &#34;manual&#34;. The default is manual.</span>
-</span></span><span style="display:flex;"><span>#node.startup <span style="color:#9ece6a;font-weight:bold">=</span> manual
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>*****************
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Startup settings
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>*****************
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> To request that the iscsi service scripts startup a session, use <span style="color:#ed9d13">&#34;automatic&#34;</span>:
+</span></span><span style="display:flex;"><span><span style="color:#ccc"> node.startup = automatic
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># To manually startup the session, use &#34;manual&#34;. The default is manual.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>node.startup = manual
 </span></span></code></pre></div><p>Además, hay que añadir el nodo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -o new
-</span></span><span style="display:flex;"><span>New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 192.168.0.4,3260,-1 iqn.2024-10.org.javi:target1] added
-</span></span></code></pre></div><p>Y, en el registro del nodo cambiar el valor del parámetro <code>discovery.sendtargets.use_discoveryd</code> a <code>Yes</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.use_discoveryd -v Yes
-</span></span></code></pre></div><p>Por último, se debe establecer también un valor al parámetro <code>discovery.sendtargets.discoveryd_poll_inval</code>. En este caso, <code>30</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.discoveryd_poll_inval -v 30
-</span></span></code></pre></div><p>Una vez que el volumen es accesible desde el cliente se puede crear un punto de montaje con systemd para hacerlo persistente. Systemd es un demonio que gestiona y adminisra el sistema y los servicios, entre ellos, el montaje de discos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -o new
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 192.168.0.4,3260,-1 iqn.2024-10.org.javi:target1] added
+</span></span></span></code></pre></div><p>Y, en el registro del nodo cambiar el valor del parámetro <code>discovery.sendtargets.use_discoveryd</code> a <code>Yes</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.use_discoveryd -v Yes
+</span></span></span></code></pre></div><p>Por último, se debe establecer también un valor al parámetro <code>discovery.sendtargets.discoveryd_poll_inval</code>. En este caso, <code>30</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">iscsiadm --mode node -T iqn.2024-10.org.javi:target1 --portal 192.168.0.4 -n discovery.sendtargets.discoveryd_poll_inval -v 30
+</span></span></span></code></pre></div><p>Una vez que el volumen es accesible desde el cliente se puede crear un punto de montaje con systemd para hacerlo persistente. Systemd es un demonio que gestiona y adminisra el sistema y los servicios, entre ellos, el montaje de discos.</p>
 <p>Para hacer un montaje persisten con systemd es necesario un archivo de montaje que se crea en el directorio /etc/systemd/system/&lt;nombre&gt;.mount.</p>
 <p>Al igual que en el fichero /etc/fstab, en el fichero de montaje se pueden especificar el punto de montaje del disco, el sistema de ficheros que usa y las opciones de montaje.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo nano /etc/systemd/system/san.mount
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#bb9af7">[Unit]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Description</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">Nuevo disco montado-san</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">After</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">iscsid.service</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Requires</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">iscsid.service</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Mount]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">What</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/dev/sda</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Where</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">/san</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Type</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">ext4</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">Options</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">defaults</span>
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">[Install]</span>
-</span></span><span style="display:flex;"><span><span style="color:#7aa2f7">WantedBy</span><span style="color:#9ece6a;font-weight:bold">=</span><span style="color:#9ece6a">multi-user.target</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo nano /etc/systemd/system/san.mount
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Description</span>=<span style="color:#ed9d13">Nuevo disco montado-san</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">After</span>=<span style="color:#ed9d13">iscsid.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Requires</span>=<span style="color:#ed9d13">iscsid.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Mount]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">What</span>=<span style="color:#ed9d13">/dev/sda</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Where</span>=<span style="color:#ed9d13">/san</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Type</span>=<span style="color:#ed9d13">ext4</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Options</span>=<span style="color:#ed9d13">defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">WantedBy</span>=<span style="color:#ed9d13">multi-user.target</span>
 </span></span></code></pre></div><p>Para que systemd detecte los cambios se reinicia el daemon.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl daemon-reload
-</span></span></code></pre></div><p>Una vez que el montaje del dispositivo está configurado a través de systemctl este volumen se puede montar con el siguiente comando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl start san.mount
-</span></span></code></pre></div><p>Para hacer persistente a los reinicios el montaje del dispositivo simplemente hay que habilitarlo de la misma forma que se habilitan otros servicios en systemctl.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo systemctl enable san.mount
-</span></span><span style="display:flex;"><span>Created symlink /etc/systemd/system/multi-user.target.wants/san.mount → /etc/systemd/system/san.mount.
-</span></span></code></pre></div><p>Además, se pueden usar otras funciones de systemctl como el status para ver el estado del dispositivo. Así, tras reiniciar el cliente, se puede comprobar que el dispositivo se ha vuelto a montar correctamente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>vagrant@cliente:~$ sudo systemctl status san.mount 
-</span></span><span style="display:flex;"><span>● san.mount - Nuevo disco montado-san
-</span></span><span style="display:flex;"><span>     Loaded: loaded (/etc/systemd/system/san.mount; enabled; preset: enabled)
-</span></span><span style="display:flex;"><span>     Active: active (mounted) since Fri 2024-11-01 19:20:34 CET; 22s ago
-</span></span><span style="display:flex;"><span>      Where: /san
-</span></span><span style="display:flex;"><span>       What: /dev/sda
-</span></span><span style="display:flex;"><span>      Tasks: 0 (limit: 1098)
-</span></span><span style="display:flex;"><span>     Memory: 160.0K
-</span></span><span style="display:flex;"><span>        CPU: 4ms
-</span></span><span style="display:flex;"><span>     CGroup: /system.slice/san.mount
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>nov 01 19:20:34 cliente systemd[1]: Mounting san.mount - Nuevo disco montado-san...
-</span></span><span style="display:flex;"><span>nov 01 19:20:34 cliente systemd[1]: Mounted san.mount - Nuevo disco montado-san.
-</span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-windows">Creación de un target para compartir con un cliente Windows</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl daemon-reload
+</span></span></span></code></pre></div><p>Una vez que el montaje del dispositivo está configurado a través de systemctl este volumen se puede montar con el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start san.mount
+</span></span></span></code></pre></div><p>Para hacer persistente a los reinicios el montaje del dispositivo simplemente hay que habilitarlo de la misma forma que se habilitan otros servicios en systemctl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ sudo systemctl enable san.mount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Created symlink /etc/systemd/system/multi-user.target.wants/san.mount → /etc/systemd/system/san.mount.
+</span></span></span></code></pre></div><p>Además, se pueden usar otras funciones de systemctl como el status para ver el estado del dispositivo. Así, tras reiniciar el cliente, se puede comprobar que el dispositivo se ha vuelto a montar correctamente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">vagrant@cliente:~$ sudo systemctl status san.mount 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">● san.mount - Nuevo disco montado-san
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     Loaded: loaded (/etc/systemd/system/san.mount; enabled; preset: enabled)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     Active: active (mounted) since Fri 2024-11-01 19:20:34 CET; 22s ago
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      Where: /san
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       What: /dev/sda
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      Tasks: 0 (limit: 1098)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     Memory: 160.0K
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        CPU: 4ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     CGroup: /system.slice/san.mount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">nov 01 19:20:34 cliente systemd[1]: Mounting san.mount - Nuevo disco montado-san...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">nov 01 19:20:34 cliente systemd[1]: Mounted san.mount - Nuevo disco montado-san.
+</span></span></span></code></pre></div><h1 id="creación-de-un-target-para-compartir-con-un-cliente-windows">Creación de un target para compartir con un cliente Windows</h1>
 <h2 id="creación-del-target-en-el-servidor-san-1">Creación del target en el servidor SAN</h2>
 <p>El target que se va a compartir con el cliente Windows cuenta con dos unidades lógicas de 512M cada una.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode target --tid 2 -T iqn.2024-11.org.javi:target2
-</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 1 -b /dev/vg1/lv2
-</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 2 -b /dev/vg1/lv3
-</span></span><span style="display:flex;"><span>sudo tgtadm --lld iscsi --op bind --mode target --tid 2 -I 192.168.0.6
-</span></span></code></pre></div><p>La autenticación CHAP se puede habilitar a través de la línea de comandos con la herramienta <code>tgtadm</code> pero la herramienta <code>tgt-admin</code> no es capaz de volcar esta información al fichero de configuración persistente, así que para poder configurar la autenticación es necesrio editar directamente el fichero de configuración.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op new --mode target --tid 2 -T iqn.2024-11.org.javi:target2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 1 -b /dev/vg1/lv2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op new --mode logicalunit --tid 2 --lun 2 -b /dev/vg1/lv3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo tgtadm --lld iscsi --op bind --mode target --tid 2 -I 192.168.0.6
+</span></span></span></code></pre></div><p>La autenticación CHAP se puede habilitar a través de la línea de comandos con la herramienta <code>tgtadm</code> pero la herramienta <code>tgt-admin</code> no es capaz de volcar esta información al fichero de configuración persistente, así que para poder configurar la autenticación es necesrio editar directamente el fichero de configuración.</p>
 <p>En la declaración del target en este fichero hay que añadir el parámetro <code>incominguser</code> que tiene dos valores. El primero de ellos es el usuario y el segundo la contraseña.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>sudo nano /etc/tgt/conf.d/san.conf
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>&lt;target iqn.2024-11.org.javi:target2&gt;
-</span></span><span style="display:flex;"><span>        backing-store /dev/vg1/lv2
-</span></span><span style="display:flex;"><span>        backing-store /dev/vg1/lv3
-</span></span><span style="display:flex;"><span>        initiator-address 192.168.0.6
-</span></span><span style="display:flex;"><span>        incominguser usuario usuariousuario
-</span></span><span style="display:flex;"><span>&lt;/target&gt;
-</span></span></code></pre></div><p>Para cargar esta modificación en el fichero hay que reiniciar el servicio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo systemctl restart tgt
-</span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente-1">Configuración del volumen en el cliente</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo tgt-admin --dump &gt; /etc/tgt/conf.d/san.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">sudo nano /etc/tgt/conf.d/san.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;target iqn.2024-11.org.javi:target2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        backing-store /dev/vg1/lv2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        backing-store /dev/vg1/lv3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        initiator-address 192.168.0.6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        incominguser usuario usuariousuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/target&gt;
+</span></span></span></code></pre></div><p>Para cargar esta modificación en el fichero hay que reiniciar el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart tgt
+</span></span></span></code></pre></div><h2 id="configuración-del-volumen-en-el-cliente-1">Configuración del volumen en el cliente</h2>
 <p>Para configurar un volumen compartido en un cliente Windows se usa la herramienta iSCSI initiator, que está instalada en el sistema operativo por defecto.</p>
 <p>Al iniciar esta herramienta se muestra un mensaje en el que se avisa de que el servicio iSCSI de Microsoft no se ha activado y pregunta si se quiere iniciar. Tras iniciar el servicio se abre la herramienta del iniciador o cliente iscsi en la que se puede configurar una nueva conexión.</p>
 <p>Con esta herramienta se puede establecer una conexión rápida al servidor iscsi con la que se puede detectar un destino e inicar sesión en él indicando el nombre de domino o la dirección IP del servidor.</p>
@@ -1142,9 +1142,9 @@
             class="img img-fluid img-center"
             width="497"
             height="180"
-            src="/images/servicios/san/p3_c1_hu3913001309016120820.png"
+            src="/images/servicios/san/p3_c1_hu_1cf7e9cfce76f681.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c1_hu3913001309016120820.png'" />
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c1_hu_1cf7e9cfce76f681.png'" />
       
     
 
@@ -1255,9 +1255,9 @@
             class="img img-fluid img-center"
             width="497"
             height="717"
-            src="/images/servicios/san/p3_c2_hu16630072945554834780.png"
+            src="/images/servicios/san/p3_c2_hu_7a51b6c015bc5cd0.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c2_hu16630072945554834780.png'" />
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c2_hu_7a51b6c015bc5cd0.png'" />
       
     
 
@@ -1362,9 +1362,9 @@
             class="img img-fluid img-center"
             width="538"
             height="641"
-            src="/images/servicios/san/p3_c3_hu14451167632641132517.png"
+            src="/images/servicios/san/p3_c3_hu_15ecf9eb7b0f9e2b.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c3_hu14451167632641132517.png'" />
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c3_hu_15ecf9eb7b0f9e2b.png'" />
       
     
 
@@ -1470,9 +1470,9 @@
             class="img img-fluid img-center"
             width="762"
             height="604"
-            src="/images/servicios/san/p3_c4_hu16522034985484298249.png"
+            src="/images/servicios/san/p3_c4_hu_227f51a4bab12661.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c4_hu16522034985484298249.png'" />
+            onerror="this.onerror='null';this.src='\/images\/servicios\/san\/p3_c4_hu_227f51a4bab12661.png'" />
       
     
 
@@ -1722,16 +1722,53 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
-      Instalación desatendida de Debian12
+    <a href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+      Instalación de WordPress en Rocky Linux 9
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors//">
-          <i class="fa-regular fa-circle-user mr-2"></i>
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache <code>httpd</code> y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
+      Manejo y modificación de módulos del kernel 
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1746,8 +1783,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+  <p class="mb-6">Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
     Leer
   </a>
 </div>
@@ -1759,8 +1796,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
-      Así funciona IPv6: configuración en router Linux y Cisco
+    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+      Gestión de dispositivos de almacenamiento con Powershell
     </a>
   </h4>
   
@@ -1775,53 +1812,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Redes
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
-      Configuración NAT en routers Cisco en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
+  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
     Leer
   </a>
 </div>
@@ -1927,9 +1927,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1937,9 +1937,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

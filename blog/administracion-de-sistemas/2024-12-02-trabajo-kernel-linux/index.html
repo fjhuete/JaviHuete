@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -881,49 +881,49 @@
             <h1 id="trabajo-con-kernel-linux">Trabajo con kernel Linux</h1>
 <h2 id="actualizar-el-kernel-a-través-del-gestor-de-paquetes">Actualizar el kernel a través del gestor de paquetes</h2>
 <p>Ver la versión actual del kernel</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ uname -r 
-</span></span><span style="display:flex;"><span>6.1.0-25-amd64
-</span></span></code></pre></div><p>Comprobar las versiones disponibles del kernel</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ apt policy linux-image-amd64
-</span></span><span style="display:flex;"><span>linux-image-amd64:
-</span></span><span style="display:flex;"><span>  Installed: (none)
-</span></span><span style="display:flex;"><span>  Candidate: 6.10.11-1
-</span></span><span style="display:flex;"><span>  Version table:
-</span></span><span style="display:flex;"><span>     6.10.11-1 500
-</span></span><span style="display:flex;"><span>        500 http://deb.debian.org/debian testing/main amd64 Packages
-</span></span><span style="display:flex;"><span>     6.1.106-3 500
-</span></span><span style="display:flex;"><span>        500 http://deb.debian.org/debian bookworm/main amd64 Packages
-</span></span></code></pre></div><p>Ver los kerneles instalados en el sistema</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ dpkg --list | grep linux-image
-</span></span><span style="display:flex;"><span>ii  linux-image-6.1.0-25-amd64       6.1.106-3                      amd64        Linux 6.1 for 64-bit PCs (signed)
-</span></span></code></pre></div><p>Instalar el kernel</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo apt policy linux-image-amd64
-</span></span></code></pre></div><p>Tras reiniciar el equipo, el sistema carga el nuevo kernel recién instalado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ uname -r 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">6.1.0-25-amd64
+</span></span></span></code></pre></div><p>Comprobar las versiones disponibles del kernel</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ apt policy linux-image-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linux-image-amd64:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Installed: (none)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Candidate: 6.10.11-1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Version table:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     6.10.11-1 500
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        500 http://deb.debian.org/debian testing/main amd64 Packages
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     6.1.106-3 500
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        500 http://deb.debian.org/debian bookworm/main amd64 Packages
+</span></span></span></code></pre></div><p>Ver los kerneles instalados en el sistema</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dpkg --list | grep linux-image
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ii  linux-image-6.1.0-25-amd64       6.1.106-3                      amd64        Linux 6.1 for 64-bit PCs (signed)
+</span></span></span></code></pre></div><p>Instalar el kernel</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo apt policy linux-image-amd64
+</span></span></span></code></pre></div><p>Tras reiniciar el equipo, el sistema carga el nuevo kernel recién instalado.</p>
 <p>Para desinstalar el kernel se debe arrancar el equipo con un kernel diferente al que se desinstala y, posteriormente, desinstalarlo desde el gestor de paquetes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ sudo apt remove --purge linux-image-6.10.11-amd64
-</span></span></code></pre></div><p>La instalación de un kernel genera los ficheros config, initrd.img y vmlinuz en el directorio /boot/.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ ls -l /boot/
-</span></span><span style="display:flex;"><span>total 47244
-</span></span><span style="display:flex;"><span>-rw-r--r-- 1 root root   259508 Aug 26 21:47 config-6.1.0-25-amd64
-</span></span><span style="display:flex;"><span>drwxr-xr-x 5 root root     4096 Oct  8 13:27 grub
-</span></span><span style="display:flex;"><span>-rw-r--r-- 1 root root 39925056 Oct  4 09:30 initrd.img-6.1.0-25-amd64
-</span></span><span style="display:flex;"><span>-rw-r--r-- 1 root root       83 Aug 26 21:47 System.map-6.1.0-25-amd64
-</span></span><span style="display:flex;"><span>-rw-r--r-- 1 root root  8177600 Aug 26 21:47 vmlinuz-6.1.0-25-amd64
-</span></span></code></pre></div><h2 id="compilar-el-kernel-desde-el-código-fuente">Compilar el kernel desde el código fuente</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ sudo apt remove --purge linux-image-6.10.11-amd64
+</span></span></span></code></pre></div><p>La instalación de un kernel genera los ficheros config, initrd.img y vmlinuz en el directorio /boot/.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ ls -l /boot/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 47244
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root   259508 Aug 26 21:47 config-6.1.0-25-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">drwxr-xr-x 5 root root     4096 Oct  8 13:27 grub
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root 39925056 Oct  4 09:30 initrd.img-6.1.0-25-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root       83 Aug 26 21:47 System.map-6.1.0-25-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root  8177600 Aug 26 21:47 vmlinuz-6.1.0-25-amd64
+</span></span></span></code></pre></div><h2 id="compilar-el-kernel-desde-el-código-fuente">Compilar el kernel desde el código fuente</h2>
 <p>Descargar el código fuente</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz
-</span></span></code></pre></div><p>Es un archivo pesado que tarda más de 30 segundos en descomprimirse.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ time tar -xf linux-6.11.2.tar.xz 
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>real	0m32.098s
-</span></span><span style="display:flex;"><span>user	0m13.602s
-</span></span><span style="display:flex;"><span>sys	0m7.698s
-</span></span></code></pre></div><p>El directorio generado tras descomprimir el archivo contiene múltiples ficheros .c y .h con el código fuente del kernel. En total son casi 60.000 ficheros de código fuente. Además, se puede contar el número de líneas de código fuente que componen el kernel.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>❯ find . -iname &#34;*.[ch]&#34; | wc -l
-</span></span><span style="display:flex;"><span>59558
-</span></span><span style="display:flex;"><span>❯ find . -iname &#34;*.[ch]&#34; -exec cat {} \; | grep &#34;[;|#]&#34; | wc -l
-</span></span><span style="display:flex;"><span>15863403
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.11.2.tar.xz
+</span></span></span></code></pre></div><p>Es un archivo pesado que tarda más de 30 segundos en descomprimirse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ time tar -xf linux-6.11.2.tar.xz 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">real	0m32.098s
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">user	0m13.602s
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sys	0m7.698s
+</span></span></span></code></pre></div><p>El directorio generado tras descomprimir el archivo contiene múltiples ficheros .c y .h con el código fuente del kernel. En total son casi 60.000 ficheros de código fuente. Además, se puede contar el número de líneas de código fuente que componen el kernel.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ find . -iname &#34;*.[ch]&#34; | wc -l
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">59558
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ find . -iname &#34;*.[ch]&#34; -exec cat {} \; | grep &#34;[;|#]&#34; | wc -l
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">15863403
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1168,32 +1168,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
-      Sistemas operativos inmutables
+    <a href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
+      Verificar la integridad de ficheros con GPG y apt-secure
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Administracion sistemas
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">La inmutabilidad de los sistemas operativos se refiere a la característica de estos que impide al usuario modificar libremente el sistema de archivos raíz con el objetivo de evitar los problemas que esto puede provocar. En este post se analizan algunos de estos sistemas operativos y se valoran sus ventajas e inconvenientes.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/">
+  <p class="mb-6">Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
     Leer
   </a>
 </div>
@@ -1205,8 +1205,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
-      Cómo simular un servidor PostgreSQL en GNS3
+    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+      Ejemplos de uso del comando parted en Debian
     </a>
   </h4>
   
@@ -1221,16 +1221,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/fundamentos-hardware/"
             class="ms-1"
-            >Redes
+            >Fundamentos hardware
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
     Leer
   </a>
 </div>
@@ -1242,32 +1242,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
-      Comandos para la programación de tareas
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Sistemas
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>
@@ -1373,9 +1373,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1383,9 +1383,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

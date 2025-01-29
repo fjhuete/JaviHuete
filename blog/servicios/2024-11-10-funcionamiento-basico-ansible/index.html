@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -885,72 +885,72 @@
 
             <h1 id="instalación-de-ansible">Instalación de Ansible</h1>
 <p>Ansible se puede instalar desde los repositorios de Debian</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt install ansible
-</span></span></code></pre></div><h1 id="preparación-de-la-máquina">Preparación de la máquina</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install ansible
+</span></span></span></code></pre></div><h1 id="preparación-de-la-máquina">Preparación de la máquina</h1>
 <p>En este ejemplo se usa una máquina virtual con un usuario sin privilegios que puede acceder por ssh y que puede usar sudo sin indicar la contraseña.</p>
 <h1 id="ficheros-de-configuración">Ficheros de configuración</h1>
 <h2 id="inventario">Inventario</h2>
 <p>Incluye una declaración de los grupos y máquinas que se van a configurar y algunas variables para identificarlas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#bb9af7">all</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">children</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#bb9af7">servidores</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">hosts</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">ansible</span>: 
-</span></span><span style="display:flex;"><span>          <span style="color:#bb9af7">ansible_ssh_host</span>: <span style="color:#e0af68">172.22.200.46</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#bb9af7">ansible_ssh_user</span>: debian
-</span></span><span style="display:flex;"><span>          <span style="color:#bb9af7">ansible_ssh_private_key_file</span>: /home/javi/.ssh/id_rsa
-</span></span></code></pre></div><h2 id="fichero-de-configuración">Fichero de configuración</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">all</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">children</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">servidores</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">hosts</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">ansible</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">ansible_ssh_host</span>:<span style="color:#666"> </span><span style="color:#3677a9">172.22.200.46</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">ansible_ssh_user</span>:<span style="color:#666"> </span>debian<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">ansible_ssh_private_key_file</span>:<span style="color:#666"> </span>/home/javi/.ssh/id_rsa<span style="color:#666">
+</span></span></span></code></pre></div><h2 id="fichero-de-configuración">Fichero de configuración</h2>
 <p>En él se indica la ruta al fichero de inventario.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[defaults]
-</span></span><span style="display:flex;"><span>inventory = hosts
-</span></span><span style="display:flex;"><span>host_key_checking = False
-</span></span></code></pre></div><p>El parámetro <code>host_key_checking = False</code> evita los mensajes de advertencia cuando se reutilizan direcciones IP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>[defaults]<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>inventory = hosts<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span>host_key_checking = False<span style="color:#666">
+</span></span></span></code></pre></div><p>El parámetro <code>host_key_checking = False</code> evita los mensajes de advertencia cuando se reutilizan direcciones IP.</p>
 <h2 id="probar-conexión">Probar conexión</h2>
 <p>Para probar la conexión a una máquina Ansible usa el módulo ping.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ansible -m ping all
-</span></span><span style="display:flex;"><span>ansible | SUCCESS =&gt; {
-</span></span><span style="display:flex;"><span>    &#34;ansible_facts&#34;: {
-</span></span><span style="display:flex;"><span>        &#34;discovered_interpreter_python&#34;: &#34;/usr/bin/python3&#34;
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    &#34;changed&#34;: false,
-</span></span><span style="display:flex;"><span>    &#34;ping&#34;: &#34;pong&#34;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="actualizar-el-playbook">Actualizar el playbook</h2>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ansible -m ping all
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ansible | SUCCESS =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &#34;ansible_facts&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#34;discovered_interpreter_python&#34;: &#34;/usr/bin/python3&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &#34;changed&#34;: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &#34;ping&#34;: &#34;pong&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><h2 id="actualizar-el-playbook">Actualizar el playbook</h2>
 <p>El playbook es el fichero que contiene las reglas que ejecuta ansible en la máquina objetivo.</p>
 <p>En este caso, Ansible actualiza el sistema de paquetes, instala git y apache2, copia un fichero a la máquina remota, copia una plantilla al directorio /var/www/html.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#bb9af7">hosts</span>: all
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">become</span>: <span style="color:#e0af68">true</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">tasks</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#414868;font-style:italic"># Actualizamos paquetes</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: Actualizamos el sistema
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">apt</span>: update_cache=yes upgrade=yes
-</span></span><span style="display:flex;"><span>      <span style="color:#414868;font-style:italic"># Instalar paquetes</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: <span style="color:#9ece6a">&#34;Instalar paquetes con apt&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">ansible.builtin.apt</span>: 
-</span></span><span style="display:flex;"><span>       <span style="color:#bb9af7">pkg</span>:
-</span></span><span style="display:flex;"><span>        - apache2
-</span></span><span style="display:flex;"><span>        - git
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#414868;font-style:italic"># Copia un fichero a la máquina remota</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: <span style="color:#9ece6a">&#34;Copiar fichero a la máquina remota&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">copy</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">src</span>: files/foo.conf
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">dest</span>: /etc/
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">owner</span>: root
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">group</span>: root
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">mode</span>: <span style="color:#9ece6a">&#39;0644&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#414868;font-style:italic"># Copia un template a un fichero</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#bb9af7">name</span>: <span style="color:#9ece6a">&#34;Copiar un tamplate a un fichero de la máquina remota&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">template</span>: 
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">src</span>: template/index.j2
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">dest</span>: /var/www/html/index.html
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">owner</span>: www-data
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">group</span>: www-data
-</span></span><span style="display:flex;"><span>        <span style="color:#bb9af7">mode</span>: <span style="color:#e0af68">0644</span>
-</span></span></code></pre></div><h1 id="ejecutar-el-playbook">Ejecutar el playbook</h1>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ansible-playbook site.yaml
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#6ab825;font-weight:bold">hosts</span>:<span style="color:#666"> </span>all<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">become</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">true</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">tasks</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#999;font-style:italic"># Actualizamos paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>Actualizamos el sistema<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">apt</span>:<span style="color:#666"> </span>update_cache=yes upgrade=yes<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#999;font-style:italic"># Instalar paquetes</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;Instalar paquetes con apt&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">ansible.builtin.apt</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">pkg</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- apache2<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- git<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#999;font-style:italic"># Copia un fichero a la máquina remota</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;Copiar fichero a la máquina remota&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">copy</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">src</span>:<span style="color:#666"> </span>files/foo.conf<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">dest</span>:<span style="color:#666"> </span>/etc/<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span>root<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">mode</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#39;0644&#39;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#999;font-style:italic"># Copia un template a un fichero</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;Copiar un tamplate a un fichero de la máquina remota&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">template</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">src</span>:<span style="color:#666"> </span>template/index.j2<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">dest</span>:<span style="color:#666"> </span>/var/www/html/index.html<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">owner</span>:<span style="color:#666"> </span>www-data<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666"> </span>www-data<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">mode</span>:<span style="color:#666"> </span><span style="color:#3677a9">0644</span><span style="color:#666">
+</span></span></span></code></pre></div><h1 id="ejecutar-el-playbook">Ejecutar el playbook</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ansible-playbook site.yaml
+</span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
             
@@ -1179,8 +1179,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
-      Instalación de MySQL en Debian
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
     </a>
   </h4>
   
@@ -1195,16 +1195,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/bases-de-datos/"
             class="ms-1"
-            >Administracion bbdd
+            >Bases de datos
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
     Leer
   </a>
 </div>
@@ -1216,8 +1216,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
-      Así funciona IPv6: configuración en router Linux y Cisco
+    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
+      Comandos para la programación de tareas
     </a>
   </h4>
   
@@ -1232,16 +1232,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Redes
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
+  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
     Leer
   </a>
 </div>
@@ -1253,32 +1253,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/">
-      Manejo y uso del comando mkisofs
+    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+      Cifrado asimétrico con GPG y OpenSSL
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Fundamentos hardware
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/">
+  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
     Leer
   </a>
 </div>
@@ -1384,9 +1384,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1394,9 +1394,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

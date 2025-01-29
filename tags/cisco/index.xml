@@ -6,8 +6,15 @@
     <description>Recent content in Cisco on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 21 May 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de una VPN punto a punto con IPSec</title>
+      <link>/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/</guid>
+      <description>&lt;p&gt;Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Túneles IPv6: túneles 6to4</title>
       <link>/blog/redes/2024-05-21-tuneles-ipv6-6to4/</link>

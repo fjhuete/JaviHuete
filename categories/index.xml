@@ -6,20 +6,27 @@
     <description>Recent content in Categories on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Mon, 13 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Servicios</title>
-      <link>/categories/servicios/</link>
-      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/categories/servicios/</guid>
+      <title>Seguridad</title>
+      <link>/categories/seguridad/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/categories/seguridad/</guid>
       <description></description>
     </item>
     <item>
       <title>Administracion-Sistemas</title>
       <link>/categories/administracion-sistemas/</link>
-      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/categories/administracion-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>/categories/servicios/</link>
+      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/categories/servicios/</guid>
       <description></description>
     </item>
     <item>

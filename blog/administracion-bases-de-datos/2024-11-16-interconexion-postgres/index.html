@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -881,163 +881,163 @@
             <h1 id="enlace-entre-dos-servidores-postgres">Enlace entre dos servidores Postgres</h1>
 <h2 id="configuración-del-acceso-remoto-al-servidor-postgres">Configuración del acceso remoto al servidor Postgres</h2>
 <p>En primer lugar es necesario contar con dos servidores diferentes y que en ambos esté instalado el SGBD Postgres. Además, es necesario configurar la conexión remota en ambos casos. Para ello se editan los ficheros de configuración /etc/postgresql/15/main/pg_hba.conf y /etc/postgresql/15/main/postgresql.conf y se añaden las siguientes líneas:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>#En el ficheero /etc/postgresql/15/main/postgresql.conf
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>listen_addresses = &#39;*&#39;
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>#En el fichero /etc/postgresql/15/main/pg_hba.conf
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>host    all             all             10.0.0.0/24             scram-sha-256
-</span></span><span style="display:flex;"><span>host    all             all             all                     scram-sha-256
-</span></span></code></pre></div><p>Una vez que ambos servidores están configurados e instalados hay que crear los usuarios y las bases de datos en cada uno de ellos y añadirles contenido.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>postgres:<span style="color:#9ece6a;font-weight:bold">~</span><span style="color:#db4b4b">$</span> sudo su
-</span></span><span style="display:flex;"><span>root<span style="color:#9ece6a;font-weight:bold">@</span>postgres:<span style="color:#9ece6a;font-weight:bold">/</span>home<span style="color:#9ece6a;font-weight:bold">/</span>debian<span style="color:#9ece6a;font-weight:bold">#</span> su postgres
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">@</span>postgres:<span style="color:#9ece6a;font-weight:bold">/</span>home<span style="color:#9ece6a;font-weight:bold">/</span>debian<span style="color:#db4b4b">$</span> psql
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span>En el ficheero /etc/postgresql/15/main/postgresql.conf
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">listen_addresses = &#39;*&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span>En el fichero /etc/postgresql/15/main/pg_hba.conf
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">host    all             all             10.0.0.0/24             scram-sha-256
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">host    all             all             all                     scram-sha-256
+</span></span></span></code></pre></div><p>Una vez que ambos servidores están configurados e instalados hay que crear los usuarios y las bases de datos en cada uno de ellos y añadirles contenido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>debian@postgres:~<span style="color:#a61717;background-color:#e3d2d2">$</span> sudo su
+</span></span><span style="display:flex;"><span>root@postgres:/home/debian# su postgres
+</span></span><span style="display:flex;"><span>postgres@postgres:/home/debian<span style="color:#a61717;background-color:#e3d2d2">$</span> psql
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> uno <span style="color:#bb9af7">with</span> <span style="color:#bb9af7">password</span> <span style="color:#9ece6a">&#39;uno&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">ROLE</span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> bd1;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">DATABASE</span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> <span style="color:#bb9af7">database</span> bd1 <span style="color:#bb9af7">to</span> uno;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">GRANT</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">user</span> uno <span style="color:#6ab825;font-weight:bold">with</span> <span style="color:#6ab825;font-weight:bold">password</span> <span style="color:#ed9d13">&#39;uno&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">ROLE</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">database</span> bd1;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">DATABASE</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">grant</span> <span style="color:#6ab825;font-weight:bold">all</span> <span style="color:#6ab825;font-weight:bold">privileges</span> <span style="color:#6ab825;font-weight:bold">on</span> <span style="color:#6ab825;font-weight:bold">database</span> bd1 <span style="color:#6ab825;font-weight:bold">to</span> uno;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">GRANT</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>postgres:<span style="color:#9ece6a;font-weight:bold">~</span><span style="color:#db4b4b">$</span> psql <span style="color:#9ece6a;font-weight:bold">-</span>W bd1 uno
+</span></span><span style="display:flex;"><span>debian@postgres:~<span style="color:#a61717;background-color:#e3d2d2">$</span> psql -W bd1 uno
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">schema</span> scott;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">SCHEMA</span>
-</span></span><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">table</span> scott<span style="color:#e0af68">.</span>dept (
-</span></span><span style="display:flex;"><span>  deptno <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  dname  <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  loc    <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> pk_dept <span style="color:#bb9af7">primary</span> <span style="color:#bb9af7">key</span> (deptno)
+</span></span><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">schema</span> scott;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">SCHEMA</span>
+</span></span><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">table</span> scott<span style="color:#3677a9">.</span>dept (
+</span></span><span style="display:flex;"><span>  deptno <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  dname  <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  loc    <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> pk_dept <span style="color:#6ab825;font-weight:bold">primary</span> <span style="color:#6ab825;font-weight:bold">key</span> (deptno)
 </span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">TABLE</span>
-</span></span><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">table</span> scott<span style="color:#e0af68">.</span>emp (
-</span></span><span style="display:flex;"><span>  empno    <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  ename    <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  job      <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  mgr      <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  hiredate <span style="color:#9ece6a">date</span>,
-</span></span><span style="display:flex;"><span>  sal      <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  comm     <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  deptno   <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> pk_emp <span style="color:#bb9af7">primary</span> <span style="color:#bb9af7">key</span> (empno),
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> fk_mgr <span style="color:#bb9af7">foreign</span> <span style="color:#bb9af7">key</span> (mgr) <span style="color:#bb9af7">references</span> scott<span style="color:#e0af68">.</span>emp (empno),
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> fk_deptno <span style="color:#bb9af7">foreign</span> <span style="color:#bb9af7">key</span> (deptno) <span style="color:#bb9af7">references</span> scott<span style="color:#e0af68">.</span>dept (deptno)
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">TABLE</span>
+</span></span><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">table</span> scott<span style="color:#3677a9">.</span>emp (
+</span></span><span style="display:flex;"><span>  empno    <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  ename    <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  job      <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  mgr      <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  hiredate <span style="color:#24909d">date</span>,
+</span></span><span style="display:flex;"><span>  sal      <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  comm     <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  deptno   <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> pk_emp <span style="color:#6ab825;font-weight:bold">primary</span> <span style="color:#6ab825;font-weight:bold">key</span> (empno),
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> fk_mgr <span style="color:#6ab825;font-weight:bold">foreign</span> <span style="color:#6ab825;font-weight:bold">key</span> (mgr) <span style="color:#6ab825;font-weight:bold">references</span> scott<span style="color:#3677a9">.</span>emp (empno),
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> fk_deptno <span style="color:#6ab825;font-weight:bold">foreign</span> <span style="color:#6ab825;font-weight:bold">key</span> (deptno) <span style="color:#6ab825;font-weight:bold">references</span> scott<span style="color:#3677a9">.</span>dept (deptno)
 </span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">TABLE</span>
-</span></span><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">insert</span> <span style="color:#bb9af7">into</span> scott<span style="color:#e0af68">.</span>dept (deptno,  dname,        loc)
-</span></span><span style="display:flex;"><span>       <span style="color:#bb9af7">values</span>    (<span style="color:#e0af68">10</span>,     <span style="color:#9ece6a">&#39;ACCOUNTING&#39;</span>, <span style="color:#9ece6a">&#39;NEW YORK&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">20</span>,     <span style="color:#9ece6a">&#39;RESEARCH&#39;</span>,   <span style="color:#9ece6a">&#39;DALLAS&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">30</span>,     <span style="color:#9ece6a">&#39;SALES&#39;</span>,      <span style="color:#9ece6a">&#39;CHICAGO&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">40</span>,     <span style="color:#9ece6a">&#39;OPERATIONS&#39;</span>, <span style="color:#9ece6a">&#39;BOSTON&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">INSERT</span> <span style="color:#e0af68">0</span> <span style="color:#e0af68">4</span>
-</span></span><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">insert</span> <span style="color:#bb9af7">into</span> scott<span style="color:#e0af68">.</span>emp (empno, ename,    job,        mgr,   hiredate,     sal, comm, deptno)
-</span></span><span style="display:flex;"><span>       <span style="color:#bb9af7">values</span>   (<span style="color:#e0af68">7369</span>, <span style="color:#9ece6a">&#39;SMITH&#39;</span>,  <span style="color:#9ece6a">&#39;CLERK&#39;</span>,     <span style="color:#e0af68">7902</span>, <span style="color:#9ece6a">&#39;1980-12-17&#39;</span>,  <span style="color:#e0af68">800</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7499</span>, <span style="color:#9ece6a">&#39;ALLEN&#39;</span>,  <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-02-20&#39;</span>, <span style="color:#e0af68">1600</span>,  <span style="color:#e0af68">300</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7521</span>, <span style="color:#9ece6a">&#39;WARD&#39;</span>,   <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-02-22&#39;</span>, <span style="color:#e0af68">1250</span>,  <span style="color:#e0af68">500</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7566</span>, <span style="color:#9ece6a">&#39;JONES&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-04-02&#39;</span>, <span style="color:#e0af68">2975</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7654</span>, <span style="color:#9ece6a">&#39;MARTIN&#39;</span>, <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-09-28&#39;</span>, <span style="color:#e0af68">1250</span>, <span style="color:#e0af68">1400</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;BLAKE&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-05-01&#39;</span>, <span style="color:#e0af68">2850</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7782</span>, <span style="color:#9ece6a">&#39;CLARK&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-06-09&#39;</span>, <span style="color:#e0af68">2450</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7788</span>, <span style="color:#9ece6a">&#39;SCOTT&#39;</span>,  <span style="color:#9ece6a">&#39;ANALYST&#39;</span>,   <span style="color:#e0af68">7566</span>, <span style="color:#9ece6a">&#39;1982-12-09&#39;</span>, <span style="color:#e0af68">3000</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;KING&#39;</span>,   <span style="color:#9ece6a">&#39;PRESIDENT&#39;</span>, <span style="color:#bb9af7">NULL</span>, <span style="color:#9ece6a">&#39;1981-11-17&#39;</span>, <span style="color:#e0af68">5000</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7844</span>, <span style="color:#9ece6a">&#39;TURNER&#39;</span>, <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-09-08&#39;</span>, <span style="color:#e0af68">1500</span>,    <span style="color:#e0af68">0</span>,   <span style="color:#e0af68">30</span>),     
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7934</span>, <span style="color:#9ece6a">&#39;MILLER&#39;</span>, <span style="color:#9ece6a">&#39;CLERK&#39;</span>,     <span style="color:#e0af68">7782</span>, <span style="color:#9ece6a">&#39;1982-01-23&#39;</span>, <span style="color:#e0af68">1300</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>);
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">commit</span>;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">INSERT</span> <span style="color:#e0af68">0</span> <span style="color:#e0af68">14</span>
-</span></span><span style="display:flex;"><span>WARNING:  there <span style="color:#bb9af7">is</span> <span style="color:#bb9af7">no</span> <span style="color:#bb9af7">transaction</span> <span style="color:#bb9af7">in</span> progress
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">COMMIT</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>postgres2:<span style="color:#9ece6a;font-weight:bold">~</span><span style="color:#db4b4b">$</span> sudo su
-</span></span><span style="display:flex;"><span>root<span style="color:#9ece6a;font-weight:bold">@</span>postgres2:<span style="color:#9ece6a;font-weight:bold">/</span>home<span style="color:#9ece6a;font-weight:bold">/</span>debian<span style="color:#9ece6a;font-weight:bold">#</span> su postgres
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">@</span>postgres2:<span style="color:#9ece6a;font-weight:bold">/</span>home<span style="color:#9ece6a;font-weight:bold">/</span>debian<span style="color:#db4b4b">$</span> psql
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">TABLE</span>
+</span></span><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">insert</span> <span style="color:#6ab825;font-weight:bold">into</span> scott<span style="color:#3677a9">.</span>dept (deptno,  dname,        loc)
+</span></span><span style="display:flex;"><span>       <span style="color:#6ab825;font-weight:bold">values</span>    (<span style="color:#3677a9">10</span>,     <span style="color:#ed9d13">&#39;ACCOUNTING&#39;</span>, <span style="color:#ed9d13">&#39;NEW YORK&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">20</span>,     <span style="color:#ed9d13">&#39;RESEARCH&#39;</span>,   <span style="color:#ed9d13">&#39;DALLAS&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">30</span>,     <span style="color:#ed9d13">&#39;SALES&#39;</span>,      <span style="color:#ed9d13">&#39;CHICAGO&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">40</span>,     <span style="color:#ed9d13">&#39;OPERATIONS&#39;</span>, <span style="color:#ed9d13">&#39;BOSTON&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">INSERT</span> <span style="color:#3677a9">0</span> <span style="color:#3677a9">4</span>
+</span></span><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">insert</span> <span style="color:#6ab825;font-weight:bold">into</span> scott<span style="color:#3677a9">.</span>emp (empno, ename,    job,        mgr,   hiredate,     sal, comm, deptno)
+</span></span><span style="display:flex;"><span>       <span style="color:#6ab825;font-weight:bold">values</span>   (<span style="color:#3677a9">7369</span>, <span style="color:#ed9d13">&#39;SMITH&#39;</span>,  <span style="color:#ed9d13">&#39;CLERK&#39;</span>,     <span style="color:#3677a9">7902</span>, <span style="color:#ed9d13">&#39;1980-12-17&#39;</span>,  <span style="color:#3677a9">800</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7499</span>, <span style="color:#ed9d13">&#39;ALLEN&#39;</span>,  <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-02-20&#39;</span>, <span style="color:#3677a9">1600</span>,  <span style="color:#3677a9">300</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7521</span>, <span style="color:#ed9d13">&#39;WARD&#39;</span>,   <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-02-22&#39;</span>, <span style="color:#3677a9">1250</span>,  <span style="color:#3677a9">500</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7566</span>, <span style="color:#ed9d13">&#39;JONES&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-04-02&#39;</span>, <span style="color:#3677a9">2975</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7654</span>, <span style="color:#ed9d13">&#39;MARTIN&#39;</span>, <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-09-28&#39;</span>, <span style="color:#3677a9">1250</span>, <span style="color:#3677a9">1400</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;BLAKE&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-05-01&#39;</span>, <span style="color:#3677a9">2850</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7782</span>, <span style="color:#ed9d13">&#39;CLARK&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-06-09&#39;</span>, <span style="color:#3677a9">2450</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7788</span>, <span style="color:#ed9d13">&#39;SCOTT&#39;</span>,  <span style="color:#ed9d13">&#39;ANALYST&#39;</span>,   <span style="color:#3677a9">7566</span>, <span style="color:#ed9d13">&#39;1982-12-09&#39;</span>, <span style="color:#3677a9">3000</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;KING&#39;</span>,   <span style="color:#ed9d13">&#39;PRESIDENT&#39;</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>, <span style="color:#ed9d13">&#39;1981-11-17&#39;</span>, <span style="color:#3677a9">5000</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7844</span>, <span style="color:#ed9d13">&#39;TURNER&#39;</span>, <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-09-08&#39;</span>, <span style="color:#3677a9">1500</span>,    <span style="color:#3677a9">0</span>,   <span style="color:#3677a9">30</span>),     
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7934</span>, <span style="color:#ed9d13">&#39;MILLER&#39;</span>, <span style="color:#ed9d13">&#39;CLERK&#39;</span>,     <span style="color:#3677a9">7782</span>, <span style="color:#ed9d13">&#39;1982-01-23&#39;</span>, <span style="color:#3677a9">1300</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">commit</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">INSERT</span> <span style="color:#3677a9">0</span> <span style="color:#3677a9">14</span>
+</span></span><span style="display:flex;"><span>WARNING:  there <span style="color:#6ab825;font-weight:bold">is</span> <span style="color:#6ab825;font-weight:bold">no</span> <span style="color:#6ab825;font-weight:bold">transaction</span> <span style="color:#6ab825;font-weight:bold">in</span> progress
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">COMMIT</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>debian@postgres2:~<span style="color:#a61717;background-color:#e3d2d2">$</span> sudo su
+</span></span><span style="display:flex;"><span>root@postgres2:/home/debian# su postgres
+</span></span><span style="display:flex;"><span>postgres@postgres2:/home/debian<span style="color:#a61717;background-color:#e3d2d2">$</span> psql
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">user</span> dos <span style="color:#bb9af7">with</span> <span style="color:#bb9af7">password</span> <span style="color:#9ece6a">&#39;dos&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">ROLE</span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">database</span> bd2;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">DATABASE</span>
-</span></span><span style="display:flex;"><span>postgres<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">grant</span> <span style="color:#bb9af7">all</span> <span style="color:#bb9af7">privileges</span> <span style="color:#bb9af7">on</span> <span style="color:#bb9af7">database</span> bd2 <span style="color:#bb9af7">to</span> dos;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">GRANT</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">user</span> dos <span style="color:#6ab825;font-weight:bold">with</span> <span style="color:#6ab825;font-weight:bold">password</span> <span style="color:#ed9d13">&#39;dos&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">ROLE</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">database</span> bd2;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">DATABASE</span>
+</span></span><span style="display:flex;"><span>postgres=# <span style="color:#6ab825;font-weight:bold">grant</span> <span style="color:#6ab825;font-weight:bold">all</span> <span style="color:#6ab825;font-weight:bold">privileges</span> <span style="color:#6ab825;font-weight:bold">on</span> <span style="color:#6ab825;font-weight:bold">database</span> bd2 <span style="color:#6ab825;font-weight:bold">to</span> dos;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">GRANT</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>debian<span style="color:#9ece6a;font-weight:bold">@</span>postgres2:<span style="color:#9ece6a;font-weight:bold">~</span><span style="color:#db4b4b">$</span> psql <span style="color:#9ece6a;font-weight:bold">-</span>W bd2 dos
+</span></span><span style="display:flex;"><span>debian@postgres2:~<span style="color:#a61717;background-color:#e3d2d2">$</span> psql -W bd2 dos
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">schema</span> scott;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">SCHEMA</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">table</span> scott<span style="color:#e0af68">.</span>dept (
-</span></span><span style="display:flex;"><span>  deptno <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  dname  <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  loc    <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> pk_dept <span style="color:#bb9af7">primary</span> <span style="color:#bb9af7">key</span> (deptno)
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">schema</span> scott;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">SCHEMA</span>
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">table</span> scott<span style="color:#3677a9">.</span>dept (
+</span></span><span style="display:flex;"><span>  deptno <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  dname  <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  loc    <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> pk_dept <span style="color:#6ab825;font-weight:bold">primary</span> <span style="color:#6ab825;font-weight:bold">key</span> (deptno)
 </span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">TABLE</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">table</span> scott<span style="color:#e0af68">.</span>emp (
-</span></span><span style="display:flex;"><span>  empno    <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  ename    <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  job      <span style="color:#9ece6a">text</span>,
-</span></span><span style="display:flex;"><span>  mgr      <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  hiredate <span style="color:#9ece6a">date</span>,
-</span></span><span style="display:flex;"><span>  sal      <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  comm     <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  deptno   <span style="color:#9ece6a">integer</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> pk_emp <span style="color:#bb9af7">primary</span> <span style="color:#bb9af7">key</span> (empno),
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> fk_mgr <span style="color:#bb9af7">foreign</span> <span style="color:#bb9af7">key</span> (mgr) <span style="color:#bb9af7">references</span> scott<span style="color:#e0af68">.</span>emp (empno),
-</span></span><span style="display:flex;"><span>  <span style="color:#bb9af7">constraint</span> fk_deptno <span style="color:#bb9af7">foreign</span> <span style="color:#bb9af7">key</span> (deptno) <span style="color:#bb9af7">references</span> scott<span style="color:#e0af68">.</span>dept (deptno)
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">TABLE</span>
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">table</span> scott<span style="color:#3677a9">.</span>emp (
+</span></span><span style="display:flex;"><span>  empno    <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  ename    <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  job      <span style="color:#24909d">text</span>,
+</span></span><span style="display:flex;"><span>  mgr      <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  hiredate <span style="color:#24909d">date</span>,
+</span></span><span style="display:flex;"><span>  sal      <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  comm     <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  deptno   <span style="color:#24909d">integer</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> pk_emp <span style="color:#6ab825;font-weight:bold">primary</span> <span style="color:#6ab825;font-weight:bold">key</span> (empno),
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> fk_mgr <span style="color:#6ab825;font-weight:bold">foreign</span> <span style="color:#6ab825;font-weight:bold">key</span> (mgr) <span style="color:#6ab825;font-weight:bold">references</span> scott<span style="color:#3677a9">.</span>emp (empno),
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">constraint</span> fk_deptno <span style="color:#6ab825;font-weight:bold">foreign</span> <span style="color:#6ab825;font-weight:bold">key</span> (deptno) <span style="color:#6ab825;font-weight:bold">references</span> scott<span style="color:#3677a9">.</span>dept (deptno)
 </span></span><span style="display:flex;"><span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">TABLE</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">insert</span> <span style="color:#bb9af7">into</span> scott<span style="color:#e0af68">.</span>dept (deptno,  dname,        loc)
-</span></span><span style="display:flex;"><span>       <span style="color:#bb9af7">values</span>    (<span style="color:#e0af68">10</span>,     <span style="color:#9ece6a">&#39;ACCOUNTING&#39;</span>, <span style="color:#9ece6a">&#39;NEW YORK&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">20</span>,     <span style="color:#9ece6a">&#39;RESEARCH&#39;</span>,   <span style="color:#9ece6a">&#39;DALLAS&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">30</span>,     <span style="color:#9ece6a">&#39;SALES&#39;</span>,      <span style="color:#9ece6a">&#39;CHICAGO&#39;</span>),
-</span></span><span style="display:flex;"><span>                 (<span style="color:#e0af68">40</span>,     <span style="color:#9ece6a">&#39;OPERATIONS&#39;</span>, <span style="color:#9ece6a">&#39;BOSTON&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">INSERT</span> <span style="color:#e0af68">0</span> <span style="color:#e0af68">4</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">insert</span> <span style="color:#bb9af7">into</span> scott<span style="color:#e0af68">.</span>emp (empno, ename,    job,        mgr,   hiredate,     sal, comm, deptno)
-</span></span><span style="display:flex;"><span>       <span style="color:#bb9af7">values</span>   (<span style="color:#e0af68">7369</span>, <span style="color:#9ece6a">&#39;SMITH&#39;</span>,  <span style="color:#9ece6a">&#39;CLERK&#39;</span>,     <span style="color:#e0af68">7902</span>, <span style="color:#9ece6a">&#39;1980-12-17&#39;</span>,  <span style="color:#e0af68">800</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7499</span>, <span style="color:#9ece6a">&#39;ALLEN&#39;</span>,  <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-02-20&#39;</span>, <span style="color:#e0af68">1600</span>,  <span style="color:#e0af68">300</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7521</span>, <span style="color:#9ece6a">&#39;WARD&#39;</span>,   <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-02-22&#39;</span>, <span style="color:#e0af68">1250</span>,  <span style="color:#e0af68">500</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7566</span>, <span style="color:#9ece6a">&#39;JONES&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-04-02&#39;</span>, <span style="color:#e0af68">2975</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7654</span>, <span style="color:#9ece6a">&#39;MARTIN&#39;</span>, <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-09-28&#39;</span>, <span style="color:#e0af68">1250</span>, <span style="color:#e0af68">1400</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;BLAKE&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-05-01&#39;</span>, <span style="color:#e0af68">2850</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">30</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7782</span>, <span style="color:#9ece6a">&#39;CLARK&#39;</span>,  <span style="color:#9ece6a">&#39;MANAGER&#39;</span>,   <span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;1981-06-09&#39;</span>, <span style="color:#e0af68">2450</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7788</span>, <span style="color:#9ece6a">&#39;SCOTT&#39;</span>,  <span style="color:#9ece6a">&#39;ANALYST&#39;</span>,   <span style="color:#e0af68">7566</span>, <span style="color:#9ece6a">&#39;1982-12-09&#39;</span>, <span style="color:#e0af68">3000</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">20</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7839</span>, <span style="color:#9ece6a">&#39;KING&#39;</span>,   <span style="color:#9ece6a">&#39;PRESIDENT&#39;</span>, <span style="color:#bb9af7">NULL</span>, <span style="color:#9ece6a">&#39;1981-11-17&#39;</span>, <span style="color:#e0af68">5000</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>),
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7844</span>, <span style="color:#9ece6a">&#39;TURNER&#39;</span>, <span style="color:#9ece6a">&#39;SALESMAN&#39;</span>,  <span style="color:#e0af68">7698</span>, <span style="color:#9ece6a">&#39;1981-09-08&#39;</span>, <span style="color:#e0af68">1500</span>,    <span style="color:#e0af68">0</span>,   <span style="color:#e0af68">30</span>),     
-</span></span><span style="display:flex;"><span>                (<span style="color:#e0af68">7934</span>, <span style="color:#9ece6a">&#39;MILLER&#39;</span>, <span style="color:#9ece6a">&#39;CLERK&#39;</span>,     <span style="color:#e0af68">7782</span>, <span style="color:#9ece6a">&#39;1982-01-23&#39;</span>, <span style="color:#e0af68">1300</span>, <span style="color:#bb9af7">NULL</span>,   <span style="color:#e0af68">10</span>);
-</span></span><span style="display:flex;"><span>      <span style="color:#bb9af7">commit</span>;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">INSERT</span> <span style="color:#e0af68">0</span> <span style="color:#e0af68">14</span>
-</span></span><span style="display:flex;"><span>WARNING:  there <span style="color:#bb9af7">is</span> <span style="color:#bb9af7">no</span> <span style="color:#bb9af7">transaction</span> <span style="color:#bb9af7">in</span> progress
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">COMMIT</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">TABLE</span>
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">insert</span> <span style="color:#6ab825;font-weight:bold">into</span> scott<span style="color:#3677a9">.</span>dept (deptno,  dname,        loc)
+</span></span><span style="display:flex;"><span>       <span style="color:#6ab825;font-weight:bold">values</span>    (<span style="color:#3677a9">10</span>,     <span style="color:#ed9d13">&#39;ACCOUNTING&#39;</span>, <span style="color:#ed9d13">&#39;NEW YORK&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">20</span>,     <span style="color:#ed9d13">&#39;RESEARCH&#39;</span>,   <span style="color:#ed9d13">&#39;DALLAS&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">30</span>,     <span style="color:#ed9d13">&#39;SALES&#39;</span>,      <span style="color:#ed9d13">&#39;CHICAGO&#39;</span>),
+</span></span><span style="display:flex;"><span>                 (<span style="color:#3677a9">40</span>,     <span style="color:#ed9d13">&#39;OPERATIONS&#39;</span>, <span style="color:#ed9d13">&#39;BOSTON&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">INSERT</span> <span style="color:#3677a9">0</span> <span style="color:#3677a9">4</span>
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">insert</span> <span style="color:#6ab825;font-weight:bold">into</span> scott<span style="color:#3677a9">.</span>emp (empno, ename,    job,        mgr,   hiredate,     sal, comm, deptno)
+</span></span><span style="display:flex;"><span>       <span style="color:#6ab825;font-weight:bold">values</span>   (<span style="color:#3677a9">7369</span>, <span style="color:#ed9d13">&#39;SMITH&#39;</span>,  <span style="color:#ed9d13">&#39;CLERK&#39;</span>,     <span style="color:#3677a9">7902</span>, <span style="color:#ed9d13">&#39;1980-12-17&#39;</span>,  <span style="color:#3677a9">800</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7499</span>, <span style="color:#ed9d13">&#39;ALLEN&#39;</span>,  <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-02-20&#39;</span>, <span style="color:#3677a9">1600</span>,  <span style="color:#3677a9">300</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7521</span>, <span style="color:#ed9d13">&#39;WARD&#39;</span>,   <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-02-22&#39;</span>, <span style="color:#3677a9">1250</span>,  <span style="color:#3677a9">500</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7566</span>, <span style="color:#ed9d13">&#39;JONES&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-04-02&#39;</span>, <span style="color:#3677a9">2975</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7654</span>, <span style="color:#ed9d13">&#39;MARTIN&#39;</span>, <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-09-28&#39;</span>, <span style="color:#3677a9">1250</span>, <span style="color:#3677a9">1400</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;BLAKE&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-05-01&#39;</span>, <span style="color:#3677a9">2850</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">30</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7782</span>, <span style="color:#ed9d13">&#39;CLARK&#39;</span>,  <span style="color:#ed9d13">&#39;MANAGER&#39;</span>,   <span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;1981-06-09&#39;</span>, <span style="color:#3677a9">2450</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7788</span>, <span style="color:#ed9d13">&#39;SCOTT&#39;</span>,  <span style="color:#ed9d13">&#39;ANALYST&#39;</span>,   <span style="color:#3677a9">7566</span>, <span style="color:#ed9d13">&#39;1982-12-09&#39;</span>, <span style="color:#3677a9">3000</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">20</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7839</span>, <span style="color:#ed9d13">&#39;KING&#39;</span>,   <span style="color:#ed9d13">&#39;PRESIDENT&#39;</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>, <span style="color:#ed9d13">&#39;1981-11-17&#39;</span>, <span style="color:#3677a9">5000</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>),
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7844</span>, <span style="color:#ed9d13">&#39;TURNER&#39;</span>, <span style="color:#ed9d13">&#39;SALESMAN&#39;</span>,  <span style="color:#3677a9">7698</span>, <span style="color:#ed9d13">&#39;1981-09-08&#39;</span>, <span style="color:#3677a9">1500</span>,    <span style="color:#3677a9">0</span>,   <span style="color:#3677a9">30</span>),     
+</span></span><span style="display:flex;"><span>                (<span style="color:#3677a9">7934</span>, <span style="color:#ed9d13">&#39;MILLER&#39;</span>, <span style="color:#ed9d13">&#39;CLERK&#39;</span>,     <span style="color:#3677a9">7782</span>, <span style="color:#ed9d13">&#39;1982-01-23&#39;</span>, <span style="color:#3677a9">1300</span>, <span style="color:#6ab825;font-weight:bold">NULL</span>,   <span style="color:#3677a9">10</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">commit</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">INSERT</span> <span style="color:#3677a9">0</span> <span style="color:#3677a9">14</span>
+</span></span><span style="display:flex;"><span>WARNING:  there <span style="color:#6ab825;font-weight:bold">is</span> <span style="color:#6ab825;font-weight:bold">no</span> <span style="color:#6ab825;font-weight:bold">transaction</span> <span style="color:#6ab825;font-weight:bold">in</span> progress
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">COMMIT</span>
 </span></span></code></pre></div><h2 id="configuración-de-la-interconexión-entre-servidores-postgres">Configuración de la interconexión entre servidores Postgres</h2>
 <p>Para permitir la interconexión entre ambos servidores es necesario crear un enlace con la orden <code>create extension dblink;</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">extension</span> dblink <span style="color:#bb9af7">schema</span> scott;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">EXTENSION</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=#</span> <span style="color:#bb9af7">create</span> <span style="color:#bb9af7">extension</span> dblink <span style="color:#bb9af7">schema</span> scott;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">CREATE</span> <span style="color:#bb9af7">EXTENSION</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">extension</span> dblink <span style="color:#6ab825;font-weight:bold">schema</span> scott;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">EXTENSION</span>
+</span></span><span style="display:flex;"><span>bd2=# <span style="color:#6ab825;font-weight:bold">create</span> <span style="color:#6ab825;font-weight:bold">extension</span> dblink <span style="color:#6ab825;font-weight:bold">schema</span> scott;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">CREATE</span> <span style="color:#6ab825;font-weight:bold">EXTENSION</span>
 </span></span></code></pre></div><p>Una vez que se ha habilitado el enlace en ambas bases de datos se puede acceder desde un servidor al otro para consultar la información almacenada en él.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">select</span> <span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">from</span> dblink(<span style="color:#9ece6a">&#39;dbname=bd2 host=10.0.0.47 user=dos password=dos&#39;</span>,<span style="color:#9ece6a">&#39;select * from scott.dept&#39;</span>) <span style="color:#bb9af7">as</span> dept (deptno <span style="color:#9ece6a">integer</span>, dname <span style="color:#9ece6a">text</span>, loc <span style="color:#9ece6a">text</span>);
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">select</span> * <span style="color:#6ab825;font-weight:bold">from</span> dblink(<span style="color:#ed9d13">&#39;dbname=bd2 host=10.0.0.47 user=dos password=dos&#39;</span>,<span style="color:#ed9d13">&#39;select * from scott.dept&#39;</span>) <span style="color:#6ab825;font-weight:bold">as</span> dept (deptno <span style="color:#24909d">integer</span>, dname <span style="color:#24909d">text</span>, loc <span style="color:#24909d">text</span>);
 </span></span></code></pre></div><p>Pero la búsqueda devuelve el siguiente error:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>ERROR:  <span style="color:#bb9af7">function</span> dblink(<span style="color:#bb9af7">unknown</span>, <span style="color:#bb9af7">unknown</span>) does <span style="color:#bb9af7">not</span> exist
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>ERROR:  <span style="color:#6ab825;font-weight:bold">function</span> dblink(<span style="color:#6ab825;font-weight:bold">unknown</span>, <span style="color:#6ab825;font-weight:bold">unknown</span>) does <span style="color:#6ab825;font-weight:bold">not</span> exist
 </span></span></code></pre></div><p>Para solucionarlo se ejecuta esta orden:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span><span style="color:#bb9af7">set</span> search_path <span style="color:#bb9af7">to</span> scott;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">set</span> search_path <span style="color:#6ab825;font-weight:bold">to</span> scott;
 </span></span></code></pre></div><p>Al repetir la consulta, se obtiene el resultado.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">select</span> <span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">from</span> dblink(<span style="color:#9ece6a">&#39;dbname=bd2 host=10.0.0.47 user=dos password=dos&#39;</span>,<span style="color:#9ece6a">&#39;select * from scott.dept&#39;</span>) <span style="color:#bb9af7">as</span> dept (deptno <span style="color:#9ece6a">integer</span>, dname <span style="color:#9ece6a">text</span>, loc <span style="color:#9ece6a">text</span>);
-</span></span><span style="display:flex;"><span> deptno <span style="color:#9ece6a;font-weight:bold">|</span>   dname    <span style="color:#9ece6a;font-weight:bold">|</span>   loc    
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">--------+------------+----------
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>     <span style="color:#e0af68">10</span> <span style="color:#9ece6a;font-weight:bold">|</span> ACCOUNTING <span style="color:#9ece6a;font-weight:bold">|</span> NEW YORK
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">20</span> <span style="color:#9ece6a;font-weight:bold">|</span> RESEARCH   <span style="color:#9ece6a;font-weight:bold">|</span> DALLAS
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">30</span> <span style="color:#9ece6a;font-weight:bold">|</span> SALES      <span style="color:#9ece6a;font-weight:bold">|</span> CHICAGO
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">40</span> <span style="color:#9ece6a;font-weight:bold">|</span> OPERATIONS <span style="color:#9ece6a;font-weight:bold">|</span> BOSTON
-</span></span><span style="display:flex;"><span>(<span style="color:#e0af68">4</span> <span style="color:#bb9af7">rows</span>)
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd1=&gt; <span style="color:#6ab825;font-weight:bold">select</span> * <span style="color:#6ab825;font-weight:bold">from</span> dblink(<span style="color:#ed9d13">&#39;dbname=bd2 host=10.0.0.47 user=dos password=dos&#39;</span>,<span style="color:#ed9d13">&#39;select * from scott.dept&#39;</span>) <span style="color:#6ab825;font-weight:bold">as</span> dept (deptno <span style="color:#24909d">integer</span>, dname <span style="color:#24909d">text</span>, loc <span style="color:#24909d">text</span>);
+</span></span><span style="display:flex;"><span> deptno |   dname    |   loc    
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">--------+------------+----------
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>     <span style="color:#3677a9">10</span> | ACCOUNTING | NEW YORK
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">20</span> | RESEARCH   | DALLAS
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">30</span> | SALES      | CHICAGO
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">40</span> | OPERATIONS | BOSTON
+</span></span><span style="display:flex;"><span>(<span style="color:#3677a9">4</span> <span style="color:#6ab825;font-weight:bold">rows</span>)
 </span></span></code></pre></div><p>De la misma forma, si se ejecuta la misma consulta en el servidor 2, se puede recuperar esta información del servidor 1.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">set</span> search_path <span style="color:#bb9af7">to</span> scott;
-</span></span><span style="display:flex;"><span><span style="color:#bb9af7">SET</span>
-</span></span><span style="display:flex;"><span>bd2<span style="color:#9ece6a;font-weight:bold">=&gt;</span> <span style="color:#bb9af7">select</span> <span style="color:#9ece6a;font-weight:bold">*</span> <span style="color:#bb9af7">from</span> dblink(<span style="color:#9ece6a">&#39;dbname=bd1 host=10.0.0.134 user=uno password=uno&#39;</span>,<span style="color:#9ece6a">&#39;select * from scott.dept&#39;</span>) <span style="color:#bb9af7">as</span> dept (deptno <span style="color:#9ece6a">integer</span>, dname <span style="color:#9ece6a">text</span>, loc <span style="color:#9ece6a">text</span>);
-</span></span><span style="display:flex;"><span> deptno <span style="color:#9ece6a;font-weight:bold">|</span>   dname    <span style="color:#9ece6a;font-weight:bold">|</span>   loc    
-</span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic">--------+------------+----------
-</span></span></span><span style="display:flex;"><span><span style="color:#414868;font-style:italic"></span>     <span style="color:#e0af68">10</span> <span style="color:#9ece6a;font-weight:bold">|</span> ACCOUNTING <span style="color:#9ece6a;font-weight:bold">|</span> NEW YORK
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">20</span> <span style="color:#9ece6a;font-weight:bold">|</span> RESEARCH   <span style="color:#9ece6a;font-weight:bold">|</span> DALLAS
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">30</span> <span style="color:#9ece6a;font-weight:bold">|</span> SALES      <span style="color:#9ece6a;font-weight:bold">|</span> CHICAGO
-</span></span><span style="display:flex;"><span>     <span style="color:#e0af68">40</span> <span style="color:#9ece6a;font-weight:bold">|</span> OPERATIONS <span style="color:#9ece6a;font-weight:bold">|</span> BOSTON
-</span></span><span style="display:flex;"><span>(<span style="color:#e0af68">4</span> <span style="color:#bb9af7">rows</span>)
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgres" data-lang="postgres"><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">set</span> search_path <span style="color:#6ab825;font-weight:bold">to</span> scott;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">SET</span>
+</span></span><span style="display:flex;"><span>bd2=&gt; <span style="color:#6ab825;font-weight:bold">select</span> * <span style="color:#6ab825;font-weight:bold">from</span> dblink(<span style="color:#ed9d13">&#39;dbname=bd1 host=10.0.0.134 user=uno password=uno&#39;</span>,<span style="color:#ed9d13">&#39;select * from scott.dept&#39;</span>) <span style="color:#6ab825;font-weight:bold">as</span> dept (deptno <span style="color:#24909d">integer</span>, dname <span style="color:#24909d">text</span>, loc <span style="color:#24909d">text</span>);
+</span></span><span style="display:flex;"><span> deptno |   dname    |   loc    
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">--------+------------+----------
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>     <span style="color:#3677a9">10</span> | ACCOUNTING | NEW YORK
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">20</span> | RESEARCH   | DALLAS
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">30</span> | SALES      | CHICAGO
+</span></span><span style="display:flex;"><span>     <span style="color:#3677a9">40</span> | OPERATIONS | BOSTON
+</span></span><span style="display:flex;"><span>(<span style="color:#3677a9">4</span> <span style="color:#6ab825;font-weight:bold">rows</span>)
 </span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
@@ -1288,8 +1288,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
-      Configuración NAT en routers Cisco en GNS3
+    <a href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+      Creación de política de grupo en Windows Active Directory
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
     </a>
   </h4>
   
@@ -1312,45 +1349,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
-      Configuración de un servidor SAN
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
     Leer
   </a>
 </div>
@@ -1456,9 +1456,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1466,9 +1466,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

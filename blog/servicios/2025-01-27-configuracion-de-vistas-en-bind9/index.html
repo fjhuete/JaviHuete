@@ -1,0 +1,1801 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración de vistas en el servidor DNS con  Bind9</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración de vistas en el servidor DNS con  Bind9" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/" />
+
+
+<meta name="twitter:title" content="Configuración de vistas en el servidor DNS con  Bind9" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Configuración de vistas en el servidor DNS con  Bind9
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/servicios/"
+                    class=""
+                    >Servicios
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              January 27, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-del-dns-en-los-clientes">Configuración del DNS en los clientes</a></li>
+    <li><a href="#configuración-del-parámetro-search-para-poder-usar-los-nombres-cortos-del-escenario">Configuración del parámetro <code>search</code> para poder usar los nombres cortos del escenario</a></li>
+    <li><a href="#configuración-para-acceder-al-servidor-dns-desde-el-exterior">Configuración para acceder al servidor DNS desde el exterior</a>
+      <ol>
+        <li><a href="#regla-dnat">Regla DNAT</a></li>
+        <li><a href="#creación-de-una-nueva-vista">Creación de una nueva vista</a></li>
+        <li><a href="#configurar-el-dns-como-forwarder">Configurar el DNS como forwarder</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</details>
+
+            <p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p>
+<p>El servidor DNS se configura en uno de los contenedores alojados en la máquina que funciona como router del escenario. Para ello, en primer lugar se accede al conetenedor y se instala el servidor DNS Bind9.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install bind9
+</span></span></span></code></pre></div><p>En el fichero /etc/bind/named.conf.options se configuran las opciones del servidor. En principio, se puede usar el parámetro <code>allow-query</code> para permitir consultas desde todas las redes del escenario y desactivar el sistema <code>dnssec-validation</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">dnssec-validation</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">no</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">allow-query</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; 192.168.0.0/24; 172.16.0.0/16; };</span><span style="color:#666">
+</span></span></span></code></pre></div><p>A continuación, se definen las zonas sobre las que el servidor DNS tiene dominio en el fichero /etc/bind/named.conf.local. Para ello se van a usar dos vistas diferentes según si la consulta al DNS llega desde la red intra (192.168.0.0/24) o desde la red DMZ (172.16.0.0/16).</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_intra</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">192.168.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">24</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javiintra.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">0</span><span style="color:#447fcf;text-decoration:underline">.168.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">192</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">168</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">172</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">16</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_DMZ</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.16.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; 127.0.0.1; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javidmz.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">0</span><span style="color:#447fcf;text-decoration:underline">.168.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">192</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">168</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">172</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">16</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Además, hay que comentar las zonas que se han declarado en este fichero en los otros ficheros incluidos en él. Así, en el fichero /etc/bind/zones.frc1918 se comentan las siguientes líneas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">//zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">  </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">; file &#34;/etc/bind/db.empty&#34;; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">//zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">168</span><span style="color:#447fcf;text-decoration:underline">.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">; file &#34;/etc/bind/db.empty&#34;; };</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Y en el fichero /etc/bind/named.conf se comenta la línea que incluye el fichero de zonas por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">//include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Después, hay que rellenar los ficheros de de zona para las zonas declaradas previamente. Primero, se configura la zona javi.gonzalonazareno.org</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /etc/bind/db.empty /var/cache/bind/db.javiintra.gonzalonazareno.org
+</span></span></span></code></pre></div><p>En este fichero se configura la resolución directa de los nombres de las máquinas y servicios del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">	</span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">	</span>nami.javi.gonzalonazareno.org. root.javi.gonzalonazareno.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			      </span><span style="color:#ed9d13">1</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			 </span><span style="color:#ed9d13">604800</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			</span><span style="color:#ed9d13">2419200</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">	</span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">	</span>nami.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span>javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">nami</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">192.168.0.2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">sanji</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">192.168.0.3</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">luffy</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">zoro</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.16.0.200</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">www</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zoro</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">bd</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">sanji</span><span style="color:#666">
+</span></span></span></code></pre></div><p>A partir de este fichero de zona, se puede generar el fichero para la otra zona definida anteriormente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /var/cache/bind/db.javiintra.gonzalonazareno.org /var/cache/bind/db.javidmz.gonzalonazareno.org
+</span></span></span></code></pre></div><p>En este caso, sólo cambia la línea para la resolución de <code>luffy</code>, que es la única máquina del escenario que cuenta con dos direcciones IP diferentes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">luffy</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.16.0.1</span><span style="color:#666">
+</span></span></span></code></pre></div><p>También hay que rellenar la información para los ficheros de resolución inversa. En este escenario hay dos redes y, por tanto, se usan dos ficheros de resolución inversa diferentes. Primero, se rellena el fichero para la resolución inversa de la red 192.168.0.0/24.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /etc/bind/db.empty /var/cache/bind/db.192.168.0
+</span></span></span></code></pre></div><p>Con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>nami.javi.gonzalonazareno.org. <span style="color:#447fcf;text-decoration:underline">root.javi.gonzalonazaren</span><span style="color:#a61717;background-color:#e3d2d2">&gt;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                              </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                        </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">      </span>nami.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span><span style="color:#ed9d13">0</span>.168.192.in-addr.arpa.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">1</span><span style="color:#666">               </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">     </span>luffy.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">2</span><span style="color:#666">               </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">     </span>nami.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">3</span><span style="color:#666">               </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">     </span>sanji.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span></code></pre></div><p>Después se repite la operación con el fichero para la zona 172.16.0.0/16.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /etc/bind/db.empty /var/cache/bind/db.172.16
+</span></span></span></code></pre></div><p>Este fichero tiene el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>nami.javi.gonzalonazareno.org. <span style="color:#447fcf;text-decoration:underline">root.javi.gonzalonazaren</span><span style="color:#a61717;background-color:#e3d2d2">&gt;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                              </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                        </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">      </span>nami.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span><span style="color:#ed9d13">16</span>.172.in-addr.arpa.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">1</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#666">               </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">     </span>luffy.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">200</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#666">             </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">     </span>zoro.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span></code></pre></div><h1 id="configuración-del-dns-en-los-clientes">Configuración del DNS en los clientes</h1>
+<p>Para que el resto de máquinas de la red se refieran a <code>nami</code> como servidor DNS, hay que configurar su dirección como DNS por defecto en los clientes. En este escenario <code>nami</code> y <code>sanji</code> son contenedores Ubuntu, con un direccionamiento estático y que usan netplan para su configuración de red. Así, un ejemplo de configuración de una de estas máquinas contendo con <code>nami</code> como servidor DNS es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">network</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">version</span>:<span style="color:#666"> </span><span style="color:#3677a9">2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">ethernets</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">eth0</span>:<span style="color:#666"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">dhcp4</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#3677a9">192.168.0.3</span>/24<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">routes</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#6ab825;font-weight:bold">to</span>:<span style="color:#666"> </span>default<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">via</span>:<span style="color:#666"> </span><span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">mtu</span>:<span style="color:#666"> </span><span style="color:#3677a9">1442</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">nameservers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#3677a9">192.168.0.2</span><span style="color:#666">
+</span></span></span></code></pre></div><p>En ambos contenedores se aplican los cambios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">netplan apply
+</span></span></span></code></pre></div><p>La otra máquina del escenario, <code>zoro</code> usa el sistema operativo Rocky Linux 9. En esta distribución se establece la configuración de red a través de NetworkManager usando algunos de sus clientes para terminal, ya sea <code>nmcli</code> (línea de comandos) o <code>nmtui</code> (interfaz de texto). En este caso, usando <code>nmtui</code> se accede al menú <code>edit connection</code> y se edita la única conexión configurada en la máquina para añadir la IP de <code>nami</code> como DNS por defecto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">┌───────────────────────────┤ Edit Connection ├───────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│                                                                        ↑│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│         Profile name Wired connection 1______________________          ▮│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│               Device eth0 (FA:16:3E:67:F3:1E)________________          ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│                                                                        ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ ═ ETHERNET                                                    &lt;Show&gt;   ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ ═ 802.1X SECURITY                                             &lt;Show&gt;   ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│                                                                        ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ ╤ IPv4 CONFIGURATION &lt;Manual&gt;                                 &lt;Hide&gt;   ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │          Addresses 172.16.0.200/32__________ &lt;Remove&gt;                ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │                    &lt;Add...&gt;                                          ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │            Gateway 172.16.0.1_______________                         ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │        DNS servers 192.168.0.4______________ &lt;Remove&gt;                ▒│
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │                    &lt;Add...&gt;                                          ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │     Search domains &lt;Add...&gt;                                          ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │                                                                      ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │            Routing (No custom routes) &lt;Edit...&gt;                      ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │ [ ] Never use this network for default route                         ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│ │ [ ] Ignore automatically obtained routes                             ▒│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│                                                                        ↓│ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">└─────────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>Por último, <code>luffy</code> toma el servidor DNS por defecto de la configuración DHCP y, además, usa <code>systemd</code> para gestionar la configuración de red. Así, se puede configurar su servidor DNS modificando el contenido del fichero de configuración /etc/systemd/resolved.conf.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Resolve]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">DNS</span>=<span style="color:#ed9d13">192.168.0.2</span>
+</span></span></code></pre></div><p>Para aplicar el cambio, se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart systemd-resolved.service
+</span></span></span></code></pre></div><h1 id="configuración-del-parámetro-search-para-poder-usar-los-nombres-cortos-del-escenario">Configuración del parámetro <code>search</code> para poder usar los nombres cortos del escenario</h1>
+<p>Para poder usar los nombres cortos de las máquinas del escenario, se debe configurar en todos los clientes el nombre de dominio de las máquinas en el parámetro <code>search</code> en la configuración del DNS.</p>
+<p>En los contenedores, tanto <code>nami</code> como <code>sanji</code>, este parámetro se puede configurar en el fichero de configuración de red /etc/netplan/10-lxc.yaml.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">network</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">version</span>:<span style="color:#666"> </span><span style="color:#3677a9">2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">ethernets</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">eth0</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">dhcp4</span>:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#3677a9">192.168.0.2</span>/24<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">routes</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#6ab825;font-weight:bold">to</span>:<span style="color:#666"> </span>default<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">via</span>:<span style="color:#666"> </span><span style="color:#3677a9">192.168.0.1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">mtu</span>:<span style="color:#666"> </span><span style="color:#3677a9">1442</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">nameservers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">addresses</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#3677a9">192.168.0.2</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">search</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- javi.gonzalonazareno.org<span style="color:#666">
+</span></span></span></code></pre></div><p>En el caso de <code>zoro</code>, con Rocky Linux 9, esta configuración se puede añadir a través de la interfaz de texto <code>nmtui</code>, desde la interfaz de la línea de comando <code>nmcli</code> o editando el menú de configuración de la conexión. En este caso, este fichero es /etc/NetworkManager/system-connections/Wired connection 1.nmconnection. En este fichero, la configuración de la conexión para IPv4 es la siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[ipv4]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">address1</span>=<span style="color:#ed9d13">172.16.0.200/32,172.16.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">dns</span>=<span style="color:#ed9d13">192.168.0.2;</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">method</span>=<span style="color:#ed9d13">manual</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">dns-search</span>=<span style="color:#ed9d13">javi.gonzalonazareno.org</span>
+</span></span></code></pre></div><p>Por úlitmo, en la máquina <code>luffy</code>, que usa <code>systemd</code>, una opción para configurar la búsqueda de dominios es uasr usa el parámetro <code>Domains</code> en el fichero /etc/systemd/resolved.conf.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[Resolve]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">DNS</span>=<span style="color:#ed9d13">192.168.0.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">Domains</span>=<span style="color:#ed9d13">javi.gonzalonazareno.org</span>
+</span></span></code></pre></div><p>Para aplicar el cambio, se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart systemd-resolved.service
+</span></span></span></code></pre></div><h1 id="configuración-para-acceder-al-servidor-dns-desde-el-exterior">Configuración para acceder al servidor DNS desde el exterior</h1>
+<p>La máquina router de este escenario, <code>luffy</code> es la única que tiene una dirección IP accesible desde fuera de esta red. Para que se pueda usar el servidor DNS desde fuera de la red hay que configurar una regla DNAT en el router que redirija el tráfico del puerto 53 al DNS. También es necesario contar con una nueva vista que muestre sólo la información que debe ser accesible desde fuera de la red y oculte aquella que no debe ser pública.</p>
+<h2 id="regla-dnat">Regla DNAT</h2>
+<p>En el router <code>luffy</code> una regla DNAT debe redirigir el tráfico que llegue al puerto 53 del router a la IP de <code>nami</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">iptables -t nat -A PREROUTING -p udp --dport 53 -i ens3 -j DNAT --to 192.168.0.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iptables-save &gt; /etc/iptables/rules.v4
+</span></span></span></code></pre></div><h2 id="creación-de-una-nueva-vista">Creación de una nueva vista</h2>
+<p>Para que el servidor DNS sólo muestre al exterior la información relevante para el acceso a la red a través de la IP pública, es decir, la IP de <code>luffy</code> y el alias del servicio www, hay que configurar una nueva vista en el servidor DNS. Esta vista se añade al fichero /etc/bind/named.conf.local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_externa</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javiexterna.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span></code></pre></div><p>En /var/cache/bind/ se rellena el fichero de zona.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>luffy.javi.gonzalonazareno.org. <span style="color:#447fcf;text-decoration:underline">root.javi.gonzalonazare</span><span style="color:#a61717;background-color:#e3d2d2">&gt;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                              </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                        </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">      </span>luffy.javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span>javi.gonzalonazareno.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">luffy</span><span style="color:#666">                   </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">       </span><span style="color:#3677a9">172.22.201.28</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">www</span><span style="color:#666">                     </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">   </span><span style="color:#a61717;background-color:#e3d2d2">luffy</span><span style="color:#666">
+</span></span></span></code></pre></div><h2 id="configurar-el-dns-como-forwarder">Configurar el DNS como forwarder</h2>
+<p>Para que desde dentro del escenario se puedan resolver direcciones de fuera, hay que configurar el servidor DNS como forwarder hacia el servidor DNS principal en la red, que tiene configurada la delegación de dominio a los subdominos del resto de compañeros. Esta configuración se aplica en el fichero /etc/bind/named.conf.options.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">forwarders</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#3677a9">172.22.0.1</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/dns/">
+                        DNS
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servidor-dns/">
+                        Servidor DNS
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/bind9/">
+                        Bind9
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas/">
+                        Administración de sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servicios/">
+                        Servicios
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servicios-de-red-e-internet/">
+                        Servicios de red e internet
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fservicios%2f2025-01-27-configuracion-de-vistas-en-bind9%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fservicios%2f2025-01-27-configuracion-de-vistas-en-bind9%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fservicios%2f2025-01-27-configuracion-de-vistas-en-bind9%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fservicios%2f2025-01-27-configuracion-de-vistas-en-bind9%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+      Cómo simular un servidor MariaDB en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+      Gestión de dispositivos de almacenamiento con Powershell
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

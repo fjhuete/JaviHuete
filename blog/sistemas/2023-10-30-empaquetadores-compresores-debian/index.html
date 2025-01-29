@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -965,32 +965,32 @@
 <p>Por último, otro uso habitual de <code>tar</code> es la transferencia de información. Con <code>tar</code> se puede crear un archivo en un sistema, transferirlo a otro y extraerlo en él. De esta forma, se puede transferir un grupo de ficheros de un sistema a otro de forma cómoda y ordenada.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización">Opciones más comunes y ejemplos de utilización</h2>
 <p>Algunas de las opciones más comunes y su ejemplo de utilización para <code>tar</code> son:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -A [OPTIONS] ARCHIVE ARCHIVE
-</span></span><span style="display:flex;"><span>tar {--catenate|--concatenate} [OPTIONS] ARCHIVE ARCHIVE
-</span></span></code></pre></div><p>Empaqueta un archivo al final del otro. Los argumentos son los nombres de los archivos que se van a empaque<code>tar</code>. Todos los archivos deben tener el mismo formato que el resto de archivos con los que se van a empaque<code>tar</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -c [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span><span style="display:flex;"><span>tar --create [--file ARCHIVE] [OPTIONS] [FILE…]
-</span></span></code></pre></div><p>Crea un nuevo archivo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -d [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span><span style="display:flex;"><span>tar {--diff|--compare} [--file ARCHIVE] [OPTIONS] [FILE…]
-</span></span></code></pre></div><p>Encuentra las diferencias entre el archivo y el sistema de ficheros.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar --delete [--file ARCHIVE] [OPTIONS] [MEMBER…]
-</span></span></code></pre></div><p>Elimina ficheros o miembros del archivo. Los argumentos se refieren al nombre de los archivos miembros que se van a eliminar.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -r [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span><span style="display:flex;"><span>tar --append [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span></code></pre></div><p>Empaqueta ficheros al final de un archivo. Los argumentos se usan igual que con <code>-c</code> (&ndash;create).</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -t [-f ARCHIVE] [OPTIONS] [MEMBER…]
-</span></span><span style="display:flex;"><span>tar --list [-f ARCHIVE] [OPTIONS] [MEMBER…]
-</span></span></code></pre></div><p>Lista el contenido de un archivo. Los argumentos son opcionales y especifican los nombres de los miembros que se deben lis<code>tar</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar --test-label [--file ARCHIVE] [OPTIONS] [LABEL…]
-</span></span></code></pre></div><p>Prueba la etiqueta de volumen y sale. Sin argumentos devuelve el volumen y sale, si se usan argumentos compara la etiqueta de volumen de cada argumento y devuelve un 0 si encuentra alguna coincidencia y un 1 si no.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -u [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span><span style="display:flex;"><span>tar --update [--file ARCHIVE] [OPTIONS] [FILE…]
-</span></span><span style="display:flex;"><span>tar --update [-f ARCHIVE] [OPTIONS] [FILE…]
-</span></span></code></pre></div><p>Empaqueta ficheros que son más nuevos que la copia correspondiente en el archivo. Los argumentos tienen el mismo significado que con <code>-c</code> y <code>-r</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>tar -x [-f ARCHIVE] [OPTIONS] [MEMBER…]
-</span></span><span style="display:flex;"><span>tar {--extract|--get} [-f ARCHIVE] [OPTIONS] [MEMBER…]
-</span></span></code></pre></div><p>Extrae ficheros de un archivo. Los argumentos son opcionales. Especifican el nombre de los miembros del archivo que se van a extraer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -A [OPTIONS] ARCHIVE ARCHIVE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar {--catenate|--concatenate} [OPTIONS] ARCHIVE ARCHIVE
+</span></span></span></code></pre></div><p>Empaqueta un archivo al final del otro. Los argumentos son los nombres de los archivos que se van a empaque<code>tar</code>. Todos los archivos deben tener el mismo formato que el resto de archivos con los que se van a empaque<code>tar</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -c [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar --create [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span></code></pre></div><p>Crea un nuevo archivo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -d [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar {--diff|--compare} [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span></code></pre></div><p>Encuentra las diferencias entre el archivo y el sistema de ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar --delete [--file ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></span></code></pre></div><p>Elimina ficheros o miembros del archivo. Los argumentos se refieren al nombre de los archivos miembros que se van a eliminar.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -r [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar --append [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span></code></pre></div><p>Empaqueta ficheros al final de un archivo. Los argumentos se usan igual que con <code>-c</code> (&ndash;create).</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -t [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar --list [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></span></code></pre></div><p>Lista el contenido de un archivo. Los argumentos son opcionales y especifican los nombres de los miembros que se deben lis<code>tar</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar --test-label [--file ARCHIVE] [OPTIONS] [LABEL…]
+</span></span></span></code></pre></div><p>Prueba la etiqueta de volumen y sale. Sin argumentos devuelve el volumen y sale, si se usan argumentos compara la etiqueta de volumen de cada argumento y devuelve un 0 si encuentra alguna coincidencia y un 1 si no.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -u [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar --update [--file ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar --update [-f ARCHIVE] [OPTIONS] [FILE…]
+</span></span></span></code></pre></div><p>Empaqueta ficheros que son más nuevos que la copia correspondiente en el archivo. Los argumentos tienen el mismo significado que con <code>-c</code> y <code>-r</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -x [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar {--extract|--get} [-f ARCHIVE] [OPTIONS] [MEMBER…]
+</span></span></span></code></pre></div><p>Extrae ficheros de un archivo. Los argumentos son opcionales. Especifican el nombre de los miembros del archivo que se van a extraer.</p>
 <h2 id="extensión-de-los-ficheros">Extensión de los ficheros</h2>
 <p>Los ficheros empaquetados con <code>tar</code> tienen la extensión .<code>tar</code>.</p>
 <h2 id="paquete-donde-se-encuentra">Paquete donde se encuentra</h2>
@@ -1002,8 +1002,8 @@
 Además, <code>gzip</code> también puede descomprimir ficheros creados por <code>gzip</code>, <code>zip</code>, <code>comrpess</code> o <code>pack</code>.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-1">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de <code>gzip</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>gzip [OPTION]… [FILE]…
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">gzip [OPTION]… [FILE]…
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-c</code>, <code>--stdout</code>. Escribe el fichero en salida estándar y mantiene sin cambio los ficheros originales.</li>
 <li><code>-d</code>, <code>--decompress</code>. Descomprime los ficheros indicados.</li>
@@ -1032,8 +1032,8 @@ El nombre del fichero comprimido deriva del fichero original. Al comprimir, se a
 <p>Tras comprimir o descomprimir un fichero, <code>xz</code> copia también el propietario, grupo, permisos, hora de acceso y de modificación del fichero origen.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-2">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de xz es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>xz [OPTION]… [FILE]…
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">xz [OPTION]… [FILE]…
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-z</code>, <code>--compress</code>. Comprime el fichero. Es el modo de operación por defecto.</li>
 <li><code>-d</code>, <code>--decompress</code>, <code>--uncompress</code>. Descomprime el fichero.</li>
@@ -1060,11 +1060,11 @@ El nombre del fichero comprimido deriva del fichero original. Al comprimir, se a
 Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .bz, .tbz2 o .tbz), <code>bzip2</code> advierte de que no se ha podido averiguar la extensión y usa el nombre del fichero original con la extensión .out.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-3">Opciones más comunes y ejemplos de utilización</h2>
 <p>Algunos ejemplos de utilización de <code>bzip2</code> son los siguientes:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>bzip2 [OPTION]… [FILE]…
-</span></span><span style="display:flex;"><span>bunzip2 [OPTION]… [FILE]…
-</span></span><span style="display:flex;"><span>bzcat [OPTION]… [FILE]…
-</span></span><span style="display:flex;"><span>bzip2recover FILE
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">bzip2 [OPTION]… [FILE]…
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bunzip2 [OPTION]… [FILE]…
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bzcat [OPTION]… [FILE]…
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">bzip2recover FILE
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-c</code> <code>--stdout</code>. Comprime o descomprime a la salida estándar.</li>
 <li><code>-d</code> <code>--decompress</code>. Descomprime el fichero indicado.</li>
@@ -1088,8 +1088,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p>Cada fichero indicado se comprime a uno con extesión .7z y después se elimina.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-4">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de <code>p7zip</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>p7zip [OPTION]… [FILE]…
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">p7zip [OPTION]… [FILE]…
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-c</code>, <code>--stdout</code>, <code>--to-stdout</code>. Escribe la salida a la salida estándar.</li>
 <li><code>-d</code>, <code>--decompress</code>, <code>--uncompress</code>. Descomprime los archivos.</li>
@@ -1108,8 +1108,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p><code>Zip</code> almacena uno o varios ficheros comprimidos en un único archivo zip, junto con información sobre los ficheros (nombre, ruta, fecha y hora de la última modificación, protección e información de comprobación de la integridad del fichero). Una estructura de directorios completa se puede empaquetar en un fichero zip con un único comando. <code>Zip</code> puede comprimir los ficheros o guardarlos sin compresión.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-5">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de <code>zip</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>zip [OPTION]... [FILE]... [INPATH]...
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zip [OPTION]... [FILE]... [INPATH]...
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-f</code>  <code>--freshen</code>. Reemplaza una entrada existente en el archivo zip sólo si se ha modificado más recientemente que la versión que ya se encuentra en el archivo.</li>
 <li><code>-u</code>  <code>--update</code>. Afecta sólo a ficheros nuevos o modificados.</li>
@@ -1144,8 +1144,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p><code>Rar</code> es un compresor y archivador que empaqueta ficheros con compresión.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-6">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de zip es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>rar &lt;command&gt; [-&lt;switch 1&gt; -&lt;switch N&gt;] archive [files…]
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">rar &lt;command&gt; [-&lt;switch 1&gt; -&lt;switch N&gt;] archive [files…]
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-a</code>. Añade ficheros al archivo.</li>
 <li><code>-c</code>. Añade comentarios al archivo.</li>
@@ -1173,8 +1173,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p>Lista, comprueba y extrae los ficheros almacenados en un archivo zip. Por defecto, <code>unzip</code> extrae los ficheros en el directorio de trabajo.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-7">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de <code>unzip</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>unzip [OPTION]… [FILE]…
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">unzip [OPTION]… [FILE]…
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-p</code>. Extrae los ficheros a una tubería.</li>
 <li><code>-f</code>. Actualiza los ficheros existentes y no crea ninguno nuevo.</li>
@@ -1203,8 +1203,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p>El programa <code>unrar</code> extrae ficheros de archivos rar.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-8">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de unzip es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>unrar  command  [-switch ...] archive [file ...] [@listfiles ...] [path...] [path_to_extract/]
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">unrar  command  [-switch ...] archive [file ...] [@listfiles ...] [path...] [path_to_extract/]
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>e</code>. Extrae los ficheros al directorio de trabajo.</li>
 <li><code>l</code>. Lista el contenido del archivo.</li>
@@ -1238,8 +1238,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
 <p><code>Compress</code> reduce el tamaño de los ficheros indicados usando el código adaptativo Lempel-Ziv. Cuando sea posible, cada fichero se reemplaza por uno con la extensión .Z y se mantienen la propiedad de los ficheros y la hora de acceso y modificación. Si no se especifican los ficheros, se comprimen los ficheros de la entrada estándar a la salida estándar. <code>Compress</code> sólo intenta comprimir ficheros normales e ignora los enlaces simbólicos. Los ficheros comprimidos usando <code>compress</code> se pueden restaurar a su forma original usando uncompress.real.</p>
 <h2 id="opciones-más-comunes-y-ejemplos-de-utilización-9">Opciones más comunes y ejemplos de utilización</h2>
 <p>Un ejemplo de utilización de <code>compress</code> es el siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>compress [OPTION]… [NAME]…
-</span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">compress [OPTION]… [NAME]…
+</span></span></span></code></pre></div><p>Entre las opciones más comunes se encuentran:</p>
 <ul>
 <li><code>-c</code>. Escribe a la salida estándar. No modifica los ficheros.</li>
 <li><code>-r</code>. Opera de forma recursiva. Si algún fichero especificado es un directorio, compress accede al directorio y comprime todos los ficheros que encuentre en él.</li>
@@ -1537,8 +1537,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/">
-      Configuración de Apache2 con fpm-php
+    <a href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+      Instalación de WordPress en Rocky Linux 9
     </a>
   </h4>
   
@@ -1553,16 +1553,16 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Implantacion
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se documenta el proceso de configuración de un servidor Apache2 para servir aplicaciones web dinámicas escritas en PHP usando el servidor de aplicaciones fpm-php.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/">
+  <p class="mb-6"><p>En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache <code>httpd</code> y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
     Leer
   </a>
 </div>
@@ -1574,8 +1574,8 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-      Configuración NAT en routers Mikrotik en Openstack
+    <a href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
+      Creación de usuarios y políticas de seguridad en Debian
     </a>
   </h4>
   
@@ -1590,16 +1590,16 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Redes
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+  <p class="mb-6">En este post se explica, a través de varios casos prácticos y ejemplos, el uso adecuado de los comandos básicos para la creación de usuarios y el establecimiento de políticas de seguridad en los sistemas operativos basados en Debian.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-18-creacion-usuarios-seguridad-debian/">
     Leer
   </a>
 </div>
@@ -1611,32 +1611,32 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
+    <a href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+      Creación de una VPN punto a punto con IPSec
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Redes
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+  <p class="mb-6"><p>Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
     Leer
   </a>
 </div>
@@ -1742,9 +1742,9 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -1752,9 +1752,9 @@ Si el fichero no usa una extensión reconocible por <code>bzip2</code> (.bz2, .b
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 

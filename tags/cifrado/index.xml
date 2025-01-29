@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cifrado on Javi Huete</title>
+    <link>/tags/cifrado/</link>
+    <description>Recent content in Cifrado on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/cifrado/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de una VPN de acceso remoto con OpenVPN y certificados x509</title>
+      <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/</guid>
+      <description>&lt;p&gt;En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de una VPN de acceso remoto con IPSec</title>
+      <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/</guid>
+      <description>&lt;p&gt;Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de una VPN de acceso remoto con WireGuard</title>
+      <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/</guid>
+      <description>&lt;p&gt;En este escenario un servidor VPN permite el acceso a un equipo conectado a su red interna a los clientes conectados a él a través de la red VPN.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de una VPN punto a punto con IPSec</title>
+      <link>/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/</guid>
+      <description>&lt;p&gt;Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de una VPN sitio a sitio con WireGuard</title>
+      <link>/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/</link>
+      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/</guid>
+      <description>&lt;p&gt;En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Autentificación SSH con cifrado asimétrico usando GPG</title>
+      <link>/blog/seguridad/2025-01-14-autentificacion-con-gpg/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-autentificacion-con-gpg/</guid>
+      <description>&lt;p&gt;Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Certificado HTTP y SSL</title>
+      <link>/blog/seguridad/2025-01-14-certificado-http-ssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-certificado-http-ssl/</guid>
+      <description>En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</description>
+    </item>
+    <item>
+      <title>Cifrado asimétrico con GPG y OpenSSL</title>
+      <link>/blog/seguridad/2025-01-14-criptografia-gpg-openssl/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-criptografia-gpg-openssl/</guid>
+      <description>En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</description>
+    </item>
+    <item>
+      <title>Correo electrónico cifrado con Thunderbird</title>
+      <link>/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/</guid>
+      <description>&lt;p&gt;En este tutorial se muestra cómo configurar el cliente de correo electrónico Mozilla Thunderbird para enviar y recibir correos electrónicos cifrados con un par de claves pública y privada generadas con GPG.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Firmas y autenticación con GPG</title>
+      <link>/blog/seguridad/2025-01-14-criptografia-integridad/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-14-criptografia-integridad/</guid>
+      <description>En esta entrada se explica cómo firmar claves públicas usando GPG.</description>
+    </item>
+    <item>
+      <title>Verificar la integridad de ficheros con GPG y apt-secure</title>
+      <link>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</link>
+      <pubDate>Tue, 14 Jan 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</guid>
+      <description>Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</description>
+    </item>
+  </channel>
+</rss>

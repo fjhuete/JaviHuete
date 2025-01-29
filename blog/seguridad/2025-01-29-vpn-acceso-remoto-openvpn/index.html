@@ -1,0 +1,2694 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración de una VPN de acceso remoto con OpenVPN y certificados x509</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración de una VPN de acceso remoto con OpenVPN y certificados x509" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/" />
+
+
+<meta name="twitter:title" content="Configuración de una VPN de acceso remoto con OpenVPN y certificados x509" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/javi-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Javi Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/seguridad/"
+                    class=""
+                    >Seguridad
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              January 29, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#instalación-de-openvpn">Instalación de OpenVPN</a></li>
+    <li><a href="#creación-de-la-autoridad-certificadora-ca-y-certificados">Creación de la Autoridad Certificadora (CA) y certificados</a></li>
+    <li><a href="#configuración-del-servidor-vpn">Configuración del servidor VPN</a></li>
+    <li><a href="#configuración-del-cliente-vpn">Configuración del cliente VPN</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="808"
+            height="487"
+            src="/images/seguridad/vpn/vpn1_hu_a30a72e1fed468c0.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/seguridad\/vpn\/vpn1_hu_a30a72e1fed468c0.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<h1 id="instalación-de-openvpn">Instalación de OpenVPN</h1>
+<p>La instalación de OpenVPN se puede hacer a través de la paquetería disponible en los repositorios de varias distribuciones GNU/Linux, en este caso, el paquete <code>openvpn</code> de los repositorios de Debian instala en el equipo tanto el cliente como el servidor VPN. Por tanto, este paquete se isntala tanto en el equipo servidor como en el equipo cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo apt install openvpn
+</span></span></span></code></pre></div><h1 id="creación-de-la-autoridad-certificadora-ca-y-certificados">Creación de la Autoridad Certificadora (CA) y certificados</h1>
+<p>El primer paso para configurar una VPN usando OpenVPN es generar la estructura de certificados necesaria. Este modelo de certificación requiere del uso de un certificado o clave pública y una clave privada para el servidor y cada uno de los clientes, así como un certificado y clave privada de la Autoridad Certificadora (CA) que, además, debe firmar todos los certificados de los clientes.</p>
+<p>Esta estructura permite una autentificación bidireccional basada en certificados en la que el cliente autentifica el certificado del servidor y el servidor autentifica el certificado de cada cliente para poder establecer una confianza mutua. Para ello tanto el cliente como el servidor verifican que el certificado está firmado por la Autoridad Certificadora.</p>
+<p>Por tanto, para poder establecer esta estructura en este escenario es necesario generar un certificado y clave de la CA, un certificado y clave del servidor y un certificado y clave del cliente.</p>
+<p>OpenVPN cuenta con una herramienta llamada <code>easy-rsa 2</code> que incluye un conjunto de scripts que facilitan esta tarea de manera que generan tanto la CA como los certificados y claves necesarios de forma automatizada a través de estos scripts. Sin embargo, en este caso, se usa la herramienta OpenSSL para la creación de estos ficheros.</p>
+<p>El primer paso para generar todos los certificados necesarios para el funcionamiento de la VPN es crear la Autoridad Certificadora. Para ello, en primer lugar, se crea en el servidor VPN la siguiente estructura de directorios a partir de la raíz /etc/openvpn/server/:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# mkdir -p CA/{certsdb,certreqs,crl,private}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# touch CA/index.txt
+</span></span></span></code></pre></div><p>A continuación se toma como referencia el fichero de ejemplo /etc/ssl/openssl.cnf para configurar la CA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# cp /etc/ssl/openssl.cnf ./CA
+</span></span></span></code></pre></div><p>En este fichero se modifican los siguientes parámetros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[ CA_default ]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">dir             = .            # Where everything is kept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">certs           = $dir/certsdb          # Where the issued certs are kept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">new_certs_dir   = $certs                # default place for new certs.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">req_extensions = v3_req # The extensions to add to a certificate request
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">[ req_distinguished_name ]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">countryName                     = Country Name (2 letter code)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">countryName_default             = ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">countryName_min                 = 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">countryName_max                 = 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">stateOrProvinceName             = State or Province Name (full name)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">stateOrProvinceName_default     = Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">localityName                    = Locality Name (eg, city)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">localityName_default            = Dos Hermanas
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">0.organizationName              = Organization Name (eg, company)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">0.organizationName_default      = IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[ req_attributes ]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span><span style="color:#40ffff">challengePassword</span>              = A challenge password
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span><span style="color:#40ffff">challengePassword_min</span>          = <span style="color:#3677a9">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span><span style="color:#40ffff">challengePassword_max</span>          = <span style="color:#3677a9">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span><span style="color:#40ffff">unstructuredName</span>               = An optional company name
+</span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span></code></pre></div><p>Tras haber configurado la CA se puede generar su par de claves.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# openssl req -new -newkey rsa:2048 -keyout private/cakey.pem -out careq.pem -config openssl.cnf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">.......+.......+..+...+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+.+.....+.............+..+.......+..+...+...+...+.+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+...........+......+............+...............................+...........+...+...+............+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+.......+...+.....+.+......+......+...+..+...+....+..+....+.....+...............+.+.....+......+...+......+......+.......+.....+...+.......+.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+..+..........+...+...+...+..+.........+......+.........+...+.+.........+.....+..........+...+..............+.+............+...+..+......+......+....+.....+....+..+.+...+...........+......+............+.+.....+..........+......+.....+...+.......+.....+.........+.+.........+.....+.......+..+.+......+........+...............+...+.........+.+..+.+.....+.+...........+...+.+...........+.........+.............+...+..+...+....+.........+............+........+.+...+.....+............+.........+.+...+........+..........+.....+...+....+......+.........+..+.........+....+..................+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Verifying - Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You are about to be asked to enter information that will be incorporated
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">into your certificate request.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">What you are about to enter is what is called a Distinguished Name or a DN.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">There are quite a few fields but you can leave some blank
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">For some fields there will be a default value,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">If you enter &#39;.&#39;, the field will be left blank.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Country Name (2 letter code) [ES]:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">State or Province Name (full name) [Andalucia]:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Locality Name (eg, city) [Dos Hermanas]:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organization Name (eg, company) [IESGN]:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organizational Unit Name (eg, section) []:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Common Name (e.g. server FQDN or YOUR name) []:VPNCA
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Email Address []:admin@vpn.org
+</span></span></span></code></pre></div><p>A continuación, hay que autofirmar el certificado de la CA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# openssl ca -create_serial -out cacert.pem -days 365 -keyfile private/cakey.pem -selfsign -extensions v3_ca -config openssl.cnf -infiles careq.pem 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Using configuration from openssl.cnf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter pass phrase for private/cakey.pem:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Check that the request matches the signature
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Signature ok
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate Details:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Serial Number:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            72:4f:85:46:41:25:c7:3f:62:45:a1:80:95:ec:3d:70:42:de:56:ce
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Validity
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not Before: Jan 11 15:37:59 2025 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not After : Jan 11 15:37:59 2026 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Subject:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            countryName               = ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            stateOrProvinceName       = Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            organizationName          = IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            commonName                = VPNCA
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            emailAddress              = admin@vpn.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        X509v3 extensions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Subject Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                48:E8:19:11:32:DF:50:CA:72:6E:20:AF:3E:17:51:C4:02:F5:2F:6D
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Authority Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                48:E8:19:11:32:DF:50:CA:72:6E:20:AF:3E:17:51:C4:02:F5:2F:6D
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Basic Constraints: critical
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                CA:TRUE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate is to be certified until Jan 11 15:37:59 2026 GMT (365 days)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Sign the certificate? [y/n]:y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">1 out of 1 certificate requests certified, commit? [y/n]y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Write out database with 1 new entries
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Database updated
+</span></span></span></code></pre></div><p>Además, el servidor debe contar también con su propio certificado firmado por la CA, así que en el directorio /etc/openvp/server se genera una solicitud de certificado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# openssl req -newkey rsa:4096 -keyout servidor.key -out servidor.csr
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...+....+.....+.+.....+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..........+.........+...+...+...+....+.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..........+......+...+....+............+...+......+..+...+...............+......+....+............+...+...........+.+.....+...+....+......+.....+......+.....................+....+...+.....+......+....+..+..........+.....+.+........+.+........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">..................................+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+..........+..............+....+..............+...............+.+.....+...............+.+........+......+....+...+............+...+.....+...+.........+.+...............+......+...+........+...+....+..+.+.................+......+......+.+..+..................+.........+....+.........+..+...+......+....+...+.........+...+......+......+........+.......+......+..............................+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Verifying - Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You are about to be asked to enter information that will be incorporated
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">into your certificate request.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">What you are about to enter is what is called a Distinguished Name or a DN.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">There are quite a few fields but you can leave some blank
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">For some fields there will be a default value,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">If you enter &#39;.&#39;, the field will be left blank.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Country Name (2 letter code) [AU]:ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">State or Province Name (full name) [Some-State]:Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Locality Name (eg, city) []:Dos Hermanas
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organization Name (eg, company) [Internet Widgits Pty Ltd]:IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organizational Unit Name (eg, section) []:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Common Name (e.g. server FQDN or YOUR name) []:VPNServer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Email Address []:admin@vpnserver.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Please enter the following &#39;extra&#39; attributes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">to be sent with your certificate request
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">A challenge password []:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">An optional company name []:
+</span></span></span></code></pre></div><p>Esta solicitud se le pasa a la CA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# cp servidor.csr CA/certreqs/
+</span></span></span></code></pre></div><p>Y la CA firma el certificado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# openssl ca -config openssl.cnf -out certsdb/servidor.crt -infiles certreqs/servidor.csr 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Using configuration from openssl.cnf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter pass phrase for ./private/cakey.pem:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Check that the request matches the signature
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Signature ok
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate Details:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Serial Number:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            72:4f:85:46:41:25:c7:3f:62:45:a1:80:95:ec:3d:70:42:de:56:cf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Validity
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not Before: Jan 11 15:43:33 2025 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not After : Jan 11 15:43:33 2026 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Subject:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            countryName               = ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            stateOrProvinceName       = Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            organizationName          = IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            commonName                = VPNServer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            emailAddress              = admin@vpnserver.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        X509v3 extensions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Basic Constraints: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                CA:FALSE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Subject Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                25:1B:D2:22:7F:DA:08:8E:06:6E:B1:0E:1C:AC:0A:01:A9:D3:09:3B
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Authority Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                48:E8:19:11:32:DF:50:CA:72:6E:20:AF:3E:17:51:C4:02:F5:2F:6D
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate is to be certified until Jan 11 15:43:33 2026 GMT (365 days)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Sign the certificate? [y/n]:y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">1 out of 1 certificate requests certified, commit? [y/n]y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Write out database with 1 new entries
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Database updated
+</span></span></span></code></pre></div><p>Para completar la estructura de certificados que permite la validación del servidor y el cliente que intervienen en esta VPN, falta por generar el certificado del cliente, esta vez, desde el directorio /etc/openvpn/client en el equipo cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# openssl req -newkey rsa:4096 -keyout cliente.key -out cliente.csr
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">..+.+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..+..+.......+.....+.+.....+....+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+.........................+......+...+.....+.........+..................+.......+..+..................+.+.........+........+...+....+........+....+...+..+..........+.....+.+...+......+...+...+.....+.......+..+.........+....+......+......+........+...+..................+....+.......................+...+.+...+...............+...+.....+.............+..+.........+.............+......+.....+.......................................+...+.......+..+.+............+.....+..........+..+.............+...+..+...+...................+.....+.+..............+.........+....+..+....+..+...+...................+..+...+................+..+..........+...+...........+....+......+........+............+.+.....+.......+.....+.+......+..............+...............+.+.....+....+...........+.+........+.+....................+..................+..........+........+.......+.................................+..+...............+...+...+......+....+..+..........+........................+........+.+..+..........+...+...........+....+.....+.+..............+.+..............+......+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">.+......................+...+........+....+...........+.+...............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.....+.+.....+...+....+...+.....+....+.........+.........+...+...+.........+......+..+...+....+.....+......+.+.....+....+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...+...................+..+...+.......+......+..................+..............+......+....+......+.........+...........+.+.........+.........+.....................+.....+....+...+..+.+..+.......+..+.........+.........+.......+........+.............+..............+...+......+.......+.....+.........+......+...................+...+......+.........+..+....+......+.....+......+...+....+..+..........+...+..+....+...........+.+..+...+.......+.....+.......+...............+.....+...............+.+..+......+............+....+.....+....+.........+......+......+.....+....+..+...+...................+..+....+.....+.+.......................+......+.+...+.................+.+..+.+..+..................+.........+...+.........+.+........+..........+.................+.......+...+............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Verifying - Enter PEM pass phrase:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You are about to be asked to enter information that will be incorporated
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">into your certificate request.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">What you are about to enter is what is called a Distinguished Name or a DN.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">There are quite a few fields but you can leave some blank
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">For some fields there will be a default value,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">If you enter &#39;.&#39;, the field will be left blank.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-----
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Country Name (2 letter code) [AU]:ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">State or Province Name (full name) [Some-State]:Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Locality Name (eg, city) []:Dos Hermanas
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organization Name (eg, company) [Internet Widgits Pty Ltd]:IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Organizational Unit Name (eg, section) []:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Common Name (e.g. server FQDN or YOUR name) []:VPNClient
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Email Address []:cliente@vpnserver.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Please enter the following &#39;extra&#39; attributes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">to be sent with your certificate request
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">A challenge password []:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">An optional company name []:
+</span></span></span></code></pre></div><p>Esta solicitud se envía a la CA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# scp cliente.csr debian@192.168.122.243:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cliente.csr                                  100% 1736   438.2KB/s   00:00 
+</span></span></span></code></pre></div><p>Y la firma.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# openssl ca -config openssl.cnf -out certsdb/cliente.crt -infiles certreqs/cliente.csr 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Using configuration from openssl.cnf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter pass phrase for ./private/cakey.pem:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Check that the request matches the signature
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Signature ok
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate Details:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Serial Number:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            72:4f:85:46:41:25:c7:3f:62:45:a1:80:95:ec:3d:70:42:de:56:d0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Validity
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not Before: Jan 11 15:53:13 2025 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            Not After : Jan 11 15:53:13 2026 GMT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        Subject:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            countryName               = ES
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            stateOrProvinceName       = Andalucia
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            organizationName          = IESGN
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            commonName                = VPNClient
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            emailAddress              = cliente@vpnserver.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        X509v3 extensions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Basic Constraints: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                CA:FALSE
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Subject Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                4F:02:55:C5:7C:D2:69:C0:F5:77:5C:72:CC:EE:55:87:E3:7E:69:9B
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            X509v3 Authority Key Identifier: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                48:E8:19:11:32:DF:50:CA:72:6E:20:AF:3E:17:51:C4:02:F5:2F:6D
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Certificate is to be certified until Jan 11 15:53:13 2026 GMT (365 days)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Sign the certificate? [y/n]:y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">1 out of 1 certificate requests certified, commit? [y/n]y
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Write out database with 1 new entries
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Database updated
+</span></span></span></code></pre></div><p>Por último, la CA devuelve el certificado del cliente firmado junto a su propio certificado autofirmado al cliente para que también pueda verificar la identidad del servidor VPN en las conexiones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# scp certsdb/cliente.crt debian@192.168.122.147:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cliente.crt                                   100% 5922   536.4KB/s   00:00 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server/CA# scp cacert.pem debian@192.168.122.147:/home/debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cacert.pem                                    100% 4439   601.8KB/s   00:00 
+</span></span></span></code></pre></div><p>En el cliente, estos certificados también se almacena en el directorio /etc/openvpn/client.</p>
+<p>El último elemento pendiente de generar en esta estructra de certificados es el fichero de parámetros Diffie-Hellman. Las claves de intercambio Diffie-Hellman son un método matemático que permite generar una clave criptográfica simétrica de manera segura. Este método de intercambio de claves simétricas permite que dos partes que no han tenido comunicación previa establezcan una clave compartida de forma segura sobre un canal inseguro. Este fichero también se puede generar de forma sencilla usando las herramientas que incorpora OpenVPN o, con un breve comando usando la opción <code>dhparam</code> de la herramienta <code>openssl</code>. La ejecución de este comando puede alargarse de varios minutos a varias horas según el nivel de seguridad que se indique y la capacidad de cómputo del equipo. En este caso, se opta por generar un fichero de 4096 bits que, en la MV de GNS3 con la que se está trabajando necesita más de media hora para generar el fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# openssl dhparam -out dhparams.pem 4096
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Generating DH parameters, 4096 bit long safe prime
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">........................................................+.................................................................................................................................................................................................................................................................................................+......................................................................................................................................................................................................................................................................................................................+.........................................+..............................................................................................................................................................................................................................................................................+..........+..........................................................
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">.......+.................................................................................................+.....................................................................................................................................................................................+...............................................................................................++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*++*
+</span></span></span></code></pre></div><p>Así, un esquema de la estructura de certificados elaborada se puede representar en la siguiente tabla:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Fichero</th>
+          <th>Ubicación</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>cacert.pem</td>
+          <td>servidor y cliente</td>
+      </tr>
+      <tr>
+          <td>cakey.pem</td>
+          <td>servidor (CA)</td>
+      </tr>
+      <tr>
+          <td>dhparams.pem</td>
+          <td>servidor</td>
+      </tr>
+      <tr>
+          <td>servidor.crt</td>
+          <td>servidor</td>
+      </tr>
+      <tr>
+          <td>servidor.key</td>
+          <td>servidor</td>
+      </tr>
+      <tr>
+          <td>cliente.crt</td>
+          <td>cliente</td>
+      </tr>
+      <tr>
+          <td>cliente.key</td>
+          <td>cliente</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="configuración-del-servidor-vpn">Configuración del servidor VPN</h1>
+<p>La instalación del paquete <code>openvpn</code> genera un directorio en el sistema en el que se almacenan varios ficheros de configuración de ejemplo tanto para configurar el servidor como el cliente VPN. A partir de estos ficheros de ejemplo se pueden configurar de forma más sencilla ambas partes de la VPN.</p>
+<p>Así que, para empezar con la configuración del servidor VPN se puede copiar este fichero de ejemplo al directorio /etc/openvpn/server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf .
+</span></span></span></code></pre></div><p>Por defecto, este fichero configura el servidor para escuchar en el puerto 1194, usar el protocolo UDP, crear una interfaz tun que crea un túnel IP para enrutar el tráfico de la VPN. En el apartado de certificados SSL hay que indicar la ruta a los certificados necesarios par el funcionamiento del servidor: el certificado de la CA, el del servidor y la clave privada del servidor, así como el fichero de parámetros Diffie-Hellman.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ca cacert.pem
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cert servidor.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">key servidor.key  # This file should be kept secret
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Diffie hellman parameters.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Generate your own with:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   openssl dhparam -out dh2048.pem <span style="color:#3677a9">2048</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dh dhparams.pem
+</span></span></span></code></pre></div><p>Después hay que configurar los parámetros relacionados con la red como el tipo de topología, en este caso <code>subnet</code> para que permita el direccionamiento IP y el direccionamiento de la red de la VPN, en este caso, se configura la 10.99.99.0/24.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> Network topology
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Should be subnet (addressing via IP)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> unless Windows clients v2.0.9 and lower have to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> be supported (<span style="color:#6ab825;font-weight:bold">then</span> net30, i.e. a /30 per client)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Defaults to net30 (not recommended)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">topology subnet
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Configure server mode and supply a VPN subnet
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> OpenVPN to draw client addresses from.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> The server will take 10.8.0.1 <span style="color:#6ab825;font-weight:bold">for</span> itself,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the rest will be made available to clients.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Each client will be able to reach the server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on 10.8.0.1. Comment this line out <span style="color:#6ab825;font-weight:bold">if</span> you are
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> ethernet bridging. See the man page <span style="color:#6ab825;font-weight:bold">for</span> more info.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">server 10.99.99.0 255.255.255.0
+</span></span></span></code></pre></div><p>En el resto de parámetros como el tipo de compresión, el tipo de cifrado, el tiempo de &ldquo;keepalive&rdquo;, etc. se mantienen los valores por defecto.</p>
+<p>También por defecto, la configuración de OpenVPN incluye un parámetro extra de seguridad cuyo uso es opcional. Para deshabilitarlo, es necesario comentar la siguiente línea del fichero de configuración:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> For extra security beyond that provided
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> by SSL/TLS, create an <span style="color:#ed9d13">&#34;HMAC firewall&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to <span style="color:#24909d">help</span> block DoS attacks and UDP port flooding.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Generate with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   openvpn --genkey tls-auth ta.key
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># The server and each client must have     </span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a copy of this key.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> The second parameter should be <span style="color:#ed9d13">&#39;0&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on the server and <span style="color:#ed9d13">&#39;1&#39;</span> on the clients.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;tls-auth ta.key 0 # This file is secret
+</span></span></span></code></pre></div><p>Además, para que <code>systemd</code> pueda usar la frase de paso de la clave privada del servidor hay que indicarla en un fichero al que también se hace referencia en la configuración del servidor VPN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo &#34;contraseña&#34; &gt; auth.txt
+</span></span></span></code></pre></div><p>Así, en el fichero de configuración del servidor VPN quedan recogido los siguientes parámetros y valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@debian:~$ cat /etc/openvpn/server/server.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span><span style="color:#999;font-style:italic">################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Sample OpenVPN 2.0 config file <span style="color:#6ab825;font-weight:bold">for</span>            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> multi-client server.                          <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                               <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This file is <span style="color:#6ab825;font-weight:bold">for</span> the server side              <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> of a many-clients &lt;-&gt; one-server              <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> OpenVPN configuration.                        <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                               <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> OpenVPN also supports                         <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> single-machine &lt;-&gt; single-machine             <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> configurations (See the Examples page         <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on the web site <span style="color:#6ab825;font-weight:bold">for</span> more info).               <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                               <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This config should work on Windows            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> or Linux/BSD systems.  Remember on            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Windows to quote pathnames and use            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> double backslashes, e.g.:                     <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#ed9d13">&#34;C:\\Program Files\\OpenVPN\\config\\foo.key&#34;</span> <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                               <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Comments are preceded with <span style="color:#ed9d13">&#39;#&#39;</span> or <span style="color:#ed9d13">&#39;;&#39;</span>         <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span><span style="color:#999;font-style:italic">################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Which <span style="color:#24909d">local</span> IP address should OpenVPN
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> listen on? (optional)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;local a.b.c.d
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Which TCP/UDP port should OpenVPN listen on?
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> If you want to run multiple OpenVPN instances
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on the same machine, use a different port
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> number <span style="color:#6ab825;font-weight:bold">for</span> each one.  You will need to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> open up this port on your firewall.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">port 1194
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> TCP or UDP server?
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;proto tcp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">proto udp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> <span style="color:#ed9d13">&#34;dev tun&#34;</span> will create a routed IP tunnel,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#ed9d13">&#34;dev tap&#34;</span> will create an ethernet tunnel.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Use <span style="color:#ed9d13">&#34;dev tap0&#34;</span> <span style="color:#6ab825;font-weight:bold">if</span> you are ethernet bridging
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and have precreated a tap0 virtual interface
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and bridged it with your ethernet interface.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> If you want to control access policies
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> over the VPN, you must create firewall
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> rules <span style="color:#6ab825;font-weight:bold">for</span> the the TUN/TAP interface.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> On non-Windows systems, you can give
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> an explicit unit number, such as tun0.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> On Windows, use <span style="color:#ed9d13">&#34;dev-node&#34;</span> <span style="color:#6ab825;font-weight:bold">for</span> this.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> On most systems, the VPN will not <span style="color:#6ab825;font-weight:bold">function</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> unless you partially or fully disable
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the firewall <span style="color:#6ab825;font-weight:bold">for</span> the TUN/TAP interface.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;dev tap
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dev tun
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Windows needs the TAP-Win32 adapter name
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> from the Network Connections panel <span style="color:#6ab825;font-weight:bold">if</span> you
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> have more than one.  On XP SP2 or higher,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> you may need to selectively disable the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Windows firewall <span style="color:#6ab825;font-weight:bold">for</span> the TAP adapter.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Non-Windows systems usually don<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>t need this.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;dev-node MyTap
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> SSL/TLS root certificate (ca), certificate
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (cert), and private key (key).  Each client
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and the server must have their own cert and
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> key file.  The server and all clients will
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> use the same ca file.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># See the &#34;easy-rsa&#34; directory for a series</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> of scripts <span style="color:#6ab825;font-weight:bold">for</span> generating RSA certificates
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and private keys.  Remember to use
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a unique Common Name <span style="color:#6ab825;font-weight:bold">for</span> the server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and each of the client certificates.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Any X509 key management system can be used.</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> OpenVPN can also use a PKCS <span style="color:#999;font-style:italic">#12 formatted key file</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (see <span style="color:#ed9d13">&#34;pkcs12&#34;</span> directive in man page).
+</span></span><span style="display:flex;"><span><span style="color:#ccc">ca cacert.pem
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cert servidor.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">key servidor.key  # This file should be kept secret
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Diffie hellman parameters.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Generate your own with:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   openssl dhparam -out dh2048.pem <span style="color:#3677a9">2048</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dh dhparams.pem
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Network topology
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Should be subnet (addressing via IP)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> unless Windows clients v2.0.9 and lower have to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> be supported (<span style="color:#6ab825;font-weight:bold">then</span> net30, i.e. a /30 per client)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Defaults to net30 (not recommended)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">topology subnet
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Configure server mode and supply a VPN subnet
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> OpenVPN to draw client addresses from.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> The server will take 10.8.0.1 <span style="color:#6ab825;font-weight:bold">for</span> itself,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the rest will be made available to clients.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Each client will be able to reach the server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on 10.8.0.1. Comment this line out <span style="color:#6ab825;font-weight:bold">if</span> you are
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> ethernet bridging. See the man page <span style="color:#6ab825;font-weight:bold">for</span> more info.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">server 10.99.99.0 255.255.255.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Maintain a record of client &lt;-&gt; virtual IP address
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> associations in this file.  If OpenVPN goes down or
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> is restarted, reconnecting clients can be assigned
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the same virtual IP address from the pool that was
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> previously assigned.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">ifconfig-pool-persist /var/log/openvpn/ipp.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Configure server mode <span style="color:#6ab825;font-weight:bold">for</span> ethernet bridging.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> You must first use your OS<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s bridging capability
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to bridge the TAP interface with the ethernet
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> NIC interface.  Then you must manually <span style="color:#24909d">set</span> the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> IP/netmask on the bridge interface, here we
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> assume 10.8.0.4/255.255.255.0.  Finally we
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> must <span style="color:#24909d">set</span> aside an IP range in this subnet
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (<span style="color:#40ffff">start</span>=10.8.0.50 <span style="color:#40ffff">end</span>=10.8.0.100) to allocate
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to connecting clients.  Leave this line commented
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> out unless you are ethernet bridging.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;server-bridge 10.8.0.4 255.255.255.0 10.8.0.50 10.8.0.100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Configure server mode <span style="color:#6ab825;font-weight:bold">for</span> ethernet bridging
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> using a DHCP-proxy, where clients talk
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to the OpenVPN server-side DHCP server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to receive their IP address allocation
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and DNS server addresses.  You must first use
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> your OS<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s bridging capability to bridge the TAP
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> interface with the ethernet NIC interface.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Note: this mode only works on clients (such as
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Windows), where the client-side TAP adapter is
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> bound to a DHCP client.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;server-bridge
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Push routes to the client to allow it
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to reach other private subnets behind
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the server.  Remember that these
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> private subnets will also need
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to know to route the OpenVPN client
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> address pool (10.8.0.0/255.255.255.0)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> back to the OpenVPN server.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">push &#34;route 10.0.0.0 255.255.255.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;push &#34;route 192.168.20.0 255.255.255.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> To assign specific IP addresses to specific
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> clients or <span style="color:#6ab825;font-weight:bold">if</span> a connecting client has a private
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> subnet behind it that should also have VPN access,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> use the subdirectory <span style="color:#ed9d13">&#34;ccd&#34;</span> <span style="color:#6ab825;font-weight:bold">for</span> client-specific
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> configuration files (see man page <span style="color:#6ab825;font-weight:bold">for</span> more info).
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> EXAMPLE: Suppose the client
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> having the certificate common name <span style="color:#ed9d13">&#34;Thelonious&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> also has a small subnet behind his connecting
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> machine, such as 192.168.40.128/255.255.255.248.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> First, uncomment out these lines:
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;client-config-dir ccd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;route 192.168.40.128 255.255.255.248
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> Then create a file ccd/Thelonious with this line:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   iroute 192.168.40.128 255.255.255.248
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This will allow Thelonious<span style="color:#a61717;background-color:#e3d2d2">&#39;</span> private subnet to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> access the VPN.  This example will only work
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">if</span> you are routing, not bridging, i.e. you are
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> using <span style="color:#ed9d13">&#34;dev tun&#34;</span> and <span style="color:#ed9d13">&#34;server&#34;</span> directives.
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> EXAMPLE: Suppose you want to give
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Thelonious a fixed VPN IP address of 10.9.0.1.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> First uncomment out these lines:
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;client-config-dir ccd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;route 10.9.0.0 255.255.255.252
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> Then add this line to ccd/Thelonious:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   ifconfig-push 10.9.0.1 10.9.0.2
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Suppose that you want to <span style="color:#24909d">enable</span> different
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> firewall access policies <span style="color:#6ab825;font-weight:bold">for</span> different groups
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> of clients.  There are two methods:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (1) Run multiple OpenVPN daemons, one <span style="color:#6ab825;font-weight:bold">for</span> each
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>     group, and firewall the TUN/TAP interface
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>     <span style="color:#6ab825;font-weight:bold">for</span> each group/daemon appropriately.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (2) (Advanced) Create a script to dynamically
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>     modify the firewall in response to access
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>     from different clients.  See man
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>     page <span style="color:#6ab825;font-weight:bold">for</span> more info on learn-address script.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;learn-address ./script
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> If enabled, this directive will configure
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> all clients to redirect their default
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> network gateway through the VPN, causing
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> all IP traffic such as web browsing and
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and DNS lookups to go through the VPN
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> (The OpenVPN server machine may need to NAT
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> or bridge the TUN/TAP interface to the internet
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> in order <span style="color:#6ab825;font-weight:bold">for</span> this to work properly).
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;push &#34;redirect-gateway def1 bypass-dhcp&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Certain Windows-specific network settings
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> can be pushed to clients, such as DNS
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> or WINS server addresses.  CAVEAT:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> http://openvpn.net/faq.html#dhcpcaveats
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> The addresses below refer to the public
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> DNS servers provided by opendns.com.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;push &#34;dhcp-option DNS 208.67.222.222&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;push &#34;dhcp-option DNS 208.67.220.220&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Uncomment this directive to allow different
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> clients to be able to <span style="color:#ed9d13">&#34;see&#34;</span> each other.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> By default, clients will only see the server.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> To force clients to only see the server, you
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> will also need to appropriately firewall the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> server<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s TUN/TAP interface.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;client-to-client
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Uncomment this directive <span style="color:#6ab825;font-weight:bold">if</span> multiple clients
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> might connect with the same certificate/key
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> files or common names.  This is recommended
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> only <span style="color:#6ab825;font-weight:bold">for</span> testing purposes.  For production use,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> each client should have its own certificate/key
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> pair.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># IF YOU HAVE NOT GENERATED INDIVIDUAL</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> CERTIFICATE/KEY PAIRS FOR EACH CLIENT,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> EACH HAVING ITS OWN UNIQUE <span style="color:#ed9d13">&#34;COMMON NAME&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> UNCOMMENT THIS LINE OUT.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;duplicate-cn
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> The keepalive directive causes ping-like
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> messages to be sent back and forth over
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the link so that each side knows when
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the other side has gone down.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Ping every <span style="color:#3677a9">10</span> seconds, assume that remote
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> peer is down <span style="color:#6ab825;font-weight:bold">if</span> no ping received during
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a <span style="color:#3677a9">120</span> second <span style="color:#24909d">time</span> period.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">keepalive 10 120
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> For extra security beyond that provided
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> by SSL/TLS, create an <span style="color:#ed9d13">&#34;HMAC firewall&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to <span style="color:#24909d">help</span> block DoS attacks and UDP port flooding.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Generate with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   openvpn --genkey tls-auth ta.key
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># The server and each client must have</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a copy of this key.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> The second parameter should be <span style="color:#ed9d13">&#39;0&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on the server and <span style="color:#ed9d13">&#39;1&#39;</span> on the clients.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;tls-auth ta.key 0 # This file is secret
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Select a cryptographic cipher.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This config item must be copied to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the client config file as well.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Note that v2.4 client/server will automatically
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> negotiate AES-256-GCM in TLS mode.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See also the ncp-cipher option in the manpage
+</span></span><span style="display:flex;"><span><span style="color:#ccc">cipher AES-256-CBC
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Enable compression on the VPN link and push the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> option to the client (v2.4+ only, <span style="color:#6ab825;font-weight:bold">for</span> earlier
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> versions see below)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;compress lz4-v2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;push &#34;compress lz4-v2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> For compression compatible with older clients use comp-lzo
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> If you <span style="color:#24909d">enable</span> it here, you must also
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#24909d">enable</span> it in the client config file.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;comp-lzo
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> The maximum number of concurrently connected
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> clients we want to allow.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;max-clients 100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> It<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s a good idea to reduce the OpenVPN
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> daemon<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s privileges after initialization.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># You can uncomment this on non-Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> systems after creating a dedicated user.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;user openvpn
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;group openvpn
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> The persist options will try to avoid
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> accessing certain resources on restart
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> that may no longer be accessible because
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> of the privilege downgrade.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">persist-key
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">persist-tun
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Output a short status file showing
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> current connections, truncated
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and rewritten every minute.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">status /var/log/openvpn/openvpn-status.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> By default, log messages will go to the syslog (or
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on Windows, <span style="color:#6ab825;font-weight:bold">if</span> running as a service, they will go to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the <span style="color:#ed9d13">&#34;\Program Files\OpenVPN\log&#34;</span> directory).
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Use log or log-append to override this default.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#ed9d13">&#34;log&#34;</span> will truncate the log file on OpenVPN startup,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">while</span> <span style="color:#ed9d13">&#34;log-append&#34;</span> will append to it.  Use one
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> or the other (but not both).
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;log         /var/log/openvpn/openvpn.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;log-append  /var/log/openvpn/openvpn.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Set the appropriate level of log
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> file verbosity.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># 0 is silent, except for fatal errors</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#3677a9">4</span> is reasonable <span style="color:#6ab825;font-weight:bold">for</span> general usage
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#3677a9">5</span> and <span style="color:#3677a9">6</span> can <span style="color:#24909d">help</span> to debug connection problems
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#3677a9">9</span> is extremely verbose
+</span></span><span style="display:flex;"><span><span style="color:#ccc">verb 3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Silence repeating messages.  At most <span style="color:#3677a9">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> sequential messages of the same message
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> category will be output to the log.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;mute 20
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Notify the client that when the server restarts so it
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> can automatically reconnect.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">explicit-exit-notify 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span>Fichero de constraseña de la clave
+</span></span><span style="display:flex;"><span><span style="color:#ccc">askpass auth.txt
+</span></span></span></code></pre></div><p>El servidor VPN se puede arrancar usando systemd pero el paquete <code>openvpn</code> incluye una herramienta de depuración que se recomienda usar en los primeros inicios del servidor. Cuando la salida del comando muestra la siguiente información la configuración del servidor es correcta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# openvpn server.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 DEPRECATED OPTION: --cipher set to &#39;AES-256-CBC&#39; but missing in --data-ciphers (AES-256-GCM:AES-128-GCM:CHACHA20-POLY1305). OpenVPN ignores --cipher for cipher negotiations. 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 Note: Kernel support for ovpn-dco missing, disabling data channel offload.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 OpenVPN 2.6.3 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] [DCO]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 library versions: OpenSSL 3.0.13 30 Jan 2024, LZO 2.10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 DCO version: N/A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 net_route_v4_best_gw query: dst 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 net_route_v4_best_gw result: via 192.168.122.1 dev ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:30 Diffie-Hellman initialized with 4096 bit key
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter Private Key Password: *******                 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 WARNING: this configuration may cache passwords in memory -- use the auth-nocache option to prevent this
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">[  180.660097] tun: Universal TUN/TAP device driver, 1.6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 TUN/TAP device tun0 opened
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 net_iface_mtu_set: mtu 1500 for tun0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 net_iface_up: set tun0 up
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 net_addr_v4_add: 10.99.99.1/24 dev tun0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 Could not determine IPv4/IPv6 protocol. Using AF_INET
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 Socket Buffers: R=[212992-&gt;212992] S=[212992-&gt;212992]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 UDPv4 link local (bound): [AF_INET][undef]:1194
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 UDPv4 link remote: [AF_UNSPEC]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 MULTI: multi_init called, r=256 v=256
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 IFCONFIG POOL IPv4: base=10.99.99.2 size=253
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 IFCONFIG POOL LIST
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2025-01-11 18:02:32 Initialization Sequence Completed
+</span></span></span></code></pre></div><p>Una vez que se ha verificado el correcto funcionamiento del servidor VPN se puede usar <code>systemd</code> para arrancarlo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">systemctl start openvpn-server@server
+</span></span></span></code></pre></div><p>Al arrancar la VPN se crea una nueva interfaz de red virtual (<code>tun0</code>) con la IP 10.99.99.1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# ip a
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 127.0.0.1/8 scope host lo
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 ::1/128 scope host noprefixroute 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2: ens4: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/ether 0c:bc:63:18:00:00 brd ff:ff:ff:ff:ff:ff
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    altname enp0s4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 10.0.0.1/24 brd 10.0.0.255 scope global ens4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 fe80::ebc:63ff:fe18:0/64 scope link 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">3: ens5: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/ether 0c:bc:63:18:00:01 brd ff:ff:ff:ff:ff:ff
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    altname enp0s5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 100.0.0.2/24 brd 100.0.0.255 scope global ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 fe80::ebc:63ff:fe18:1/64 scope link 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">4: tun0: &lt;POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 500
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/none 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 10.99.99.1/24 scope global tun0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 fe80::1516:5e8c:5b38:b02/64 scope link stable-privacy 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span></code></pre></div><p>Además, también se crea una ruta en la tabla de enrutamiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/server# ip r
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">default via 100.0.0.1 dev ens5 onlink 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">10.0.0.0/24 dev ens4 proto kernel scope link src 10.0.0.1 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">10.99.99.0/24 dev tun0 proto kernel scope link src 10.99.99.1 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">100.0.0.0/24 dev ens5 proto kernel scope link src 100.0.0.2 
+</span></span></span></code></pre></div><h1 id="configuración-del-cliente-vpn">Configuración del cliente VPN</h1>
+<p>Para configurar el cliente también se puede partir del fichero de configuración de ejemplo proporcionado por OpenVPN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf .
+</span></span></span></code></pre></div><p>Este fichero también crea por defecto una interfaz de tipo tun y configura el uso del protocolo udp para la VPN. Entre los parámetros que se deben modificar están la dirección IP y puerto de escucha del servidor y la ruta relativa a los cetificados de la CA, del cliente y a la clave del cliente</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> The hostname/IP and port of the server.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> You can have multiple remote entries
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to load balance between the servers.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">remote 10.99.99.1 1194
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> SSL/TLS parms.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See the server config file <span style="color:#6ab825;font-weight:bold">for</span> more
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> description.  It<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s best to use
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a separate .crt/.key file pair
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> each client.  A single ca
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> file can be used <span style="color:#6ab825;font-weight:bold">for</span> all clients.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">ca cacert.pem
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cert cliente.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">key cliente.key
+</span></span></span></code></pre></div><p>Finalmente, el contenido íntegro del fichero de configuración del cliente VPN es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@debian:~$ cat /etc/openvpn/client/client.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span><span style="color:#999;font-style:italic">#############################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Sample client-side OpenVPN 2.0 config file <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> connecting to multi-client server.     <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This configuration can be used by multiple <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> clients, however each client should have   <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> its own cert and key files.                <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>                                            <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> On Windows, you might want to rename this  <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> file so it has a .ovpn extension           <span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span><span style="color:#999;font-style:italic">#############################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Specify that we are a client and that we
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> will be pulling certain config file directives
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> from the server.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">client
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Use the same setting as you are using on
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the server.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> On most systems, the VPN will not <span style="color:#6ab825;font-weight:bold">function</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> unless you partially or fully disable
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> the firewall <span style="color:#6ab825;font-weight:bold">for</span> the TUN/TAP interface.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;dev tap
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dev tun
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Windows needs the TAP-Win32 adapter name
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> from the Network Connections panel
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">if</span> you have more than one.  On XP SP2,
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> you may need to disable the firewall
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> the TAP adapter.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;dev-node MyTap
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Are we connecting to a TCP or
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> UDP server?  Use the same setting as
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on the server.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;proto tcp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">proto udp
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> The hostname/IP and port of the server.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> You can have multiple remote entries
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to load balance between the servers.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">remote 100.0.0.2 1194
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;remote my-server-2 1194
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Choose a random host from the remote
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> list <span style="color:#6ab825;font-weight:bold">for</span> load-balancing.  Otherwise
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> try hosts in the order specified.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;remote-random
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Keep trying indefinitely to resolve the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> host name of the OpenVPN server.  Very useful
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> on machines which are not permanently connected
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to the internet such as laptops.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">resolv-retry infinite
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Most clients don<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>t need to <span style="color:#24909d">bind</span> to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a specific <span style="color:#24909d">local</span> port number.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">nobind
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Downgrade privileges after initialization (non-Windows only)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;user openvpn
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;group openvpn
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Try to preserve some state across restarts.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">persist-key
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">persist-tun
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> If you are connecting through an
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> HTTP proxy to reach the actual OpenVPN
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> server, put the proxy server/IP and
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> port number here.  See the man page
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">if</span> your proxy server requires
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> authentication.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;http-proxy-retry # retry on connection failures
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;http-proxy [proxy server] [proxy port #]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Wireless networks often produce a lot
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> of duplicate packets.  Set this flag
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> to silence duplicate packet warnings.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;mute-replay-warnings
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> SSL/TLS parms.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See the server config file <span style="color:#6ab825;font-weight:bold">for</span> more
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> description.  It<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>s best to use
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a separate .crt/.key file pair
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">for</span> each client.  A single ca
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> file can be used <span style="color:#6ab825;font-weight:bold">for</span> all clients.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">ca cacert.pem
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cert cliente.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">key cliente.key
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Verify server certificate by checking that the
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> certificate has the correct key usage set.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> This is an important precaution to protect against
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> a potential attack discussed here:
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>  http://openvpn.net/howto.html#mitm
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># To use this feature, you will need to generate</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> your server certificates with the keyUsage <span style="color:#24909d">set</span> to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   digitalSignature, keyEncipherment
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> and the extendedKeyUsage to
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>   serverAuth
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> EasyRSA can <span style="color:#6ab825;font-weight:bold">do</span> this <span style="color:#6ab825;font-weight:bold">for</span> you.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>remote-cert-tls server
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> If a tls-auth key is used on the server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">then</span> every client must also have the key.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>tls-auth ta.key <span style="color:#3677a9">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Select a cryptographic cipher.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> If the cipher option is used on the server
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> <span style="color:#6ab825;font-weight:bold">then</span> you must also specify it here.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Note that v2.4 client/server will automatically
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> negotiate AES-256-GCM in TLS mode.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> See also the data-ciphers option in the manpage
+</span></span><span style="display:flex;"><span><span style="color:#ccc">cipher AES-256-CBC
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Enable compression on the VPN link.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> Don<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>t <span style="color:#24909d">enable</span> this unless it is also
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> enabled in the server config file.
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>comp-lzo
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Set log file verbosity.
+</span></span><span style="display:flex;"><span><span style="color:#ccc">verb 3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Silence repeating messages
+</span></span><span style="display:flex;"><span><span style="color:#ccc">;mute 20
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span>Fichero de contraseña de la clave privada
+</span></span><span style="display:flex;"><span><span style="color:#ccc">askpass auth.txt
+</span></span></span></code></pre></div><p>Como ocurre en el caso del servidor, en el cliente también se puede usar la utilidad <code>openvpn</code> para verificar la sintaxis del fichero de configuración y probar la ejecución de la VPN. Después, se puede arrancar usando <code>systemd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start openvpn-client@client
+</span></span></span></code></pre></div><p>Al arrancar el cliente de VPN, se crea una nueva interfaz de red de tipo tun (<code>tun0</code>) con la IP 10.99.99.2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# ip a
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 127.0.0.1/8 scope host lo
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 ::1/128 scope host noprefixroute 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2: ens4: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/ether 0c:1e:38:43:00:00 brd ff:ff:ff:ff:ff:ff
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    altname enp0s4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 200.0.0.2/24 brd 200.0.0.255 scope global ens4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 fe80::e1e:38ff:fe43:0/64 scope link 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">3: tun0: &lt;POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 500
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    link/none 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet 10.99.99.2/24 scope global tun0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    inet6 fe80::dc6d:524c:186d:ced1/64 scope link stable-privacy 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">       valid_lft forever preferred_lft forever
+</span></span></span></code></pre></div><p>También aparecen dos nuevas rutas en la tabla de enrutamiento: la ruta hacia la red 10.99.99.0/24, como también se incluye en la tabla de enrutamiento del servidor pero, además, en el cliente se añade la ruta hacia la red 10.0.0.0/24, que se corresponde con la red local a la que da el servidor de VPN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# ip r
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">default via 200.0.0.1 dev ens4 onlink 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">10.0.0.0/24 via 10.99.99.1 dev tun0 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">10.99.99.0/24 dev tun0 proto kernel scope link src 10.99.99.2 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">200.0.0.0/24 dev ens4 proto kernel scope link src 200.0.0.2 
+</span></span></span></code></pre></div><p>Una vez que la VPN está funcionando, el cliente puede comunicarse con el equipo de la red local que está conectado al servidor VPN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:/etc/openvpn/client# ping -c4 10.0.0.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 10.0.0.2: icmp_seq=1 ttl=63 time=2.27 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 10.0.0.2: icmp_seq=2 ttl=63 time=3.96 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 10.0.0.2: icmp_seq=3 ttl=63 time=2.08 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 10.0.0.2: icmp_seq=4 ttl=63 time=3.59 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 10.0.0.2 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 2.078/2.974/3.963/0.815 ms
+</span></span></span></code></pre></div><p>Además, se puede comprobar que esta conexión se realiza de forma segura a través de la red VPN que se ha configurado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@debian:~$ traceroute 10.0.0.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">traceroute to 10.0.0.2 (10.0.0.2), 30 hops max, 60 byte packets
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 1  10.99.99.1 (10.99.99.1)  8.065 ms  7.889 ms  7.673 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 2  10.0.0.2 (10.0.0.2)  7.634 ms  7.610 ms  7.570 ms
+</span></span></span></code></pre></div><p>En una captura de tráfico entre el cliente y el servidor también se puede apreciar cómo los paquetes de este ping entre el cliente y el equipo de la red interna del servidor VPN viajan cifrados. En la captura se muestran como paquetes del protocolo OpenVPN y no se puede ver su contenido. Además, en la captura de tráfico sí que se puede ver la dirección IP real de origen y destino de cada paquete en vez de la IP virtual que se usa internamente para enviar el tráfico a través de la VPN.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="868"
+            height="36"
+            src="/images/seguridad/vpn/Captura1_hu_e53861e283bdce92.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/seguridad\/vpn\/Captura1_hu_e53861e283bdce92.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/cifrado/">
+                        Cifrado
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/vpn/">
+                        VPN
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/openvpn/">
+                        Open VPN
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/openssl/">
+                        Open ssl
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad/">
+                        Seguridad
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/redes/">
+                        Redes
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas/">
+                        Administración de sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad-y-alta-disponibilidad/">
+                        Seguridad y alta disponibilidad
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fseguridad%2f2025-01-29-vpn-acceso-remoto-openvpn%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fseguridad%2f2025-01-29-vpn-acceso-remoto-openvpn%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fseguridad%2f2025-01-29-vpn-acceso-remoto-openvpn%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fseguridad%2f2025-01-29-vpn-acceso-remoto-openvpn%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+      Interconexión entre dos servidores Oracle
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
+      Despliegue de aplicaciones escritas en Python
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

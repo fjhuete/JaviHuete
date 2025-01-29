@@ -30,11 +30,11 @@
 
 
 
-<link rel="shortcut icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon_hu4028665881880111129.png" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu5217499384461932560.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu4028665881880111129.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu2974018437732034086.png">
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
 
 
 
@@ -452,9 +452,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -462,9 +462,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
@@ -974,9 +974,9 @@
             class="img img-fluid img-center"
             width="819"
             height="526"
-            src="/images/redes/practica12/img1_hu13587774675808210097.png"
+            src="/images/redes/practica12/img1_hu_8a5f27d0583c398d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img1_hu13587774675808210097.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica12\/img1_hu_8a5f27d0583c398d.png'" />
       
     
 
@@ -1052,116 +1052,116 @@
 <h2 id="configurar-ospf-desde-ficheros">Configurar OSPF desde ficheros</h2>
 <p>Para poder usar el protocolo OSPF en un router Linux es necesario instalar un paquete que permita gestionar este tipo de protocolos de enrutamiento dinámico. La mayoría de paquetes que cumplen esta función se basan en Zebra, un proyecto que no cuenta con mantenimiento en la actualidad. Uno de estos paquetes es Quagga, que actualmente tampoco está ya disponible en los repositorios de Debian y que ha sido sustituido por FRR (FRRouting), que también se basa en Zebra.</p>
 <p>Para instalar FRR se actualiza el gestor de paquetes y se ejecuta la instalación:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>sudo apt update &amp;&amp; sudo apt install frr -y.
-</span></span></code></pre></div><p>En este paquete, FRR gestiona la comunicación entre routers vecinos para mantener actualizado el protocolo de enrutamiento dinámico que se emplee en cada caso. Por su parte, Zebra, gestiona y actualiza la tabla de enrutamiento del dispositivo a partir de la información obtenida y procesada por el protocolo de enrutamiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt update &amp;&amp; sudo apt install frr -y.
+</span></span></span></code></pre></div><p>En este paquete, FRR gestiona la comunicación entre routers vecinos para mantener actualizado el protocolo de enrutamiento dinámico que se emplee en cada caso. Por su parte, Zebra, gestiona y actualiza la tabla de enrutamiento del dispositivo a partir de la información obtenida y procesada por el protocolo de enrutamiento.</p>
 <p>El fichero /etc/frr/daemons cuenta con una lista de todos los daemos disponibles en FRR en la que se pueden activar o desactivar. En este caso, para activar el protocolo de OSPF el fichero tiene que contener la línea</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>ospfd=yes.
-</span></span></code></pre></div><p>Tras activar los daemons necesarios (en este caso Zebra está activado por defecto porque debe estar habilitado siempre para el correcto funcionamiento del enrutamiento dinámico) se debe configurar cada uno de ellos a través de sus ficheros de configuración. Una forma de hacerlo es aprovechar los ficheros de ejemplo que se incluyen en /usr/share/doc/frr/examples/ durante la instalación del paquete frr.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ospfd=yes.
+</span></span></span></code></pre></div><p>Tras activar los daemons necesarios (en este caso Zebra está activado por defecto porque debe estar habilitado siempre para el correcto funcionamiento del enrutamiento dinámico) se debe configurar cada uno de ellos a través de sus ficheros de configuración. Una forma de hacerlo es aprovechar los ficheros de ejemplo que se incluyen en /usr/share/doc/frr/examples/ durante la instalación del paquete frr.</p>
 <p>Por ejemplo, en el caso de Zebra, se puede copiar el fichero de ejemplo con <code>cp /usr/share/doc/frr/examples/zebra.conf.sample /etc/frr/zebra.conf</code> y editar su contenido. En este fichero se indican las direcciones IP de cada una de las interfaces del router. En el caso de R1, este fichero contiene las siguientes líneas:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>interface ens4
-</span></span><span style="display:flex;"><span> 10.0.1.1/24
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>interface ens5
-</span></span><span style="display:flex;"><span> 172.23.0.1/24
-</span></span><span style="display:flex;"><span><span style="color:#db4b4b">
-</span></span></span><span style="display:flex;"><span><span style="color:#db4b4b"></span>interface ens6
-</span></span><span style="display:flex;"><span> 193.168.1.2/24
-</span></span></code></pre></div><p>También se debe seguir un procedimiento similar para configurar el protocolo OSPF en cada router. En este caso, se puede copiar el fichero de ejemplo con cp /usr/share/doc/frr/examples/ospfd.conf.sample /etc/frr/ospfd.conf. En este fichero se almacena la información relacionada con el OSPF en este router: id del router, redes y área a la que pertenece cada una de ellas. Siguiendo con el ejemplo de R1, el fichero contiene estas líneas:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>router ospf
-</span></span><span style="display:flex;"><span>  ospf router-id 1.1.1.1
-</span></span><span style="display:flex;"><span>  network 10.0.1.0/24 area 0
-</span></span><span style="display:flex;"><span>  network 173.23.0.0/24 area 0
-</span></span><span style="display:flex;"><span>  network 193.168.1.0/24 area 0
-</span></span></code></pre></div><p>Además, en ambos ficheros se debe indicar un hostname y contraseña para poder configurar y monitorizar el funcionamiento del protocolo de enrutamiento dinámico posteriormente. Esta información se incluye en ambos ficheros:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>hostname ospfd
-</span></span><span style="display:flex;"><span>password zebra
-</span></span><span style="display:flex;"><span>enable password zebra
-</span></span></code></pre></div><p>De esta manera, queda configurado el OSPF en el router R1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">interface ens4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 10.0.1.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 172.23.0.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 193.168.1.2/24
+</span></span></span></code></pre></div><p>También se debe seguir un procedimiento similar para configurar el protocolo OSPF en cada router. En este caso, se puede copiar el fichero de ejemplo con cp /usr/share/doc/frr/examples/ospfd.conf.sample /etc/frr/ospfd.conf. En este fichero se almacena la información relacionada con el OSPF en este router: id del router, redes y área a la que pertenece cada una de ellas. Siguiendo con el ejemplo de R1, el fichero contiene estas líneas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ospf router-id 1.1.1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  network 10.0.1.0/24 area 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  network 173.23.0.0/24 area 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  network 193.168.1.0/24 area 0
+</span></span></span></code></pre></div><p>Además, en ambos ficheros se debe indicar un hostname y contraseña para poder configurar y monitorizar el funcionamiento del protocolo de enrutamiento dinámico posteriormente. Esta información se incluye en ambos ficheros:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">hostname ospfd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">password zebra
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">enable password zebra
+</span></span></span></code></pre></div><p>De esta manera, queda configurado el OSPF en el router R1.</p>
 <p>Esta configuración se repite en todos los routers del escenario para conseguir que puedan actualizar sus tablas de enrutamiento usando este protocolo de enrutamiento dinámico.</p>
 <h2 id="configurar-ospf-desde-vtysh">Configurar OSPF desde vtysh</h2>
 <p>La configuración de los ficheros tal y como se desarrolla en el apartado anterior no da el resultado esperado y no consigue que el protocolo OSPF se ponga en funcionamiento en los routers Linux. Una alternativa a la configuración desde los ficheros es el uso de la terminal vtysh que incorpora el paquete FRR y que usa comandos muy similares a los que usan los routers Cisco.</p>
 <p>Para acceder a la terminal se ejecuta el comando vtysh desde un usuario que forme parte del grupo frrvty o como usuario privilegiado. Esto hace que cambie el prompt de la terminal, que muestra un mensaje de bienvenida. Desde esta nueva terminal se pueden ejecutar los comandos de configuración de OSPF en FRR.</p>
 <p>Tomando de nuevo como ejemplo el router R1, en primer lugar, se accede a la configuración del router y se activa el modo OSPF y, posteriormente, se añade un identificador del router:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router-id 1.1.1.1
-</span></span></code></pre></div><p>Posteriormente, se aporta la información de cada interfaz: su dirección IP y máscara de red. Es este punto también se puede indicar un coste a cada interfaz o un período de “saludo” o de “muerte”.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config-router)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.23.0.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.1.2/24
-</span></span></code></pre></div><p>Finalmente, se vuelve al modo de configuración de router para añadir las redes que el protocolo debe incluir en la tabla de enrutamiento.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router 1.1.1.1
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.23.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.1.0/24 area 0.0.0.0
-</span></span></code></pre></div><p>Para terminar se guardan los cambios almacenados en la memoria en el fichero /etc/frr/frr.conf con el comando write memory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian# write memory
-</span></span></code></pre></div><p>De la misma manera, los comandos para aplicar la configuración del OSPF en el router R2 son:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router-id 2.2.2.2
-</span></span><span style="display:flex;"><span>debian(config-router)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.23.0.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.24.0.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens7
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.11.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router 2.2.2.2
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.23.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.24.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.11.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# end
-</span></span><span style="display:flex;"><span>debian# write memory
-</span></span></code></pre></div><p>En el caso de R3:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router-id 3.3.3.3
-</span></span><span style="display:flex;"><span>debian(config-router)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.25.0.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.2.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router 3.3.3.3
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.25.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.2.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# end
-</span></span><span style="display:flex;"><span>debian# wr
-</span></span></code></pre></div><p>Para R4:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router-id 4.4.4.4
-</span></span><span style="display:flex;"><span>debian(config-router)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.24.0.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.12.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens7
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 173.25.0.2/24
-</span></span><span style="display:flex;"><span>debian(config-if)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router 4.4.4.4
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.24.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 173.25.0.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.12.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# end
-</span></span><span style="display:flex;"><span>debian# wr
-</span></span></code></pre></div><p>Y, por último, los comandos para R5 son:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian# configure terminal 
-</span></span><span style="display:flex;"><span>debian(config)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router-id 5.5.5.5
-</span></span><span style="display:flex;"><span>debian(config-router)# interface ens4
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.11.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.12.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.1.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# interface ens7
-</span></span><span style="display:flex;"><span>debian(config-if)# ip address 193.168.2.1/24
-</span></span><span style="display:flex;"><span>debian(config-if)# router ospf
-</span></span><span style="display:flex;"><span>debian(config-router)# router 5.5.5.5
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.1.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.2.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.11.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# network 193.168.12.0/24 area 0.0.0.0
-</span></span><span style="display:flex;"><span>debian(config-router)# end
-</span></span><span style="display:flex;"><span>debian# wr
-</span></span></code></pre></div><h1 id="rutas-elegidas-por-el-protocolo">Rutas elegidas por el protocolo</h1>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router-id 1.1.1.1
+</span></span></span></code></pre></div><p>Posteriormente, se aporta la información de cada interfaz: su dirección IP y máscara de red. Es este punto también se puede indicar un coste a cada interfaz o un período de “saludo” o de “muerte”.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.23.0.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.1.2/24
+</span></span></span></code></pre></div><p>Finalmente, se vuelve al modo de configuración de router para añadir las redes que el protocolo debe incluir en la tabla de enrutamiento.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router 1.1.1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.23.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.1.0/24 area 0.0.0.0
+</span></span></span></code></pre></div><p>Para terminar se guardan los cambios almacenados en la memoria en el fichero /etc/frr/frr.conf con el comando write memory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian# write memory
+</span></span></span></code></pre></div><p>De la misma manera, los comandos para aplicar la configuración del OSPF en el router R2 son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router-id 2.2.2.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.23.0.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.24.0.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens7
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.11.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router 2.2.2.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.23.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.24.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.11.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# end
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian# write memory
+</span></span></span></code></pre></div><p>En el caso de R3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router-id 3.3.3.3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.25.0.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.2.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router 3.3.3.3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.25.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.2.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# end
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian# wr
+</span></span></span></code></pre></div><p>Para R4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router-id 4.4.4.4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.24.0.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.12.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens7
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 173.25.0.2/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router 4.4.4.4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.24.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 173.25.0.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.12.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# end
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian# wr
+</span></span></span></code></pre></div><p>Y, por último, los comandos para R5 son:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian# configure terminal 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router-id 5.5.5.5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# interface ens4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.11.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.12.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.1.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# interface ens7
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip address 193.168.2.1/24
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# router ospf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# router 5.5.5.5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.1.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.2.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.11.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# network 193.168.12.0/24 area 0.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-router)# end
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian# wr
+</span></span></span></code></pre></div><h1 id="rutas-elegidas-por-el-protocolo">Rutas elegidas por el protocolo</h1>
 <p>Tras aplicar esta configuración a través de la terminal virtual vtysh, todos los routers se reconocen entre sí y empiezan a modificar sus tablas de enrutamiento.</p>
 
 
@@ -1254,9 +1254,9 @@
             class="img img-fluid img-center"
             width="866"
             height="5567"
-            src="/images/redes/practica15/img8_hu11693007588599471785.png"
+            src="/images/redes/practica15/img8_hu_1d389085ff383924.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img8_hu11693007588599471785.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img8_hu_1d389085ff383924.png'" />
       
     
 
@@ -1363,9 +1363,9 @@
             class="img img-fluid img-center"
             width="719"
             height="79"
-            src="/images/redes/practica15/img9_hu10393407016493345244.png"
+            src="/images/redes/practica15/img9_hu_de43a20a9652159c.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img9_hu10393407016493345244.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img9_hu_de43a20a9652159c.png'" />
       
     
 
@@ -1470,9 +1470,9 @@
             class="img img-fluid img-center"
             width="680"
             height="82"
-            src="/images/redes/practica15/img10_hu11293763818752670820.png"
+            src="/images/redes/practica15/img10_hu_f88d8064d5be36fa.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img10_hu11293763818752670820.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img10_hu_f88d8064d5be36fa.png'" />
       
     
 
@@ -1586,9 +1586,9 @@
             class="img img-fluid img-center"
             width="706"
             height="249"
-            src="/images/redes/practica15/img11_hu2051844682023670413.png"
+            src="/images/redes/practica15/img11_hu_863cc2088002d35d.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img11_hu2051844682023670413.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img11_hu_863cc2088002d35d.png'" />
       
     
 
@@ -1693,9 +1693,9 @@
             class="img img-fluid img-center"
             width="706"
             height="195"
-            src="/images/redes/practica15/img12_hu8999423555768017052.png"
+            src="/images/redes/practica15/img12_hu_cc81ee1951d25875.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img12_hu8999423555768017052.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img12_hu_cc81ee1951d25875.png'" />
       
     
 
@@ -1801,9 +1801,9 @@
             class="img img-fluid img-center"
             width="721"
             height="82"
-            src="/images/redes/practica15/img13_hu4579134420898713817.png"
+            src="/images/redes/practica15/img13_hu_79e305c08fc1bc1.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img13_hu4579134420898713817.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img13_hu_79e305c08fc1bc1.png'" />
       
     
 
@@ -1819,12 +1819,12 @@
 <h1 id="cambio-del-coste-de-las-rutas">Cambio del coste de las rutas</h1>
 <p>Del mismo modo que en los routers Cisco, desde la terminal vtysh de frr se puede modificar el coste de una ruta usando los mismos comandos. Por ejemplo, para aumentar el coste de la ruta entre R4 y R5 de 10 (por defecto) a 100 hay que indicar el nuevo coste en cada una de las interfaces que conecta esta ruta.</p>
 <p>En primer lugar, en en la interfaz ens6 del router R4:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# interface ens6
-</span></span><span style="display:flex;"><span>debian(config-if)# ip ospf cost 100
-</span></span></code></pre></div><p>Y después, en la interfaz ens5 del router R5:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>debian(config)# interface ens5
-</span></span><span style="display:flex;"><span>debian(config-if)# ip ospf cost 100
-</span></span></code></pre></div><p>Al guardar esta configuración, el resto de routers del escenario actualizan de nuevo sus tablas de enrutamiento. Por una parte, en las tablas de R4 y R5, el coste de esta ruta ha aumentado a 100:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# interface ens6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip ospf cost 100
+</span></span></span></code></pre></div><p>Y después, en la interfaz ens5 del router R5:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian(config)# interface ens5
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian(config-if)# ip ospf cost 100
+</span></span></span></code></pre></div><p>Al guardar esta configuración, el resto de routers del escenario actualizan de nuevo sus tablas de enrutamiento. Por una parte, en las tablas de R4 y R5, el coste de esta ruta ha aumentado a 100:</p>
 
 
 
@@ -1916,9 +1916,9 @@
             class="img img-fluid img-center"
             width="788"
             height="387"
-            src="/images/redes/practica15/img14_hu17119171089259938968.png"
+            src="/images/redes/practica15/img14_hu_1e475326aa5ee18a.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img14_hu17119171089259938968.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img14_hu_1e475326aa5ee18a.png'" />
       
     
 
@@ -2023,9 +2023,9 @@
             class="img img-fluid img-center"
             width="788"
             height="387"
-            src="/images/redes/practica15/img15_hu8031049179671558991.png"
+            src="/images/redes/practica15/img15_hu_c6ca848c76a6aee6.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img15_hu8031049179671558991.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img15_hu_c6ca848c76a6aee6.png'" />
       
     
 
@@ -2131,9 +2131,9 @@
             class="img img-fluid img-center"
             width="721"
             height="86"
-            src="/images/redes/practica15/img16_hu114551672076735637.png"
+            src="/images/redes/practica15/img16_hu_308d4cf38ce663a2.png"
             alt=""
-            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img16_hu114551672076735637.png'" />
+            onerror="this.onerror='null';this.src='\/images\/redes\/practica15\/img16_hu_308d4cf38ce663a2.png'" />
       
     
 
@@ -2375,8 +2375,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
-      Interconexión entre dos servidores Postgres
+    <a href="/blog/redes/2024-03-03-acl-router-cisco/">
+      Configuración de ACL en routers Cisco
     </a>
   </h4>
   
@@ -2391,16 +2391,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/redes/"
             class="ms-1"
-            >Administracion bbdd
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
+  <p class="mb-6"><p>Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-acl-router-cisco/">
     Leer
   </a>
 </div>
@@ -2412,8 +2412,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
-      Interconexión entre dos servidores Oracle
+    <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
+      Cómo simular un servidor web en GNS3
     </a>
   </h4>
   
@@ -2428,16 +2428,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/redes/"
             class="ms-1"
-            >Administracion bbdd
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+  <p class="mb-6"><p>Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
     Leer
   </a>
 </div>
@@ -2449,32 +2449,32 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
-      Conceptos de gestión de paquetería en Debian
+    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+      Cifrado asimétrico con GPG y OpenSSL
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Administracion sistemas
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
+  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
     Leer
   </a>
 </div>
@@ -2580,9 +2580,9 @@
       class="img img-light"
       width="160"
       height="32"
-      src="/images/logo_hu18267478939233474524.webp"
+      src="/images/logo_hu_147412e9a193273b.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo_hu11300897418344115346.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
 
     <img
       fetchpriority="high"
@@ -2590,9 +2590,9 @@
       class="img img-dark"
       width="160"
       height="32"
-      src="/images/logo-darkmode_hu10915171578428281277.webp"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
       alt="Javi Huete"
-      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu5734244978279122550.png';" />
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
   
   
 
