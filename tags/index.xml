@@ -6,8 +6,78 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Arranque</title>
+      <link>/tags/arranque/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/arranque/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gestores De Arranque</title>
+      <link>/tags/gestores-de-arranque/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/gestores-de-arranque/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grub</title>
+      <link>/tags/grub/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/grub/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recuperación</title>
+      <link>/tags/recuperaci%C3%B3n/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/recuperaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/tags/sistemas/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systemd</title>
+      <link>/tags/systemd/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/systemd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Systemd-Boot</title>
+      <link>/tags/systemd-boot/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/systemd-boot/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Administración De Sistemas</title>
       <link>/tags/administraci%C3%B3n-de-sistemas/</link>
@@ -27,13 +97,6 @@
       <link>/tags/cisco/</link>
       <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/cisco/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debian</title>
-      <link>/tags/debian/</link>
-      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/debian/</guid>
       <description></description>
     </item>
     <item>
@@ -100,13 +163,6 @@
       <description></description>
     </item>
     <item>
-      <title>Administración De Sistemas Operativos</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Apache</title>
       <link>/tags/apache/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
@@ -139,13 +195,6 @@
       <link>/tags/journald/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/journald/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -188,20 +237,6 @@
       <link>/tags/servidor-web/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/servidor-web/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sistemas</title>
-      <link>/tags/sistemas/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/sistemas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Systemd</title>
-      <link>/tags/systemd/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/systemd/</guid>
       <description></description>
     </item>
     <item>

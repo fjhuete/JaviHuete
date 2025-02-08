@@ -885,59 +885,59 @@
 <p>El servidor DNS se configura en uno de los contenedores alojados en la máquina que funciona como router del escenario. Para ello, en primer lugar se accede al conetenedor y se instala el servidor DNS Bind9.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install bind9
 </span></span></span></code></pre></div><p>En el fichero /etc/bind/named.conf.options se configuran las opciones del servidor. En principio, se puede usar el parámetro <code>allow-query</code> para permitir consultas desde todas las redes del escenario y desactivar el sistema <code>dnssec-validation</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">dnssec-validation</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">no</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">allow-query</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; 192.168.0.0/24; 172.16.0.0/16; };</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">dnssec-validation no;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">allow-query {172.22.0.0/16; 192.168.0.0/24; 172.16.0.0/16; };
 </span></span></span></code></pre></div><p>A continuación, se definen las zonas sobre las que el servidor DNS tiene dominio en el fichero /etc/bind/named.conf.local. Para ello se van a usar dos vistas diferentes según si la consulta al DNS llega desde la red intra (192.168.0.0/24) o desde la red DMZ (172.16.0.0/16).</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_intra</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">192.168.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">24</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javiintra.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">0</span><span style="color:#447fcf;text-decoration:underline">.168.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">192</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">168</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">172</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">16</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_DMZ</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.16.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; 127.0.0.1; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javidmz.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">0</span><span style="color:#447fcf;text-decoration:underline">.168.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">192</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">168</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">		</span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#ed9d13">172</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">16</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">view red_intra {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    match-clients { 192.168.0.0/24; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-recursion { any; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">        zone &#34;javi.gonzalonazareno.org&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.javiintra.gonzalonazareno.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	zone &#34;0.168.192.in-addr.arpa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.192.168.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	zone &#34;16.172.in-addr.arpa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.172.16&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	include &#34;/etc/bind/named.conf.default-zones&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">view red_DMZ {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    match-clients { 172.16.0.0/16; 127.0.0.1; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-recursion { any; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	zone &#34;javi.gonzalonazareno.org&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.javidmz.gonzalonazareno.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	zone &#34;0.168.192.in-addr.arpa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.192.168.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	zone &#34;16.172.in-addr.arpa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		file &#34;db.172.16&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    include &#34;/etc/bind/named.conf.default-zones&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div><p>Además, hay que comentar las zonas que se han declarado en este fichero en los otros ficheros incluidos en él. Así, en el fichero /etc/bind/zones.frc1918 se comentan las siguientes líneas:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">//zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">16</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">  </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">; file &#34;/etc/bind/db.empty&#34;; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">//zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">168</span><span style="color:#447fcf;text-decoration:underline">.192.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">; file &#34;/etc/bind/db.empty&#34;; };</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">//zone &#34;16.172.in-addr.arpa&#34;  { type master; file &#34;/etc/bind/db.empty&#34;; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">//zone &#34;168.192.in-addr.arpa&#34; { type master; file &#34;/etc/bind/db.empty&#34;; };
 </span></span></span></code></pre></div><p>Y en el fichero /etc/bind/named.conf se comenta la línea que incluye el fichero de zonas por defecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">//include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">//include &#34;/etc/bind/named.conf.default-zones&#34;;
 </span></span></span></code></pre></div><p>Después, hay que rellenar los ficheros de de zona para las zonas declaradas previamente. Primero, se configura la zona javi.gonzalonazareno.org</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /etc/bind/db.empty /var/cache/bind/db.javiintra.gonzalonazareno.org
 </span></span></span></code></pre></div><p>En este fichero se configura la resolución directa de los nombres de las máquinas y servicios del escenario.</p>
@@ -1082,16 +1082,16 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">iptables-save &gt; /etc/iptables/rules.v4
 </span></span></span></code></pre></div><h2 id="creación-de-una-nueva-vista">Creación de una nueva vista</h2>
 <p>Para que el servidor DNS sólo muestre al exterior la información relevante para el acceso a la red a través de la IP pública, es decir, la IP de <code>luffy</code> y el alias del servicio www, hay que configurar una nueva vista en el servidor DNS. Esta vista se añade al fichero /etc/bind/named.conf.local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">view</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">red_externa</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">match-clients</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-recursion</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">any</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javiexterna.gonzalonazareno.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#a61717;background-color:#e3d2d2">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">named.conf.default-zones</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">view red_externa {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    match-clients { 172.22.0.0/16; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-recursion { any; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        zone &#34;javi.gonzalonazareno.org&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">                file &#34;db.javiexterna.gonzalonazareno.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        include &#34;/etc/bind/named.conf.default-zones&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div><p>En /var/cache/bind/ se rellena el fichero de zona.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>luffy.javi.gonzalonazareno.org. <span style="color:#447fcf;text-decoration:underline">root.javi.gonzalonazare</span><span style="color:#a61717;background-color:#e3d2d2">&gt;</span><span style="color:#666">
@@ -1109,9 +1109,9 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">www</span><span style="color:#666">                     </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">   </span><span style="color:#a61717;background-color:#e3d2d2">luffy</span><span style="color:#666">
 </span></span></span></code></pre></div><h2 id="configurar-el-dns-como-forwarder">Configurar el DNS como forwarder</h2>
 <p>Para que desde dentro del escenario se puedan resolver direcciones de fuera, hay que configurar el servidor DNS como forwarder hacia el servidor DNS principal en la red, que tiene configurada la delegación de dominio a los subdominos del resto de compañeros. Esta configuración se aplica en el fichero /etc/bind/named.conf.options.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">forwarders</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#3677a9">172.22.0.1</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">forwarders {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        172.22.0.1;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div>
           </div>
           <div class="row items-start justify-between">
@@ -1341,8 +1341,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
-      Cómo simular un servidor MariaDB en GNS3
+    <a href="/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
+      Manejo y modificación de módulos del kernel 
     </a>
   </h4>
   
@@ -1357,16 +1357,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Redes
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+  <p class="mb-6">Aquí se recogen algunos ejercicios en los que se ponen en práctica diferentes herramientas para trabajar con los módulos del kernel de Linux.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-manejo-de-modulos/">
     Leer
   </a>
 </div>
@@ -1378,8 +1378,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
-      Gestión de dispositivos de almacenamiento con Powershell
+    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+      Conceptos básicos del gestor de paquetes apt
     </a>
   </h4>
   
@@ -1402,8 +1402,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
     Leer
   </a>
 </div>
@@ -1415,8 +1415,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
-      Uso básico de Wireshark
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
     </a>
   </h4>
   
@@ -1431,16 +1431,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Redes
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
     Leer
   </a>
 </div>

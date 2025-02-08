@@ -900,9 +900,9 @@
 <p>Aunque la configuración por defecto de bind9 permite usar el servidor DNS desde el momento en el que se instala, se pueden modificar algunos parámetros como, por ejemplo, el parámetro <code>options</code> del fichero /etc/default/named para evitar la resolución de direcciones IPv6.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">OPTIONS=&#34;-4 -f -u bind&#34;
 </span></span></span></code></pre></div><p>Como bind9 sólo acepta consultas desde la red local por defecto, para poder usarlo en entornos como OpenStack, donde se usan IP flotantes o para poder consultar usando una conexión a través de una VPN, se debe modificar el parámetro <code>allow-query</code> del fichero /etc/bind/named.conf.options.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">allow-query</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#3677a9">172.201.0.0</span><span style="color:#a61717;background-color:#e3d2d2">/</span><span style="color:#ed9d13">16</span><span style="color:#999;font-style:italic">; 172.22.0.0/16;};</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">allow-query {172.201.0.0/16; 172.22.0.0/16;};
 </span></span></span></code></pre></div><p>Para que el servidor funcione correctamente en este entorno, también es necesario desactivar el sistema de seguridad <code>dnssec-validation</code> en este fichero.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">dnssec-validation</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">no</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">dnssec-validation no;
 </span></span></span></code></pre></div><h2 id="prueba-de-funcionamiento">Prueba de funcionamiento</h2>
 <p>Para comprobar el funcionamiento del servidor DNS se consulta la resolución del nombre de dominio de una web, por ejemplo, &ldquo;<a href="https://www.marca.es"
 
@@ -962,13 +962,13 @@
 </span></span></span></code></pre></div><p>Al volver a realizar la consulta sólo tarda 4 milisegundos. Esto se debe a que el servidor DNS ha guardado la información en la caché y, por tanto, para resolver la dirección IP en este caso sólo ha tenido que consultar sus propios registros.</p>
 <h2 id="configuración-de-una-zona-directa-de-dominio-en-el-servidor-dns">Configuración de una zona directa de dominio en el servidor DNS</h2>
 <p>Para crear una zona directa para un dominio en bind9 se define la zona en el fichero /etc/bind/named.conf.local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
 </span></span></span></code></pre></div><p>A continaución se crea el fichero de zona en el directorio /var/cache/bind a partir de la plantilla /etc/bind/db.empty.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">debian</span><span style="color:#a61717;background-color:#e3d2d2">@dns1:~$</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">sudo</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">cp</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">db.empty</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">/var/cache/bind/</span><span style="color:#447fcf;text-decoration:underline">db.javi.org</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">debian</span><span style="color:#a61717;background-color:#e3d2d2">@dns1:~$</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">sudo</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">nano</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">/var/cache/bind/</span><span style="color:#447fcf;text-decoration:underline">db.javi.org</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@dns1:~$ sudo cp /etc/bind/db.empty /var/cache/bind/db.javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@dns1:~$ sudo nano /var/cache/bind/db.javi.org
 </span></span></span></code></pre></div><p>Con el siguiente contenido:</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">	</span><span style="color:#ed9d13">86400</span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">	</span>dns1.javi.org. root.javi.org. (<span style="color:#666">
@@ -992,15 +992,15 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">ftp</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">obelix</span><span style="color:#666">
 </span></span></span></code></pre></div><h2 id="configuración-de-una-zona-inversa-en-el-dns">Configuración de una zona inversa en el DNS</h2>
 <p>Esta zona también se declara en el fichero /etc/bind/named.conf.local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">22</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
 </span></span></span></code></pre></div><p>En este fichero también se descomenta la línea</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
 </span></span></span></code></pre></div><p>Esto evita que el DNS intente hacer la resolución inversa de las IP privadas preguntando a un servidor raíz.</p>
 <p>Además, en el fichero /etc/bind/zones.rfc1918 hay que comentar la línea referente a la IP privada de la red cuyas direcciones sí debe resolver el servidor DNS.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">//zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">22</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666">  </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">; file &#34;/etc/bind/db.empty&#34;; };</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">//zone &#34;22.172.in-addr.arpa&#34;  { type master; file &#34;/etc/bind/db.empty&#34;; };
 </span></span></span></code></pre></div><p>Por útlimo, se crea el fichero de zona en /var/cache/bind/db.172.22.0.0 a partir de la plantilla en /etc/bind/db.empty.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">	</span><span style="color:#ed9d13">86400</span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">	</span>dns1.javi.org. root.javi.org. (<span style="color:#666">
@@ -1118,11 +1118,11 @@
 <p>Para ofrecer el servicio de DNS en alta disponibilidad dentro de la red local se debe configurar un segundo servidor como servidor DNS esclavo. Para ello, se usa una segunda máquina que, en este caso, se llama dns2.javi.org.</p>
 <p>En esta máquina también se instala el servidor DNS <code>bind9</code> y se configura como servidor esclavo.</p>
 <p>Para ello, en primer lugar, se deshabilitan las transferencias de zona en el fichero /etc/bind/named.conf.options</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">options</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">     </span><span style="color:#a61717;background-color:#e3d2d2">...</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">     </span><span style="color:#a61717;background-color:#e3d2d2">allow-transfer</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">none</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">     </span><span style="color:#a61717;background-color:#e3d2d2">...</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">options {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     ...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     allow-transfer { none; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     ...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div>
 
 
@@ -1144,31 +1144,31 @@
 </div>
 
 <p>En cambio, en el servidor DNS maestro se debe indicar a qué dirección IP se permite realizar una transferencia de zonas. En este caso, se indica la dirección del servidor esclavo. También se activa la opción que hace que el maestro envíe una notificación a los servidores esclavos cada vez que se actualiza su configuración.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-transfer</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.200.110</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">notify</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">yes</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">22</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">allow-transfer</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.200.110</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">notify</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">yes</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-transfer { 172.22.200.110; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    notify yes;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-transfer { 172.22.200.110; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    notify yes;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div><p>En el servidor esclavo también se deben definir las zonas que se transfieren desde el servidor maestro y sobra las que el DNS tiene dominio. Con la opción <code>master</code> se indica la dirección IP del servidor maestro desde el que se transfiere la información de las zonas al esclavo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">include</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;/etc/bind/</span><span style="color:#447fcf;text-decoration:underline">zones.rfc</span><span style="color:#a61717;background-color:#e3d2d2">1918&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">slave</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">masters</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.200.100</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#ed9d13">22</span><span style="color:#447fcf;text-decoration:underline">.172.in-addr.arpa</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">slave</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;db.</span><span style="color:#3677a9">172.22.0.0</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">masters</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> </span><span style="color:#3677a9">172.22.200.100</span><span style="color:#999;font-style:italic">; };</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;	</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type slave;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    masters { 172.22.200.100; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type slave;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    masters { 172.22.200.100; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};	
 </span></span></span></code></pre></div><p>En el servidor DNS maestro también hay que añadir la información del nuevo servidor DNS de la red en el fichero de zona /var/cache/bind/db.javi.org</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>dns1.javi.org. root.javi.org. (<span style="color:#666">
@@ -1210,10 +1210,10 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">@                       IN      NS      dns3
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">dns3                    IN      A       172.22.200.203
 </span></span></span></code></pre></div><p>Después, en el servidor DNS delegado se debe crear, primero, la configuración básica del servidor DNS en el fichero /etc/bind/named.conf.local.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#447fcf;text-decoration:underline">zone</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">informatica.javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">{</span><span style="color:#666"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">type</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">master</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#a61717;background-color:#e3d2d2">file</span><span style="color:#666"> </span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#447fcf;text-decoration:underline">db.informatica.javi.org</span><span style="color:#a61717;background-color:#e3d2d2">&#34;</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#a61717;background-color:#e3d2d2">}</span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;informatica.javi.org&#34; { 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.informatica.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
 </span></span></span></code></pre></div><p>Y, a continuación, hay que crear también el fichero de zona /var/cache/bind/db.informatica.javi.org</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>dns.informatica.javi.org. root.informatica.javi.org. (<span style="color:#666">
@@ -1453,8 +1453,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
-      Gestión de permisos UGOA y ACL en Debian
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+      Interconexión entre dos servidores Oracle
     </a>
   </h4>
   
@@ -1469,16 +1469,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/administracion-bbdd/"
             class="ms-1"
-            >Sistemas
+            >Administracion bbdd
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">El propósito de este post es demostrar el funcionamiento de los permisos UGOA y las listas de control de acceso (ACL) en Debian a través de ejemplos y casos prácticos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-27-permisos-ugoa-acl-debian/">
+  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
     Leer
   </a>
 </div>
@@ -1490,8 +1490,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
-      Guía básica de configuración de Nginx
+    <a href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
+      Despliegue de aplicaciones escritas en Python
     </a>
   </h4>
   
@@ -1506,16 +1506,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
+  <p class="mb-6">En este post se muestra un ejemplo de flujo de trabajo para desplegar aplicaciones escritas en Python desde el entorno de desarrollo hasta el entorno de producción.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-02-despliegue-aplicaciones-pyton/">
     Leer
   </a>
 </div>
@@ -1527,8 +1527,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
-      Ejemplos de uso del comando parted en Debian
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
     </a>
   </h4>
   
@@ -1543,16 +1543,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/redes/"
             class="ms-1"
-            >Fundamentos hardware
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
     Leer
   </a>
 </div>

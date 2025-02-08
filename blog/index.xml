@@ -6,8 +6,22 @@
     <description>Recent content in Blog de prácticas on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Wed, 29 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arranque desde el grub ante errores en el sistema</title>
+      <link>/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/</guid>
+      <description>&lt;p&gt;El gestor de arranque GRUB cuenta con una consola desde la que se puede interactuar con el propio gestor de arranque ante un fallo en el arranque del sistema. A esta consola se puede acceder pulsando la telca &lt;code&gt;c&lt;/code&gt; desde el menú del gestor de arranque.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación y configuración del gestor de arranque systemd-boot en Debian</title>
+      <link>/blog/administracion-de-sistemas/2025-02-07-systemdboot/</link>
+      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-02-07-systemdboot/</guid>
+      <description>&lt;p&gt;&lt;code&gt;systemd-boot&lt;/code&gt; es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como &lt;code&gt;systemd-boot&lt;/code&gt; están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Configuración de una VPN de acceso remoto con OpenVPN y certificados x509</title>
       <link>/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/</link>

@@ -1,0 +1,2766 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Instalación y configuración del gestor de arranque systemd-boot en Debian</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Instalación y configuración del gestor de arranque systemd-boot en Debian" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/administracion-de-sistemas/2025-02-07-systemdboot/" />
+
+
+<meta name="twitter:title" content="Instalación y configuración del gestor de arranque systemd-boot en Debian" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Instalación y configuración del gestor de arranque systemd-boot en Debian
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              February 7, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#introducción-a-systemd-boot">Introducción a <code>systemd-boot</code></a>
+      <ol>
+        <li><a href="#los-ficheros-de-configuración-de-systemd-boot">Los ficheros de configuración de <code>systemd-boot</code></a></li>
+        <li><a href="#ventajas-e-inconvenientes-del-uso-de-systemd-boot">Ventajas e inconvenientes del uso de <code>systemd-boot</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#systemd-boot-en-la-instalación-de-debian-13"><code>systemd-boot</code> en la instalación de Debian 13</a></li>
+    <li><a href="#instalación-de-systemd-boot-en-debian-12">Instalación de <code>systemd-boot</code> en Debian 12</a>
+      <ol>
+        <li><a href="#añadir-opciones-al-menú-de-arranque-de-systemd-boot">Añadir opciones al menú de arranque de <code>systemd-boot</code></a></li>
+        <li><a href="#arranque-dual-con-systemd-boot">Arranque dual con <code>systemd-boot</code></a></li>
+      </ol>
+    </li>
+    <li><a href="#refind-la-alternativa-más-popular-a-grub">rEFInd, la alternativa más popular a GRUB</a>
+      <ol>
+        <li><a href="#instalación-de-refind">Instalación de rEFInd</a></li>
+        <li><a href="#configuración-de-refind">Configuración de rEFInd</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusión">Conclusión</a></li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p>
+<p>El gestor de arranque <code>systemd-boot</code> detecta automáticamente las imágenes arrancables, incluso las de otros sistemas operativos o gestores de arranque, no requiere un fichero de configuración y cuenta con una interfaz basada en menú.</p>
+<p>Este gestor de arranque opera únicamente en la partición EFI (EFI System Partition), de manera que los ficheros de kernel, initrds y las imágenes EFI deben estar alojadas en esta partición también. <code>systemd-boot</code> lee las entradas de los ficheros de configuración del gestor de arranque y usa un fichero por cada entrada del menú. Todos los ficheros deben estar también en la partición EFI.</p>
+<h1 id="introducción-a-systemd-boot">Introducción a <code>systemd-boot</code></h1>
+<h2 id="los-ficheros-de-configuración-de-systemd-boot">Los ficheros de configuración de <code>systemd-boot</code></h2>
+<p>El gestor de arranque <code>systemd-boot</code> usa dos tipos de ficheros de configuración. Por una parte, el fichero loader contiene la configuración del propio gestor de arranque. Por otra, cada uno de los ficheros de entradas contiene la información relativa a cada entrada del gestor de arranque.</p>
+<p>En el fichero loader se pueden indicar los valores para la entrada por defecto del menú de arranque (<code>default</code>), para el tiempo de espera durante el que se muestra el menú de arranque (<code>timeout</code>), para activar el editor de los parámetros del kernel (<code>editor</code>), para mostrar entradas automáticas para Windows, EFI Shell y Default Loader (<code>auto-entries</code>), para mostrar la entrada para reiniciar en las configuraciones de firmware UEFI (<code>auto-firmware</code>) o para cambiar el modo de consola UEFI (<code>console-mode</code>).</p>
+<p>Para cada entrada del gestor de arranque debe existir un fichero de configuración de entrada diferente. Este fichero puede almacenar información sobre el nombre del sistema operativo (<code>title</code>), la versión del kernel (<code>version</code>), el identificador de la máquina (<code>machine-id</code>), la ruta a la imagen ejecutable EFI (<code>efi</code>), opciones que se pasan a la imagen ejecutable EFI (<code>options</code>), la ruta a la imagen del kernel (<code>linux</code>) y la ruta a la imagen initramfs (<code>initrd</code>).</p>
+<p>Además, <code>systemd-boot</code> permite usar atajos de teclado para elegir entre las diferentes entradas del menú de arranque. Por ejemplo, la tecla <code>l</code> selecciona el sistema operativo Linux, la tecla <code>w</code> selecciona el sistema Windows, la tecla <code>a</code> selecciona el sistema MacOS o la tecla <code>s</code> selecciona la EFI Shell.</p>
+<p>Este gestor de arranque también se puede configurar desde el propio menú de arranque. Por ejemplo, mientras el menú de arranque se muestra en pantalla, con la tecla <code>d</code> se puede configurar la entrada por defecto del menú o con la tecla <code>t</code> se puede ajustar el tiempo durante el que se muestra este menú por pantalla. Ambas configuraciones se almacenan como una variable EFI persistente.</p>
+<h2 id="ventajas-e-inconvenientes-del-uso-de-systemd-boot">Ventajas e inconvenientes del uso de <code>systemd-boot</code></h2>
+<p>La principal ventaja de <code>systemd-boot</code> frente al gestor de arranque GRUB,  usado por la gran mayoría de distribuciones basadas en GNU/Linux es que su configuración es mucho más sencilla.</p>
+<p>Mientras que GRUB requiere el uso de varios ficheros de configuración que se ubican en diferentes rutas del sistema operativo, <code>systemd-boot</code> se configura con un único fichero almacenado en la partición EFI. Además, se trata de un fichero de sintaxis sencilla, que admite unas pocas opciones y esto hace que <code>systemd-boot</code> sea un gestor de arranque que se configura en pocas líneas.</p>
+<p>Igualmente, la configuración de las diferentes entradas del menú de arranque es también muy sencilla, en un fichero diferente para cada entrada en el que sólo hay que editar unas pocas líneas para indicar al gestor de arranque la imagen EFI que debe ejecutar.</p>
+<p>Esta sencillez hace que <code>systemd-boot</code> sea un gestor de arranque más fácil no sólo de configurar sino también de mantener que GRUB,  ya que es más sencillo mantener la integridad de sus ficheros de configuración y, en caso de error en la configuración, es también más sencillo depurar los posibles fallos en estos ficheros. Además, este gestor de arranque no necesita regenerar los ficheros de configuración ante cada cambio en su configuración, como ocurre con GRUB.</p>
+<p>Como inconvenientes cabe destacar que las opciones de configuración de <code>systemd-boot</code> son más limitadas que las de GRUB y, por tanto, es un gestor de arranque menos personalizable y no cuenta con la gran cantidad de opciones y características avanzadas cuyo uso permite el gestor de arranque GRUB.</p>
+<p>Por otra parte, <code>systemd-boot</code> sólo se puede instalar en equipos que usen firmware EFI. Esto hace que cualquier sistema operativo que instale por defecto este gestor de arranque no sea compatible con equipos antiguos que usen un firmware de tipo BIOS.</p>
+<p>Otra de las limitaciones más importantes de <code>systemd-boot</code> es que sólo puede arrancar usando ficheros ubicados en la partición EFI, es decir, para poder elegir entre varios kernels diferentes durante el arranque, todos ellos deben estar almacenados en esta partición.</p>
+<p>Pero es más, para arrancar el sistema operativo desde una instantánea snapshot también es necesario que la instantánea se encuentre en esta partición. Teniendo en cuenta que, en general, las particiones EFI suelen ser pequeñas y las snapshots suelen ocupar bastante espacio en disco, esta combinación parece difícilmente compatible. Esto convierte a <code>systemd-boot</code> en un gestor de arranque muy poco recomendado para aquellos sistemas que pueden tener la necesidad de arrancar desde una instantánea en un momento determinado o para aquellos que, como los sistemas operativos inmutables, incorporen el uso de instantáneas en la propia filosofía de funcionamiento del sistema operativo.</p>
+<p>Aunque varias distribuciones como Red Hat y sus derivadas, openSUSE, ArchLinux y, más recientemente, Debian en su versión Trixie incluyen la opción de instalar <code>systemd-boot</code> desde el proceso de instalación del propio sistema operativo o facilitan una gran cantidad de información sobre su instalación a través de su documentación oficial, no parece que, a día de hoy, sea la opción de gestor de arranque por defecto de ninguna de estas principales distribuciones basadas en GNU/Linux.</p>
+<h1 id="systemd-boot-en-la-instalación-de-debian-13"><code>systemd-boot</code> en la instalación de Debian 13</h1>
+<p>La instalación de <code>systemd-boot</code> en Debian 13 es sencilla porque la imagen ISO del sistema operativo incluye a través del modo experto de su instalador una opción para hacerlo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="768"
+            src="/images/aso/systemdboot/systemd-boot1_hu_3c555d635ba18103.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot1_hu_3c555d635ba18103.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<p>Para que Debian Trixie configure <code>systemd-boot</code> como gestor de arranque simplemente hay que seleccionar esta opción durante la instalación en vez de la opción que instala el gestor de arranque GRUB.</p>
+<p>Cuando se instala, <code>systemd-boot</code> genera en el directorio /boot/efi del sistema el siguiente esquema de directorios:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@DebTrixie:~# tree /boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── ed59fdedf5eb46c4988f357052d4f4ac
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── 6.12.6-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       ├── initrd.img-6.12.6-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       └── linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── BOOT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   └── BOOTX64.EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── Linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── systemd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       └── systemd-bootx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">└── loader
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── entries
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │   └── ed59fdedf5eb46c4988f357052d4f4ac-6.12.6-amd64.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── entries.srel
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── keys
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── loader.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    └── random-seed
+</span></span></span></code></pre></div><p>Junto al directorio EFI, la instalación de <code>systemd-boot</code> genera dos directorios más: un directorio loader y otro con el número de identificación de la máquina.</p>
+<p>El directorio EFI contiene las imágenes EFI ejecutables que el gestor de arranque usa para arrancar el sistema operativo. En el directorio nombrado con el identificador de la máquina se encuentran los ficheros del kernel y del initramfs a los que apunta la entrada del gestor de arranque y en el directorio loader se encuentra el fichero de configuración del gestor de arranque (loader.conf) y un directorio que almacena los ficheros de configuración para cada entrada (entries). En este caso, este directorio sólo contienen un fichero de configuración y, por tanto, el gestor de arranque sólo mostrará una entrada.</p>
+<p>Este esquema de directorios es diferente al que se genera cuando se instala el gestor de arranque GRUB. En este caso, el contenido de la partición EFI del sistema sólo incluye unos pocos ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# tree /boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">└── EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    └── debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        ├── BOOTX64.CSV
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        ├── fbx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        ├── GRUB.cfg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        ├── grubx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        ├── mmx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        └── shimx64.efi
+</span></span></span></code></pre></div><p>El resto de ficheros tanto de configuración del gestor de arranque como de kernel o el initramfs están en otras ubicaciones del sistema operativo, como, por ejemplo el directorio /etc/default o el directorio /boot.</p>
+<p>En una instalación básica, el fichero de configuración de <code>systemd-boot,</code> loader.conf, contiene la siguiente información:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">timeout 3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">console-mode keep
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">default ed59fdedf5eb46c4988f357052d4f4ac-*
+</span></span></span></code></pre></div><p>En él se indica que el tiempo durante el que se muestra el menú de arranque es de 3 segundos, el modo de la consola y la entrada por defecto, que apunta al fichero de entradas que comienza por el número de identificación indicado en el fichero.</p>
+<p>El contenido del fichero de configuración para la entrada del menú de arranque es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> Boot Loader Specification type#1 entry
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> File created by /usr/lib/kernel/install.d/90-loaderentry.install (systemd 257.1-7)
+</span></span><span style="display:flex;"><span><span style="color:#ccc">title      Debian GNU/Linux trixie/sid
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">version    6.12.6-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">machine-id ed59fdedf5eb46c4988f357052d4f4ac
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sort-key   debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">options    root=UUID=2ff4b2e6-5279-41e3-a528-afaa8db8b76c systemd.machine_id=ed59fdedf5eb46c4988f357052d4f4ac
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linux      /ed59fdedf5eb46c4988f357052d4f4ac/6.12.6-amd64/linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">initrd     /ed59fdedf5eb46c4988f357052d4f4ac/6.12.6-amd64/initrd.img-6.12.6-amd64
+</span></span></span></code></pre></div><p>El campo <code>title</code> indica el nombre con el que esta entrada aparece en el menú de arranque, el campo <code>version</code> muestra la versión del kernel que se usa en este caso, el campo <code>machine-id</code> hace referencia al identificador de la máquina, en el campo <code>sort-key</code> se indica la palabra para ordenar alfabéticamente las entradas del menú de arranque, en el campo <code>options</code> se indican el UUID de la partición en la que está la raíz del sistema y el identificador de la máquina y los campos <code>linux</code> e <code>initrd</code> muestran la ruta relativa desde el directorio /boot/efi a los ficheros de kernel e initramfs respectivamente.</p>
+<p>Las unidades de systemd necesarias para el correcto funcionemiento del gestor de arranque están en el directorio /usr/lib/systemd/system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@DebTrixie:~# ls -l /usr/lib/systemd/system | grep systemd-boot
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root  681 ene  4 02:55 systemd-boot-check-no-failures.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root  532 dic 19 22:25 systemd-bootctl@.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root  596 dic 19 22:25 systemd-bootctl.socket
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root 1029 dic 19 22:25 systemd-boot-random-seed.service
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 root root  733 dic 19 22:25 systemd-boot-update.service
+</span></span></span></code></pre></div><h1 id="instalación-de-systemd-boot-en-debian-12">Instalación de <code>systemd-boot</code> en Debian 12</h1>
+<p>Para instalar el gestor de arranque <code>systemd-boot</code> en Debian 12, la distribución ofrece entre su paquetería el paquete <code>systemd-boot</code>. Al instalar este paquete, se genera la estructura de directorios propia de este gestor de arranque en la partición EFI, se descargan los ficheros necesarios para el funcionamiento del gestor de arranque a sus ubicaciones. Así, se coloca el ejecutable EFI <code>systemd-bootx64.efi</code> en el directorio EFI/systemd/ de la partición EFI del sistema y en el directorio EFI/BOOT con el nombre <code>BOOTX64.EFI</code>.</p>
+<p>La instalación de este paquete genera, además, las unidades de systemd relacionadas con el gestor de arranque y los ficheros de configuración loader y entries que también se ubican en la partición EFI.</p>
+<p>El paquete <code>systemd-boot</code> se puede instalar con el gestor de paquetes <code>apt</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install systemd-boot
+</span></span></span></code></pre></div><p>Junto a todas las modificaciones descritas previamente, la instalación de este paquete también instala en el sistema la herramienta <code>bootctl</code>, una herramienta para controlar la configuración del gestor de arranque <code>systemd-boot</code>. Las diferentes opciones de este comando permiten realizar tareas como comprobar el estado del gestor de arranque y las variables EFI, modificar las variables EFI, modificar las opciones de configuración del gestor de arranque como la entrada por defecto o el tiempo durante el que se muestra el menú de arranque. Esta utilidad también permite instalar <code>systemd-boot</code> en la partición EFI del sistema, actualizar el gestor de arranque o eliminarlo de la partición EFI del sistema. Además, las opciones para instalar, actualizar o eliminar <code>systemd-boot,</code> estas opciones también instalan, actualizan o eliminan las variables EFI relacionadas con el gestor de arranque del sistema.</p>
+<p>Así, para instalar el gestor de arranque <code>systemd-boot</code> en el sistema se usa la siguiente orden:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# bootctl install
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Copied &#34;/usr/lib/systemd/boot/efi/systemd-bootx64.efi&#34; to &#34;/boot/efi/EFI/systemd/systemd-bootx64.efi&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Copied &#34;/usr/lib/systemd/boot/efi/systemd-bootx64.efi&#34; to &#34;/boot/efi/EFI/BOOT/BOOTX64.EFI&#34;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Random seed file /boot/efi/loader/random-seed successfully written (32 bytes).
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Not installing system token, since we are running in a virtualized environment.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Created EFI boot entry &#34;Linux Boot Manager&#34;.
+</span></span></span></code></pre></div><p>Tras la instalación, se crea la siguiente estructura de directorios en la partición EFI (/boot/efi) del sistema operativo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# tree /boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/boot/efi/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── 3185f7f12240431fac68143b3a38ef1b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── 6.1.0-27-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── initrd.img-6.1.0-27-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   └── linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── 6.1.0-28-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       ├── initrd.img-6.1.0-28-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       └── linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── BOOT
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   └── BOOTX64.EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── BOOTX64.CSV
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── fbx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── GRUB.cfg
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── grubx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   ├── mmx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   │   └── shimx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── Linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── systemd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│       └── systemd-bootx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">└── loader
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── entries
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │   ├── 3185f7f12240431fac68143b3a38ef1b-6.1.0-27-amd64.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │   └── 3185f7f12240431fac68143b3a38ef1b-6.1.0-28-amd64.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── entries.srel
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    ├── loader.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    └── random-seed
+</span></span></span></code></pre></div><p>Por defecto, el instalador genera un fichero de configuración de <code>systemd-boot</code> con el contenido básico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# cat /boot/efi/loader/loader.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span>timeout <span style="color:#3677a9">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>console-mode keep
+</span></span><span style="display:flex;"><span><span style="color:#ccc">default 3185f7f12240431fac68143b3a38ef1b-*
+</span></span></span></code></pre></div><p>Como este sistema tiene instaladas dos versiones diferentes del kernel, se generan también dos ficheros de entrada del menú de arranque, uno para cada una de las versiones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# cat /boot/efi/loader/entries/3185f7f12240431fac68143b3a38ef1b-6.1.0-27-amd64.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">title      Debian GNU/Linux 12 (bookworm)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">version    6.1.0-27-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">machine-id 3185f7f12240431fac68143b3a38ef1b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sort-key   debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">options    root=UUID=e208b2c9-3870-4f39-99ff-0fdf31c219f4 ro quiet systemd.machine_id=3185f7f12240431fac68143b3a38ef1b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linux      /3185f7f12240431fac68143b3a38ef1b/6.1.0-27-amd64/linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">initrd     /3185f7f12240431fac68143b3a38ef1b/6.1.0-27-amd64/initrd.img-6.1.0-27-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# cat /boot/efi/loader/entries/3185f7f12240431fac68143b3a38ef1b-6.1.0-28-amd64.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">title      Debian GNU/Linux 12 (bookworm)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">version    6.1.0-28-amd64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">machine-id 3185f7f12240431fac68143b3a38ef1b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sort-key   debian
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">options    root=UUID=e208b2c9-3870-4f39-99ff-0fdf31c219f4 ro quiet systemd.machine_id=3185f7f12240431fac68143b3a38ef1b
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linux      /3185f7f12240431fac68143b3a38ef1b/6.1.0-28-amd64/linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">initrd     /3185f7f12240431fac68143b3a38ef1b/6.1.0-28-amd64/initrd.img-6.1.0-28-amd64
+</span></span></span></code></pre></div><p>Para mostrar el menú de arranque tras el encendido de la máquina hay dos opciones: se puede modificar directamente el fichero de configuración loader.conf o usar la herramienta <code>bootctl</code> para cambiar este valor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">bootctl set-timeout 3
+</span></span></span></code></pre></div><p>Al reiniciar el equipo, el gestor de arranque definido ya es <code>systemd-boot,</code> que muestra en el menú de arranque las dos entradas listadas anteriormente para arrancar con los dos kernels instalados en el equipo.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="736"
+            src="/images/aso/systemdboot/systemd-boot2_hu_2ada25d5de0e4f0b.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot2_hu_2ada25d5de0e4f0b.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="añadir-opciones-al-menú-de-arranque-de-systemd-boot">Añadir opciones al menú de arranque de <code>systemd-boot</code></h2>
+<p>La herramienta <code>bootctl</code> genera automáticamente durante la instalación de <code>systemd-boot,</code> por defecto, una entrada para cada versión del kernel instalada en el equipo, así como una opción para reiniciar la máquina y acceder a la interfaz de su firmware. Pero <code>systemd-boot</code> permite añadir fácilmente nuevas entradas al menú de arranque. Por ejemplo, se puede configurar una entrada de este menú con la que se acceda directamente a la shell EFI.</p>
+<p>Si el equipo cuenta con una shell EFI como la disponible en el paquete edk2-shell, el gestor de arranque <code>systemd-boot</code> puede reconocerla automáticamente y crear una entrada en el menú de arranque por defecto. Sin embargo, en este caso no hay ninguna shell EFI instalada previamente.</p>
+<p>Para crear esta nueva entrada es necesario contar con un fichero ejecutable de tipo EFI que arranque la shell EFI. Este fichero se puede obtener desde diferentes fuentes tanto oficiales como de terceros. En este caso, se descarga el fichero ejecutable publicado en el repositorio de GitHub de  <a href="https://github.com/pbatard/UEFI-Shell/releases"
+
+
+
+
+ target="_blank"
+ 
+
+
+>pbatard</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@debian:~# wget https://github.com/tianocore/edk2/blob/UDK2018/ShellBinPkg/UefiShell/X64/Shell.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">--2025-01-10 18:06:37--  https://github.com/tianocore/edk2/blob/UDK2018/ShellBinPkg/UefiShell/X64/Shell.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resolviendo github.com (github.com)... 140.82.121.3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Conectando con github.com (github.com)[140.82.121.3]:443... conectado.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Petición HTTP enviada, esperando respuesta... 200 OK
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Longitud: no especificado [text/html]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Grabando a: «Shell.efi»
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Shell.efi               [ &lt;=&gt;                ] 229,94K  --.-KB/s    en 0,1s    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">2025-01-10 18:06:39 (1,51 MB/s) - «Shell.efi» guardado [235463]
+</span></span></span></code></pre></div><p>Para que el gestor de arranque pueda acceder al fichero ejecutable, este se debe ubicar en la partición EFI del sistema, es decir, dentro del directorio /boot/efi.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp shellx64.efi /boot/efi/EFI/
+</span></span></span></code></pre></div><p>A continuación, se puede crear el fichero de la entrada para la shell EFI en el directorio /boot/efi/loader/entries.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">title Shell EFI
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">efi /EFI/shellx64.efi
+</span></span></span></code></pre></div><p>Tras generar este fichero y reiniciar la máquina, aparece la nueva entrada en el menú de arranque.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="736"
+            src="/images/aso/systemdboot/systemd-boot3_hu_48525a2d1f3e7383.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot3_hu_48525a2d1f3e7383.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>Y, si se elige esta opción durante el arranque, se accede a la shell EFI.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="736"
+            src="/images/aso/systemdboot/systemd-boot4_hu_965cc35f8e7802df.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot4_hu_965cc35f8e7802df.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<p>En este punto se aprecia la que quizás sea la ventaja más llamativa del gestor de arranque <code>systemd-boot</code> frente a GRUB. En este caso, ha sido suficiente crear un fichero con sólo dos líneas para generar una nueva entrada en el menú de arranque. En cambio, hacer esta modificación en el gestor de arranque GRUB habría supuesto un proceso más complejo de configuración, en ficheros con una sintaxis más compleja y, además, habría conllevado también un proceso de actualización del gestor de arranque a través de herramientas como <code>update-grub</code>.</p>
+<h2 id="arranque-dual-con-systemd-boot">Arranque dual con <code>systemd-boot</code></h2>
+<p>Para configurar un arranque dual con <code>systemd-boot</code> cuando un equipo usa dos discos duros diferentes con distintos sistemas operativos instalados es importante tener en cuenta una característica propia de este gestor de arranque: necesita contar con todos los ficheros necesarios para su funcionamiento en la misma partición ESP. Mientras que otros gestores de arranque como GRUB pueden funcionar si cada sistema operativo tiene su kernel y su fichero de initramfs en su propia partición de arranque, <code>systemd-boot</code> necesita todos esos ficheros en una misma partición.</p>
+<p>Así, en un equipo con <code>systemd-boot</code> como gestor de arranque que tiene instalado un sistema operativo Debian 12 en su disco duro principal y un sistema operativo AlmaLinux en un segundo disco duro, es necesario configurar el gestor de arranque para que pueda arrancar no sólo el SO Debian sino también el AlmaLinux.</p>
+<p>En primer lugar, se arranca desde el primer sistema operativo y se monta temporalmente el segundo disco duro para poder acceder a sus contenidos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">mount /dev/vdb2 /mnt
+</span></span></span></code></pre></div><p>A continuación en el disco principal se genera la estrucutra de directorios necesaria para albergar los ficheros de arranque del nuevo sistema operativo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cd /boot/efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">mkdir -p ce16eed6dd7f4a4b80c2668acc1a64e3/5.14.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd ce16eed6dd7f4a4b80c2668acc1a64e3/5.14.0
+</span></span></span></code></pre></div><p>En este nuevo directorio se almacenan los ficheros del kernel e initramfs del nuevo sistema operativo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /mnt/vmlinuz-5.14.0-503.11.1.el9_5.x86_64 .
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cp /mnt/initramfs-5.14.0-503.11.1.el9_5.x86_64.img .
+</span></span></span></code></pre></div><p>Después, a partir del fichero de entrada del SO Debian se genera el fichero de entrada para el nuevo sistema operativo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp /boot/efi/loader/entries/ed59fdedf5eb46c4988f357052d4f4ac-6.12.6-amd64.conf /boot/efi/loader/entries/ce16eed6dd7f4a4b80c2668acc1a64e3-5.14.0.conf
+</span></span></span></code></pre></div><p>Y se configura la entrada del menú de arranque.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">#</span> Boot Loader Specification type#1 entry
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> File created by /usr/lib/kernel/install.d/90-loaderentry.install &gt;
+</span></span><span style="display:flex;"><span><span style="color:#ccc">title      AlmaLinux                  
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">version    5.14.0      
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">machine-id ce16eed6dd7f4a4b80c2668acc1a64e3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sort-key   almalinux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">options    root=UUID=4d59812e-1dcf-462b-b362-5bb8a04e8e6e systemd.m&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">linux      /ce16eed6dd7f4a4b80c2668acc1a64e3/5.14.0/vmlinuz-5.14.0-&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">initrd    /ce16eed6dd7f4a4b80c2668acc1a64e3/5.14.0/initramfs-5.14.0&gt;
+</span></span></span></code></pre></div><p>Tras añadir el fichero de definición de la entrada al directorio de entradas en la partición ESP del sistema y reiniciar, la entrada para arrancar AlmaLinux ya aparece en el menú de arranque.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="736"
+            src="/images/aso/systemdboot/systemd-boot7_hu_9b406a9ccf118aae.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot7_hu_9b406a9ccf118aae.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="refind-la-alternativa-más-popular-a-grub">rEFInd, la alternativa más popular a GRUB</h1>
+<p>A pesar del éxito en implantación en algunas distribuciones de <code>systemd-boot</code>, la alternativa más popular a día entre la comunidad de usuarios de GNU/Linux al gestor de arranque GRUB es rEFInd.</p>
+<h2 id="instalación-de-refind">Instalación de rEFInd</h2>
+<p>En muchas distribuciones como, por ejemplo, Debian, rEFInd se puede instalar desde el gestor de paquetes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">apt install refind
+</span></span></span></code></pre></div><p>Durante la instalación del paquete, rEFInd pide permiso para instalar el gestor de arranque en la partición EFI del sistema operativo (ESP).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="854"
+            height="581"
+            src="/images/aso/systemdboot/systemd-boot5_hu_bf324953b7b6cfcf.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot5_hu_bf324953b7b6cfcf.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h2 id="configuración-de-refind">Configuración de rEFInd</h2>
+<p>Al instalar el gestor de arranque se genera la siguiente estructura en la partición EFI del sistema operativo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">/boot/efi/EFI/refind/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── BOOT.CSV
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── drivers_x64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── ext4_x64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── icons
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── arrow_left.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── arrow_right.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── boot_linux.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── boot_win.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_about.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_bootorder.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_csr_rotate.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_exit.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_firmware.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_hidden.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_install.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_reset.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── func_shutdown.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── mouse.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_arch.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_artful.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_bionic.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_centos.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_chakra.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_chrome.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_clover.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_crunchbang.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_debian.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_devuan.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_elementary.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_fedora.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_freebsd.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_frugalware.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_gentoo.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_gummiboot.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_haiku.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_hwtest.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_kubuntu.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_legacy.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_linuxmint.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_linux.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_lubuntu.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_mac.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_mageia.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_mandriva.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_manjaro.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_netbsd.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_network.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_opensuse.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_redhat.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_refind.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_refit.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_slackware.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_suse.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_systemd.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_trusty.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_ubuntu.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_uefi.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_unknown.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_void.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_win8.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_win.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_xenial.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_xubuntu.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── os_zesty.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── README
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_apple_rescue.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_fwupdate.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_memtest.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_mok_tool.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_netboot.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_part.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_rescue.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_shell.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── tool_windows_rescue.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── transparent.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── vol_efi.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── vol_external.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── vol_internal.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── vol_net.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── vol_optical.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── keys
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── altlinux.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── canonical-uefi-ca.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── centossecureboot201.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── centossecurebootca2.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── debian.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── fedora-ca.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── microsoft-kekca-public.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── microsoft-pca-public.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── microsoft-uefica-public.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── openSUSE-UEFI-CA-Certificate-4096.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── openSUSE-UEFI-CA-Certificate.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── refind.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── refind_local.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   ├── refind_local.crt
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">│   └── SLES-UEFI-CA-Certificate.cer
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── refind.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">├── refind_x64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">└── vars
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    └── PreviousBoot
+</span></span></span></code></pre></div><p>El gestor de arranque rEFInd es una alternativa mucho más basada en los elementos gráficos que GRUB y, sobre todo, que <code>systemd-boot</code>. De hecho, en la estructura de directorios que el gestor de arranque instala en el sistema se incluye una gran cantidad de imágenes que el gestor de arranque usa para mostrar los diferentes iconos en el menú de selección.</p>
+<p>En el fichero de configuración /boot/efi/EFI/refind/refind.conf se puede personalizar el gestor de arranque. Este fichero permite establecer parámetros propios de cualquier gestor de arranque como el <code>timeout</code> o la opción de arranque por defecto pero también permite activar otras opciones como, por ejemplo, apagar el equipo cuando termina este plazo o apagar la pantalla al activar el modo &ldquo;salvapantallas&rdquo; después de un tiempo determinado.</p>
+<p>En este fichero también se puede modificar la aperiencia gráfica del gestor de arranque ya que la configuración permite ocultar del menú de arranque elementos como el banner, las etiquetas, algunos submenús, el funcionamiento de las flechas, las pistas asociadas a cada entrada, la imagen del tipo de dispositivo asociado a cada entrada o la opción de editar las entradas desde el menú de arranque.</p>
+<p>Por supuesto, todos los elementos gráficos como el banner, la fuente y los iconos que se muestran en el menú de arranque se pueden sustituir por otros en este fichero de configuración para personalizar también la apariencia de este menú.</p>
+<p>A diferencia de otros gestores de arranque como GRUB o <code>systemd-boot</code>, rEFInd permite el uso del ratón en el menú de arranque. Esta opción también se puede configurar en este fichero.</p>
+<p>Por otra parte, desde el fichero de configuración de rEFInd se pueden habilitar otras herramientas del gestor de arranque que no están orientadas a arrancar un sistema operativo como, por ejemplo, la shell EFI, un test de memoria, la herramienta de particionado <code>gdisk</code>, herramientas de recuperación para Apple o Windows, una herramienta para instalar rEFInd en otra partición ESP, la herramienta para modificar el orden de arranque de la EFI (aunque este orden no afecta al menú de arranque de rEFInd), un botón de apagado, la opción de reiniciar la máquina, la de acceder al firmware EFI o la de ejecutar el arranque por red.</p>
+<p>Las entradas del menú de arranque de rEFInd también se pueden especificar en este fichero de configuración con un formato muy parecido al que usan las entradas del GRUB, como se muestra a continuación:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">menuentry Debian {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    icon EFI/refind/icons/os_debian.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    volume 904404F8-B481-440C-A1E3-11A5A954E601
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    loader /boot/vmlinuz-linux
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    initrd initrd-3.3.0.img
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    options &#34;rw root=UUID=5f96cafa-e0a7-4057-b18f-fa709db5b837&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><ul>
+<li><code>icon</code> es una ruta al fichero de la imagen que se muestra en cada entrada de menú.</li>
+<li><code>volume</code> es el nombre o el UUID del volumen en el que se encuentra el SO que arranca la entrada del menú.</li>
+<li><code>loader</code> es la ruta al fichero del kernel que usa la entrada del menú.</li>
+<li><code>initrd</code> es la ruta al fichero iniramfs que usa la entrada del menú.</li>
+<li><code>options</code> es una lista de opciones de arranque que puede incluir, por ejemplo, el UUID de la partición en la que se encuentra la raíz del sistema que monta la entrada del menú.</li>
+</ul>
+<p>Además de sistemas operativos, rEFInd también puede arrancar otros gestores de arranque. Por ejemplo, una entrada del menú que arranque el cargador de arranque GRUB puede ser como esta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">menuentry GRUB {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    loader /EFI/debian/grubx64.efi
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    icon /EFI/refind/icons/os_debian.png
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><p>Todas las entradas del menú aceptan también la opción <code>disabled</code> que hace que no se muestren en el menú de arranque.</p>
+<p>El proceso de configuración de rEFInd puede ser desde lo más extremadamente sencillo posible hasta muy enrevesado según el nivel de complejidad con el que se quira configurar la herramienta. De entrada, tras instalar el paquete <code>refind</code> a través de <code>apt</code>, el gestor de arranque se configura de forma automática para su funcionamiento en el sistema. Esta autoconfiguración ofrece una configuración básica que detecta todos los sistemas operativos y gestores de arranque instalados en la partición EFI del sistema y los muestra en el menú de arranque.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1366"
+            height="736"
+            src="/images/aso/systemdboot/systemd-boot6_hu_a6f3b32f54dea3c2.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/aso\/systemdboot\/systemd-boot6_hu_a6f3b32f54dea3c2.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+
+<h1 id="conclusión">Conclusión</h1>
+<p>El gestor de arranque <code>systemd-boot</code> ha ido ganando presencia entre varias distribuciones basadas en GNU/Linux en los últimos años, hasta el punto de que la nueva versión de Debian ya lo incluye como una opción alternativa al gestor de arranque GRUB durante la instalación experta. Este gestor de arranque ofrece ventajas evidentes respecto a GRUB,  especialmente viene con una gestión y configuración más sencilla y una estructura de directorios más clara.</p>
+<p>Sin embargo, aún presenta limitaciones importantes en cuanto a las posibilidades que ofrece y que dificultan mucho tareas cotidianas para los administradores de sistema como la personalización de la configuración o el arranque desde instantáneas.</p>
+<p>Tanto por estos motivos como por fidelidad a los principios en los que se basan los sistemas operativos GNU/Linux, otras muchas distribuciones se han mostrado reacias a incorporar <code>systemd-boot</code> o, directamente, cualquier elemento de systemd a sus sistemas operativos.</p>
+<p>Además hay que tener en cuenta que, entre la comunidad de desarrolladores y usuarios de software libre parecen triunfar más otras alternativas al gestor de arranque GRUB como, por ejemplo, <a href="http://www.rodsbooks.com/refind/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>rEFInd</a>.</p>
+<p>Será cuestión de tiempo, por tanto, ver si el uso de <code>systemd-boot</code> se estandariza ya sea por las preferencias de los usuarios o por la firme apuesta de las principales distribuciones, sobre todo las pertenecientes al ecosistema Red Hat y las derivadas de Debian, o si, por el contrario, el GRUB de GNU mantiene su hegemonía entre los sistemas operativos GNU/Linux.</p>
+<h1 id="fuentes">Fuentes</h1>
+<p><a href="https://systemd.io/BOOT/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd-boot UEFI Boot Manager</a></p>
+<p><a href="https://wiki.archlinux.org/title/Systemd-boot"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd-boot (ArchLinux Wiki)</a></p>
+<p><a href="https://en.opensuse.org/Systemd-boot"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd-boot (OpenSUSE Wiki)</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Systemd-boot"
+
+
+
+
+ target="_blank"
+ 
+
+
+>systemd-boot (Wikipedia)</a></p>
+<p><a href="https://forum.endeavouros.com/t/grub-or-systemd-boot/14548/2"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Grub or Systemd-boot? (endeavouros forum)</a></p>
+<p><a href="https://blog.bofh.it/debian/id_465"
+
+
+
+
+ target="_blank"
+ 
+
+
+>I replaced GRUB with systemd-boot</a></p>
+<p><a href="https://p5r.uk/blog/2020/using-systemd-boot-on-debian-bullseye.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Using <code>systemd-boot</code> on Debian Bullseye</a></p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/systemd/">
+                        Systemd
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/grub/">
+                        Grub
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/systemd-boot/">
+                        Systemd boot
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/gestores-de-arranque/">
+                        Gestores de arranque
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
+                        Administración de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2025-02-07-systemdboot%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2025-02-07-systemdboot%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2025-02-07-systemdboot%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2025-02-07-systemdboot%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
+      Convulsión en el mundo del software libre
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-03-acl-router-cisco/">
+      Configuración de ACL en routers Cisco
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-acl-router-cisco/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
+      Cómo simular un servidor web en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-w&#43;aS42D2&#43;B&#43;Jix&#43;joZ7pAua1vbu/pRK/IhoP55b8n3w="
+  src="/js/script-lazy.min.c3e692e360f6f81f898b1fa3a19ee902e6b5bdbbbfa512bf221a0fe796fc9f7c.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>
