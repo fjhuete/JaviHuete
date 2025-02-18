@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Roundcube on Javi Huete</title>
+    <link>/tags/roundcube/</link>
+    <description>Recent content in Roundcube on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/roundcube/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de Roundcube usando Docker</title>
+      <link>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</guid>
+      <description>&lt;p&gt;Para conectarse a un servidor de correo propio se puede usar un cliente de escritorio o, en este caso, un webmail. En este ejemplo se usa el cliente de correo web se puede desplegar usando Docker. En este caso, se usa la imagen de la aplicación web de correo roundcube.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

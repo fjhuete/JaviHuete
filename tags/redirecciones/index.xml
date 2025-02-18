@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redirecciones on Javi Huete</title>
+    <link>/tags/redirecciones/</link>
+    <description>Recent content in Redirecciones on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/redirecciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de un servidor de correos satélite, redirecciones y alias</title>
+      <link>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</guid>
+      <description>&lt;p&gt;Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &amp;ldquo;oficial&amp;rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

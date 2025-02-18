@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rocky on Javi Huete</title>
+    <link>/tags/rocky/</link>
+    <description>Recent content in Rocky on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/rocky/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Envío de correos desde una aplicación web</title>
+      <link>/blog/servicios/2025-02-18-envio-correos-aplicacion-web/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-envio-correos-aplicacion-web/</guid>
+      <description>&lt;p&gt;En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &amp;ldquo;oficial&amp;rdquo; de la red. Este servidor de correo está en otra máquina de la red.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

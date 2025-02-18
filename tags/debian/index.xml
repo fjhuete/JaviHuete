@@ -6,8 +6,57 @@
     <description>Recent content in Debian on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Fri, 07 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de herramientas antispam en el servidor de correos</title>
+      <link>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</guid>
+      <description>&lt;p&gt;Cuando se configura un servidor de correos de Internet es importante configurarlo de manera correcta para que pueda usar los mecanismos disponibles para filtrar el spam que recibe.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración del servidor de correos para permitir el uso de clientes externos</title>
+      <link>/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/</guid>
+      <description>&lt;p&gt;En este post se abordan algunos de los pasos que hay que seguir para configurar un servidor de correo para que se pueda usar con clientes externos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de Roundcube usando Docker</title>
+      <link>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</guid>
+      <description>&lt;p&gt;Para conectarse a un servidor de correo propio se puede usar un cliente de escritorio o, en este caso, un webmail. En este ejemplo se usa el cliente de correo web se puede desplegar usando Docker. En este caso, se usa la imagen de la aplicación web de correo roundcube.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Envío de correos desde una aplicación web</title>
+      <link>/blog/servicios/2025-02-18-envio-correos-aplicacion-web/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-envio-correos-aplicacion-web/</guid>
+      <description>&lt;p&gt;En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &amp;ldquo;oficial&amp;rdquo; de la red. Este servidor de correo está en otra máquina de la red.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de un servidor de correos satélite, redirecciones y alias</title>
+      <link>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</guid>
+      <description>&lt;p&gt;Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &amp;ldquo;oficial&amp;rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación y configuración de un servidor de correos de Internet</title>
+      <link>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
+      <description>&lt;p&gt;Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación y configuración de un servidor de correos postfix</title>
+      <link>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
+      <description>&lt;p&gt;Para instalar un servidor de correos &lt;code&gt;postfix&lt;/code&gt; en Debian se instala el paquete &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Arranque desde el grub ante errores en el sistema</title>
       <link>/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/</link>
@@ -73,9 +122,9 @@
     </item>
     <item>
       <title>Instalación y configuración de un servidor DNS con Bind9</title>
-      <link>/blog/servicios/2025-01-16-instalaci-configuracion-dns-bind9/</link>
+      <link>/blog/servicios/2025-01-16-instalacion-configuracion-dns-bind9/</link>
       <pubDate>Thu, 16 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2025-01-16-instalaci-configuracion-dns-bind9/</guid>
+      <guid>/blog/servicios/2025-01-16-instalacion-configuracion-dns-bind9/</guid>
       <description>&lt;p&gt;El servidor Bind9 es uno de los servidores DNS más usados. Aunque todos los proveedores de Internet cuentan con servidores DNS para permitir la navegación usando direcciones URL por Internet, en muchas ocasiones puede ser interesante contar con un servidor DNS configurado para la resolución de nombres en la red local.&lt;/p&gt;</description>
     </item>
     <item>

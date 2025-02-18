@@ -3,7 +3,91 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/alias/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/correo/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/dkim/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/dmarc/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/dns/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/dovecot/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-02-18-envio-correos-aplicacion-web/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/postifx/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/redirecciones/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/rocky/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/roundcube/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/servicios/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/servicios/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/servicios-de-red-e-internet/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/spamassassin/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/spf/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
@@ -15,15 +99,6 @@
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/debian/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/gestores-de-arranque/</loc>
@@ -49,12 +124,6 @@
   </url><url>
     <loc>/tags/systemd-boot/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
-    <lastmod>2025-01-29T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/cifrado/</loc>
     <lastmod>2025-01-29T01:00:00+02:00</lastmod>
@@ -116,9 +185,6 @@
     <loc>/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/dns/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/implantaci%C3%B3n/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
@@ -140,15 +206,6 @@
     <loc>/tags/rocky-linux/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/servicios/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/servicios/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/servicios-de-red-e-internet/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/servidor-dns/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
@@ -161,7 +218,7 @@
     <loc>/tags/wordpress/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/blog/servicios/2025-01-16-instalaci-configuracion-dns-bind9/</loc>
+    <loc>/blog/servicios/2025-01-16-instalacion-configuracion-dns-bind9/</loc>
     <lastmod>2025-01-16T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/autentificaci%C3%B3n/</loc>

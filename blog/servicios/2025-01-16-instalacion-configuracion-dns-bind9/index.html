@@ -1,0 +1,1913 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Instalación y configuración de un servidor DNS con Bind9</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Instalación y configuración de un servidor DNS con Bind9" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/servicios/2025-01-16-instalacion-configuracion-dns-bind9/" />
+
+
+<meta name="twitter:title" content="Instalación y configuración de un servidor DNS con Bind9" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Instalación y configuración de un servidor DNS con Bind9
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/servicios/"
+                    class=""
+                    >Servicios
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              January 16, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#instalación-y-configuración-básica-de-bind9">Instalación y configuración básica de Bind9</a>
+      <ol>
+        <li><a href="#configuración-básica-de-bind9">Configuración básica de bind9</a></li>
+        <li><a href="#prueba-de-funcionamiento">Prueba de funcionamiento</a></li>
+        <li><a href="#configuración-de-una-zona-directa-de-dominio-en-el-servidor-dns">Configuración de una zona directa de dominio en el servidor DNS</a></li>
+        <li><a href="#configuración-de-una-zona-inversa-en-el-dns">Configuración de una zona inversa en el DNS</a></li>
+        <li><a href="#demostración-del-funcionamiento-del-dns">Demostración del funcionamiento del DNS</a>
+          <ol>
+            <li><a href="#consulta-de-la-ip-de-un-servicio">Consulta de la IP de un servicio</a></li>
+            <li><a href="#consulta-del-servidor-dns-con-autoridad-del-dominio">Consulta del servidor DNS con autoridad del dominio</a></li>
+            <li><a href="#consulta-del-servidor-de-correo-del-dominio">Consulta del servidor de correo del dominio</a></li>
+            <li><a href="#consulta-de-una-resolución-inversa">Consulta de una resolución inversa</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#instalación-y-configuración-de-un-servidor-dns-esclavo">Instalación y configuración de un servidor DNS esclavo</a></li>
+    <li><a href="#configuración-de-una-subdelegación-de-dominio">Configuración de una subdelegación de dominio</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>El servidor Bind9 es uno de los servidores DNS más usados. Aunque todos los proveedores de Internet cuentan con servidores DNS para permitir la navegación usando direcciones URL por Internet, en muchas ocasiones puede ser interesante contar con un servidor DNS configurado para la resolución de nombres en la red local.</p>
+<h1 id="instalación-y-configuración-básica-de-bind9">Instalación y configuración básica de Bind9</h1>
+<p>En este post se usa una máquina que se llama dns1.javi.org para instalar y configurar el servidor DNS. Para darle el FQDN a la máquina se añade una línea en el fichero /etc/hosts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">127.0.1.1	dns1.javi.org dns1
+</span></span></span></code></pre></div><p>Para instalar el servidor DNS se usa el gestor de paquetes <code>apt</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install bind9
+</span></span></span></code></pre></div><h2 id="configuración-básica-de-bind9">Configuración básica de bind9</h2>
+<p>Aunque la configuración por defecto de bind9 permite usar el servidor DNS desde el momento en el que se instala, se pueden modificar algunos parámetros como, por ejemplo, el parámetro <code>options</code> del fichero /etc/default/named para evitar la resolución de direcciones IPv6.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">OPTIONS=&#34;-4 -f -u bind&#34;
+</span></span></span></code></pre></div><p>Como bind9 sólo acepta consultas desde la red local por defecto, para poder usarlo en entornos como OpenStack, donde se usan IP flotantes o para poder consultar usando una conexión a través de una VPN, se debe modificar el parámetro <code>allow-query</code> del fichero /etc/bind/named.conf.options.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">allow-query {172.201.0.0/16; 172.22.0.0/16;};
+</span></span></span></code></pre></div><p>Para que el servidor funcione correctamente en este entorno, también es necesario desactivar el sistema de seguridad <code>dnssec-validation</code> en este fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">dnssec-validation no;
+</span></span></span></code></pre></div><h2 id="prueba-de-funcionamiento">Prueba de funcionamiento</h2>
+<p>Para comprobar el funcionamiento del servidor DNS se consulta la resolución del nombre de dominio de una web, por ejemplo, &ldquo;<a href="https://www.marca.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.marca.es</a>&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig @172.22.201.193 www.marca.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; @172.22.201.193 www.marca.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 40638
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: edae20696a6fbaf9010000006784c4660eddb44059fca349 (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;www.marca.es.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">www.marca.es.		256	IN	A	193.110.128.199
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 132 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 08:43:27 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 85
+</span></span></span></code></pre></div><p>La consulta ha tardado 132 milisegundos. Para averiguar la IP de <code>www.marca.es</code> el servidor ha consultado, primero, a un servidor DNS raíz (<code>.</code>); después al servidor con autoridad sobre la zona <code>.es.</code>; y, por último, al servidor con autoridad sobre la zona <code>marca.es.</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig @172.22.201.193 www.marca.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; @172.22.201.193 www.marca.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 39396
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: b6936c508548bcc9010000006784c4f0c6a5c63c576d6598 (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;www.marca.es.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">www.marca.es.		118	IN	A	193.110.128.199
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 4 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 08:45:45 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 85
+</span></span></span></code></pre></div><p>Al volver a realizar la consulta sólo tarda 4 milisegundos. Esto se debe a que el servidor DNS ha guardado la información en la caché y, por tanto, para resolver la dirección IP en este caso sólo ha tenido que consultar sus propios registros.</p>
+<h2 id="configuración-de-una-zona-directa-de-dominio-en-el-servidor-dns">Configuración de una zona directa de dominio en el servidor DNS</h2>
+<p>Para crear una zona directa para un dominio en bind9 se define la zona en el fichero /etc/bind/named.conf.local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><p>A continaución se crea el fichero de zona en el directorio /var/cache/bind a partir de la plantilla /etc/bind/db.empty.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@dns1:~$ sudo cp /etc/bind/db.empty /var/cache/bind/db.javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@dns1:~$ sudo nano /var/cache/bind/db.javi.org
+</span></span></span></code></pre></div><p>Con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">	</span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">	</span>dns1.javi.org. root.javi.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			      </span><span style="color:#ed9d13">1</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			 </span><span style="color:#ed9d13">604800</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			</span><span style="color:#ed9d13">2419200</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">	</span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">MX</span><span style="color:#666">	</span><span style="color:#ed9d13">10</span><span style="color:#666">	</span>correo.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span>javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">dns1</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.201.193</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">correo</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.200.101</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">asterix</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.200.102</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">obelix</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.200.103</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">www</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">asterix</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">informatica</span><span style="color:#666">		</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">asterix</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">ftp</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">	</span><span style="color:#a61717;background-color:#e3d2d2">obelix</span><span style="color:#666">
+</span></span></span></code></pre></div><h2 id="configuración-de-una-zona-inversa-en-el-dns">Configuración de una zona inversa en el DNS</h2>
+<p>Esta zona también se declara en el fichero /etc/bind/named.conf.local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><p>En este fichero también se descomenta la línea</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span></code></pre></div><p>Esto evita que el DNS intente hacer la resolución inversa de las IP privadas preguntando a un servidor raíz.</p>
+<p>Además, en el fichero /etc/bind/zones.rfc1918 hay que comentar la línea referente a la IP privada de la red cuyas direcciones sí debe resolver el servidor DNS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">//zone &#34;22.172.in-addr.arpa&#34;  { type master; file &#34;/etc/bind/db.empty&#34;; };
+</span></span></span></code></pre></div><p>Por útlimo, se crea el fichero de zona en /var/cache/bind/db.172.22.0.0 a partir de la plantilla en /etc/bind/db.empty.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">	</span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">	</span>dns1.javi.org. root.javi.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			      </span><span style="color:#ed9d13">1</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			 </span><span style="color:#ed9d13">604800</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			</span><span style="color:#ed9d13">2419200</span><span style="color:#666">		</span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">			  </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">	</span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span><span style="color:#ed9d13">22</span>.172.in-addr.arpa.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">193</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">201</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">	</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">101</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">200</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">	</span>correo.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">102</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">200</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">	</span>asterix.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">103</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">200</span><span style="color:#666">			</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">	</span>obelix.javi.org.<span style="color:#666">
+</span></span></span></code></pre></div><h2 id="demostración-del-funcionamiento-del-dns">Demostración del funcionamiento del DNS</h2>
+<h3 id="consulta-de-la-ip-de-un-servicio">Consulta de la IP de un servicio</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig www.javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; www.javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 41239
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: 6e103d4f5bfd34d9010000006784ccff50d9a71428c955be (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;www.javi.org.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">www.javi.org.		86400	IN	CNAME	asterix.javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">asterix.javi.org.	86400	IN	A	172.22.200.102
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 8 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 09:20:08 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 107
+</span></span></span></code></pre></div><h3 id="consulta-del-servidor-dns-con-autoridad-del-dominio">Consulta del servidor DNS con autoridad del dominio</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig NS javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; NS javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 22504
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: 18e226f3f575cfa3010000006784cd6c22f38adb1d38e17d (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;javi.org.			IN	NS
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">javi.org.		86400	IN	NS	dns1.javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ADDITIONAL SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dns1.javi.org.		86400	IN	A	172.22.201.193
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 4 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 09:21:58 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 100
+</span></span></span></code></pre></div><h3 id="consulta-del-servidor-de-correo-del-dominio">Consulta del servidor de correo del dominio</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig MX javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; MX javi.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 5583
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: 0b5cb5134bc0944b010000006784cdb40b2da6360f48f0b5 (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;javi.org.			IN	MX
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">javi.org.		86400	IN	MX	10 correo.javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ADDITIONAL SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">correo.javi.org.	86400	IN	A	172.22.200.101
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 4 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 09:23:09 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 104
+</span></span></span></code></pre></div><h3 id="consulta-de-una-resolución-inversa">Consulta de una resolución inversa</h3>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ dig -x 172.22.200.102
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.28-1~deb12u2-Debian &lt;&lt;&gt;&gt; -x 172.22.200.102
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 64988
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: d7dd86865fb75af6010000006784ce93495573bf53185e65 (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;102.200.22.172.in-addr.arpa.	IN	PTR
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">102.200.22.172.in-addr.arpa. 86400 IN	PTR	asterix.javi.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 4 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 172.22.201.193#53(172.22.201.193) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Mon Jan 13 09:26:52 CET 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 114
+</span></span></span></code></pre></div><h1 id="instalación-y-configuración-de-un-servidor-dns-esclavo">Instalación y configuración de un servidor DNS esclavo</h1>
+<p>Para ofrecer el servicio de DNS en alta disponibilidad dentro de la red local se debe configurar un segundo servidor como servidor DNS esclavo. Para ello, se usa una segunda máquina que, en este caso, se llama dns2.javi.org.</p>
+<p>En esta máquina también se instala el servidor DNS <code>bind9</code> y se configura como servidor esclavo.</p>
+<p>Para ello, en primer lugar, se deshabilitan las transferencias de zona en el fichero /etc/bind/named.conf.options</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">options {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     ...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     allow-transfer { none; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">     ...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span></code></pre></div>
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice warning">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+      </svg><p>Warning</p>
+  </div>
+  <div class="notice-body"><p>Esta configuración se debe hacer, en general, en todos los servidores que no tengan otros servidores esclavos a los que deban transferirles información de sus zonas de dominio.</p></div>
+</div>
+
+<p>En cambio, en el servidor DNS maestro se debe indicar a qué dirección IP se permite realizar una transferencia de zonas. En este caso, se indica la dirección del servidor esclavo. También se activa la opción que hace que el maestro envíe una notificación a los servidores esclavos cada vez que se actualiza su configuración.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-transfer { 172.22.200.110; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    notify yes;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    allow-transfer { 172.22.200.110; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    notify yes;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span></code></pre></div><p>En el servidor esclavo también se deben definir las zonas que se transfieren desde el servidor maestro y sobra las que el DNS tiene dominio. Con la opción <code>master</code> se indica la dirección IP del servidor maestro desde el que se transfiere la información de las zonas al esclavo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">include &#34;/etc/bind/zones.rfc1918&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;javi.org&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type slave;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    masters { 172.22.200.100; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zone &#34;22.172.in-addr.arpa&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type slave;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.172.22.0.0&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    masters { 172.22.200.100; };
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};	
+</span></span></span></code></pre></div><p>En el servidor DNS maestro también hay que añadir la información del nuevo servidor DNS de la red en el fichero de zona /var/cache/bind/db.javi.org</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>dns1.javi.org. root.javi.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                              </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                        </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns2.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">MX</span><span style="color:#666">	</span><span style="color:#ed9d13">10</span><span style="color:#666">	</span>correo.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span>javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">dns1</span><span style="color:#666">		</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.200.100</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">dns2</span><span style="color:#666">		</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">	</span><span style="color:#3677a9">172.22.200.110</span><span style="color:#666">
+</span></span></span></code></pre></div><p>Y también en el fichero de zona de resolución inversa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>dns1.javi.org. root.javi.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                               </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                           </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                           </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">		</span>dns2.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span><span style="color:#ed9d13">22</span>.172.in-addr.arpa.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">100</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">200</span><span style="color:#666">		</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">		</span>dns1.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#ed9d13">110</span><span style="color:#a61717;background-color:#e3d2d2">.</span><span style="color:#ed9d13">200</span><span style="color:#666">		</span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">	</span><span style="color:#6ab825;font-weight:bold">PTR</span><span style="color:#666">		</span>dns2.javi.org.<span style="color:#666">
+</span></span></span></code></pre></div><p>Cada vez que se modifique la información de la zona sobre la que tiene autoridad el servidor DNS maestro se debe aumentar el número de serie del fichero de configuración de zona. De esta forma, el servidor DNS esclavo actualizará sus registros para que sean idénticos a los del maestro.</p>
+<h1 id="configuración-de-una-subdelegación-de-dominio">Configuración de una subdelegación de dominio</h1>
+<p>El primer paso para configurar la delegación de un subdominio a un servidor DNS diferente al servidor DNS del dominio principal es añadir al fichero de zona del dominio principal las líneas necearias para realizar la delegación del subdominio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">$</span>ORIGIN informatica.javi.org.
+</span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">@                       IN      NS      dns3
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dns3                    IN      A       172.22.200.203
+</span></span></span></code></pre></div><p>Después, en el servidor DNS delegado se debe crear, primero, la configuración básica del servidor DNS en el fichero /etc/bind/named.conf.local.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zone &#34;informatica.javi.org&#34; { 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    type master;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    file &#34;db.informatica.javi.org&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">};
+</span></span></span></code></pre></div><p>Y, a continuación, hay que crear también el fichero de zona /var/cache/bind/db.informatica.javi.org</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bind" data-lang="bind"><span style="display:flex;"><span><span style="color:#bbb">$TTL</span><span style="color:#666">    </span><span style="color:#ed9d13">86400</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">SOA</span><span style="color:#666">     </span>dns.informatica.javi.org. root.informatica.javi.org. (<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                              </span><span style="color:#ed9d13">1</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Serial</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                         </span><span style="color:#ed9d13">604800</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Refresh</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Retry</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                        </span><span style="color:#ed9d13">2419200</span><span style="color:#666">         </span><span style="color:#999;font-style:italic">; Expire</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                          </span><span style="color:#ed9d13">86400</span><span style="color:#666"> </span>)<span style="color:#666">       </span><span style="color:#999;font-style:italic">; Negative Cache TTL</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">NS</span><span style="color:#666">              </span>dns.informatica.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">@</span><span style="color:#666">       </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">MX</span><span style="color:#666">      </span><span style="color:#ed9d13">10</span><span style="color:#666">      </span>mail.informatica.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#bbb">$ORIGIN</span><span style="color:#666"> </span>informatica.javi.org.<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">dns3</span><span style="color:#666">                    </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">       </span><span style="color:#3677a9">172.22.200.203</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">mail</span><span style="color:#666">                    </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">       </span><span style="color:#3677a9">172.22.200.201</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">web</span><span style="color:#666">                     </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">A</span><span style="color:#666">       </span><span style="color:#3677a9">172.22.200.202</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#447fcf;text-decoration:underline">www</span><span style="color:#666">                     </span><span style="color:#6ab825;font-weight:bold">IN</span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">CNAME</span><span style="color:#666">   </span><span style="color:#a61717;background-color:#e3d2d2">web</span><span style="color:#666">
+</span></span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/dns/">
+                        DNS
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/bind9/">
+                        Bind9
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas/">
+                        Administración de sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servicios/">
+                        Servicios
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/servicios-de-red-e-internet/">
+                        Servicios de red e internet
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fservicios%2f2025-01-16-instalacion-configuracion-dns-bind9%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fservicios%2f2025-01-16-instalacion-configuracion-dns-bind9%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fservicios%2f2025-01-16-instalacion-configuracion-dns-bind9%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fservicios%2f2025-01-16-instalacion-configuracion-dns-bind9%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+      Conceptos básicos del gestor de paquetes apt
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+      Recolección centralizada de logs de sistema mediante jouranld
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-6WomfiWXziApPR9exxy3xjT2w9Za&#43;OYxJPD02L7xe5A="
+  src="/js/script-lazy.min.e96a267e2597ce20293d1f5ec71cb7c634f6c3d65af8e63124f0f4d8bef17b90.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

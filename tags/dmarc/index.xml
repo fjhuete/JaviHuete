@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dmarc on Javi Huete</title>
+    <link>/tags/dmarc/</link>
+    <description>Recent content in Dmarc on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/dmarc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración de herramientas antispam en el servidor de correos</title>
+      <link>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</guid>
+      <description>&lt;p&gt;Cuando se configura un servidor de correos de Internet es importante configurarlo de manera correcta para que pueda usar los mecanismos disponibles para filtrar el spam que recibe.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración del servidor de correos para permitir el uso de clientes externos</title>
+      <link>/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/</guid>
+      <description>&lt;p&gt;En este post se abordan algunos de los pasos que hay que seguir para configurar un servidor de correo para que se pueda usar con clientes externos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación y configuración de un servidor de correos de Internet</title>
+      <link>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
+      <description>&lt;p&gt;Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

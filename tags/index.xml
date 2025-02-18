@@ -6,8 +6,127 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Fri, 07 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración De Sistemas</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alias</title>
+      <link>/tags/alias/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/alias/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Correo</title>
+      <link>/tags/correo/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/correo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dkim</title>
+      <link>/tags/dkim/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/dkim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dmarc</title>
+      <link>/tags/dmarc/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/dmarc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dns</title>
+      <link>/tags/dns/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/dns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dovecot</title>
+      <link>/tags/dovecot/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/dovecot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postifx</title>
+      <link>/tags/postifx/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/postifx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redirecciones</title>
+      <link>/tags/redirecciones/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/redirecciones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rocky</title>
+      <link>/tags/rocky/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/rocky/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Roundcube</title>
+      <link>/tags/roundcube/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/roundcube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios</title>
+      <link>/tags/servicios/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servicios De Red E Internet</title>
+      <link>/tags/servicios-de-red-e-internet/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/servicios-de-red-e-internet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spamassassin</title>
+      <link>/tags/spamassassin/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/spamassassin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spf</title>
+      <link>/tags/spf/</link>
+      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/spf/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Administración De Sistemas Operativos</title>
       <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
@@ -20,13 +139,6 @@
       <link>/tags/arranque/</link>
       <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
       <guid>/tags/arranque/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debian</title>
-      <link>/tags/debian/</link>
-      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/debian/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +188,6 @@
       <link>/tags/systemd-boot/</link>
       <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
       <guid>/tags/systemd-boot/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Administración De Sistemas</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas/</link>
-      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
       <description></description>
     </item>
     <item>
@@ -177,13 +282,6 @@
       <description></description>
     </item>
     <item>
-      <title>Dns</title>
-      <link>/tags/dns/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/dns/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Implantación</title>
       <link>/tags/implantaci%C3%B3n/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
@@ -209,20 +307,6 @@
       <link>/tags/rocky-linux/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/rocky-linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Servicios</title>
-      <link>/tags/servicios/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/servicios/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Servicios De Red E Internet</title>
-      <link>/tags/servicios-de-red-e-internet/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/servicios-de-red-e-internet/</guid>
       <description></description>
     </item>
     <item>
