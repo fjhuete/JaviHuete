@@ -3,18 +3,93 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/almacenamiento/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/bind-mount/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/comandos-b%C3%A1sicos/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/creaci%C3%B3n-de-im%C3%A1genes/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/docker-ce/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/docker-compose/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantacion/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/implantacion/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantaci%C3%B3n-de-aplicaciones-web/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-24-implantacion-aplicaciones-php-docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-25-implantacion-aplicaciones-python-docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/instalaci%C3%B3n/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/lamp/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/mariadb/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/moby/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/nextcloud/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/php/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vol%C3%BAmenes/</loc>
+    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/alias/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</loc>
@@ -39,9 +114,6 @@
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/dns/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/docker/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/dovecot/</loc>
@@ -84,9 +156,6 @@
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/spf/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
@@ -275,9 +344,6 @@
     <loc>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</loc>
     <lastmod>2025-01-14T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/almacenamiento/</loc>
-    <lastmod>2025-01-13T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/cloud/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
@@ -356,15 +422,6 @@
     <loc>/tags/framework/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/implantacion/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/implantacion/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/implantaci%C3%B3n-de-aplicaciones-web/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
@@ -372,9 +429,6 @@
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/nginx/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administracion-sistemas/</loc>
@@ -425,9 +479,6 @@
     <loc>/tags/haproxy/</loc>
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/instalaci%C3%B3n/</loc>
-    <lastmod>2024-11-24T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/instalaci%C3%B3n-desatendida/</loc>
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
@@ -435,9 +486,6 @@
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/iventoy/</loc>
-    <lastmod>2024-11-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/php/</loc>
     <lastmod>2024-11-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/preseed/</loc>
@@ -459,9 +507,6 @@
     <lastmod>2024-11-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/flask/</loc>
-    <lastmod>2024-11-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/lamp/</loc>
     <lastmod>2024-11-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/migraci%C3%B3n-de-aplicaciones/</loc>
@@ -794,14 +839,8 @@
     <loc>/tags/dhcp/</loc>
     <lastmod>2024-03-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/mariadb/</loc>
-    <lastmod>2024-03-24T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/servidores/</loc>
     <lastmod>2024-03-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/comandos-b%C3%A1sicos/</loc>
-    <lastmod>2024-03-17T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/sistemas/2024-03-17-comandos-control-procesos/</loc>
     <lastmod>2024-03-17T01:00:00+02:00</lastmod>

@@ -6,8 +6,15 @@
     <description>Recent content in Instalación on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 24 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/instalaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de Docker</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/</guid>
+      <description>Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</description>
+    </item>
     <item>
       <title>Instalación desatendida por red de Debian12</title>
       <link>/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/</link>

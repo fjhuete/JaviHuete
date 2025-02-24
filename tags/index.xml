@@ -6,8 +6,127 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Almacenamiento</title>
+      <link>/tags/almacenamiento/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/almacenamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bind Mount</title>
+      <link>/tags/bind-mount/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/bind-mount/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comandos Básicos</title>
+      <link>/tags/comandos-b%C3%A1sicos/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/comandos-b%C3%A1sicos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Creación De Imágenes</title>
+      <link>/tags/creaci%C3%B3n-de-im%C3%A1genes/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/creaci%C3%B3n-de-im%C3%A1genes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker CE</title>
+      <link>/tags/docker-ce/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/docker-ce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker Compose</title>
+      <link>/tags/docker-compose/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantacion</title>
+      <link>/tags/implantacion/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/implantacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantación De Aplicaciones Web</title>
+      <link>/tags/implantaci%C3%B3n-de-aplicaciones-web/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/implantaci%C3%B3n-de-aplicaciones-web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Instalación</title>
+      <link>/tags/instalaci%C3%B3n/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/instalaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lamp</title>
+      <link>/tags/lamp/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/lamp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mariadb</title>
+      <link>/tags/mariadb/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/mariadb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moby</title>
+      <link>/tags/moby/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/moby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nextcloud</title>
+      <link>/tags/nextcloud/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/nextcloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PHP</title>
+      <link>/tags/php/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/php/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volúmenes</title>
+      <link>/tags/vol%C3%BAmenes/</link>
+      <pubDate>Mon, 24 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/vol%C3%BAmenes/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Administración De Sistemas</title>
       <link>/tags/administraci%C3%B3n-de-sistemas/</link>
@@ -55,13 +174,6 @@
       <link>/tags/dns/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
       <guid>/tags/dns/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     <item>
@@ -422,13 +534,6 @@
       <description></description>
     </item>
     <item>
-      <title>Almacenamiento</title>
-      <link>/tags/almacenamiento/</link>
-      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/almacenamiento/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Cloud</title>
       <link>/tags/cloud/</link>
       <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
@@ -562,20 +667,6 @@
       <description></description>
     </item>
     <item>
-      <title>Implantacion</title>
-      <link>/tags/implantacion/</link>
-      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/implantacion/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Implantación De Aplicaciones Web</title>
-      <link>/tags/implantaci%C3%B3n-de-aplicaciones-web/</link>
-      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/implantaci%C3%B3n-de-aplicaciones-web/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>LEMP</title>
       <link>/tags/lemp/</link>
       <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
@@ -587,13 +678,6 @@
       <link>/tags/nginx/</link>
       <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
       <guid>/tags/nginx/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -688,13 +772,6 @@
       <description></description>
     </item>
     <item>
-      <title>Instalación</title>
-      <link>/tags/instalaci%C3%B3n/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/instalaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Instalación Desatendida</title>
       <link>/tags/instalaci%C3%B3n-desatendida/</link>
       <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
@@ -706,13 +783,6 @@
       <link>/tags/iventoy/</link>
       <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/iventoy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PHP</title>
-      <link>/tags/php/</link>
-      <pubDate>Sun, 24 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/php/</guid>
       <description></description>
     </item>
     <item>
@@ -748,13 +818,6 @@
       <link>/tags/flask/</link>
       <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/flask/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LAMP</title>
-      <link>/tags/lamp/</link>
-      <pubDate>Mon, 18 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/lamp/</guid>
       <description></description>
     </item>
     <item>
@@ -1269,24 +1332,10 @@
       <description></description>
     </item>
     <item>
-      <title>Mariadb</title>
-      <link>/tags/mariadb/</link>
-      <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/mariadb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Servidores</title>
       <link>/tags/servidores/</link>
       <pubDate>Sun, 24 Mar 2024 01:00:00 +0200</pubDate>
       <guid>/tags/servidores/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Comandos Básicos</title>
-      <link>/tags/comandos-b%C3%A1sicos/</link>
-      <pubDate>Sun, 17 Mar 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/comandos-b%C3%A1sicos/</guid>
       <description></description>
     </item>
     <item>
