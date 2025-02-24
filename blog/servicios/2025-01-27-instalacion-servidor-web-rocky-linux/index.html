@@ -1122,8 +1122,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
-      Autentificación SSH con cifrado asimétrico usando GPG
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
@@ -1146,8 +1146,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>
@@ -1159,8 +1159,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
-      Configuración NAT en routers Linux en Openstack
+    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
     </a>
   </h4>
   
@@ -1183,8 +1183,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
     Leer
   </a>
 </div>
@@ -1196,8 +1196,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
-      Almacenamiento en Docker
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
     </a>
   </h4>
   
@@ -1212,16 +1212,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/redes/"
             class="ms-1"
-            >Implantacion
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume el funcionamiento de los dos principales métodos de almacenamiento en Docker: los volúmenes y los bind mount</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
     Leer
   </a>
 </div>

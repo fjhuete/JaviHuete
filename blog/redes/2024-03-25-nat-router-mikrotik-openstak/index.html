@@ -1382,8 +1382,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
-      Configuración de un proxy inverso en Apache2 y Nginx
+    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
+      Guía básica de configuración de Nginx
     </a>
   </h4>
   
@@ -1406,8 +1406,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
     Leer
   </a>
 </div>
@@ -1419,8 +1419,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-      Cómo configurar un servidor DHCP en un router Cisco
+    <a href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
+      Certificado HTTP y SSL
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+      Recolección centralizada de logs de sistema mediante jouranld
     </a>
   </h4>
   
@@ -1435,53 +1472,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Redes
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
     Leer
   </a>
 </div>

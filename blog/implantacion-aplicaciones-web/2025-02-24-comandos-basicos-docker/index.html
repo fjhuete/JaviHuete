@@ -943,9 +943,9 @@
 </span></span></span></code></pre></div><p>A los contenedores se les pueden trasladar ficheros usando el comando <code>docker cp</code>. Para ello, se crea un fichero.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@docker:~$ nano info.php
 </span></span></span></code></pre></div><p>A continuación se rellena.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">&lt;?php
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">echo phpinfo();
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">?&gt;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?php
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">echo</span> phpinfo();
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">?&gt;</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span></code></pre></div><p>Y se pasa al contenedor.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@docker:~$ docker cp info.php php:/var/www/html
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">Successfully copied 2.05kB to php:/var/www/html
@@ -1159,8 +1159,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
-      Instalación de un CMS Python usando Django
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
+      Interconexión entre dos servidores Postgres
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
+      Migración de aplicaciones web PHP al entorno de producción
     </a>
   </h4>
   
@@ -1183,8 +1220,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
+  <p class="mb-6"><p>Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
     Leer
   </a>
 </div>
@@ -1196,8 +1233,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
-      Cómo importar dispositivos a GNS3
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
     </a>
   </h4>
   
@@ -1220,45 +1257,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/">
-      Uso de cloud-init con libvirt
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-uso-de-cloud-init-con-libvirt/">
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
     Leer
   </a>
 </div>
