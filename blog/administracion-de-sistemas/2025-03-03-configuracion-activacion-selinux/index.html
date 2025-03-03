@@ -1,0 +1,1875 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración y activación de SELinux</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración y activación de SELinux" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/" />
+
+
+<meta name="twitter:title" content="Configuración y activación de SELinux" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Configuración y activación de SELinux
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              March 3, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#instalación-y-configuración-de-los-servicios">Instalación y configuración de los servicios</a>
+      <ol>
+        <li><a href="#instalación-y-configuración-de-sshfs">Instalación y configuración de sshfs</a></li>
+        <li><a href="#instalación-y-configuración-de-samba">Instalación y configuración de samba</a>
+          <ol>
+            <li><a href="#configuración-de-selinux-para-permitir-el-acceso-remoto-al-servidor">Configuración de SELinux para permitir el acceso remoto al servidor</a></li>
+          </ol>
+        </li>
+        <li><a href="#instalación-y-configuración-de-nfs">Instalación y configuración de nfs</a></li>
+      </ol>
+    </li>
+    <li><a href="#habilitar-el-inicio-de-sesión-como-root-en-un-nuevo-puerto">Habilitar el inicio de sesión como root en un nuevo puerto</a>
+      <ol>
+        <li><a href="#configuración-de-selinux-para-permitir-el-acceso-por-ssh-en-el-nuevo-puerto">Configuración de SELinux para permitir el acceso por SSH en el nuevo puerto</a></li>
+      </ol>
+    </li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En esta entrada se configura el sistema de seguridad avanzada de SELinux en un sistema operativo Rocky Linux 9 para permitir el uso de diferentes protocolos de comunicación en red.</p>
+<h1 id="instalación-y-configuración-de-los-servicios">Instalación y configuración de los servicios</h1>
+<h2 id="instalación-y-configuración-de-sshfs">Instalación y configuración de sshfs</h2>
+<p>Usando el escenario con el que ya se ha trabajado en otros posts, en este caso, el servidor sshfs será la máquina <code>zoro</code> (Rocky Linux 9) y el cliente es <code>luffy</code> (Debian 12). Para poder montar un directorio del servidor en el cliente, primero, se debe instalar el paquete <code>sshfs</code> en el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install sshfs
+</span></span></code></pre></div><p>A continuación, se crea en el cliente un directorio que será el punto de montaje del directorio compartido por el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir zoro
+</span></span></code></pre></div><p>En el servidor se crea el directorio que se va a compartir con el cliente y se le da su propiedad al usuario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /srv/compartido
+</span></span><span style="display:flex;"><span>sudo chown -R usuario: /srv/compartido/
+</span></span></code></pre></div><p>Para montar el directorio compartido en el cliente de forma no persistente, se usa el comando <code>sshfs</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sshfs zoro:/srv/compartido zoro/
+</span></span></code></pre></div><p>Así, el directorio compartido por el servidor se monta en el punto de montaje indicado en el cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ df -Th
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Filesystem           Type        Size  Used Avail Use% Mounted on
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zoro:/srv/compartido fuse.sshfs   14G  1.7G   13G  12% /home/usuario/zoro
+</span></span></span></code></pre></div><p>Y, por tanto, el cliente puede tener acceso al contenido del directorio compartido en el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ ls -l zoro/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 usuario usuario 33 Feb  1 11:17 fichero.txt
+</span></span></span></code></pre></div><p>Con el comando <code>mount</code> podemos comprobar las opciones con las que se ha montado este sistema de archivos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zoro:/srv/compartido on /home/usuario/zoro type fuse.sshfs (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+</span></span></span></code></pre></div><p>Para hacer este montaje persistente se puede añadir la siguiente entrada al fichero /etc/fstab del cliente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sshfs#usuario@zoro:/srv/compartido /home/usuario/zoro fuse defaults,allow_other,IdentityFile=/home/usuario/.ssh/id_rsa 0 0
+</span></span></span></code></pre></div>
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>Aunque al montar el sistema de ficheros remoto con el comando <code>sshfs</code> se puede usar la clave privada herredada al acceder al cliente con <code>ssh -A</code>, cuando el montaje se especifica en el fichero /etc/fstab de forma persistente es necesario que la clave privada con la que se conectan el cliente y el servidor esté presente en el cliente. Además, este fichero debe contar con permisos restrictivos como <code>600</code> para evitar que otros usuarios diferentes al propietario puedan acceder al fichero. Por último, el fichero se debe indicar en la línea de montaje del fichero fstab como se muestra en el ejemplo.</p></div>
+</div>
+
+<h2 id="instalación-y-configuración-de-samba">Instalación y configuración de samba</h2>
+<p>Para configurar un servidor samba en el servidor Rocky Linux 9 es necesario instalar el paquete <code>samba</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf update
+</span></span><span style="display:flex;"><span>sudo dnf install samba
+</span></span></code></pre></div><p>En el servidor, se crea el directorio que se compartirá a través de samba y se la da su propiedad al usuario sin privilegios <code>usuario</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /srv/compartido
+</span></span><span style="display:flex;"><span>sudo chown usuario: /srv/compartido/
+</span></span></code></pre></div><p>En el fichero /etc/samba/smb.conf se puede configurar el directorio compartido desde el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[compartido]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#bbb">path</span> = <span style="color:#ed9d13">/srv/compartido
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">        browsable = yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">        writable = yes</span>
+</span></span></code></pre></div><p>Por último, para activar y habilitar el servicio samba se usa systemd.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl start smb nmb
+</span></span><span style="display:flex;"><span>sudo systemctl <span style="color:#24909d">enable</span> smb nmb
+</span></span></code></pre></div><p>Para poder compartir este sistema de ficheros, el servicio samba debe contar con algún usuario. Se puede crear un usuario específico para el servicio samba o, como en este caso, reutilizar usuarios del sistema operativo. Con el comando <code>smbpasswd</code> se crea una contraseña de samba para el usuario y se añade a la base de datos del servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo smbpasswd -a usuario
+</span></span><span style="display:flex;"><span>New SMB password:
+</span></span><span style="display:flex;"><span>Retype new SMB password:
+</span></span><span style="display:flex;"><span>Added user usuario.
+</span></span></code></pre></div><p>Por último, para aplicar los cambios, se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart smb nmb
+</span></span></code></pre></div><p>En el lado del cliente, es necesario instalar el paquete <code>cifs-utils</code> para poder conectarse al servidor samba.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install cifs-utils samba-common
+</span></span></code></pre></div><p>En el cliente también debe crearse un directorio que sirva de punto de montaje al sistema de ficheros compartido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir zoro
+</span></span></code></pre></div><p>Para montar el sistema de ficheros remoto compartido por el servidor samba en el cliente se usa el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -t cifs //zoro/compartido zoro -o <span style="color:#40ffff">user</span>=usuario
+</span></span></code></pre></div><h3 id="configuración-de-selinux-para-permitir-el-acceso-remoto-al-servidor">Configuración de SELinux para permitir el acceso remoto al servidor</h3>
+<p>Al montar el directorio compartido desde el servidor en el cliente aunque el directorio se monta, no se puede acceder a su contenido.</p>
+<p>En el servidor, se puede verificar el log de SELinux para comprobar que este problema se debe a las limitaciones del sistema avanzado de seguridad.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sealert -a /var/log/audit/audit.log
+</span></span></code></pre></div><p>La herramienta <code>sealert</code> propone tras este análisis varias acciones para solucionar este problema. La primera de ellas pasa por incluir el directorio compartido en el contexto de samba.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>semanage fcontext -a -t samba_share_t <span style="color:#ed9d13">&#39;/srv/compartido/&#39;</span>
+</span></span><span style="display:flex;"><span>restorecon -v <span style="color:#ed9d13">&#39;/srv/compartido/&#39;</span>
+</span></span></code></pre></div><p>Además, hay que poner a <code>1</code> los booleanos necesarios para que el servidor samba pueda exportar servidores tanto en modo de lectura como de lectura/escritura.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>setsebool -P samba_export_all_ro <span style="color:#3677a9">1</span>
+</span></span><span style="display:flex;"><span>setsebool -P samba_export_all_rw <span style="color:#3677a9">1</span>
+</span></span></code></pre></div><p>Por último, la herramienta <code>sealert</code> recomiand también instalar los módulos de SELinux necesarios para permitir la conexión desde el cliente samba al servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ausearch -c <span style="color:#ed9d13">&#39;smbd[172.16.0.1&#39;</span> --raw] | audit2allow -M my-smbd1721601
+</span></span><span style="display:flex;"><span>semodule -X <span style="color:#3677a9">300</span> -i my-smbd1721601.pp
+</span></span><span style="display:flex;"><span>ausearch -c <span style="color:#ed9d13">&#39;(l-upload)&#39;</span> --raw | audit2allow -M my-lupload
+</span></span><span style="display:flex;"><span>semodule -X <span style="color:#3677a9">300</span> -i my-lupload.pp
+</span></span></code></pre></div><p>De esta manera, el cliente monta en el directorio indicado el sistema de ficheros compartido por el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ df -Th
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Filesystem                           Type        Size  Used Avail Use% Mounted on
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">//zoro/compartido                    cifs        8.9G  1.3G  7.7G  14% /home/debian/zoro
+</span></span></span></code></pre></div><p>Y puede acceder al contenido de este sistema de ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ ls -l zoro/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 usuario usuario 33 Feb  1 11:17 fichero.txt
+</span></span></span></code></pre></div><p>Para hacer este montaje persistente usando el fichero /etc/fstab se debe añadir la siguiente línea:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">//zoro/compartido    /home/debian/zoro     cifs    rw,relatime,vers=3.1.1,cache=strict,username=usuario,uid=0,noforceuid,gid=0,noforcegid,addr=10.0.0.45,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,rsize=4194304,wsize=4194304,bsize=1048576,echo_interval=60,actimeo=1,closetimeo=1,user=usuario,password=usuario
+</span></span></span></code></pre></div><h2 id="instalación-y-configuración-de-nfs">Instalación y configuración de nfs</h2>
+<p>Por defecto, el paquete que instala el servidor NFS está instalado en Rocky Linux 9. Si no es el caso, el paquete con el que se puede instalar este servicio en esta distribución es <code>nfs-utils</code>.</p>
+<p>Para compartir un directorio del servidor usando NFS, se crea el directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir -p /srv/compartido
+</span></span></code></pre></div><p>Para evitar problemas de permisos, hay que darle la propiedad de este directorio al usuario sin privilegios del sistema.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chown -R usuario: /srv/compartido
+</span></span></code></pre></div><p>Los directorios que el servidor comparte con los clientes se configuran en el fichero /etc/exports. El formato en este fichero incluye, en primer lugar, el directorio que se comparte, después la IP del cliente y, entre paréntesis, las opciones con las que se comparte.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">/srv/nfs 172.22.201.28(rw,sync,no_subtree_check)
+</span></span></span></code></pre></div><p>En el cliente, se instala el paquete necesario para montar directorios compartidos por NFS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nfs-common
+</span></span></code></pre></div><p>Y se monta el directorio compartido.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount zoro:/srv/compartido zoro/
+</span></span></code></pre></div><p>De esta manera, el cliente puede montar el directorio compartido por el servidor NFS en el punto de montaje indicado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ df -Th
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Filesystem            Type      Size  Used Avail Use% Mounted on
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">zoro:/srv/compartido nfs4       14G  1.7G   13G  13% /home/usuario/zoro
+</span></span></span></code></pre></div><p>Y puede acceder al contenido de este sistema de ficheros.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ ls -l zoro/
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">total 4
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">-rw-r--r-- 1 usuario usuario 33 Feb  1 11:17 fichero.txt
+</span></span></span></code></pre></div><p>Para hacer este montaje persistente se puede añadir la siguiente entrada al fichero /etc/fstab del cliente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zoro:/srv/compartido /home/usuario/zoro nfs defaults 0 0
+</span></span></span></code></pre></div><h1 id="habilitar-el-inicio-de-sesión-como-root-en-un-nuevo-puerto">Habilitar el inicio de sesión como root en un nuevo puerto</h1>
+<p>Para permitir el acceso por SSH del root a un servidor Rocky Linux 9, hay que darle el valor <code>yes</code> al parámetro <code>PermitRootLogin</code> en el fichero de configuración /etc/ssh/sshd_config. En este mismo fichero, se puede configurar un puerto de escucha para el servidor SSH diferente al habitual (22). Por ejemplo, se puede usar el puerto 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Port <span style="color:#3677a9">2222</span>
+</span></span><span style="display:flex;"><span>PermitRootLogin yes
+</span></span></code></pre></div><p>Además, como esta máquina es una máquina virtual de Open Stack cuenta con una configuración por defecto generada a través de cloud-config. Esta configuración impide la conexión por SSH usando contraseña y para modificarla hay que editar el fichero /etc/ssh/sshd_config.d/50-cloud-init.conf.</p>
+<p>La única configuración que se incluye en este ficher es el parámetro para evitar la autenticación por contraseña durante la conexión SSH para forzar así la autenticación usando un par de claves. Para permitir que el usuario root se pueda identificar con su contraseña a la hora de acceder por SSH al servidor Rocky Linux (una práctica que no es segura ni recomendada en un entorno de producción real) se debe editar este fichero y modificar el valor del único parámetro que incluye.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">PasswordAuthentication no
+</span></span></span></code></pre></div><p>Si se reinicia el servicio tras modificar el puerto sin habilitarlo en el sistema de seguridad SELinux se produce el siguiente error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">error: Bind to port 2222 on 0.0.0.0 failed: Permission denied.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">error: Bind to port 2222 on :: failed: Permission denied.
+</span></span></span></code></pre></div><h2 id="configuración-de-selinux-para-permitir-el-acceso-por-ssh-en-el-nuevo-puerto">Configuración de SELinux para permitir el acceso por SSH en el nuevo puerto</h2>
+<p>Para permitir la conexión por SSH a través del nuevo puerto, se debe configurar como un puerto para este tipo de conexiones en el sistema de seguridad de SELinux. Esto se puede hacer usando la herramienta <code>semanage</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo semanage port -a -t ssh_port_t -p tcp <span style="color:#3677a9">2222</span>
+</span></span></code></pre></div><p>Tras permitir el uso de este puerto para las conexiones SSH se puede reiniciar el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart sshd
+</span></span></code></pre></div><p>Sin embargo, a pesar de haber habilitado el puerto 2222 para las conexiones SSH con <code>semanage</code>, el análisis de los logs de SELinux con la herramienta <code>sealert</code> devuelve una alerta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo sealert -a /var/log/audit/audit.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">100% done
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">found 1 alerts in /var/log/audit/audit.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">--------------------------------------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">SELinux is preventing /usr/sbin/sshd from name_bind access on the tcp_socket port 2222.
+</span></span></span></code></pre></div><p>En esta alerta se advierte de que la configuración de SELinux evita que el servicio sshd pueda utilizar el puerto 2222 para la escucha de conexiones. Esta herramienta cuenta, además, con diferentes plugins que ofrecen soluciones alternativas a esta alerta. La primera de estas soluciones, aportada por el plugin <code>bind_ports</code> propone habilitar el puerto 2222 para el servicio SSH tal y como ya se ha hecho previamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">*****  Plugin bind_ports (92.2 confidence) suggests   ************************
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">If you want to allow /usr/sbin/sshd to bind to network port 2222
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Then you need to modify the port type.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Do
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> semanage port -a -t PORT_TYPE -p tcp <span style="color:#3677a9">2222</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">    where PORT_TYPE is one of the following: ssh_port_t, vnc_port_t, xserver_port_t.
+</span></span></span></code></pre></div><p>Otra solución viene propuesta por el plugin <code>catchall</code>, que facilita la posibilidad de generar un módulo de políticas de seguridad de SELinux local que permite el acceso por SSH a través del puerto 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">*****  Plugin catchall (1.41 confidence) suggests   **************************
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">If you believe that sshd should be allowed name_bind access on the port 2222 tcp_socket by default.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Then you should report this as a bug.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You can generate a local policy module to allow this access.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Do
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">allow this access for now by executing:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> ausearch -c <span style="color:#ed9d13">&#39;sshd&#39;</span> --raw | audit2allow -M my-sshd
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> semodule -X <span style="color:#3677a9">300</span> -i my-sshd.pp
+</span></span></code></pre></div><p>Así, en primer lugar se puede generar un nuevo módulo que permita esta regla en SELinux.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo ausearch -c &#39;sshd&#39; --raw | audit2allow -M my-sshd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">******************** IMPORTANT ***********************
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">To make this policy package active, execute:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">semodule -i my-sshd.pp
+</span></span></span></code></pre></div><p>El segundo comando propuesto por el script tras analizar los logs de SELinux instala el módulo creado. Este comando cuenta con dos opciones, la primera, <code>-X</code>, indica un número de prioridad entre el 1 y el 999 y la segunda, <code>-i</code>, indica el módulo que se instala. Esta segunda opción debe aparecer obligatoriamente para la instalación de un módulo. Asignarle una prioridad es opcional.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo semodule -i my-sshd.pp
+</span></span></code></pre></div><p>Tras instalar el módulo, la herramienta de análisis de los logs de SELinux no devuelve ninguna alerta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo sealert -a /var/log/audit/audit.log
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">100% done
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">found 0 alerts in /var/log/audit/audit.log
+</span></span></span></code></pre></div><p>Tras establecer esta nueva configuración en SELinux, el servidor permite conexiones SSH usando el puerto 2222.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ ssh zoro -p 2222
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Thu Feb  6 12:39:44 2025 from 172.16.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[usuario@zoro ~]$</span> <span style="color:#24909d">pwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">/home/usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[usuario@zoro ~]$</span> <span style="color:#24909d">echo</span> <span style="color:#40ffff">$USER</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">usuario
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[usuario@zoro ~]$</span> 
+</span></span></code></pre></div><p>Además, esta conexión se puede hacer como el usuario privilegiado root.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ sudo su
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@luffy:/home/usuario# ssh zoro -p 2222
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@zoro&#39;s password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Activate the web console with: systemctl enable --now cockpit.socket
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Last login: Fri Feb  7 07:47:03 2025 from 172.16.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[root@zoro ~]#</span> <span style="color:#24909d">pwd</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">/root
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[root@zoro ~]#</span> <span style="color:#24909d">echo</span> <span style="color:#40ffff">$USER</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">root
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[root@zoro ~]#</span> 
+</span></span></code></pre></div><h1 id="fuentes">Fuentes</h1>
+<p><a href="https://askubuntu.com/questions/710149/how-to-convert-sshfs-command-to-fstab-entry"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How to convert sshfs command to fstab entry?</a></p>
+<p><a href="https://unix.stackexchange.com/questions/94720/connection-reset-by-peer-using-sshfs"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Connection reset by peer using sshfs</a></p>
+<p><a href="https://docs.rockylinux.org/labs/networking/lab8-samba/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Lab 8: Samba</a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-rocky-linux-8"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How to Set Up an NFS Mount on Rocky Linux 8</a></p>
+<p><a href="https://computingforgeeks.com/install-and-configure-nfs-server-on-rocky-linux/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Install and Configure NFS Server on Rocky Linux 8</a></p>
+<p><a href="https://linuxopsys.com/linux-nfs-mount-entry-in-fstab-with-example"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Linux NFS Mount Entry in fstab (/etc/fstab) with Example</a></p>
+<p><a href="https://devtutorial.io/how-to-enable-root-login-via-ssh-on-rocky-linux-9-p3344.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How to Enable Root Login Via SSH on Rocky Linux 9</a></p>
+<p><a href="https://forums.rockylinux.org/t/rocky-linux-9-1-ssh-root-login/8648"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Rocky linux 9.1 ssh root login</a></p>
+<p><a href="https://orcacore.com/change-ssh-port-rocky-linux/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>How To Change SSH port on Rocky Linux</a></p>
+<p><a href="https://bitsymasbitsya.blogspot.com/2023/11/cambiar-el-puerto-de-ssh-en-derivados.html"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Cambiar el puerto de SSH en Derivados Red Hat Enterprise Linux 8 </a></p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/selinux/">
+                        Selinux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/rocky/">
+                        Rocky
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/red-hat/">
+                        Red hat
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad/">
+                        Seguridad
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
+                        Administración de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2025-03-03-configuracion-activacion-selinux%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2025-03-03-configuracion-activacion-selinux%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2025-03-03-configuracion-activacion-selinux%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2025-03-03-configuracion-activacion-selinux%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+      Configuración de un servidor SAN
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
+      Verificar la integridad de ficheros con GPG y apt-secure
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-6WomfiWXziApPR9exxy3xjT2w9Za&#43;OYxJPD02L7xe5A="
+  src="/js/script-lazy.min.e96a267e2597ce20293d1f5ec71cb7c634f6c3d65af8e63124f0f4d8bef17b90.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

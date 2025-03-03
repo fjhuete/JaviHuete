@@ -6,8 +6,15 @@
     <description>Recent content in Red Hat on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Thu, 09 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/red-hat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuración y activación de SELinux</title>
+      <link>/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/</guid>
+      <description>&lt;p&gt;En esta entrada se configura el sistema de seguridad avanzada de SELinux en un sistema operativo Rocky Linux 9 para permitir el uso de diferentes protocolos de comunicación en red.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sistemas operativos inmutables</title>
       <link>/blog/administracion-de-sistemas/2025-01-09-sistemas-operativos-inmutables/</link>

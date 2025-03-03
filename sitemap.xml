@@ -3,7 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-sistemas/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/red-hat/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/rocky/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/seguridad/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/selinux/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sistemas/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/almacenamiento/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
@@ -12,12 +48,6 @@
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/bind-mount/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/comandos-b%C3%A1sicos/</loc>
@@ -41,10 +71,10 @@
     <loc>/tags/docker-compose/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/implantacion/</loc>
+    <loc>/categories/implantacion/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/categories/implantacion/</loc>
+    <loc>/tags/implantacion/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/implantaci%C3%B3n-de-aplicaciones-web/</loc>
@@ -78,9 +108,6 @@
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/python/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/vol%C3%BAmenes/</loc>
@@ -137,16 +164,13 @@
     <loc>/tags/redirecciones/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/rocky/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/roundcube/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/servicios/</loc>
+    <loc>/categories/servicios/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/categories/servicios/</loc>
+    <loc>/tags/servicios/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/servicios-de-red-e-internet/</loc>
@@ -157,12 +181,6 @@
   </url><url>
     <loc>/tags/spf/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/administracion-sistemas/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/arranque/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
@@ -179,13 +197,7 @@
     <loc>/blog/administracion-de-sistemas/2025-02-07-systemdboot/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/recuperaci%C3%B3n/</loc>
-    <lastmod>2025-02-07T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/sistemas/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/systemd/</loc>
@@ -225,9 +237,6 @@
     <lastmod>2025-01-29T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/redes/</loc>
-    <lastmod>2025-01-29T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/seguridad/</loc>
     <lastmod>2025-01-29T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/seguridad/</loc>
@@ -401,9 +410,6 @@
     <loc>/tags/opensuse/</loc>
     <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/red-hat/</loc>
-    <lastmod>2025-01-09T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/sistema-de-archivos/</loc>
     <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -518,10 +524,10 @@
     <loc>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</loc>
     <lastmod>2024-11-17T01:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/administracion-bbdd/</loc>
+    <loc>/categories/administracion-bbdd/</loc>
     <lastmod>2024-11-17T01:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/administracion-bbdd/</loc>
+    <loc>/tags/administracion-bbdd/</loc>
     <lastmod>2024-11-17T01:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/bases-de-datos/</loc>

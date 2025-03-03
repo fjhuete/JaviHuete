@@ -6,8 +6,57 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Mon, 24 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Red Hat</title>
+      <link>/tags/red-hat/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/red-hat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rocky</title>
+      <link>/tags/rocky/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/rocky/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seguridad</title>
+      <link>/tags/seguridad/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Selinux</title>
+      <link>/tags/selinux/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/selinux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/tags/sistemas/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sistemas/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Almacenamiento</title>
       <link>/tags/almacenamiento/</link>
@@ -198,13 +247,6 @@
       <description></description>
     </item>
     <item>
-      <title>Rocky</title>
-      <link>/tags/rocky/</link>
-      <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/rocky/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Roundcube</title>
       <link>/tags/roundcube/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
@@ -240,13 +282,6 @@
       <description></description>
     </item>
     <item>
-      <title>Administración De Sistemas Operativos</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Arranque</title>
       <link>/tags/arranque/</link>
       <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
@@ -268,24 +303,10 @@
       <description></description>
     </item>
     <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Recuperación</title>
       <link>/tags/recuperaci%C3%B3n/</link>
       <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
       <guid>/tags/recuperaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sistemas</title>
-      <link>/tags/sistemas/</link>
-      <pubDate>Fri, 07 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/sistemas/</guid>
       <description></description>
     </item>
     <item>
@@ -342,13 +363,6 @@
       <link>/tags/redes/</link>
       <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/redes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Seguridad</title>
-      <link>/tags/seguridad/</link>
-      <pubDate>Wed, 29 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/seguridad/</guid>
       <description></description>
     </item>
     <item>
@@ -622,13 +636,6 @@
       <link>/tags/opensuse/</link>
       <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/opensuse/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Red Hat</title>
-      <link>/tags/red-hat/</link>
-      <pubDate>Thu, 09 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/red-hat/</guid>
       <description></description>
     </item>
     <item>
