@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh Agent on Javi Huete</title>
+    <link>/tags/ssh-agent/</link>
+    <description>Recent content in Ssh Agent on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/ssh-agent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de una aplicación usando Jenkins</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</guid>
+      <description>&lt;p&gt;Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firewall on Javi Huete</title>
+    <link>/tags/firewall/</link>
+    <description>Recent content in Firewall on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Wed, 05 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implantación de un cortafuegos perimetral con nftables</title>
+      <link>/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/</link>
+      <pubDate>Wed, 05 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/</guid>
+      <description>&lt;p&gt;En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta &lt;code&gt;nftables&lt;/code&gt; para filtrar el tráfico que circula por la red.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ</title>
+      <link>/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/</link>
+      <pubDate>Tue, 25 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/</guid>
+      <description>&lt;p&gt;En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta &lt;code&gt;nftables&lt;/code&gt; para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

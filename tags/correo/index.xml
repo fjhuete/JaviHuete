@@ -45,16 +45,16 @@
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos de Internet</title>
-      <link>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
+      <link>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
+      <guid>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
       <description>&lt;p&gt;Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos postfix</title>
-      <link>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
+      <link>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
+      <guid>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
       <description>&lt;p&gt;Para instalar un servidor de correos &lt;code&gt;postfix&lt;/code&gt; en Debian se instala el paquete &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

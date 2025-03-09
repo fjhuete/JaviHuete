@@ -1,0 +1,2186 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Instalación y configuración inicial de OpenLDAP</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Instalación y configuración inicial de OpenLDAP" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/" />
+
+
+<meta name="twitter:title" content="Instalación y configuración inicial de OpenLDAP" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Instalación y configuración inicial de OpenLDAP
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/administracion-sistemas/"
+                    class=""
+                    >Administracion sistemas
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              March 4, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#instalación-de-openldap">Instalación de OpenLDAP</a></li>
+    <li><a href="#configuración-inicial-de-openldap">Configuración inicial de OpenLDAP</a>
+      <ol>
+        <li><a href="#creación-de-la-estructura-de-unidades-organizativas">Creación de la estructura de unidades organizativas</a></li>
+        <li><a href="#creación-del-primer-usuario">Creación del primer usuario</a></li>
+      </ol>
+    </li>
+    <li><a href="#configuración-del-cliente-ubuntu">Configuración del cliente Ubuntu</a>
+      <ol>
+        <li><a href="#instalación-de-dependencias-en-ubuntu">Instalación de dependencias en Ubuntu</a></li>
+        <li><a href="#configuración-del-cliente-ldap-en-ubuntu">Configuración del cliente LDAP en Ubuntu</a></li>
+        <li><a href="#configuración-de-nsswitch">Configuración de NSSwitch</a></li>
+        <li><a href="#configuración-de-los-módulos-pam">Configuración de los módulos PAM</a></li>
+        <li><a href="#configuración-del-servidor-nfs">Configuración del servidor NFS</a></li>
+      </ol>
+    </li>
+    <li><a href="#configuración-del-cliente-rocky-linux">Configuración del cliente Rocky Linux</a>
+      <ol>
+        <li><a href="#instalación-de-dependencias-en-rocky-linux">Instalación de dependencias en Rocky Linux</a></li>
+        <li><a href="#configuración-del-cliente-ldap-en-rocky-linux">Configuración del cliente LDAP en Rocky Linux</a></li>
+      </ol>
+    </li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>LDAP es un protocolo de comunicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar información en un entorno de red. Este directorio incluye un conjunto de objetos con atributos organizados jerárquicamente. El directorio LDAP se puede instalar en un servidor de una red para centralizar la gestión de usuarios y grupos en la red.</p>
+<h1 id="instalación-de-openldap">Instalación de OpenLDAP</h1>
+<p>El servicio de OpenLDAP se puede instalar en Debian con el paquete <code>slapd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install slapd
+</span></span></code></pre></div><p>La instalación de OpenLDAP es interactiva y, durante el proceso, se solicita al usuario indicar una contraseña de administrador del directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">   ┌─────────────────────────┤ Configuring slapd ├──────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ Please enter the password for the admin entry in your LDAP directory.  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ Administrator password:                                                │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ *******_______________________________________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                 &lt;Ok&gt;                                   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   └────────────────────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><p>Tras la instalación, se pueden indicar nuevos parámetros de configuración en el directorio reconfigurando el paquete a través de <code>dpkg</code> con la prioridad más baja <code>-plow</code> para que pida indicar todos los parámetros posibles de forma interactiva.</p>
+<pre tabindex="0"><code>sudo dpkg-reconfigure -plow slapd
+</code></pre><p>Entonces, en primer lugar, el menú de configuración pregunta si se quiere omitir la configuración de LDAP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  ┌──────────────────────────┤ Configuring slapd ├───────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ If you enable this option, no initial configuration or database will be  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ created for you.                                                         │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ Omit OpenLDAP server configuration?                                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                    &lt;Yes&gt;                       &lt;No&gt;                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  └──────────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>Tras contestar negativamente a esta pregunta, el proceso de configuración de LDAP solicita el nombre de dominio DNS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">    ┌────────────────────────┤ Configuring slapd ├─────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │ The DNS domain name is used to construct the base DN of the LDAP     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │ directory. For example, &#39;foo.example.org&#39; will create the directory  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │ with &#39;dc=foo, dc=example, dc=org&#39; as base DN.                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │                                                                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │ DNS domain name:                                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │                                                                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │ luffy.javi.gonzalonazareno.org______________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │                                                                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │                                &lt;Ok&gt;                                  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    │                                                                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    └──────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>El siguiente paso en la configuración es indicar el nombre de la organización</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  ┌──────────────────────────┤ Configuring slapd ├───────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ Please enter the name of the organization to use in the base DN of your  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ LDAP directory.                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ Organization name:                                                       │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ IES Gonzalo Nazareno____________________________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                  &lt;Ok&gt;                                    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  └──────────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>Nuevamente, el menú de configuración solicita una contraseña de administración</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">   ┌─────────────────────────┤ Configuring slapd ├──────────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ Please enter the password for the admin entry in your LDAP directory.  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ Administrator password:                                                │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │ *******_______________________________________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                 &lt;Ok&gt;                                   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   └────────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>Por último, hay que elegir diferentes opciones de configuración relacionadas con la base de datos que usa LDAP, como si se debe eliminar cuando de desinstale el servicio o si se deben sobrescribir los datos almacenados en la primera instalación.</p>
+<p>Tras ejecutar modificar todos estos parámetros al servicio, el comando <code>slapcat</code> muestra la configuración del directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo slapcat
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dn: dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: dcObject
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organization
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">o: IES Gonzalo Nazareno
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dc: luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">structuralObjectClass: organization
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">entryUUID: cf045d28-83d9-103f-8e4a-11736b3f8ca6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">creatorsName: cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">createTimestamp: 20250220132451Z
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">entryCSN: 20250220132451.208225Z#000000#000#000000
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">modifiersName: cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">modifyTimestamp: 20250220132451Z
+</span></span></span></code></pre></div><p>Además, LDAP instala una serie de utilidades para interactuar con el directorio incluidas en el paquete <code>ldap-utils</code> como <code>ldapsearch</code>, que permite buscar información de los registros almacenado en el servidor LDAP. Esta herramienta busca los objetos anidados dentro de un árbol. Para no indicar el árbol del directorio de búsqueda en cada ejecución del comando, se puede crear el fichero /etc/ldap/ldap.conf o editarlo si ya existe para incluir en el parámetro <code>BASE</code> el árbol del directorio por defecto del servidor LDAP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAP Defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># See ldap.conf(5) for details</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># This file should be world readable but not world writable.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">BASE    dc</span>=<span style="color:#ed9d13">luffy,dc=javi,dc=gonzalonazareno,dc=org</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#URI    ldap://ldap.example.com ldap://ldap-provider.example.com:666</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#SIZELIMIT      12</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#TIMELIMIT      15</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#DEREF          never</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># TLS certificates (needed for GnuTLS)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">TLS_CACERT      /etc/ssl/certs/ca-certificates.crt</span>
+</span></span></code></pre></div><h1 id="configuración-inicial-de-openldap">Configuración inicial de OpenLDAP</h1>
+<h2 id="creación-de-la-estructura-de-unidades-organizativas">Creación de la estructura de unidades organizativas</h2>
+<p>Para poner en funcionamiento el árbol del directorio LDAP, en este caso, se usa una estructura básica con dos unidades organizativas diferentes: usuarios y grupos. Estas unidades organizativas se definen en un fichero <code>.ldif</code>. Para este propósito, se ha generado en el directorio /etc/ldap un nuevo directorio llamado ldif, que contendrá los ficheros <code>.ldif</code> en los que se definen todos los elementos del directorio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir ldif
+</span></span><span style="display:flex;"><span><span style="color:#24909d">cd</span> ldif/
+</span></span></code></pre></div><p>En este directorio se crea el fichero de definición de las unidades organizativas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano ou.ldif
+</span></span></code></pre></div><p>El contenido del fichero es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">dn</span>:<span style="color:#666"> </span>ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">ou</span>:<span style="color:#666"> </span>Usuarios<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">objectClass</span>:<span style="color:#666"> </span>organizationalUnit<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">dn</span>:<span style="color:#666"> </span>ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">ou</span>:<span style="color:#666"> </span>Grupos<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">objectClass</span>:<span style="color:#666"> </span>organizationalUnit<span style="color:#666">
+</span></span></span></code></pre></div><p>Tras definir las unidades organizativas en este fichero, se añaden a la estructura del directorio con el comando <code>ldapadd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ldapadd -x -D &#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34; -f /etc/ldap/ldif/ou.ldif -W
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">adding new entry &#34;ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">adding new entry &#34;ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;
+</span></span></span></code></pre></div><p>Ahora, en la estructura del árbol del directorio aparecen las dos unidades organizativas recién creadas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ldapsearch -x -D &#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34; -W
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> extended LDIF
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAPv3</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> base &lt;<span style="color:#40ffff">dc</span>=luffy,dc=javi,dc=gonzalonazareno,dc=org&gt; (default) with scope subtree
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> filter: (<span style="color:#40ffff">objectclass</span>=*)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> requesting: ALL
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: dcObject
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organization
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">o: IES Gonzalo Nazareno
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dc: luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Grupos, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Grupos
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Usuarios, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Usuarios
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> search result
+</span></span><span style="display:flex;"><span><span style="color:#ccc">search: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">result: 0 Success
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> numResponses: <span style="color:#3677a9">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> numEntries: <span style="color:#3677a9">3</span>
+</span></span></code></pre></div><h2 id="creación-del-primer-usuario">Creación del primer usuario</h2>
+<p>Para crear un usuario en el directorio LDAP se debe definir la información de este usuario en un fichero <code>.ldif</code>. Posteriormente, se carga la información de estos ficheros a la estructura del árbol de directorios de LDAP. En el directorio ldif creado anteriormente se puede crear el fichero <code>.ldif</code> del primer usuario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano asoprueba.ldif
+</span></span></code></pre></div><p>En este fichero se indican los parámetros que configuran la creación del usuario en LDAP. En este caso, como el grupo principal del usuario no se ha creado aún, se define también en este fichero.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">dn</span>:<span style="color:#666"> </span>cn=grupo1,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">objectClass</span>:<span style="color:#666"> </span>posixGroup<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">cn</span>:<span style="color:#666"> </span>grupo1<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">gidNumber</span>:<span style="color:#666"> </span><span style="color:#3677a9">1100</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">dn</span>:<span style="color:#666"> </span>uid=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">uid</span>:<span style="color:#666"> </span>asoprueba<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">cn</span>:<span style="color:#666"> </span>asoprueba<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">objectClass</span>:<span style="color:#666"> </span>posixAccount<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">objectClass</span>:<span style="color:#666"> </span>account<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">userPassword</span>:<span style="color:#666"> </span>{SSHA}vm1AqM6+exx8bsCMqbsXMzm3J8io/qWX<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">uidNumber</span>:<span style="color:#666"> </span><span style="color:#3677a9">1100</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">gidNumber</span>:<span style="color:#666"> </span><span style="color:#3677a9">1100</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">homeDirectory</span>:<span style="color:#666"> </span>/home/asoprueba<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">loginShell</span>:<span style="color:#666"> </span>/bin/bash<span style="color:#666">
+</span></span></span></code></pre></div><p>Para poder indicar una contraseña en el fichero de definición del usuario, hay que usar un hash ya encriptado. El servidor OpenLDAP, a través del paquete <code>slapd</code> instala la herramienta <code>slappasswd</code> que permite obtener este hash encriptado de forma interactiva.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo slappasswd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">New password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Re-enter new password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">{SSHA}vm1AqM6+exx8bsCMqbsXMzm3J8io/qWX
+</span></span></span></code></pre></div><p>Este hash encriptado es el que se indica en el fichero <code>.ldif</code> en el que se define el usuario.</p>
+<p>Para añadir el registro tanto del usuario como del grupo declarado en el fichero <code>.ldif</code> al directorio LDAP se usa la utlidad <code>ldapadd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ldapadd -x -D &#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34; -f /etc/ldap/ldif/asoprueba.ldif -W
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">adding new entry &#34;cn=grupo1,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">adding new entry &#34;uid=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;
+</span></span></span></code></pre></div><p>Tras añadir el usuario al directorio LDAP, si se hace una búsquedas de los objetos de este árbol del directorio, se muestra el usuario recién creado.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">ldapsearch -x -D &#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34; -W
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> extended LDIF
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAPv3</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> base &lt;<span style="color:#40ffff">dc</span>=luffy,dc=javi,dc=gonzalonazareno,dc=org&gt; (default) with scope subtree
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> filter: (<span style="color:#40ffff">objectclass</span>=*)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> requesting: ALL
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: dcObject
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organization
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">o: IES Gonzalo Nazareno
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dc: luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Grupos, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Grupos
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Usuarios, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Usuarios
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> grupo1, Grupos, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: cn=grupo1,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixGroup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: grupo1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> asoprueba, Usuarios, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: uid=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uid: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixAccount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: account
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">userPassword:: e1NTSEF9dm0xQXFNNitleHg4YnNDTXFic1hNem0zSjhpby9xV1g=
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">homeDirectory: /home/asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">loginShell: /bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> search result
+</span></span><span style="display:flex;"><span><span style="color:#ccc">search: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">result: 0 Success
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> numResponses: <span style="color:#3677a9">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> numEntries: <span style="color:#3677a9">5</span>
+</span></span></code></pre></div><h1 id="configuración-del-cliente-ubuntu">Configuración del cliente Ubuntu</h1>
+<h2 id="instalación-de-dependencias-en-ubuntu">Instalación de dependencias en Ubuntu</h2>
+<p>Para permitir el inicio de sesión con un usuario desde el cliente es necesario instalar una serie de dependencias previas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install libnss-ldap libpam-ldap ldap-utils
+</span></span></code></pre></div><p>La instalación de algunos de estos paquetes incluye un proceso de configuración interactivo. Por ejemplo, durante la configuración del paquete <code>libnss-ldap</code> hay que indicar la uri de conexión al servidor LDAP</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc"> ┌─────────────────────┤ Configuring ldap-auth-config ├──────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Please enter the URI of the LDAP server to use. This is a string in the   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ form of ldap://&lt;hostname or IP&gt;:&lt;port&gt;/. ldaps:// or ldapi:// can also    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ be used. The port number is optional.                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Note: It is usually a good idea to use an IP address because it reduces   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ risks of failure in the event name service problems.                      │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ LDAP server Uniform Resource Identifier:                                  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ ldap://luffy.javi.gonzalonazareno.org____________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                  &lt;Ok&gt;                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> └───────────────────────────────────────────────────────────────────────────┘
+</span></span></span></code></pre></div><p>También hay que configurar el nombre distinguido de la base para la búsqueda.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc"> ┌─────────────────────┤ Configuring ldap-auth-config ├──────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Please enter the distinguished name of the LDAP search base. Many sites   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ use the components of their domain names for this purpose. For example,   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ the domain &#34;example.net&#34; would use &#34;dc=example,dc=net&#34; as the             │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ distinguished name of the search base.                                    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Distinguished name of the search base:                                    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ dc=luffy,dc=javi,dc=gonzalonazareno,dc=org_______________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                  &lt;Ok&gt;                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> └───────────────────────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><p>Además, hay que indicar la versión: 3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  ┌─────────────────────┤ Configuring ldap-auth-config ├─────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ Please enter which version of the LDAP protocol should be used by        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ ldapns. It is usually a good idea to set this to the highest available   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ version.                                                                 │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ LDAP version to use:                                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                    3                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                    2                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                  &lt;Ok&gt;                                    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  └──────────────────────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><p>Durante la configuración de <code>libpam-ldap</code> también se requiere una configuración interactiva. Por ejemplo, hay que permitir que el usuario admin de LDAP se convierta en el root.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc"> ┌─────────────────────┤ Configuring ldap-auth-config ├──────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ This option will allow you to make password utilities that use pam to     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ behave like you would be changing local passwords.                        │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ The password will be stored in a separate file which will be made         │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ readable to root only.                                                    │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ If you are using NFS mounted /etc or any other custom setup, you should   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ disable this.                                                             │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Make local root Database admin:                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                    &lt;Yes&gt;                       &lt;No&gt;                       │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> └───────────────────────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><p>Hay que definir el usuario administrador de LDAP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">          ┌─────────────┤ Configuring ldap-auth-config ├─────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │ This account will be used when root changes a password.  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │ Note: This account has to be a privileged account.       │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │ LDAP account for root:                                   │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │ cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org_____ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                          &lt;Ok&gt;                            │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          │                                                          │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          └──────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><p>También hay que indicar su contraseña.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc"> ┌─────────────────────┤ Configuring ldap-auth-config ├──────────────────────┐
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Please enter the password to use when ldap-auth-config tries to login to  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ the LDAP directory using the LDAP account for root.                       │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ The password will be stored in a separate file /etc/ldap.secret which     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ will be made readable to root only.                                       │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ Entering an empty password will re-use the old password.                  │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ LDAP root account password:                                               │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │ *******__________________________________________________________________ │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                  &lt;Ok&gt;                                     │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> │                                                                           │ 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> └───────────────────────────────────────────────────────────────────────────┘ 
+</span></span></span></code></pre></div><h2 id="configuración-del-cliente-ldap-en-ubuntu">Configuración del cliente LDAP en Ubuntu</h2>
+<p>También en el cliente, se configura el fichero /etc/ldap/ldap.conf para que pueda acceder al servidor LDAP para validar los usuarios registrados en el directorio. Para ello, en este fichero se indica la base y la URI de conexión del cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAP Defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># See ldap.conf(5) for details</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># This file should be world readable but not world writable.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">BASE    dc</span>=<span style="color:#ed9d13">luffy,dc=javi,dc=gonzalonazareno,dc=org</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">URI     ldap://luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#SIZELIMIT      12</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#TIMELIMIT      15</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#DEREF          never</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># TLS certificates (needed for GnuTLS)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">TLS_CACERT      /etc/ssl/certs/ca-certificates.crt</span>
+</span></span></code></pre></div><h2 id="configuración-de-nsswitch">Configuración de NSSwitch</h2>
+<p>Además, para que el sistema use el directorio LDAP como servidor de autenticación de usuarios en red, en el fichero /etc/nsswitch.conf hay que indicar <code>ldap</code> como método de autentificación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">passwd</span>:<span style="color:#666">         </span>files ldap systemd<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">group</span>:<span style="color:#666">          </span>files ldap systemd<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">shadow</span>:<span style="color:#666">         </span>files ldap<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">gshadow</span>:<span style="color:#666">        </span>files ldap<span style="color:#666">
+</span></span></span></code></pre></div><h2 id="configuración-de-los-módulos-pam">Configuración de los módulos PAM</h2>
+<p>También hay que configurar la autenticación y la sesión pam. Para hacer esta configuración, es necesario trabajar con varios módulos PAM. En primer lugar, en el módulo /etc/pam.d/common-password se elimina la opción <code>use_authtok</code> en el módulo <code>pam_ldap.so</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">password        [success=1 user_unknown=ignore default=die]     pam_ldap.so t
+</span></span></span></code></pre></div><p>A continuación, en el módulo /etc/pam.d/common-session hay que añadir la configuración del módulo <code>pam_mkhomedir</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">session optional pam_mkhomedir.so skel=/etc/skel umask=077
+</span></span></span></code></pre></div><p>Tras establecer toda esta configuración, el usuario <code>asoprueba</code> creado en el servidor LDAP puede iniciar sesión desde el cliente.</p>
+<h2 id="configuración-del-servidor-nfs">Configuración del servidor NFS</h2>
+<p>En el servidor NFS se crea una directorio en el que se crearán los directorios /home de todos los usuarios del directorio LDAP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /srv/nfs
+</span></span></code></pre></div><p>Este directorio se tiene que compartir con todos los equipos de la red. Por eso, hay que añadir la siguiente línea al fichero /etc/export:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">/srv/nfs        *(rw,sync,no_root_squash,no_subtree_check)
+</span></span></span></code></pre></div><p>Para aplicar la configuración, se reinicia el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart nfs-server
+</span></span></code></pre></div><p>En cada máquina cliente hay que crear un directorio que funcione como punto de montaje del sistema de ficheros compartido por el servidor NFS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mkdir /usuarios
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#3677a9">777</span> /usuarios/
+</span></span></code></pre></div><p>Este punto de montaje se indica en el fichero /etc/fstab para que sea persistente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">zoro:/srv/nfs /usuarios nfs defaults 0 0
+</span></span></span></code></pre></div><p>Por último, se instala el cliente nfs y se monta el directorio remoto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nfs-common
+</span></span><span style="display:flex;"><span>sudo mount -a
+</span></span></code></pre></div><p>A continuación, en el directorio LDAP se configura el usuario para que su home se cree en este directorio compartido por el servidor NFS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">dn: cn=asoprueba,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixGroup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">dn: uid=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uid: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixAccount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: account
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">userPassword: {SSHA}vm1AqM6+exx8bsCMqbsXMzm3J8io/qWX
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">homeDirectory: /usuarios/home/asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">loginShell: /bin/bash
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapdelete -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;</span> <span style="color:#40ffff">cn</span>=asoprueba,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org -W
+</span></span><span style="display:flex;"><span>ldapdelete -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;</span> <span style="color:#40ffff">uid</span>=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org -W
+</span></span><span style="display:flex;"><span>ldapadd -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;</span> -f /etc/ldap/ldif/asoprueba.ldif -W
+</span></span></code></pre></div><p>Al iniciar sesión de nuevo con el usuario <code>asoprueba</code> se crea su nuevo home de usuario en el directorio compartido por el servidor NFS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@nami:~$ su - asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Creating directory &#39;/usuarios/home/asoprueba&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">asoprueba@nami:~$ whoami
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">asoprueba@nami:~$ pwd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">/usuarios/home/asoprueba
+</span></span></span></code></pre></div><h1 id="configuración-del-cliente-rocky-linux">Configuración del cliente Rocky Linux</h1>
+<h2 id="instalación-de-dependencias-en-rocky-linux">Instalación de dependencias en Rocky Linux</h2>
+<p>Para permitir el inicio de sesión con un usuario desde un cliente Rocky Linux hay que instalar una serie de dependencias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install openldap-clients sssd sssd-ldap oddjob-mkhomedir
+</span></span></code></pre></div><p>Además, hay que activar el inicio de sesión con <code>sssd</code> y permitir la creación del directorio home del usuario con el parámetro <code>with-mkhomedir</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo authselect <span style="color:#6ab825;font-weight:bold">select</span> sssd with-mkhomedir --force
+</span></span></code></pre></div><p>Tabmién hay que habilitar el servicio <code>oddjobd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl <span style="color:#24909d">enable</span> --now oddjobd.service
+</span></span></code></pre></div><h2 id="configuración-del-cliente-ldap-en-rocky-linux">Configuración del cliente LDAP en Rocky Linux</h2>
+<p>También en el cliente, se configura el fichero /etc/ldap/ldap.conf para que pueda acceder al servidor LDAP para validar los usuarios registrados en el directorio. Para ello, en este fichero se indica la base y la URI de conexión del cliente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAP Defaults</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># See ldap.conf(5) for details</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># This file should be world readable but not world writable.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">BASE    dc</span>=<span style="color:#ed9d13">luffy,dc=javi,dc=gonzalonazareno,dc=org</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">URI     ldap://luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#SIZELIMIT      12</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#TIMELIMIT      15</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#DEREF          never</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># When no CA certificates are specified the Shared System Certificates</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># are in use. In order to have these available along with the ones specified</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># by TLS_CACERTDIR one has to include them explicitly:</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#TLS_CACERT     /etc/pki/tls/cert.pem</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># System-wide Crypto Policies provide up to date cipher suite which should</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># be used unless one needs a finer grinded selection of ciphers. Hence, the</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># PROFILE=SYSTEM value represents the default behavior which is in place</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># when no explicit setting is used. (see openssl-ciphers(1) for more info)</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#TLS_CIPHER_SUITE PROFILE=SYSTEM</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Turning this off breaks GSSAPI used with krb5 when rdns = false</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">SASL_NOCANON    on</span>
+</span></span></code></pre></div><p>Además, hay que cambiar el perfil de autenticación a SSSD.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> sudo authselect <span style="color:#6ab825;font-weight:bold">select</span> sssd with-mkhomedir --force
+</span></span><span style="display:flex;"><span><span style="color:#ccc">Backup stored at /var/lib/authselect/backups/2025-03-03-17-31-00.oyLTl2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Profile &#34;sssd&#34; was selected.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">The following nsswitch maps are overwritten by the profile:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- passwd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- group
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- netgroup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- automount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- services
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Make sure that SSSD service is configured and enabled. See SSSD documentation for more information.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">- with-mkhomedir is selected, make sure pam_oddjob_mkhomedir module
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  is present and oddjobd service is enabled and active
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  - systemctl enable --now oddjobd.service
+</span></span></span></code></pre></div><p>Tal y como indica la salida del comando anterior, también hay que iniciar y habilitar el servicio <code>oddjobd</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl <span style="color:#24909d">enable</span> --now oddjobd.service
+</span></span></code></pre></div><p>Para configurar el servicio SSSD se crea el fichero /etc/sssd/sssd.conf con el siguiente contenido:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[domain/javi.gonzalonazareno.org]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">id_provider</span> = <span style="color:#ed9d13">ldap</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">auth_provider</span> = <span style="color:#ed9d13">ldap</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ldap_uri</span> = <span style="color:#ed9d13">ldap://luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ldap_search_base</span> = <span style="color:#ed9d13">dc=luffy,dc=javi,dc=gonzalonazareno,dc=org</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">ldap_id_use_start_tls</span> = <span style="color:#ed9d13">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#ldap_tls_cacertdir = /etc/openldap/cacerts</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#cache_credentials = True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[sssd]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">services</span> = <span style="color:#ed9d13">nss, pam</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">domains</span> = <span style="color:#ed9d13">javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">[nss]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">filter_groups</span> = <span style="color:#ed9d13">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">filter_users</span> = <span style="color:#ed9d13">root</span>
+</span></span></code></pre></div><p>Este fichero debe tener permisos de lectura y escritura para el usuario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod <span style="color:#3677a9">600</span> /etc/sssd/sssd.conf
+</span></span></code></pre></div><p>Para aplicar la configuración, hay que reiniciar el servicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart sssd
+</span></span></code></pre></div><p>Así, desde el cliente, se puede acceder a la información del servidor usando el comando <code>ldapsearch</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ldapsearch -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazare
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span><span style="color:#ccc">no,dc=org&#34; -W
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> extended LDIF
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAPv3</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> base &lt;<span style="color:#40ffff">dc</span>=luffy,dc=javi,dc=gonzalonazareno,dc=org&gt; (default) with scope subtree
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> filter: (<span style="color:#40ffff">objectclass</span>=*)
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> requesting: ALL
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># luffy.javi.gonzalonazareno.org</span>
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: dcObject
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organization
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">o: IES Gonzalo Nazareno
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dc: luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Grupos, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Grupos
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> Usuarios, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ou: Usuarios
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> asoprueba, Grupos, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: cn=asoprueba,ou=Grupos,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixGroup
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> asoprueba, Usuarios, luffy.javi.gonzalonazareno.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">dn: uid=asoprueba,ou=Usuarios,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uid: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cn: asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: posixAccount
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">objectClass: account
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">userPassword:: e1NTSEF9dm0xQXFNNitleHg4YnNDTXFic1hNem0zSjhpby9xV1g=
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">uidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gidNumber: 1100
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">homeDirectory: /usuarios/home/asoprueba
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">loginShell: /bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> search result
+</span></span><span style="display:flex;"><span><span style="color:#ccc">search: 2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">result: 0 Success
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#aaa">#</span> numResponses: <span style="color:#3677a9">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa">#</span> numEntries: <span style="color:#3677a9">5</span>
+</span></span></code></pre></div><p>Sin embargo, al intentar iniciar sesión con la cuenta de usuario configurada en el servidor LDAP, se produce un error de autentificación.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> su - asoprueba
+</span></span><span style="display:flex;"><span><span style="color:#ccc">Password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">su: Authentication failure
+</span></span></span></code></pre></div><p>En el log de <code>sssd</code> se indica que este error se debe a que el puerto del servidor no está disponible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">   *  (2025-03-04  7:39:47): [be[javi.gonzalonazareno.org]] [get_port_status] (0x1000): [RID#6] Port status of port 389 for server &#39;luffy.javi.gonzalonazareno.org&#39; is &#39;not working&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   *  (2025-03-04  7:39:47): [be[javi.gonzalonazareno.org]] [get_port_status] (0x0080): [RID#6] SSSD is unable to complete the full connection request, this internal status does not necessarily indicate network port issues.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">   *  (2025-03-04  7:39:47): [be[javi.gonzalonazareno.org]] [fo_resolve_service_send] (0x0020): [RID#6] No available servers for service &#39;LDAP&#39;
+</span></span></span></code></pre></div><p>Sin embargo, en los logs recogidos por <code>journald</code> se apunta a que el oregin del error es un fallo en la encriptación con TLS. Este mecanismo de encriptación está deshabilitado en el fichero de configuración del servicio <code>sssd</code>, sin embargo, parece que este servicio sigue intentando encriptar las comunicaciones con el servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">Mar 04 07:39:47 zoro.javi.gonzalonazareno.org sssd_be[4950]: Could not start TLS encryption. unsupported extended operation
+</span></span></span></code></pre></div><h1 id="fuentes">Fuentes</h1>
+<p><a href="https://aso.tinaja.es/ldap/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>El servicio de directorio. LDAP</a></p>
+<p><a href="https://howtoforge.es/como-configurar-el-cliente-openldap-en-debian-10/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Cómo configurar el cliente OpenLDAP en Debian 10</a></p>
+<p><a href="http://somebooks.es/12-11-perfiles-moviles-de-usuario-usando-nfs-y-ldap/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>11.11. Perfiles móviles de usuario usando NFS y LDAP</a></p>
+<p><a href="https://es.linux-console.net/?p=22399"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Configurar el cliente OpenLDAP en Rocky Linux 8/AlmaLinux 8</a></p>
+
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/sistemas/">
+                        Sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/ldap/">
+                        Ldap
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/linux/">
+                        Linux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/rocky/">
+                        Rocky
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/debian/">
+                        Debian
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/red-hat/">
+                        Red hat
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/openldap/">
+                        Openldap
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/selinux/">
+                        Selinux
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
+                        Administración de sistemas operativos
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2025-03-04-instalacion-configuracion-ldap%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2025-03-04-instalacion-configuracion-ldap%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2025-03-04-instalacion-configuracion-ldap%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2025-03-04-instalacion-configuracion-ldap%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+      Uso básico de Wireshark
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+      Cifrado asimétrico con GPG y OpenSSL
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-6WomfiWXziApPR9exxy3xjT2w9Za&#43;OYxJPD02L7xe5A="
+  src="/js/script-lazy.min.e96a267e2597ce20293d1f5ec71cb7c634f6c3d65af8e63124f0f4d8bef17b90.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

@@ -1246,8 +1246,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
-      Recolección centralizada de logs de sistema mediante jouranld
+    <a href="/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/">
+      Configuración y activación de SELinux
     </a>
   </h4>
   
@@ -1270,8 +1270,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+  <p class="mb-6"><p>En esta entrada se configura el sistema de seguridad avanzada de SELinux en un sistema operativo Rocky Linux 9 para permitir el uso de diferentes protocolos de comunicación en red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/">
     Leer
   </a>
 </div>
@@ -1283,45 +1283,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
-      Migración de aplicaciones web PHP al entorno de producción
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
-      Instalación del servidor web Apache en Rocky Linux 9
+    <a href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
+      Creación de Services en kubernetes
     </a>
   </h4>
   
@@ -1344,8 +1307,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El de Apache es uno de los servidores web más usados del mundo. Aunque en otras distribuciones, como las basadas en Debian, este servidor se instala con el paquete <code>apache2</code> en las distribuciones basadas en Red Hat como CentOS o Rocky Linux, este servidor se instala con el paquete <code>httpd</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
+  <p class="mb-6"><p>Los servicios en Kubernetes permiten a otros pods o al usuario acceder al servicio que ofrece otro pod.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+      Instalación y configuración de un servidor de correos de Internet
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
     Leer
   </a>
 </div>

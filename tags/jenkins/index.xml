@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on Javi Huete</title>
+    <link>/tags/jenkins/</link>
+    <description>Recent content in Jenkins on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Construcción de una imagen Docker en un pipeline de Jenkins</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/</guid>
+      <description>&lt;p&gt;Para crear una imagen Docker desde un pipeline de Jenkins es necesario conectar este servicio a la cuenta de DockerHub a la que debe subir la imagen. Para ello, en el menú Administrar Jenkins -&amp;gt; Credenciales -&amp;gt; Global -&amp;gt; Add Credentials se crea una nueva credencial de tipo nombre de usuario y contraseña.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de credenciales en Jenkins</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-credenciales-jenkins/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-credenciales-jenkins/</guid>
+      <description>&lt;p&gt;Las credenciales en Jenkin se crean en el menú Administrar Jenkins -&amp;gt; Credenciales -&amp;gt; Global -&amp;gt; Add Credentials.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación usando Jenkins</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</guid>
+      <description>&lt;p&gt;Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ejecutar un pipeline de Jenkins con cada actualización de un repositorio</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/</guid>
+      <description>&lt;p&gt;Para que Jenkins ejecute un pipeline cada vez que se actualice un repositorio git se pueden establecer varias configuraciones diferentes. En este caso, se incluye el Jenkinsfile en el repositorio de GitHub.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de Jenkins usando Docker como runner</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/</guid>
+      <description>&lt;p&gt;En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test para la integración continua de una aplicación django</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
+      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test para la integración continua de una aplicación django</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</guid>
+      <description>&lt;p&gt;A partir de la aplicación &lt;a href=&#34;https://github.com/fjhuete/django_tutorial&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;django_tutorial&lt;/a&gt; escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WordPress on Javi Huete</title>
+    <title>Wordpress on Javi Huete</title>
     <link>/tags/wordpress/</link>
-    <description>Recent content in WordPress on Javi Huete</description>
+    <description>Recent content in Wordpress on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Mon, 27 Jan 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de una aplicación en Kubernetes usando Helm</title>
+      <link>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</guid>
+      <description>&lt;p&gt;Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalación del servidor web Apache en Rocky Linux 9</title>
       <link>/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/</link>

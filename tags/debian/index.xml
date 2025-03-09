@@ -6,8 +6,15 @@
     <description>Recent content in Debian on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación y configuración inicial de OpenLDAP</title>
+      <link>/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/</link>
+      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/</guid>
+      <description>&lt;p&gt;LDAP es un protocolo de comunicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar información en un entorno de red. Este directorio incluye un conjunto de objetos con atributos organizados jerárquicamente. El directorio LDAP se puede instalar en un servidor de una red para centralizar la gestión de usuarios y grupos en la red.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Configuración de herramientas antispam en el servidor de correos</title>
       <link>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</link>
@@ -45,16 +52,16 @@
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos de Internet</title>
-      <link>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
+      <link>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
+      <guid>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
       <description>&lt;p&gt;Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos postfix</title>
-      <link>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
+      <link>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
+      <guid>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
       <description>&lt;p&gt;Para instalar un servidor de correos &lt;code&gt;postfix&lt;/code&gt; en Debian se instala el paquete &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>

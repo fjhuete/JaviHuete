@@ -3,43 +3,259 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/administracion-sistemas/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cloud-computing/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-credenciales-jenkins/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-creacion-deployment-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/creaci%C3%B3n-de-im%C3%A1genes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-creacion-pods-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-creacion-ingress-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-creacion-servicio-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/despliegue-continuo/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/django/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/docker/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/github/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/helm/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/implantacion/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantacion/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantaci%C3%B3n/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantaci%C3%B3n-de-aplicaciones-web/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/servicios/2025-03-09-instalacion-minikube/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/integracion-continua/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/jenkins/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/kind/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/kubernetes/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/mariadb/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/minikube/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/ngrok/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/orquestaci%C3%B3n/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/php/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/pods/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/servicios/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/servicios/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/servicios-de-red-e-internet/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/ssh/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/ssh-agent/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/wordpress/</loc>
+    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cortafuegos/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/firewall/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/nftables/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/redes/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/seguridad/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/seguridad/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/seguridad-y-alta-disponibilidad/</loc>
+    <lastmod>2025-03-05T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-sistemas/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/ldap/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/openldap/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/red-hat/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/rocky/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/selinux/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sistemas/</loc>
+    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-bbdd/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administracion-bbdd/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/bases-de-datos/</loc>
+    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cassandra/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/administracion-de-sistemas/2025-03-03-configuracion-activacion-selinux/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
+    <loc>/tags/mongodb/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/red-hat/</loc>
+    <loc>/tags/movimiento-de-datos/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/rocky/</loc>
+    <loc>/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/seguridad/</loc>
+    <loc>/tags/mysql/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/selinux/</loc>
+    <loc>/tags/oracle/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/sistemas/</loc>
+    <loc>/tags/postgresql/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
+    <loc>/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/</loc>
+    <lastmod>2025-02-25T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/almacenamiento/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
@@ -56,28 +272,13 @@
     <loc>/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/creaci%C3%B3n-de-im%C3%A1genes/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/docker/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/docker-ce/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/docker-compose/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/implantacion/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/implantacion/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/implantaci%C3%B3n-de-aplicaciones-web/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/implantacion-aplicaciones-web/2025-02-24-implantacion-aplicaciones-php-docker/</loc>
@@ -95,26 +296,14 @@
     <loc>/tags/lamp/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/mariadb/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/moby/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/nextcloud/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/php/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
-    <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/vol%C3%BAmenes/</loc>
     <lastmod>2025-02-24T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/alias/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
@@ -126,9 +315,6 @@
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/correo/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/debian/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-02-18-despliegue-roundcube-docker/</loc>
@@ -152,10 +338,10 @@
     <loc>/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</loc>
+    <loc>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</loc>
+    <loc>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/postifx/</loc>
@@ -167,20 +353,17 @@
     <loc>/tags/roundcube/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/categories/servicios/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/servicios/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/servicios-de-red-e-internet/</loc>
-    <lastmod>2025-02-18T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/spamassassin/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/spf/</loc>
     <lastmod>2025-02-18T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/auditor%C3%ADa/</loc>
+    <lastmod>2025-02-17T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/</loc>
+    <lastmod>2025-02-17T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/arranque/</loc>
     <lastmod>2025-02-07T01:00:00+02:00</lastmod>
@@ -236,15 +419,6 @@
     <loc>/tags/openvpn/</loc>
     <lastmod>2025-01-29T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/redes/</loc>
-    <lastmod>2025-01-29T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/seguridad/</loc>
-    <lastmod>2025-01-29T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/seguridad-y-alta-disponibilidad/</loc>
-    <lastmod>2025-01-29T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/strongswan/</loc>
     <lastmod>2025-01-29T01:00:00+02:00</lastmod>
   </url><url>
@@ -261,9 +435,6 @@
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/implantaci%C3%B3n/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/</loc>
@@ -291,9 +462,6 @@
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/web/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/wordpress/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2025-01-16-instalacion-configuracion-dns-bind9/</loc>
@@ -339,9 +507,6 @@
     <lastmod>2025-01-14T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/integridad-de-ficheros/</loc>
-    <lastmod>2025-01-14T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/ssh/</loc>
     <lastmod>2025-01-14T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/ssl/</loc>
@@ -420,9 +585,6 @@
     <lastmod>2025-01-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/cms/</loc>
-    <lastmod>2024-12-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/django/</loc>
     <lastmod>2024-12-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/framework/</loc>
@@ -521,31 +683,13 @@
     <loc>/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/</loc>
     <lastmod>2024-11-18T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</loc>
-    <lastmod>2024-11-17T01:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/administracion-bbdd/</loc>
-    <lastmod>2024-11-17T01:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/administracion-bbdd/</loc>
-    <lastmod>2024-11-17T01:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/bases-de-datos/</loc>
-    <lastmod>2024-11-17T01:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/interconexion-de-servidores/</loc>
     <lastmod>2024-11-17T01:00:00+00:00</lastmod>
   </url><url>
     <loc>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</loc>
     <lastmod>2024-11-17T01:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/postgresql/</loc>
-    <lastmod>2024-11-17T01:00:00+00:00</lastmod>
-  </url><url>
     <loc>/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/</loc>
-    <lastmod>2024-11-16T01:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/oracle/</loc>
     <lastmod>2024-11-16T01:00:00+00:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2024-12-02-configuracion-proxy-inverso/</loc>
@@ -608,10 +752,13 @@
     <loc>/tags/iscsi/</loc>
     <lastmod>2024-11-10T01:00:00+02:00</lastmod>
   </url><url>
+    <loc>/tags/kvm/</loc>
+    <lastmod>2024-11-10T01:00:00+02:00</lastmod>
+  </url><url>
     <loc>/tags/lets-encrypt/</loc>
     <lastmod>2024-11-10T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/orquestaci%C3%B3n/</loc>
+    <loc>/tags/livbirt/</loc>
     <lastmod>2024-11-10T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/san/</loc>
@@ -639,9 +786,6 @@
     <lastmod>2024-10-21T01:00:00+00:00</lastmod>
   </url><url>
     <loc>/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/</loc>
-    <lastmod>2024-10-21T01:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/mysql/</loc>
     <lastmod>2024-10-21T01:00:00+00:00</lastmod>
   </url><url>
     <loc>/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/</loc>
@@ -791,9 +935,6 @@
     <loc>/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/</loc>
     <lastmod>2024-04-12T02:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/cortafuegos/</loc>
-    <lastmod>2024-04-12T02:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/hunger-games/</loc>
     <lastmod>2024-04-12T02:00:00+02:00</lastmod>
   </url><url>
@@ -881,9 +1022,6 @@
     <loc>/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/</loc>
     <lastmod>2024-03-07T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/mongodb/</loc>
-    <lastmod>2024-03-07T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/nosql/</loc>
     <lastmod>2024-03-07T01:00:00+02:00</lastmod>
   </url><url>
@@ -948,9 +1086,6 @@
     <lastmod>2024-02-04T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/</loc>
-    <lastmod>2024-02-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/kvm/</loc>
     <lastmod>2024-02-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/qemu/</loc>

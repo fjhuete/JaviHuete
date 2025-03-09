@@ -1,0 +1,2170 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Implantación de un cortafuegos perimetral con nftables</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Implantación de un cortafuegos perimetral con nftables" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/" />
+
+
+<meta name="twitter:title" content="Implantación de un cortafuegos perimetral con nftables" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Implantación de un cortafuegos perimetral con nftables
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/javi-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Javi Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/seguridad/"
+                    class=""
+                    >Seguridad
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              March 5, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#implementación-de-un-cortafuegos-perimetral-con-nftables">Implementación de un cortafuegos perimetral con nftables</a></li>
+    <li><a href="#permite-poder-hacer-conexiones-ssh-al-exterior-desde-la-máquina-cortafuegos">Permite poder hacer conexiones ssh al exterior desde la máquina cortafuegos</a></li>
+    <li><a href="#permite-hacer-consultas-dns-desde-la-máquina-cortafuegos-sólo-al-servidor-8888-comprueba-que-no-puedes-hacer-un-dig-a-1111">Permite hacer consultas DNS desde la máquina cortafuegos sólo al servidor 8.8.8.8. Comprueba que no puedes hacer un dig a 1.1.1.1</a></li>
+    <li><a href="#permite-que-la-máquina-cortafuegos-pueda-navegar-por-https">Permite que la máquina cortafuegos pueda navegar por https</a></li>
+    <li><a href="#los-equipos-de-la-red-local-deben-poder-tener-conexión-al-exterior">Los equipos de la red local deben poder tener conexión al exterior</a></li>
+    <li><a href="#permitimos-el-ssh-desde-el-cortafuegos-a-la-lan">Permitimos el ssh desde el cortafuegos a la LAN</a></li>
+    <li><a href="#permitimos-hacer-ping-desde-la-lan-a-la-máquina-cortafuegos">Permitimos hacer ping desde la LAN a la máquina cortafuegos</a></li>
+    <li><a href="#permite-realizar-conexiones-ssh-desde-los-equipos-de-la-lan">Permite realizar conexiones ssh desde los equipos de la LAN</a></li>
+    <li><a href="#instala-un-servidor-de-correos-en-la-máquina-de-la-lan-permite-el-acceso-desde-el-exterior-y-desde-el-cortafuegos-al-servidor-de-correos-para-probarlo-puedes-ejecutar-un-telnet-al-puerto-25-tcp">Instala un servidor de correos en la máquina de la LAN. Permite el acceso desde el exterior y desde el cortafuegos al servidor de correos. Para probarlo puedes ejecutar un telnet al puerto 25 tcp</a></li>
+    <li><a href="#permite-hacer-conexiones-ssh-desde-exterior-a-la-lan">Permite hacer conexiones ssh desde exterior a la LAN</a></li>
+    <li><a href="#modifica-la-regla-anterior-para-que-al-acceder-desde-el-exterior-por-ssh-tengamos-que-conectar-al-puerto-2222-aunque-el-servidor-ssh-este-configurado-para-acceder-por-el-puerto-22">Modifica la regla anterior, para que al acceder desde el exterior por ssh tengamos que conectar al puerto 2222, aunque el servidor ssh este configurado para acceder por el puerto 22</a></li>
+    <li><a href="#permite-hacer-consultas-dns-desde-la-lan-sólo-al-servidor-8888-comprueba-que-no-puedes-hacer-un-dig-a-1111">Permite hacer consultas DNS desde la LAN sólo al servidor 8.8.8.8. Comprueba que no puedes hacer un dig a 1.1.1.1</a></li>
+    <li><a href="#permite-que-los-equipos-de-la-lan-puedan-navegar-por-internet-excepto-a-la-página">Permite que los equipos de la LAN puedan navegar por internet, excepto a la página <a href="http://www.realbetisbalompie.es">www.realbetisbalompie.es</a></a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red.</p>
+<h1 id="implementación-de-un-cortafuegos-perimetral-con-nftables">Implementación de un cortafuegos perimetral con nftables</h1>
+<p>Para implementar un cortafuegos perimetral en una red con <code>nftables</code>, en primer lugar, se instala el paquete necesario para utilizar esta herramienta.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nftables
+</span></span></code></pre></div><p>A diferencia de <code>iptables</code>, <code>nftables</code> no cuenta con tablas predefinidas. Por tanto, para poder usar esta herramienta como cortafuegos perimetral que filtre el tráfico que circula entre la red privada e Internet hay que crear la tabla <code>filter</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add table inet filter
+</span></span></code></pre></div><p>A continuación, hay que crear también las cadenas en esta tabla. Aunque estas cadenas van a tener política por defecto <code>drop</code>, en un primer momento, se crean con política por defecto <code>accept</code> para no perder la conexión por SSH a la máquina.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add chain inet filter input { <span style="color:#24909d">type</span> filter hook input priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy accept <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain inet filter output { <span style="color:#24909d">type</span> filter hook output priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy accept <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain inet filter forward { <span style="color:#24909d">type</span> filter hook forward priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy accept <span style="color:#ed9d13">\;</span> }
+</span></span></code></pre></div><p>Como la máquina cortafuegos también actúa como router, necesitará una tabla <code>nat</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add table ip nat
+</span></span></code></pre></div><p>Esta tabla usa las cadenas prerouting y postrouting.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add chain ip nat prerouting { <span style="color:#24909d">type</span> nat hook prerouting priority <span style="color:#3677a9">100</span> <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain ip nat postrouting { <span style="color:#24909d">type</span> nat hook postrouting priority <span style="color:#3677a9">100</span> <span style="color:#ed9d13">\;</span> }
+</span></span></code></pre></div><p>Para que la máquina del cortafuegos actúe también como router debe tener activado el bit de forwarding. Por tanto, en el fichero de configuración /etc/sysctl.conf se descomenta la siguiente línea:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Uncomment the next line to enable packet forwarding for IPv4</span>
+</span></span><span style="display:flex;"><span><span style="color:#bbb">net.ipv4.ip_forward</span>=<span style="color:#ed9d13">1</span>
+</span></span></code></pre></div><p>Y se aplican los cambios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~$ sudo sysctl -p
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">net.ipv4.ip_forward = 1
+</span></span></span></code></pre></div><p>Además, para que desde la máquina de la red privada se pueda acceder a Internet, hay que añadir la regla SNAT correspondiente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule ip nat postrouting oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 counter masquerade
+</span></span></code></pre></div><p>Antes de cambiar la política por defecto de las cadenas de filtrado a <code>drop</code> hay que garantizar el acceso a la máquina por SSH con las siguientes reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input ip saddr 172.22.0.0/16 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 172.22.0.0/16 tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Para poder acceder por SSH a la máquina, además, desde la VPN que permite el acceso remoto a la red de OpenStack ha sido necesario añadir una nueva regla de cortafuegos más laxa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Ahora que la conexión por SSH a la máquina ya se permite, se puede cambiar a <code>drop</code> la política por defecto de las tres cadenas de la tabla <code>filter</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft chain inet filter input { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft chain inet filter output { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft chain inet filter forward { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span></code></pre></div><p>Para comprobar que la política por defecto está funcionando se puede hacer, desde el cortafuegos, un ping a la máquina de la red privada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~# ping -c1 -w4 192.168.100.10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 192.168.100.10 (192.168.100.10) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 192.168.100.10 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">4 packets transmitted, 0 received, 100% packet loss, time 3055ms
+</span></span></span></code></pre></div><p>Para que las reglas configuradas en el cortafuegos sean persistentes a los reinicios se vuelcan al fichero /etc/nftables.conf</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft list ruleset &gt; /etc/nftables.conf
+</span></span></code></pre></div><p>Tras aplicar estas primeras reglas, contiene la siguiente información:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:/home/debian# cat /etc/nftables.conf 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">table inet filter {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	chain input {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook input priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 3563 bytes 285912
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip saddr 172.22.0.0/16 tcp dport 22 ct state established,new counter packets 387 bytes 26896 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain output {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook output priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 2944 bytes 288232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip daddr 172.22.0.0/16 tcp sport 22 ct state established counter packets 257 bytes 25248 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain forward {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook forward priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 11644 bytes 37493425
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">table ip nat {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	chain prerouting {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type nat hook prerouting priority 100; policy accept;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain postrouting {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type nat hook postrouting priority srcnat; policy accept;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		oifname &#34;ens3&#34; ip saddr 192.168.100.0/24 counter packets 21 bytes 1480 masquerade
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><p>A continuación, hay que permitir también el tráfico para la interfaz loopback.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;lo&#34;</span> counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;lo&#34;</span> counter accept
+</span></span></code></pre></div><p>Como siguiente paso, se permite al router hacer ping a Internet.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><p>Y también a la LAN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><p>Así, desde el router se puede hacer ping tanto al exterior como a la máquina de la red privada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:/home/debian# ping -c1 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 8.8.8.8: icmp_seq=1 ttl=104 time=17.4 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 8.8.8.8 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 17.447/17.447/17.447/0.000 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:/home/debian# ping -c1 192.168.100.10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 192.168.100.10 (192.168.100.10) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 192.168.100.10: icmp_seq=1 ttl=64 time=2.08 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 192.168.100.10 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 2.078/2.078/2.078/0.000 ms
+</span></span></span></code></pre></div><p>Para permitir que la máquina de la red LAN pueda hacer ping al exterior también hay que indicar las reglas necesarias en la cadena <code>forward</code> de la tabla <code>filter</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip daddr 192.168.100.0/24 icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ ping -c1 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 8.8.8.8: icmp_seq=1 ttl=103 time=18.2 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 8.8.8.8 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 18.206/18.206/18.206/0.000 ms
+</span></span></span></code></pre></div><p>Para poder resolver nombres de Internet, el equipo de la LAN tiene que poder acceder al servidor DNS que tenga configurado. Para ello, la tabla <code>filter</code> del cortafuegos necesita incluir las reglas en la cadena <code>forward</code> que permitan el tráfico del puerto 53.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip daddr 192.168.100.0/24 udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ ping -c1 www.google.com
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING www.google.com (142.250.185.4) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from mad41s11-in-f4.1e100.net (142.250.185.4): icmp_seq=1 ttl=104 time=27.8 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- www.google.com ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 27.831/27.831/27.831/0.000 ms
+</span></span></span></code></pre></div><p>Para que el equipo de LAN pueda navegar por Internet usando los protocolos HTTP y HTTPS se debe permitir también el tráfico por los puertos de estos servicios.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip protocol tcp ip saddr 192.168.100.0/24 tcp dport { 80,443} ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip protocol tcp ip daddr 192.168.100.0/24 tcp sport { 80,443} ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ curl www.example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!doctype html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;title&gt;Example Domain&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">    &lt;meta charset=&#34;utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;style type=&#34;text/css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    body {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #f0f0f2;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        font-family: -apple-system, system-ui, BlinkMacSystemFont, &#34;Segoe UI&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		 &#34;Open Sans&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        width: 600px;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 5em auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 2em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #fdfdff;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        border-radius: 0.5em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    a:link, a:visited {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        color: #38488f;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        text-decoration: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    @media (max-width: 700px) {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            width: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;/style&gt;    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;h1&gt;Example Domain&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;This domain is for use in illustrative examples in documents. You may u
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	se this
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    domain in literature without prior coordination or asking for permission.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;&lt;a href=&#34;https://www.iana.org/domains/example&#34;&gt;More information...&lt;/a&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span></code></pre></div><p>Además, en el equipo de la LAN hay un servidor web. Para acceder a él hay que permitir el acceso a través del cortafuegos. Como mejora a esta regla, se limita el número de conexiones del servidor web a 15.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip daddr 192.168.100.0/24 tcp dport <span style="color:#3677a9">80</span> ct state new,established ct count <span style="color:#3677a9">15</span> counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 tcp sport <span style="color:#3677a9">80</span> ct state established counter accept
+</span></span></code></pre></div><p>Además, hay que configurar la regla de DNAT para el acceso a este servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">80</span> counter dnat to 192.168.100.10
+</span></span></code></pre></div><p>Con estas reglas de filtrado y de DNAT se puede acceder al servidor web desde el exterior a través del cortafuegos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ curl 172.22.201.30
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">html { color-scheme: light dark; }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">body { width: 35em; margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">font-family: Tahoma, Verdana, Arial, sans-serif; }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">working. Further configuration is required.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;p&gt;For online documentation and support please refer to
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;a href=&#34;http://nginx.org/&#34;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Commercial support is available at
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;a href=&#34;http://nginx.com/&#34;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span></code></pre></div><p>En este punto, el listado de reglas configuradas en el cortafuegos es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:~# nft list ruleset
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">table inet filter {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	chain input {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook input priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 6628 bytes 555598
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip saddr 172.22.0.0/16 tcp dport 22 ct state established,new counter packets 1924 bytes 27628 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip saddr 192.168.100.0/24 tcp sport 22 ct state established counter packets 588 bytes 97152 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip saddr 192.168.100.0/24 tcp sport 22 ct state established counter packets 0 bytes 0 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;lo&#34; counter packets 0 bytes 0 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens4&#34; icmp type echo-reply counter packets 1 bytes 84 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; icmp type echo-reply counter packets 6 bytes 504 accept 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        tcp dport 22 ct state established,new counter packets 885 bytes 68334 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain output {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook output priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 5661 bytes 618708
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip daddr 172.22.0.0/16 tcp sport 22 ct state established counter packets 1393 bytes 152276 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		ip daddr 192.168.100.0/24 tcp dport 22 ct state established,new counter packets 677 bytes 61220 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		oifname &#34;lo&#34; counter packets 0 bytes 0 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		oifname &#34;ens4&#34; icmp type echo-request counter packets 1 bytes 84 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		oifname &#34;ens3&#34; icmp type echo-request counter packets 6 bytes 504 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		tcp sport 22 ct state established counter packets 553 bytes 95508 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain forward {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type filter hook forward priority filter; policy drop;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		counter packets 12383 bytes 38207937
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens4&#34; oifname &#34;ens3&#34; ip saddr 192.168.100.0/24 icmp type echo-request counter packets 3 bytes 252 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; oifname &#34;ens4&#34; ip daddr 192.168.100.0/24 icmp type echo-reply counter packets 3 bytes 252 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens4&#34; oifname &#34;ens3&#34; ip saddr 192.168.100.0/24 udp dport 53 ct state established,new counter packets 10 bytes 638 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; oifname &#34;ens4&#34; ip daddr 192.168.100.0/24 udp sport 53 ct state established counter packets 10 bytes 1099 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens4&#34; oifname &#34;ens3&#34; ip protocol tcp ip saddr 192.168.100.0/24 tcp dport { 80, 443 } ct state established,new counter packets 178 bytes 10181 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; oifname &#34;ens4&#34; ip protocol tcp ip daddr 192.168.100.0/24 tcp sport { 80, 443 } ct state established counter packets 232 bytes 680949 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; oifname &#34;ens4&#34; ip daddr 192.168.100.0/24 tcp dport 80 ct state established,new ct count 15 counter packets 6 bytes 396 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens4&#34; oifname &#34;ens3&#34; ip saddr 192.168.100.0/24 tcp sport 80 ct state established counter packets 4 bytes 1069 accept
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">table ip nat {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	chain prerouting {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type nat hook prerouting priority 100; policy accept;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		iifname &#34;ens3&#34; tcp dport 80 counter packets 1 bytes 60 dnat to 192.168.100.10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">	chain postrouting {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		type nat hook postrouting priority srcnat; policy accept;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		oifname &#34;ens3&#34; ip saddr 192.168.100.0/24 counter packets 37 bytes 2550 masquerade
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	}
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><h1 id="permite-poder-hacer-conexiones-ssh-al-exterior-desde-la-máquina-cortafuegos">Permite poder hacer conexiones ssh al exterior desde la máquina cortafuegos</h1>
+<p>Para permitir conexiones SSH al exterior desde la máquina cortafuegos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Así, desde el cortafuegos se puede acceder por SSH a una máquina de fuera de la red.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~$ ssh javi@172.22.12.23
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">The authenticity of host &#39;172.22.12.23 (172.22.12.23)&#39; can&#39;t be established.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ED25519 key fingerprint is SHA256:i3ZgWPBlfhW42MZfkeEZO4Oa4oqgFpeJPc9RXrpTyZM.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This key is not known by any other names.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Warning: Permanently added &#39;172.22.12.23&#39; (ED25519) to the list of known hosts.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux tepig 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You have new mail.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Mon Feb 24 12:59:56 2025 from 172.22.201.30
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ hostname -f
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tepig
+</span></span></span></code></pre></div><h1 id="permite-hacer-consultas-dns-desde-la-máquina-cortafuegos-sólo-al-servidor-8888-comprueba-que-no-puedes-hacer-un-dig-a-1111">Permite hacer consultas DNS desde la máquina cortafuegos sólo al servidor 8.8.8.8. Comprueba que no puedes hacer un dig a 1.1.1.1</h1>
+<p>Para restringir las consultas DNS desde el cortafuegos sólo al servidor 8.8.8.8:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip daddr 8.8.8.8 udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 8.8.8.8 udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span></code></pre></div><p>Se pueden resolver direcciones al DNS 8.8.8.8:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">root@router-fw:~# dig @8.8.8.8 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; @8.8.8.8 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 30545
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 512
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;javihuete.site.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">javihuete.site.		900	IN	A	216.24.57.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 88 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Fri Feb 21 18:06:02 UTC 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 59
+</span></span></span></code></pre></div><p>Pero no a 1.1.1.1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:~# dig @1.1.1.1 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; @1.1.1.1 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; no servers could be reached
+</span></span></span></code></pre></div><h1 id="permite-que-la-máquina-cortafuegos-pueda-navegar-por-https">Permite que la máquina cortafuegos pueda navegar por https</h1>
+<p>Para que el cortafuegos pueda navegar por HTTPS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">443</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp sport <span style="color:#3677a9">443</span> ct state established counter accept
+</span></span></code></pre></div><p>Desde la máquina se puede acceder a una web HTTPS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:~# curl https://example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!doctype html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;title&gt;Example Domain&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">    &lt;meta charset=&#34;utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;style type=&#34;text/css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    body {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #f0f0f2;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        font-family: -apple-system, system-ui, BlinkMacSystemFont, &#34;Segoe UI&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">		 &#34;Open Sans&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        width: 600px;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 5em auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 2em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #fdfdff;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        border-radius: 0.5em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    a:link, a:visited {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        color: #38488f;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        text-decoration: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    @media (max-width: 700px) {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            width: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;/style&gt;    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;h1&gt;Example Domain&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;This domain is for use in illustrative examples in documents. You may 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	use this domain in literature without prior coordination or asking for 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	permission.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;&lt;a href=&#34;https://www.iana.org/domains/example&#34;&gt;More information...&lt;/a&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">	&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span></code></pre></div><p>Pero no por HTTP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:~# time curl example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">^C
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">real	4m57.055s
+</span></span></span></code></pre></div><h1 id="los-equipos-de-la-red-local-deben-poder-tener-conexión-al-exterior">Los equipos de la red local deben poder tener conexión al exterior</h1>
+<p>Para que los equipos de la red local puedan tener conexión al exterior haciendo ping:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip daddr 192.168.100.0/24 icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ ping -c1 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 8.8.8.8: icmp_seq=1 ttl=103 time=18.2 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 8.8.8.8 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 18.206/18.206/18.206/0.000 ms
+</span></span></span></code></pre></div><h1 id="permitimos-el-ssh-desde-el-cortafuegos-a-la-lan">Permitimos el ssh desde el cortafuegos a la LAN</h1>
+<p>Como, por defecto, se ha bloqueado todo el tráfico, desde el router no se puede acceder por SSH a la máquina de la red privada. Para permitir este tráfico hay que añadir dos reglas similares a las que permiten acceder por SSH al router.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output ip daddr 192.168.100.0/24 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 192.168.100.0/24 tcp sport <span style="color:#3677a9">22</span> ct stateestablished counter accept
+</span></span></code></pre></div><p>Tras aplicar estas reglas, se puede conectar al equipo de la red local por SSH.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~$ ssh 192.168.100.10
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux lan 6.1.0-28-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.119-1 (2024-11-22) 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Fri Feb 21 13:05:49 2025 from 192.168.100.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ hostname -f
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">lan
+</span></span></span></code></pre></div><h1 id="permitimos-hacer-ping-desde-la-lan-a-la-máquina-cortafuegos">Permitimos hacer ping desde la LAN a la máquina cortafuegos</h1>
+<p>Para que la máquin de la LAN haga ping al cortafuegos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ ping -c1 192.168.100.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 192.168.100.2 (192.168.100.2) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 192.168.100.2: icmp_seq=1 ttl=64 time=0.224 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 192.168.100.2 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 0.224/0.224/0.224/0.000 ms
+</span></span></span></code></pre></div><h1 id="permite-realizar-conexiones-ssh-desde-los-equipos-de-la-lan">Permite realizar conexiones ssh desde los equipos de la LAN</h1>
+<p>Para que los equipos de la LAN se puedan conectar por SSH al router:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ ssh 192.168.100.2
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">The authenticity of host &#39;192.168.100.2 (192.168.100.2)&#39; can&#39;t be established.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ED25519 key fingerprint is SHA256:PidAI9u2QLAxIyVcwJCMBDGGXcZUUDYA3F5BL5CDzuc.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This key is not known by any other names.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Warning: Permanently added &#39;192.168.100.2&#39; (ED25519) to the list of known hosts.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux router-fw 6.1.0-28-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.119-1 (2024-11-22) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Fri Feb 21 16:37:47 2025 from 172.210.0.6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~$ hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">router-fw
+</span></span></span></code></pre></div><h1 id="instala-un-servidor-de-correos-en-la-máquina-de-la-lan-permite-el-acceso-desde-el-exterior-y-desde-el-cortafuegos-al-servidor-de-correos-para-probarlo-puedes-ejecutar-un-telnet-al-puerto-25-tcp">Instala un servidor de correos en la máquina de la LAN. Permite el acceso desde el exterior y desde el cortafuegos al servidor de correos. Para probarlo puedes ejecutar un telnet al puerto 25 tcp</h1>
+<p>Para permitir el acceso desde el exterior al servidor de correos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip daddr 192.168.100.0/24 tcp dport <span style="color:#3677a9">25</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.100.0/24 tcp sport <span style="color:#3677a9">25</span> ct state established counter accept
+</span></span></code></pre></div><p>Además, hay que configurar la regla de DNAT para el acceso a este servidor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">25</span> counter dnat to 192.168.100.10
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ telnet 172.22.201.30 25
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Trying 172.22.201.30...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Connected to 172.22.201.30.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Escape character is &#39;^]&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">220 lan ESMTP Postfix (Debian/GNU)
+</span></span></span></code></pre></div><p>Para permitir el acceso desde el cortafuegos al servidor de correos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter output ip daddr 192.168.100.0/24 tcp dport <span style="color:#3677a9">25</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 192.168.100.0/24 tcp sport <span style="color:#3677a9">25</span> ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@router-fw:~# telnet 192.168.100.10 25
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Trying 192.168.100.10...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Connected to 192.168.100.10.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Escape character is &#39;^]&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">220 lan ESMTP Postfix (Debian/GNU)
+</span></span></span></code></pre></div><h1 id="permite-hacer-conexiones-ssh-desde-exterior-a-la-lan">Permite hacer conexiones ssh desde exterior a la LAN</h1>
+<p>Para permitir conexiones SSH desde el exterior a la LAN:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward ip daddr 192.168.100.0/24 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward ip saddr 192.168.100.0/24 tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><h1 id="modifica-la-regla-anterior-para-que-al-acceder-desde-el-exterior-por-ssh-tengamos-que-conectar-al-puerto-2222-aunque-el-servidor-ssh-este-configurado-para-acceder-por-el-puerto-22">Modifica la regla anterior, para que al acceder desde el exterior por ssh tengamos que conectar al puerto 2222, aunque el servidor ssh este configurado para acceder por el puerto 22</h1>
+<p>En este caso, se puede usar una regla de DNAT</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">2222</span> counter dnat to 192.168.100.10:22
+</span></span><span style="display:flex;"><span>nft add rule ip nat postrouting oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp sport <span style="color:#3677a9">22</span> counter snat to 172.22.201.30:2222
+</span></span></code></pre></div><h1 id="permite-hacer-consultas-dns-desde-la-lan-sólo-al-servidor-8888-comprueba-que-no-puedes-hacer-un-dig-a-1111">Permite hacer consultas DNS desde la LAN sólo al servidor 8.8.8.8. Comprueba que no puedes hacer un dig a 1.1.1.1</h1>
+<p>Primero hay que eliminar las reglas que permiten el tráfico DNS desde la LAN establecidas al principio del ejercicio:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft delete rule inet filter forward handle <span style="color:#3677a9">33</span>
+</span></span><span style="display:flex;"><span>nft delete rule inet filter forward handle <span style="color:#3677a9">34</span>
+</span></span></code></pre></div><p>Y para restrigir las consultas DNS sólo al servidor 8.8.8.8 desde la LAN:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip daddr 8.8.8.8 udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip saddr 8.8.8.8 udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ dig @8.8.8.8 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; @8.8.8.8 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 6326
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 512
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;javihuete.site.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">javihuete.site.		900	IN	A	216.24.57.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 188 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Fri Feb 21 19:30:40 UTC 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 59
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">debian@lan:~$ dig @1.1.1.1 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; communications error to 1.1.1.1#53: timed out
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; @1.1.1.1 javihuete.site.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; (1 server found)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; no servers could be reached
+</span></span></span></code></pre></div><h1 id="permite-que-los-equipos-de-la-lan-puedan-navegar-por-internet-excepto-a-la-página">Permite que los equipos de la LAN puedan navegar por internet, excepto a la página <a href="https://www.realbetisbalompie.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.realbetisbalompie.es</a></h1>
+<p>Con las reglas configuradas hasta el momento se permite el tráfico web por todo Internet. Así que hay que averiguar la IP de la páquina que hay que bloquear.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@router-fw:~$ dig www.realbetisbalompie.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; www.realbetisbalompie.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 32924
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 512
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;www.realbetisbalompie.es.	IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">www.realbetisbalompie.es. 122	IN	CNAME	realbetisbalompie.es.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">realbetisbalompie.es.	122	IN	A	51.255.76.196
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 52 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 8.8.8.8#53(8.8.8.8) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Fri Feb 21 19:33:29 UTC 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 83
+</span></span></span></code></pre></div><p>A continuación, se eliminan las reglas que permiten el tráfico web desde la LAN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft delete rule inet filter forward handle <span style="color:#3677a9">36</span>
+</span></span><span style="display:flex;"><span>nft delete rule inet filter forward handle <span style="color:#3677a9">38</span>
+</span></span></code></pre></div><p>Después se permite el tráfico web a todo Internet excepto a la IP <code>51.255.76.196</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip protocol tcp ip saddr 192.168.100.0/24 ip daddr != 51.255.76.196 tcp dport { 80,443} ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> ip protocol tcp ip saddr != 51.255.76.196 ip daddr 192.168.100.0/24 tcp sport { 80,443} ct state established counter accept
+</span></span></code></pre></div><p>Así, se puede acceder a cualquier web excepto a <a href="https://www.realbetisbalompie.es"
+
+
+
+
+ target="_blank"
+ 
+
+
+>www.realbetisbalompie.es</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ curl www.example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!doctype html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;title&gt;Example Domain&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">    &lt;meta charset=&#34;utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;style type=&#34;text/css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    body {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #f0f0f2;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        font-family: -apple-system, system-ui, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Open Sans&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        width: 600px;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 5em auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 2em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #fdfdff;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        border-radius: 0.5em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    a:link, a:visited {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        color: #38488f;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        text-decoration: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    @media (max-width: 700px) {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            width: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;/style&gt;    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;h1&gt;Example Domain&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;This domain is for use in illustrative examples in documents. You may use this
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    domain in literature without prior coordination or asking for permission.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;&lt;a href=&#34;https://www.iana.org/domains/example&#34;&gt;More information...&lt;/a&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">debian@lan:~$ time curl www.realbetisbalompie.es
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">curl: (28) Failed to connect to www.realbetisbalompie.es port 80 after 129394 ms: Couldn&#39;t connect to server
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">real	2m9.418s
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">user	0m0.015s
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sys	0m0.030s
+</span></span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/cortafuegos/">
+                        Cortafuegos
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/firewall/">
+                        Firewall
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/nftables/">
+                        Nftables
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/redes/">
+                        Redes
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad/">
+                        Seguridad
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas/">
+                        Administración de sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad-y-alta-disponibilidad/">
+                        Seguridad y alta disponibilidad
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fseguridad%2f2025-03-05-implantacion-cortafuegos-perimetral-nftables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fseguridad%2f2025-03-05-implantacion-cortafuegos-perimetral-nftables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fseguridad%2f2025-03-05-implantacion-cortafuegos-perimetral-nftables%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fseguridad%2f2025-03-05-implantacion-cortafuegos-perimetral-nftables%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
+      Movimientos de datos entre bases de datos
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En esta entrada se muestran diferentes supuestos prácticos de movimientos de datos entre bases de datos diferentes. En algunos cosos, estos volcados se realizan entre bases de datos dentro del mismo sistema gestor de bases de datos. En otras ocasiones, se documenta el proceso para volcar la información desde un sistema gestor de bases de datos a otro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+      Configuración NAT en routers Mikrotik en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-6WomfiWXziApPR9exxy3xjT2w9Za&#43;OYxJPD02L7xe5A="
+  src="/js/script-lazy.min.e96a267e2597ce20293d1f5ec71cb7c634f6c3d65af8e63124f0f4d8bef17b90.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

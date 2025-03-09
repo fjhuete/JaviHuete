@@ -1,0 +1,2360 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<title>Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="/images/og-image.png" />
+        <meta name="twitter:image" content="/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/" />
+
+
+<meta name="twitter:title" content="Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.min.5b415ddfdcfc45a6381f2b2b542ec2e47841a7d4938375c23070838929369bec.css"
+  integrity="sha256-W0Fd39z8RaY4HysrVC7C5HhBp9STg3XCMHCDiSk2m+w="
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.min.1891ab9d1988b9b19756de1bbea47aecb95c7b5ab195f6fe52244b6eca5d8154.css"
+  integrity="sha256-GJGrnRmIubGXVt4bvqR67Llce1qxlfb+UiRLbspdgVQ="
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+      
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Prácticas</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccioanr
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/javi-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Javi Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/seguridad/"
+                    class=""
+                    >Seguridad
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              February 25, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#configuración-del-cortafuegos-perimetral-en-luffy">Configuración del cortafuegos perimetral en Luffy</a>
+      <ol>
+        <li><a href="#creación-de-las-tablas-y-cadenas">Creación de las tablas y cadenas</a></li>
+        <li><a href="#reglas-de-cortafuegos-para-permitir-el-funcionamiento-del-escenario">Reglas de cortafuegos para permitir el funcionamiento del escenario</a>
+          <ol>
+            <li><a href="#permitir-el-tráfico-al-servidor-dns">Permitir el tráfico al servidor DNS</a></li>
+            <li><a href="#permitir-el-tráfico-al-servidor-de-correos">Permitir el tráfico al servidor de correos</a></li>
+            <li><a href="#permitir-el-tráfico-al-servidor-mariadb">Permitir el tráfico al servidor MariaDB</a></li>
+            <li><a href="#permitir-el-tráfico-al-servidor-web">Permitir el tráfico al servidor web</a></li>
+            <li><a href="#permitir-el-tráfico-al-servidor-ldap">Permitir el tráfico al servidor LDAP</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#la-máquina-luffy-tiene-un-servidor-ssh-escuchando-por-el-puerto-22-pero-al-acceder-desde-el-exterior-habrá-que-conectar-al-puerto-2222">La máquina Luffy tiene un servidor ssh escuchando por el puerto 22, pero al acceder desde el exterior habrá que conectar al puerto 2222</a></li>
+    <li><a href="#desde-sanji-y-zoro-se-debe-permitir-la-conexión-ssh-por-el-puerto-22-a-la-máquina-luffy">Desde Sanji y Zoro se debe permitir la conexión ssh por el puerto 22 a la máquina Luffy</a></li>
+    <li><a href="#la-máquina-luffy-debe-tener-permitido-el-tráfico-para-la-interfaz-loopback">La máquina Luffy debe tener permitido el tráfico para la interfaz loopback</a></li>
+    <li><a href="#a-la-máquina-luffy-se-le-puede-hacer-ping-desde-la-dmz-pero-desde-la-lan-se-le-debe-rechazar-la-conexión-reject-y-desde-el-exterior-se-rechazará-de-manera-silenciosa">A la máquina Luffy se le puede hacer ping desde la DMZ, pero desde la LAN se le debe rechazar la conexión (REJECT) y desde el exterior se rechazará de manera silenciosa</a></li>
+    <li><a href="#la-máquina-luffy-puede-hacer-ping-a-la-lan-la-dmz-y-al-exterior">La máquina Luffy puede hacer ping a la LAN, la DMZ y al exterior</a></li>
+    <li><a href="#desde-la-máquina-zoro-se-puede-hacer-ping-y-conexión-ssh-a-las-máquinas-de-la-lan">Desde la máquina Zoro se puede hacer ping y conexión ssh a las máquinas de la LAN</a></li>
+    <li><a href="#desde-cualquier-máquina-de-la-lan-se-puede-conectar-por-ssh-a-la-máquina-zoro">Desde cualquier máquina de la LAN se puede conectar por ssh a la máquina Zoro</a></li>
+    <li><a href="#configura-la-máquina-luffy-para-que-las-máquinas-de-lan-y-dmz-puedan-acceder-al-exterior">Configura la máquina Luffy para que las máquinas de LAN y DMZ puedan acceder al exterior</a></li>
+    <li><a href="#las-máquinas-de-la-lan-pueden-hacer-ping-al-exterior-y-navegar">Las máquinas de la LAN pueden hacer ping al exterior y navegar</a></li>
+    <li><a href="#la-máquina-zoro-puede-navegar-instala-un-servidor-web-un-servidor-ftp-y-un-servidor-de-correos-si-no-los-tienes-aún">La máquina Zoro puede navegar. Instala un servidor web, un servidor ftp y un servidor de correos si no los tienes aún</a></li>
+    <li><a href="#configura-la-máquina-luffy-para-que-los-servicios-web-y-ftp-sean-accesibles-desde-el-exterior">Configura la máquina Luffy para que los servicios web y ftp sean accesibles desde el exterior</a></li>
+    <li><a href="#el-servidor-web-y-el-servidor-ftp-deben-ser-accesibles-desde-la-lan-y-desde-el-exterior">El servidor web y el servidor ftp deben ser accesibles desde la LAN y desde el exterior</a></li>
+    <li><a href="#el-servidor-de-correos-sólo-debe-ser-accesible-desde-la-lan">El servidor de correos sólo debe ser accesible desde la LAN</a></li>
+    <li><a href="#en-la-máquina-nami-instala-un-servidor-postgres-si-no-lo-tiene-aún-a-este-servidor-se-puede-acceder-desde-la-dmz-pero-no-desde-el-exterior">En la máquina Nami instala un servidor Postgres si no lo tiene aún. A este servidor se puede acceder desde la DMZ, pero no desde el exterior</a></li>
+    <li><a href="#evita-ataques-dos-por-icmp-flood-limitando-a-4-el-número-de-peticiones-por-segundo-desde-una-misma-ip">Evita ataques DoS por ICMP Flood, limitando a 4 el número de peticiones por segundo desde una misma IP</a></li>
+    <li><a href="#evita-ataques-dos-por-syn-flood">Evita ataques DoS por SYN Flood</a></li>
+    <li><a href="#evita-que-realicen-escaneos-de-puertos-a-luffy">Evita que realicen escaneos de puertos a Luffy</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p>
+<p>Los contenedores forman parte de la red interna y el servidor web forma parte de la red DMZ.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="661"
+            height="190"
+            src="/images/seguridad/cortafuegos/escenario_hu_2c2c4d054fd35ce8.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/seguridad\/cortafuegos\/escenario_hu_2c2c4d054fd35ce8.png'" />
+      
+    
+
+  
+  
+
+
+
+
+
+
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
+
+<h1 id="configuración-del-cortafuegos-perimetral-en-luffy">Configuración del cortafuegos perimetral en Luffy</h1>
+<p>En este caso, se usa la herramienta nftables para implementar el cortafuegos en el escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install nftables
+</span></span></code></pre></div><h2 id="creación-de-las-tablas-y-cadenas">Creación de las tablas y cadenas</h2>
+<p>A diferencia de <code>iptables</code>, <code>nftables</code> no cuenta con tablas predefinidas. Por tanto, para poder usar esta herramienta como cortafuegos perimetral es necesario crear las tablas.</p>
+<p>En este escenario, el cortafuegos cumple con dos funciones: por una parte, filtra el tráfico que circula por la red y; por otra, modifica los paquetes traduciendo las direcciones IP de una red a otra cuando es necesario a través de las reglas de NAT. Por tanto, el cortafuegos necesita usar las tablas <code>filter</code> y <code>nat</code>.</p>
+<p>En este caso, la tabla <code>filter</code> es de tipo <code>inet</code> para que el filtrado de paquetes afecte, de forma indiferente, al tráfico IPv4 y al tráfico IPv6. En cambio, puesto que el NAT es una técnica específica de las direcciones IPv4, la tabla <code>nat</code> es de tipo <code>ip</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add table inet filter
+</span></span><span style="display:flex;"><span>nft add table ip nat
+</span></span></code></pre></div><p>Dentro de cada tabla, es necesario crear también las cadenas en las que se organizan las reglas tanto de filtrado como de NAT. En la tabla <code>nat</code>, las cadenas necesarias son <code>prerouting</code> y <code>postrouting</code>. En la tabla <code>filter</code> se pueden definir cadenas específicas para cada tráfico en concreto. Así, en esta tabla se establecen las siguientes cadenas:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Cadena</th>
+          <th>Descripción</th>
+          <th>Tipo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Input</td>
+          <td>Tráfico destinado a Luffy</td>
+          <td>Input</td>
+      </tr>
+      <tr>
+          <td>Output</td>
+          <td>Tráfico que origina Luffy</td>
+          <td>Output</td>
+      </tr>
+      <tr>
+          <td>Forward</td>
+          <td>Tráfico que pasa por Luffy pero ni se dirige ni se origina en el cortafuegos</td>
+          <td>Forward</td>
+      </tr>
+      <tr>
+          <td>Lan-ext y ext-lan</td>
+          <td>Tráfico que circula entre Nami o Sanji y el exterior</td>
+          <td>Sin hook</td>
+      </tr>
+      <tr>
+          <td>Lan-dmz y dmz-lan</td>
+          <td>Tráfico que circula entre Nami o Sanji y Zoro</td>
+          <td>Sin hook</td>
+      </tr>
+      <tr>
+          <td>Dmz-ext y ext-dmz</td>
+          <td>Tráfico que circula entre Zoro y el exterior</td>
+          <td>Sin hook</td>
+      </tr>
+  </tbody>
+</table>
+<p>Aunque la política por defecto de todas estas cadenas será <code>drop</code>, en un primer momento se crean con una política por defecto <code>accept</code> para no perder la conexión por SSH a ellas. Para crear las cadenas se usa el comando <code>nft add chain</code> de <code>nftables</code>.</p>
+<p>Si se crean diferentes cadenas con el hook forward el cortafuegos no funciona porque sólo permitiría pasar el tráfico que cumpliese con una regla en cada una de las cadenas. Esto ocurre porque, si la política por defecto de varias cadenas de tipo forward es drop, el cortafuegos rechaza el tráfico que no cumpla con ninguna regla de esa cadena.</p>
+<p>Para solucionar esto y poder usar cadenas personalizadas en la configuración del cortafuegos, se crea una cadena genérica de tipo forward y, después se crean varias cadenas sin hook según el origen y destino del tráfico que atraviese el cortafuegos. Este tráfico se redirige después a cada una de las cadenas personalizadas según su origen y destino con la orden <code>jump</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Tabla filter</span>
+</span></span><span style="display:flex;"><span>nft add chain inet filter input { <span style="color:#24909d">type</span> filter hook input priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy accept <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain inet filter output { <span style="color:#24909d">type</span> filter hook output priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy accept <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain inet filter forward { <span style="color:#24909d">type</span> filter hook forward priority <span style="color:#3677a9">0</span> <span style="color:#ed9d13">\;</span> counter <span style="color:#ed9d13">\;</span> policy drop <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain inet filter lan-ext
+</span></span><span style="display:flex;"><span>nft add chain inet filter ext-lan
+</span></span><span style="display:flex;"><span>nft add chain inet filter lan-dmz
+</span></span><span style="display:flex;"><span>nft add chain inet filter dmz-lan
+</span></span><span style="display:flex;"><span>nft add chain inet filter dmz-ext
+</span></span><span style="display:flex;"><span>nft add chain inet filter ext-dmz
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico de Nami y Sanji al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> jump lan-ext
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico del exterior a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> jump ext-lan
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico de Nami y Sanji a la dmz</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> jump lan-dmz
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico de Nami y Sanji a la dmz</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> jump dmz-lan
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico de la dmz al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> jump dmz-ext
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Redirigir tráfico del exterior a la dmz</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter forward iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> jump ext-dmz
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Tabla nat</span>
+</span></span><span style="display:flex;"><span>nft add chain ip nat prerouting { <span style="color:#24909d">type</span> nat hook prerouting priority <span style="color:#3677a9">100</span> <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft add chain ip nat postrouting { <span style="color:#24909d">type</span> nat hook postrouting priority <span style="color:#3677a9">100</span> <span style="color:#ed9d13">\;</span> }
+</span></span></code></pre></div><h2 id="reglas-de-cortafuegos-para-permitir-el-funcionamiento-del-escenario">Reglas de cortafuegos para permitir el funcionamiento del escenario</h2>
+<p>Antes de cambiar la política por defecto de las cadenas de filtrado a <code>drop</code> hay que garantizar el acceso a la máquina cortafuegos por SSH.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input ip saddr 172.22.0.0/16 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 172.22.0.0/16 tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Aunque para poder acceder por SSH a la máquina, además, desde la VPN que permite el acceso remoto a la red de OpenStack es necesario usar unas reglas algo más permisivas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Además, también se permite el acceso por SSH desde Luffy al resto de máquinas del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Acceso por SSH de Luffy a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Acceso por SSH de Luffy a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Una vez que se ha garantizado el acceso a la máquina del cortafuegos, se puede cambiar la política por defecto de todas las cadenas de la tabla <code>filter</code> a <code>drop</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft chain inet filter input { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft chain inet filter output { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span><span style="display:flex;"><span>nft chain inet filter forward { policy drop <span style="color:#ed9d13">\;</span> }
+</span></span></code></pre></div><p>Al hacer un ping entre dos máquinas cualquiera del escenario, se puede comprobar que no hay conexión entre ellas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@luffy:~# ping -w4 zoro
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING zoro.javi.gonzalonazareno.org (172.16.0.200) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- zoro.javi.gonzalonazareno.org ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">4 packets transmitted, 0 received, 100% packet loss, time 3074ms
+</span></span></span></code></pre></div><p>Para garantizar el correcto funcionamiento del escenario, es necesario incluir reglas de cortafuegos que permitan las conexiones necesarias para cada uno de los servicios instalados en estas máquinas.</p>
+<h3 id="permitir-el-tráfico-al-servidor-dns">Permitir el tráfico al servidor DNS</h3>
+<p>Para que funcione la resolución de nombres de dominios en el escenario es necesario permitir el tráfico por el puerto 53 UDP:</p>
+<ul>
+<li>Desde Nami hacia el exterior</li>
+<li>Desde el exterior hacia Nami</li>
+<li>Desde Zoro hacia Nami</li>
+<li>Desde Nami hacia Zoro</li>
+<li>Desde Luffy hacia Nami</li>
+<li>Desde Nami hacia Luffy</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones DNS de Nami al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-ext udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta DNS del exterior a Nami</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-lan udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones DNS de Zoro a Nami</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta DNS de Nami a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones DNS de Luffy a Nami</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> udp dport <span style="color:#3677a9">53</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta DNS de Nami a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> udp sport <span style="color:#3677a9">53</span> ct state established counter accept
+</span></span></code></pre></div><p>Así, se pueden hacer resoluciones de nombres de dominio desde todas las máquinas del escenario.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@luffy:~# dig javihuete.site
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">; &lt;&lt;&gt;&gt; DiG 9.18.33-1~deb12u2-Debian &lt;&lt;&gt;&gt; javihuete.site
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; global options: +cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; Got answer:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 41601
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; OPT PSEUDOSECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; EDNS: version: 0, flags:; udp: 1232
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">; COOKIE: 0ac70611e3934a4c0100000067c89697aed0469ea41d3509 (good)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; QUESTION SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;javihuete.site.			IN	A
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; ANSWER SECTION:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">javihuete.site.		887	IN	A	216.24.57.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">;; Query time: 0 msec
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; SERVER: 192.168.0.2#53(192.168.0.2) (UDP)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; WHEN: Wed Mar 05 18:23:19 UTC 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">;; MSG SIZE  rcvd: 87
+</span></span></span></code></pre></div><h3 id="permitir-el-tráfico-al-servidor-de-correos">Permitir el tráfico al servidor de correos</h3>
+<p>Para que el servidor de correos pueda enviar y recibir correos desde el exterior es necesario permitir el tráfico por el puerto 25 TCP:</p>
+<ul>
+<li>Desde Sanji hacia el exterior</li>
+<li>Desde el exterior hacia Sanji</li>
+</ul>
+<p>Además, hay que configurar en la tabla <code>nat</code> una regla de DNAT que reenvíe los correos que lleguen al router, Luffy, al servidor de correos en Sanji.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Envío de correos de Sanji al relay host en Macaco (172.22.0.1)</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-ext ip saddr 192.168.0.3 tcp dport <span style="color:#3677a9">25</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Recepción de correos del exterior de Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-lan ip daddr 192.168.0.3 tcp dport <span style="color:#3677a9">25</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Regla DNAT para reenviar los correos de Luffy a Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">25</span> counter dnat to 192.168.0.3
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Regla SNAT para que puedan salir los correos de Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat postrouting oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 192.168.0.0/24 counter masquerade
+</span></span></code></pre></div><h3 id="permitir-el-tráfico-al-servidor-mariadb">Permitir el tráfico al servidor MariaDB</h3>
+<p>Al servidor MariaDB instalado en Sanji debe acceder el servidor web instalado en Zoro. Por tanto, para que este servicio funcione correctamente es necesario permitir el tráfico por el puerto 3306 TCP:</p>
+<ul>
+<li>Desde Zoro hacia Sanji</li>
+<li>Desde Sanji hacia Zoro</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Conexiones desde el servidor web a la base de datos</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp dport <span style="color:#3677a9">3306</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas de la base de datos al servidor web</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp sport <span style="color:#3677a9">3306</span> ct state established counter accept
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> mysql -u wp-user -p -h sanji
+</span></span><span style="display:flex;"><span><span style="color:#ccc">Enter password: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Welcome to the MariaDB monitor.  Commands end with ; or \g.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Your MariaDB connection id is 33
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Server version: 10.6.18-MariaDB-0ubuntu0.22.04.1 Ubuntu 22.04
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">MariaDB [(none)]&gt; 
+</span></span></span></code></pre></div><h3 id="permitir-el-tráfico-al-servidor-web">Permitir el tráfico al servidor web</h3>
+<p>Al servidor web sólo es necesario acceder desde el exterior y se hace a través de una regla DNAT en el router. Por tanto, para permitir el correcto funcionamiento del servidor web es necesario permitir el tráfico por el puerto 80 TCP:</p>
+<ul>
+<li>Desde el exterior hacia Zoro</li>
+<li>Desde Zoro hacia el exterior</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones HTTP desde el exterior al servidor web</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-dmz ip daddr 172.16.0.200 tcp dport <span style="color:#3677a9">80</span> ct state new,established ct count <span style="color:#3677a9">10</span> counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta HTTP desde el servidor web al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-ext ip saddr 172.16.0.200 tcp sport <span style="color:#3677a9">80</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Regla DNAT</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">80</span> counter dnat to 172.16.0.200
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Regla SNAT</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat postrouting oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 172.16.0.0/32 counter masquerade
+</span></span></code></pre></div><p>{{ &lt; notice &ldquo;note&rdquo; &gt;}}
+En este caso, a la regla que permite el paso de peticiones HTTP desde el exterior al servidor web se le añade una condición que limita a 10 el número de conexiones simultáneas.
+{{ &lt; /notice &gt;}}</p>
+<h3 id="permitir-el-tráfico-al-servidor-ldap">Permitir el tráfico al servidor LDAP</h3>
+<p>Para que funcione el servidor LDAP en el escenario es necesario permitir el tráfico por el puerto 389 TCP de petición desde todas las máquinas a Luffy y de respuesta desde Luffy a todas las máquinas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones LDAP de la LAN a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 192.168.0.0/24 tcp dport <span style="color:#3677a9">389</span> counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta LDAP de Luffy a la LAN</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 192.168.0.0/24 tcp sport <span style="color:#3677a9">389</span> counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones LDAP de la DMZ a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 172.16.0.0/32 tcp dport <span style="color:#3677a9">389</span> counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuesta LDAP de Luffy a la DMZ</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 172.16.0.0/32 tcp sport <span style="color:#3677a9">389</span> counter accept
+</span></span></code></pre></div><p>Una vez configuradas todas las reglas del cortafuegos, para que esta configuración sea persistente entre reinicios es necesario volcar la información al fichero /etc/nftables.conf.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">nft list ruleset &gt; /etc/nftables.conf
+</span></span></span></code></pre></div><p>Además, también hay que habilitar y arrancar el servicio <code>nftables</code>, que se encarga de cargar las reglas a partir del fichero de configuración en cada reinicio.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl enable nftables
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl start nftables
+</span></span></span></code></pre></div><h1 id="la-máquina-luffy-tiene-un-servidor-ssh-escuchando-por-el-puerto-22-pero-al-acceder-desde-el-exterior-habrá-que-conectar-al-puerto-2222">La máquina Luffy tiene un servidor ssh escuchando por el puerto 22, pero al acceder desde el exterior habrá que conectar al puerto 2222</h1>
+<p>Para acceder por SSH a Luffy usando el puerto 2222 en vez del 22 sin modificar la configuración del servidor SSH se puede usar la siguiente regla de DNAT en el cortafuegos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">2222</span> counter dnat to 10.0.200.61:22
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ ssh luffy -p 2222
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux luffy 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You have new mail.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Wed Mar  5 18:17:59 2025 from 172.210.0.6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">luffy
+</span></span></span></code></pre></div><h1 id="desde-sanji-y-zoro-se-debe-permitir-la-conexión-ssh-por-el-puerto-22-a-la-máquina-luffy">Desde Sanji y Zoro se debe permitir la conexión ssh por el puerto 22 a la máquina Luffy</h1>
+<p>Para permitir que Luffy reciba conexiones SSH desde Sanji y Zoro se añaden al cortafuegos las siguientes reglas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones SSH de Sanji a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 192.168.0.3 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas SSH de Luffy a Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 192.168.0.3 tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones SSH de Zoro a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input ip saddr 172.16.0.200 tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas SSH de Luffy a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output ip daddr 172.16.0.200 tcp dport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Desde Sanji se puede conectar por SSH a Luffy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@sanji:~$ ssh luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux luffy 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You have new mail.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Wed Mar  5 17:09:30 2025 from 172.210.0.6
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">luffy
+</span></span></span></code></pre></div><p>Igualmente, desde Zoro también se puede acceder a Luffy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ssh luffy
+</span></span><span style="display:flex;"><span><span style="color:#ccc">Linux luffy 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">The programs included with the Debian GNU/Linux system are free software;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">the exact distribution terms for each program are described in the
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">individual files in /usr/share/doc/*/copyright.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">permitted by applicable law.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You have new mail.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Wed Mar  5 18:38:02 2025 from 172.16.0.200
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@luffy:~$ hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">luffy
+</span></span></span></code></pre></div><h1 id="la-máquina-luffy-debe-tener-permitido-el-tráfico-para-la-interfaz-loopback">La máquina Luffy debe tener permitido el tráfico para la interfaz loopback</h1>
+<p>Para permitir el tráfico para la interfaz loopback en el cortafuegos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;lo&#34;</span> counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;lo&#34;</span> counter accept
+</span></span></code></pre></div><h1 id="a-la-máquina-luffy-se-le-puede-hacer-ping-desde-la-dmz-pero-desde-la-lan-se-le-debe-rechazar-la-conexión-reject-y-desde-el-exterior-se-rechazará-de-manera-silenciosa">A la máquina Luffy se le puede hacer ping desde la DMZ, pero desde la LAN se le debe rechazar la conexión (REJECT) y desde el exterior se rechazará de manera silenciosa</h1>
+<p>En este caso se configuran las reglas que:</p>
+<ul>
+<li>Permitan las peticiones ping desde Zoro a Luffy</li>
+<li>Permitan las respuestas ping desde Luffy a Zoro</li>
+<li>Rechacen las peticiones ping desde Nami o Sanji</li>
+<li>Rechacen de manera silenciosa las peticiones ping desde el exterior</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Zoro a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping de Luffy a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Rechazar las peticiones ping desde la LAN</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> icmp <span style="color:#24909d">type</span> echo-request reject with icmp <span style="color:#24909d">type</span> admin-prohibited
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Rechazar de manera silenciosa las peticiones ping desde el exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter reject
+</span></span></code></pre></div><p>Desde Zoro se puede hacer ping a Luffy</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ping -c1 luffy
+</span></span><span style="display:flex;"><span><span style="color:#ccc">PING 172.16.0.1 (172.16.0.1) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 172.16.0.1: icmp_seq=1 ttl=64 time=0.261 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 172.16.0.1 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 0.261/0.261/0.261/0.000 ms
+</span></span></span></code></pre></div><p>En el caso de las peticiones ping desde la red interna a Luffy, este tipo de comunicación no se permite.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@sanji:~$ ping -w2 luffy
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING luffy.javi.gonzalonazareno.org (192.168.0.1) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- luffy.javi.gonzalonazareno.org ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2 packets transmitted, 0 received, 100% packet loss, time 1012ms
+</span></span></span></code></pre></div><p>En el caso de las peticiones ping desde el exterior a Luffy no se informa de la prohibición pero tampoco se permite este tipo de conexiones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ ping -w2 172.22.201.28
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 172.22.201.28 (172.22.201.28) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 172.22.201.28 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">2 packets transmitted, 0 received, 100% packet loss, time 1013ms
+</span></span></span></code></pre></div><h1 id="la-máquina-luffy-puede-hacer-ping-a-la-lan-la-dmz-y-al-exterior">La máquina Luffy puede hacer ping a la LAN, la DMZ y al exterior</h1>
+<p>Para permitir que Luffy pueda hacer ping por todas sus interfaces hay que escribir las reglas que permitan:</p>
+<ul>
+<li>Peticiones ping de Luffy a Zoro</li>
+<li>Respuestas ping de Zoro a Luffy</li>
+<li>Peticiones ping de Luffy a Nami y Sanji</li>
+<li>Respuestas ping de Nami y Sanji a Luffy</li>
+<li>Peticiones ping de Luffy al exterior</li>
+<li>Respuestas ping desde el exterior a Luffy</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Luffy a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping de Zoro a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens4&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Luffy a Nami o Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping de Nami o Sanji a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;br-intra&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Luffy al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter output oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping del exterior a Luffy</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter input iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><p>Así, Luffy puede hacer ping por todas sus interfaces.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">root@luffy:~# ping -c1 sanji
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING sanji.javi.gonzalonazareno.org (192.168.0.3) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from sanji.javi.gonzalonazareno.org (192.168.0.3): icmp_seq=1 ttl=64 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">time=0.086 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- sanji.javi.gonzalonazareno.org ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 0.086/0.086/0.086/0.000 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@luffy:~# ping -c1 zoro
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING zoro.javi.gonzalonazareno.org (172.16.0.200) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from zoro.javi.gonzalonazareno.org (172.16.0.200): icmp_seq=1 ttl=64 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">time=1.71 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- zoro.javi.gonzalonazareno.org ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 1.705/1.705/1.705/0.000 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">root@luffy:~# ping -c1 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 8.8.8.8: icmp_seq=1 ttl=106 time=17.4 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 8.8.8.8 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 17.415/17.415/17.415/0.000 ms
+</span></span></span></code></pre></div><h1 id="desde-la-máquina-zoro-se-puede-hacer-ping-y-conexión-ssh-a-las-máquinas-de-la-lan">Desde la máquina Zoro se puede hacer ping y conexión ssh a las máquinas de la LAN</h1>
+<p>Para que Zoro pueda hacer ping y conectarse por SSH a Nami y Sanji hay que establecer las siguientes reglas en el cortafuegos:</p>
+<ul>
+<li>Peticiones ping de Zoro a Nami o Sanji</li>
+<li>Respuestas ping de Nami y Sanji a Zoro</li>
+<li>Peticiones SSH de Zoro a Nami o Sanji</li>
+<li>Respuestas SSH de Nami y Sanji a Zoro</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Zoro a Nami o Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping de Nami o Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones SSH de Zoro a Nami o Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp dport <span style="color:#3677a9">22</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas SSH de Nami o Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp sport <span style="color:#3677a9">22</span> ct state established counter accept
+</span></span></code></pre></div><p>Zoro puede conectarse por SSH y hacer ping a ambos contenedores de la red LAN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ssh sanji
+</span></span><span style="display:flex;"><span><span style="color:#ccc">The authenticity of host &#39;sanji (192.168.0.3)&#39; can&#39;t be established.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ED25519 key fingerprint is SHA256:js8NZC99EMo1ukuhti5Z/YjQqKme0y8bhVI6/eGyAh0.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This key is not known by any other names
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Warning: Permanently added &#39;sanji&#39; (ED25519) to the list of known hosts.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.1.0-31-amd64 x86_64)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc"> * Documentation:  https://help.ubuntu.com
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> * Management:     https://landscape.canonical.com
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"> * Support:        https://ubuntu.com/pro
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">You have no mail.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Wed Mar  5 18:42:02 2025 from 192.168.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@sanji:~$ hostname
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sanji
+</span></span></span></code></pre></div><h1 id="desde-cualquier-máquina-de-la-lan-se-puede-conectar-por-ssh-a-la-máquina-zoro">Desde cualquier máquina de la LAN se puede conectar por ssh a la máquina Zoro</h1>
+<p>Para permitir que desde Nami y Sanji se pueda hacer SSH a Zoro hay que:</p>
+<ul>
+<li>Permitir las peticiones SSH de Nami y Sanji a Zoro</li>
+<li>Permitir las respuestas SSH de Zoro a Sanji y Nami</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones SSH de Nami o Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp dport <span style="color:#3677a9">22</span> counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas SSH de Zoro a Nami o Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp sport <span style="color:#3677a9">22</span> counter accept
+</span></span></code></pre></div><p>Con esta regla, Nami y Sanji pueden conectarse por SSH a Zoro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@sanji:~$ ssh zoro
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">The authenticity of host &#39;zoro (172.16.0.200)&#39; can&#39;t be established.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ED25519 key fingerprint is SHA256:mPxa3RuInTQPneT1b/7k0XK4E8uYJN1af3evQt/2C7w.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">This key is not known by any other names
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Warning: Permanently added &#39;zoro&#39; (ED25519) to the list of known hosts.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Last login: Wed Mar  5 18:43:36 2025 from 172.16.0.1
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">[usuario@zoro ~]$</span> hostname
+</span></span><span style="display:flex;"><span><span style="color:#ccc">zoro.javi.gonzalonazareno.org
+</span></span></span></code></pre></div><h1 id="configura-la-máquina-luffy-para-que-las-máquinas-de-lan-y-dmz-puedan-acceder-al-exterior">Configura la máquina Luffy para que las máquinas de LAN y DMZ puedan acceder al exterior</h1>
+<p>Para que las máquinas tanto de la LAN como de la DMZ puedan acceder al exterior a través de ping hay que permitir:</p>
+<ul>
+<li>Las peticiones ping de Nami y Sanji al exterior</li>
+<li>Las respuestas ping del exterior a Nami y Sanji</li>
+<li>Las peticiones ping de Zoro al exterior</li>
+<li>Las respuestas ping del exterior a Zoro</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Nami y Sanji al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-ext icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping del exterior a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-lan icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Zoro al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-ext icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping del exterior a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-dmz icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span></code></pre></div><p>Ahora las máquinas de la LAN y la DMZ pueden hacer ping al exterior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@nami:~$ ping -c1 8.8.8.8
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">64 bytes from 8.8.8.8: icmp_seq=1 ttl=105 time=17.2 ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">--- 8.8.8.8 ping statistics ---
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">1 packets transmitted, 1 received, 0% packet loss, time 0ms
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">rtt min/avg/max/mdev = 17.196/17.196/17.196/0.000 ms
+</span></span></span></code></pre></div><h1 id="las-máquinas-de-la-lan-pueden-hacer-ping-al-exterior-y-navegar">Las máquinas de la LAN pueden hacer ping al exterior y navegar</h1>
+<p>Para que Nami y Sanji puedan navegar por Internet y hacer ping al exterior hay que permitir en el cortafuegos:</p>
+<ul>
+<li>Las peticiones ping de Nami y Sanji al exterior</li>
+<li>Las respuestas ping del exterior a Nami y Sanji</li>
+<li>Las peticiones HTTP y HTTPS de Nami y Sanji al exterior</li>
+<li>Las respuestas HTTP y HTTPS del exterior y Nami y Sanji</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones ping de Nami y Sanji al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-ext icmp <span style="color:#24909d">type</span> echo-request counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas ping del exterior a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-lan icmp <span style="color:#24909d">type</span> echo-reply counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones HTTP y HTTPS de Nami y Sanji al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-ext tcp dport { 80,443 } ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas HTTP y HTTPS del exterior a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-lan tcp sport { 80,443 } ct state established counter accept
+</span></span></code></pre></div><p>Tanto desde Nami como desde Sanji se puede hacer ping al exterior y consultar páginas web.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@nami:~$ curl example.org
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!doctype html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;title&gt;Example Domain&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">    &lt;meta charset=&#34;utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;style type=&#34;text/css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    body {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #f0f0f2;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        font-family: -apple-system, system-ui, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Open Sans&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        width: 600px;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 5em auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 2em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #fdfdff;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        border-radius: 0.5em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    a:link, a:visited {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        color: #38488f;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        text-decoration: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    @media (max-width: 700px) {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            width: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;/style&gt;    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;h1&gt;Example Domain&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;This domain is for use in illustrative examples in documents. You may use this
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    domain in literature without prior coordination or asking for permission.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;&lt;a href=&#34;https://www.iana.org/domains/example&#34;&gt;More information...&lt;/a&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span></code></pre></div><h1 id="la-máquina-zoro-puede-navegar-instala-un-servidor-web-un-servidor-ftp-y-un-servidor-de-correos-si-no-los-tienes-aún">La máquina Zoro puede navegar. Instala un servidor web, un servidor ftp y un servidor de correos si no los tienes aún</h1>
+<p>Para que Zoro pueda navegar por Internet es necesario permitir por los puertos 80 y 443 TCP:</p>
+<ul>
+<li>Las peticiones de Zoro al exterior</li>
+<li>Las respuestas del exterior a Zoro</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones HTTP y HTTPS de Zoro al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-ext tcp dport { 80,443 } ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas HTTP y HTTPS del exterior a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-dmz tcp sport { 80,443 } ct state established counter accept
+</span></span></code></pre></div><p>Al permitir este tráfico Zoro ya puede navegar por Internet, así como instalar paquetes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> curl example.org
+</span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;!doctype html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;title&gt;Example Domain&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">    &lt;meta charset=&#34;utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta http-equiv=&#34;Content-type&#34; content=&#34;text/html; charset=utf-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;style type=&#34;text/css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    body {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #f0f0f2;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        font-family: -apple-system, system-ui, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Open Sans&#34;, &#34;Helvetica Neue&#34;, Helvetica, Arial, sans-serif;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        width: 600px;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        margin: 5em auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        padding: 2em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        background-color: #fdfdff;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        border-radius: 0.5em;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    a:link, a:visited {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        color: #38488f;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        text-decoration: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    @media (max-width: 700px) {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        div {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            margin: 0 auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">            width: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;/style&gt;    
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">&lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;h1&gt;Example Domain&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;This domain is for use in illustrative examples in documents. You may use this
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    domain in literature without prior coordination or asking for permission.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    &lt;p&gt;&lt;a href=&#34;https://www.iana.org/domains/example&#34;&gt;More information...&lt;/a&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;/html&gt;
+</span></span></span></code></pre></div><h1 id="configura-la-máquina-luffy-para-que-los-servicios-web-y-ftp-sean-accesibles-desde-el-exterior">Configura la máquina Luffy para que los servicios web y ftp sean accesibles desde el exterior</h1>
+<p>Para que los servicios web y ftp instalados en Zoro sean accesibles desde el exterior hay que añadir al cortafuegos una regla de DNAT para cada uno de ellos.</p>
+<p>Además, hay que permitir que atraviesen el router:</p>
+<ul>
+<li>Las peticiones HTTP y HTTPS del exterior a Zoro</li>
+<li>Las respuestas HTTP y HTTPS de Zoro al exterior</li>
+<li>Las peticiones FTP del exterior a Zoro</li>
+<li>Las respuestas FTP de Zoro al exterior</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones HTTP y HTTPS del exterior a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-dmz tcp dport { 80,443 } ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas HTTP y HTTPS de Zoro al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-ext tcp sport { 80,443 } ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones FTP del exterior a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter ext-dmz tcp dport <span style="color:#3677a9">21</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas FTP de Zoro al exterior</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-ext tcp sport <span style="color:#3677a9">21</span> ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#DNAT para el servidor web</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport { 80,443 } counter dnat to 172.16.0.200
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#DNAT para el servidor FTP</span>
+</span></span><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">21</span> counter dnat to 172.16.0.200
+</span></span></code></pre></div><p>Así, tanto el servidor web como el FTP de Zoro son accesibles desde el exterior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ curl 172.22.201.28
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;h1&gt;Francisco Javier Huete Mejías&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;h2&gt;Jueves, 30 de enero de 2025&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">❯ telnet 172.22.201.28 21
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Trying 172.22.201.28...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Connected to 172.22.201.28.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Escape character is &#39;^]&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">220 (vsFTPd 3.0.5)
+</span></span></span></code></pre></div><h1 id="el-servidor-web-y-el-servidor-ftp-deben-ser-accesibles-desde-la-lan-y-desde-el-exterior">El servidor web y el servidor ftp deben ser accesibles desde la LAN y desde el exterior</h1>
+<p>Para que estos servicios sean accesibles también desde la LAN hay que permitir:</p>
+<ul>
+<li>Las peticiones HTTP y HTTPS desde Nami y Sanji a Zoro</li>
+<li>Las respuestas HTTP y HTTPS desde Zoro a Nami y Sanji</li>
+<li>Las peticiones FTP desde Nami y Sanji a Zoro</li>
+<li>Las respuestas FTP desde Zoro a Nami y Sanji</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones HTTP y HTTPS de Nami y Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp dport { 80,443 } ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas HTTP y HTTPS de Zoro a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp sport { 80,443 } ct state established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones FTP de Nami y Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp dport <span style="color:#3677a9">21</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas FTP de Zoro a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp sport <span style="color:#3677a9">21</span> ct state established counter accept
+</span></span></code></pre></div><p>Así, desde Nami y Sanji se puede acceder a ambos servicios en Zoro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@nami:~$ curl zoro
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;h1&gt;Francisco Javier Huete Mejías&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">&lt;h2&gt;Jueves, 30 de enero de 2025&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">usuario@nami:~$ telnet zoro 21
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Trying 172.16.0.200...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Connected to zoro.javi.gonzalonazareno.org.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Escape character is &#39;^]&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">220 (vsFTPd 3.0.5)
+</span></span></span></code></pre></div><h1 id="el-servidor-de-correos-sólo-debe-ser-accesible-desde-la-lan">El servidor de correos sólo debe ser accesible desde la LAN</h1>
+<p>Para que el servidor de correos en Zoro sea accesible sólo desde la LAN hay que permitir el tráfico por el puerto 25 TCP:</p>
+<ul>
+<li>Desde Sanji y Nami a Zoro</li>
+<li>Desde Zoro a Nami y Sanji</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones al servidor de correos de Nami y Sanji a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz tcp dport <span style="color:#3677a9">25</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas del servidor de correos de Zoro a Nami y Sanji</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan tcp sport <span style="color:#3677a9">25</span> ct state established counter accept
+</span></span></code></pre></div><h1 id="en-la-máquina-nami-instala-un-servidor-postgres-si-no-lo-tiene-aún-a-este-servidor-se-puede-acceder-desde-la-dmz-pero-no-desde-el-exterior">En la máquina Nami instala un servidor Postgres si no lo tiene aún. A este servidor se puede acceder desde la DMZ, pero no desde el exterior</h1>
+<p>Para acceder al Postgres de Nami desde Zoro hay que permitir el tráfico por el puerto 5432 TCP:</p>
+<ul>
+<li>Desde Zoro a Nami</li>
+<li>Desde Nami a Zoro</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones al servidor Postgres de Zoro a Nami</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter dmz-lan ip daddr 192.168.0.2 tcp dport <span style="color:#3677a9">5432</span> ct state new,established counter accept
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Respuestas del servidor Postgres de Nami a Zoro</span>
+</span></span><span style="display:flex;"><span>nft add rule inet filter lan-dmz ip saddr 192.168.0.2 tcp sport <span style="color:#3677a9">5432</span> ct state established counter accept
+</span></span></code></pre></div><h1 id="evita-ataques-dos-por-icmp-flood-limitando-a-4-el-número-de-peticiones-por-segundo-desde-una-misma-ip">Evita ataques DoS por ICMP Flood, limitando a 4 el número de peticiones por segundo desde una misma IP</h1>
+<p>Para limitar el número de peticiones ICMP por segundo se usa el parámetro <code>limit rate</code>. Esta regla tiene que estar antes de las que se usan para permitir el tráfico de entrada ICMP a Luffy, así que se crea con la opción <code>postion</code> para colocarla al principio de la lista de reglas del cortafuegos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft insert rule inet filter input position <span style="color:#3677a9">0</span> icmp <span style="color:#24909d">type</span> echo-request limit rate 4/second counter drop
+</span></span></code></pre></div><h1 id="evita-ataques-dos-por-syn-flood">Evita ataques DoS por SYN Flood</h1>
+<p>Para evitar ataques DoS por SYN Flood se puede limitar el número de paquetes por segundo que se reciben marcados con la bandera SYN. Por ejemplo, se puede permitir la entrada de 5 paquetes SYN por segundo y bloquear el resto.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input tcp flags syn limit rate 5/second counter accept
+</span></span><span style="display:flex;"><span>nft add rule inet filter input tcp flags syn counter drop
+</span></span></code></pre></div><h1 id="evita-que-realicen-escaneos-de-puertos-a-luffy">Evita que realicen escaneos de puertos a Luffy</h1>
+<p>Para evitar que se realice un escaneo de puertos a Luffy se pueden limitar las conexiones a aquellos puertos del router que no están abiertos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nft add rule inet filter input tcp dport != { 22, 80, <span style="color:#3677a9">443</span> } limit rate 5/minute counter accept
+</span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/cortafuegos/">
+                        Cortafuegos
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/firewall/">
+                        Firewall
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/nftables/">
+                        Nftables
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/redes/">
+                        Redes
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad/">
+                        Seguridad
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/administraci%c3%b3n-de-sistemas/">
+                        Administración de sistemas
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/seguridad-y-alta-disponibilidad/">
+                        Seguridad y alta disponibilidad
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fseguridad%2f2025-02-25-cortafuegos-permietral-nftables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fseguridad%2f2025-02-25-cortafuegos-permietral-nftables%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fseguridad%2f2025-02-25-cortafuegos-permietral-nftables%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2fblog%2fseguridad%2f2025-02-25-cortafuegos-permietral-nftables%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+      Instalación de un servidor de correos satélite, redirecciones y alias
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+      Ejemplos de uso del comando parted en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/fundamentos-hardware/"
+            class="ms-1"
+            >Fundamentos hardware
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
+      Instalación de minikube
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
+
+
+
+ 
+
+
+>libvirt</a> y <a href="/tags/kvm/"
+
+
+
+ 
+
+
+>KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity="sha256-LO9JECYLqyMcpGlrtxZcpUn0I8AvhO6oIIibJZv4zbk="
+  src="/js/script.min.2cef4910260bab231ca4696bb7165ca549f423c02f84eea820889b259bf8cdb9.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="sha256-6WomfiWXziApPR9exxy3xjT2w9Za&#43;OYxJPD02L7xe5A="
+  src="/js/script-lazy.min.e96a267e2597ce20293d1f5ec71cb7c634f6c3d65af8e63124f0f4d8bef17b90.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

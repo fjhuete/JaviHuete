@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ngrok on Javi Huete</title>
+    <link>/tags/ngrok/</link>
+    <description>Recent content in Ngrok on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test para la integración continua de una aplicación django</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
+      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

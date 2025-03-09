@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kind on Javi Huete</title>
+    <link>/tags/kind/</link>
+    <description>Recent content in Kind on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/kind/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de kind y creación de un cluster de kubernetes</title>
+      <link>/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Kind&lt;/a&gt; es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

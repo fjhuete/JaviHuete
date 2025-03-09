@@ -6,8 +6,99 @@
     <description>Recent content in Servicios on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 18 Feb 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/categories/servicios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de Deployments en kubernetes</title>
+      <link>/blog/servicios/2025-03-09-creacion-deployment-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-creacion-deployment-kubernetes/</guid>
+      <description>&lt;p&gt;Para crear un despliegue o deployment en Kubernetes se define el recurso en un fichero yaml.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de pods en kubernetes</title>
+      <link>/blog/servicios/2025-03-09-creacion-pods-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-creacion-pods-kubernetes/</guid>
+      <description>&lt;p&gt;Los pods en Kubernetes se pueden crear a partir de una declaración del recursos en un fichero yaml.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de recursos de tipo Ingress en kubernetes</title>
+      <link>/blog/servicios/2025-03-09-creacion-ingress-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-creacion-ingress-kubernetes/</guid>
+      <description>&lt;p&gt;Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de Replica Sets en kubernetes</title>
+      <link>/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/</guid>
+      <description>&lt;p&gt;Para crear un ReplicaSet, en primer lugar, se declara el recurso en un fichero yaml.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Creación de Services en kubernetes</title>
+      <link>/blog/servicios/2025-03-09-creacion-servicio-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-creacion-servicio-kubernetes/</guid>
+      <description>&lt;p&gt;Los servicios en Kubernetes permiten a otros pods o al usuario acceder al servicio que ofrece otro pod.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de aplicaciones usando variables de entorno en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/</guid>
+      <description>&lt;p&gt;Para usar variables de entorno en el despliegue de aplicaciones en Kubernetes se usan recursos como los ConfigMap o los Secrets.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de un servidor web con contenido persistente en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/</guid>
+      <description>&lt;p&gt;Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un &lt;code&gt;storageClass&lt;/code&gt; definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un &lt;code&gt;storageClass&lt;/code&gt; estándar de tipo &lt;code&gt;hostpath&lt;/code&gt;, que creará los volúmenes que se soliciten al crear un recurso de tipo &lt;code&gt;PersistentVolumeClaim&lt;/code&gt; (PVC)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación con contenido persistente en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/</guid>
+      <description>&lt;p&gt;Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación con contenido persistente en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</guid>
+      <description>&lt;p&gt;En este post se documenta el despliegue de la aplicación Let`s Chat en Kubernetes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación en Kubernetes usando Helm</title>
+      <link>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</guid>
+      <description>&lt;p&gt;Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación Python en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/</guid>
+      <description>&lt;p&gt;Para desplegar una aplicación escrita en Python en Kubernetes se usan los ficheros yaml que definen los diferentes recursos necesarios para el despliegue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de kind y creación de un cluster de kubernetes</title>
+      <link>/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Kind&lt;/a&gt; es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instalación de minikube</title>
+      <link>/blog/servicios/2025-03-09-instalacion-minikube/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-instalacion-minikube/</guid>
+      <description>&lt;p&gt;Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando &lt;a href=&#34;/tags/libvirt/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;libvirt&lt;/a&gt; y &lt;a href=&#34;/tags/kvm/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;KVM&lt;/a&gt;. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Configuración de herramientas antispam en el servidor de correos</title>
       <link>/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/</link>
@@ -45,16 +136,16 @@
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos de Internet</title>
-      <link>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
+      <link>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
+      <guid>/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/</guid>
       <description>&lt;p&gt;Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Instalación y configuración de un servidor de correos postfix</title>
-      <link>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
+      <link>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</link>
       <pubDate>Tue, 18 Feb 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2028-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
+      <guid>/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/</guid>
       <description>&lt;p&gt;Para instalar un servidor de correos &lt;code&gt;postfix&lt;/code&gt; en Debian se instala el paquete &lt;code&gt;postfix&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     <item>

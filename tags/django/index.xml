@@ -6,8 +6,22 @@
     <description>Recent content in Django on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 03 Dec 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de una aplicación Python en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/</guid>
+      <description>&lt;p&gt;Para desplegar una aplicación escrita en Python en Kubernetes se usan los ficheros yaml que definen los diferentes recursos necesarios para el despliegue.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test para la integración continua de una aplicación django</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</guid>
+      <description>&lt;p&gt;A partir de la aplicación &lt;a href=&#34;https://github.com/fjhuete/django_tutorial&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;django_tutorial&lt;/a&gt; escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalación de un CMS Python usando Django</title>
       <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>

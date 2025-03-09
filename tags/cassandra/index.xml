@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cassandra on Javi Huete</title>
+    <link>/tags/cassandra/</link>
+    <description>Recent content in Cassandra on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Mon, 03 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Movimientos de datos entre bases de datos</title>
+      <link>/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/</guid>
+      <description>&lt;p&gt;En esta entrada se muestran diferentes supuestos prácticos de movimientos de datos entre bases de datos diferentes. En algunos cosos, estos volcados se realizan entre bases de datos dentro del mismo sistema gestor de bases de datos. En otras ocasiones, se documenta el proceso para volcar la información desde un sistema gestor de bases de datos a otro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Auditoría de bases de datos</title>
+      <link>/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/</link>
+      <pubDate>Mon, 17 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/</guid>
+      <description>&lt;p&gt;En este post se recogen algunos ejemplos prácticos de auditoría en bases de datos instaladas en distintos sistemas gestores tanto relacionales como no relacionales.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

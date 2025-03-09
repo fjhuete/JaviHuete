@@ -6,8 +6,22 @@
     <description>Recent content in Administracion-Bbdd on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 17 Nov 2024 01:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/categories/administracion-bbdd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Movimientos de datos entre bases de datos</title>
+      <link>/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/</link>
+      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/</guid>
+      <description>&lt;p&gt;En esta entrada se muestran diferentes supuestos prácticos de movimientos de datos entre bases de datos diferentes. En algunos cosos, estos volcados se realizan entre bases de datos dentro del mismo sistema gestor de bases de datos. En otras ocasiones, se documenta el proceso para volcar la información desde un sistema gestor de bases de datos a otro.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Auditoría de bases de datos</title>
+      <link>/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/</link>
+      <pubDate>Mon, 17 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/</guid>
+      <description>&lt;p&gt;En este post se recogen algunos ejemplos prácticos de auditoría en bases de datos instaladas en distintos sistemas gestores tanto relacionales como no relacionales.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Interconexión entre dos servidores Postgres</title>
       <link>/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/</link>
