@@ -901,8 +901,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">GRANT</span><span style="color:#666"> </span>EXP_FULL_DATABASE<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">TO</span><span style="color:#666"> </span>SCOTT;<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">GRANT</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">READ</span>,<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">WRITE</span><span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">ON</span><span style="color:#666"> </span>DIRECTORY<span style="color:#666"> </span>EXPORTADO<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">TO</span><span style="color:#666"> </span>SCOTT;<span style="color:#666">
 </span></span></span></code></pre></div><p>Para estimar el tiempo que se tarda en realizar la exportación del esquema se usa el comando <code>expdp</code> de Oracle Data Pump.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:~$ expdp scott/tiger SCHEMAS=scott DIRECTORY=EXPORTADO ESTIMATE_ON
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">LY=YES
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:~$ expdp scott/tiger SCHEMAS=scott DIRECTORY=EXPORTADO ESTIMATE_ONLY=YES
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Export: Release 21.0.0.0.0 - Production on Lun Feb 24 18:16:46 2025
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">Version 21.3.0.0.0
@@ -981,8 +980,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">El trabajo &#34;SCOTT&#34;.&#34;SYS_EXPORT_SCHEMA_03&#34; ha terminado correctamente en Lun Feb 24 18:20:52 2025 elapsed 0 00:00:52
 </span></span></span></code></pre></div><h1 id="importa-el-fichero-obtenido-anteriormente-usando-oracle-data-pump-pero-en-un-usuario-distinto-de-la-misma-base-de-datos">Importa el fichero obtenido anteriormente usando Oracle Data Pump pero en un usuario distinto de la misma base de datos</h1>
 <p>Para importar el esquema scott con otro usuario hay que usar la herramienta Oracle Data Pump Import (<code>impdp</code>). Es importante definir correctamente el parámetro <code>SCHEMAS</code>, que debe indicar el esquema original del que se realizó la exportación y el parámetro <code>REMAP_SCHEMA</code>, que debe indicar a qué nuevo usuario se remapea el esquema.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:/opt/exportado$ impdp ADMIN/ADMIN SCHEMAS=scott DIRECTORY=EXPORTAD
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">O DUMPFILE=esquema_scott.dmp REMAP_SCHEMA=scott:usrpractica
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:/opt/exportado$ impdp ADMIN/ADMIN SCHEMAS=scott DIRECTORY=EXPORTADO DUMPFILE=esquema_scott.dmp REMAP_SCHEMA=scott:usrpractica
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Import: Release 21.0.0.0.0 - Production on Lun Feb 24 19:11:27 2025
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">Version 21.3.0.0.0
@@ -2841,8 +2839,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-      Cómo configurar un servidor DHCP en un router Cisco
+    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+      Cómo importar dispositivos a GNS3
     </a>
   </h4>
   
@@ -2865,8 +2863,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
     Leer
   </a>
 </div>
@@ -2878,8 +2876,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
-      Creación de un escenario con varios contenedores con docker compose
+    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
+      Introducción a Openstack Client
     </a>
   </h4>
   
@@ -2894,16 +2892,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Implantacion
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para implantar una aplicación nextcloud en un contenedor docker conectada a otro contenedor con una base de datos MariaDB se puede usar un fichero docker compose para configurar el escenario.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
+  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
     Leer
   </a>
 </div>
@@ -2915,8 +2913,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
-      Configuración de switches en GNS3
+    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+      Configuración de un servidor SAN
     </a>
   </h4>
   
@@ -2931,16 +2929,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
     Leer
   </a>
 </div>

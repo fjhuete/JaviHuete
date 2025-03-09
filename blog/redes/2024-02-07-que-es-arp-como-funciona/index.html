@@ -1769,82 +1769,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/">
-      Configuración de Apache2 con fpm-php
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se documenta el proceso de configuración de un servidor Apache2 para servir aplicaciones web dinámicas escritas en PHP usando el servidor de aplicaciones fpm-php.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-apache2-fpmphp/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/">
-      Despliegue de aplicaciones usando variables de entorno en Kubernetes
+    <a href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+      Instalación y configuración de un servidor de correos de Internet
     </a>
   </h4>
   
@@ -1867,8 +1793,82 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para usar variables de entorno en el despliegue de aplicaciones en Kubernetes se usan recursos como los ConfigMap o los Secrets.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/">
+  <p class="mb-6"><p>Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+      Envío de correos desde una aplicación web
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &ldquo;oficial&rdquo; de la red. Este servidor de correo está en otra máquina de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+      Despliegue de una aplicación en Kubernetes usando Helm
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
     Leer
   </a>
 </div>

@@ -79,18 +79,18 @@
       <description>&lt;p&gt;Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Despliegue de una aplicación con contenido persistente en Kubernetes</title>
-      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</guid>
-      <description>&lt;p&gt;En este post se documenta el despliegue de la aplicación Let`s Chat en Kubernetes.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Despliegue de una aplicación en Kubernetes usando Helm</title>
       <link>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/blog/servicios/2025-03-09-instalacion-aplicacion-helm/</guid>
       <description>&lt;p&gt;Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Despliegue de una aplicación PHP en Kubernetes</title>
+      <link>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/</guid>
+      <description>&lt;p&gt;En este post se documenta el despliegue de la aplicación Let`s Chat en Kubernetes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Despliegue de una aplicación Python en Kubernetes</title>
@@ -105,6 +105,13 @@
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/</guid>
       <description>&lt;p&gt;Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Disparar un pipeline de Jenkins desde GitHub usando Ngrok</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
+      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ejecutar un pipeline de Jenkins con cada actualización de un repositorio</title>
@@ -133,13 +140,6 @@
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/blog/servicios/2025-03-09-instalacion-minikube/</guid>
       <description>&lt;p&gt;Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando &lt;a href=&#34;/tags/libvirt/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;libvirt&lt;/a&gt; y &lt;a href=&#34;/tags/kvm/&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;KVM&lt;/a&gt;. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Test para la integración continua de una aplicación django</title>
-      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
-      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test para la integración continua de una aplicación django</title>

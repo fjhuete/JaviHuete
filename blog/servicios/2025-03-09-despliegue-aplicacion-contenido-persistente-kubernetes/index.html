@@ -973,9 +973,9 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">tier</span>:<span style="color:#666"> </span>frontend<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">spec</span>:<span style="color:#666">
 </span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">volumes</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-nextcloud<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">persistentVolumeClaim</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">claimName</span>:<span style="color:#666"> </span>pvc-nextcloud<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-nextcloud<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">persistentVolumeClaim</span>:<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">claimName</span>:<span style="color:#666"> </span>pvc-nextcloud<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">containers</span>:<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">      </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>contenedor-nextcloud<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">image</span>:<span style="color:#666"> </span>nextcloud<span style="color:#666">
@@ -1004,8 +1004,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>nextcloud-datos<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_host<span style="color:#666">
 </span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">volumeMounts</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">mountPath</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/var/www/html&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-nextcloud<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">mountPath</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/var/www/html&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-nextcloud<span style="color:#666">
 </span></span></span></code></pre></div><p>Igualmente, también hay que modificar el despliegue de la base de datos para que use el volumen persistente definido previamente.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">apiVersion</span>:<span style="color:#666"> </span>apps/v1<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">kind</span>:<span style="color:#666"> </span>Deployment<span style="color:#666">
@@ -1027,9 +1027,9 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">tier</span>:<span style="color:#666"> </span>backend<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">spec</span>:<span style="color:#666">
 </span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">volumes</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">persistentVolumeClaim</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">claimName</span>:<span style="color:#666"> </span>pvc-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">persistentVolumeClaim</span>:<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">claimName</span>:<span style="color:#666"> </span>pvc-mariadb<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">containers</span>:<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>contenedor-mariadb<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">image</span>:<span style="color:#666"> </span>mariadb:10.5<span style="color:#666">
@@ -1058,8 +1058,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>nextcloud-passwords<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_rootpassword<span style="color:#666">
 </span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">volumeMounts</span>:<span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span>- <span style="color:#6ab825;font-weight:bold">mountPath</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/var/lib/mysql&#34;</span><span style="color:#666">
-</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">              </span>- <span style="color:#6ab825;font-weight:bold">mountPath</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/var/lib/mysql&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
 </span></span></span></code></pre></div><p>A partir de estos ficheros, se crean los recursos necesarios para desplegar la aplicación.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl apply -f pvc-nextcloud.yaml
 </span></span><span style="display:flex;"><span>kubectl apply -f pvc-mariadb.yaml
@@ -1312,8 +1312,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
+    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
+      Guía básica de configuración de Nginx
     </a>
   </h4>
   
@@ -1328,16 +1328,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
     Leer
   </a>
 </div>
@@ -1349,8 +1349,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
-      Creación de una VPN sitio a sitio con WireGuard
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/">
+      Despliegue de aplicaciones usando variables de entorno en Kubernetes
     </a>
   </h4>
   
@@ -1365,16 +1365,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Seguridad
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
+  <p class="mb-6"><p>Para usar variables de entorno en el despliegue de aplicaciones en Kubernetes se usan recursos como los ConfigMap o los Secrets.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicaciones-usando-variables-entorno-kubernetes/">
     Leer
   </a>
 </div>
@@ -1386,8 +1386,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
-      Conceptos básicos del gestor de paquetes apt
+    <a href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
+      Creación de Deployments en kubernetes
     </a>
   </h4>
   
@@ -1402,16 +1402,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+  <p class="mb-6"><p>Para crear un despliegue o deployment en Kubernetes se define el recurso en un fichero yaml.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
     Leer
   </a>
 </div>

@@ -1323,45 +1323,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/">
-      Instalación y configuración inicial de OpenLDAP
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>LDAP es un protocolo de comunicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar información en un entorno de red. Este directorio incluye un conjunto de objetos con atributos organizados jerárquicamente. El directorio LDAP se puede instalar en un servidor de una red para centralizar la gestión de usuarios y grupos en la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/servicios/2024-12-02-configuracion-proxy/">
+      Configuración de un proxy inverso en Apache2
     </a>
   </h4>
   
@@ -1384,8 +1347,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6">A través de un caso práctica se muestran diferentes ejemplos de configuración de un proxy inverso usando Apache2.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy/">
     Leer
   </a>
 </div>
@@ -1397,8 +1360,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
-      Envío de correos desde una aplicación web
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
+      Disparar un pipeline de Jenkins desde GitHub usando Ngrok
     </a>
   </h4>
   
@@ -1413,16 +1376,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &ldquo;oficial&rdquo; de la red. Este servidor de correo está en otra máquina de la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+  <p class="mb-6"><p>Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>

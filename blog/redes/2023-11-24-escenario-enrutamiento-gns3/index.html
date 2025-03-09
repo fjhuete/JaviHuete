@@ -4914,8 +4914,8 @@ En primer lugar aparece una red con dos ordenadores conectados (H1 y H2). Se ind
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
-      Configuración de un proxy inverso en Apache2 y Nginx
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
@@ -4930,16 +4930,16 @@ En primer lugar aparece una red con dos ordenadores conectados (H1 y H2). Se ind
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Servicios
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>
@@ -4951,45 +4951,8 @@ En primer lugar aparece una red con dos ordenadores conectados (H1 y H2). Se ind
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
-      Cómo enrutar una red en OpenStack
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-      Test para la integración continua de una aplicación django
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
+      Instalación de Jenkins usando Docker como runner
     </a>
   </h4>
   
@@ -5012,17 +4975,45 @@ En primer lugar aparece una red con dos ordenadores conectados (H1 y H2). Se ind
       </li>
     </ul>
   
-  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
+  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
+    Leer
+  </a>
+</div>
 
-
-
-
- target="_blank"
- 
-
-
->django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
+      Creación y configuración de un sistema de ficheros en Debian 12
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
     Leer
   </a>
 </div>

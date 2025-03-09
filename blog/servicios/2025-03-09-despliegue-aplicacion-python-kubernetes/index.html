@@ -941,60 +941,60 @@
       <div
         class="tab-content-panel "
         data-tab-panel="deployment-mariadb">
-        <p>apiVersion: apps/v1
-kind: Deployment
-metadata:
-name: mariadb
-labels:
-app: mariadb
-tier: backend
-spec:
-replicas: 1
-selector:
-matchLabels:
-app: mariadb
-tier: backend
-template:
-metadata:
-labels:
-app: mariadb
-tier: backend
-spec:
-volumes:
-- name: volumen-mariadb
-persistentVolumeClaim:
-claimName: pvc-mariadb
-containers:
-- name: contenedor-mariadb
-image: mariadb:10.5
-ports:
-- name: mariadb-server
-containerPort: 3306
-env:
-- name: MARIADB_USER
-valueFrom:
-configMapKeyRef:
-name: polls-datos
-key: bd_user
-- name: MARIADB_DATABASE
-valueFrom:
-configMapKeyRef:
-name: polls-datos
-key: bd_dbname
-- name: MARIADB_PASSWORD
-valueFrom:
-secretKeyRef:
-name: polls-passwords
-key: bd_password
-- name: MARIADB_ROOT_PASSWORD
-valueFrom:
-secretKeyRef:
-name: polls-passwords
-key: bd_rootpassword
-volumeMounts:
-- mountPath: &ldquo;/var/lib/mysql&rdquo;
-name: volumen-mariadb</p>
-<pre tabindex="0"><code></code></pre>
+        <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">apiVersion</span>:<span style="color:#666"> </span>apps/v1<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">kind</span>:<span style="color:#666"> </span>Deployment<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">metadata</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">labels</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">app</span>:<span style="color:#666"> </span>mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">tier</span>:<span style="color:#666"> </span>backend<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#6ab825;font-weight:bold">spec</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">replicas</span>:<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">selector</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">matchLabels</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">app</span>:<span style="color:#666"> </span>mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">tier</span>:<span style="color:#666"> </span>backend<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">  </span><span style="color:#6ab825;font-weight:bold">template</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">metadata</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">labels</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">app</span>:<span style="color:#666"> </span>mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span><span style="color:#6ab825;font-weight:bold">tier</span>:<span style="color:#666"> </span>backend<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">    </span><span style="color:#6ab825;font-weight:bold">spec</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">volumes</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">persistentVolumeClaim</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span><span style="color:#6ab825;font-weight:bold">claimName</span>:<span style="color:#666"> </span>pvc-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">      </span><span style="color:#6ab825;font-weight:bold">containers</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">        </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>contenedor-mariadb<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">image</span>:<span style="color:#666"> </span>mariadb:10.5<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">ports</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>mariadb-server<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">containerPort</span>:<span style="color:#666"> </span><span style="color:#3677a9">3306</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">env</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>MARIADB_USER<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">valueFrom</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">configMapKeyRef</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>polls-datos<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_user<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>MARIADB_DATABASE<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">valueFrom</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">configMapKeyRef</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>polls-datos<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_dbname<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>MARIADB_PASSWORD<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">valueFrom</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">secretKeyRef</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>polls-passwords<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_password<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">            </span>- <span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>MARIADB_ROOT_PASSWORD<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span><span style="color:#6ab825;font-weight:bold">valueFrom</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">secretKeyRef</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>polls-passwords<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                  </span><span style="color:#6ab825;font-weight:bold">key</span>:<span style="color:#666"> </span>bd_rootpassword<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">          </span><span style="color:#6ab825;font-weight:bold">volumeMounts</span>:<span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">              </span>- <span style="color:#6ab825;font-weight:bold">mountPath</span>:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/var/lib/mysql&#34;</span><span style="color:#666">
+</span></span></span><span style="display:flex;"><span><span style="color:#666">                </span><span style="color:#6ab825;font-weight:bold">name</span>:<span style="color:#666"> </span>volumen-mariadb<span style="color:#666">
+</span></span></span></code></pre></div>
       </div>
     
       <div
@@ -1415,8 +1415,8 @@ name: volumen-mariadb</p>
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
-      Creación de recursos de tipo Ingress en kubernetes
+    <a href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
+      Gestión de redes en Openstack
     </a>
   </h4>
   
@@ -1439,8 +1439,8 @@ name: volumen-mariadb</p>
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
+  <p class="mb-6"><p>En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
     Leer
   </a>
 </div>
@@ -1452,8 +1452,8 @@ name: volumen-mariadb</p>
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-      Cómo configurar un servidor DHCP en un router Cisco
+    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+      Escenario de enrutamiento en GNS3
     </a>
   </h4>
   
@@ -1476,8 +1476,8 @@ name: volumen-mariadb</p>
       </li>
     </ul>
   
-  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
     Leer
   </a>
 </div>
@@ -1489,8 +1489,8 @@ name: volumen-mariadb</p>
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-      Test para la integración continua de una aplicación django
+    <a href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
+      Cómo simular un servidor MariaDB en GNS3
     </a>
   </h4>
   
@@ -1505,25 +1505,16 @@ name: volumen-mariadb</p>
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/redes/"
             class="ms-1"
-            >Implantacion
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
-
-
-
-
- target="_blank"
- 
-
-
->django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
+  <p class="mb-6">MariaDB es uno conocido y reputado servidor de bases de datos. Es similar a MySQL y permite almacenar y gestionar una gran cantidad de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-mariadb-gns3/">
     Leer
   </a>
 </div>

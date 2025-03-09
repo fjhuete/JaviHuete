@@ -9,7 +9,7 @@
     <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test para la integración continua de una aplicación django</title>
+      <title>Disparar un pipeline de Jenkins desde GitHub usando Ngrok</title>
       <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>

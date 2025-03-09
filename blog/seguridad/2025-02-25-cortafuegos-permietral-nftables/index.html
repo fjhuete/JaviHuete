@@ -1216,9 +1216,26 @@
 </span></span><span style="display:flex;"><span>nft add rule ip nat prerouting iifname <span style="color:#ed9d13">&#34;ens3&#34;</span> tcp dport <span style="color:#3677a9">80</span> counter dnat to 172.16.0.200
 </span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Regla SNAT</span>
 </span></span><span style="display:flex;"><span>nft add rule ip nat postrouting oifname <span style="color:#ed9d13">&#34;ens3&#34;</span> ip saddr 172.16.0.0/32 counter masquerade
-</span></span></code></pre></div><p>{{ &lt; notice &ldquo;note&rdquo; &gt;}}
-En este caso, a la regla que permite el paso de peticiones HTTP desde el exterior al servidor web se le añade una condición que limita a 10 el número de conexiones simultáneas.
-{{ &lt; /notice &gt;}}</p>
+</span></span></code></pre></div>
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="notice note">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+      </svg><p>Note</p>
+  </div>
+  <div class="notice-body"><p>En este caso, a la regla que permite el paso de peticiones HTTP desde el exterior al servidor web se le añade una condición que limita a 10 el número de conexiones simultáneas.</p></div>
+</div>
+
 <h3 id="permitir-el-tráfico-al-servidor-ldap">Permitir el tráfico al servidor LDAP</h3>
 <p>Para que funcione el servidor LDAP en el escenario es necesario permitir el tráfico por el puerto 389 TCP de petición desde todas las máquinas a Luffy y de respuesta desde Luffy a todas las máquinas.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic">#Peticiones LDAP de la LAN a Luffy</span>
@@ -1886,8 +1903,8 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
+      Instalación de Docker
     </a>
   </h4>
   
@@ -1902,16 +1919,16 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6">Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
     Leer
   </a>
 </div>
@@ -1923,8 +1940,8 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
-      Ejemplos de uso del comando parted en Debian
+    <a href="/blog/redes/2024-03-03-acl-router-cisco/">
+      Configuración de ACL en routers Cisco
     </a>
   </h4>
   
@@ -1939,16 +1956,16 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/redes/"
             class="ms-1"
-            >Fundamentos hardware
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+  <p class="mb-6"><p>Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-acl-router-cisco/">
     Leer
   </a>
 </div>
@@ -1960,8 +1977,8 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
-      Instalación de minikube
+    <a href="/blog/seguridad/2025-01-14-criptografia-integridad/">
+      Firmas y autenticación con GPG
     </a>
   </h4>
   
@@ -1976,30 +1993,16 @@ En este caso, a la regla que permite el paso de peticiones HTTP desde el exterio
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Servicios
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
-
-
-
- 
-
-
->libvirt</a> y <a href="/tags/kvm/"
-
-
-
- 
-
-
->KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+  <p class="mb-6">En esta entrada se explica cómo firmar claves públicas usando GPG.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-integridad/">
     Leer
   </a>
 </div>

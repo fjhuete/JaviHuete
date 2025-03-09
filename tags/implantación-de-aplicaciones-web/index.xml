@@ -30,6 +30,13 @@
       <description>&lt;p&gt;Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Disparar un pipeline de Jenkins desde GitHub usando Ngrok</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
+      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
+      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Ejecutar un pipeline de Jenkins con cada actualización de un repositorio</title>
       <link>/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
@@ -42,13 +49,6 @@
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/</guid>
       <description>&lt;p&gt;En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Test para la integración continua de una aplicación django</title>
-      <link>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</guid>
-      <description>&lt;p&gt;Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Test para la integración continua de una aplicación django</title>

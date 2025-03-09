@@ -1013,46 +1013,63 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span>/<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span>Procedimiento<span style="color:#666"> </span>creado.<span style="color:#666">
-</span></span></span></code></pre></div><p>{{ &lt; notice &ldquo;info&rdquo; &gt;}}
-Aunque para comprobar el correcto funcionamiento del procedimiento se han replicado la mayor parte de los errores de acceso que se recogen en la función, algunos de ellos como el error ORA-1005, el error ORA-1034, el error ORA-28009 y el error ORA-27101 no se registran en la vista <code>DBA_AUDIT_SESSION</code> del diccionario de datos de Oracle. En el caso de los errores ORA-1034 y ORA-27101 esto se explica porque se producen al intentar iniciar sesión cuando la instancia de Oracle no está en funcionamiento y, por tanto, no puede registrar este intento de acceso fallido en la vista de auditoría.
-{{ &lt; /notice &gt;}}</p>
-<pre tabindex="0"><code>debian@bbdd:~$ sqlplus
+</span></span></span></code></pre></div>
 
-SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:04:53 2025
-Version 21.3.0.0.0
 
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+  
 
-Introduzca el nombre de usuario: scott
-Introduzca la contraseña: 
 
-ERROR:
-ORA-01005: se ha proporcionado una contraseña nula; conexión denegada
-</code></pre><pre tabindex="0"><code>debian@bbdd:~$ sqlplus scott/tiger
 
-SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:05:49 2025
-Version 21.3.0.0.0
 
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
 
-ERROR:
-ORA-01034: ORACLE not available
-ORA-27101: shared memory realm does not exist
-Linux-x86_64 Error: 2: No such file or directory
-Additional information: 4775
-Additional information: -718068697
-Identificador de Proceso: 0
-Identificador de Sesión: 0 Número de Serie: 0
-</code></pre><pre tabindex="0"><code>debian@bbdd:~$ sqlplus sys/sys
+  
 
-SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:06:58 2025
-Version 21.3.0.0.0
 
-Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+<div class="notice info">
+  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="22" height="22">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg><p>Info</p>
+  </div>
+  <div class="notice-body"><p>Aunque para comprobar el correcto funcionamiento del procedimiento se han replicado la mayor parte de los errores de acceso que se recogen en la función, algunos de ellos como el error ORA-1005, el error ORA-1034, el error ORA-28009 y el error ORA-27101 no se registran en la vista <code>DBA_AUDIT_SESSION</code> del diccionario de datos de Oracle. En el caso de los errores ORA-1034 y ORA-27101 esto se explica porque se producen al intentar iniciar sesión cuando la instancia de Oracle no está en funcionamiento y, por tanto, no puede registrar este intento de acceso fallido en la vista de auditoría.</p></div>
+</div>
 
-ERROR:
-ORA-28009: connection as SYS should be as SYSDBA or SYSOPER
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">SQL</span>&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">EXEC</span><span style="color:#666"> </span>ACCESOSFALLIDOS;<span style="color:#666">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:~$ sqlplus
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:04:53 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Version 21.3.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Introduzca el nombre de usuario: scott
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Introduzca la contraseña: 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">ERROR:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ORA-01005: se ha proporcionado una contraseña nula; conexión denegada
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:~$ sqlplus scott/tiger
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:05:49 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Version 21.3.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">ERROR:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ORA-01034: ORACLE not available
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ORA-27101: shared memory realm does not exist
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Linux-x86_64 Error: 2: No such file or directory
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Additional information: 4775
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Additional information: -718068697
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Identificador de Proceso: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Identificador de Sesión: 0 Número de Serie: 0
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">debian@bbdd:~$ sqlplus sys/sys
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">SQL*Plus: Release 21.0.0.0.0 - Production on Mar Feb 18 18:06:58 2025
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Version 21.3.0.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">ERROR:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">ORA-28009: connection as SYS should be as SYSDBA or SYSOPER
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">SQL</span>&gt;<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">EXEC</span><span style="color:#666"> </span>ACCESOSFALLIDOS;<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span>USUARIO<span style="color:#666">   </span>FECHA/HORA<span style="color:#666">	        </span>ERROR<span style="color:#666">
 </span></span></span><span style="display:flex;"><span><span style="color:#666"></span><span style="color:#999;font-style:italic">--------------------------------------------------------------------------------
 </span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>SCOTT<span style="color:#666">     </span><span style="color:#3677a9">16</span>/<span style="color:#3677a9">02</span>/<span style="color:#3677a9">25</span><span style="color:#666"> </span><span style="color:#3677a9">16</span>:<span style="color:#3677a9">43</span><span style="color:#666">      </span>Usuario<span style="color:#666"> </span>o<span style="color:#666"> </span>contraseña<span style="color:#666"> </span>incorrectos<span style="color:#666">
@@ -3124,82 +3141,8 @@ ORA-28009: connection as SYS should be as SYSDBA or SYSOPER
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/">
-      Comandos básicos en Docker
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se muestran algunos de los comandos básicos para la creación y gestión de contenedores usando Docker</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
-      Instalación de WordPress en Rocky Linux 9
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -3222,8 +3165,96 @@ ORA-28009: connection as SYS should be as SYSDBA or SYSOPER
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache <code>httpd</code> y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
+      Instalación de minikube
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
+
+
+
+ 
+
+
+>libvirt</a> y <a href="/tags/kvm/"
+
+
+
+ 
+
+
+>KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+      Despliegue de una aplicación en Kubernetes usando Helm
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
     Leer
   </a>
 </div>

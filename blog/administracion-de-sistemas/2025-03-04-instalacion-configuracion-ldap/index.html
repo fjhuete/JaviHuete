@@ -911,8 +911,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">   │                                                                        │ 
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">   └────────────────────────────────────────────────────────────────────────┘ 
 </span></span></span></code></pre></div><p>Tras la instalación, se pueden indicar nuevos parámetros de configuración en el directorio reconfigurando el paquete a través de <code>dpkg</code> con la prioridad más baja <code>-plow</code> para que pida indicar todos los parámetros posibles de forma interactiva.</p>
-<pre tabindex="0"><code>sudo dpkg-reconfigure -plow slapd
-</code></pre><p>Entonces, en primer lugar, el menú de configuración pregunta si se quiere omitir la configuración de LDAP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg-reconfigure -plow slapd
+</span></span></code></pre></div><p>Entonces, en primer lugar, el menú de configuración pregunta si se quiere omitir la configuración de LDAP.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  ┌──────────────────────────┤ Configuring slapd ├───────────────────────────┐
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │                                                                          │ 
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc">  │ If you enable this option, no initial configuration or database will be  │ 
@@ -1377,9 +1377,8 @@
 </span></span></code></pre></div><p>Para aplicar la configuración, hay que reiniciar el servicio.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart sssd
 </span></span></code></pre></div><p>Así, desde el cliente, se puede acceder a la información del servidor usando el comando <code>ldapsearch</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ldapsearch -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazare
-</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span><span style="color:#ccc">no,dc=org&#34; -W
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#aaa">[usuario@zoro ~]$</span> ldapsearch -x -D <span style="color:#ed9d13">&#34;cn=admin,dc=luffy,dc=javi,dc=gonzalonazareno,dc=org&#34;</span> -W
+</span></span><span style="display:flex;"><span><span style="color:#ccc">Enter LDAP Password: 
 </span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#aaa">#</span> extended LDIF
 </span></span><span style="display:flex;"><span><span style="color:#aaa">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># LDAPv3</span>
@@ -1726,8 +1725,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
-      Uso básico de Wireshark
+    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
+      Introducción a Openstack Client
     </a>
   </h4>
   
@@ -1742,16 +1741,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Wireshark es una herramienta que captura del tráfico que circula por una red y permite analizar el contenido de los paquetes que se envían y reciben desde las máquinas conectadas. Este software permite capturar los paquetes que viajan por una red, filtrarlos, y ver su contenido para poder analizar el tipo de tráfico del que se trata.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-12-11-uso-basico-wireshark-tutorial/">
+  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
     Leer
   </a>
 </div>
@@ -1763,8 +1762,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
-      Escenario de enrutamiento en GNS3
+    <a href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
+      Funcionamiento básico de ansible
     </a>
   </h4>
   
@@ -1779,16 +1778,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
+  <p class="mb-6">Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
     Leer
   </a>
 </div>
@@ -1800,8 +1799,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
+      Creación de Deployments en kubernetes
     </a>
   </h4>
   
@@ -1816,16 +1815,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Seguridad
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6"><p>Para crear un despliegue o deployment en Kubernetes se define el recurso en un fichero yaml.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
     Leer
   </a>
 </div>
