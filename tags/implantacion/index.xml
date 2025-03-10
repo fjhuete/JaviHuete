@@ -100,6 +100,13 @@
       <description>Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</description>
     </item>
     <item>
+      <title>Implantación de una aplicación Java usando Docker</title>
+      <link>/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/</link>
+      <pubDate>Mon, 10 Feb 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/</guid>
+      <description>&lt;p&gt;Para implantar una aplicación Java usando Docker se puede compilar una aplicación desde el código fuente o usar un fichero ya compilado. Además, se puede implantar una aplicación en un contenedor tomcat o crear una imagen Docker propia a partir de una imagen Tomcat con las modificaciones necesarias para servir la aplicación.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Instalación de un CMS Python usando Django</title>
       <link>/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/</link>
       <pubDate>Tue, 03 Dec 2024 01:00:00 +0200</pubDate>
