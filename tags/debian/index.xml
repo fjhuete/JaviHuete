@@ -6,8 +6,22 @@
     <description>Recent content in Debian on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 04 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`</title>
+      <link>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</guid>
+      <description>&lt;p&gt;En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Métricas y monitorización con Pormetheus y Grafana</title>
+      <link>/blog/administracion-de-sistemas/2025-03-11-metricas-monitorizacion-grafana-prometheus-telegram/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/administracion-de-sistemas/2025-03-11-metricas-monitorizacion-grafana-prometheus-telegram/</guid>
+      <description>&lt;p&gt;Grafana y Prometheus son herramientas que permiten monitorizar el funcionamiento de los equipos de una red. En combinación, pueden recopilar y centralizar información relevante del funcionamiento de los servidores de una red, mostrarla de manera visual a través de una interfaz gráfica y notificar situaciones críticas en los equipos.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalación y configuración inicial de OpenLDAP</title>
       <link>/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/</link>

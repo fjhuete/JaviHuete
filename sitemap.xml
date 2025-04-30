@@ -3,15 +3,90 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-sistemas/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/backup/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/copia-de-seguridad/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/dd/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/sistemas/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/fct/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/fct/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/implantaci%C3%B3n-de-sistemas-operativos/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/windows/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/windows-11/</loc>
+    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/alertas/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/grafana/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/m%C3%A9tricas/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/administracion-de-sistemas/2025-03-11-metricas-monitorizacion-grafana-prometheus-telegram/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/monitorizaci%C3%B3n/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/prometheus/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/red-hat/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/rocky/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/telegram/</loc>
     <lastmod>2025-03-11T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
-    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/cloud-computing/</loc>
@@ -152,9 +227,6 @@
     <loc>/tags/ssh-agent/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -185,37 +257,16 @@
     <loc>/tags/seguridad-y-alta-disponibilidad/</loc>
     <lastmod>2025-03-05T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/administracion-sistemas/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/debian/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/</loc>
     <lastmod>2025-03-04T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/ldap/</loc>
     <lastmod>2025-03-04T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/openldap/</loc>
     <lastmod>2025-03-04T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/red-hat/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/rocky/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/selinux/</loc>
-    <lastmod>2025-03-04T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/sistemas/</loc>
     <lastmod>2025-03-04T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-gestores-de-bases-de-datos/</loc>
@@ -866,9 +917,6 @@
     <loc>/tags/gpo/</loc>
     <lastmod>2024-05-17T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/implantaci%C3%B3n-de-sistemas-operativos/</loc>
-    <lastmod>2024-05-17T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/pol%C3%ADticas-de-grupo/</loc>
     <lastmod>2024-05-17T01:00:00+02:00</lastmod>
   </url><url>
@@ -876,9 +924,6 @@
     <lastmod>2024-05-17T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/sistemas/</loc>
-    <lastmod>2024-05-17T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/windows/</loc>
     <lastmod>2024-05-17T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/redes/2024-05-14-ipv6-router-linux-cisco/</loc>

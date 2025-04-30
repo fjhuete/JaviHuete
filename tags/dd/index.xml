@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dd on Javi Huete</title>
+    <link>/tags/dd/</link>
+    <description>Recent content in Dd on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Wed, 09 Apr 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/dd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`</title>
+      <link>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</guid>
+      <description>&lt;p&gt;En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows 11 on Javi Huete</title>
+    <link>/tags/windows-11/</link>
+    <description>Recent content in Windows 11 on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 27 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/windows-11/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo configurar Windows 11 sin conexión a Internet</title>
+      <link>/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/</link>
+      <pubDate>Thu, 27 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/</guid>
+      <description>&lt;p&gt;Hoy, en la empresa en la que estoy haciendo mis prácticas, he tenido que configurar un nuevo equipo con Windows 11. Por varias razones puede que, cuando nos enfrentemos a esta tarea, no tengamos acceso a Internet. En este caso, la red local requiere una validación para poder acceder a ella pero, en otros, puede ocurrir que simplemente no tengas una red wifi a la conectarte o un cable de red a mano. El asistente de configuración de Windows 11 tal y como viene programado por defecto en los nuevos equipos no permite configurar el sistema operativo si no se establece una conexión entre el ordenador e Internet. Pero hay una forma de evitar esta limitación.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

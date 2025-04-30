@@ -6,8 +6,141 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración De Sistemas Operativos</title>
+      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Backup</title>
+      <link>/tags/backup/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/backup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Copia De Seguridad</title>
+      <link>/tags/copia-de-seguridad/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/copia-de-seguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dd</title>
+      <link>/tags/dd/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/dd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas</title>
+      <link>/tags/sistemas/</link>
+      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/sistemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FCT</title>
+      <link>/tags/fct/</link>
+      <pubDate>Thu, 27 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/fct/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implantación De Sistemas Operativos</title>
+      <link>/tags/implantaci%C3%B3n-de-sistemas-operativos/</link>
+      <pubDate>Thu, 27 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/implantaci%C3%B3n-de-sistemas-operativos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Thu, 27 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows 11</title>
+      <link>/tags/windows-11/</link>
+      <pubDate>Thu, 27 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/windows-11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alertas</title>
+      <link>/tags/alertas/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/alertas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grafana</title>
+      <link>/tags/grafana/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/grafana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Métricas</title>
+      <link>/tags/m%C3%A9tricas/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/m%C3%A9tricas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monitorización</title>
+      <link>/tags/monitorizaci%C3%B3n/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/monitorizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prometheus</title>
+      <link>/tags/prometheus/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/prometheus/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Red Hat</title>
+      <link>/tags/red-hat/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/red-hat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rocky</title>
+      <link>/tags/rocky/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/rocky/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Telegram</title>
+      <link>/tags/telegram/</link>
+      <pubDate>Tue, 11 Mar 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/telegram/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Administración De Sistemas</title>
       <link>/tags/administraci%C3%B3n-de-sistemas/</link>
@@ -240,31 +373,10 @@
       <description></description>
     </item>
     <item>
-      <title>Administración De Sistemas Operativos</title>
-      <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/administraci%C3%B3n-de-sistemas-operativos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debian</title>
-      <link>/tags/debian/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/debian/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ldap</title>
       <link>/tags/ldap/</link>
       <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/tags/ldap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     <item>
@@ -275,31 +387,10 @@
       <description></description>
     </item>
     <item>
-      <title>Red Hat</title>
-      <link>/tags/red-hat/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/red-hat/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rocky</title>
-      <link>/tags/rocky/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/rocky/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Selinux</title>
       <link>/tags/selinux/</link>
       <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/tags/selinux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sistemas</title>
-      <link>/tags/sistemas/</link>
-      <pubDate>Tue, 04 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/sistemas/</guid>
       <description></description>
     </item>
     <item>
@@ -1325,13 +1416,6 @@
       <description></description>
     </item>
     <item>
-      <title>Implantación De Sistemas Operativos</title>
-      <link>/tags/implantaci%C3%B3n-de-sistemas-operativos/</link>
-      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/implantaci%C3%B3n-de-sistemas-operativos/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Políticas De Grupo</title>
       <link>/tags/pol%C3%ADticas-de-grupo/</link>
       <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
@@ -1343,13 +1427,6 @@
       <link>/tags/powershell/</link>
       <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
       <guid>/tags/powershell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>/tags/windows/</link>
-      <pubDate>Fri, 17 May 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/windows/</guid>
       <description></description>
     </item>
     <item>
