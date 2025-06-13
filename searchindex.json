@@ -7,8 +7,8 @@
   "image": null,
   "imageSM": null,
   "searchKeyword": "",
-  "categories": "administracion-sistemas",
-  "tags": "sistemas, debian, linux, dd, backup, copia de seguridad, Administración de Sistemas Operativos",
+  "categories": "FCT",
+  "tags": "sistemas, debian, linux, dd, backup, copia de seguridad, Administración de Sistemas Operativos, FCT",
   "content":"En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.\nUn procedimiento habitual para crear copias de seguridad o volcados de un disco duro es usar el comando dd. Sin embargo, este comando no cuenta con ninguna opción que permita comprimir la copia durante este proceso. Así, para conseguir un volcado de un disco duro comprimido hay que encadenar a la salida de este comando, una herramienta de compresión, en este caso, gzip.\nDe esta manera, para generar una copia de seguridad de un disco duro comprimida en un sólo comando se puede usar la siguiente orden:\ndd if=/dev/sda status=progress | gzip \u0026gt; /media/disk/backup.img.gz En este caso, además, la opción status=progress muestra, durante la ejecución de la copia de seguridad, información y estadísticas sobre el proceso.\nTip\nEste comando necesitas permisos de root para poder ejecutarse. Si se ejecuta con sudo el comando dd se ejecutará como root pero el comando gzip se ejecutará como usuario sin privilegios. Para evitar este problema, si el procedimiento se va a realizar como un usuario sin privilegios se puede ejecutar el siguiente comando: sudo bash -c \u0026quot;dd if=/dev/sda status=progress | gzip \u0026gt; /media/disk/backup.img.gz\u0026quot;.\n"},{
   "section": "Blog",
   "slug": "/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/",

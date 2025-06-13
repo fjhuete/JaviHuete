@@ -11,9 +11,6 @@
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/categories/administracion-sistemas/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/backup/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -32,6 +29,12 @@
     <loc>/tags/debian/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
+    <loc>/categories/fct/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/fct/</loc>
+    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+  </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -44,12 +47,6 @@
     <loc>/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/</loc>
     <lastmod>2025-03-27T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/categories/fct/</loc>
-    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/fct/</loc>
-    <lastmod>2025-03-27T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/implantaci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-03-27T01:00:00+02:00</lastmod>
   </url><url>
@@ -58,6 +55,9 @@
   </url><url>
     <loc>/tags/windows-11/</loc>
     <lastmod>2025-03-27T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/administracion-sistemas/</loc>
+    <lastmod>2025-03-11T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/alertas/</loc>
     <lastmod>2025-03-11T01:00:00+02:00</lastmod>
