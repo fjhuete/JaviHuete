@@ -1145,8 +1145,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
+      Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos
     </a>
   </h4>
   
@@ -1161,16 +1161,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Servicios
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6"><p>Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
     Leer
   </a>
 </div>
@@ -1182,45 +1182,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-12-02-configuracion-nginx/">
-      Guía básica de configuración de Nginx
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se recoge una guía básica del uso del servidor web Nginx a partir de un supuesto práctico.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-nginx/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
+      Creación de una VPN de acceso remoto con WireGuard
     </a>
   </h4>
   
@@ -1243,8 +1206,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+  <p class="mb-6"><p>En este escenario un servidor VPN permite el acceso a un equipo conectado a su red interna a los clientes conectados a él a través de la red VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
+      Creación de un escenario con varios contenedores con docker compose
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para implantar una aplicación nextcloud en un contenedor docker conectada a otro contenedor con una base de datos MariaDB se puede usar un fichero docker compose para configurar el escenario.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
     Leer
   </a>
 </div>
