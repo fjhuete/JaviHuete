@@ -2306,8 +2306,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
+    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
     </a>
   </h4>
   
@@ -2330,8 +2330,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
     Leer
   </a>
 </div>
@@ -2343,45 +2343,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
-      Despliegue de una aplicación usando Jenkins
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
-      Despliegue de una aplicación en Kubernetes usando Helm
+    <a href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+      Instalación y configuración de un servidor de correos de Internet
     </a>
   </h4>
   
@@ -2404,8 +2367,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+  <p class="mb-6"><p>Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/">
+      Implantación de un cortafuegos perimetral con nftables
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/">
     Leer
   </a>
 </div>

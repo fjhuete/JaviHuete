@@ -3,7 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
@@ -12,9 +15,6 @@
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/backup/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/blog/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>

@@ -1135,45 +1135,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-      Instalación de Jenkins usando Docker como runner
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
-      Instalación y configuración de un servidor de correos postfix
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1196,8 +1159,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para instalar un servidor de correos <code>postfix</code> en Debian se instala el paquete <code>postfix</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1209,8 +1172,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
-      Recolección centralizada de logs de sistema mediante jouranld
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
     </a>
   </h4>
   
@@ -1233,8 +1196,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
+      Verificar la integridad de ficheros con GPG y apt-secure
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Existen varios mecanismos para verificar la integridad de los ficheros descargados tanto desde los propios repositorios de la distribución como de repositorios de terceros. Algunos de ellos son GPG y apt-secure.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/">
     Leer
   </a>
 </div>
