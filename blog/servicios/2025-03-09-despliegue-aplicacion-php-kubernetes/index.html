@@ -1224,8 +1224,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
-      Despliegue de Roundcube usando Docker
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
@@ -1240,16 +1240,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Servicios
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para conectarse a un servidor de correo propio se puede usar un cliente de escritorio o, en este caso, un webmail. En este ejemplo se usa el cliente de correo web se puede desplegar usando Docker. En este caso, se usa la imagen de la aplicación web de correo roundcube.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>
@@ -1261,8 +1261,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
-      Despliegue de una aplicación usando Jenkins
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
+      Instalación de Jenkins usando Docker como runner
     </a>
   </h4>
   
@@ -1285,8 +1285,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
+  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
     Leer
   </a>
 </div>
@@ -1298,8 +1298,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
-      Instalación de Debian 12 bajo LVM en Proxmox
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
     </a>
   </h4>
   
@@ -1314,16 +1314,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Fundamentos hardware
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
     Leer
   </a>
 </div>
