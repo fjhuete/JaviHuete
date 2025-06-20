@@ -1168,8 +1168,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
-      Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`
+    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
+      Compartición de sistemas de ficheros con sshfs y systemd
     </a>
   </h4>
   
@@ -1184,16 +1184,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fct/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Fct
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
+  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
     Leer
   </a>
 </div>
@@ -1205,8 +1205,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
-      Instalación y configuración de un servidor de correos postfix
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+      Instalación de un servidor de correos satélite, redirecciones y alias
     </a>
   </h4>
   
@@ -1229,45 +1266,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para instalar un servidor de correos <code>postfix</code> en Debian se instala el paquete <code>postfix</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
-      Creación de recursos de tipo Ingress en kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
+  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
     Leer
   </a>
 </div>

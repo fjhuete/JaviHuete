@@ -3695,9 +3695,72 @@ ExecStart=/opt/netbox/venv/bin/daphne netbox.asgi:application --bind 127.0.0.1
   
   
     
-    <strong style="color:red; margin-bottom:15px; display:inline-block;"
-      >/images/proyectointegrado/img13.png does not exist</strong
-    >
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+    
+
+
+    
+    
+      
+      
+
+      
+        
+        
+      
+
+
+      
+
+      
+      
+        
+        
+        
+      
+      
+      
+      
+
+    
+    
+
+    
+    
+      
+      
+          <img
+            title=""
+            loading="lazy"
+            decoding="async"
+            class="img img-fluid img-center"
+            width="1364"
+            height="653"
+            src="/images/proyectointegrado/img13_hu_78b21db40fb2ca34.png"
+            alt=""
+            onerror="this.onerror='null';this.src='\/images\/proyectointegrado\/img13_hu_78b21db40fb2ca34.png'" />
+      
+    
+
   
   
 
@@ -5617,45 +5680,8 @@ ExecStart=/opt/netbox/venv/bin/daphne netbox.asgi:application --bind 127.0.0.1
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-      Convulsión en el mundo del software libre
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/">
-      Comandos de supervisión de redes
+    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
     </a>
   </h4>
   
@@ -5678,8 +5704,8 @@ ExecStart=/opt/netbox/venv/bin/daphne netbox.asgi:application --bind 127.0.0.1
       </li>
     </ul>
   
-  <p class="mb-6">El uso de algunos comandos es fundamental en la administración de redes. Diferentes sistemas operativos usan distintos comandos pero todos ellos cumplen funciones relevantes</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-17-comandos-supervisi%C3%B3n-redes-debian-windows/">
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
     Leer
   </a>
 </div>
@@ -5691,8 +5717,8 @@ ExecStart=/opt/netbox/venv/bin/daphne netbox.asgi:application --bind 127.0.0.1
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
-      Gestión de recursos compartidos en Windows Active Directory con cmd y Powershell
+    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+      Instalación de un servidor de correos satélite, redirecciones y alias
     </a>
   </h4>
   
@@ -5707,16 +5733,53 @@ ExecStart=/opt/netbox/venv/bin/daphne netbox.asgi:application --bind 127.0.0.1
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Active Directory o Directorio Activo es un servicio de directorio de Windows en el que un equipo servidor comparte recursos como usuarios, grupos o directorios con los equipos clientes que se conectan a él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-07-gestion-recursos-compartidos-active-directory-windows-powershell/">
+  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
     Leer
   </a>
 </div>

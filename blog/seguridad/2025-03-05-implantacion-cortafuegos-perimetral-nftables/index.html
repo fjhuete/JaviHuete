@@ -1710,8 +1710,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
-      Instalación de kind y creación de un cluster de kubernetes
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+      Creación de una VPN de acceso remoto con IPSec
     </a>
   </h4>
   
@@ -1726,25 +1726,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Servicios
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p><a href="https://kind.sigs.k8s.io/"
-
-
-
-
- target="_blank"
- 
-
-
->Kind</a> es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
+  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
     Leer
   </a>
 </div>
@@ -1756,8 +1747,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
-      Instalación de Docker
+    <a href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
+      Instalación de MySQL en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
+      Creación de un escenario con varios contenedores con docker compose
     </a>
   </h4>
   
@@ -1780,45 +1808,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+  <p class="mb-6"><p>Para implantar una aplicación nextcloud en un contenedor docker conectada a otro contenedor con una base de datos MariaDB se puede usar un fichero docker compose para configurar el escenario.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
     Leer
   </a>
 </div>
