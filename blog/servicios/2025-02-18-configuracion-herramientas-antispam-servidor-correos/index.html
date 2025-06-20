@@ -1183,8 +1183,8 @@ sudo systemctl enable spamd
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
-      Instalación de minikube
+    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
+      Instalación y configuración del gestor de arranque systemd-boot en Debian
     </a>
   </h4>
   
@@ -1199,30 +1199,16 @@ sudo systemctl enable spamd
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Servicios
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
-
-
-
- 
-
-
->libvirt</a> y <a href="/tags/kvm/"
-
-
-
- 
-
-
->KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
     Leer
   </a>
 </div>
@@ -1234,8 +1220,8 @@ sudo systemctl enable spamd
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
-      Configuración NAT en routers Mikrotik en Openstack
+    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+      Qué es ARP y cómo funciona
     </a>
   </h4>
   
@@ -1258,8 +1244,8 @@ sudo systemctl enable spamd
       </li>
     </ul>
   
-  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
     Leer
   </a>
 </div>
@@ -1271,8 +1257,8 @@ sudo systemctl enable spamd
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
-      Movimientos de datos entre bases de datos
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+      Creación de una VPN de acceso remoto con IPSec
     </a>
   </h4>
   
@@ -1287,16 +1273,16 @@ sudo systemctl enable spamd
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Administracion bbdd
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En esta entrada se muestran diferentes supuestos prácticos de movimientos de datos entre bases de datos diferentes. En algunos cosos, estos volcados se realizan entre bases de datos dentro del mismo sistema gestor de bases de datos. En otras ocasiones, se documenta el proceso para volcar la información desde un sistema gestor de bases de datos a otro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
+  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
     Leer
   </a>
 </div>

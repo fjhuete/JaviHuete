@@ -1310,8 +1310,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
-      Cómo simular un servidor PostgreSQL en GNS3
+    <a href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
+      Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`
     </a>
   </h4>
   
@@ -1326,16 +1326,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/fct/"
             class="ms-1"
-            >Redes
+            >Fct
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+  <p class="mb-6"><p>En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
     Leer
   </a>
 </div>
@@ -1347,8 +1347,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
-      Disparar un pipeline de Jenkins desde GitHub usando Ngrok
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
+      Almacenamiento en Docker
     </a>
   </h4>
   
@@ -1371,45 +1408,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-03-acl-router-cisco/">
-      Configuración de ACL en routers Cisco
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Las ACL o listas de control de acceso son un mecanismo que permite controlar el tráfico que atraviesa en router en una red. En este post se demuestra el funcionamiento de las ACL en los routers Cisco con un escenario basado en los personajes de la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-acl-router-cisco/">
+  <p class="mb-6">En este post se resume el funcionamiento de los dos principales métodos de almacenamiento en Docker: los volúmenes y los bind mount</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
     Leer
   </a>
 </div>
