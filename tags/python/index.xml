@@ -6,8 +6,15 @@
     <description>Recent content in Python on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 09 Mar 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2025 11:45:00 +0200</lastBuildDate>
     <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de la aplicación Python de gestión de la infraestructura de red NetBox mediante la especificación ASGI y usando Caddy como proxy inverso</title>
+      <link>/blog/proyecto-integrado/2025-06-17-proyecto-integrado-netbox-asgi-caddy/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/blog/proyecto-integrado/2025-06-17-proyecto-integrado-netbox-asgi-caddy/</guid>
+      <description>En el Proyecto Integrado con el que termino mis estudios de Administración de Sistemas Informáticos en Red analizo cómo se puede usar el servidor web Caddy para servir una aplicación web escrita en Python, usando el estándar de comunicación asíncrona ASGI. Como ejemplo, despliego la aplicación de gestión de la infraestructura de red NetBox. Puedes leer mi Proyecto en este post.</description>
+    </item>
     <item>
       <title>Construcción de una imagen Docker en un pipeline de Jenkins</title>
       <link>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/</link>

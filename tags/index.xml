@@ -6,8 +6,64 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Wed, 09 Apr 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2025 11:45:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASGI</title>
+      <link>/tags/asgi/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/asgi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caddy</title>
+      <link>/tags/caddy/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/caddy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Daphne</title>
+      <link>/tags/daphne/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/daphne/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Django</title>
+      <link>/tags/django/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/django/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Netbox</title>
+      <link>/tags/netbox/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/netbox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenStack</title>
+      <link>/tags/openstack/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/openstack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Servidor Web</title>
+      <link>/tags/servidor-web/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/tags/servidor-web/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Administración De Sistemas Operativos</title>
       <link>/tags/administraci%C3%B3n-de-sistemas-operativos/</link>
@@ -170,13 +226,6 @@
       <description></description>
     </item>
     <item>
-      <title>Django</title>
-      <link>/tags/django/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/django/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Docker</title>
       <link>/tags/docker/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
@@ -286,13 +335,6 @@
       <link>/tags/pods/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/tags/pods/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>/tags/python/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -772,13 +814,6 @@
       <description></description>
     </item>
     <item>
-      <title>Servidor Web</title>
-      <link>/tags/servidor-web/</link>
-      <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/servidor-web/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Web</title>
       <link>/tags/web/</link>
       <pubDate>Mon, 27 Jan 2025 01:00:00 +0200</pubDate>
@@ -902,13 +937,6 @@
       <link>/tags/libvirt/</link>
       <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
       <guid>/tags/libvirt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpenStack</title>
-      <link>/tags/openstack/</link>
-      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/openstack/</guid>
       <description></description>
     </item>
     <item>

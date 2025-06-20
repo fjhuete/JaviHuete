@@ -1226,8 +1226,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/">
+      Creación de Replica Sets en kubernetes
     </a>
   </h4>
   
@@ -1250,8 +1250,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+  <p class="mb-6"><p>Para crear un ReplicaSet, en primer lugar, se declara el recurso en un fichero yaml.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/">
     Leer
   </a>
 </div>
@@ -1263,8 +1263,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
-      Cómo enrutar una red en OpenStack
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+      Creación de una VPN de acceso remoto con IPSec
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
     </a>
   </h4>
   
@@ -1287,45 +1324,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
     Leer
   </a>
 </div>

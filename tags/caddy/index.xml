@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Caddy on Javi Huete</title>
+    <link>/tags/caddy/</link>
+    <description>Recent content in Caddy on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Tue, 17 Jun 2025 11:45:00 +0200</lastBuildDate>
+    <atom:link href="/tags/caddy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Despliegue de la aplicación Python de gestión de la infraestructura de red NetBox mediante la especificación ASGI y usando Caddy como proxy inverso</title>
+      <link>/blog/proyecto-integrado/2025-06-17-proyecto-integrado-netbox-asgi-caddy/</link>
+      <pubDate>Tue, 17 Jun 2025 11:45:00 +0200</pubDate>
+      <guid>/blog/proyecto-integrado/2025-06-17-proyecto-integrado-netbox-asgi-caddy/</guid>
+      <description>En el Proyecto Integrado con el que termino mis estudios de Administración de Sistemas Informáticos en Red analizo cómo se puede usar el servidor web Caddy para servir una aplicación web escrita en Python, usando el estándar de comunicación asíncrona ASGI. Como ejemplo, despliego la aplicación de gestión de la infraestructura de red NetBox. Puedes leer mi Proyecto en este post.</description>
+    </item>
+  </channel>
+</rss>

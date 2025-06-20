@@ -5,16 +5,49 @@
     <loc>/</loc>
     <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
+    <loc>/tags/asgi/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
     <loc>/blog/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/caddy/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/daphne/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/proyecto-integrado/2025-06-17-proyecto-integrado-netbox-asgi-caddy/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/django/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/netbox/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/openstack/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/proyecto-integrado/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/python/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/servidor-web/</loc>
+    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
     <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/backup/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/</loc>
@@ -39,9 +72,6 @@
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/sistemas/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/sistemas/2025-03-27-configurar-windows-11-sin-internet/</loc>
@@ -143,9 +173,6 @@
     <loc>/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/django/</loc>
-    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/docker/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -207,9 +234,6 @@
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/pods/</loc>
-    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/python/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/servicios/</loc>
@@ -521,9 +545,6 @@
     <loc>/tags/servidor-dns/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/servidor-web/</loc>
-    <lastmod>2025-01-27T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/web/</loc>
     <lastmod>2025-01-27T01:00:00+02:00</lastmod>
   </url><url>
@@ -606,9 +627,6 @@
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/libvirt/</loc>
-    <lastmod>2025-01-13T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/openstack/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/openstack-client/</loc>
