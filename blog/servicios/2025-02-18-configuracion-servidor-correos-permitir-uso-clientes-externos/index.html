@@ -1198,8 +1198,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/">
-      Despliegue de una aplicación Python en Kubernetes
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+      Despliegue de una aplicación con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1222,8 +1222,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar una aplicación escrita en Python en Kubernetes se usan los ficheros yaml que definen los diferentes recursos necesarios para el despliegue.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/">
+  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1235,8 +1235,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
+      Construcción de una imagen Docker en un pipeline de Jenkins
     </a>
   </h4>
   
@@ -1251,53 +1288,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Redes
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
-      Envío de correos desde una aplicación web
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &ldquo;oficial&rdquo; de la red. Este servidor de correo está en otra máquina de la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+  <p class="mb-6"><p>Para crear una imagen Docker desde un pipeline de Jenkins es necesario conectar este servicio a la cuenta de DockerHub a la que debe subir la imagen. Para ello, en el menú Administrar Jenkins -&gt; Credenciales -&gt; Global -&gt; Add Credentials se crea una nueva credencial de tipo nombre de usuario y contraseña.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
     Leer
   </a>
 </div>

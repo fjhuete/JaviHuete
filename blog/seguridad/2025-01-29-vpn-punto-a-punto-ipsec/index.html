@@ -1468,8 +1468,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
-      Conceptos de gestión de paquetería en Debian
+    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
+      Enrutamiento dinámico con OSPF usando routers Linux en GNS3
     </a>
   </h4>
   
@@ -1484,16 +1484,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/redes/"
             class="ms-1"
-            >Administracion sistemas
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-09-30-conceptos-basicos-apt/">
+  <p class="mb-6"><p>En este post se muestra el funcionamiento del protocolo de enrutamiento dinámico OSPF, un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos de la red, en los routers Linux de este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-linux-gns3-ospf/">
     Leer
   </a>
 </div>
@@ -1505,45 +1505,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
-      Uso de Openstack para crear un escenario de despliegue
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1566,8 +1529,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se crea un escenario en OpenStack que consta de 4 máquinas: 2 instancias y dos contenedores LXC que se ejecutan en una de estas dos instancias. Este escenario está orientado a alojar diferentes servicios en cada una de las máquinas en el futuro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-creacion-escenario-openstack/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
+      Configuración del protocolo HTTPS para el acceso a una aplicación web
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Para usar HTTPS en una aplicación web es necesario configurar el protocolo HTTPS en el servidor web en el que se aloja. En este post se recoge una breve guía con los pasos a seguir.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-10-configuracion-protoclo-https-acceso-aplicacion-web/">
     Leer
   </a>
 </div>

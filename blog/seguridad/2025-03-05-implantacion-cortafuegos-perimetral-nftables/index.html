@@ -1710,8 +1710,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
-      Instalación del servidor web Apache en Rocky Linux 9
+    <a href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
+      Instalación de kind y creación de un cluster de kubernetes
     </a>
   </h4>
   
@@ -1734,8 +1734,17 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El de Apache es uno de los servidores web más usados del mundo. Aunque en otras distribuciones, como las basadas en Debian, este servidor se instala con el paquete <code>apache2</code> en las distribuciones basadas en Red Hat como CentOS o Rocky Linux, este servidor se instala con el paquete <code>httpd</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
+  <p class="mb-6"><p><a href="https://kind.sigs.k8s.io/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Kind</a> es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
     Leer
   </a>
 </div>
@@ -1747,8 +1756,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
-      Instalación de Debian 12 bajo LVM en Proxmox
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
+      Instalación de Docker
     </a>
   </h4>
   
@@ -1763,16 +1772,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fundamentos-hardware/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Fundamentos hardware
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+  <p class="mb-6">Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
     Leer
   </a>
 </div>
@@ -1784,16 +1793,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
-      Creación de una VPN sitio a sitio con WireGuard
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1808,8 +1817,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
     Leer
   </a>
 </div>

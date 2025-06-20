@@ -1251,8 +1251,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/">
-      Configuración del servidor de correos para permitir el uso de clientes externos
+    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+      Cómo simular un servidor PostgreSQL en GNS3
     </a>
   </h4>
   
@@ -1267,16 +1267,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se abordan algunos de los pasos que hay que seguir para configurar un servidor de correo para que se pueda usar con clientes externos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/">
+  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
     Leer
   </a>
 </div>
@@ -1288,45 +1288,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
-      Creación de Services en kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Los servicios en Kubernetes permiten a otros pods o al usuario acceder al servicio que ofrece otro pod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
-      Creación de una VPN de acceso remoto con IPSec
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
@@ -1349,8 +1312,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
+      Gestión de redes en Openstack
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
     Leer
   </a>
 </div>
