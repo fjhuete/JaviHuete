@@ -1251,8 +1251,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
-      Despliegue de una aplicación en Kubernetes usando Helm
+    <a href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
+      Despliegue de Roundcube usando Docker
     </a>
   </h4>
   
@@ -1275,8 +1275,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+  <p class="mb-6"><p>Para conectarse a un servidor de correo propio se puede usar un cliente de escritorio o, en este caso, un webmail. En este ejemplo se usa el cliente de correo web se puede desplegar usando Docker. En este caso, se usa la imagen de la aplicación web de correo roundcube.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
     Leer
   </a>
 </div>
@@ -1288,8 +1288,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+      Qué es ARP y cómo funciona
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>El protocolo de resolución de direcciones (ARP) es el protocolo de comunicaciones responsable de encontrar la dirección MAC que corresponde a una determinada dirección IP. Lo hace a través de un conjunto de tramas de petición y respuesta.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-07-que-es-arp-como-funciona/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
+      Creación de Deployments en kubernetes
     </a>
   </h4>
   
@@ -1312,45 +1349,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
-      Implantación de una aplicación Java usando Docker
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para implantar una aplicación Java usando Docker se puede compilar una aplicación desde el código fuente o usar un fichero ya compilado. Además, se puede implantar una aplicación en un contenedor tomcat o crear una imagen Docker propia a partir de una imagen Tomcat con las modificaciones necesarias para servir la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
+  <p class="mb-6"><p>Para crear un despliegue o deployment en Kubernetes se define el recurso en un fichero yaml.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
     Leer
   </a>
 </div>

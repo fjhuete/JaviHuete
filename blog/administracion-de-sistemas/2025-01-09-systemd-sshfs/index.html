@@ -1310,8 +1310,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
-      Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`
+    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
+      Instalación y configuración del gestor de arranque systemd-boot en Debian
     </a>
   </h4>
   
@@ -1326,16 +1326,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fct/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Fct
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
+  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
     Leer
   </a>
 </div>
@@ -1347,45 +1347,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
-      Almacenamiento en Docker
+    <a href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
+      Instalación de un CMS Python usando Django
     </a>
   </h4>
   
@@ -1408,8 +1371,45 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume el funcionamiento de los dos principales métodos de almacenamiento en Docker: los volúmenes y los bind mount</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
+  <p class="mb-6"><p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-11-24-comando-xargs/">
+      El comando xargs
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">El comando xargs permite la construcción y ejecución de líneas de comando desde la entrada estándar. Este comando lee los elementos de la línea de la entrada estándar delimitados por espacios o líneas y ejecuta el comando una o más veces con el argumento inicial seguido de los elementos elementos indicados por teclado.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-11-24-comando-xargs/">
     Leer
   </a>
 </div>

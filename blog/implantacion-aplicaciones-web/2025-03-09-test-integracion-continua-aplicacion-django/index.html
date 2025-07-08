@@ -1183,45 +1183,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
-      Configuración NAT en routers Linux en Openstack
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
-      Configuración de vistas en el servidor DNS con  Bind9
+    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+      Instalación de un servidor de correos satélite, redirecciones y alias
     </a>
   </h4>
   
@@ -1244,8 +1207,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
     Leer
   </a>
 </div>
@@ -1257,8 +1220,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
-      Instalación de un CMS Python usando Django
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+      Creación de una VPN de acceso remoto con IPSec
     </a>
   </h4>
   
@@ -1273,16 +1236,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Implantacion
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se instala el CMS CMS-Django usando un entorno virtual.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-12-03-instalacion-cms-python/">
+  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+      Autentificación SSH con cifrado asimétrico usando GPG
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
     Leer
   </a>
 </div>

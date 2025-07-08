@@ -1122,8 +1122,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
-      Configuración de herramientas antispam en el servidor de correos
+    <a href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
+      Migración de aplicaciones web PHP al entorno de producción
     </a>
   </h4>
   
@@ -1138,16 +1138,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Cuando se configura un servidor de correos de Internet es importante configurarlo de manera correcta para que pueda usar los mecanismos disponibles para filtrar el spam que recibe.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
+  <p class="mb-6"><p>Este supuesto parte de un servidor Apache2 en un entorno de pruebas con dos aplicaciones PHP instaladas: Moodle y NextCloud. En este post se document la migración de estas aplicaciones a un servidor Nginx en producción.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2024-11-18-migracion-aplicaciones-php/">
     Leer
   </a>
 </div>
@@ -1159,45 +1159,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
-      Configuración NAT en routers Cisco en GNS3
+    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+      Configuración de switches en GNS3
     </a>
   </h4>
   
@@ -1220,8 +1183,45 @@
       </li>
     </ul>
   
-  <p class="mb-6">NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
+  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+      Instalación de Debian 12 bajo LVM en Proxmox
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/fundamentos-hardware/"
+            class="ms-1"
+            >Fundamentos hardware
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
     Leer
   </a>
 </div>

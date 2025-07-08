@@ -1106,45 +1106,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
-      Certificado HTTP y SSL
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
-      Despliegue de una aplicación en Kubernetes usando Helm
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1167,8 +1130,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1180,8 +1143,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/">
-      Despliegue de una aplicación PHP en Kubernetes
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
     </a>
   </h4>
   
@@ -1196,16 +1159,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se documenta el despliegue de la aplicación Let`s Chat en Kubernetes.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/">
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+      Empaquetadores y compresores/descompresores en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/sistemas/"
+            class="ms-1"
+            >Sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
     Leer
   </a>
 </div>
