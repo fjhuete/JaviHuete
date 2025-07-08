@@ -565,6 +565,10 @@
                 
                 
                 
+              
+                
+                
+                
                inline-flex items-center">
               Más
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -581,8 +585,8 @@
                   <a
                     class="nav-dropdown-link "
                     
-                    href="/authors">
-                    Autores
+                    href="/cursos">
+                    Cursos
                   </a>
                 </li>
               
@@ -594,6 +598,17 @@
                     
                     href="/categories">
                     Categorías
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
                   </a>
                 </li>
               
@@ -803,7 +818,7 @@
                   d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
               </svg>
             </kbd>
-            seleccioanr
+            seleccionar
           </span>
           <span class="search-result-info"></span>
           <span data-target="close-search-modal">
@@ -1162,8 +1177,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
-      Cómo hacer copias de seguridad comprimidas con `dd` y `gzip`
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
     </a>
   </h4>
   
@@ -1178,16 +1193,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/fct/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Fct
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En entornos profesionales es frecuente realizar, de manera periódica, copias de seguridad de todo el contenido de un sistema e incluso de discos duros completos. Estas copias pueden conllevar un gran coste de almacenamiento y, por tanto, es conveniente almacenarlas de forma comprimida.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2025-04-09-como-hacer-copias-de-seguridad-comprimidas/">
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
     Leer
   </a>
 </div>
@@ -1199,45 +1214,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
-      Escenario de enrutamiento en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En esta práctica se parte de un escenario recreado en el simulador GNS3 y, a partir de él, se enruta el tráfico entre los diferentes equipos que forman la red para permitir la comunicación entre todas las máquinas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2023-11-24-escenario-enrutamiento-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
-      Ejecutar un pipeline de Jenkins con cada actualización de un repositorio
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
+      Despliegue de una aplicación usando Jenkins
     </a>
   </h4>
   
@@ -1260,8 +1238,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para que Jenkins ejecute un pipeline cada vez que se actualice un repositorio git se pueden establecer varias configuraciones diferentes. En este caso, se incluye el Jenkinsfile en el repositorio de GitHub.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
+  <p class="mb-6"><p>Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
+      Implantación de una aplicación Java usando Docker
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/implantacion/"
+            class="ms-1"
+            >Implantacion
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para implantar una aplicación Java usando Docker se puede compilar una aplicación desde el código fuente o usar un fichero ya compilado. Además, se puede implantar una aplicación en un contenedor tomcat o crear una imagen Docker propia a partir de una imagen Tomcat con las modificaciones necesarias para servir la aplicación.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
     Leer
   </a>
 </div>

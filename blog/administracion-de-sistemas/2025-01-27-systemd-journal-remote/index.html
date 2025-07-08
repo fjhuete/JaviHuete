@@ -565,6 +565,10 @@
                 
                 
                 
+              
+                
+                
+                
                inline-flex items-center">
               Más
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -581,8 +585,8 @@
                   <a
                     class="nav-dropdown-link "
                     
-                    href="/authors">
-                    Autores
+                    href="/cursos">
+                    Cursos
                   </a>
                 </li>
               
@@ -594,6 +598,17 @@
                     
                     href="/categories">
                     Categorías
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
                   </a>
                 </li>
               
@@ -803,7 +818,7 @@
                   d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
               </svg>
             </kbd>
-            seleccioanr
+            seleccionar
           </span>
           <span class="search-result-info"></span>
           <span data-target="close-search-modal">
@@ -1451,8 +1466,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
-      Guía de instalación de MongoDB en Debian 12
+    <a href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
+      Instalación de Debian 12 bajo LVM en Proxmox
     </a>
   </h4>
   
@@ -1467,16 +1482,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/bases-de-datos/"
+            href="/categories/fundamentos-hardware/"
             class="ms-1"
-            >Bases de datos
+            >Fundamentos hardware
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+  <p class="mb-6"><p>Proxmox Virtual Environment, o Proxmox VE, entorno de virtualización de servidores de código abierto basado en Debian. En este post se usa este entorno para crear una máquina virtual en la que se instala un sistema operativo Debian 12 bajo volúmenes lógicos (lvm).</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-04-04-instalacion-debian-lvm-proxmox/">
     Leer
   </a>
 </div>
@@ -1488,45 +1503,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
-      Despliegue de una aplicación con contenido persistente en Kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
-      Así funciona IPv6: configuración en router Linux y Cisco
+    <a href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+      Cómo importar dispositivos a GNS3
     </a>
   </h4>
   
@@ -1549,8 +1527,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>IPv6 es una actualización del protocolo IPv4 que nace ante la escasez de direcciones que IPv4 permite. Las direcciones IPv6 están formada por 32 caracteres hexadecimales en grupos de cuatro caracteres separados por el carácter dos puntos (:). En este post se recogen varios ejemplos prácticos del funcionamiento de este protocolo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-14-ipv6-router-linux-cisco/">
+  <p class="mb-6"><p>En muchas ocasiones es habitual necesitar importar dispositivos que no están incluidos en la instalación básica de GNS3 para simular redes similares a las que podemos encontrar en la vida real. En este tutorial hay un par de ejemplos en los que se importan las imágenes de diferentes dispositivos en el simulador.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-importar-dispositivos-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
+      Movimientos de datos entre bases de datos
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En esta entrada se muestran diferentes supuestos prácticos de movimientos de datos entre bases de datos diferentes. En algunos cosos, estos volcados se realizan entre bases de datos dentro del mismo sistema gestor de bases de datos. En otras ocasiones, se documenta el proceso para volcar la información desde un sistema gestor de bases de datos a otro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2025-03-03-movimiento-de-datos-entre-bases-de-datos/">
     Leer
   </a>
 </div>
