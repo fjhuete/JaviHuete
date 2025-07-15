@@ -1277,45 +1277,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
-      Configuración de herramientas antispam en el servidor de correos
+    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+      Configuración de reglas de cortafuegos en router Linux usando iptables
     </a>
   </h4>
   
@@ -1330,16 +1293,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Cuando se configura un servidor de correos de Internet es importante configurarlo de manera correcta para que pueda usar los mecanismos disponibles para filtrar el spam que recibe.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
+  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
     Leer
   </a>
 </div>
@@ -1351,8 +1314,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
-      Configuración de vistas en el servidor DNS con  Bind9
+    <a href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+      Configuración NAT en routers Mikrotik en Openstack
     </a>
   </h4>
   
@@ -1367,16 +1330,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+  <p class="mb-6">En este post se configura el funcionamiento del NAT en una red creada en Openstack que usa routers Mikrotik. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-mikrotik-openstak/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
     Leer
   </a>
 </div>
