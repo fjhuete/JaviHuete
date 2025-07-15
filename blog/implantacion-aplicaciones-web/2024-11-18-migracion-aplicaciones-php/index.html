@@ -1337,8 +1337,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-      Instalación de Jenkins usando Docker como runner
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
+      Construcción de una imagen Docker en un pipeline de Jenkins
     </a>
   </h4>
   
@@ -1361,8 +1361,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
       </li>
     </ul>
   
-  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
+  <p class="mb-6"><p>Para crear una imagen Docker desde un pipeline de Jenkins es necesario conectar este servicio a la cuenta de DockerHub a la que debe subir la imagen. Para ello, en el menú Administrar Jenkins -&gt; Credenciales -&gt; Global -&gt; Add Credentials se crea una nueva credencial de tipo nombre de usuario y contraseña.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
     Leer
   </a>
 </div>
@@ -1374,8 +1374,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
-      Empaquetadores y compresores/descompresores en Debian
+    <a href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
+      Instalación de kind y creación de un cluster de kubernetes
     </a>
   </h4>
   
@@ -1390,16 +1390,25 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+  <p class="mb-6"><p><a href="https://kind.sigs.k8s.io/"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Kind</a> es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
     Leer
   </a>
 </div>
@@ -1411,8 +1420,8 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
-      Creación y configuración de un sistema de ficheros en Debian 12
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1427,16 +1436,16 @@ Esto se debe a que Moodle usa rutas amigables y nginx no está configurado por d
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>

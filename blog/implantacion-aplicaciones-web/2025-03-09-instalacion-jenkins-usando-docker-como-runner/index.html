@@ -1232,8 +1232,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
+      Instalación y configuración de un servidor de correos de Internet
     </a>
   </h4>
   
@@ -1256,8 +1256,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6"><p>Para configurar un servidor de correos en un servidor expuesto a Internet hay que instalar un servicio SMTP en este servidor. En este caso, se usa el servidor <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-018-instalacion-configuracion-servidor-correo-postifx-internet/">
     Leer
   </a>
 </div>
@@ -1269,8 +1269,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    <a href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+      Envío de correos desde una aplicación web
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &ldquo;oficial&rdquo; de la red. Este servidor de correo está en otra máquina de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-14-criptografia-integridad/">
+      Firmas y autenticación con GPG
     </a>
   </h4>
   
@@ -1293,45 +1330,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-implantacion-aplicaciones-php-docker/">
-      Implantación de aplicaciones web PHP en Docker
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Para implantar una aplicación PHP en Docker se genera un entorno LAMP usando varios contenedores a través de un fichero docker-compose como se muestra en este post</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-implantacion-aplicaciones-php-docker/">
+  <p class="mb-6">En esta entrada se explica cómo firmar claves públicas usando GPG.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-integridad/">
     Leer
   </a>
 </div>

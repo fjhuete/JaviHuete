@@ -1304,16 +1304,53 @@ Cuando los ficheros crontab se han instalado, cron ya cuenta con la información
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/">
+      Despliegue de una aplicación PHP en Kubernetes
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se documenta el despliegue de la aplicación Let`s Chat en Kubernetes.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-php-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1328,8 +1365,8 @@ Cuando los ficheros crontab se han instalado, cron ya cuenta con la información
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
     Leer
   </a>
 </div>
@@ -1341,8 +1378,8 @@ Cuando los ficheros crontab se han instalado, cron ya cuenta con la información
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-      Instalación de Jenkins usando Docker como runner
+    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+      Guía de instalación de MongoDB en Debian 12
     </a>
   </h4>
   
@@ -1357,53 +1394,16 @@ Cuando los ficheros crontab se han instalado, cron ya cuenta con la información
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/bases-de-datos/"
             class="ms-1"
-            >Implantacion
+            >Bases de datos
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
-      Convulsión en el mundo del software libre
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se repasa el conflicto generado en el mundo del software libre tras las decisiones de Red Hat sobre el proyecto CentOS y las consecuencias para otras distribuciones derivadas.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-convulsion-en-el-mundo-del-software-libre/">
+  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
     Leer
   </a>
 </div>

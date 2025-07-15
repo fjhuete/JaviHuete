@@ -1150,45 +1150,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
-      Creación de política de grupo en Windows Active Directory
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Una directiva de grupo es un conjunto de reglas que controlan el entorno de trabajo de cuentas de usuario y cuentas de equipo. La directiva de grupo permite gestionar y configurar de forma centralizada sistemas operativos, aplicaciones y configuración de los usuarios en un entorno de Directorio Activo.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-17-politicas-grupo-active-directory-windows/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+      Autentificación SSH con cifrado asimétrico usando GPG
     </a>
   </h4>
   
@@ -1211,8 +1174,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
     Leer
   </a>
 </div>
@@ -1224,8 +1187,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
-      Interconexión entre dos servidores Oracle
+    <a href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+      Configuración de switches en GNS3
     </a>
   </h4>
   
@@ -1240,16 +1203,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/redes/"
             class="ms-1"
-            >Administracion bbdd
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+  <p class="mb-6"><p>En este post se muestran varios ejemplos de configuración de switches gestionables en el simulador GNS3. A los dispositivos se les aplican configuraciones como la creación de VLAN, la configuración del port bonding entre switches o el uso del port mirroring para monitorizar el tráfico de la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-01-28-configuracion-switches-gns3-vlan-portbonding-port-mirroring/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
     Leer
   </a>
 </div>
