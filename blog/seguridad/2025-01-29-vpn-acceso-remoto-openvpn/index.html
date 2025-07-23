@@ -2249,8 +2249,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
-      Configuración de vistas en el servidor DNS con  Bind9
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -2273,8 +2273,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -2286,8 +2286,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
+      Creación de una VPN sitio a sitio con WireGuard
     </a>
   </h4>
   
@@ -2302,16 +2302,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Servicios
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6"><p>En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
     Leer
   </a>
 </div>
@@ -2323,8 +2323,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
-      Almacenamiento en Docker
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
+      Implantación de una aplicación Java usando Docker
     </a>
   </h4>
   
@@ -2347,8 +2347,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume el funcionamiento de los dos principales métodos de almacenamiento en Docker: los volúmenes y los bind mount</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-almacenamiento-docker/">
+  <p class="mb-6"><p>Para implantar una aplicación Java usando Docker se puede compilar una aplicación desde el código fuente o usar un fichero ya compilado. Además, se puede implantar una aplicación en un contenedor tomcat o crear una imagen Docker propia a partir de una imagen Tomcat con las modificaciones necesarias para servir la aplicación.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
     Leer
   </a>
 </div>

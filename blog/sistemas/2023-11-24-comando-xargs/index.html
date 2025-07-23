@@ -1171,54 +1171,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-      Test para la integración continua de una aplicación django
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
-
-
-
-
- target="_blank"
- 
-
-
->django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
-      Envío de correos desde una aplicación web
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1241,8 +1195,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un servidor web Rocky Linux 9 con una aplicación WordPress se configura la aplicación para que envíe correos a través del servidor de correos &ldquo;oficial&rdquo; de la red. Este servidor de correo está en otra máquina de la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-envio-correos-aplicacion-web/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1254,8 +1208,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
-      Creación de un escenario con varios contenedores con docker compose
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
+      Ejecutar un pipeline de Jenkins con cada actualización de un repositorio
     </a>
   </h4>
   
@@ -1278,8 +1269,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para implantar una aplicación nextcloud en un contenedor docker conectada a otro contenedor con una base de datos MariaDB se puede usar un fichero docker compose para configurar el escenario.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-creacion-escenario-varios-contenedores-docker-compose/">
+  <p class="mb-6"><p>Para que Jenkins ejecute un pipeline cada vez que se actualice un repositorio git se pueden establecer varias configuraciones diferentes. En este caso, se incluye el Jenkinsfile en el repositorio de GitHub.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
     Leer
   </a>
 </div>
