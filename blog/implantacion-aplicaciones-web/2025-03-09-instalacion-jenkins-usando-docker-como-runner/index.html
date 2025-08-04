@@ -1232,8 +1232,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
-      Guía de instalación de MongoDB en Debian 12
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
     </a>
   </h4>
   
@@ -1248,16 +1248,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/bases-de-datos/"
+            href="/categories/redes/"
             class="ms-1"
-            >Bases de datos
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En esta guía se resumen los pasos esenciales para instalar MongoDB en Debian 12 de manera sencilla.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/bases-de-datos/2024-03-07-instalacion-mongodb-debian-12-sgbd-nosql/">
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
     Leer
   </a>
 </div>
@@ -1269,8 +1269,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
-      Creación de recursos de tipo Ingress en kubernetes
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
+      Gestión de almacenamiento en Openstack
     </a>
   </h4>
   
@@ -1293,45 +1330,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
-      Comandos para el control de procesos
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Un proceso es la unidad básica de trabajo del sistema operativo. En este post podrás encontrar una lista de comandos con los que controlar los procesos que se llevan a cabo en un equipo, así como sus diferentes opciones y ejemplos de uso.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-03-17-comandos-control-procesos/">
+  <p class="mb-6">En este post se muestran algunos ejemplos de funcionamiento del cliente de OpenStack para la gestión del almacenamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-del-almacenamiento/">
     Leer
   </a>
 </div>

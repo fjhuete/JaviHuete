@@ -2249,8 +2249,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+      Despliegue de una aplicación con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -2273,8 +2273,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -2286,8 +2286,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
-      Creación de una VPN sitio a sitio con WireGuard
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
+      Instalación desatendida por red de Debian12
     </a>
   </h4>
   
@@ -2302,16 +2302,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Seguridad
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
+  <p class="mb-6">En este post se recogen varias opciones alternativas para la configuración de un servicio de instalación desatendida de Debian 12 por red.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/">
     Leer
   </a>
 </div>
@@ -2323,8 +2323,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
-      Implantación de una aplicación Java usando Docker
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
+      Disparar un pipeline de Jenkins desde GitHub usando Ngrok
     </a>
   </h4>
   
@@ -2347,8 +2347,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para implantar una aplicación Java usando Docker se puede compilar una aplicación desde el código fuente o usar un fichero ya compilado. Además, se puede implantar una aplicación en un contenedor tomcat o crear una imagen Docker propia a partir de una imagen Tomcat con las modificaciones necesarias para servir la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-10-despliegue-aplicacion-java-usando-docker/">
+  <p class="mb-6"><p>Jenkins se integra con Ngrok para hacer accesible el servidor Jenkins local a servicios en Internet como, por ejemplo, GitHub. Para poder exponer Jenkins a Internet es necesario crear una URL de Ngrok.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-disparar-pipeline-jenkins-desde-github-usando-ngrok/">
     Leer
   </a>
 </div>

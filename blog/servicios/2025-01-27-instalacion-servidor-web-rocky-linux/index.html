@@ -1137,82 +1137,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
-      Construcción de una imagen Docker en un pipeline de Jenkins
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para crear una imagen Docker desde un pipeline de Jenkins es necesario conectar este servicio a la cuenta de DockerHub a la que debe subir la imagen. Para ello, en el menú Administrar Jenkins -&gt; Credenciales -&gt; Global -&gt; Add Credentials se crea una nueva credencial de tipo nombre de usuario y contraseña.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
-      Configuración de herramientas antispam en el servidor de correos
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Cuando se configura un servidor de correos de Internet es importante configurarlo de manera correcta para que pueda usar los mecanismos disponibles para filtrar el spam que recibe.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-configuracion-herramientas-antispam-servidor-correos/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    <a href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
+      Certificado HTTP y SSL
     </a>
   </h4>
   
@@ -1235,8 +1161,82 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+  <p class="mb-6">En esta entrada se explica cómo se puede generar un certificado HTTPS para un servidor web creando una Autoridad Certificadora propia y cómo configurar un servidor web Apache2 o Nginx para usar el certificado.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-certificado-http-ssl/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/">
+      Implantación de un cortafuegos perimetral con nftables
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-03-05-implantacion-cortafuegos-perimetral-nftables/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/">
+      Correo electrónico cifrado con Thunderbird
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este tutorial se muestra cómo configurar el cliente de correo electrónico Mozilla Thunderbird para enviar y recibir correos electrónicos cifrados con un par de claves pública y privada generadas con GPG.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-correo-electronico-cifrado-thunderbird/">
     Leer
   </a>
 </div>
