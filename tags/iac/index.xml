@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IaC on Javi Huete</title>
+    <link>/tags/iac/</link>
+    <description>Recent content in IaC on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/tags/iac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de Oracle Cloud Infrastructure OCI CLI</title>
+      <link>/blog/iac/2025-08-21-instalacion-oci-cli/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-21-instalacion-oci-cli/</guid>
+      <description>La herramienta para la línea de comandos de Oracle Cloud Infrastructure es un recurso muy útil para gestionar un arrendamiento en OCI. Es espacialmente práctica si se combina con otras herramientas para la gestión de infraestructura como código.</description>
+    </item>
+    <item>
+      <title>Instalación de Terraform</title>
+      <link>/blog/iac/2025-08-21-instalacion-terraform/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-21-instalacion-terraform/</guid>
+      <description>En este post se describe el proceso de instalación de la herramienta para la línea de comandos de Terraform, que permite aplicar la configuración de Terraform a una estructura en un proveedor del cloud.</description>
+    </item>
+  </channel>
+</rss>

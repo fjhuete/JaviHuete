@@ -532,7 +532,7 @@
               class="nav-link "
               
               href="/blog"
-              >Prácticas</a
+              >Blog</a
             >
           </li>
         
@@ -1143,8 +1143,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
-      Introducción a Openstack Client
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1167,8 +1167,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">OpenStack es una herramienta de infraestructura como servicio que puede gestionarse desde la línea de comandos a través de su cliente.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-introduccion-a-openstack/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1180,8 +1180,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
-      Instalación de kind y creación de un cluster de kubernetes
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+      Despliegue de una aplicación con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1204,17 +1204,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p><a href="https://kind.sigs.k8s.io/"
-
-
-
-
- target="_blank"
- 
-
-
->Kind</a> es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
+  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -1226,8 +1217,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
+      Cómo simular un servidor web en GNS3
     </a>
   </h4>
   
@@ -1242,16 +1233,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/redes/"
             class="ms-1"
-            >Seguridad
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6"><p>Existen varias formas de crear un servidor web en un escenario de GNS3. En este post se optará por añadir una máquina Linux con Debian 11 en la que se instalará el servidor Nginx para que pueda actuar a forma de servidor web en el escenario.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-03-simular-servidor-web-gns3-nginx-apache/">
     Leer
   </a>
 </div>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infraestructura on Javi Huete</title>
+    <link>//localhost:1313/tags/infraestructura/</link>
+    <description>Recent content in Infraestructura on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Sun, 24 Aug 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/infraestructura/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de una VCN en Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>//localhost:1313/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Sun, 24 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>//localhost:1313/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;Las VCN (Virtual Cloud Network) son un recurso fundamental en Oracle Cloud Infrastructure. En este post se utiliza la herramienta de IaC Terraform para provisionar uno de estos recursos en un arrendamiento de OCI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>//localhost:1313/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Sun, 24 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>//localhost:1313/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;En un &lt;a href=&#34;//localhost:1313/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;post anterior&lt;/a&gt; se mostraba cómo crear un recurso de tipo VCN (virtual cloud network o red virtual en la nube) en Oracle Cloud Infrastructure (OCI) usando Terraform. Pero este tipo de recurso, por sí solo no tiene ninguna utilidad. Así que en esta entrada se muestra cómo añadir una subred a la VCN y cómo modificarla posteriormente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eliminar recursos de Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>//localhost:1313/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Sun, 24 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>//localhost:1313/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;En este post se explica cómo se pueden eliminar recursos en un proveedor de cloud, en este caso Oracle Cloud Infrastructure (OCI) usando la herramienta de línea de comandos de Terraform. El punto de partida es una infraestructura sencilla: una VCN con una subnet creada en &lt;a href=&#34;//localhost:1313/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;otro artículo de este blog&lt;/a&gt; y después modificada en este &lt;a href=&#34;//localhost:1313/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;otro post&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

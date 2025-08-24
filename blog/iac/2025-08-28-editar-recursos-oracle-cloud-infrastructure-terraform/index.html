@@ -1,0 +1,1918 @@
+<!doctype html>
+<html
+  itemscope
+  class=""
+  lang="es-Es"
+  itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8" />
+
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+
+<meta name="theme-name" content="hugoplate" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu_97d734128f375af.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu_2a8eebffbb7fef12.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu_97d734128f375af.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu_cb22fd2ed3486ab3.png">
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta
+  name="msapplication-TileColor"
+  content="#ddd" />
+<meta
+  name="theme-color"
+  content="#ffffff" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <base href="//localhost:1313/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/" />
+
+
+
+
+
+
+
+  
+
+
+<title>Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta
+    name="keywords"
+    content="Javi Huete, Virtualización, Sistemas, Informática, Bases de datos" />
+
+
+
+
+<meta
+  name="description"
+  content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+
+  <meta name="author" content="Javi Huete" />
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+
+  
+  
+    
+    
+      
+    
+
+    
+
+
+    
+    
+
+
+    
+    
+      
+      
+      
+        <meta property="og:image" content="//localhost:1313/images/og-image.png" />
+        <meta name="twitter:image" content="//localhost:1313/images/og-image.png" />
+        <meta
+          name="twitter:card"
+          content="summary_large_image" />
+      
+      
+      <meta property="og:image:width" content="1123" />
+      <meta property="og:image:height" content="650" />
+    
+
+
+    
+    <meta
+      property="og:image:type"
+      content="image/.png" />
+  
+
+
+  
+
+
+
+
+
+<meta property="og:title" content="Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform" />
+<meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//localhost:1313/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/" />
+
+
+<meta name="twitter:title" content="Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform" />
+<meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
+
+
+  <meta name="twitter:site" content="@fj_huete" />
+
+
+  <meta name="twitter:creator" content="@Javi Huete" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  let indexURL = "//localhost:1313/searchindex.json";
+  let includeSectionsInSearch = ["blog"];
+  let search_no_results = "No hay resultados para";
+  let search_initial_message = "Escribe algo para buscar...";
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin />
+<link rel="preconnect" href="//cdnjs.cloudflare.com" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://use.fontawesome.com" />
+<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel="dns-prefetch" href="//platform.linkedin.com" />
+<link rel="dns-prefetch" href="//platform.twitter.com" />
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script>
+  (function () {
+    const googleFont = document.createElement("link");
+    googleFont.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap";
+    googleFont.type = "text/css";
+    googleFont.rel = "stylesheet";
+    document.head.appendChild(googleFont);
+  })();
+</script>
+
+
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<link
+  href="/css/style.css"
+  integrity=""
+  rel="stylesheet" />
+
+
+<link
+  defer
+  async
+  rel="stylesheet"
+  href="/css/style-lazy.css"
+  integrity=""
+  media="print"
+  onload="this.media='all'; this.onload=null;" />
+
+
+  </head>
+
+  <body>
+    
+    
+      
+
+
+
+
+
+      
+      <div
+  class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
+  <span class="block sm:hidden">all</span>
+  <span class="hidden sm:block md:hidden">sm</span>
+  <span class="hidden md:block lg:hidden">md</span>
+  <span class="hidden lg:block xl:hidden">lg</span>
+  <span class="hidden xl:block 2xl:hidden">xl</span>
+  <span class="hidden 2xl:block">2xl</span>
+</div>
+
+    
+
+
+    
+    
+
+
+
+
+
+    
+    <header
+  class="header sticky top-0 z-30">
+  <nav class="navbar container">
+    
+    <div class="order-0">
+      
+      <a class="navbar-brand block" href="/">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+      </a>
+    </div>
+    
+    <input id="nav-toggle" type="checkbox" class="hidden" />
+    <label
+      for="nav-toggle"
+      class="order-3 cursor-pointer flex items-center lg:hidden text-dark dark:text-white lg:order-1">
+      <svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20">
+        <title>Menu Open</title>
+        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+      </svg>
+      <svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20">
+        <title>Menu Close</title>
+        <polygon
+          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+          transform="rotate(45 10 10)"></polygon>
+      </svg>
+    </label>
+    
+
+    
+    <ul
+      id="nav-menu"
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/"
+              >Inicio</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/about"
+              >Sobre mí</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/blog"
+              >Blog</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              
+              href="/contact"
+              >Contacto</a
+            >
+          </li>
+        
+      
+        
+        
+        
+        
+          <li class="nav-item nav-dropdown group relative">
+            <span
+              class="nav-link 
+                
+                
+                
+              
+                
+                
+                
+              
+                
+                
+                
+               inline-flex items-center">
+              Más
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+            <ul
+              class="nav-dropdown-list lg:group-hover:visible lg:group-hover:opacity-100">
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/cursos">
+                    Cursos
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/categories">
+                    Categorías
+                  </a>
+                </li>
+              
+                
+                
+                <li class="nav-dropdown-item">
+                  <a
+                    class="nav-dropdown-link "
+                    
+                    href="/authors">
+                    Autores
+                  </a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      
+      
+    </ul>
+
+    <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      
+        
+          <button
+            aria-label="search"
+            
+            class="border-border text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
+            
+            data-target="search-modal">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        
+      
+
+      
+
+
+
+
+
+
+
+
+
+      
+
+
+  <div class="theme-switcher mr-5 hidden">
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0"
+          viewBox="0 0 56 56"
+          fill="#fff"
+          height="16"
+          width="16">
+          <path
+            d="M30 4.6c0-1-.9-2-2-2a2 2 0 0 0-2 2v5c0 1 .9 2 2 2s2-1 2-2Zm9.6 9a2 2 0 0 0 0 2.8c.8.8 2 .8 2.9 0L46 13a2 2 0 0 0 0-2.9 2 2 0 0 0-3 0Zm-26 2.8c.7.8 2 .8 2.8 0 .8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9 0-.7.8-.7 2.1 0 3ZM28 16a12 12 0 0 0-12 12 12 12 0 0 0 12 12 12 12 0 0 0 12-12 12 12 0 0 0-12-12Zm23.3 14c1.1 0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 0 0-2 2c0 1.1 1 2 2 2ZM4.7 26a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2Zm37.8 13.6a2 2 0 0 0-3 0 2 2 0 0 0 0 2.9l3.6 3.5a2 2 0 0 0 2.9 0c.8-.8.8-2.1 0-3ZM10 43.1a2 2 0 0 0 0 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1 0-2.9-.8-.8-2-.8-2.9 0Zm20 3.4c0-1.1-.9-2-2-2a2 2 0 0 0-2 2v4.9c0 1 .9 2 2 2s2-1 2-2Z" />
+        </svg>
+        
+        <svg
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100"
+          viewBox="0 0 24 24"
+          fill="none"
+          height="16"
+          width="16">
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4 0 0 0 8.7 1.8c1-.3 2 .5 1.5 1.5v.1a10.3 10.3 0 0 1-9.4 6.2A10.3 10.3 0 0 1 3.2 6.7c1-2 2.9-3.5 4.9-4.4Z" />
+        </svg>
+      </span>
+    </label>
+  </div>
+
+  
+  <script>
+    var darkMode = true;
+
+    
+
+    if (localStorage.getItem("theme") === "dark"){darkMode = true}
+    else if (localStorage.getItem("theme") === "light"){darkMode = false}
+
+    if (darkMode){document.documentElement.classList.add("dark")}
+    else {document.documentElement.classList.remove("dark")}
+
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      var themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+      var themeSwitcherContainer = document.querySelector('.theme-switcher');
+
+      [].forEach.call(themeSwitch, function (ts) {
+        ts.checked = darkMode;
+        ts.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            document.documentElement.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+
+      
+      themeSwitcherContainer.classList.remove('hidden');
+    });
+  </script>
+
+
+
+
+      
+      
+    </div>
+  </nav>
+</header>
+
+    
+
+
+
+
+  
+    <div
+      class="search-modal "
+      aria-hidden="true"
+      style="--color-primary: #121212">
+      <div data-target="close-search-modal" class="search-modal-overlay"></div>
+      <div
+        class="search-wrapper"
+        data-image="true"
+        data-description="true"
+        data-tags="true"
+        data-categories="true">
+        <div class="search-wrapper-header">
+          <label for="search-modal-input" style="margin-top:-1px">
+            <span class="sr-only">search icon</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-icon"
+              data-type="search">
+              <path
+                fill="currentColor"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              height="18"
+              width="18"
+              class="search-reset"
+              data-type="reset">
+              <path
+                fill="currentColor"
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+            </svg>
+          </label>
+          <input
+            id="search-modal-input"
+            type="text"
+            data-search-input
+            autocomplete="off"
+            aria-label="Search"
+            placeholder="Busca en un post..." />
+        </div>
+        <div class="search-wrapper-body">
+          <div class="search-result" data-search-result></div>
+          <span class="search-result-empty">
+            Escribe algo para buscar...
+          </span>
+        </div>
+        <div class="search-wrapper-footer">
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z" />
+              </svg>
+            </kbd>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="margin-top:1px;"
+                viewBox="0 0 16 16">
+                <path
+                  d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+              </svg>
+            </kbd>
+            navegar
+          </span>
+          <span>
+            <kbd>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="currentColor"
+                style="display:inline-block;"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </kbd>
+            seleccionar
+          </span>
+          <span class="search-result-info"></span>
+          <span data-target="close-search-modal">
+            <kbd>ESC</kbd> cerrar
+          </span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <main>
+      
+  <section class="section pt-7">
+    <div class="container">
+      <div class="row justify-center">
+        <article class="lg:col-10">
+          
+          
+          <h1 class="h2 mb-4">
+            Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform
+          </h1>
+          <ul class="mb-4">
+            <li class="mr-4 inline-block">
+              <a
+                href="/authors/francisco-javier-huete/">
+                <i class="fa-regular fa-circle-user mr-2"></i
+                >Francisco Javier Huete
+              </a>
+            </li>
+            
+            
+              <li class="mr-4 inline-block">
+                <i class="fa-regular fa-folder mr-2"></i>
+                
+                  <a
+                    href="/categories/iac/"
+                    class=""
+                    >Ia c
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/cloud/"
+                    class=""
+                    >Cloud
+                  </a>
+                
+              </li>
+            
+            <li class="mr-4 inline-block">
+              <i class="fa-regular fa-clock mr-2"></i>
+              August 24, 2025
+            </li>
+          </ul>
+          <div class="content mb-10">
+            
+
+ 
+  
+
+<details open class="table-of-content blog">
+  <summary>
+    
+      Índice
+    
+  </summary>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#añadir-recursos-a-la-configuración">Añadir recursos a la configuración</a></li>
+    <li><a href="#modificar-recursos-con-terraform">Modificar recursos con Terraform</a></li>
+  </ol>
+</nav>
+</details>
+
+            <p>En un <a href="/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform"
+
+
+
+ 
+
+
+>post anterior</a> se mostraba cómo crear un recurso de tipo VCN (virtual cloud network o red virtual en la nube) en Oracle Cloud Infrastructure (OCI) usando Terraform. Pero este tipo de recurso, por sí solo no tiene ninguna utilidad. Así que en esta entrada se muestra cómo añadir una subred a la VCN y cómo modificarla posteriormente.</p>
+<h1 id="añadir-recursos-a-la-configuración">Añadir recursos a la configuración</h1>
+<p>Para añadir recursos a una configuración de Terraform simplemente es necesario añadir un nuevo bloque de tipo <code>resource</code> a la configuración. Es recomendable organizar los diferentes recursos en ficheros de configuración separados para mantener el orden y la organización de la infraestructura que se describe en el proyecto. Sin embargo, en este caso, como se trata de una configuración muy sencilla y todos los recursos creados están relacionados con la red se sigue trabajando en el mismo fichero <code>main.tf</code> que en el post anterior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span>terraform {
+</span></span><span style="display:flex;"><span>  required_providers {
+</span></span><span style="display:flex;"><span>    oci = {
+</span></span><span style="display:flex;"><span>      source  = <span style="color:#ed9d13">&#34;oracle/oci&#34;</span>
+</span></span><span style="display:flex;"><span>      version = <span style="color:#ed9d13">&#34;7.15.0&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">provider</span> <span style="color:#ed9d13">&#34;oci&#34;</span> {
+</span></span><span style="display:flex;"><span>  region              = <span style="color:#ed9d13">&#34;eu-madrid-1&#34;</span>
+</span></span><span style="display:flex;"><span>  auth                = <span style="color:#ed9d13">&#34;SecurityToken&#34;</span>
+</span></span><span style="display:flex;"><span>  config_file_profile = <span style="color:#ed9d13">&#34;terraform-tutorial&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_vcn&#34;</span> <span style="color:#ed9d13">&#34;mi_vcn&#34;</span> {
+</span></span><span style="display:flex;"><span>  dns_label      = <span style="color:#ed9d13">&#34;mivcn&#34;</span>
+</span></span><span style="display:flex;"><span>  cidr_block     = <span style="color:#ed9d13">&#34;172.22.0.0/16&#34;</span>
+</span></span><span style="display:flex;"><span>  compartment_id = <span style="color:#ed9d13">&#34;&lt;OCID del compartimento&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  display_name   = <span style="color:#ed9d13">&#34;Mi VCN&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_subnet&#34;</span> <span style="color:#ed9d13">&#34;private_subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  vcn_id                      = oci_core_vcn.mi_vcn.id
+</span></span><span style="display:flex;"><span>  cidr_block                  = <span style="color:#ed9d13">&#34;172.22.0.0/24&#34;</span>
+</span></span><span style="display:flex;"><span>  compartment_id              = <span style="color:#ed9d13">&#34;&lt;OCID del compartimento&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  display_name                = <span style="color:#ed9d13">&#34;Private Subnet&#34;</span>
+</span></span><span style="display:flex;"><span>  prohibit_public_ip_on_vnic  = <span style="color:#6ab825;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>  dns_label                   = <span style="color:#ed9d13">&#34;privatesubnet&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>En este caso, con el último bloque del fichero de configuración se crea un nuevo recurso de tipo subnet a la VCN previamente existente. Crear el recurso es tan sencillo como ejecutar un <code>terraform plan</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ terraform plan
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_vcn.mi_vcn: Refreshing state... [id=&lt;OCID de la VCN&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform used the selected providers to generate the following execution plan.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resource actions are indicated with the following symbols:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + create
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform will perform the following actions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_subnet.private_subnet will be created
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + resource &#34;oci_core_subnet&#34; &#34;private_subnet&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + availability_domain        = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + cidr_block                 = &#34;172.22.0.0/24&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + compartment_id             = &#34;&lt;OCID del compartimento&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + defined_tags               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dhcp_options_id            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + display_name               = &#34;Private Subnet&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dns_label                  = &#34;privatesubnet&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + freeform_tags              = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + id                         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_block             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_blocks            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6virtual_router_ip      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_internet_ingress  = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_public_ip_on_vnic = true
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + route_table_id             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + security_list_ids          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + state                      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + subnet_domain_name         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + time_created               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + vcn_id                     = &#34;OCID de la VCN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_ip          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_mac         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Plan: 1 to add, 0 to change, 0 to destroy.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">───────────────────────────────────────────────────────────────────────────────
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Note: You didn&#39;t use the -out option to save this plan, so Terraform can&#39;t
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">guarantee to take exactly these actions if you run &#34;terraform apply&#34; now.
+</span></span></span></code></pre></div><p>La ejecución de este comando muestra los recursos que se van a crear cuando el plan se aplique. Si se alinean con los objetivos perseguidos, entonces, se puede proceder a aplicar el plan con <code>terraform apply</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ terraform apply
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_vcn.mi_vcn: Refreshing state... [id=&lt;OCID de la VCN&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform used the selected providers to generate the following execution plan.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resource actions are indicated with the following symbols:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + create
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform will perform the following actions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_subnet.private_subnet will be created
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + resource &#34;oci_core_subnet&#34; &#34;private_subnet&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + availability_domain        = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + cidr_block                 = &#34;172.22.0.0/24&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + compartment_id             = &#34;&lt;OCID del compartimento&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + defined_tags               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dhcp_options_id            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + display_name               = &#34;Private Subnet&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dns_label                  = &#34;privatesubnet&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + freeform_tags              = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + id                         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_block             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_blocks            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6virtual_router_ip      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_internet_ingress  = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_public_ip_on_vnic = true
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + route_table_id             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + security_list_ids          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + state                      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + subnet_domain_name         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + time_created               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + vcn_id                     = &#34;&lt;OCID de la VCN&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_ip          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_mac         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Plan: 1 to add, 0 to change, 0 to destroy.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Do you want to perform these actions?
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Terraform will perform the actions described above.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Only &#39;yes&#39; will be accepted to approve.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  Enter a value: yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">oci_core_subnet.private_subnet: Creating...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Creation complete after 4s [id=&lt;OCID de la subred&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+</span></span></span></code></pre></div><p>Tras aplicar la configuración, la nueva subred se crea en el compartimento indicado de OCI.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ oci network subnet list --profile terraform-tutorial --auth security_token --compartment-id &lt;OCID del compartimento&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  &#34;data&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;availability-domain&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;cidr-block&#34;: &#34;172.22.0.0/24&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;compartment-id&#34;: &#34;&lt;OCID del compartimento&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;defined-tags&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#34;Oracle-Tags&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          &#34;CreatedBy&#34;: &#34;default/fjhuete&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          &#34;CreatedOn&#34;: &#34;2025-08-22T15:36:51.582Z&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      },
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;dhcp-options-id&#34;: &#34;&lt;OCID del recurso&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;display-name&#34;: &#34;Private Subnet&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;dns-label&#34;: &#34;privatesubnet&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;freeform-tags&#34;: {},
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;id&#34;: &#34;&lt;OCID de la subred&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-cidr-block&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-cidr-blocks&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-virtual-router-ip&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;lifecycle-state&#34;: &#34;AVAILABLE&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;prohibit-internet-ingress&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;prohibit-public-ip-on-vnic&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;route-table-id&#34;: &#34;&lt;OCID del recurso&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;security-list-ids&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#34;&lt;OCID del recurso&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      ],
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;subnet-domain-name&#34;: &#34;privatesubnet.mivcn.oraclevcn.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;time-created&#34;: &#34;2025-08-22T15:36:51.612000+00:00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;vcn-id&#34;: &#34;&lt;OCID del recurso&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;virtual-router-ip&#34;: &#34;172.22.0.1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;virtual-router-mac&#34;: &#34;00:00:17:D1:34:5F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div><h1 id="modificar-recursos-con-terraform">Modificar recursos con Terraform</h1>
+<p>El proceso para modificar alguno de los recursos creados es bastante sencillo. Simplemente hay que modificar la definición del recurso en la configuración y volver a aplicar el plan de nuevo. En el mejor de los casos, el recurso permitirá ediciones y modificaciones en calienta y Terraform simplemente aplicará ese cambio. En el peor de los casos, el recurso no admitirá el cambio configurado y, por tanto, Terraform deberá eliminarlo y crearlo de nuevo. Este es uno de los motivos por el que es importante usar <code>terraform plan</code> antes de <code>terraform apply</code>, ya que el primer comando indica cuando un recurso se puede modificar o cuando, en cambio, es necesario eliminarlo y volverlo a crear.</p>
+<p>En este ejemplo, la modificación consiste en cambiar el nombre o <code>display_name</code> de la subred. Para ello, sólo hay que cambiar este valor en el fichero de configuración <code>main.tf</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span>terraform {
+</span></span><span style="display:flex;"><span>  required_providers {
+</span></span><span style="display:flex;"><span>    oci = {
+</span></span><span style="display:flex;"><span>      source  = <span style="color:#ed9d13">&#34;oracle/oci&#34;</span>
+</span></span><span style="display:flex;"><span>      version = <span style="color:#ed9d13">&#34;7.15.0&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">provider</span> <span style="color:#ed9d13">&#34;oci&#34;</span> {
+</span></span><span style="display:flex;"><span>  region              = <span style="color:#ed9d13">&#34;eu-madrid-1&#34;</span>
+</span></span><span style="display:flex;"><span>  auth                = <span style="color:#ed9d13">&#34;SecurityToken&#34;</span>
+</span></span><span style="display:flex;"><span>  config_file_profile = <span style="color:#ed9d13">&#34;terraform-tutorial&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_vcn&#34;</span> <span style="color:#ed9d13">&#34;mi_vcn&#34;</span> {
+</span></span><span style="display:flex;"><span>  dns_label      = <span style="color:#ed9d13">&#34;mivcn&#34;</span>
+</span></span><span style="display:flex;"><span>  cidr_block     = <span style="color:#ed9d13">&#34;172.22.0.0/16&#34;</span>
+</span></span><span style="display:flex;"><span>  compartment_id = <span style="color:#ed9d13">&#34;&lt;OCID del compartimento&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  display_name   = <span style="color:#ed9d13">&#34;Mi VCN&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_subnet&#34;</span> <span style="color:#ed9d13">&#34;private_subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  vcn_id                      = oci_core_vcn.mi_vcn.id
+</span></span><span style="display:flex;"><span>  cidr_block                  = <span style="color:#ed9d13">&#34;172.22.0.0/24&#34;</span>
+</span></span><span style="display:flex;"><span>  compartment_id              = <span style="color:#ed9d13">&#34;&lt;OCID del compartimento&gt;&#34;</span>
+</span></span><span style="display:flex; background-color:#363636"><span>  display_name                = <span style="color:#ed9d13">&#34;Subred Privada&#34;</span>
+</span></span><span style="display:flex;"><span>  prohibit_public_ip_on_vnic  = <span style="color:#6ab825;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>  dns_label                   = <span style="color:#ed9d13">&#34;privatesubnet&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Al planear la ejecución de la configuración, Terraform avisa de que este valor se modificará en la infraestructura de OCI al aplicar el plan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ terraform plan
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_vcn.mi_vcn: Refreshing state... [id=&lt;OCID de la VCN&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Refreshing state... [id=&lt;OCID de la subred&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform used the selected providers to generate the following execution plan.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resource actions are indicated with the following symbols:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ~ update in-place
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform will perform the following actions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_subnet.private_subnet will be updated in-place
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ~ resource &#34;oci_core_subnet&#34; &#34;private_subnet&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      ~ display_name               = &#34;Private Subnet&#34; -&gt; &#34;Subred Privada&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        id                         = &#34;&lt;OCID de la subred&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        # (17 unchanged attributes hidden)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Plan: 0 to add, 1 to change, 0 to destroy.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">───────────────────────────────────────────────────────────────────────────────
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Note: You didn&#39;t use the -out option to save this plan, so Terraform can&#39;t
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">guarantee to take exactly these actions if you run &#34;terraform apply&#34; now.
+</span></span></span></code></pre></div><p>Como se ve, la actualización se produce &ldquo;in-place&rdquo; y, por tanto, no requiere eliminar el recurso. Por tanto, a continuación, se puede aplicar el plan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ terraform apply 
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_vcn.mi_vcn: Refreshing state... [id=&lt;OCID de la VCN&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Refreshing state... [id=&lt;OCID de la subred&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform used the selected providers to generate the following execution plan.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resource actions are indicated with the following symbols:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ~ update in-place
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform will perform the following actions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_subnet.private_subnet will be updated in-place
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ~ resource &#34;oci_core_subnet&#34; &#34;private_subnet&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      ~ display_name               = &#34;Private Subnet&#34; -&gt; &#34;Subred Privada&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        id                         = &#34;&lt;OCID de la subred&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        # (17 unchanged attributes hidden)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Plan: 0 to add, 1 to change, 0 to destroy.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Do you want to perform these actions?
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Terraform will perform the actions described above.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Only &#39;yes&#39; will be accepted to approve.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  Enter a value: yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">oci_core_subnet.private_subnet: Modifying... [id=&lt;OCID de la subred&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Modifications complete after 1s [id=&lt;OCID de la subred&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+</span></span></span></code></pre></div><p>Tras aplicar esta modificación, el nombre del recurso cambia en la infraestructura de OCI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ oci network subnet list --profile terraform-tutorial --auth security_token --compartment-id &lt;OCID del compartimento&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">{
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  &#34;data&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;availability-domain&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;cidr-block&#34;: &#34;172.22.0.0/24&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;compartment-id&#34;: &#34;&lt;OCID del compartimento&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;defined-tags&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#34;Oracle-Tags&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          &#34;CreatedBy&#34;: &#34;default/fjhuete&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">          &#34;CreatedOn&#34;: &#34;2025-08-22T15:36:51.582Z&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      },
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;dhcp-options-id&#34;: &#34;&lt;OCID del recurso&gt;&#34;,
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#ccc">      &#34;display-name&#34;: &#34;Subred Privada&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;dns-label&#34;: &#34;privatesubnet&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;freeform-tags&#34;: {},
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;id&#34;: &#34;&lt;OCID de la subred&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-cidr-block&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-cidr-blocks&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;ipv6-virtual-router-ip&#34;: null,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;lifecycle-state&#34;: &#34;AVAILABLE&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;prohibit-internet-ingress&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;prohibit-public-ip-on-vnic&#34;: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;route-table-id&#34;: &#34;&lt;OCID del recurso&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;security-list-ids&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">        &#34;&lt;OCID del recurso&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      ],
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;subnet-domain-name&#34;: &#34;privatesubnet.mivcn.oraclevcn.com&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;time-created&#34;: &#34;2025-08-22T15:36:51.612000+00:00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;vcn-id&#34;: &#34;&lt;OCID de la VCN&gt;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;virtual-router-ip&#34;: &#34;172.22.0.1&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      &#34;virtual-router-mac&#34;: &#34;00:00:17:D1:34:5F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
+</span></span></span></code></pre></div>
+          </div>
+          <div class="row items-start justify-between">
+            
+            
+              <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+                <h5 class="mr-3">Tags :</h5>
+                <ul>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/terraform/">
+                        Terraform
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/oracle-cloud-infrastructure/">
+                        Oracle cloud infrastructure
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/oci/">
+                        Oci
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/virtual-cloud-network/">
+                        Virtual cloud network
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/vcn/">
+                        VC n
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/subnet/">
+                        Subnet
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/infraestructura/">
+                        Infraestructura
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/infraestructura-como-c%c3%b3digo/">
+                        Infraestructura como código
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/iac/">
+                        Ia c
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/hashicorp/">
+                        Hashi corp
+                      </a>
+                    </li>
+                  
+                    <li class="inline-block">
+                      <a
+                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                        href="/tags/oracle/">
+                        Oracle
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+            <div class="lg:col-4 flex items-center">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="share-icons">
+  <h5 class="share-title">Compartir :</h5>
+
+
+  
+  
+    <a
+      class="share-link share-facebook"
+      href="https://facebook.com/sharer/sharer.php?u=%2f%2flocalhost%3a1313%2fblog%2fiac%2f2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share facebook">
+      <span class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-twitter"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2f%2flocalhost%3a1313%2fblog%2fiac%2f2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform%2f"
+      target="_blank"
+      rel="noopener"
+      aria-label="share twitter">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path 
+            d="M8 2H1l8.26 11.015L1.45 22H4.1l6.388-7.349L16 22h7l-8.608-11.478L21.8 2h-2.65l-5.986 6.886zm9 18L5 4h2l12 16z"/>
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-email"
+      href="mailto:?subject=Compartir&amp;body=%2f%2flocalhost%3a1313%2fblog%2fiac%2f2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform%2f"
+      target="_self"
+      rel="noopener"
+      aria-label="share email">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+    <a
+      class="share-link share-reddit"
+      href="https://reddit.com/submit/?url=%2f%2flocalhost%3a1313%2fblog%2fiac%2f2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform%2f&amp;resubmit=true&amp;title=Compartir"
+      target="_blank"
+      rel="noopener"
+      aria-label="share reddit">
+      <span aria-hidden="true" class="share-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+        </svg>
+      </span>
+    </a>
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+
+
+  
+  
+</div>
+
+            </div>
+          </div>
+          
+          
+            <div class="mt-20">
+              <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "javihuete-site" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          
+        </article>
+      </div>
+
+      
+      
+      
+      
+        <div class="section pb-0">
+          <h2 class="h3 mb-12">Relacionados</h2>
+          <div class="row">
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
+      Interconexión entre dos servidores Postgres
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se explica brevemente cómo se puede establecer una interconexión entre dos servidores PostgreSQL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-postgres/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+      Ejemplos de uso del comando parted en Debian
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/fundamentos-hardware/"
+            class="ms-1"
+            >Fundamentos hardware
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p><code>Parted</code> es un programa que manipula particiones de disco. Soporta múltiples formatos de tablas de particiones como MS-DOS y GPT. Es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y copiar su contenido a un nuevo disco duro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-02-01-comando-parted/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-12-02-configuracion-proxy/">
+      Configuración de un proxy inverso en Apache2
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">A través de un caso práctica se muestran diferentes ejemplos de configuración de un proxy inverso usando Apache2.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+    </main>
+
+    
+    <footer class="bg-theme-light dark:bg-darkmode-theme-light">
+  <div class="container">
+    <div class="row items-center py-10">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
+        <a
+          class="navbar-brand inline-block"
+          href="/">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+  
+  
+    
+    
+  
+
+
+  
+  
+      
+      
+    
+    
+    
+    
+    
+    
+  
+  
+
+  
+  
+    
+    
+      
+      
+
+
+      
+      
+        
+        
+        
+        
+
+        
+        
+        
+      
+      
+    
+  
+  
+
+  
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-light"
+      width="160"
+      height="32"
+      src="/images/logo_hu_147412e9a193273b.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo_hu_239070bac3e16f0e.png';" />
+
+    <img
+      fetchpriority="high"
+      decoding="async"
+      class="img img-dark"
+      width="160"
+      height="32"
+      src="/images/logo-darkmode_hu_590aa44f8245a468.webp"
+      alt="Javi Huete"
+      onerror="this.onerror=null;this.src='\/images\/logo-darkmode_hu_7ac6db7b4e6aa847.png';" />
+  
+  
+
+
+        </a>
+      </div>
+      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+        <ul>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /about
+                "
+                >Sobre mí</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /blog
+                "
+                >Prácticas</a
+              >
+            </li>
+          
+            <li class="m-3 inline-block">
+              <a
+                
+                href="
+                  /contact
+                "
+                >Contacto</a
+              >
+            </li>
+          
+        </ul>
+      </div>
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="email"
+                rel="nofollow noopener"
+                href="mailto:fjhuete.m@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="github"
+                rel="nofollow noopener"
+                href="https://www.github.com/fjhuete">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="linkedin"
+                rel="nofollow noopener"
+                href="https://www.linkedin.com/in/fjhuete">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          
+            <li>
+              <a
+                target="_blank"
+                aria-label="telegram"
+                rel="nofollow noopener"
+                href="https://t.me/fj_huete">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-border dark:border-darkmode-border border-t py-7">
+    <div class="text-light dark:text-darkmode-light container text-center">
+      <p>
+        Esta web está licenciada bajo <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+
+
+
+
+ target="_blank"
+ 
+
+
+>CC BY-NC-SA 4.0</a>. Funciona con <a href="gohugo.io"
+
+
+
+ 
+
+
+>Hugo</a> y <a href="https://github.com/zeon-studio/hugoplate"
+
+
+
+
+ target="_blank"
+ 
+
+
+>Hugoplate</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+    
+    
+
+
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script.js"></script>
+
+
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity=""
+  src="/js/script-lazy.js"></script>
+
+
+
+<script>
+  if ('serviceWorker' in navigator){navigator.serviceWorker.register("/service-worker.js");}
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  </body>
+</html>

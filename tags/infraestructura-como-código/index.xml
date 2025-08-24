@@ -6,8 +6,22 @@
     <description>Recent content in Infraestructura Como Código on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Sun, 10 Nov 2024 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/infraestructura-como-c%C3%B3digo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de Oracle Cloud Infrastructure OCI CLI</title>
+      <link>/blog/iac/2025-08-21-instalacion-oci-cli/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-21-instalacion-oci-cli/</guid>
+      <description>La herramienta para la línea de comandos de Oracle Cloud Infrastructure es un recurso muy útil para gestionar un arrendamiento en OCI. Es espacialmente práctica si se combina con otras herramientas para la gestión de infraestructura como código.</description>
+    </item>
+    <item>
+      <title>Instalación de Terraform</title>
+      <link>/blog/iac/2025-08-21-instalacion-terraform/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-21-instalacion-terraform/</guid>
+      <description>En este post se describe el proceso de instalación de la herramienta para la línea de comandos de Terraform, que permite aplicar la configuración de Terraform a una estructura en un proveedor del cloud.</description>
+    </item>
     <item>
       <title>Funcionamiento básico de ansible</title>
       <link>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</link>

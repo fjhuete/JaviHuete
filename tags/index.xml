@@ -6,8 +6,85 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Tue, 17 Jun 2025 11:45:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Computing</title>
+      <link>/tags/cloud-computing/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/cloud-computing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debian</title>
+      <link>/tags/debian/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/debian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HashiCorp</title>
+      <link>/tags/hashicorp/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/hashicorp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IaC</title>
+      <link>/tags/iac/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/iac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infraestructura Como Código</title>
+      <link>/tags/infraestructura-como-c%C3%B3digo/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/infraestructura-como-c%C3%B3digo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Insfraestructura</title>
+      <link>/tags/insfraestructura/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/insfraestructura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OCI</title>
+      <link>/tags/oci/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oracle</title>
+      <link>/tags/oracle/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oracle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oracle Cloud Infrastructure</title>
+      <link>/tags/oracle-cloud-infrastructure/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oracle-cloud-infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>/tags/terraform/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/terraform/</guid>
+      <description></description>
+    </item>
     <item>
       <title>ASGI</title>
       <link>/tags/asgi/</link>
@@ -90,13 +167,6 @@
       <link>/tags/dd/</link>
       <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
       <guid>/tags/dd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Debian</title>
-      <link>/tags/debian/</link>
-      <pubDate>Wed, 09 Apr 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/debian/</guid>
       <description></description>
     </item>
     <item>
@@ -202,13 +272,6 @@
       <link>/tags/administraci%C3%B3n-de-sistemas/</link>
       <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/tags/administraci%C3%B3n-de-sistemas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cloud Computing</title>
-      <link>/tags/cloud-computing/</link>
-      <pubDate>Sun, 09 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/cloud-computing/</guid>
       <description></description>
     </item>
     <item>
@@ -482,13 +545,6 @@
       <link>/tags/mysql/</link>
       <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
       <guid>/tags/mysql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oracle</title>
-      <link>/tags/oracle/</link>
-      <pubDate>Mon, 03 Mar 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/oracle/</guid>
       <description></description>
     </item>
     <item>
@@ -898,13 +954,6 @@
       <description></description>
     </item>
     <item>
-      <title>Cloud</title>
-      <link>/tags/cloud/</link>
-      <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/cloud/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Cloud-Init</title>
       <link>/tags/cloud-init/</link>
       <pubDate>Mon, 13 Jan 2025 01:00:00 +0200</pubDate>
@@ -1252,13 +1301,6 @@
       <link>/tags/fpm-php/</link>
       <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
       <guid>/tags/fpm-php/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Infraestructura Como Código</title>
-      <link>/tags/infraestructura-como-c%C3%B3digo/</link>
-      <pubDate>Sun, 10 Nov 2024 01:00:00 +0200</pubDate>
-      <guid>/tags/infraestructura-como-c%C3%B3digo/</guid>
       <description></description>
     </item>
     <item>

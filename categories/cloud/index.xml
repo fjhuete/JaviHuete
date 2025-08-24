@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Javi Huete</title>
+    <link>/categories/cloud/</link>
+    <description>Recent content in Cloud on Javi Huete</description>
+    <generator>Hugo</generator>
+    <language>es-Es</language>
+    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
+    <atom:link href="/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instalación de Oracle Cloud Infrastructure OCI CLI</title>
+      <link>/blog/iac/2025-08-21-instalacion-oci-cli/</link>
+      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-21-instalacion-oci-cli/</guid>
+      <description>La herramienta para la línea de comandos de Oracle Cloud Infrastructure es un recurso muy útil para gestionar un arrendamiento en OCI. Es espacialmente práctica si se combina con otras herramientas para la gestión de infraestructura como código.</description>
+    </item>
+  </channel>
+</rss>

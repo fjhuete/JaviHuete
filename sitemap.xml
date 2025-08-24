@@ -3,18 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/cloud/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cloud/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/cloud-computing/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/debian/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/hashicorp/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/iac/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/iac/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/infraestructura-como-c%C3%B3digo/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/insfraestructura/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-21-instalacion-oci-cli/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-21-instalacion-terraform/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oci/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oracle/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oracle-cloud-infrastructure/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/terraform/</loc>
+    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/asgi/</loc>
     <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
-    <loc>/blog/</loc>
-    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/caddy/</loc>
-    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
     <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
     <loc>/tags/daphne/</loc>
@@ -41,9 +89,6 @@
     <loc>/tags/servidor-web/</loc>
     <lastmod>2025-06-17T11:45:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-06-17T11:45:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas-operativos/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
@@ -57,9 +102,6 @@
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/dd/</loc>
-    <lastmod>2025-04-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/debian/</loc>
     <lastmod>2025-04-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/fct/</loc>
@@ -117,9 +159,6 @@
     <lastmod>2025-03-11T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/administraci%C3%B3n-de-sistemas/</loc>
-    <lastmod>2025-03-09T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/cloud-computing/</loc>
     <lastmod>2025-03-09T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/</loc>
@@ -321,9 +360,6 @@
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/mysql/</loc>
-    <lastmod>2025-03-03T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/oracle/</loc>
     <lastmod>2025-03-03T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/postgresql/</loc>
@@ -602,9 +638,6 @@
     <loc>/blog/seguridad/2025-01-15-integridad-de-ficheros-con-gpg/</loc>
     <lastmod>2025-01-14T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/cloud/</loc>
-    <lastmod>2025-01-13T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/cloud-init/</loc>
     <lastmod>2025-01-13T01:00:00+02:00</lastmod>
   </url><url>
@@ -825,9 +858,6 @@
     <lastmod>2024-11-10T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/servicios/2024-11-10-funcionamiento-basico-ansible/</loc>
-    <lastmod>2024-11-10T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/infraestructura-como-c%C3%B3digo/</loc>
     <lastmod>2024-11-10T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/iscsi/</loc>
