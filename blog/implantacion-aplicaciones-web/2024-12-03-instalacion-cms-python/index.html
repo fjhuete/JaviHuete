@@ -1338,8 +1338,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-      Test para la integración continua de una aplicación django
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
+      Construcción de una imagen Docker en un pipeline de Jenkins
     </a>
   </h4>
   
@@ -1362,17 +1362,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
-
-
-
-
- target="_blank"
- 
-
-
->django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
+  <p class="mb-6"><p>Para crear una imagen Docker desde un pipeline de Jenkins es necesario conectar este servicio a la cuenta de DockerHub a la que debe subir la imagen. Para ello, en el menú Administrar Jenkins -&gt; Credenciales -&gt; Global -&gt; Add Credentials se crea una nueva credencial de tipo nombre de usuario y contraseña.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-imagen-docker-pipeline-jenkins/">
     Leer
   </a>
 </div>
@@ -1384,45 +1375,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-      Enrutamiento dinámico con OSPF usando routers Cisco en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">OSPF (Open Shortest Path First), &ldquo;Abrir el camino más corto primero&rdquo; en español, es un protocolo de red para enrutamiento dinámico que usa el algoritmo Dijkstra, para calcular la ruta más corta entre dos nodos.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-22-enrutamiento-dinamico-cisco-gns3-ospf/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
-      Configuración de un servidor SAN
+    <a href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
+      Creación de recursos de tipo Ingress en kubernetes
     </a>
   </h4>
   
@@ -1445,8 +1399,45 @@
       </li>
     </ul>
   
-  <p class="mb-6">En este post se muestran, a través de un caso práctico, algunos ejemplos de configuración de un servidor SAN.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-configuracion-servidor-san/">
+  <p class="mb-6"><p>Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
+      Despliegue de Roundcube usando Docker
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para conectarse a un servidor de correo propio se puede usar un cliente de escritorio o, en este caso, un webmail. En este ejemplo se usa el cliente de correo web se puede desplegar usando Docker. En este caso, se usa la imagen de la aplicación web de correo roundcube.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-despliegue-roundcube-docker/">
     Leer
   </a>
 </div>

@@ -1232,8 +1232,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
-      Instalación de un servidor de correos satélite, redirecciones y alias
+    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+      Cifrado asimétrico con GPG y OpenSSL
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
+      Instalación y configuración de un servidor de correos postfix
     </a>
   </h4>
   
@@ -1256,8 +1293,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Este servidor de correo se instala en el router de un escenario formado por cuatro máquinas en el que ya existe un servidor de correos &ldquo;oficial&rdquo; que puede enviar y recibir correos electrónicos a Internet. Para evitar que el resto de equipos de la red puedan enviar correos hay que configurar el cortafuegos del router.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-servidor-correo-satelite/">
+  <p class="mb-6"><p>Para instalar un servidor de correos <code>postfix</code> en Debian se instala el paquete <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
     Leer
   </a>
 </div>
@@ -1269,8 +1306,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
-      Instalación de Docker
+    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+      Autentificación SSH con cifrado asimétrico usando GPG
     </a>
   </h4>
   
@@ -1285,53 +1322,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Implantacion
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Existen dos opciones para instalar Docker en Debian: usando la distribución de Docker Community Edition o usando los repositorios oficiales de Debian. En este post se muestra un ejemplo de cada caso</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-instalacion-docker/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
-      Cómo simular un servidor PostgreSQL en GNS3
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/redes/"
-            class="ms-1"
-            >Redes
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">PostgreSQL es uno de los servidores de bases de datos más usados. Se trata de un software libre y portente que permite almacenar y gestionar grandes volúmenes de información. En este post se explica cómo simularlo en un escenario de GNS3.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-simular-servidor-postgresql-gns3/">
+  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
     Leer
   </a>
 </div>

@@ -1126,8 +1126,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/">
-      Instalación y configuración inicial de OpenLDAP
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+      Despliegue de una aplicación con contenido persistente en Kubernetes
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
+      Recolección centralizada de logs de sistema mediante jouranld
     </a>
   </h4>
   
@@ -1150,8 +1187,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>LDAP es un protocolo de comunicación que permite el acceso a un servicio de directorio ordenado y distribuido para buscar información en un entorno de red. Este directorio incluye un conjunto de objetos con atributos organizados jerárquicamente. El directorio LDAP se puede instalar en un servidor de una red para centralizar la gestión de usuarios y grupos en la red.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-03-04-instalacion-configuracion-ldap/">
+  <p class="mb-6"><p>Para configurar un servidor de journald en la red local es necesario que todos los equipos de la red cuenten con el componente <code>systemd-journal-remote</code> instalado. Este componente de <code>systemd</code> permite a los diferentes nodos de la red interactuar entre sí y trasladar la información relativa a los logs del sistema desde los clientes al servidor de logs.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-27-systemd-journal-remote/">
     Leer
   </a>
 </div>
@@ -1163,8 +1200,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
+    <a href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
+      Configuración de un proxy inverso en Apache2 y Nginx
     </a>
   </h4>
   
@@ -1179,53 +1216,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
-      Conceptos básicos del gestor de paquetes apt
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se recoge un breve resumen sobre la información relativa a los gestores de paquetes apt y aptitude incluida en el manual de referencia de Debian</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-25-conceptos-basicos-apt/">
+  <p class="mb-6">En este post se muestran diferentes ejemplos de configuración de los servidores web Apache2 y Nginx como proxy inverso.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-proxy-inverso/">
     Leer
   </a>
 </div>

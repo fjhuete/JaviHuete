@@ -1397,91 +1397,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
-      Instalación de kind y creación de un cluster de kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p><a href="https://kind.sigs.k8s.io/"
-
-
-
-
- target="_blank"
- 
-
-
->Kind</a> es una alternativa para instalar un cluster de Kubernetes que ejecuta sus diferentes nodos en contenedores docker.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-kind-creacion-cluster/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
-      Ejecutar un pipeline de Jenkins con cada actualización de un repositorio
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para que Jenkins ejecute un pipeline cada vez que se actualice un repositorio git se pueden establecer varias configuraciones diferentes. En este caso, se incluye el Jenkinsfile en el repositorio de GitHub.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-ejecutar-pipeline-jenkins-cada-actualzacion-repositorio/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-integridad/">
-      Firmas y autenticación con GPG
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
     </a>
   </h4>
   
@@ -1504,8 +1421,96 @@
       </li>
     </ul>
   
-  <p class="mb-6">En esta entrada se explica cómo firmar claves públicas usando GPG.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-integridad/">
+  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
+      Instalación de minikube
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
+
+
+
+ 
+
+
+>libvirt</a> y <a href="/tags/kvm/"
+
+
+
+ 
+
+
+>KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/">
+      Arranque desde el grub ante errores en el sistema
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-sistemas/"
+            class="ms-1"
+            >Administracion sistemas
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>El gestor de arranque GRUB cuenta con una consola desde la que se puede interactuar con el propio gestor de arranque ante un fallo en el arranque del sistema. A esta consola se puede acceder pulsando la telca <code>c</code> desde el menú del gestor de arranque.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/">
     Leer
   </a>
 </div>
