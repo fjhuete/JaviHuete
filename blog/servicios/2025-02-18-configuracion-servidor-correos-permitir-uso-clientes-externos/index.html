@@ -1213,8 +1213,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
-      Creación de Services en kubernetes
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -1237,8 +1237,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Los servicios en Kubernetes permiten a otros pods o al usuario acceder al servicio que ofrece otro pod.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-servicio-kubernetes/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
     Leer
   </a>
 </div>
@@ -1250,8 +1250,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-      Instalación de Jenkins usando Docker como runner
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
+      Túneles IPv6: túneles 6to4
     </a>
   </h4>
   
@@ -1266,53 +1303,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/redes/"
             class="ms-1"
-            >Implantacion
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
-      Funcionamiento básico de ansible
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
+  <p class="mb-6"><p>En este post se muestra, a través de un ejemplo práctico, el funcionamiento de los túneles IPv6. Estos túneles permiten que el tráfico que va de una a otra dirección IPv6 pase por redes que funcionan usando el portocolo IPv4.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-21-tuneles-ipv6-6to4/">
     Leer
   </a>
 </div>

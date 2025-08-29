@@ -1232,8 +1232,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
+      Instalación y configuración del gestor de arranque systemd-boot en Debian
     </a>
   </h4>
   
@@ -1248,16 +1248,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Seguridad
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
     Leer
   </a>
 </div>
@@ -1269,8 +1269,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
-      Instalación y configuración de un servidor de correos postfix
+    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+      Configuración de reglas de cortafuegos en router Linux usando iptables
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -1293,45 +1330,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para instalar un servidor de correos <code>postfix</code> en Debian se instala el paquete <code>postfix</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
-      Autentificación SSH con cifrado asimétrico usando GPG
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
     Leer
   </a>
 </div>

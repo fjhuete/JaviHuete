@@ -914,7 +914,7 @@
 </span></span><span style="display:flex;"><span>apt install unzip
 </span></span><span style="display:flex;"><span>unzip opencms_8.0.4.zip
 </span></span></code></pre></div><p>Para crear la imagen de la aplicación, se parte de la imagen Docker de Tomcat y se copia el fichero de despliegue .war de la aplicación en el directorio de despliegue que se indica en la documentación de la imagen Docker.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> bitnami/tomcat:9.0</span><span style="color:#a61717;background-color:#e3d2d2">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#666"> </span><span style="color:#ed9d13">bitnami/tomcat:9.0</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">COPY</span> app/opencms.war /opt/bitnami/tomcat/webapps<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span></code></pre></div><p>A partir de este Dockerfile se puede generar una imagen Docker que despliegue la apliación.</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t fjhuete/opencms:v1 .
@@ -1220,8 +1220,82 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
-      Funcionamiento básico de ansible
+    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+      Autentificación SSH con cifrado asimétrico usando GPG
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/iac/2025-08-21-instalacion-terraform/">
+      Instalación de Terraform
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/iac/"
+            class="ms-1"
+            >Ia c
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">En este post se describe el proceso de instalación de la herramienta para la línea de comandos de Terraform, que permite aplicar la configuración de Terraform a una estructura en un proveedor del cloud.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/iac/2025-08-21-instalacion-terraform/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
+      Creación de Deployments en kubernetes
     </a>
   </h4>
   
@@ -1244,82 +1318,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">Ansible es un software que permite la configuración automatizada de equipos a través de la ejecución de reglas. En esta entrada se recogen algunos elementos fundamentales de esta herramienta.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-11-10-funcionamiento-basico-ansible/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/">
-      Creación de Replica Sets en kubernetes
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Para crear un ReplicaSet, en primer lugar, se declara el recurso en un fichero yaml.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-replicaset-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
-      Empaquetadores y compresores/descompresores en Debian
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/sistemas/"
-            class="ms-1"
-            >Sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+  <p class="mb-6"><p>Para crear un despliegue o deployment en Kubernetes se define el recurso en un fichero yaml.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-deployment-kubernetes/">
     Leer
   </a>
 </div>

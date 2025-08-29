@@ -1218,45 +1218,8 @@ En este directorio se almacenan los keyrings adicionales que se usan con la opci
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/seguridad/"
-            class="ms-1"
-            >Seguridad
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
-      Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos
+    <a href="/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/">
+      Eliminar recursos de Oracle Cloud Infrastructure (OCI) con Terraform
     </a>
   </h4>
   
@@ -1271,16 +1234,38 @@ En este directorio se almacenan los keyrings adicionales que se usan con la opci
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/iac/"
             class="ms-1"
-            >Sistemas
+            >Ia c
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cloud/"
+            class="ms-1"
+            >Cloud
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
+  <p class="mb-6"><p>En este post se explica cómo se pueden eliminar recursos en un proveedor de cloud, en este caso Oracle Cloud Infrastructure (OCI) usando la herramienta de línea de comandos de Terraform. El punto de partida es una infraestructura sencilla: una VCN con una subnet creada en <a href="/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform"
+
+
+
+ 
+
+
+>otro artículo de este blog</a> y después modificada en este <a href="/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform"
+
+
+
+ 
+
+
+>otro post</a>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/">
     Leer
   </a>
 </div>
@@ -1292,8 +1277,8 @@ En este directorio se almacenan los keyrings adicionales que se usan con la opci
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
+      Cómo enrutar una red en OpenStack
     </a>
   </h4>
   
@@ -1308,16 +1293,53 @@ En este directorio se almacenan los keyrings adicionales que se usan con la opci
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+  <p class="mb-6">OpenStack es un proyecto de cloud computing (computación en la nube) de software libre y código abierto. En este post se usa esta infraestructura para crear un escenario de enrutamiento.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-02-27-enrutamiento-red-openstack/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+      Interconexión entre dos servidores Oracle
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/administracion-bbdd/"
+            class="ms-1"
+            >Administracion bbdd
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
     Leer
   </a>
 </div>

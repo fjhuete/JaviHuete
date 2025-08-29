@@ -82,7 +82,7 @@
   
 
 
-<title>Instalación desatendida por red de Debian12</title>
+<title>Definición variables en una configuración de Terraform</title>
 
 
 
@@ -182,13 +182,13 @@
 
 
 
-<meta property="og:title" content="Instalación desatendida por red de Debian12" />
+<meta property="og:title" content="Definición variables en una configuración de Terraform" />
 <meta property="og:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/administracion-de-sistemas/2024-12-02-instalaci%C3%B3n-desatendida-por-red/" />
+<meta property="og:url" content="/blog/iac/2025-08-28-definir-variables-terrform/" />
 
 
-<meta name="twitter:title" content="Instalación desatendida por red de Debian12" />
+<meta name="twitter:title" content="Definición variables en una configuración de Terraform" />
 <meta name="twitter:description" content="Estudiante de Administración de Sistemas Infomáticos en Red" />
 
 
@@ -841,7 +841,7 @@
           
           
           <h1 class="h2 mb-4">
-            Instalación desatendida por red de Debian12
+            Definición variables en una configuración de Terraform
           </h1>
           <ul class="mb-4">
             <li class="mr-4 inline-block">
@@ -857,16 +857,24 @@
                 <i class="fa-regular fa-folder mr-2"></i>
                 
                   <a
-                    href="/categories/administracion-sistemas/"
+                    href="/categories/iac/"
                     class=""
-                    >Administracion sistemas
+                    >Ia c
+                      ,
+                    
+                  </a>
+                
+                  <a
+                    href="/categories/cloud/"
+                    class=""
+                    >Cloud
                   </a>
                 
               </li>
             
             <li class="mr-4 inline-block">
               <i class="fa-regular fa-clock mr-2"></i>
-              November 24, 2024
+              August 28, 2025
             </li>
           </ul>
           <div class="content mb-10">
@@ -883,213 +891,151 @@
   </summary>
   <nav id="TableOfContents">
   <ol>
-    <li><a href="#instalación-automática-usando-un-fichero-de-preseed-alojado-en-un-servidor-web">Instalación automática usando un fichero de preseed alojado en un servidor web</a>
-      <ol>
-        <li><a href="#configuración-del-servidor-web">Configuración del servidor web</a></li>
-        <li><a href="#acceso-al-fichero-de-preseed-desde-el-instalador">Acceso al fichero de preseed desde el instalador</a></li>
-      </ol>
-    </li>
-    <li><a href="#instalación-desatendida-desde-un-servidor-pxetftp">Instalación desatendida desde un servidor PXE/TFTP</a>
-      <ol>
-        <li><a href="#configuración-del-servidor-tftp">Configuración del servidor TFTP</a></li>
-        <li><a href="#creación-del-archivo-de-instalación">Creación del archivo de instalación</a></li>
-        <li><a href="#configuración-del-servidor-dhcp">Configuración del servidor DHCP</a></li>
-      </ol>
-    </li>
-    <li><a href="#instalación-desatendida-con-dnsmasq">Instalación desatendida con dnsmasq</a></li>
-    <li><a href="#iventoy-una-alternativa-sencilla">iVentoy: una alternativa sencilla</a></li>
+    <li><a href="#declaración-de-variables">Declaración de variables</a></li>
+    <li><a href="#definición-de-variables">Definición de variables</a></li>
+    <li><a href="#referenciar-las-variables">Referenciar las variables</a></li>
   </ol>
 </nav>
 </details>
 
-            <h1 id="instalación-automática-usando-un-fichero-de-preseed-alojado-en-un-servidor-web">Instalación automática usando un fichero de preseed alojado en un servidor web</h1>
-<h2 id="configuración-del-servidor-web">Configuración del servidor web</h2>
-<p>El fichero de preseed para la instalación desatendida de Debian se puede aportar no sólo volcando su contenido al archivo de imagen iso del instalador sino también haciéndolo accesible para el cliente en el que se instala el sistema operativo desde un servidor web alojado en la red. Para usar este método de instalación desatendida, primero es necesario contar con un fichero de preseed correctamente configurado y con un servidor web accesible desde el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install apache2
-</span></span></span></code></pre></div><p>Este método se puede adaptar a las necesidades de la configuración del servidor web, ya sea creando un virtual host específico para alojar el fichero de preseed o estableciendo una resolución de nombres estática en la red local para que el servidor sea accesible por su nombre de host y no se necesario indicar su IP. Para el propósito de esta documentación, la configuración del servidor web se mantiene sencilla y se opta por la solución más simple: colocar el fichero de preseed en el document root por defecto.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp preseed.cfg /var/www/html
-</span></span></span></code></pre></div><p>Esto hace que el fichero sea accesible desde cualquier cliente conectado a la red que acceda a la ruta <code>http://IP_SERVIDOR/preseed.cfg</code>.</p>
-<h2 id="acceso-al-fichero-de-preseed-desde-el-instalador">Acceso al fichero de preseed desde el instalador</h2>
-<p>Para que el instalador tenga acceso a este fichero el cliente tiene que arrancar con una iso que cargue el menú de instalación de Debian y, desde él, acceder a las <code>opciones avanzadas</code> y después a <code>instalación automática</code>.</p>
-<p>Esto lanza el proceso de instalación y, en un momento determinado, tras la configuración por DHCP del equipo y una vez que la máquina obtiene la configuración de red, se muestra un diálogo en el que se solicita la ubicación del fichero de preseed para ejecutar la instalación desatendida. En este ejemplo el cliente es una máquina virtual creada con libvirt-KVM y el servidor web está instalado en el host, así que la conexión se realiza a través de la red por defecto de libvirt-KVM.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">http://192.168.122.1/preseed.cfg
-</span></span></span></code></pre></div><p>A partir de este punto, el proceso de instalación continúa su ejecución de forma autónoma hasta finalizar con el reinicio del equipo, que en este punto ya cuenta con el nuevo sistema operativo instalado.</p>
-<h1 id="instalación-desatendida-desde-un-servidor-pxetftp">Instalación desatendida desde un servidor PXE/TFTP</h1>
-<p>Para esta instalación es necesario contar en el escenario con un servidor DHCP y un servidor TFTP. Ambos se pueden ejecutar en la misma máquina.</p>
-<h2 id="configuración-del-servidor-tftp">Configuración del servidor TFTP</h2>
-<p>Como servidor TFTP <a href="https://www.debian.org/releases/stable/i386/ch04s05.es.html"
-
-
-
-
- target="_blank"
- 
-
-
->la guía oficial de Debian</a> recomienda usar <code>tftpd-hpa</code> para un servidor Debian GNU/Linux. Está escrito por el mismo autor del gestor de arranque syslinux, y por ello menos proclive a generar problemas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install tftpd-hpa
-</span></span></span></code></pre></div><p>Existen dos formas de iniciar TFTP: desde el demonio del sistema o como un demonio independiente. Esta configuración se determina en el fichero /etc/default/tftpd-hpa, en el que se debe incluir la siguiente línea:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">  RUN_DAEMON=&#34;yes&#34;
-</span></span></span></code></pre></div><p>Con esta orden se fuerza la ejecución del demonio. A continuación, se debe reiniciar el servicio para cargar esta nueva configuración</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart tftpd-hpa.service 
-</span></span></span></code></pre></div><h2 id="creación-del-archivo-de-instalación">Creación del archivo de instalación</h2>
-<p>A diferencia de las instalaciones que usan medios físicos como CD, DVD o memorias extraíbles USB, donde se usa un fichero de imagen de tipo iso arrancable para cargar e instalar el sistema operativo en el equipo, para las instalaciones por red Debian distribuye imágenes de instalación comprimidas, generalmente, con el nombre <code>netboot.tar.gz</code>. Esta imagen se puede descargar desde los repositorios de Debian.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">wget http://ftp.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/netboot.tar.gz
-</span></span></span></code></pre></div><p>Para que el archivo de instalación esté disponible desde el resto de equipos conectados a la red hay que descomprimir el contenido de este archivo en el directorio que el servidor TFTP comparte con los clientes.</p>
-<p>En este punto se abren dos posibilidades. La primera de ellas es modificar el contenido de este archivo de imagen de forma análoga a cuando se modifica el contenido de una imagen iso, de manera que las órdenes del fichero de preseed se carguen en el fichero initrd de la imagen comprimida y se ejecuten de forma automática durante el proceso de instalación.</p>
-<p>La otra opción es instalar junto al servidor TFTP y DHCP de este equipo un servidor web y alojar en él el fichero de preseed. De esta forma, se puede llevar a cabo una instalación automatizada obteniendo el fichero por red tal y como se ha descrito <a href="#instalaci%c3%b3n-autom%c3%a1tica-usando-un-fichero-de-preseed-alojado-en-un-servidor-web"
+            <p>Una de las grandes ventajas de la Infraestructura como Código (IaC) es que permite crear recursos en proveedores de cloud o en local de forma automática y, sobre todo, replicar los escenarios generados. Para permitir la reutilización de las configuraciones de Terraform es conveniente hacer uso de las variables. En esta entrada se crean diferentes recursos en Oracle Cloud Infrastructure utilizando esta característica de la IaC.</p>
+<h1 id="declaración-de-variables">Declaración de variables</h1>
+<p>El uso de variables tanto en Terraform como en otras herramientas de IaC hace que la configuración que se define en cada proyecto sea más flexible, legible y reutilizable. Para demostrar el funcionamiento de las variables en Terraform, en este post se crean varios recursos en OCI: una VCN y una subnet, un escenario equivalente al definido en <a href="/blog/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform"
 
 
 
  
 
 
->en el apartado anterior</a>. Como este procedimiento ya está documentado se sigue a continuación con la otra opción.</p>
-<p>Para volcar la configuración del fichero de preseed al fichero initrd del instalador de Debian hay que seguir unos pasos similares a los que se realizan para crear una imagen iso para la instalación desatendida con la diferencia de que, en este caso, no es necesario utilizar ninguna herramienta específica para descomprimir el archivo de instalación. Así, en primer lugar, se descomprime el archivo de instalación y, a continuación se descomprime también el fichero <code>initrd.gz</code> del directorio debian-installer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">tar -xvf netboot.tar.gz 
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gunzip debian-installer/amd64/initrd.gz
-</span></span></span></code></pre></div><p>A continuación, se vuelca el contenido del fichero de preseed con la configuración para la instalación desatendida en el fichero initrd y se vuelve a comprimir.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo preseed.cfg | cpio -H newc -o -A -F debian-installer/amd64/initrd
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">gzip debian-installer/amd64/initrd
+>una entrada previa en este mismo blog</a>.</p>
+<p>En Terraform las variables se declaran en un fichero generalmente llamado <code>variables.tf</code> aunque, en realidad, la herramienta carga todos los ficheros del directorio terminados en la extensión <code>.tf</code> cuando va a aplicar una configuración.</p>
+<p>Así, en este caso, en el fichero de variables se declaran una variable para el OCID del compartimento en el que se crean los recursos y otra para la región.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">variable</span> <span style="color:#ed9d13">&#34;compartment_id&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="color:#ed9d13">&#34;OCID del compartimento&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = string
+</span></span><span style="display:flex;"><span>  sensitive   = <span style="color:#6ab825;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">variable</span> <span style="color:#ed9d13">&#34;region&#34;</span> {
+</span></span><span style="display:flex;"><span>  description = <span style="color:#ed9d13">&#34;región del arrendamiento de OCI&#34;</span>
+</span></span><span style="display:flex;"><span>  type        = string
+</span></span><span style="display:flex;"><span>  default     = <span style="color:#ed9d13">&#34;eu-madrid-1&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Cada variable se define con un bloque de tipo <code>variable &quot;&lt;nombre&gt;&quot; {}</code>. Al menos, el campo <code>type</code> es obligatorio y, además, es una buena práctica añadir una descripción de la variable en el campo <code>description</code>. Además, algunas variables se pueden declarar con un valor por defecto que se puede sobrescribir posteriormente usando el campo <code>default</code>.</p>
+<p>Otra opción que se puede usar al declarar una variable es <code>sensitive</code>. Cuando este campo toma el valor <code>true</code>, la salida del comando <code>terraform plan</code> o <code>terraform apply</code> no mostrará el valor real de esa variable, sino el texto <code>(sensitive value)</code>.</p>
+<h1 id="definición-de-variables">Definición de variables</h1>
+<p>Las variables en Terraform se definen en un fichero separado generalmente llamado <code>terraform.tfvars</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span>compartment_id   = <span style="color:#ed9d13">&#34;&lt;OCID del compartimento&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>region           = <span style="color:#ed9d13">&#34;eu-madrid-1&#34;</span>
+</span></span></code></pre></div><p>Es en este fichero donde da valor a las variables definidas en el fichero <code>variables.tf</code> y en el que se pueden sobrescribir los valores por defecto configurados en ese fichero de definición de variables.</p>
+<p>Una práctica recomendada cuando trabaja con variables en Terraform en directorios que cuentan con control de versiones es excluir los ficheros con extensión <code>.tfvars</code> de este control de versiones. De esta forma se evita que el contenido sensible quede expuesto en repositorios públicos de control de versiones como GitHub o GitLab.</p>
+<h1 id="referenciar-las-variables">Referenciar las variables</h1>
+<p>En el fichero (o los ficheros) de configuración de Terraform las variables se referencian con el formato <code>var.&lt;nombre_variable&gt;</code>. Así, el fichero para la definición de una VCN y una subred en OCI usando las variables anteriormente definida quedaría de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-terraform" data-lang="terraform"><span style="display:flex;"><span>terraform {
+</span></span><span style="display:flex;"><span>  required_providers {
+</span></span><span style="display:flex;"><span>    oci = {
+</span></span><span style="display:flex;"><span>      source  = <span style="color:#ed9d13">&#34;oracle/oci&#34;</span>
+</span></span><span style="display:flex;"><span>      version = <span style="color:#ed9d13">&#34;7.15.0&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">provider</span> <span style="color:#ed9d13">&#34;oci&#34;</span> {
+</span></span><span style="display:flex; background-color:#363636"><span>  region              = <span style="color:#24909d">var</span>.region
+</span></span><span style="display:flex;"><span>  auth                = <span style="color:#ed9d13">&#34;SecurityToken&#34;</span>
+</span></span><span style="display:flex;"><span>  config_file_profile = <span style="color:#ed9d13">&#34;terraform-tutorial&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_vcn&#34;</span> <span style="color:#ed9d13">&#34;mi_vcn&#34;</span> {
+</span></span><span style="display:flex;"><span>  dns_label      = <span style="color:#ed9d13">&#34;mivcn&#34;</span>
+</span></span><span style="display:flex;"><span>  cidr_block     = <span style="color:#ed9d13">&#34;172.22.0.0/16&#34;</span>
+</span></span><span style="display:flex; background-color:#363636"><span>  compartment_id = <span style="color:#24909d">var</span>.compartment_id
+</span></span><span style="display:flex;"><span>  display_name   = <span style="color:#ed9d13">&#34;Mi VCN&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">resource</span> <span style="color:#ed9d13">&#34;oci_core_subnet&#34;</span> <span style="color:#ed9d13">&#34;private_subnet&#34;</span> {
+</span></span><span style="display:flex;"><span>  vcn_id                      = oci_core_vcn.mi_vcn.id
+</span></span><span style="display:flex;"><span>  cidr_block                  = <span style="color:#ed9d13">&#34;172.22.0.0/24&#34;</span>
+</span></span><span style="display:flex; background-color:#363636"><span>  compartment_id              = <span style="color:#24909d">var</span>.compartment_id
+</span></span><span style="display:flex;"><span>  display_name                = <span style="color:#ed9d13">&#34;Subred Privada&#34;</span>
+</span></span><span style="display:flex;"><span>  prohibit_public_ip_on_vnic  = <span style="color:#6ab825;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>  dns_label                   = <span style="color:#ed9d13">&#34;privatesubnet&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Al planificar o aplicar la configuración se muestra en la salida del comando que terraform ya ha tomado los valores del fichero <code>.tfvars</code> y los ha aplicado a la configuración definida.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">❯ terraform apply
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform used the selected providers to generate the following execution plan.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">Resource actions are indicated with the following symbols:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + create
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Terraform will perform the following actions:
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_subnet.private_subnet will be created
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + resource &#34;oci_core_subnet&#34; &#34;private_subnet&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + availability_domain        = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + cidr_block                 = &#34;172.22.0.0/24&#34;
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#ccc">      + compartment_id             = (sensitive value)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + defined_tags               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dhcp_options_id            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + display_name               = &#34;Subred Privada&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dns_label                  = &#34;privatesubnet&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + freeform_tags              = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + id                         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_block             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_blocks            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6virtual_router_ip      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_internet_ingress  = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + prohibit_public_ip_on_vnic = true
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + route_table_id             = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + security_list_ids          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + state                      = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + subnet_domain_name         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + time_created               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + vcn_id                     = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_ip          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + virtual_router_mac         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  # oci_core_vcn.mi_vcn will be created
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  + resource &#34;oci_core_vcn&#34; &#34;mi_vcn&#34; {
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + byoipv6cidr_blocks               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + cidr_block                       = &#34;172.22.0.0/16&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + cidr_blocks                      = (known after apply)
+</span></span></span><span style="display:flex; background-color:#363636"><span><span style="color:#ccc">      + compartment_id                   = (sensitive value)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + default_dhcp_options_id          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + default_route_table_id           = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + default_security_list_id         = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + defined_tags                     = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + display_name                     = &#34;Mi VCN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + dns_label                        = &#34;mivcn&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + freeform_tags                    = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + id                               = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6cidr_blocks                  = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + ipv6private_cidr_blocks          = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + is_ipv6enabled                   = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + is_oracle_gua_allocation_enabled = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + security_attributes              = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + state                            = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + time_created                     = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">      + vcn_domain_name                  = (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">      + byoipv6cidr_details (known after apply)
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Plan: 2 to add, 0 to change, 0 to destroy.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Do you want to perform these actions?
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Terraform will perform the actions described above.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  Only &#39;yes&#39; will be accepted to approve.
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">  Enter a value: yes
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">oci_core_vcn.mi_vcn: Creating...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_vcn.mi_vcn: Creation complete after 0s [id=&lt;OCID de la VCN&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Creating...
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc">oci_core_subnet.private_subnet: Creation complete after 5s [id=&lt;OCID de la subnet&gt;]
+</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 </span></span></span></code></pre></div>
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="notice note">
-  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-      </svg><p>Note</p>
-  </div>
-  <div class="notice-body"><p>Si este procedimiento se realiza en un equipo diferente al servidor TFTP será necesario comprimir de nuevo el archivo de instalación para poder llevarlo al servidor y descomprimirlo en el directorio que el servidor comparte con los clientes.</p></div>
-</div>
-
-<p>Con el archivo de instalación modificado para que ejecuta la instalación desatendida gracias a la configuración que aporta el fichero de preseed y todos los ficheros necesarios para la instalación por red ubicados en el directorio correcto del servidor TFTP (por defecto, el directorio /srv/tftp), el siguiente paso es instalar y configurar el servidor DHCP.</p>
-<h2 id="configuración-del-servidor-dhcp">Configuración del servidor DHCP</h2>
-<p>A continuación, hay que configurar el servidor DHCP para que apunte al archivo de imagen con el instalador de Debian que ofrece el servidor TFTP. Como servidor DHCP <a href="https://www.debian.org/releases/stable/i386/ch04s05.es.html"
-
-
-
-
- target="_blank"
- 
-
-
->la guía oficial de Debian</a> recomienda el uso del paquete <code>isc-dhcp-server</code> que instala el servidor dhcpd de ISC.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install isc-dhcp-server
-</span></span></span></code></pre></div><p>En su wiki, Debian recoge un <a href="https://www.debian.org/releases/stable/i386/ch04s05.es.html#dhcpd"
-
-
-
-
- target="_blank"
- 
-
-
->ejemplo de configuración</a> básico del servidor DHCP para habilitar el arranque por PXE en las máquinas cliente que se conecten a la red. En este ejemplo, el servidor TFTP y el servidor DHCP están instalados en máquinas diferentes por lo que en el escenario que se plantea aquí la configuración es un poco más sencilla. Simplemente hay que añadir a la configuración habitual del servidor DHCP la línea <code>filename &quot;pxelinux.0&quot;;</code> dentro del párrafo que identifica la red.</p>
-<p>De esta manera, la configuración del fichero /etc/dhcp/dhcpd.conf sería similar a la siguiente:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">option domain-name &#34;example.org&#34;;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">option domain-name-servers ns1.example.org, ns2.example.org;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">default-lease-time 600;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">max-lease-time 7200;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">ddns-update-style none;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">subnet 10.0.0.0 netmask 255.255.255.224 {
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  range 10.0.0.2 10.0.0.20;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  option routers 10.0.0.1;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  allow bootp;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  next-server 10.0.0.1;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">  filename &#34;pxelinux.0&#34;;
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">}
-</span></span></span></code></pre></div>
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="notice note">
-  <div class="notice-head"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="22" height="22" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-      </svg><p>Note</p>
-  </div>
-  <div class="notice-body"><p>No se debe olvidar configurar la interfaz de escucha del servidor DHCP en el fichero /etc/default/isc-dhcp-server con la línea: <code>INTERFACESv4=&quot;enp7s0&quot;</code>.</p></div>
-</div>
-
-<p>Para aplicar la configuración se tiene que reiniciar el servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart isc-dhcp-server.service
-</span></span></span></code></pre></div><p>Si la instalación de Debian requiere instalar paquetes desde los repositorios, el cliente debe tener acceso a internet. Esto se puede conseguir si el servidor DHCP/TFTP actúa también como router. Para ello, hay que activar el bit de forwarding.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">echo net.ipv4.ip_forward = 1 &gt; /etc/sysctl.conf 
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo sysctl -p
-</span></span></span></code></pre></div><p>Además, también deberá contar con una regla de iptables que permite hacer NAT a los paquetes que reciba desde el cliente.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o enp1s0 -j MASQUERADE
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo iptables-save &gt; /etc/iptables/rules.v4
-</span></span></span></code></pre></div><p>Tras completar esta configuración, cualquier cliente de la red que arranque usando la opción PXE obtendrá por DHCP la configuración de red que apunta al archivo de instalación almacenado en el servidor TFTP. Cuando el cliente acceda al fichero de arranque al que apunta el servidor DHCP cargará el menú de instalación por red de Debian. Como la imagen de instalación tiene cargadas las órdenes configuradas en el fichero de preseed, al arrancar la instalación desde este menú se produce de forma desatendida.</p>
-<h1 id="instalación-desatendida-con-dnsmasq">Instalación desatendida con dnsmasq</h1>
-<p>Dnsmasq es una herramienta que funciona como un DNS, un servidor DHCP y un servidor TFTP para redes pequeñas al mismo tiempo. Esto permite reducir el flujo de trabajo para la instalación de sistemas operativos por red al tener que usar sólo una herramienta en vez de trabajar con los diferentes servidores por separado.</p>
-<p>Para instalar dnsmasq:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo apt install dnsmasq
-</span></span></span></code></pre></div><p>La configuración tanto de DHCP como de TFTP se realizan en el fichero /etc/dnsmasq.conf</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">interface=enp7s0
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dhcp-range=10.0.0.2,10.0.0.200,6h
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">dhcp-boot=pxelinux.0
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">enable-tftp
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tftp-root=/srv/tftp
-</span></span></span></code></pre></div><p>La línea <code>interface</code> indica la interfaz por la que escucha y reparte direcciones el servidor DHCP, con <code>dhcp-range</code> se indica el rango de direcciones y el tiempo de concesión del servidor DHCP, la orden <code>dhcp-boot</code> apunta al fichero de arranque, la línea <code>enable-tftp</code> habilita el servidor TFTP y con <code>tftp-root</code> se apunta a la ruta donde están los ficheros alojados en el servidor TFTP.</p>
-<p>Para aplicar los cambios en la configuración se reinicia el servicio.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">sudo systemctl restart dnsmasq.service 
-</span></span></span></code></pre></div><p>El contenido del directorio /srv/tftp y la configuración para que el servidor DHCP/PXE/TFTP haga de router para los clientes es igual al documentado en <a href="#instalaci%c3%b3n-desatendida-desde-un-servidor-pxetftp"
-
-
-
- 
-
-
->el punto anterior</a>.</p>
-<p>Al encender por red un cliente de la red, el servidor dnsmasq le da una configuración TCP/IP y lo dirige al fichero de arranque del instalador.</p>
-<h1 id="iventoy-una-alternativa-sencilla">iVentoy: una alternativa sencilla</h1>
-<p>Una alternativa a la creación de un servidor PXE/TFTP es el uso de herramientas más sencillas como iVentoy. Esta herramienta es una versión mejorada de un servidor PXE que permite arrancar e instalar imágenes iso en diferentes máquinas de la red de manera simultánea. Se trata de una herramienta muy sencilla y fácil de usar y que se puede implantar sin hacer casi ninguna configuración. Además, iVentoy cuenta con una interfaz gráfica a la que se accede a través de un navegador web. Soporta una gran variedad de sistemas operativos y arquitecturas.</p>
-<p>La herramienta iVentoy es software libre y se distribuye a través de su <a href="https://github.com/ventoy/PXE/releases"
-
-
-
-
- target="_blank"
- 
-
-
->repositorio de GitHub</a> en forma de archivo comprimido. Para instalarla en el servidor PXE de la red simplemente hay que descargar y descomprimir el archivo y ejecutar el script <code>iventoy.sh</code> que está en el directorio raíz al descomprimir este archivo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">wget https://github.com/ventoy/PXE/releases/download/v1.0.20/iventoy-1.0.20-linux-free.tar.gz
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">tar -xvf iventoy-1.0.20-linux-free.tar.gz
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">cd iventoy-1.0.20/
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">sudo bash iventoy.sh start
-</span></span></span></code></pre></div><p>Tras ejecutar la herramienta se puede acceder a la interfaz gráfica en el puerto 26000 del servidor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">usuario@preseedsrv:~/iventoy-1.0.20$ sudo bash iventoy.sh start
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">iventoy start SUCCESS PID=1164
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc"></span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#ccc">Please open your browser and visit http://127.0.0.1:26000 or 
-</span></span></span><span style="display:flex;"><span><span style="color:#ccc">http://x.x.x.x:26000 (x.x.x.x is any valid IP address)
-</span></span></span></code></pre></div><p>Desde ella se puede configurar el servidor iVentoy, establecer la configuración de DHCP, arrancar y parar el servicio y establecer una lista de equipos que tienen permiso o no para acceder al servidor.</p>
-<p>Para hace accesible una imagen iso a los equipos de la red a través de iVentoy simplemente hay que llevar el archivo de imagen iso al directorio iso/ dentro del directorio de iVentoy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span><span style="color:#ccc">cp deb12-inst-desatendida.iso iventoy-1.0.20/iso/
-</span></span></span></code></pre></div><p>Desde la interfaz gráfica se puede también listar las máquinas que se han conectado al servidor para instalar una imagen desde él.</p>
-<p>El uso de iVentoy aporta algunas ventajas frente a otras soluciones como la instalación de un servidor PXE/TFTP desde cero. La más evidente es que el proceso de instalación y configuración del servidor es mucho más simple en este caso puesto que no es necesario instalar cada uno de los servidores por separado y establecer la configuración específica para ellos.</p>
-<p>Por otra parte, iVentoy facilita el proceso de instalación desatendida de un sistema operativo en múltiples equipos porque permite distribuir imágenes iso, a diferencia del servidor PXE/TFTP que distribuye imágenes en ficheros netboot comprimidos. Esto permite que se pueda distribuir para instalar en un entorno real con múltiples equipos el mismo archivo de imagen iso que se puede instalar en una máquina virtual en un entorno local de pruebas.</p>
-
           </div>
           <div class="row items-start justify-between">
             
@@ -1101,104 +1047,72 @@
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/sistemas/">
-                        Sistemas
+                        href="/tags/terraform/">
+                        Terraform
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/debian/">
-                        Debian
+                        href="/tags/oracle-cloud-infrastructure/">
+                        Oracle cloud infrastructure
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/linux/">
-                        Linux
+                        href="/tags/oci/">
+                        Oci
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/instalaci%c3%b3n/">
-                        Instalación
+                        href="/tags/virtual-cloud-network/">
+                        Virtual cloud network
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/preseed/">
-                        Preseed
+                        href="/tags/vcn/">
+                        VC n
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/instalaci%c3%b3n-desatendida/">
-                        Instalación desatendida
+                        href="/tags/infraestructura/">
+                        Infraestructura
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/debian-installer/">
-                        Debian installer
+                        href="/tags/infraestructura-como-c%c3%b3digo/">
+                        Infraestructura como código
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/iventoy/">
-                        Iventoy
+                        href="/tags/iac/">
+                        Ia c
                       </a>
                     </li>
                   
                     <li class="inline-block">
                       <a
                         class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/pxe/">
-                        Pxe
-                      </a>
-                    </li>
-                  
-                    <li class="inline-block">
-                      <a
-                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/tftp/">
-                        TFTP
-                      </a>
-                    </li>
-                  
-                    <li class="inline-block">
-                      <a
-                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/dnsmasq/">
-                        Dnsmasq
-                      </a>
-                    </li>
-                  
-                    <li class="inline-block">
-                      <a
-                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/administracion-sistemas/">
-                        Administracion sistemas
-                      </a>
-                    </li>
-                  
-                    <li class="inline-block">
-                      <a
-                        class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="/tags/administraci%c3%b3n-de-sistemas-operativos/">
-                        Administración de sistemas operativos
+                        href="/tags/hashicorp/">
+                        Hashi corp
                       </a>
                     </li>
                   
@@ -1231,7 +1145,7 @@
   
     <a
       class="share-link share-facebook"
-      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalaci%25C3%25B3n-desatendida-por-red%2f"
+      href="https://facebook.com/sharer/sharer.php?u=%2fblog%2fiac%2f2025-08-28-definir-variables-terrform%2f"
       target="_blank"
       rel="noopener"
       aria-label="share facebook">
@@ -1249,7 +1163,7 @@
   
     <a
       class="share-link share-twitter"
-      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalaci%25C3%25B3n-desatendida-por-red%2f"
+      href="https://twitter.com/intent/tweet/?text=Compartir&amp;url=%2fblog%2fiac%2f2025-08-28-definir-variables-terrform%2f"
       target="_blank"
       rel="noopener"
       aria-label="share twitter">
@@ -1267,7 +1181,7 @@
   
     <a
       class="share-link share-email"
-      href="mailto:?subject=Compartir&amp;body=%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalaci%25C3%25B3n-desatendida-por-red%2f"
+      href="mailto:?subject=Compartir&amp;body=%2fblog%2fiac%2f2025-08-28-definir-variables-terrform%2f"
       target="_self"
       rel="noopener"
       aria-label="share email">
@@ -1285,7 +1199,7 @@
   
     <a
       class="share-link share-reddit"
-      href="https://reddit.com/submit/?url=%2fblog%2fadministracion-de-sistemas%2f2024-12-02-instalaci%25C3%25B3n-desatendida-por-red%2f&amp;resubmit=true&amp;title=Compartir"
+      href="https://reddit.com/submit/?url=%2fblog%2fiac%2f2025-08-28-definir-variables-terrform%2f&amp;resubmit=true&amp;title=Compartir"
       target="_blank"
       rel="noopener"
       aria-label="share reddit">
@@ -1366,8 +1280,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
-      Test para la integración continua de una aplicación django
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
     </a>
   </h4>
   
@@ -1382,25 +1296,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/implantacion/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Implantacion
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
-
-
-
-
- target="_blank"
- 
-
-
->django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
     Leer
   </a>
 </div>
@@ -1412,8 +1317,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
-      Comandos para la programación de tareas
+    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+      Cómo configurar un servidor DHCP en un router Cisco
     </a>
   </h4>
   
@@ -1428,16 +1333,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/redes/"
             class="ms-1"
-            >Sistemas
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">La programación de tareas es una característica muy útil en el ámbito de la administración de sistemas informáticos, especialmente al programar scripts. En este post se repasa brevemente la información más relevante sobre los principales comandos que se pueden usar con esta finalidad.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-01-07-comandos-programacion-tareas-script-bash/">
+  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
     Leer
   </a>
 </div>
@@ -1449,8 +1354,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
-      Creación de una VPN sitio a sitio con WireGuard
+    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+      Interconexión entre dos servidores Oracle
     </a>
   </h4>
   
@@ -1465,16 +1370,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/administracion-bbdd/"
             class="ms-1"
-            >Seguridad
+            >Administracion bbdd
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post, el escenario está formado por dos servidores de VPN que actúan, a su vez, como clientes del otro servidor y un equipo en la red interna de cada servidor.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-sitio-a-sitio-wireguard/">
+  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
     Leer
   </a>
 </div>

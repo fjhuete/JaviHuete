@@ -1121,8 +1121,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
-      Configuración NAT en routers Linux en Openstack
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
+      Despliegue de una aplicación usando Jenkins
     </a>
   </h4>
   
@@ -1137,16 +1137,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Redes
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+  <p class="mb-6"><p>Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
     Leer
   </a>
 </div>
@@ -1158,8 +1158,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
-      Instalación y configuración del gestor de arranque systemd-boot en Debian
+    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
+      Compartición de sistemas de ficheros con sshfs y systemd
     </a>
   </h4>
   
@@ -1182,8 +1182,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
+  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
     Leer
   </a>
 </div>
@@ -1195,8 +1195,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
-      Funcionamiento básico de Linux Bridge
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -1211,16 +1211,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Redes
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Un bridge o puente en Linux es un dispositivo de red virtual que permite que las máquinas virtuales alojadas en una máquina física usen su tarjeta de red. En este post se muestra un ejemplo de configuración de un Bridge en una máquina Debian.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-05-28-funcionamiento-basico-linux-bridge/">
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
     Leer
   </a>
 </div>

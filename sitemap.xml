@@ -9,10 +9,64 @@
     <lastmod>2025-08-28T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/categories/cloud/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-28-definir-variables-terrform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/hashicorp/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/categories/iac/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/iac/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/infraestructura/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/infraestructura-como-c%C3%B3digo/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/blog/iac/2025-08-28-mostrar-informacion-con-outputs-terraform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oci/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oracle/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/oracle-cloud-infrastructure/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/subnet/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/terraform/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/vcn/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
+  </url><url>
+    <loc>/tags/virtual-cloud-network/</loc>
+    <lastmod>2025-08-28T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/cloud/</loc>
     <lastmod>2025-08-21T01:00:00+02:00</lastmod>
@@ -23,18 +77,6 @@
     <loc>/tags/debian/</loc>
     <lastmod>2025-08-21T01:00:00+02:00</lastmod>
   </url><url>
-    <loc>/tags/hashicorp/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/categories/iac/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/iac/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/infraestructura-como-c%C3%B3digo/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
     <loc>/tags/insfraestructura/</loc>
     <lastmod>2025-08-21T01:00:00+02:00</lastmod>
   </url><url>
@@ -42,21 +84,6 @@
     <lastmod>2025-08-21T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/blog/iac/2025-08-21-instalacion-terraform/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/oci/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/oracle/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/oracle-cloud-infrastructure/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-08-21T01:00:00+02:00</lastmod>
-  </url><url>
-    <loc>/tags/terraform/</loc>
     <lastmod>2025-08-21T01:00:00+02:00</lastmod>
   </url><url>
     <loc>/tags/asgi/</loc>

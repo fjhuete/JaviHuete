@@ -960,14 +960,14 @@
       <div
         class="tab-content-panel active"
         data-tab-panel="dockerfile">
-        <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> python:3.12.1-bookworm</span><span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">WORKDIR</span><span style="color:#ed9d13"> /usr/src/app</span><span style="color:#a61717;background-color:#e3d2d2">
+        <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#666"> </span><span style="color:#ed9d13">python:3.12.1-bookworm</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">WORKDIR</span><span style="color:#666"> </span><span style="color:#ed9d13">/usr/src/app</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">COPY</span> * .<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">COPY</span> docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> chmod +x /usr/local/bin/docker-entrypoint.sh <span style="color:#ed9d13">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span>&amp;&amp; pip install mysqlclient <span style="color:#ed9d13">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span>&amp;&amp; pip install --no-cache-dir --break-system-packages -r requirements.txt<span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#ed9d13"> 3000</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#666"> </span><span style="color:#ed9d13">3000</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">URL_BASE</span>=http://localhost<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">DJANGO_MAIL</span>=mail@mail.org<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">DJANGO_USER</span>=admin
@@ -1298,8 +1298,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
-      Cómo instalar qemu/kvm en Debian 12 para virtualizar equipos
+    <a href="/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/">
+      Manejo y uso del comando mkisofs
     </a>
   </h4>
   
@@ -1314,16 +1314,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/fundamentos-hardware/"
             class="ms-1"
-            >Sistemas
+            >Fundamentos hardware
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Qemu es un potente virtualizador que permite el uso de máquinas virtuales en equipos que usen sistemas operativos basados en Debian y otras distribuciones GNU/Linux. Este software se complementa a la perfección con VirtManager, que ofrece una interfaz gráfica amigable para realizar todas las tareas relacionadas con la virtualización.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-03-instalar-qemu-kvm-virtualizacion-debian/">
+  <p class="mb-6">En este post se muestrael funcionamiento de la herramienta mkisofs para crear sistemas de fichero de tipo ISO.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/fundamentos-hardware/2024-05-06-manejo-uso-comando-mkisofs-ejemplos/">
     Leer
   </a>
 </div>
@@ -1335,8 +1335,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
-      Instalación de MySQL en Debian
+    <a href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
+      Instalación y configuración de un servidor de correos postfix
     </a>
   </h4>
   
@@ -1351,16 +1351,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Administracion bbdd
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">El proceso de instalación de MySQL difiera un poco del que se sigue para instalar MariaDB en Debian. En este post se desarrolla una guía con los pasos a seguir.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-10-21-instalacion-mysql-debian/">
+  <p class="mb-6"><p>Para instalar un servidor de correos <code>postfix</code> en Debian se instala el paquete <code>postfix</code>.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-instalacion-configuracion-servidor-correo-postifx/">
     Leer
   </a>
 </div>
@@ -1372,8 +1372,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/iac/2025-08-28-definir-variables-terrform/">
+      Definición variables en una configuración de Terraform
     </a>
   </h4>
   
@@ -1388,16 +1388,24 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/iac/"
             class="ms-1"
-            >Seguridad
+            >Ia c
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cloud/"
+            class="ms-1"
+            >Cloud
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6"><p>Una de las grandes ventajas de la Infraestructura como Código (IaC) es que permite crear recursos en proveedores de cloud o en local de forma automática y, sobre todo, replicar los escenarios generados. Para permitir la reutilización de las configuraciones de Terraform es conveniente hacer uso de las variables. En esta entrada se crean diferentes recursos en Oracle Cloud Infrastructure utilizando esta característica de la IaC.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/iac/2025-08-28-definir-variables-terrform/">
     Leer
   </a>
 </div>

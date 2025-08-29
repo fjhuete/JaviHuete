@@ -1160,45 +1160,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
-      Instalación y configuración del gestor de arranque systemd-boot en Debian
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
+      Gestión de redes en Openstack
     </a>
   </h4>
   
@@ -1221,8 +1184,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+  <p class="mb-6"><p>En este post se muestra un caso práctica de gestión de redes en un escenario de OpenStack formado por una instancia que funciona como router y otra máquina, conectada a una red interna, que cuenta con un servidor web.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-13-gestion-de-redes-openstack/">
     Leer
   </a>
 </div>
@@ -1234,8 +1197,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/">
-      Configuración del servidor de correos para permitir el uso de clientes externos
+    <a href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
+      Configuración NAT en routers Cisco en GNS3
     </a>
   </h4>
   
@@ -1250,16 +1213,53 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/redes/"
             class="ms-1"
-            >Servicios
+            >Redes
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se abordan algunos de los pasos que hay que seguir para configurar un servidor de correo para que se pueda usar con clientes externos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-02-18-configuracion-servidor-correos-permitir-uso-clientes-externos/">
+  <p class="mb-6">NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router. En este post se muestra un ejemplo de configuración de este mecanismo en un escenario de GNS3.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-cisco-gns3/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
+      Cómo configurar un servidor DHCP en un router Cisco
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/redes/"
+            class="ms-1"
+            >Redes
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
     Leer
   </a>
 </div>

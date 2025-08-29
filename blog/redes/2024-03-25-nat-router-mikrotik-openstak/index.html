@@ -1397,8 +1397,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    <a href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
+      Creación de una VPN punto a punto con IPSec
     </a>
   </h4>
   
@@ -1421,8 +1421,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+  <p class="mb-6"><p>Este escenario está formado por dos routers Cisco c7200 que comparten una red. Por la otra interfaz, cada uno cuenta con una red privada. Usando el protocolo IPSec se crea un túnel entre ambos routers que permita comunicar las dos redes privadas a través de una VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-punto-a-punto-ipsec/">
     Leer
   </a>
 </div>
@@ -1434,8 +1434,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
-      Instalación de minikube
+    <a href="/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/">
+      Comandos básicos en Docker
     </a>
   </h4>
   
@@ -1450,30 +1450,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
-
-
-
- 
-
-
->libvirt</a> y <a href="/tags/kvm/"
-
-
-
- 
-
-
->KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+  <p class="mb-6">En este post se muestran algunos de los comandos básicos para la creación y gestión de contenedores usando Docker</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-02-24-comandos-basicos-docker/">
     Leer
   </a>
 </div>
@@ -1485,16 +1471,16 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/">
-      Arranque desde el grub ante errores en el sistema
+    <a href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
+      Instalación desatendida de Debian12
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        <a href="/authors//">
+          <i class="fa-regular fa-circle-user mr-2"></i>
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1509,8 +1495,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>El gestor de arranque GRUB cuenta con una consola desde la que se puede interactuar con el propio gestor de arranque ante un fallo en el arranque del sistema. A esta consola se puede acceder pulsando la telca <code>c</code> desde el menú del gestor de arranque.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-arranque-grub-ante-fallos/">
+  <p class="mb-6">Aquí se recoge una breve guía para la creación de una iso instalable de Debian usando un fichero de preseed.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2024-12-02-instalacion-desatendida-iso/">
     Leer
   </a>
 </div>

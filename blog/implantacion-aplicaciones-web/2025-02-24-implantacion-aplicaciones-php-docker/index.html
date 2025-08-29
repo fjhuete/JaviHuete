@@ -931,7 +931,7 @@
 </span></span><span style="display:flex;"><span>mysql -u <span style="color:#ed9d13">${</span><span style="color:#40ffff">USER</span><span style="color:#ed9d13">}</span> -p<span style="color:#ed9d13">${</span><span style="color:#40ffff">PASS</span><span style="color:#ed9d13">}</span> -h <span style="color:#ed9d13">${</span><span style="color:#40ffff">HOST</span><span style="color:#ed9d13">}</span> <span style="color:#ed9d13">${</span><span style="color:#40ffff">DB</span><span style="color:#ed9d13">}</span> &lt; /opt/biblioteca.sql
 </span></span><span style="display:flex;"><span>apache2ctl -D FOREGROUND
 </span></span></code></pre></div><p>En el Dockerfile se deben indicar, junto a este script, las variables de entorno necesarias para crear tanto el contenedor de la aplicación como la base de datos, así como los comandos que se deben ejecutar para la construcción de la imagen. Para su correcto funcionamiento, esta aplicación necesita que se instalen los módulos <code>pdo</code> y <code>pdo_mysql</code> en el contenedor php.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> php:8.4.3-apache</span><span style="color:#a61717;background-color:#e3d2d2">
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#666"> </span><span style="color:#ed9d13">php:8.4.3-apache</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">COPY</span> docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> chmod +x /usr/local/bin/docker-entrypoint.sh <span style="color:#ed9d13">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span>&amp;&amp; a2enmod rewrite <span style="color:#ed9d13">\
@@ -939,7 +939,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span>&amp;&amp; docker-php-ext-install pdo pdo_mysql<span style="color:#ed9d13">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ed9d13"></span>&amp;&amp; docker-php-ext-enable pdo pdo_mysql<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">COPY</span> app /var/www/html/<span style="color:#a61717;background-color:#e3d2d2">
-</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#ed9d13"> 80</span><span style="color:#a61717;background-color:#e3d2d2">
+</span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#666"> </span><span style="color:#ed9d13">80</span><span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">BASE_URL</span>=http://localhost/biblio/<span style="color:#a61717;background-color:#e3d2d2">
 </span></span></span><span style="display:flex;"><span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">HOST</span>=localhost
 </span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">ENV</span> <span style="color:#40ffff">USER</span>=usuario
@@ -1353,8 +1353,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
-      Cifrado asimétrico con GPG y OpenSSL
+    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+      Empaquetadores y compresores/descompresores en Debian
     </a>
   </h4>
   
@@ -1369,16 +1369,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/sistemas/"
             class="ms-1"
-            >Seguridad
+            >Sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se resume brevemente el procedimiento para crear claves de cifrado asimétrico tanto con GPG como con OpenSSL.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-criptografia-gpg-openssl/">
+  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
     Leer
   </a>
 </div>
@@ -1390,8 +1390,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
-      Configuración de reglas de cortafuegos en router Linux usando iptables
+    <a href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
+      Instalación y configuración del gestor de arranque systemd-boot en Debian
     </a>
   </h4>
   
@@ -1406,16 +1406,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/redes/"
+            href="/categories/administracion-sistemas/"
             class="ms-1"
-            >Redes
+            >Administracion sistemas
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Existen diferentes formas de implementar un cortafuegos en una red, ya sea por nodos o de forma perimetral. En ocasiones se puede dedicar un dispositivo exclusivamente para esta finalidad pero los routers también pueden cumplir esta función. En este post se muestra cómo configurar reglas de cortafuegos en routers Linux en este escenario basado en la saga &ldquo;Los juegos del hambre&rdquo;.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-04-12-cortafuegos-firewall-iptables-gns3/">
+  <p class="mb-6"><p><code>systemd-boot</code> es un gestor de arranque creado de la fusión del proyecto gummiboot con el proyecto systemd. Tanto gummiboot como <code>systemd-boot</code> están desarrollados por Red Hat. Este gestor de arranque pretende ser una alternativa minimalista al gestor de arranque GRUB,  desarrollado por GNU y está diseñado para sistemas que usan la interfaz de firmware UEFI.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-02-07-systemdboot/">
     Leer
   </a>
 </div>
@@ -1427,8 +1427,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/iac/2025-08-21-instalacion-terraform/">
-      Instalación de Terraform
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
+      Instalación de Jenkins usando Docker como runner
     </a>
   </h4>
   
@@ -1443,16 +1443,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/iac/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Ia c
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">En este post se describe el proceso de instalación de la herramienta para la línea de comandos de Terraform, que permite aplicar la configuración de Terraform a una estructura en un proveedor del cloud.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/iac/2025-08-21-instalacion-terraform/">
+  <p class="mb-6"><p>En primer lugar, en un equipo con Docker instalado instalamos también Jenkins.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-instalacion-jenkins-usando-docker-como-runner/">
     Leer
   </a>
 </div>

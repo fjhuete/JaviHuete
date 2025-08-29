@@ -6,8 +6,43 @@
     <description>Recent content in IaC on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Aug 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/categories/iac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creación de una VCN en Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;Las VCN (Virtual Cloud Network) son un recurso fundamental en Oracle Cloud Infrastructure. En este post se utiliza la herramienta de IaC Terraform para provisionar uno de estos recursos en un arrendamiento de OCI.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Definición variables en una configuración de Terraform</title>
+      <link>/blog/iac/2025-08-28-definir-variables-terrform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-28-definir-variables-terrform/</guid>
+      <description>&lt;p&gt;Una de las grandes ventajas de la Infraestructura como Código (IaC) es que permite crear recursos en proveedores de cloud o en local de forma automática y, sobre todo, replicar los escenarios generados. Para permitir la reutilización de las configuraciones de Terraform es conveniente hacer uso de las variables. En esta entrada se crean diferentes recursos en Oracle Cloud Infrastructure utilizando esta característica de la IaC.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Editar recursos en Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;En un &lt;a href=&#34;/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;post anterior&lt;/a&gt; se mostraba cómo crear un recurso de tipo VCN (virtual cloud network o red virtual en la nube) en Oracle Cloud Infrastructure (OCI) usando Terraform. Pero este tipo de recurso, por sí solo no tiene ninguna utilidad. Así que en esta entrada se muestra cómo añadir una subred a la VCN y cómo modificarla posteriormente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eliminar recursos de Oracle Cloud Infrastructure (OCI) con Terraform</title>
+      <link>/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-28-eliminar-recursos-oracle-cloud-infrastructure-terraform/</guid>
+      <description>&lt;p&gt;En este post se explica cómo se pueden eliminar recursos en un proveedor de cloud, en este caso Oracle Cloud Infrastructure (OCI) usando la herramienta de línea de comandos de Terraform. El punto de partida es una infraestructura sencilla: una VCN con una subnet creada en &lt;a href=&#34;/blog/iac/2025-08-28-creacion-vcn-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;otro artículo de este blog&lt;/a&gt; y después modificada en este &lt;a href=&#34;/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform&#34;&#xA;&#xA;&#xA;&#xA; &#xA;&#xA;&#xA;&gt;otro post&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mostrar información usando outputs en Terraform</title>
+      <link>/blog/iac/2025-08-28-mostrar-informacion-con-outputs-terraform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/blog/iac/2025-08-28-mostrar-informacion-con-outputs-terraform/</guid>
+      <description>&lt;p&gt;En ocasiones, es necesario obtener alguna información relacionada con los recursos que se crean de forma automática con Terraform. Para ello se pueden usar los outputs como se muestra en este artículo.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Instalación de Terraform</title>
       <link>/blog/iac/2025-08-21-instalacion-terraform/</link>

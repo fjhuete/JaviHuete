@@ -6,8 +6,85 @@
     <description>Recent content in Tags on Javi Huete</description>
     <generator>Hugo</generator>
     <language>es-Es</language>
-    <lastBuildDate>Thu, 21 Aug 2025 01:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 28 Aug 2025 01:00:00 +0200</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HashiCorp</title>
+      <link>/tags/hashicorp/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/hashicorp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IaC</title>
+      <link>/tags/iac/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/iac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infraestructura</title>
+      <link>/tags/infraestructura/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/infraestructura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infraestructura Como Código</title>
+      <link>/tags/infraestructura-como-c%C3%B3digo/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/infraestructura-como-c%C3%B3digo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OCI</title>
+      <link>/tags/oci/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oci/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oracle</title>
+      <link>/tags/oracle/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oracle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oracle Cloud Infrastructure</title>
+      <link>/tags/oracle-cloud-infrastructure/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/oracle-cloud-infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subnet</title>
+      <link>/tags/subnet/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/subnet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>/tags/terraform/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VCN</title>
+      <link>/tags/vcn/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/vcn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtual Cloud Network</title>
+      <link>/tags/virtual-cloud-network/</link>
+      <pubDate>Thu, 28 Aug 2025 01:00:00 +0200</pubDate>
+      <guid>/tags/virtual-cloud-network/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Cloud</title>
       <link>/tags/cloud/</link>
@@ -30,59 +107,10 @@
       <description></description>
     </item>
     <item>
-      <title>HashiCorp</title>
-      <link>/tags/hashicorp/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/hashicorp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IaC</title>
-      <link>/tags/iac/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/iac/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Infraestructura Como Código</title>
-      <link>/tags/infraestructura-como-c%C3%B3digo/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/infraestructura-como-c%C3%B3digo/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Insfraestructura</title>
       <link>/tags/insfraestructura/</link>
       <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
       <guid>/tags/insfraestructura/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OCI</title>
-      <link>/tags/oci/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/oci/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oracle</title>
-      <link>/tags/oracle/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/oracle/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oracle Cloud Infrastructure</title>
-      <link>/tags/oracle-cloud-infrastructure/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/oracle-cloud-infrastructure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Terraform</title>
-      <link>/tags/terraform/</link>
-      <pubDate>Thu, 21 Aug 2025 01:00:00 +0200</pubDate>
-      <guid>/tags/terraform/</guid>
       <description></description>
     </item>
     <item>
