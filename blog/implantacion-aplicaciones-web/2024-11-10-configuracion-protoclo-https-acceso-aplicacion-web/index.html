@@ -1168,8 +1168,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
-      Despliegue de una aplicación con contenido persistente en Kubernetes
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
     </a>
   </h4>
   
@@ -1192,8 +1192,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
     Leer
   </a>
 </div>
@@ -1205,8 +1205,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/">
-      Auditoría de bases de datos
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
+      Test para la integración continua de una aplicación django
     </a>
   </h4>
   
@@ -1221,16 +1221,25 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-bbdd/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Administracion bbdd
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se recogen algunos ejemplos prácticos de auditoría en bases de datos instaladas en distintos sistemas gestores tanto relacionales como no relacionales.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2025-02-17-auditoria-base-de-datos/">
+  <p class="mb-6"><p>A partir de la aplicación <a href="https://github.com/fjhuete/django_tutorial"
+
+
+
+
+ target="_blank"
+ 
+
+
+>django_tutorial</a> escrita en Python usando Django se configura un pipeline en Jenkins que ejecute de forma automática los test sobre la aplicación.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-test-integracion-continua-aplicacion-django/">
     Leer
   </a>
 </div>
@@ -1242,8 +1251,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
-      Autentificación SSH con cifrado asimétrico usando GPG
+    <a href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
+      Creación de recursos de tipo Ingress en kubernetes
     </a>
   </h4>
   
@@ -1258,16 +1267,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Seguridad
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para que la conexión entre cliente y servidor por SSH sea más ágil y rápida, se usa un cifrado simétrico. Sin embargo, para que una conexión con cifrado simétrico sea segura es necesario que ambos interlocutores negocien una clave simétrica usando una conexión segura.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-14-autentificacion-con-gpg/">
+  <p class="mb-6"><p>Para acceder a una aplicación usando una URL es necesario configurar un recurso de tipo ingress. En este caso, se parte de [este despliegue previo](Creación de Servicios)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-creacion-ingress-kubernetes/">
     Leer
   </a>
 </div>

@@ -1167,8 +1167,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-03-11-metricas-monitorizacion-grafana-prometheus-telegram/">
-      Métricas y monitorización con Pormetheus y Grafana
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
+      Creación de una VPN de acceso remoto con WireGuard
     </a>
   </h4>
   
@@ -1183,16 +1183,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/administracion-sistemas/"
+            href="/categories/seguridad/"
             class="ms-1"
-            >Administracion sistemas
+            >Seguridad
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Grafana y Prometheus son herramientas que permiten monitorizar el funcionamiento de los equipos de una red. En combinación, pueden recopilar y centralizar información relevante del funcionamiento de los servidores de una red, mostrarla de manera visual a través de una interfaz gráfica y notificar situaciones críticas en los equipos.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-03-11-metricas-monitorizacion-grafana-prometheus-telegram/">
+  <p class="mb-6"><p>En este escenario un servidor VPN permite el acceso a un equipo conectado a su red interna a los clientes conectados a él a través de la red VPN.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-wireguard/">
     Leer
   </a>
 </div>
@@ -1204,45 +1204,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
-      Compartición de sistemas de ficheros con sshfs y systemd
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
-      Creación y configuración de un sistema de ficheros en Debian 12
+    <a href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+      Gestión de dispositivos de almacenamiento con Powershell
     </a>
   </h4>
   
@@ -1265,8 +1228,45 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se plantea un caso práctico en el que se emplean varios comandos para la configuración de sistemas de ficheros en Debian. En concreto, se trata de un ejemplo en el que se instala Debina 12 en una máquina con recursos limitados en VirtManager y, posteriormente, se amplía el espacio de almacenamiento añadiendo un nuevo disco duro y clonando el sistema en él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-02-04-gestion-sistema-ficheros-debian/">
+  <p class="mb-6"><p>El módulo Storage de la PowerShell de Windows contiene múltiple cmdlets para gestionar los dispositivos de almacenamiento del sistema. En este post se recoge una lista de cmdlets de este módulo que cumplen diferentes funciones para realizar este trabajo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2024-05-05-gestion-dispositivos-almacenamiento-powershell/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/javi-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/seguridad/"
+            class="ms-1"
+            >Seguridad
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
     Leer
   </a>
 </div>

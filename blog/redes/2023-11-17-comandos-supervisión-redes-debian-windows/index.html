@@ -5849,8 +5849,8 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-instalacion-minikube/">
-      Instalación de minikube
+    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
+      Despliegue de una aplicación con contenido persistente en Kubernetes
     </a>
   </h4>
   
@@ -5873,22 +5873,8 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
       </li>
     </ul>
   
-  <p class="mb-6"><p>Minikube es una distribución minimalista de Kubernetes ideal para aprender a usar este orquestador, que instala una distribución de k8s en un único nodo, en este caso, en una máquina virtual usando <a href="/tags/libvirt/"
-
-
-
- 
-
-
->libvirt</a> y <a href="/tags/kvm/"
-
-
-
- 
-
-
->KVM</a>. Para instalar minikube, en primer lugar, se descarga el binario desde el repositorio de Google en el que está publicado.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-minikube/">
+  <p class="mb-6"><p>Para hacer persistente el contenido de una aplicación a los cambios de versiones en despliegues en Kubernetes hay que tener en cuenta dónde la aplicación almacena los datos. En este sentido, una aplicación puede almacenar los datos en el propio sistema donde se ejecuta o en una base de datos externa. Según esta configuración de la propia aplicación, el despliegue se hará de una de las formas que se recogen en este post.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-contenido-persistente-kubernetes/">
     Leer
   </a>
 </div>
@@ -5900,8 +5886,8 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
   
   
   <h4 class="mb-3">
-    <a href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
-      Empaquetadores y compresores/descompresores en Debian
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
     </a>
   </h4>
   
@@ -5916,16 +5902,16 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/sistemas/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Sistemas
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6">Los empaquetadores y compresores/descompresores son paquetes fundamentales en cualquier distribución de un sistema operativo. En este post se analizan varios de estos paquetes disponibles para Debian y otras distribuciones GNU/Linux</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/sistemas/2023-10-30-empaquetadores-compresores-debian/">
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
     Leer
   </a>
 </div>
@@ -5937,8 +5923,8 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
-      Configuración de una VPN de acceso remoto con OpenVPN y certificados x509
+    <a href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
+      Configuración del balanceador de carga HAProxy
     </a>
   </h4>
   
@@ -5953,16 +5939,16 @@ El comando <code>route print</code> se usa para ver la tabla de enrutamiento de 
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/seguridad/"
+            href="/categories/servicios/"
             class="ms-1"
-            >Seguridad
+            >Servicios
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se configura una conexión VPN de acceso remoto entre dos equipos. El servidor está conectado a dos redes, una de ellas está formada por el cliente y la otra por otro equipo a al que el cliente debe acceder a través de la VPN. La VPN usa direcciones de la red 10.99.99.0/24. En esta red, el servidor tiene la IP 10.99.99.1. Así, el escenario está compuesto por cuatro máquinas: en una red sólo está el cliente VPN y, la otra red está formada por el servidor VPN y un equipo interno. Entre ambas redes hay un router de Internet. Por tanto, el escenario queda construido de la siguiente manera:</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-openvpn/">
+  <p class="mb-6">En esta entrada se documenta el proceso de configuración y uso del balanceador de carga HAProxy.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2024-12-02-configuracion-balanceador-de-carga/">
     Leer
   </a>
 </div>

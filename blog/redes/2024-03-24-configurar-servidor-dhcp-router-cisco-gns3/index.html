@@ -1121,82 +1121,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
-      Despliegue de una aplicación usando Jenkins
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/implantacion/"
-            class="ms-1"
-            >Implantacion
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>Jenkins cuenta con varios plugins que permiten ejecutar comandos en un servidor remoto usando el protocolo SSH. Esto permite incluir una etapa de despliegue en el pipeline en la que, después de probar la aplicación, crear la imagen Docker y subirla a un registro de imágenes, se puede descargar la imagen en el servidor en producción y desplegar la aplicación en él.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-despliegue-aplicacion-usando-jenkins/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
-      Compartición de sistemas de ficheros con sshfs y systemd
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-sistemas/"
-            class="ms-1"
-            >Administracion sistemas
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">En este post se demuestra cómo se puede configurar un servidor de almacenamiento en una red local usando sshfs para compartir el sistema de ficheros y systemd para gestionar los puntos de montaje.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-de-sistemas/2025-01-09-systemd-sshfs/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
-      Despliegue de un servidor web con contenido persistente en Kubernetes
+    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+      Despliegue de una aplicación en Kubernetes usando Helm
     </a>
   </h4>
   
@@ -1219,8 +1145,90 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/iac/2025-08-28-mostrar-informacion-con-outputs-terraform/">
+      Mostrar información usando outputs en Terraform
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/iac/"
+            class="ms-1"
+            >Ia c
+              ,
+            
+          </a>
+        
+          <a
+            href="/categories/cloud/"
+            class="ms-1"
+            >Cloud
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En ocasiones, es necesario obtener alguna información relacionada con los recursos que se crean de forma automática con Terraform. Para ello se pueden usar los outputs como se muestra en este artículo.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/iac/2025-08-28-mostrar-informacion-con-outputs-terraform/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
+      Instalación de WordPress en Rocky Linux 9
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En este post se instala WordPress en un equipo con Rocky Linux 9 en el que se ha instalado el servidor web de Apache <code>httpd</code> y que se conecta a una base de datos instalada en otro servidor basado en Ubuntu 22.04.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-wordpress-rocky-linux/">
     Leer
   </a>
 </div>

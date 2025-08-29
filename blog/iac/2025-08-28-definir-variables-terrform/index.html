@@ -900,7 +900,7 @@
 
             <p>Una de las grandes ventajas de la Infraestructura como Código (IaC) es que permite crear recursos en proveedores de cloud o en local de forma automática y, sobre todo, replicar los escenarios generados. Para permitir la reutilización de las configuraciones de Terraform es conveniente hacer uso de las variables. En esta entrada se crean diferentes recursos en Oracle Cloud Infrastructure utilizando esta característica de la IaC.</p>
 <h1 id="declaración-de-variables">Declaración de variables</h1>
-<p>El uso de variables tanto en Terraform como en otras herramientas de IaC hace que la configuración que se define en cada proyecto sea más flexible, legible y reutilizable. Para demostrar el funcionamiento de las variables en Terraform, en este post se crean varios recursos en OCI: una VCN y una subnet, un escenario equivalente al definido en <a href="/blog/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform"
+<p>El uso de variables tanto en Terraform como en otras herramientas de IaC hace que la configuración que se define en cada proyecto sea más flexible, legible y reutilizable. Para demostrar el funcionamiento de las variables en Terraform, en este post se crean varios recursos en OCI: una VCN y una subnet, un escenario equivalente al definido en <a href="/blog/iac/2025-08-28-editar-recursos-oracle-cloud-infrastructure-terraform"
 
 
 
@@ -1280,8 +1280,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
-      Configuración de vistas en el servidor DNS con  Bind9
+    <a href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
+      Despliegue de una aplicación en Kubernetes usando Helm
     </a>
   </h4>
   
@@ -1304,8 +1304,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+  <p class="mb-6"><p>Helm es una herramienta que permite instalar aplicaciones en un cluster de Kubernetes de forma sencilla en pocos pasos.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-instalacion-aplicacion-helm/">
     Leer
   </a>
 </div>
@@ -1317,8 +1317,45 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-      Cómo configurar un servidor DHCP en un router Cisco
+    <a href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+      Despliegue de un servidor web con contenido persistente en Kubernetes
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>Para desplegar un servidor o aplicación web que sea persistente, es necesario usar volúmenes en Kubernetes. Para crear un volumen, es necesario contar con un <code>storageClass</code> definido en el cluster. En este caso, como el cluster se ha creado usando Minikube, incluye, por defecto un <code>storageClass</code> estándar de tipo <code>hostpath</code>, que creará los volúmenes que se soliciten al crear un recurso de tipo <code>PersistentVolumeClaim</code> (PVC)</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-servidor-web-persistente-kubernetes/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
+      Configuración NAT en routers Linux en Openstack
     </a>
   </h4>
   
@@ -1341,45 +1378,8 @@
       </li>
     </ul>
   
-  <p class="mb-6">La mayor parte de routers pueden funcionar también como servidores DHCP para los equipos de su red. En este post se explica cómo configurar un servidor DHCP en un router Cisco.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-24-configurar-servidor-dhcp-router-cisco-gns3/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
-      Interconexión entre dos servidores Oracle
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/administracion-bbdd/"
-            class="ms-1"
-            >Administracion bbdd
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6">Este post constituye una breve guía con los pasos a seguir para establecer una interconexión entre dos servidores Oracle.</p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/administracion-bases-de-datos/2024-11-16-interconexion-oracle/">
+  <p class="mb-6">En este post se usa una plantilla YAML para crear una red en Openstack y demostrar el funcionamiento del NAT. NAT (Network Address Translation o traducción de direcciones de red) es un mecanismo que consiste en modificar la información de direccionamiento en los paquetes IP que atraviesan un router.</p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/redes/2024-03-25-nat-router-linux-openstack/">
     Leer
   </a>
 </div>

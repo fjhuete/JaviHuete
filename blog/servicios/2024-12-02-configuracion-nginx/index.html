@@ -1238,16 +1238,53 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
-      Configuración de un cortafuegos perimetral con nftables en un escenario con una red DMZ
+    <a href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+      Configuración de vistas en el servidor DNS con  Bind9
     </a>
   </h4>
   
   
     <ul class="mb-4">
       <li class="mr-4 inline-block">
-        <a href="/authors/javi-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Javi Huete
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        
+          <a
+            href="/categories/servicios/"
+            class="ms-1"
+            >Servicios
+          </a>
+        
+      </li>
+    </ul>
+  
+  <p class="mb-6"><p>En un escenario formado por dos máquinas, en el que una de ellas contiene dos contenedores LXC, se configura un servidor DNS con diferentes vistas.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-configuracion-de-vistas-en-bind9/">
+    Leer
+  </a>
+</div>
+
+              </div>
+            
+              <div class="lg:col-4 md:col-6 mb-14">
+                <div class="bg-body dark:bg-darkmode-body">
+  
+  
+  <h4 class="mb-3">
+    <a href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
+      Creación de una VPN de acceso remoto con IPSec
+    </a>
+  </h4>
+  
+  
+    <ul class="mb-4">
+      <li class="mr-4 inline-block">
+        <a href="/authors/francisco-javier-huete/">
+          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
         </a>
       </li>
       <li class="mr-4 inline-block">
@@ -1262,8 +1299,8 @@
       </li>
     </ul>
   
-  <p class="mb-6"><p>En este post se recoge un ejemplo práctico de la implantación de un sistema de cortafuegos perimetral usando la herramienta <code>nftables</code> para filtrar el tráfico que circula por la red en escenario que está formado por dos máquinas virtuales y dos contenedores. Las máquinas virtuales, Luffy y Zoro funcionan como router/cortafuegos y servidor web respectivamente. Además, Luffy tiene dos contenedores: Nami y Sanji. Nami es el servidor DNS de la red y Sanji tiene un servidor de correos y un servidor de base de datos MariaDB al que accede el servidor web instalado en Zoro.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-02-25-cortafuegos-permietral-nftables/">
+  <p class="mb-6"><p>Para la configuración de la VPN de acceso remoto con IPSec se usa una aplicación por software, en este caso, StrongSwan. El escenario cuenta con tres máquinas: un cliente, un servidor y un equipo en la red interna del servidor al que el cliente debe acceder.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/seguridad/2025-01-29-vpn-acceso-remoto-ipsec/">
     Leer
   </a>
 </div>
@@ -1275,8 +1312,8 @@
   
   
   <h4 class="mb-3">
-    <a href="/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/">
-      Despliegue de una aplicación Python en Kubernetes
+    <a href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-credenciales-jenkins/">
+      Creación de credenciales en Jenkins
     </a>
   </h4>
   
@@ -1291,53 +1328,16 @@
         <i class="fa-regular fa-folder mr-1"></i>
         
           <a
-            href="/categories/servicios/"
+            href="/categories/implantacion/"
             class="ms-1"
-            >Servicios
+            >Implantacion
           </a>
         
       </li>
     </ul>
   
-  <p class="mb-6"><p>Para desplegar una aplicación escrita en Python en Kubernetes se usan los ficheros yaml que definen los diferentes recursos necesarios para el despliegue.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-03-09-despliegue-aplicacion-python-kubernetes/">
-    Leer
-  </a>
-</div>
-
-              </div>
-            
-              <div class="lg:col-4 md:col-6 mb-14">
-                <div class="bg-body dark:bg-darkmode-body">
-  
-  
-  <h4 class="mb-3">
-    <a href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
-      Instalación del servidor web Apache en Rocky Linux 9
-    </a>
-  </h4>
-  
-  
-    <ul class="mb-4">
-      <li class="mr-4 inline-block">
-        <a href="/authors/francisco-javier-huete/">
-          <i class="fa-regular fa-circle-user mr-2"></i>Francisco Javier Huete
-        </a>
-      </li>
-      <li class="mr-4 inline-block">
-        <i class="fa-regular fa-folder mr-1"></i>
-        
-          <a
-            href="/categories/servicios/"
-            class="ms-1"
-            >Servicios
-          </a>
-        
-      </li>
-    </ul>
-  
-  <p class="mb-6"><p>El de Apache es uno de los servidores web más usados del mundo. Aunque en otras distribuciones, como las basadas en Debian, este servidor se instala con el paquete <code>apache2</code> en las distribuciones basadas en Red Hat como CentOS o Rocky Linux, este servidor se instala con el paquete <code>httpd</code>.</p></p>
-  <a class="btn btn-outline-primary btn-sm" href="/blog/servicios/2025-01-27-instalacion-servidor-web-rocky-linux/">
+  <p class="mb-6"><p>Las credenciales en Jenkin se crean en el menú Administrar Jenkins -&gt; Credenciales -&gt; Global -&gt; Add Credentials.</p></p>
+  <a class="btn btn-outline-primary btn-sm" href="/blog/implantacion-aplicaciones-web/2025-03-09-creacion-credenciales-jenkins/">
     Leer
   </a>
 </div>
